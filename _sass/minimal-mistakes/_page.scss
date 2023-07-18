@@ -55,7 +55,12 @@ body {
     width: 100%;
     clear: both;
 
-    .page__content,
+    .page__content {
+      /* paragraph indents */
+      p {
+        line-height: 2;
+      }
+    }
     .page__meta,
     .page__share {
       position: relative;
