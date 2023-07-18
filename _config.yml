@@ -32,7 +32,7 @@ words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : ddangchani-github-io # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -264,6 +264,7 @@ defaults:
       author_profile: true
       read_time: false
       show_date: true
-      comments: # true
+      comments: true
       share: true
       related: true
+      use_math: true
