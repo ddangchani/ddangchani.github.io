@@ -11,31 +11,31 @@ The theme's `assets/css/main.css` file is built from several SCSS partials locat
 ```bash
 minimal-mistakes
 ├── _sass
-|  └── minimal-mistakes
-|     ├── vendor               # vendor SCSS partials
-|     |   ├── breakpoint       # media query mixins
-|     |   ├── magnific-popup   # Magnific Popup lightbox
-|     |   └── susy             # Susy grid system
-|     ├── _animations.scss     # animations
-|     ├── _archive.scss        # archives (list, grid, feature views)
-|     ├── _base.scss           # base HTML elements
-|     ├── _buttons.scss        # buttons
-|     ├── _footer.scss         # footer
-|     ├── _masthead.scss       # masthead
-|     ├── _mixins.scss         # mixins (em function, clearfix)
-|     ├── _navigation.scss     # nav links (breadcrumb, priority+, toc, pagination, etc.)
-|     ├── _notices.scss        # notices
-|     ├── _page.scss           # pages
-|     ├── _print.scss          # print styles
-|     ├── _reset.scss          # reset
-|     ├── _sidebar.scss        # sidebar
-|     ├── _syntax.scss         # syntax highlighting
-|     ├── _tables.scss         # tables
-|     ├── _utilities.scss      # utility classes (text/image alignment)
-|     └── _variables.scss      # theme defaults (fonts, colors, etc.)
+\vert   └── minimal-mistakes
+\vert      ├── vendor               # vendor SCSS partials
+\vert      \vert    ├── breakpoint       # media query mixins
+\vert      \vert    ├── magnific-popup   # Magnific Popup lightbox
+\vert      \vert    └── susy             # Susy grid system
+\vert      ├── _animations.scss     # animations
+\vert      ├── _archive.scss        # archives (list, grid, feature views)
+\vert      ├── _base.scss           # base HTML elements
+\vert      ├── _buttons.scss        # buttons
+\vert      ├── _footer.scss         # footer
+\vert      ├── _masthead.scss       # masthead
+\vert      ├── _mixins.scss         # mixins (em function, clearfix)
+\vert      ├── _navigation.scss     # nav links (breadcrumb, priority+, toc, pagination, etc.)
+\vert      ├── _notices.scss        # notices
+\vert      ├── _page.scss           # pages
+\vert      ├── _print.scss          # print styles
+\vert      ├── _reset.scss          # reset
+\vert      ├── _sidebar.scss        # sidebar
+\vert      ├── _syntax.scss         # syntax highlighting
+\vert      ├── _tables.scss         # tables
+\vert      ├── _utilities.scss      # utility classes (text/image alignment)
+\vert      └── _variables.scss      # theme defaults (fonts, colors, etc.)
 ├── assets
-|  ├── css
-|  |  └── main.scss            # main stylesheet, loads SCSS partials in _sass
+\vert   ├── css
+\vert   \vert   └── main.scss            # main stylesheet, loads SCSS partials in _sass
 ```
 
 ## Customizing
@@ -76,7 +76,7 @@ Before any `@import` lines.
 To mimic the look of type set in a printed book or manuscript you may want to enable paragraph indention. When `$paragraph-indent` is set to `true` indents are added to each sibling and the margin below each paragraph is removed.
 
 <figure>
-  <img src="{{ '/assets/images/mm-paragraph-indent-example.jpg' | relative_url }}" alt="indented paragraph example">
+  <img src="{{ '/assets/images/mm-paragraph-indent-example.jpg' \vert  relative_url }}" alt="indented paragraph example">
   <figcaption>Example of indented paragraphs.</figcaption>
 </figure>
 
@@ -105,7 +105,7 @@ Not a fan of the refreshed typography of the theme and want to revert back an ol
 **1.** Add this Google Fonts script to [`_includes/head/custom.html`](https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head/custom.html):
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700\vert PT+Serif:400,700,400italic" rel="stylesheet" type="text/css">
 ```
 
 **2.** Update the following SCSS variables:
@@ -157,7 +157,7 @@ Code block colors can easily be changed by overriding any of the following color
 
 ##### Default
 
-![default-code-block]({{ '/assets/images/default-code-block.jpg' | relative_url }})
+![default-code-block]({{ '/assets/images/default-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* default syntax highlighting (base16) */
@@ -181,7 +181,7 @@ $base0f: #ff5370;
 
 ##### Solarized light
 
-![solarized-light-code-block]({{ '/assets/images/solarized-light-code-block.jpg' | relative_url }})
+![solarized-light-code-block]({{ '/assets/images/solarized-light-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* solarized light syntax highlighting (base16) */
@@ -205,7 +205,7 @@ $base0f: #d33682 !default;
 
 ##### Contrast
 
-![contrast-code-block]({{ '/assets/images/contrast-code-block.jpg' | relative_url }})
+![contrast-code-block]({{ '/assets/images/contrast-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* contrast syntax highlighting (base16) */
@@ -229,7 +229,7 @@ $base0f: #b18a3d;
 
 ##### Dark
 
-![dark-code-block]({{ '/assets/images/dark-code-block.jpg' | relative_url }})
+![dark-code-block]({{ '/assets/images/dark-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* dark syntax highlighting (base16) */
@@ -253,7 +253,7 @@ $base0f: #cc6633;
 
 ##### Dirt
 
-![dirt-code-block]({{ '/assets/images/dirt-code-block.jpg' | relative_url }})
+![dirt-code-block]({{ '/assets/images/dirt-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* dirt syntax highlighting (base16) */
@@ -277,7 +277,7 @@ $base0f: #b49368;
 
 ##### Dracula
 
-![dracula-code-block]({{ '/assets/images/dracula-code-block.jpg' | relative_url }})
+![dracula-code-block]({{ '/assets/images/dracula-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* dracula syntax highlighting (base16) */
@@ -302,7 +302,7 @@ $base0f: #00f769;
 
 ##### Neon
 
-![neon-code-block]({{ '/assets/images/neon-code-block.jpg' | relative_url }})
+![neon-code-block]({{ '/assets/images/neon-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* neon syntax highlighting (base16) */
@@ -326,7 +326,7 @@ $base0f: #cc6633;
 
 ##### Plum
 
-![plum-code-block]({{ '/assets/images/plum-code-block.jpg' | relative_url }})
+![plum-code-block]({{ '/assets/images/plum-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* plum syntax highlighting (base16) */
@@ -350,7 +350,7 @@ $base0f: #cc6633;
 
 ##### Sunrise
 
-![sunrise-code-block]({{ '/assets/images/sunrise-code-block.jpg' | relative_url }})
+![sunrise-code-block]({{ '/assets/images/sunrise-code-block.jpg' \vert  relative_url }})
 
 ```scss
 /* sunrise syntax highlighting (base16) */
@@ -379,7 +379,7 @@ Probably won't need to touch these, but they're there if you need to. Width vari
 And `$susy` is used for setting [the grid](http://susy.oddbird.net/) the theme uses. Uncommenting the lines under `debug` can be useful if you want to show the columns when adjusting the layout.
 
 <figure>
-  <img src="{{ '/assets/images/mm-susy-grid-overlay.jpg' | relative_url }}" alt="Susy grid overlay for debugging">
+  <img src="{{ '/assets/images/mm-susy-grid-overlay.jpg' \vert  relative_url }}" alt="Susy grid overlay for debugging">
   <figcaption>Susy grid debug overlay enabled.</figcaption>
 </figure>
 

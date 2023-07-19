@@ -31,7 +31,7 @@ Easily change the color scheme of the theme using one of the provided "skins":
 minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 ```
 
-**Note:** If you have made edits to the theme's CSS files be sure to update [`/assets/css/main.scss`](https://github.com/mmistakes/minimal-mistakes/blob/master/assets/css/main.scss) to include `@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin` before the `minimal-mistakes` import.
+**Note:** If you have made edits to the theme's CSS files be sure to update [`/assets/css/main.scss`](https://github.com/mmistakes/minimal-mistakes/blob/master/assets/css/main.scss) to include `@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin \vert  default: 'default' }}"; // skin` before the `minimal-mistakes` import.
 {: .notice--warning}
 
 #### Air skin: `air`
@@ -116,7 +116,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 _Example:_ `locale: "en-US"` sets the `lang` attribute for the site to the _United States_ flavor of English, while `en-GB` would be for the `United Kingdom` style of English. Country codes are optional and the shorter variation `locale: "en"` is also acceptable. To find your language and country codes check this [reference table](<https://msdn.microsoft.com/en-us/library/ee825488(v=cs.20).aspx>).
 
-Properly setting the locale is important for associating localized text found in the [**UI Text**]({{ "/docs/ui-text/" | relative_url }}) data file. An improper match will cause parts of the UI to disappear (eg. button labels, section headings, etc).
+Properly setting the locale is important for associating localized text found in the [**UI Text**]({{ "/docs/ui-text/" \vert  relative_url }}) data file. An improper match will cause parts of the UI to disappear (eg. button labels, section headings, etc).
 
 **Note:** The theme comes with localized text in English (`en`, `en-US`, `en-GB`). If you change `locale` in `_config.yml` to something else, most of the UI text will go blank. Be sure to add the corresponding locale key and translated text to `_data/ui-text.yml` to avoid this.
 {: .notice--warning}
@@ -129,7 +129,7 @@ _Example:_ `title: "My Awesome Site"`
 
 You also have the option of customizing the separation character used in SEO-friendly page titles.
 
-_Example:_ `title_separator: "|"` would produce page titles like `Sample Page | My Awesome Site`.
+_Example:_ `title_separator: "\vert "` would produce page titles like `Sample Page \vert  My Awesome Site`.
 
 **Note:** Long site titles have been known to break the masthead layout. Avoid adding a long "tagline" to the title prevent this from happening eg. `My Awesome Site is the Best Because I Say So`.
 {: .notice--warning}
@@ -225,7 +225,7 @@ header:
 ```
 
 <figure>
-  <img src="{{ '/assets/images/mm-teaser-images-example.jpg' | relative_url }}" alt="teaser image example">
+  <img src="{{ '/assets/images/mm-teaser-images-example.jpg' \vert  relative_url }}" alt="teaser image example">
   <figcaption>Example of teaser images found in the related posts module.</figcaption>
 </figure>
 
@@ -238,7 +238,7 @@ logo: "/assets/images/88x88.png"
 ```
 
 <figure>
-  <img src="{{ '/assets/images/mm-masthead-logo.png' | relative_url }}" alt="masthead with logo and custom title">
+  <img src="{{ '/assets/images/mm-masthead-logo.png' \vert  relative_url }}" alt="masthead with logo and custom title">
   <figcaption>Example of masthead with logo and custom title.</figcaption>
 </figure>
 
@@ -257,19 +257,19 @@ Enable breadcrumb links to help visitors better navigate deep sites. Because of 
 1. Use a category based permalink structure e.g. `permalink: /:categories/:title/`
 2. Manually create pages for each category or use a plugin like [jekyll-archives][jekyll-archives] to auto-generate them. If these pages don't exist breadcrumb links to them will be broken.
 
-![breadcrumb navigation example]({{ "/assets/images/mm-breadcrumbs-example.jpg" | relative_url }})
+![breadcrumb navigation example]({{ "/assets/images/mm-breadcrumbs-example.jpg" \vert  relative_url }})
 
 ```yaml
 breadcrumbs: true  # disabled by default
 ```
 
-Breadcrumb start link text and separator character can both be changed in the [UI Text data file]({{ "/docs/ui-text/" | relative_url }}).
+Breadcrumb start link text and separator character can both be changed in the [UI Text data file]({{ "/docs/ui-text/" \vert  relative_url }}).
 
 ### Post dates
 
 Enable post date snippets with `show_date: true` in YAML Front Matter.
 
-![post date example]({{ "/assets/images/mm-post-date-example.png" | relative_url }})
+![post date example]({{ "/assets/images/mm-post-date-example.png" \vert  relative_url }})
 
 Instead of adding `show_date: true` to each post, apply as a default in `_config.yml` like so:
 
@@ -295,7 +295,7 @@ date_format: "%Y-%m-%d"
 
 Enable estimated reading time snippets with `read_time: true` in YAML Front Matter. `200` has been set as the default words per minute value --- which can be changed by adjusting `words_per_minute:` in `_config.yml`.
 
-![reading time example]({{ "/assets/images/mm-read-time-example.jpg" | relative_url }})
+![reading time example]({{ "/assets/images/mm-read-time-example.jpg" \vert  relative_url }})
 
 Instead of adding `read_time: true` to each post, apply as a default in `_config.yml` like so:
 
@@ -319,7 +319,7 @@ words_per_minute: 250
 
 ### Page meta separator
 
-To customise the separator between the page date and reading time (if both are enabled), edit `.page__meta-sep::before` in a [custom stylesheet]({{ "/docs/stylesheets/" | relative_url }}).
+To customise the separator between the page date and reading time (if both are enabled), edit `.page__meta-sep::before` in a [custom stylesheet]({{ "/docs/stylesheets/" \vert  relative_url }}).
 
 For example,
 
@@ -335,16 +335,16 @@ For example,
 
 [**Disqus**](https://disqus.com/), [**Discourse**](https://www.discourse.org/), [**Facebook**](https://developers.facebook.com/docs/plugins/comments), [**utterances**](https://utteranc.es/), [**giscus**](https://giscus.app/) and static-based commenting via [**Staticman**](https://staticman.net/) are built into the theme. First set the comment provider you'd like to use:
 
-| Name             | Comment Provider          |
-| ---------------- | ------------------------- |
-| **disqus**       | Disqus                    |
-| **discourse**    | Discourse                 |
-| **facebook**     | Facebook Comments         |
-| **staticman_v2** | Staticman v2 / v3         |
-| **staticman**    | Staticman v1 (deprecated) |
-| **utterances**   | utterances                |
-| **giscus**       | giscus                    |
-| **custom**       | Other                     |
+\vert  Name             \vert  Comment Provider          \vert 
+\vert  ---------------- \vert  ------------------------- \vert 
+\vert  **disqus**       \vert  Disqus                    \vert 
+\vert  **discourse**    \vert  Discourse                 \vert 
+\vert  **facebook**     \vert  Facebook Comments         \vert 
+\vert  **staticman_v2** \vert  Staticman v2 / v3         \vert 
+\vert  **staticman**    \vert  Staticman v1 (deprecated) \vert 
+\vert  **utterances**   \vert  utterances                \vert 
+\vert  **giscus**       \vert  giscus                    \vert 
+\vert  **custom**       \vert  Other                     \vert 
 
 Then add `comments: true` to each document you want comments visible on.
 
@@ -468,7 +468,7 @@ Transform user comments into `_data` files that live inside of your GitHub repos
 ##### Add Staticman as a collaborator on GitHub (legacy)
 
 1. Allow Staticman push access to your GitHub repository by clicking on **Settings**, then the **Collaborators** tab and adding your GitHub bot as a collaborator.
-2. To accept the pending invitation visit: `https://{your Staticman v2/3 API}/v[2|3]/connect/{your GitHub username}/{your repository name}`.
+2. To accept the pending invitation visit: `https://{your Staticman v2/3 API}/v[2\vert 3]/connect/{your GitHub username}/{your repository name}`.
 
 **Note:** The new GitHub App authentication method is recommended for GitHub repositories to avoid the API rate limit.
 {: .notice--info}
@@ -567,7 +567,7 @@ To skip this moderation step simply set `moderation: false`.
 **ProTip:** Create a GitHub webhook that sends a `POST` request to the following payload URL `https://{your Staticman API URL}/v2/webhook` and triggers a "Pull request" event to delete Staticman branches on merge.
 {: .notice--info}
 
-![pull-request webhook]({{ "/assets/images/mm-staticman-pr-webhook.jpg" | relative_url }})
+![pull-request webhook]({{ "/assets/images/mm-staticman-pr-webhook.jpg" \vert  relative_url }})
 
 ##### reCAPTCHA support (v2 only)
 
@@ -612,7 +612,7 @@ atom_feed:
 
 To enable site-wide search add `search: true` to your `_config.yml`.
 
-![masthead search example]({{ "/assets/images/masthead-search.gif" | relative_url }})
+![masthead search example]({{ "/assets/images/masthead-search.gif" \vert  relative_url }})
 
 #### Lunr (default)
 
@@ -691,7 +691,7 @@ Add a Google search box to your site.
 
 2. Under **Look and feel** choose the "Results only" layout and a theme (*Minimalist* is a good choice to match the default look of the Minimal Mistakes).
 
-   ![Google Custom Search Engine layout]({{ '/assets/images/google-custom-search-engine-layout.png' | relative_url }})
+   ![Google Custom Search Engine layout]({{ '/assets/images/google-custom-search-engine-layout.png' \vert  relative_url }})
 
 3. Select "Save & Get Code" and grab your search engine ID from the line that begins with `var cx = 'YOUR_SEARCH_ENGINE_ID'`.
 
@@ -827,19 +827,19 @@ og_image: /assets/images/site-logo.png
 ```
 
 <figure>
-  <img src="{{ '/assets/images/mm-twitter-card-summary-image.jpg' | relative_url }}" alt="Twitter Card summary example">
+  <img src="{{ '/assets/images/mm-twitter-card-summary-image.jpg' \vert  relative_url }}" alt="Twitter Card summary example">
   <figcaption>Example of a image placed in a Summary Card.</figcaption>
 </figure>
 
 Documents who have a `header.image` assigned in their YAML Front Matter will appear like this when shared on Twitter and Facebook.
 
 <figure>
-  <img src="{{ '/assets/images/mm-twitter-card-summary-large.jpg' | relative_url }}" alt="page shared on Twitter">
+  <img src="{{ '/assets/images/mm-twitter-card-summary-large.jpg' \vert  relative_url }}" alt="page shared on Twitter">
   <figcaption>Shared page on Twitter with header image assigned.</figcaption>
 </figure>
 
 <figure>
-  <img src="{{ '/assets/images/facebook-share-example.jpg' | relative_url }}" alt="page shared on Facebook">
+  <img src="{{ '/assets/images/facebook-share-example.jpg' \vert  relative_url }}" alt="page shared on Facebook">
   <figcaption>Shared page on Facebook with header image assigned.</figcaption>
 </figure>
 
@@ -862,12 +862,12 @@ social:
 
 Analytics is disabled by default. To enable globally select one of the following:
 
-| Name                 | Analytics Provider                                              |
-| -------------------- | --------------------------------------------------------------- |
-| **google**           | [Google Standard Analytics](https://www.google.com/analytics/)  |
-| **google-universal** | [Google Universal Analytics](https://www.google.com/analytics/) |
-| **google-gtag**      | [Google Analytics Global Site Tag](https://www.google.com/analytics/) |
-| **custom**           | Other analytics providers                                       |
+\vert  Name                 \vert  Analytics Provider                                              \vert 
+\vert  -------------------- \vert  --------------------------------------------------------------- \vert 
+\vert  **google**           \vert  [Google Standard Analytics](https://www.google.com/analytics/)  \vert 
+\vert  **google-universal** \vert  [Google Universal Analytics](https://www.google.com/analytics/) \vert 
+\vert  **google-gtag**      \vert  [Google Analytics Global Site Tag](https://www.google.com/analytics/) \vert 
+\vert  **custom**           \vert  Other analytics providers                                       \vert 
 
 For Google Analytics add your Tracking Code:
 
@@ -889,7 +889,7 @@ To use another provider not included with the theme set `provider: "custom"` the
 
 Used as the defaults for defining what appears in the author sidebar.
 
-![author sidebar example]({{ "/assets/images/mm-author-sidebar-example.jpg" | relative_url }})
+![author sidebar example]({{ "/assets/images/mm-author-sidebar-example.jpg" \vert  relative_url }})
 
 **Note:** For sites with multiple authors these values can be overridden post by post with custom YAML Front Matter and a data file. For more information on how that works see below.
 {: .notice--info}
@@ -904,11 +904,11 @@ author:
 
 Author links are all optional, include the ones you want visible under the `author.links` array.
 
-| Name | Description |
-| --- | --- |
-| **label** | Link label (e.g. `"Twitter"`) |
-| **icon** | [Font Awesome icon](https://fontawesome.com/v5/search) classes (e.g. `"fab fa-fw fa-twitter-square"`) |
-| **url** | Link URL (e.g. `"https://twitter.com/mmistakes"`) |
+\vert  Name \vert  Description \vert 
+\vert  --- \vert  --- \vert 
+\vert  **label** \vert  Link label (e.g. `"Twitter"`) \vert 
+\vert  **icon** \vert  [Font Awesome icon](https://fontawesome.com/v5/search) classes (e.g. `"fab fa-fw fa-twitter-square"`) \vert 
+\vert  **url** \vert  Link URL (e.g. `"https://twitter.com/mmistakes"`) \vert 
 
 ```yaml
 author:
@@ -931,17 +931,17 @@ author:
       url: "https://instagram.com/mmistakes"
 ```
 
-To customize the author sidebar, read the full [layout documentation]({{ "/docs/layouts/#author-profile" | relative_url }}).
+To customize the author sidebar, read the full [layout documentation]({{ "/docs/layouts/#author-profile" \vert  relative_url }}).
 
 ## Site footer
 
 Footer links can be added under the `footer.links` array.
 
-| Name | Description |
-| --- | --- |
-| **label** | Link label (e.g. `"Twitter"`) |
-| **icon** | [Font Awesome icon](https://fontawesome.com/v5/search) classes (e.g. `"fab fa-fw fa-twitter-square"`) |
-| **url** | Link URL (e.g. `"https://twitter.com/mmistakes"`) |
+\vert  Name \vert  Description \vert 
+\vert  --- \vert  --- \vert 
+\vert  **label** \vert  Link label (e.g. `"Twitter"`) \vert 
+\vert  **icon** \vert  [Font Awesome icon](https://fontawesome.com/v5/search) classes (e.g. `"fab fa-fw fa-twitter-square"`) \vert 
+\vert  **url** \vert  Link URL (e.g. `"https://twitter.com/mmistakes"`) \vert 
 
 ```yaml
 footer:
@@ -1032,7 +1032,7 @@ If [using pagination](https://github.com/jekyll/jekyll-paginate) on the homepage
 paginate: 5
 ```
 
-You'll also need to include some Liquid and HTML to properly use the paginator, which you can find in the **Layouts** section under [Home Page]({{ "/docs/layouts/#home-page" | relative_url }}).
+You'll also need to include some Liquid and HTML to properly use the paginator, which you can find in the **Layouts** section under [Home Page]({{ "/docs/layouts/#home-page" \vert  relative_url }}).
 
 The paginator only works on files with name `index.html`. To use pagination in a subfolder --- for example `/recent/`, create `/recent/index.html` and set the `paginate_path` in `_config.yml` to this:
 
@@ -1055,13 +1055,13 @@ timezone: America/New_York
 
 When hosting with GitHub Pages a small [set of gems](https://pages.github.com/versions/) have been whitelisted for use. The theme uses a few of them which can be found under `gems`. Additional settings and configurations are documented in the links below.
 
-| Plugin | Description                                                                               |
-| --- | --- |
-| [jekyll-paginate][jekyll-paginate] | Pagination Generator for Jekyll. |
-| [jekyll-sitemap][jekyll-sitemap] | Jekyll plugin to silently generate a sitemaps.org compliant sitemap for your Jekyll site. |
-| [jekyll-gist][jekyll-gist] | Liquid tag for displaying GitHub Gists in Jekyll sites. |
-| [jekyll-feed][jekyll-feed] | A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts. |
-| [jekyll-include-cache][jekyll-include-cache] | Liquid tag that caches Liquid includes. |
+\vert  Plugin \vert  Description                                                                               \vert 
+\vert  --- \vert  --- \vert 
+\vert  [jekyll-paginate][jekyll-paginate] \vert  Pagination Generator for Jekyll. \vert 
+\vert  [jekyll-sitemap][jekyll-sitemap] \vert  Jekyll plugin to silently generate a sitemaps.org compliant sitemap for your Jekyll site. \vert 
+\vert  [jekyll-gist][jekyll-gist] \vert  Liquid tag for displaying GitHub Gists in Jekyll sites. \vert 
+\vert  [jekyll-feed][jekyll-feed] \vert  A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts. \vert 
+\vert  [jekyll-include-cache][jekyll-include-cache] \vert  Liquid tag that caches Liquid includes. \vert 
 
 [jekyll-paginate]: https://github.com/jekyll/jekyll-paginate
 [jekyll-sitemap]: https://github.com/jekyll/jekyll-sitemap

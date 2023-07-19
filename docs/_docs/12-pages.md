@@ -23,11 +23,11 @@ sample-project
 
 Examples:
 
-| filename            | permalink              |
-| --------            | ---------              |
-| _pages/about.md     | `permalink: /about/`   |
-| _pages/home.md      | `permalink: /`         |
-| _pages/contact.md   | `permalink: /contact/` |
+\vert  filename            \vert  permalink              \vert 
+\vert  --------            \vert  ---------              \vert 
+\vert  _pages/about.md     \vert  `permalink: /about/`   \vert 
+\vert  _pages/home.md      \vert  `permalink: /`         \vert 
+\vert  _pages/contact.md   \vert  `permalink: /contact/` \vert 
 
 **Recommended Front Matter Defaults:**
 

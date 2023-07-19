@@ -13,46 +13,46 @@ Nothing clever here :wink:. Layouts, data files, and includes are all placed in 
 ```bash
 minimal-mistakes
 ├── _data                      # data files for customizing the theme
-|  ├── navigation.yml          # main navigation links
-|  └── ui-text.yml             # text used throughout the theme's UI
+\vert   ├── navigation.yml          # main navigation links
+\vert   └── ui-text.yml             # text used throughout the theme's UI
 ├── _includes
-|  ├── analytics-providers     # snippets for analytics (Google and custom)
-|  ├── comments-providers      # snippets for comments
-|  ├── footer
-|  |  └── custom.html          # custom snippets to add to site footer
-|  ├── head
-|  |  └── custom.html          # custom snippets to add to site head
-|  ├── feature_row             # feature row helper
-|  ├── gallery                 # image gallery helper
-|  ├── group-by-array          # group by array helper for archives
-|  ├── nav_list                # navigation list helper
-|  ├── toc                     # table of contents helper
-|  └── ...
+\vert   ├── analytics-providers     # snippets for analytics (Google and custom)
+\vert   ├── comments-providers      # snippets for comments
+\vert   ├── footer
+\vert   \vert   └── custom.html          # custom snippets to add to site footer
+\vert   ├── head
+\vert   \vert   └── custom.html          # custom snippets to add to site head
+\vert   ├── feature_row             # feature row helper
+\vert   ├── gallery                 # image gallery helper
+\vert   ├── group-by-array          # group by array helper for archives
+\vert   ├── nav_list                # navigation list helper
+\vert   ├── toc                     # table of contents helper
+\vert   └── ...
 ├── _layouts
-|  ├── archive-taxonomy.html   # tag/category archive for Jekyll Archives plugin
-|  ├── archive.html            # archive base
-|  ├── categories.html         # archive listing posts grouped by category
-|  ├── category.html           # archive listing posts grouped by specific category
-|  ├── collection.html         # archive listing documents in a specific collection
-|  ├── compress.html           # compresses HTML in pure Liquid
-|  ├── default.html            # base for all other layouts
-|  ├── home.html               # home page
-|  ├── posts.html              # archive listing posts grouped by year
-|  ├── search.html             # search page
-|  ├── single.html             # single document (post/page/etc)
-|  ├── tag.html                # archive listing posts grouped by specific tag
-|  ├── tags.html               # archive listing posts grouped by tags
-|  └── splash.html             # splash page
+\vert   ├── archive-taxonomy.html   # tag/category archive for Jekyll Archives plugin
+\vert   ├── archive.html            # archive base
+\vert   ├── categories.html         # archive listing posts grouped by category
+\vert   ├── category.html           # archive listing posts grouped by specific category
+\vert   ├── collection.html         # archive listing documents in a specific collection
+\vert   ├── compress.html           # compresses HTML in pure Liquid
+\vert   ├── default.html            # base for all other layouts
+\vert   ├── home.html               # home page
+\vert   ├── posts.html              # archive listing posts grouped by year
+\vert   ├── search.html             # search page
+\vert   ├── single.html             # single document (post/page/etc)
+\vert   ├── tag.html                # archive listing posts grouped by specific tag
+\vert   ├── tags.html               # archive listing posts grouped by tags
+\vert   └── splash.html             # splash page
 ├── _sass                      # SCSS partials
 ├── assets
-|  ├── css
-|  |  └── main.scss            # main stylesheet, loads SCSS partials from _sass
-|  ├── images                  # image assets for posts/pages/collections/etc.
-|  ├── js
-|  |  ├── plugins              # jQuery plugins
-|  |  ├── vendor               # vendor scripts
-|  |  ├── _main.js             # plugin settings and other scripts to load after jQuery
-|  |  └── main.min.js          # optimized and concatenated script file loaded before </body>
+\vert   ├── css
+\vert   \vert   └── main.scss            # main stylesheet, loads SCSS partials from _sass
+\vert   ├── images                  # image assets for posts/pages/collections/etc.
+\vert   ├── js
+\vert   \vert   ├── plugins              # jQuery plugins
+\vert   \vert   ├── vendor               # vendor scripts
+\vert   \vert   ├── _main.js             # plugin settings and other scripts to load after jQuery
+\vert   \vert   └── main.min.js          # optimized and concatenated script file loaded before </body>
 ├── _config.yml                # site configuration
 ├── Gemfile                    # gem file dependencies
 ├── index.html                 # paginated home page showing recent posts

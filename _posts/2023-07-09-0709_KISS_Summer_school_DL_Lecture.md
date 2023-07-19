@@ -1,11 +1,12 @@
 ---
 title: "0709 KISS Summer school DL Lecture"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Deep Learning
+- Machine Learning
+category: 'DL'
 use_math: true
 ---
+{% raw %}
 
 # Introduction to DL
 
@@ -16,14 +17,17 @@ Traditional Linear Model > suffers at specific tasks(ex. MNIST)
 		: First PC finds overall mean usually(cannot capture small-scale feature)
 How to overcome > Use Basis function $f:R^{p}\to R^{d}$ (kernel function)
 
-### Neural Network
-#### 1-layer Neural Network
+## Neural Network
+### 1-layer Neural Network
+
 $$
+
 \begin{aligned}
 H^{(1)} &= g^{(1)}(W^{(1)}x + w_{0}^{(1)})\\
 \Lambda&= g^{(\lambda)}(W^{(\lambda)}H^{(1)}+w_{0}^{(\lambda)})\\
 Y &\sim p(y,\lambda) 
 \end{aligned}
+
 $$
 
 Output layer $g^{(\lambda)}$ is determined as dist of $Y$
@@ -34,20 +38,26 @@ Output layer $g^{(\lambda)}$ is determined as dist of $Y$
 
 - $g$ is nonlinear (Ex. ReLU : piecewise linear)
 
-#### Deep Neural Network : Multilayer Neural Network
+### Deep Neural Network : Multilayer Neural Network
 
 - General Approximation Theory
 - Model Fitting : MLE
 let $W$ vector contains every weight matrices, $(x_{1},y_{1}),\ldots,(x_{n}, y_{n})$ training data.
 
 Then, cost function of $Y\sim N(\Lambda,\sigma^{2})$
+
 $$
+
 C(W)=-l(W)\propto \frac{1}{n}\sum_{i=1}^{n}(y_{i}-\Lambda(x_{i}:W))^{2}
+
 $$
 
 If $Y\sim \text{Multi}(\Lambda)$ , the negative loglik becomes
+
 $$
+
 C(W) \propto \sum_{i}\sum_{k}y_{k}\log p_{k}(x_{i}:W)
+
 $$
 
 ### How to optimize?
@@ -58,10 +68,10 @@ $$
 - Adam, AdaGrad, RMSprop
 - Neural Net depends on Gradient i.e. the activation function should have good property
 - Gradient Saturation Problem
-	- At Sigmoid, Hyperbolic tangent activation function 
-		: the product of partial derivatives conv to 0
-	- Solution
-		: Rectified Linear Unit(ReLU)
+  - At Sigmoid, Hyperbolic tangent activation function 
+: the product of partial derivatives conv to 0
+  - Solution
+: Rectified Linear Unit(ReLU)
 
 
 ### What kind of Hidden Layer then?
@@ -84,9 +94,13 @@ Solutions :
 ### Penalization
 L1, L2 Regularization(Ridge, Lasso) : add a regularization term to negative loss
 ex) L1 Term at Categorical response
+
 $$
+
 -l(W) \propto -\sum_{i}\sum_{k}y_{ik}\log p_{k}(x_{i}:W)+\lambda\Vert W\Vert^{2}
+
 $$
+
 : work as Shrinkage estimator
 
 ### Dropout
@@ -113,10 +127,11 @@ Due to dropout and batch training, likelihood and cost function changes at every
 
 ### Validation Method for Binary Y
 - Classification rule to 0 or 1
-	- From Model : We acquire $P(Y=1|X)$ 
-	- How to determine prediction of Y as 0 or 1? : Threshold setting
+- From Model : We acquire $P(Y=1\vert X)$ 
+- How to determine prediction of Y as 0 or 1? 
+- By : Threshold setting
 	: Large Threshold  - both TPR, FPR lower
-	> We should not make threshold constant, instead observe change of ROC curve as threshold changes
+> We should not make threshold constant, instead observe change of ROC curve as threshold changes
 
 - **ROC Curve** is important : AUC-ROC
 
@@ -159,21 +174,33 @@ $\mathbf{x} = [x_{1},\ldots,x_{T}]$ : T is number of words in the text $\mathrm{
 
 ### Self-Attention Layer
 - $x_{t}$ is d-dimensional vector at $t$ word
-- Linear transformation for $x_t$ :  $$
+- Linear transformation for $x_t$ :  
+
+$$
+
 V_{t}=W_{v}x_{t}+w_{v}
+
 $$
+
 - Self-attention:
+
 $$
+
 sa(x_{t}) = \sum_{u=1}^T a(x_{u},x_{t})V_{u}
+
 $$
+
 where $a(X_{t},X_{u})>0, \sum_{u}a(x_{u},x_{t})=1$ is an attention which $t$-word gives to $X_{u}$.
 
 - Calculating $a(X_{u},X_{t})$
 > query $Q_{t} = W_{q}x_{t}+ w_{q}$
 > Key $K_{t}=W_{k}x_{t}+w_{k}$
 > Then, we calculate as follows:
-> $$
+
+$$
+
 a(x_{u},x_{t}) = \mathrm{softmax}(K_{u}^{T}Q_{t})
+
 $$
 
 ### Position Encoding
@@ -183,7 +210,9 @@ $$
 
 ### Multi-head Self Attention
 Define various number of self attention for $h=1,\cdots,H$ 
-: able to extract various kind of relationship of text
+> able to extract various kind of relationship of text
 
 ### Transformer Layer
 - Residual multi-head attention > Layer Normalization > Residual Dense Layers > Layer Normalization
+
+{% endraw %}

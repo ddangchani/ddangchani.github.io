@@ -170,7 +170,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
 highlighter: rouge
 lsi: false
-excerpt_separator: "\n\n"
+excerpt_separator: "<!--break-->"
 incremental: false
 
 
@@ -181,10 +181,10 @@ kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
-  toc_levels: 1..6
+  toc_levels: 1..5
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-
+  syntax_highlighter: rouge
 
 # Sass/SCSS
 sass:
@@ -268,3 +268,11 @@ defaults:
       share: true
       related: true
       use_math: true
+      toc: true
+      toc_label: "Table of Contents"
+      toc_sticky: true
+
+  - scope:
+      path: "assets/img"
+    values:
+      image: true

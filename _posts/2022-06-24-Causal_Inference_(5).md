@@ -6,6 +6,7 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## Multivariate Causal Models
 이전까지는 변수가 2개인 SCM, 즉 원인-결과의 SCM을 살펴보았었다. 이제부터는 변수가 여러개인(multivariate) causal model들에 대해 살펴보도록 하자. 우선, cause-effect 모델도 포함되지만 다변량 causal model은 일반적으로 그래프(graph)의 형태로 표현된다.
 
@@ -33,15 +34,21 @@ DAG $\mathcal G$에 대해 다음 두 경우 중 하나를 만족하는 노드 $
 2. 노드 $i_k$나 $i_k$의 어떤 descendant도 집합 $S$에 포함되지 않으며
 
 $$
+
 i_{k-1}\to i_k\leftarrow i_{k+1}
+
 $$
 
 을 만족한다.
 
 또한, DAG $\mathcal G$의 서로소인 세 노드 집합 $A,B,S$에 대해, $A$의 원소와 $B$의 원소를 잇는 모든 경로가 $S$의 원소에 의해 가로막혀있다면 이를
+
 $$
-A\perp_\mathcal G B\;|\;S
+
+A\perp_\mathcal G B\;\vert \;S
+
 $$
+
 로 표기한다.
 
 ## Multivariate SCM
@@ -60,33 +67,49 @@ X_j = f_j(\text{PA}_j,N_j), \;\; j=1,\ldots,d
 다음과 같은 SCM
 ![](Causal Inference (5).assets/16562033783507.jpg)
 에 대해 
+
 $$
+
 \begin{aligned}
 &f_1(x_3,n) = 2x_3+n\\
 &f_2(x_1,n) = (0.5x_1)^2+n\\
 &f_3(n) = n\\
 &f_4(x_2,x_3,n) = x_2 + 2\sin(x_3+n)
 \end{aligned}
+
 $$
+
 으로 주어지며, 각 noise variable이 모두 i.i.d인 정규분포를 따른다고 가정하자. 그러면 다음과 같이 $\mathbf X$의 random sample을 생성할 수 있다(Code on Github).
-![](assets/16562068457631.jpg)
+![](/assets/img/16562068457631.jpg)
 
 ## Intervention
 이전에 다루었던 Cause-Effect 모델에서의 intervention과 마찬가지로, multivariate SCM에 대해서도 intervention distribution을 생각해볼 수 있다. SCM $\mathfrak C = (S,P_N)$ 이 주어졌을 때, 새로운 assignment
+
 $$
+
 X_k = \tilde f(\widetilde{\text{PA}}_k, \tilde N_k)
+
 $$
+
 에 대응하는 intervention이 일어났다고 하자. 그러면 이에 대한 intervention distribution을 다음과 같이 표기한다.
+
 $$
+
 P_\mathbf X^\tilde{\mathfrak{C}} = P_\mathbf X^{\mathfrak C;do(X_k=\tilde f(\widetilde{\text{PA}}_k, \tilde N_k))}
+
 $$
+
 단, intervention으로 새롭게 대치되는 noise variable $\tilde N_k$과 기존 noise variable $N$은 모두 서로 독립이어야 한다.
 
 ### Total cause effect
 확률변수 $X,Y$와 $X$에 대한 어떤 random variable $\tilde N_X$에 대해
+
 $$
+
 X\;\not\bot \;Y \;\;\text{in}\;\;P_\mathbf X^{\mathfrak C:do(X=\tilde N_X)}
+
 $$
+
 이면, 즉 $X$가 noise variable로 intervened 된 상황에서 $X,Y$가 독립이라면 $X$에서 $Y$로의 **total causal effect**가 존재한다고 정의한다. 이 정의의 조건은 쉽게 이해할 수 있지만, total causal effect의 실제 의미를 파악하는데는 어려움이 있을 수 있다. 이에 대해, 동치인 다른 명제들이 다음과 같이 존재한다.
 
 #### 동치관계
@@ -101,32 +124,46 @@ Total causal effect가 존재한다는 것은, SCM에 대응하는 그래프에�
 ### Counterfactuals
 
 이전에 bivariate causal model에 대한 Counterfactual을 다룬 적이 있었다. 간단히 말해서, causal model의 특정 노드 혹은 noise variable이 변화될 때 causal model을 가정하는 것이다. 마찬가지로, multivariate causal model $\frak C\rm=(\bf S,\rm P_N)$ 에 대해서도 다음과 같이 Counterfactual을 정의할 수 있다.
+
 $$
-\frak C_{\bf X=x} = \big (\bf S, \rm P_N^{\frak C|\bf X=x}\big )
+
+\frak C_{\bf X=x} = \big (\bf S, \rm P_N^{\frak C\vert \bf X=x}\big )
+
 $$
-여기서 $\bf X=x$는 노드 벡터 $\bf X$의 관측값을 의미하며, noise distribution에 대해 $P_\bf N^{\frak C|\bf X=x}=\rm P_{\bf N|X=x}$ 가 성립한다. 또한, counterfactual에 의한 새로운 noise variable들은 서로 독립일 필요가 없다.
+
+여기서 $\bf X=x$는 노드 벡터 $\bf X$의 관측값을 의미하며, noise distribution에 대해 $P_\bf N^{\frak C\vert \bf X=x}=\rm P_{\bf N\vert X=x}$ 가 성립한다. 또한, counterfactual에 의한 새로운 noise variable들은 서로 독립일 필요가 없다.
 
 #### Example
 
 $\bf X=\rm(X,Y,Z)$에 대한 다음 SCM
+
 $$
+
 \begin{aligned}
 & X= N_X\\
 & Y = X^2 + N_Y\\
 & Z= 2Y+X+N_Z
 \end{aligned}
+
 $$
-를 생각하자. 또한, noise distribution은 $N_X,N_Y,N_Z\sim\bf U\rm(\{-5,-4,\ldots,4,5\})$, 즉 uniform (discrete) distribution으로 주어진다고 하자. 만일 관측값 $\rm(X,Y,Z) = (1,2,4)$가 주어진다면 $P_\bf N^{\frak C|\bf X=x}$에 대한 새로운 noise distribution은 $(N_X,N_Y,N_Z) = (1,1,-1)$, 즉 point mass 1을 갖는다. 따라서, 주어진 관측 아래 다음과 같은 명제
+
+를 생각하자. 또한, noise distribution은 $N_X,N_Y,N_Z\sim\bf U\rm(\{-5,-4,\ldots,4,5\})$, 즉 uniform (discrete) distribution으로 주어진다고 하자. 만일 관측값 $\rm(X,Y,Z) = (1,2,4)$가 주어진다면 $P_\bf N^{\frak C\vert \bf X=x}$에 대한 새로운 noise distribution은 $(N_X,N_Y,N_Z) = (1,1,-1)$, 즉 point mass 1을 갖는다. 따라서, 주어진 관측 아래 다음과 같은 명제
 
 > “$Z$ would have been $11$ if had X been *set to* $2$”
 
 가 성립한다. 즉,
+
 $$
-P_Z^{\frak C|\bf X=x\rm;do(X=2)}
+
+P_Z^{\frak C\vert \bf X=x\rm;do(X=2)}
+
 $$
+
 이 성립한다.
 
 ## References
 
 - Elements of Causal Inferences
 
+
+{% endraw %}

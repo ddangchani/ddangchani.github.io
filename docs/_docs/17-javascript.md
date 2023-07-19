@@ -10,19 +10,19 @@ The theme's `assets/js/main.min.js` script is built from several vendor, jQuery 
 ```bash
 minimal mistakes
 ├── assets
-|  ├── js
-|  |  ├── plugins
-|  |  |   ├── gumshoe.js                     # simple scrollspy
-|  |  |   ├── jquery.ba-throttle-debounce.js # rate-limit functions
-|  |  |   ├── jquery.fitvids.js              # fluid width video embeds
-|  |  |   ├── jquery.greedy-navigation.js    # priority plus navigation
-|  |  |   ├── jquery.magnific-popup.js       # responsive lightbox
-|  |  |   └── smooth-scroll.js               # make same-page links scroll smoothly
-|  |  ├── vendor
-|  |  |   └── jquery
-|  |  |       └── jquery-3.5.1.js
-|  |  ├── _main.js                           # jQuery plugin settings and other scripts
-|  |  └── main.min.js                        # concatenated and minified theme script
+\vert   ├── js
+\vert   \vert   ├── plugins
+\vert   \vert   \vert    ├── gumshoe.js                     # simple scrollspy
+\vert   \vert   \vert    ├── jquery.ba-throttle-debounce.js # rate-limit functions
+\vert   \vert   \vert    ├── jquery.fitvids.js              # fluid width video embeds
+\vert   \vert   \vert    ├── jquery.greedy-navigation.js    # priority plus navigation
+\vert   \vert   \vert    ├── jquery.magnific-popup.js       # responsive lightbox
+\vert   \vert   \vert    └── smooth-scroll.js               # make same-page links scroll smoothly
+\vert   \vert   ├── vendor
+\vert   \vert   \vert    └── jquery
+\vert   \vert   \vert        └── jquery-3.5.1.js
+\vert   \vert   ├── _main.js                           # jQuery plugin settings and other scripts
+\vert   \vert   └── main.min.js                        # concatenated and minified theme script
 ```
 
 ## Customizing

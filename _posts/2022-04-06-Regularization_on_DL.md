@@ -6,6 +6,7 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## Regularization on Neural Network
 
 Neural Network는 기본적인 feedforward network조차도 학습해야 할 파라미터 개수가 많다. MNIST 데이터셋을 사용하는 네트워크에서, input layer의 값을 받는 첫번째 fully-connected hidden layer의 경우 노드가 30개라면 $784\times30 = 23520$ 개의 parameter를 갖는다. 심층 신경망이나, convolutional layer 같이 더 깊은 연산을 요구하는 신경망의 경우는 추정해야 할 파라미터가 많게는 수백만, 수천만개 까지 증가한다.
@@ -20,7 +21,7 @@ Early Stopping<sup>조기 종료</sup> 방법은 경사하강법과 같이 반�
 
 ### L1, L2 Regularization
 
-이전에 Linear Regression에서의 대표적인 규제 방법으로 Lasso, Ridge 방법을 살펴보았다([링크](https://velog.io/@ddangchani/Linear-Regression)). 이때 사용된 방법이 L1, L2 Norm을 이용한 규제인데, 이는 신경망에서도 마찬가지로 사용될 수 있다. 다만, 신경망에서는 parameter가 행렬로 주어지므로, 행렬에 대해 L1,L2 노음을 어떻게 정의할 것인지에 대한 논의가 우선되어야 한다.
+이전에 Linear Regression에서의 대표적인 규제 방법으로 Lasso, Ridge 방법을 살펴보았다([링크](https://ddangchani.github.io/Linear-Regression)). 이때 사용된 방법이 L1, L2 Norm을 이용한 규제인데, 이는 신경망에서도 마찬가지로 사용될 수 있다. 다만, 신경망에서는 parameter가 행렬로 주어지므로, 행렬에 대해 L1,L2 노음을 어떻게 정의할 것인지에 대한 논의가 우선되어야 한다.
 
 #### Matrix Norm
 
@@ -28,39 +29,55 @@ Early Stopping<sup>조기 종료</sup> 방법은 경사하강법과 같이 반�
 
 > For $\forall \alpha\in\mathbb R$ and $\forall \mathbf A,\mathbf B\in\mathbf M_{m\times n}(\mathbb R)$,
 >
-> 1. $\Vert\alpha\mathbf A\Vert = |\alpha|\Vert\mathbf A\Vert$
+> 1. $\Vert\alpha\mathbf A\Vert = \vert \alpha\vert \Vert\mathbf A\Vert$
 > 2. $\mathbf{\Vert A+B\Vert \leq \Vert A\Vert +\Vert B\Vert}$
 > 3. $\Vert\mathbf A\Vert\geq0$
 > 4. $\Vert\mathbf A\Vert = 0 \iff \mathbf A=\mathbf O$
 
 이는 해석학에서 살펴본 [노음공간의 성질](ttps://velog.io/@ddangchani/실해석학-10.-Lp-Space)을 행렬 공간에 대해 그대로 적용한 것이다. 다만, 행렬에서 노음을 정의하기 위해서는 행렬곱셈이 정의될 때 아래와 같이 하나의 특성을 더 추가해야 한다.
+
 $$
+
 \mathbf{\Vert AB\Vert \leq \Vert A\Vert\cdot\Vert B\Vert}
+
 $$
+
 $m\times n$ 행렬 $\mathbf A$의 열벡터가 $\{\mathbf a_i:i=1,\ldots,n\}$ 들로 주어진다고 하자, 그러면 벡터공간에 정의된 L1 노음을 이용해 행렬노음공간의 위 성질들을 만족하도록 다음과 같이 L1 Matrix Norm을 정의할 수 있다.
+
 $$
-\Vert\mathbf A\Vert_1 = \max_{1\leq i\leq n}\Vert \mathbf a_i\Vert = \max\sum_{k=1}^m|a_{ik}|
+
+\Vert\mathbf A\Vert_1 = \max_{1\leq i\leq n}\Vert \mathbf a_i\Vert = \max\sum_{k=1}^m\vert a_{ik}\vert 
+
 $$
+
 L2 Norm을 정의하기 위해서는, 우선 Operator Norm(Induced Norm)에 대해 알아두어야 한다. 선형대수학에서 행렬은 Linear Operator, 즉 행렬 $A$ 뒤에 곱해지는(Linear operation) 벡터 $x\in V$ 를($V$는 vector space) 다른 벡터공간으로 이동시키는 것으로 여겨진다. 이때 Linear operator $A$ 에 대한 노음 $\Vert A\Vert_{\text{op}}$ 을 정의하기 위해 vector space의 노음을 유도해서 사용하는데, 정의는 다음과 같다.
+
 $$
+
 \begin{aligned}
 \Vert A\Vert_{\text{op}} &=\inf\{c\geq 0: \Vert Ax\Vert\leq c\Vert x\Vert\;\; \forall x\in\mathbb R^n\}\\
 &=\sup\{\Vert Ax\Vert : x\in \mathbb R^n,\;\;\Vert x \Vert=1\}
 
 \end{aligned}
+
 $$
+
 이를 이용하면, 다음과 같이 L2 Matrix Norm을 유도할 수 있다.
+
 $$
+
 \Vert A\Vert_2 = \sup_{\Vert x\Vert=1}\Vert Ax\Vert_2\\
 =\sup\biggl\{ \frac{\Vert Ax\Vert}{\Vert x\Vert} : x\in \mathbb R^n,\;\; x\neq 0 \biggr\}
+
 $$
+
 이때, 아래 식은 Rayleigh quotient의 꼴이므로, 아래 집합의 supremum을 찾는 것은 행렬 $A$의 최대 고유값을 찾는 것과 같다. 따라서, 행렬의 L2 Norm은 최대 고유값(Largest Eigenvalue)으로 정의된다.
 
 신경망에서 L1, L2 규제를 이용한다는 것은 Loss function $L(W,b)$의 계산과정에 $\Vert W\Vert_1$ 또는 $\Vert W\Vert_2$를 더한다는 것을 말한다. 또한, Linear regression의 Lasso, Ridge penalty term과 마찬가지로 규제 강도값을 설정해 이를 노음에 곱하여 사용하는데, 이는 어느 정도로 노음 규제를 허용할 것인지 정하는 hyperparmeter이다. keras에서는 `keras.regularizers.l1()`과 `keras.regularizers.l2() `가 사용가능하고, 각각 매개변수로 규제강도 값(기본값은 0.01)을 받는다.
 
 ### Dropout
 
-드롭아웃에 대한 기본적인 내용은 [AlexNet](https://velog.io/@ddangchani/AlexNet) paper review에서 다룬 것을 살펴보면 되고, 자세한 내용은 다른 논문 리뷰에서 다루도록 하겠다.
+드롭아웃에 대한 기본적인 내용은 [AlexNet](https://ddangchani.github.io/AlexNet) paper review에서 다룬 것을 살펴보면 되고, 자세한 내용은 다른 논문 리뷰에서 다루도록 하겠다.
 
 ### Max-Norm Regularization
 
@@ -72,3 +89,4 @@ Max-norm regularization 기법은 신경망에서 널리 사용되는 기법 중
 
 - Hands on Machine Learning, 2e.
 - https://hichoe95.tistory.com/58
+{% endraw %}

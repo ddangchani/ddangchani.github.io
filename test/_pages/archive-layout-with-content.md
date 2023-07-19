@@ -33,22 +33,22 @@ Multi line blockquote with a cite reference:
 
 ## Tables
 
-| Employee         | Salary |                                                              |
-| --------         | ------ | ------------------------------------------------------------ |
-| [John Doe](#)    | $1     | Because that's all Steve Jobs needed for a salary.           |
-| [Jane Doe](#)    | $100K  | For all the blogging she does.                               |
-| [Fred Bloggs](#) | $100M  | Pictures are worth a thousand words, right? So Jane × 1,000. |
-| [Jane Bloggs](#) | $100B  | With hair like that?! Enough said.                           |
+\vert  Employee         \vert  Salary \vert                                                               \vert 
+\vert  --------         \vert  ------ \vert  ------------------------------------------------------------ \vert 
+\vert  [John Doe](#)    \vert  $1     \vert  Because that's all Steve Jobs needed for a salary.           \vert 
+\vert  [Jane Doe](#)    \vert  $100K  \vert  For all the blogging she does.                               \vert 
+\vert  [Fred Bloggs](#) \vert  $100M  \vert  Pictures are worth a thousand words, right? So Jane × 1,000. \vert 
+\vert  [Jane Bloggs](#) \vert  $100B  \vert  With hair like that?! Enough said.                           \vert 
 
-| Header1 | Header2 | Header3 |
-|:--------|:-------:|--------:|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-|-----------------------------|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-|=============================|
-| Foot1   | Foot2   | Foot3   |
+\vert  Header1 \vert  Header2 \vert  Header3 \vert 
+\vert :--------\vert :-------:\vert --------:\vert 
+\vert  cell1   \vert  cell2   \vert  cell3   \vert 
+\vert  cell4   \vert  cell5   \vert  cell6   \vert 
+\vert -----------------------------\vert 
+\vert  cell1   \vert  cell2   \vert  cell3   \vert 
+\vert  cell4   \vert  cell5   \vert  cell6   \vert 
+\vert =============================\vert 
+\vert  Foot1   \vert  Foot2   \vert  Foot3   \vert 
 
 ## Definition Lists
 

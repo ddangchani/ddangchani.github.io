@@ -6,6 +6,7 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## Incomplete mathematical mosaic of DL
 
 이번 글에서는 논문 *Fit without fear: remarkable mathematical phenomena of deep learning through the prism of interpolation*(M.Belkin et al.)을 리뷰해보도록 하겠다. 이 논문은 최근학술적 및 산업적으로 괄목할만한 성과를 내고 있는 딥러닝(DL)의 수학적인 백그라운드를 설명하고자 한다. 딥러닝은 분명 classical ML영역 및 통계학에 어느 정도 기반을 두고있는 것이 사실이지만, 그럼에도 불구하고 이러한 복잡한 신경망이 실제 문제에서 어떻게 잘 작동하는지에 대한 수학적인 근거는 부족한 편이다. 저자는 abstract에서 이를 ‘incomplete mathematical mosaic’라고 표현하는데, Interpolation과 over-parameterization의 두 가지 큰 테마로 이러한 현상의 설명을 시도한다. 저자의 논증 과정에서 깊이 있는 이론통계적 내용이 다소 등장하는데, 각각의 내용 및 참고문헌들에 대해서는 추후에 계속 공부하며 포스팅하도록 하겠다.
@@ -21,14 +22,16 @@ use_math: true
 
 ### Classical regime vs. Modern regime of ML
 
-|                        | Classical regime                        | Modern regime                                   |
-|------------------------|-----------------------------------------|-------------------------------------------------|
-| Generalization curve   | U-shaped                                | Descending                                      |
-| Optimal model          | Bottom of U                             | Any large model                                 |
-| Optimization landscape | Locally convex                          | Not locally convex, but satisfying PL condition |
-| GD/SGD convergence	    | GD converges but not SGD with fixed eta | GD/SGD both converge                            |
+\vert                         \vert  Classical regime                        \vert  Modern regime                                   \vert 
+\vert ------------------------\vert -----------------------------------------\vert -------------------------------------------------\vert 
+\vert  Generalization curve   \vert  U-shaped                                \vert  Descending                                      \vert 
+\vert  Optimal model          \vert  Bottom of U                             \vert  Any large model                                 \vert 
+\vert  Optimization landscape \vert  Locally convex                          \vert  Not locally convex, but satisfying PL condition \vert 
+\vert  GD/SGD convergence	    \vert  GD converges but not SGD with fixed eta \vert  GD/SGD both converge                            \vert 
 
 위 표는 classical regime과 modern regime의 특징을 비교해서 설명한 것이다(논문 summary 참고). 각각의 내용에 대해 살펴보도록 하자.
 #### Setting
 
 
+
+{% endraw %}

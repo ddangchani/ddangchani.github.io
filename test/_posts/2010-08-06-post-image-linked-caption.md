@@ -16,6 +16,6 @@ Stairs? Were we're going we don't need no stairs.
 {% endcapture %}
 
 <figure>
-  {{ fig_img | markdownify | remove: "<p>" | remove: "</p>" }}
-  <figcaption>{{ fig_caption | markdownify | remove: "<p>" | remove: "</p>" }}</figcaption>
+  {{ fig_img \vert  markdownify \vert  remove: "<p>" \vert  remove: "</p>" }}
+  <figcaption>{{ fig_caption \vert  markdownify \vert  remove: "<p>" \vert  remove: "</p>" }}</figcaption>
 </figure>

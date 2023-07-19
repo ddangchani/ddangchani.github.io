@@ -6,6 +6,7 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## Simple Neural Network with Tensorflow
 
 Tensorflow를 이용해, 이전까지 알아본 신경망의 기본적인 내용을 바탕으로 간단한 신경망을 구현해보자. 우선, 필자는 M1 Macbook Air에 python 3.9버전을 올려 apple tensorflow 2.8 버전 환경을 사용하고 있음을 알린다. M1 환경에서 tensorflow를 설치하는 방법은 [Apple Developer 문서](https://developer.apple.com/metal/tensorflow-plugin/)를 참고하면 된다.*(자세한 설치방법 등은 구글링하면 많이 나오는데 댓글에 남기면 답변드리도록 하겠습니다😃)*
@@ -45,7 +46,7 @@ plt.show()
 
 아래와 같은 훈련 데이터셋의 첫 번째 이미지(그래프)를 얻을 수 있다.
 
-<img src="simpe nn with tf.assets/스크린샷 2022-03-26 오후 2.28.16.png" alt="스크린샷 2022-03-26 오후 2.28.16" style="zoom:50%;" />
+<img src="/assets/img/simpe nn with tf.assets/스크린샷 2022-03-26 오후 2.28.16.png" alt="스크린샷 2022-03-26 오후 2.28.16" style="zoom:50%;" />
 
 ### Simple Feedfoward Neural Network
 
@@ -79,9 +80,13 @@ class Network(object):
 위 코드는 2-hidden layer mlp에 필요한 변수(W1,W2,W3,b1,b2,b3) 들을 텐서플로의 변수객체 `tf.Variable`으로 설정하며 동시에 가중치행렬($\mathbf{W_1,W_2,W_3}$) 은 정규분포에서 임의로, 편향벡터($\mathbf{b_1,b_2,b_3}$) 는 영벡터로 생성한다(변수들을 텐서<sup>tensor<라고도 부른다). 또한, 각 행렬과 벡터의 크기는 Hyperparmeter로 받은 `n_layers`(Input layer, 두 개의 hidden layer, Output layer의 각 노드개수를 리스트 형태로 받는다✅) 에 의해 결정된다. 
 
 신경망에서 처리되는 데이터 행렬은 모두 행<sup>row</sup>이 샘플개수, 열<sup>column</sup>은 특성 개수를 의미한다. 예를 들어, MNIST의 경우 Input layer의 Data Matrix를 살펴보면, 각 데이터(이미지)가 784개의 특성을 가지므로 (이는 노드 개수를 의미한다❗️) Input layer는 784개 노드로 구성되며, Input Matrix는 $60000\times784$ 행렬이 된다. 만일 첫번째 hidden layer가 30개의 노드를 가지고 fully-connected인 경우 Input Matrix $\mathbf X_1$과 hidden layer의 데이터 $\mathbf X_2\in \mathbf M_{60000,30}(\mathbb R)$ 에 대해
+
 $$
+
 \mathbf X_2 = h(\mathbf X_1 \mathbf W_1+\mathbf b_1)\tag{1}
+
 $$
+
 를 만족하는 $784\times 30$ 가중치행렬 $\mathbf W_1$과 편향행렬 $\mathbf b_1\in\mathbf M_{60000,1}(\mathbb R)$이 주어지고, 초기값은 각각 표준정규분포로부터의 random matrix와 영행렬($0$)로 주어진다. 여기서 함수 $h$는 활성함수를 의미한다. 만일 한 개의 데이터가 처리되는 신경망을 표현하고 싶다면, 각 데이터행렬 대신 행벡터를 사용하면 될 것이다.
 
 #### Forward & Backward Pass
@@ -159,3 +164,4 @@ for epoch in range(epochs):
 
 - https://medium.com/analytics-vidhya/how-to-write-a-neural-network-in-tensorflow-from-scratch-without-using-keras-e056bb143d78
 - 핸즈온 머신러닝 2e
+{% endraw %}

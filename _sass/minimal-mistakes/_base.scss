@@ -338,3 +338,10 @@ input[type="submit"],
   -webkit-transition: $global-transition;
   transition: $global-transition;
 }
+
+img + em {
+  display: block;
+  text-align: center;
+  font-size: $type-size-5;
+  color: rgb(107, 104, 104);
+}

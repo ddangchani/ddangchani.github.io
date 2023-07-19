@@ -6,24 +6,37 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 # Probabilistic Graphical Models
 
-이전에 graph의 [markov property](https://velog.io/@ddangchani/CausalInference6)을 살펴보며 markov property 하에서(parent 노드가 주어질 때 다른 노드들과의 조건부 독립성) graphical model을 다음과 같은 markov chain 형태로 나타낼 수 있음을 알았다.
+이전에 graph의 [markov property](https://ddangchani.github.io/CausalInference6)을 살펴보며 markov property 하에서(parent 노드가 주어질 때 다른 노드들과의 조건부 독립성) graphical model을 다음과 같은 markov chain 형태로 나타낼 수 있음을 알았다.
+
 $$
-p(\mathbf x_{1:V}) = \prod_{i=1}^Vp_{\theta_i}(x_i|\mathbf x_{pa(i)})
+
+p(\mathbf x_{1:V}) = \prod_{i=1}^Vp_{\theta_i}(x_i\vert \mathbf x_{pa(i)})
+
 $$
+
 만일 각 노드가 discrete random variable로 주어진다면, 각 노드에서의 조건부 확률분포(CPD, conditional probability distribution)를 table 형태로 표현할 수 있다. i번째 노드에서의 **conditional probability table**(CPT)은 다음과 같이 주어진다.
+
 $$
-\theta_{ijk} := p(x_i=k|\mathbf x_{pa(i)} = j)
+
+\theta_{ijk} := p(x_i=k\vert \mathbf x_{pa(i)} = j)
+
 $$
+
 여기서 $k, j$는 각 노드의 상태(이산값)를 의미하며, 따라서 전체 그래프 모델에서의 CPT는 3D 텐서로 주어지게 된다.
 
 ## Example with Python Code
 
 교재에서 다루는 5개의 discrete random variable로 이루어진 그래프를 모델링하고 시각화하는 방법에 대해 살펴보도록 하자. *Student Network* 라고 부르는 이 그래프는 가상의 학생에 대해 관련된 이산변수들(D=수업 난이도, I=지능, G=성적, S=SAT 점수, L=추천문구(good/bad)) 들로 구성되어있다. 연쇄법칙에 의해 joint probability는 다음과 같이 나타난다.
+
 $$
-p(D,I,G,L,S) = p(L|G)\times p(S|I)\times p(G|D,I)\times p(D) \times p(I)
+
+p(D,I,G,L,S) = p(L\vert G)\times p(S\vert I)\times p(G\vert D,I)\times p(D) \times p(I)
+
 $$
+
 Python에서는 `pypgm` 라이브러리를 활용해 그래피컬 모델링이 가능하다. 우선 다음과 같이 패키지들을 불러오자.
 
 ```python
@@ -51,7 +64,7 @@ dot = model2.draw()
 display(dot)
 ```
 
-<img src="assets/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.20.57.png" alt="스크린샷 2022-09-28 오전 9.20.57" style="zoom:50%;" />
+<img src="/assets/img/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.20.57.png" alt="스크린샷 2022-09-28 오전 9.20.57" style="zoom:50%;" />
 
 설정한 네트워크의 각 노드별 조건부 확률분포(CPD)를 다음과 같은 tablular form으로 설정하여, 모델에 적용할 수 있다.
 
@@ -98,7 +111,7 @@ dot = pgm.visualize_model(model)
 display(dot)
 ```
 
-<img src="assets/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.22.38.png" alt="스크린샷 2022-09-28 오전 9.22.38" style="zoom:50%;" />
+<img src="/assets/img/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.22.38.png" alt="스크린샷 2022-09-28 오전 9.22.38" style="zoom:50%;" />
 
 또한, 각 treatment(여기서는 Grade가 B인 경우를 예시로 선택)에 대한 다른 노드들의 marginal distribution을 확인할 수 있다. 이러한 형태의 추론을 쿼리(query)라고도 하는데,  다음과 같이 evidence를 설정하고, `VariableElimination` 클래스를 활용해 조건부 분포를 찾거나 혹은 `get_marginals, visualize_marginals`을 이용해 시각화할 수 있다.
 
@@ -106,9 +119,9 @@ display(dot)
 # Inference
 evidence = {'Grade' : 'B'} # posterior given grade=B
 postD = infer.query(['Diff'], evidence).values
-print("Pr(Difficulty=Hard|Grade=B) = {:0.2f}".format(postD[1]))
+print("Pr(Difficulty=Hard\vert Grade=B) = {:0.2f}".format(postD[1]))
 
-# Result : Pr(Difficulty=Hard|Grade=B) = 0.37
+# Result : Pr(Difficulty=Hard\vert Grade=B) = 0.37
 ```
 
 ```python
@@ -119,9 +132,10 @@ dot = pgm.visualize_marginals(model, evidence, marginals)
 display(dot)
 ```
 
-<img src="assets/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.26.58.png" alt="스크린샷 2022-09-28 오전 9.26.58" style="zoom:50%;" />
+<img src="/assets/img/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.26.58.png" alt="스크린샷 2022-09-28 오전 9.26.58" style="zoom:50%;" />
 
 ## References
 
 - Probabilistic Machine Learning - Advanced Topics
 - https://colab.research.google.com/github/probml/pyprobml/blob/master/notebooks/book2/04/student_pgm.ipynb#scrollTo=8FEYdsYCXYj5
+{% endraw %}

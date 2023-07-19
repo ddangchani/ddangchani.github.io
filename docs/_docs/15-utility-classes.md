@@ -69,7 +69,7 @@ No wrap text.
 
 Position images with the following classes.
 
-![image-center]({{ "/assets/images/image-alignment-580x300.jpg" | relative_url }}){: .align-center}
+![image-center]({{ "/assets/images/image-alignment-580x300.jpg" \vert  relative_url }}){: .align-center}
 
 The image above happens to be **centered**.
 
@@ -79,7 +79,7 @@ The image above happens to be **centered**.
 
 ---
 
-![image-left]({{ "/assets/images/image-alignment-150x150.jpg" | relative_url }}){: .align-left} The rest of this paragraph is filler for the sake of seeing the text wrap around the 150×150 image, which is **left aligned**. There should be plenty of room above, below, and to the right of the image. Just look at him there --- Hey guy! Way to rock that left side. I don't care what the right aligned image says, you look great. Don't let anyone else tell you differently.
+![image-left]({{ "/assets/images/image-alignment-150x150.jpg" \vert  relative_url }}){: .align-left} The rest of this paragraph is filler for the sake of seeing the text wrap around the 150×150 image, which is **left aligned**. There should be plenty of room above, below, and to the right of the image. Just look at him there --- Hey guy! Way to rock that left side. I don't care what the right aligned image says, you look great. Don't let anyone else tell you differently.
 
 ```markdown
 ![image-left](/assets/images/filename.jpg){: .align-left}
@@ -87,7 +87,7 @@ The image above happens to be **centered**.
 
 ---
 
-![image-right]({{ "/assets/images/image-alignment-300x200.jpg" | relative_url }}){: .align-right}
+![image-right]({{ "/assets/images/image-alignment-300x200.jpg" \vert  relative_url }}){: .align-right}
 
 And now we're going to shift things to the **right align**. Again, there should be plenty of room above, below, and to the left of the image. Just look at him there --- Hey guy! Way to rock that right side. I don't care what the left aligned image says, you look great. Don't let anyone else tell you differently.
 
@@ -97,7 +97,7 @@ And now we're going to shift things to the **right align**. Again, there should 
 
 ---
 
-![full]({{ "/assets/images/image-alignment-1200x4002.jpg" | relative_url }})
+![full]({{ "/assets/images/image-alignment-1200x4002.jpg" \vert  relative_url }})
 {: .full}
 
 The image above should extend outside of the parent container on right.
@@ -115,36 +115,36 @@ Make any link standout more when applying the `.btn .btn--primary` classes.
 <a href="#" class="btn btn--primary">Link Text</a>
 ```
 
-| Button Type   | Example | Class | Kramdown |
-| ------        | ------- | ----- | ------- |
-| Default       | [Text](#link){: .btn} | `.btn` | `[Text](#link){: .btn}` |
-| Primary       | [Text](#link){: .btn .btn--primary} | `.btn .btn--primary` | `[Text](#link){: .btn .btn--primary}` |
-| Success       | [Text](#link){: .btn .btn--success} | `.btn .btn--success` | `[Text](#link){: .btn .btn--success}` |
-| Warning       | [Text](#link){: .btn .btn--warning} | `.btn .btn--warning` | `[Text](#link){: .btn .btn--warning}` |
-| Danger        | [Text](#link){: .btn .btn--danger} | `.btn .btn--danger` | `[Text](#link){: .btn .btn--danger}` |
-| Info          | [Text](#link){: .btn .btn--info} | `.btn .btn--info` | `[Text](#link){: .btn .btn--info}` |
-| Inverse       | [Text](#link){: .btn .btn--inverse} | `.btn .btn--inverse` | `[Text](#link){: .btn .btn--inverse}` |
-| Light Outline | [Text](#link){: .btn .btn--light-outline} | `.btn .btn--light-outline` | `[Text](#link){: .btn .btn--light-outline}` |
+\vert  Button Type   \vert  Example \vert  Class \vert  Kramdown \vert 
+\vert  ------        \vert  ------- \vert  ----- \vert  ------- \vert 
+\vert  Default       \vert  [Text](#link){: .btn} \vert  `.btn` \vert  `[Text](#link){: .btn}` \vert 
+\vert  Primary       \vert  [Text](#link){: .btn .btn--primary} \vert  `.btn .btn--primary` \vert  `[Text](#link){: .btn .btn--primary}` \vert 
+\vert  Success       \vert  [Text](#link){: .btn .btn--success} \vert  `.btn .btn--success` \vert  `[Text](#link){: .btn .btn--success}` \vert 
+\vert  Warning       \vert  [Text](#link){: .btn .btn--warning} \vert  `.btn .btn--warning` \vert  `[Text](#link){: .btn .btn--warning}` \vert 
+\vert  Danger        \vert  [Text](#link){: .btn .btn--danger} \vert  `.btn .btn--danger` \vert  `[Text](#link){: .btn .btn--danger}` \vert 
+\vert  Info          \vert  [Text](#link){: .btn .btn--info} \vert  `.btn .btn--info` \vert  `[Text](#link){: .btn .btn--info}` \vert 
+\vert  Inverse       \vert  [Text](#link){: .btn .btn--inverse} \vert  `.btn .btn--inverse` \vert  `[Text](#link){: .btn .btn--inverse}` \vert 
+\vert  Light Outline \vert  [Text](#link){: .btn .btn--light-outline} \vert  `.btn .btn--light-outline` \vert  `[Text](#link){: .btn .btn--light-outline}` \vert 
 
-| Button Size | Example | Class | Kramdown |
-| ----------- | ------- | ----- | -------- |
-| X-Large     | [X-Large Button](#){: .btn .btn--primary .btn--x-large} | `.btn .btn--primary .btn--x-large` | `[Text](#link){: .btn .btn--primary .btn--x-large}` |
-| Large       | [Large Button](#){: .btn .btn--primary .btn--large} | `.btn .btn--primary .btn--large` | `[Text](#link){: .btn .btn--primary .btn--large}` |
-| Default     | [Default Button](#){: .btn .btn--primary} | `.btn .btn--primary` | `[Text](#link){: .btn .btn--primary }` |
-| Small       | [Small Button](#){: .btn .btn--primary .btn--small} | `.btn .btn--primary .btn--small` | `[Text](#link){: .btn .btn--primary .btn--small}` |
+\vert  Button Size \vert  Example \vert  Class \vert  Kramdown \vert 
+\vert  ----------- \vert  ------- \vert  ----- \vert  -------- \vert 
+\vert  X-Large     \vert  [X-Large Button](#){: .btn .btn--primary .btn--x-large} \vert  `.btn .btn--primary .btn--x-large` \vert  `[Text](#link){: .btn .btn--primary .btn--x-large}` \vert 
+\vert  Large       \vert  [Large Button](#){: .btn .btn--primary .btn--large} \vert  `.btn .btn--primary .btn--large` \vert  `[Text](#link){: .btn .btn--primary .btn--large}` \vert 
+\vert  Default     \vert  [Default Button](#){: .btn .btn--primary} \vert  `.btn .btn--primary` \vert  `[Text](#link){: .btn .btn--primary }` \vert 
+\vert  Small       \vert  [Small Button](#){: .btn .btn--primary .btn--small} \vert  `.btn .btn--primary .btn--small` \vert  `[Text](#link){: .btn .btn--primary .btn--small}` \vert 
 
 ## Notices
 
 Call attention to a block of text.
 
-| Notice Type | Class              |
-| ----------- | -----              |
-| Default     | `.notice`          |
-| Primary     | `.notice--primary` |
-| Info        | `.notice--info`    |
-| Warning     | `.notice--warning` |
-| Success     | `.notice--success` |
-| Danger      | `.notice--danger`  |
+\vert  Notice Type \vert  Class              \vert 
+\vert  ----------- \vert  -----              \vert 
+\vert  Default     \vert  `.notice`          \vert 
+\vert  Primary     \vert  `.notice--primary` \vert 
+\vert  Info        \vert  `.notice--info`    \vert 
+\vert  Warning     \vert  `.notice--warning` \vert 
+\vert  Success     \vert  `.notice--success` \vert 
+\vert  Danger      \vert  `.notice--danger`  \vert 
 
 **Watch out!** This paragraph of text has been [emphasized](#) with the `{: .notice}` class.
 {: .notice}
@@ -173,5 +173,5 @@ You can also add the `.notice` class to a `<div>` element.
 
 <div class="notice--info">
   <h4 class="no_toc">Notice Headline:</h4>
-  {{ notice-text | markdownify }}
+  {{ notice-text \vert  markdownify }}
 </div>

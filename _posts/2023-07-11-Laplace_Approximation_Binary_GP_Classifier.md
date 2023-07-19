@@ -1,77 +1,115 @@
 ---
 title: "Laplace Approximation Binary GP Classifier"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Machine Learning
+- Gaussian Process
+- Bayesian
+category: 'ML'
 use_math: true
 ---
-[바로 이전 글에서](https://velog.io/@ddangchani/Gaussian-Process-Classification) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}|X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.
+{% raw %}
+[바로 이전 글에서](https://ddangchani.github.io/ML/Gaussian-Process-Classification) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}\vert X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.
 
 ## Laplace Approximation
 
 베이즈 규칙에 의해 latent variable $\mathbf{f}$ 의 사후확률분포는 다음과 같이 주어진다.
+
 $$
-p(\mathbf{f}|X,y)\propto p(y|\mathbf{f})p(\mathbf{f}|X)
+
+p(\mathbf{f}\vert X,y)\propto p(y\vert \mathbf{f})p(\mathbf{f}\vert X)
+
 $$
+
 로그를 취하고 Gaussian process prior distribution을 적용하면,
+
 $$
+
 \begin{aligned}
-\Psi(\mathbf{f}) &:= \log p(y|\mathbf{f})+\log p(\mathbf{f}|X)\\
-&= \log p(y|\mathbf{f}) - \frac{1}{2}\mathbf{f}^{T}K^{-1}\mathbf{f}- \frac{1}{2}\log|K|- \frac{n}{2}\log 2\pi
+\Psi(\mathbf{f}) &:= \log p(y\vert \mathbf{f})+\log p(\mathbf{f}\vert X)\\
+&= \log p(y\vert \mathbf{f}) - \frac{1}{2}\mathbf{f}^{T}K^{-1}\mathbf{f}- \frac{1}{2}\log\vert K\vert - \frac{n}{2}\log 2\pi
 \end{aligned}
+
 $$
+
 가 된다. 위 식을 $\mathbf{f}$ 에 대해 미분하면, 다음과 같이 그래디언트 및 헤시안 행렬을 얻을 수 있다.
+
 $$
+
 \begin{aligned}
-\nabla\Psi(\mathbf{f}) &= \nabla\log p(y|\mathbf{f})-K^{-1}\mathbf{f}\\
+\nabla\Psi(\mathbf{f}) &= \nabla\log p(y\vert \mathbf{f})-K^{-1}\mathbf{f}\\
 \nabla\nabla\Psi(\mathbf{f}) &= -W-K^{-1}
 \end{aligned}
+
 $$
+
 또한, 사후확률을 최대로 하는 latent variable을 찾으면
+
 $$
-\hat{\mathbf{f}} = K(\nabla\log p(y|\mathbf{\hat f}))
+
+\hat{\mathbf{f}} = K(\nabla\log p(y\vert \mathbf{\hat f}))
+
 $$
+
 가 되고, closed form이 존재하지 않으므로 다음과 같이 Newton algorithm을 이용해 구할 수 있다.
+
 $$
+
 \begin{aligned}
 \mathbf{f}^{\mathrm{new}}&= \mathbf{f}-(\nabla^2\Psi)^{-1}\nabla\Psi\\
-&= (K^{-1}+W)^{-1}(W\mathbf{f}+\nabla\log p(y|\mathbf{f}))
+&= (K^{-1}+W)^{-1}(W\mathbf{f}+\nabla\log p(y\vert \mathbf{f}))
 \end{aligned}
+
 $$
+
 이를 통해 MAP estimator $\mathbf{\hat f}$ 를 찾으면 이를 이용해 다음과 같은 사후분포의 **Laplace approximation**을 얻게 된다.
+
 $$
-q(\mathbf{f}|X,y) \sim N(\mathbf{\hat f},(K^{-1}+W)^{-1})
+
+q(\mathbf{f}\vert X,y) \sim N(\mathbf{\hat f},(K^{-1}+W)^{-1})
+
 $$
 
 ## Prediction
 
 Test data $x_{*}$에 대한 predictive distribution을 구하는 과정에서 앞서 구한 Laplace approximation을 이용하면 다음과 같다. 우선 test data에 대한 latent mean은
+
 $$
+
 \begin{aligned}
-\mathrm{E}_{q}[f_{*}|X,Y,x_{*}] &= \int \mathrm{E}[f_{*}|\mathbf{f},X,x_{*}]q(\mathbf{f}|X,y)d\mathbf{f} \\ 
-&= \int \mathbf{k}(x_{*})^{T}K^{-1}\mathbf{f}q(\mathbf{f}|X,y )d\mathbf{f}\\
-&= \mathbf{k}(x_{*})^{T}K^{-1}\mathrm{E}_{q}[\mathbf{f}|X,y]\\
+\mathrm{E}_{q}[f_{*}\vert X,Y,x_{*}] &= \int \mathrm{E}[f_{*}\vert \mathbf{f},X,x_{*}]q(\mathbf{f}\vert X,y)d\mathbf{f} \\ 
+&= \int \mathbf{k}(x_{*})^{T}K^{-1}\mathbf{f}q(\mathbf{f}\vert X,y )d\mathbf{f}\\
+&= \mathbf{k}(x_{*})^{T}K^{-1}\mathrm{E}_{q}[\mathbf{f}\vert X,y]\\
 &= \mathbf{k}(x_{*})^{T}K^{-1}\mathbf{\hat f} \\
-&= \mathbf{k}(x_{*})^{T}\nabla\log p(y|\mathbf{\hat f})
+&= \mathbf{k}(x_{*})^{T}\nabla\log p(y\vert \mathbf{\hat f})
 \end{aligned}
+
 $$
+
 으로 주어지고, 이를 이용하면 실제 prediction $\pi_{*}$ 에 대한 MAP estimator는 다음과 같이 구할 수 있다.
+
 $$
+
 \begin{aligned}
-\bar\pi_{*}&= \mathrm{E_{q}[\pi_{*}|X,Y,x_{*}}]\\
-&= \int \sigma(f_{*})q(f_{*}|X,Y,x_{*})df_{*}
+\bar\pi_{*}&= \mathrm{E_{q}[\pi_{*}\vert X,Y,x_{*}}]\\
+&= \int \sigma(f_{*})q(f_{*}\vert X,Y,x_{*})df_{*}
 \end{aligned}
+
 $$
+
 ## Example
 
-이전 [Linear Classification Model](https://velog.io/@ddangchani/Gaussian-Process-Classification)에서 다루었던 데이터를 바탕으로 예측 확률분포를 구하는 과정을 알고리즘으로 살펴보도록 하자. 우선 데이터는 다음과 같이 각 클래스별로 4개씩 주어졌다고 가정하자.
-![](Pasted%20image%2020230712191857.png)
+이전 [Linear Classification Model](https://ddangchani.github.io/Gaussian-Process-Classification)에서 다루었던 데이터를 바탕으로 예측 확률분포를 구하는 과정을 알고리즘으로 살펴보도록 하자. 우선 데이터는 다음과 같이 각 클래스별로 4개씩 주어졌다고 가정하자.
+![](/assets/img/Pasted image 20230712191857.png){: .align-center}{: .align-center}
+
 Kernel function은 Gaussian RBF
+
 $$
+
 k(\mathbf{x_{1},x_{2}}) = \exp(-\Vert\mathbf{x}_{1}-\mathbf{x}_{2}\Vert^{2})
+
 $$
-을 사용했으며, 우선 이를 이용해 Covariance Matrix $K$와 로그가능도 $\log p(y|\mathbf{f})$ 를 구한다.
+
+을 사용했으며, 우선 이를 이용해 Covariance Matrix $K$와 로그가능도 $\log p(y\vert \mathbf{f})$ 를 구한다.
 ```python
 # covariance matrix
 
@@ -133,8 +171,9 @@ def laplace_approximation(y, K, X, x_new=None, max_iter=100):
 ```
 
 이를 바탕으로 Predictive distribution의 contour plot을 다음과 같이 그릴 수 있다.
-![](Pasted%20image%2020230712191810.png)
+![](/assets/img/Pasted image 20230712191810.png){: .align-center}{: .align-center}
 
 ## References
 - Gaussian Process for Machine Learning
 - Code on Github: https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/Linear%20Classification.ipynb
+{% endraw %}

@@ -7,6 +7,7 @@ tags:
 category: math
 use_math: true
 ---
+{% raw %}
 
 ## 거리공간<sup>Metric Spaces</sup>
 이번 포스팅에서는 실해석학에서 다뤄지는 거리<sup>metric</sup>의 개념과, 이를 이용해 정의된 거리공간과 그 특성들에 대해 대략적으로 다루어보고자 한다. 해석개론에서 다루어지는 기본적인 열린/닫힌 집합의 개념과 열린/닫힌 집합에서의 수열과 같은 내용들은 분량상 생략하도록 하겠다.
@@ -18,10 +19,12 @@ use_math: true
 > 3. $\rho(x,y) = \rho(y,x)$
 > 4. $\rho(x,y) \leq \rho(x,z) + \rho(z,y)$
 
-공집합이 아닌 집합 X에 대해 위와 같이 정의된 Metric이 존재하면, 이를 거리공간(Metric Space)이라고 한다. 또한, 이러한 거리공간을 $(X, \rho)$ 형태로 표기한다. 예를 들어, 실수 전체의 집합(수직선)) $\R$에서 거리함수를 $\rho(x,y) = |x-y|$ 로 정의한 거리공간 $(\R,\rho)$ 은 잘 정의된 거리공간이라 할 수 있다.   
+공집합이 아닌 집합 X에 대해 위와 같이 정의된 Metric이 존재하면, 이를 거리공간(Metric Space)이라고 한다. 또한, 이러한 거리공간을 $(X, \rho)$ 형태로 표기한다. 예를 들어, 실수 전체의 집합(수직선)) $\R$에서 거리함수를 $\rho(x,y) = \vert x-y\vert $ 로 정의한 거리공간 $(\R,\rho)$ 은 잘 정의된 거리공간이라 할 수 있다.   
 #### 노음선형공간에서의 거리
 이전에 다루었던 [노음선형공간](https://ddangchani.github.io/math/실해석학10)을 생각해보자. 이떄, 노음의 정의를 만족하기 위해서는 삼각부등식 역시 만족시켜야 했는데(N1 성질), 이를 통해 어떤 노음선형공간 X에서 다음과 같이 metric을 정의하면,   
+
 $$
+
 \rho(x,y) = \Vert x-y\Vert \quad \forall x,y\in X
 $$   
 이는 위에서 살펴본 거리의 성질을 모두 만족시키므로 노음선형공간은 거리공간임을 알 수 있다.
@@ -29,12 +32,14 @@ $$
 #### 등장사상(isometry)
 어떤 공집합이 아닌 집합 X에 대해 두 개 이상의 거리함수가 정의될 수도 있을 것이다. 이떄 두 metric의 비교가 필요한데, metric의 동치관계는 다음과 같이 정의한다.
 **Def** $\rho,\sigma$ 가 집합 X에서의 두 metric 일때, 두 metric이 동치인 것은 임의의 $x_1,x_2 \in X$ 에 대해 다음을 만족시키는 $c_1,c_2>0$ 이 존재한다는 것이다.   
+
 $$
+
 c_1\cdot\sigma(x_1,x_2)\leq\rho(x_1,x_2)\leq c_2\cdot\sigma(x_1,x_2)
 $$   
 예시로 1차원 유클리드공간 $\R$에서의 다음 두 metric을 살펴보자.   
  > 1. Discrete Metric : $\sigma(x,y) = I_{x=y}$
- > 2. Absolute Metric : $\rho(x,y) = |x-y|$   
+ > 2. Absolute Metric : $\rho(x,y) = \vert x-y\vert $   
 
 이 경우 두 거리함수는 동치가 아님이 쉽게 확인되는데, $x_1,x_2 \in X$ 가 $x_1=x_2$ 인 경우를 살펴보자. 그러면 부등식의 가운데 항이 $\rho(x_1,x_2)=0$ 임은 자명하다. 반면, 두 원소가 동일하므로 discrete metric은 $\sigma(x_1,x_2)=1$이다. 따라서 왼쪽 부등호는 어떠한 양수에 대해서도 성립하지 않으므로, 두 거리가 동치관계가 아님을 알 수 있다.   
 위와 같은 거리의 동치관계 말고도 거리공간의 동치관계 역시 정의할 수 있다.   
@@ -44,20 +49,27 @@ $$
 ### 거리공간에서의 연속 실함수
 #### 정의
 **Def** 거리공간 X에서 Y로의 사상 $f:X\to Y$ 가 X에서의 임의의 수열 $x_n$ 에 대해 다음을 만족하면 $x\in X$ 에서 연속이라고 정의한다.   
+
 $$
+
 \{x_n\}\to x \Rightarrow \{f(x_n)\}\to f(x)
 $$   
 만일 X의 모든 점에서 연속이면 사상 $f$를 연속이라고 한다. 해석개론에서 공부하는 입실론-델타 논법을 거리공간에 적용시키면, 다음과 같이 연속성을 정의할 수 있다.
 **Epsilon-Delta** 거리공간 $(X,\rho)$ 에서 $(Y,\sigma)$ 로의 사상 $f$ 가 **연속**인 것과,   
 임의의 $\epsilon>0$ 에 대해 다음을 만족하는 $\delta>0$ 의 존재성은 동치이다. (이떄 $N$은 근방<sup>neighborhood</sup>을 의미한다.)  
+
 $$
+
 f(N(x,\delta)) \subseteq N(f(x),\epsilon)
 $$   
 마찬가지로, 균등연속(uniformly continuous) 역시 거리공간에서 다음과 같이 정의가 가능하다.
 **Unif.continuity** 거리공간 $(X,\rho)$ 에서 $(Y,\sigma)$ 로의 사상 $f$ 가 **균등연속**인 것과,   
 임의의 $\epsilon>0$ 및 $u,v\in X$ 에 대해 다음을 만족하는 $\delta>0$ 의 존재성은 동치이다.
+
 $$
+
 \rho(u,v)<\delta \Rightarrow \sigma(f(u),f(v))<\epsilon
+
 $$
 
 ### 완비성
@@ -111,3 +123,5 @@ $$\{N(x_k,\epsilon)\}_{k=1}^n\quad \text{and} \quad E\subset\bigcup_{k=1}^n N(x_
 
 ## Reference
  - Real Analysis 4th edition, Royden
+
+{% endraw %}

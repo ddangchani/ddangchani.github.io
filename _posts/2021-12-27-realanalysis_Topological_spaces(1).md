@@ -7,6 +7,7 @@ tags:
 category: math
 use_math: true
 ---
+{% raw %}
 
 ## 위상공간<sup>Topological Spaces</sup>
 위상공간은 집합의 일종으로, 위상(토폴로지, topology)이 부여된 공간을 의미한다. 앞서 살펴본 [거리공간](https://ddangchani.github.io/math/realanalyis_metricspaces) 역시 위상공간의 일종인데, 거리공간에서의 거리의 개념이 위상을 정의하기 때문이다. 이 장에서 다루고자 하는 위상공간은, 거리공간보다 더 일반적인 개념이며 이를 바탕으로 가산성, 사상의 연속성과 같은 내용을 다룰 것이다.   
@@ -74,3 +75,4 @@ X의 어떤 점 $x\in X$ 에 대해 $x$ 를 포함하는 열린 집합을 $x$의
 ## Reference
  - Real Analysis 4th edition, Royden
  - Topology and Groupoids, Brwon(2006)
+{% endraw %}

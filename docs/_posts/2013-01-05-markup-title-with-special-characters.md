@@ -400,7 +400,7 @@ This is a test to see if the fonts used in this theme support basic Latin charac
     </td>
     
     <td>
-      |
+      \vert 
     </td>
     
     <td>

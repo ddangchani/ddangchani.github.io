@@ -6,6 +6,7 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## Monotone Class Argument
 
 Dynkin's $\pi-\lambda$ system이라고도 불리는 체계는 실변수함수론에서 다양한 정리들을 증명하거나 할 때 유용하게 사용된다. 또한, 확률론에서도 사건이나 random event의 독립성을 확인할 때 역시 이용된다. 우선 $\pi$ system, $\lambda$ system이 무엇인지 살펴보고, 간단한 예시를 통해 이들이 어떻게 이용되는지 알아보도록 하자.
@@ -32,7 +33,7 @@ Dynkin's $\pi-\lambda$ system이라고도 불리는 체계는 실변수함수론
 >    $$
 >    가 성립한다.
 
-위와 같이 각각 $\pi$ system, $\lambda$ system을 정의한다. 이때 $\lambda$ system과 $\sigma$-algebra는 유사한 형태를 가지고 있는데([정의](https://velog.io/@ddangchani/실해석학-2.-sigma-algebra) 참고), 3번의 mutually disjoint union으로부터의 닫힘 조건만이 다르다는 것을 알 수 있다. 즉, $\sigma-$algebra는 $\pi-$system이면서 동시에 $\lambda$-system이기도 하다. 이 정의를 바탕으로, 다음과 같이 Dynkin's THM이 성립한다.
+위와 같이 각각 $\pi$ system, $\lambda$ system을 정의한다. 이때 $\lambda$ system과 $\sigma$-algebra는 유사한 형태를 가지고 있는데([정의](https://ddangchani.github.io/실해석학-2.-sigma-algebra) 참고), 3번의 mutually disjoint union으로부터의 닫힘 조건만이 다르다는 것을 알 수 있다. 즉, $\sigma-$algebra는 $\pi-$system이면서 동시에 $\lambda$-system이기도 하다. 이 정의를 바탕으로, 다음과 같이 Dynkin's THM이 성립한다.
 
 ### Dynkin's $\pi-\lambda$ Theorem
 
@@ -52,7 +53,7 @@ $\mathcal{F}=\{(a,b):a,b\in\R, a<b\}$ 는 Measurable Space $(\R,\mathcal{B}(\R))
 
 ### Measurability of function
 
-앞서 [Lebesgue measurable function](https://velog.io/@ddangchani/실해석학-5.-르벡-가측함수)을 정의할 때 실함수들의 치역이 가측인지를 기반으로 가측함수를 정의했었다. 여기서는 보다 일반적으로 함수의 measurability를 정의하고 르벡가측함수의 정의와 동치가 됨을 앞선 pi-lambda system 논의를 이용해 보여보도록 하자.
+앞서 [Lebesgue measurable function](https://ddangchani.github.io/실해석학-5.-르벡-가측함수)을 정의할 때 실함수들의 치역이 가측인지를 기반으로 가측함수를 정의했었다. 여기서는 보다 일반적으로 함수의 measurability를 정의하고 르벡가측함수의 정의와 동치가 됨을 앞선 pi-lambda system 논의를 이용해 보여보도록 하자.
 
 #### 가측함수
 
@@ -63,9 +64,13 @@ $\mathcal{F}=\{(a,b):a,b\in\R, a<b\}$ 는 Measurable Space $(\R,\mathcal{B}(\R))
 #### Lemma (Induced $\sigma$-algebra)
 
 가측공간 $(X,\mathcal{X}),(Y,\mathcal{Y})$ 에 대해 주어진 사상 $f:X\to Y$ 에서
+
 $$
+
 \{B\subset Y:f^{-1}(B)\in \mathcal{X}\}
+
 $$
+
 으로 정의된 모임은 $Y$의 $\sigma$-algebra이다.
 
 > 증명. 역상<sup>inverse image</sup>에 대해 다음의 기본적인 집합 연산들
@@ -80,7 +85,7 @@ $$
 
 만약 위에서 $Y$가 위상공간이고 Borel-$\sigma$-algebra $\mathcal{B}(Y)$ 가 존재한다면 $Y$의 토폴로지가 $\mathcal{B}(Y)$의 separating class이므로(보렐 시그마 대수의 정의에 의해) 토폴로지의 원소, 즉 임의의 열린 집합 $V$들에 대해 $f^{-1}(V)\in\mathcal{X}$ 이 성립하는지를 보면 될 것이다.
 
-#### [Lebesgue measurable function](https://velog.io/@ddangchani/실해석학-5.-르벡-가측함수) 의 정의 도출
+#### [Lebesgue measurable function](https://ddangchani.github.io/실해석학-5.-르벡-가측함수) 의 정의 도출
 
 (Real-valued) Lebesgue measurable funciton $f:X\to\R$ 의 경우 임의의 실수 $c\in\R$ 에 대해 집합 $\{x\in X:f(x)\leq c\}$ 이 가측집합이면 $f$를 가측함수라고 정의했었다. 이 정의를 앞선 Monotone class argument를 이용해 보여보도록 하자.
 
@@ -92,3 +97,5 @@ $$
 
 - Foundations of Modern Probability, O.Kallenberg
 - Real and Complex Analysis, W.Rudin
+
+{% endraw %}

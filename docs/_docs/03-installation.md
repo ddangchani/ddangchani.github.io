@@ -8,11 +8,11 @@ toc: true
 
 ## Install the theme
 
-**1.** For a **new site**, install the `minimal-mistakes-jekyll` gem, remote theme, or fork the Minimal Mistakes repo on GitHub following the steps outlined in the [*Quick-Start Guide*]({{ "/docs/quick-start-guide/" | relative_url }}).
+**1.** For a **new site**, install the `minimal-mistakes-jekyll` gem, remote theme, or fork the Minimal Mistakes repo on GitHub following the steps outlined in the [*Quick-Start Guide*]({{ "/docs/quick-start-guide/" \vert  relative_url }}).
 
 If you plan to host with GitHub Pages be sure to properly setup [**jekyll-remote-theme**](https://github.com/benbalter/jekyll-remote-theme) as it is required for the theme to work properly. 
 
-**2.** For an **existing site** follow the steps outlined in the [*Quick-Start Guide*]({{ "/docs/quick-start-guide/" | relative_url }}). Then work through the guidelines below for migration and setup.
+**2.** For an **existing site** follow the steps outlined in the [*Quick-Start Guide*]({{ "/docs/quick-start-guide/" \vert  relative_url }}). Then work through the guidelines below for migration and setup.
 
 **3.** For those who'd like to make substantial edits to the theme, download as a ZIP file to customize.
 
@@ -102,7 +102,7 @@ $ bundle install
 {: .notice--warning}
 
 <figure>
-  <img src="{{ '/assets/images/mm-bundle-install.gif' | relative_url }}" alt="bundle install in Terminal window">
+  <img src="{{ '/assets/images/mm-bundle-install.gif' \vert  relative_url }}" alt="bundle install in Terminal window">
 </figure>
 
 Depending on what gems you already have installed you may have to run `bundle update` to clear up any dependency issues. Bundler is usually pretty good at letting you know what gems need updating or have issues installing, to further investigate.

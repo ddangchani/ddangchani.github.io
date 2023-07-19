@@ -1,11 +1,12 @@
 ---
-title: "따릉이 transform"
+title: "따릉이 transform"
 tags:
 - tag1
 - tag2
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## 따릉이 데이터 분석하기 (4) Transformation
 
 이번에는 PCA를 비롯해 예측변수의 데이터셋을 변환시키는<sup>transformation</sup> 여러 가지 방법들에 대해 다루어보도록 하겠다. 대표적으로 PCA는 기본적인 회귀문제에 응용되어 PCR로 사용되거나, 고차원 문제의 차원 축소 기법으로 필수적인 역할을 한다. 여기서는 우선 PCA를 진행하고, 이 결과를 바탕으로 PCR을 진행하여 이를 PLS와 비교해보도록 하자.
@@ -102,7 +103,7 @@ pca_1.fit(X_train,y_train)
 pca_2.fit(X_train,y_train)
 ```
 
-<img src="따릉이_transform.assets/스크린샷 2022-04-12 오후 3.27.26.png" alt="스크린샷 2022-04-12 오후 3.27.26" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform.assets/스크린샷 2022-04-12 오후 3.27.26.png" alt="스크린샷 2022-04-12 오후 3.27.26" style="zoom:50%;" />
 
 그러면 위와 같이 Interactive한 html 객체가 나오는데, 각 항목을 클릭하면 적용된 각 메서드에 대해 hyperparmeter나 설정을 어떻게 취했는지 파악할 수 있다. 이제 PCA가 적용된 결과를 파악해보도록 하자. Pipeline의 각 단계와 해당 단계에서의 attribute는 리스트로 저장되고 Pipelline 형성 단계에서 설정한 각 단계의 이름으로 이를 불러올 수 있는데(`.named_steps['이름']` attribute 이용), 아래와 같이 `pca_1`,`pca_2`에서의` explained_variance_ratio`를 파악할 수 있다. 이는 각 주성분이 전체 분산의 얼마만큼의 비율을 설명하는지 의미한다. 
 
@@ -120,24 +121,24 @@ pca_res = pd.DataFrame([pca_1_ratio,pca_2_ratio], index=['Scaler','One-hot'], co
 pca_res.iloc[:3,:].sum(axis=0) # Ex.ratio of first three components
 ```
 
-|      | Scaler | One-hot |
-| ---: | -----: | ------: |
-|    1 |  0.884 |   0.336 |
-|    2 |  0.039 |   0.232 |
-|    3 |  0.031 |   0.105 |
-|    4 |  0.015 |   0.080 |
-|    5 |  0.012 |   0.055 |
-|    6 |  0.008 |   0.049 |
-|    7 |  0.007 |   0.021 |
-|    8 |  0.003 |   0.008 |
-|    9 |  0.001 |   0.006 |
-|   10 |  0.000 |   0.006 |
+\vert       \vert  Scaler \vert  One-hot \vert 
+\vert  ---: \vert  -----: \vert  ------: \vert 
+\vert     1 \vert   0.884 \vert    0.336 \vert 
+\vert     2 \vert   0.039 \vert    0.232 \vert 
+\vert     3 \vert   0.031 \vert    0.105 \vert 
+\vert     4 \vert   0.015 \vert    0.080 \vert 
+\vert     5 \vert   0.012 \vert    0.055 \vert 
+\vert     6 \vert   0.008 \vert    0.049 \vert 
+\vert     7 \vert   0.007 \vert    0.021 \vert 
+\vert     8 \vert   0.003 \vert    0.008 \vert 
+\vert     9 \vert   0.001 \vert    0.006 \vert 
+\vert    10 \vert   0.000 \vert    0.006 \vert 
 
 이를 보면 One-hot encoding을 처리하지 않은 첫번째 PCA 모델이 더 효과적으로 주성분 분리가 일어났음을 확인할 수 있는데, `pca_res.iloc[:3,:].sum(axis=0)` 코드로 처음 세 개의 주성분이 설명하는 비율을 확인해보면  Scaler는 95.4%, One-hot은 67.3% 이다. 따라서, PCR과 PLS를 비교하는 과정에서는 `preprocessor_1`만 이용하고, PCA 단계에서는 3개의 주성분을 사용하도록 하겠다.
 
 ### Principal Component Regression & Partial Least Squares
 
-PCR<sup>주성분회귀</sup>은 예측변수행렬의 고유값분해를 기반으로 회귀계수를 추정하는 방법이다([참고](https://velog.io/@ddangchani/Linear-Regression-2)). 즉, PCA를 training data에 적용시킴으로써 차원 축소가 가능하게 하고, 이를 바탕으로 선형 회귀를 진행하는 것이다.  이때 PCA는 반응변수에 무관하게 작동하므로, **unsupervised** transformation이 일어난다고 볼 수 있다.[PLS](https://velog.io/@ddangchani/Linear-Regression-2)는 Linear regression 알고리즘의 일종인데, PCR과 유사하게 예측변수 열벡터들의 선형결합을 바탕으로 선형 모형을 구성하지만, 그 과정에서 반응변수와의 관계가 개입되므로 **supervised** transformation이라는 것이 PCR과의 차이점이다.
+PCR<sup>주성분회귀</sup>은 예측변수행렬의 고유값분해를 기반으로 회귀계수를 추정하는 방법이다([참고](https://ddangchani.github.io/Linear-Regression-2)). 즉, PCA를 training data에 적용시킴으로써 차원 축소가 가능하게 하고, 이를 바탕으로 선형 회귀를 진행하는 것이다.  이때 PCA는 반응변수에 무관하게 작동하므로, **unsupervised** transformation이 일어난다고 볼 수 있다.[PLS](https://ddangchani.github.io/Linear-Regression-2)는 Linear regression 알고리즘의 일종인데, PCR과 유사하게 예측변수 열벡터들의 선형결합을 바탕으로 선형 모형을 구성하지만, 그 과정에서 반응변수와의 관계가 개입되므로 **supervised** transformation이라는 것이 PCR과의 차이점이다.
 
 #### PCR
 
@@ -152,7 +153,7 @@ pcr = Pipeline(
 pcr.fit(X_train, y_train)
 ```
 
-<img src="따릉이_transform.assets/스크린샷 2022-04-12 오후 3.53.18.png" alt="스크린샷 2022-04-12 오후 3.53.18" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform.assets/스크린샷 2022-04-12 오후 3.53.18.png" alt="스크린샷 2022-04-12 오후 3.53.18" style="zoom:50%;" />
 
 위 코드를 통해, 그림과 같은 Pipeline을 갖는 Principal Component Regression method를 구현할 수 있다. 마찬가지로, `sklearn.cross_decomposition`의 `PLSRegression`을 이용하여 다음과 같은 PLS 파이프라인을 생성할 수 있다.
 
@@ -168,7 +169,7 @@ pls = Pipeline(
 pls.fit(X_train, y_train)
 ```
 
-<img src="따릉이_transform.assets/스크린샷 2022-04-12 오후 7.35.06.png" alt="스크린샷 2022-04-12 오후 7.35.06" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform.assets/스크린샷 2022-04-12 오후 7.35.06.png" alt="스크린샷 2022-04-12 오후 7.35.06" style="zoom:50%;" />
 
 #### Comparison between PCR / PLS
 
@@ -206,7 +207,7 @@ plt.savefig('plots/pcr_vs_pls.png', transparent=False, facecolor = 'white')
 
 첫 줄의 `pca`는 PCR 파이프라인에서 Linear Regression을 제외한 PCA까지의 프로세스만 분리한 또다른 파이프라인이다. 코드를 실행하면 다음과 같은 두 plot을 얻을 수 있는데, 왼쪽은 PCA를 통해 얻은 분포와 PCR을 통해 얻은 예측값의 분포를 보이며, 오른쪽은 PLS를 통해 얻은 분포와 예측값의 분포를 나타낸 것이다.
 
-![pcr_vs_pls](따릉이_transform.assets/pcr_vs_pls.png)
+![pcr_vs_pls](/assets/img/따릉이_transform.assets/pcr_vs_pls.png){: .align-center}
 
 그림으로만 보면 성능이 쉽게 구분되지 않으므로, validation data에 대한 R-squared value와 RMSE value를 모두 비교해보도록 하자. 각 pipeline의 경우 모두 Regression model 이고, `.score` 메서드로  결정계수 $R^2$를 얻을 수 있다.
 
@@ -226,3 +227,5 @@ print(np.sqrt(mean_squared_error(y_val, pls.predict(X_val))).round(3)) # PLS = 5
 ## References
 
 - scikit-learn 공식 문서 : https://scikit-learn.org/stable/auto_examples/cross_decomposition/plot_pcr_vs_pls.html
+
+{% endraw %}

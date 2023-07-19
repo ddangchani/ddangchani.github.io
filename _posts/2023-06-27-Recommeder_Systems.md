@@ -1,11 +1,11 @@
 ---
 title: "Recommeder Systems"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Recommender Systems
+category: 'Recommender Systems'
 use_math: true
 ---
+{% raw %}
 
 이번 여름방학 기간을 활용하여 데이터사이언스 영역에서 갈수록 중요해지는 토픽 중 하나인 추천시스템에 대해 공부해 포스팅해보고자 한다. 추천시스템의 목적은 궁극적으로 사용자에게 적절한 아이템을 추천해주는 것인데, 기존의 statistical learning model과는 다른 상황이 분명히 존재한다. 사용자에게 추천해주는 아이템은 그 사용자가 경험해보지 못한 아이템, 즉 유저 피드백이 없는 상황이므로 기존의 회귀모형이나 분류모형을 활용하기에 어려움이 있을 수 있다. 다만 최근 미디어 영역에서 소위 '알고리즘'이라고 하는 추천 시스템의 활용 및 그 효과가 도드라지면서 추천시스템과 관련된 방법론 역시 다양한 방면으로 발전하는 중이다. 본 포스팅 및 차후 작성되는 포스트들은 *Charu C. Aggarwal*의 **Recommender Systems** 책의 내용을 바탕으로 작성될 것이다.
 
@@ -45,3 +45,4 @@ use_math: true
 
 ## Reference
 - *Charu C. Aggarwal - Recommender Systems*
+{% endraw %}

@@ -7,6 +7,7 @@ tags:
 category: math
 use_math: true
 ---
+{% raw %}
 
 ## 위상공간에서의 연속사상
 ### 정의
@@ -22,11 +23,15 @@ use_math: true
 어떤 집합 $X$에 대한 토폴로지는, $X$의 부분집합들을 모아놓은 것으로 정의했다. 만약 $\mathcal{T_1},\mathcal{T_2}$ 가 $X$의 토폴로지이고 이때 $\mathcal{T_1}\subseteq\mathcal{T_2}$ 가 성립한다면 $\mathcal{T_2}$ 를 더 **약한**(weaker), 반대로 $\mathcal{T_1}$ 을 더 **강한**(stronger) 토폴로지라고 한다. 
 
 **정의** 공집합이 아닌 집합 X에 대해    
+
 $$
+
 \mathcal{F} = \{f_\alpha:X\to X_\alpha\}
 $$   
 로 정의된 사상들의 모임 형태를 생각하자. 이때 각 $X_\alpha$ 는 위상공간이다. 만약 사상들의 모임을 다음과 같이 정의한다면,   
+
 $$
+
 \mathcal{F}=\{f_\alpha^{-1}(\mathcal{O_\alpha}):f_\alpha\in \mathcal{F},\mathcal{O_\alpha}\text{  open  in   }X_\alpha\}
 $$   
 $\mathcal{F}$를 포함하는 $X$의 토폴로지 중, 가장 약한 토폴로지를 $\mathcal{F}$애 의한 $X$의 **weak topology(약한 토폴로지)** 라고 정의한다.   
@@ -41,15 +46,23 @@ $\mathcal{F}$를 포함하는 $X$의 토폴로지 중, 가장 약한 토폴로�
 
 **예시 : L1 space to L2 space**    
 르벡가측집합 $E\subset \mathbb{R}$ 에 대해, $L^1(E)$와 $L^2(E)$ 공간을 잇는 함수   
+
 $$
-\Phi(f)(x) = sgn(f(x))|f(x)|^{1/2}
+
+\Phi(f)(x) = sgn(f(x))\vert f(x)\vert ^{1/2}
 $$    
 를 생각하자($f\in L^1(E)$). 그러면 임의의 두 수 $a,b$에 대해 다음 부등식이 성립하므로   
+
 $$
-|sgn(a)\cdot|a|^{1/2}-sgn(b)\cdot|b|^{1/2}|^2 \leq 2|a-b|
+
+\vert sgn(a)\cdot\vert a\vert ^{1/2}-sgn(b)\cdot\vert b\vert ^{1/2}\vert ^2 \leq 2\vert a-b\vert 
+
 $$
+
 임의의 $f,g\in L^1$ 에 대해서도 아래 부등식이 성립하여 $\Phi(f)\in L^2(E)$ 이다.   
+
 $$
+
 \Vert \Phi(f)-\Phi(g)\Vert_2^2\leq 2\Vert f-g\Vert_1
 $$    
 이렇게 정의된 사상 $\Phi$ 는 위상동형사상의 조건을 만족하고 $L^1$ 공간과 $L^2$ 공간은 위상동형임을 알 수 있다.   
@@ -84,3 +97,5 @@ $$
 
 ## Reference
  - Real Analysis 4th edition, Royden
+
+{% endraw %}

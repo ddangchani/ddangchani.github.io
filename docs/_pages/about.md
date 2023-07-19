@@ -20,7 +20,7 @@ Minimal Mistakes is a flexible two-column Jekyll theme. Perfect for hosting your
 
 {% include gallery id="layouts_gallery" caption="Examples of included layouts `splash`, `single`, and `archive`." %}
 
-[Install the Theme]({{ "/docs/quick-start-guide/" | relative_url }}){: .btn .btn--success .btn--large}
+[Install the Theme]({{ "/docs/quick-start-guide/" \vert  relative_url }}){: .btn .btn--success .btn--large}
 
 ## Notable Features
 
@@ -37,26 +37,26 @@ Minimal Mistakes is a flexible two-column Jekyll theme. Perfect for hosting your
 
 ## Demo Pages
 
-| Name                                        | Description                                           |
-| ------------------------------------------- | ----------------------------------------------------- |
-| [Post with Header Image][header-image-post] | A post with a large header image. |
-| [HTML Tags and Formatting Post][html-tags-post] | A variety of common markup showing how the theme styles them. |
-| [Syntax Highlighting Post][syntax-post] | Post displaying highlighted code. |
-| [Post with a Gallery][gallery-post] | A post showing several images wrapped in `<figure>` elements. |
-| [Sample Collection Page][sample-collection] | Single page from a collection. |
-| [Categories Archive][categories-archive] | Posts grouped by category. |
-| [Tags Archive][tags-archive] | Posts grouped by tag. |
+\vert  Name                                        \vert  Description                                           \vert 
+\vert  ------------------------------------------- \vert  ----------------------------------------------------- \vert 
+\vert  [Post with Header Image][header-image-post] \vert  A post with a large header image. \vert 
+\vert  [HTML Tags and Formatting Post][html-tags-post] \vert  A variety of common markup showing how the theme styles them. \vert 
+\vert  [Syntax Highlighting Post][syntax-post] \vert  Post displaying highlighted code. \vert 
+\vert  [Post with a Gallery][gallery-post] \vert  A post showing several images wrapped in `<figure>` elements. \vert 
+\vert  [Sample Collection Page][sample-collection] \vert  Single page from a collection. \vert 
+\vert  [Categories Archive][categories-archive] \vert  Posts grouped by category. \vert 
+\vert  [Tags Archive][tags-archive] \vert  Posts grouped by tag. \vert 
 
 For even more demo pages check the [posts archive][year-archive].
 
-[header-image-post]: {{ "" | relative_url }}{% post_url 2012-03-15-layout-header-image-text-readability %}
-[gallery-post]: {{ "" | relative_url }}{% post_url 2010-09-09-post-gallery %}
-[html-tags-post]: {{ "" | relative_url }}{% post_url 2013-01-11-markup-html-tags-and-formatting %}
-[syntax-post]: {{ "" | relative_url }}{% post_url 2013-08-16-markup-syntax-highlighting %}
-[sample-collection]: {{ "/recipes/chocolate-chip-cookies/" | relative_url }}
-[categories-archive]: {{ "/categories/" | relative_url }}
-[tags-archive]: {{ "/tags/" | relative_url }}
-[year-archive]: {{ "/year-archive/" | relative_url }}
+[header-image-post]: {{ "" \vert  relative_url }}{% post_url 2012-03-15-layout-header-image-text-readability %}
+[gallery-post]: {{ "" \vert  relative_url }}{% post_url 2010-09-09-post-gallery %}
+[html-tags-post]: {{ "" \vert  relative_url }}{% post_url 2013-01-11-markup-html-tags-and-formatting %}
+[syntax-post]: {{ "" \vert  relative_url }}{% post_url 2013-08-16-markup-syntax-highlighting %}
+[sample-collection]: {{ "/recipes/chocolate-chip-cookies/" \vert  relative_url }}
+[categories-archive]: {{ "/categories/" \vert  relative_url }}
+[tags-archive]: {{ "/tags/" \vert  relative_url }}
+[year-archive]: {{ "/year-archive/" \vert  relative_url }}
 
 ---
 

@@ -6,6 +6,7 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## Random Elements
 
 저번에 다룬 확률측도 공간(Probability Space, 이하 *확률공간*) $(\Omega,\mathcal{F},P)$ 를 바탕으로 확률론의 대상이 되는 random elements 대한 내용을 다루도록 할 것이다. (확률측도의 $\sigma$-algebra에 대해서도 인식의 편의(🤔)를 위해 $\mathcal{M}$ 대신 $\mathcal{F}$을 사용하도록 하겠다.)
@@ -17,30 +18,43 @@ use_math: true
 1. **Infinitely Often**(i.o) : $A_n$이 무한한 index set $n\in\{1,2,3,\ldots\}$ 에서 True임을 의미한다. 이때 다음과 같이 무한한 사건열을 True로 하는 outcome $\omega\in\Omega$ 들의 집합 $\{A_n \;\text{i.o}\}$ 은 다음과 같이 표현할 수 있다. 
 
 $$
+
 \{A_n \;\text{i.o}\}=\limsup_nA_n=\bigcap_n\bigcup_{k\geq n}A_k=\{\omega\in\Omega:\sum_nI_{A_n}(\omega)=\infty\}
+
 $$
 
 2. **All but finitely many / Ultimately**(a.b.f or ult.) : $A_n$이 유한한 index set에서 True임을 의미한다.
 
 $$
+
 \{A_n \;\text{a.b.f}\}=\liminf_nA_n=\bigcup_n\bigcap_{k\geq n}A_k=\{\omega\in\Omega:\sum_nI_{A_n^c}(\omega)<\infty\}
+
 $$
 
 
 
 또한, 두 정의에서 Indicator function을 취하면
+
 $$
+
 I_{\{A_n\;\text{i.o}\}} = \limsup_{n\to\infty}I_{A_n}
+
 $$
 
 $$
+
 I_{\{A_n\;\text{a.b.f}\}} = \liminf_{n\to\infty}I_{A_n}
+
 $$
 
-으로 표현된다. 이때 [Fatou's Lemma](https://velog.io/@ddangchani/실해석학-7.-르벡-적분1)을 이용하면
+으로 표현된다. 이때 [Fatou's Lemma](https://ddangchani.github.io/실해석학-7.-르벡-적분1)을 이용하면
+
 $$
+
 P\{A_n\; \text{i.o}\}\geq\limsup_nP(A_n),\;\;P\{A_n\; \text{a.b.f}\}\leq\liminf_nP(A_n)
+
 $$
+
 임을 알 수 있다. 여기서 확률측도의 연속성과 가산가법성을 이용하면 이전에 살펴보았던 **Borel-Canteli Lemma**를 얻을 수 있다.
 
 #### Borel-Canteli Lemma
@@ -58,9 +72,13 @@ $$
 #### Random Element
 
 Probability space $(\Omega,\mathcal{F},P)$의 Sample space $\Omega$ 에서 어떤 가측공간 $(S,\mathcal{S})$ 로 정의된 measurable한 사상 $\xi:\Omega\to S$을 $S$의  **random element**라고 정의한다. 또한 $\mathcal{S}$의 원소 $B\in\mathcal{S}$ 을 생각하면 이에 대해 $\{\xi\in B\}=\xi^{-1}(B)\in\mathcal{F}$ 을 대응시킬 수 있다. 그러면
+
 $$
+
 P\{\xi\in B\}=P(\xi^{-1}(B))=(P\circ\xi^{-1})(B),\quad B\in \mathcal{S}
+
 $$
+
 으로 정의되는 새로운 set function $P\circ\xi^{-1}$을 정의할 수 있고, 이는 $S$에서 정의되는 새로운 확률측도가 되고, 이를 $\xi$의 (확률)**분포**<sup>distribution</sup>라고 부른다.
 
 이렇게 정의되는 random element는 $S$가 어떤 공간이냐에 따라 다른 명칭으로 불린다. 대표적으로 $S=\R$인 경우 random variable<sup>확률변수</sup>가 되며, $S=\R^d$인 경우 random vector가 된다. 만일 $S$가 함수공간<sup>function space</sup> 인 경우는 이를 stochastic(*or random*) process<sup>확률과정</sup>이 된다. 또한, 만일 두 random elements $\xi,\eta$가 $(S,\mathcal{S})$에서 같은 distribution을 갖는다면 이를 $\xi\stackrel{d}{=}\eta$ 로 표기한다.
@@ -83,3 +101,5 @@ Measurable space $(S,\mathcal{S})$ 와 index set $T$, $U\subset S^T$ 를 고정�
 
 - Foundations of Modern Probability, O.Kallenberg
 
+
+{% endraw %}

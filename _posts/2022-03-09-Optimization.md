@@ -6,13 +6,18 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 # Optimization
 
 최적화<sup>optimization</sup>과 관련된 내용은 통계학 및 머신러닝 뿐 아니라 다른 자연과학, 사회과학 분야들에서 널리 사용된다. 머신러닝 영역에서 최적화 문제는 다음 식 한줄로 표현할 수 있다.
+
 $$
+
 w^*=\arg\min_w L(w)
+
 $$
-이때 argmin, 즉 최대화가 아닌 **최소화** 표현이 사용되는 이유는 머신러닝에서 사용하는 최적화는 [손실함수](https://velog.io/@ddangchani/Model-Assessment) $L(w)$를 최소화하는데 초점이 맞춰져있기 때문이다(본격적으로 최적화를 다루는 convex optimization 영역에서도 함수의 convex와 일치하게끔 최소화로 치환하여 문제를 생각하는 경우가 많다). 손실함수는 squared loss function 뿐 아니라 softmax, SVM, Full loss function과 같이 딥러닝에서도 이용되는 다양한 종류가 있는데, 각각에 대해서는 추후에 더 살펴보도록 하겠다. 우선 여기서는 손실함수의 종류에 관계없이, 손실함수를 최소화하는 방법, 즉 알고리즘들에 대해 살펴보자.
+
+이때 argmin, 즉 최대화가 아닌 **최소화** 표현이 사용되는 이유는 머신러닝에서 사용하는 최적화는 [손실함수](https://ddangchani.github.io/Model-Assessment) $L(w)$를 최소화하는데 초점이 맞춰져있기 때문이다(본격적으로 최적화를 다루는 convex optimization 영역에서도 함수의 convex와 일치하게끔 최소화로 치환하여 문제를 생각하는 경우가 많다). 손실함수는 squared loss function 뿐 아니라 softmax, SVM, Full loss function과 같이 딥러닝에서도 이용되는 다양한 종류가 있는데, 각각에 대해서는 추후에 더 살펴보도록 하겠다. 우선 여기서는 손실함수의 종류에 관계없이, 손실함수를 최소화하는 방법, 즉 알고리즘들에 대해 살펴보자.
 
 ### Is Random Search🔍 an Optimization?
 
@@ -36,8 +41,11 @@ for num in range(1000):
 ### Gradient
 
 그래디언트<sup>gradient</sup>는 벡터에 대해 정의된 미분계수이다. 즉, 일차원 유클리드공간에서의 함수 $f:\mathbb\R\to\mathbb\R$ 의 대한 미분계수
+
 $$
+
 \frac{df(x)}{dx}=\lim_{h\to0}\frac{f(x+h)-f(x)}{h} \tag{1}
+
 $$
 
 
@@ -59,9 +67,13 @@ for t in range(num_steps):
 ~~~
 
 위 알고리즘은 그래디언트를 이용한 가장 기초적인 알고리즘으로, 이를 **Vanilla gradient descent**라고도 한다. 식으로 표현하면 다음과 같다.
+
 $$
+
 W=W-\eta\cdot\nabla_WL(W)
+
 $$
+
 1차원 데이터셋에서 생각해보면, 어떤 점에서 미분계수가 양수라는 것은 그 점보다 작은 값에서 더 낮은 함수값을 취한다는 것이고 음수인 경우는 반대인 것이므로, 위 식에서처럼 그래디언트에 음수를 취하여 $w$를 갱신한다. 이때 학습률<sup>learning rate</sup>을 의미하는 $\eta$ (eta)는 그래디언트를 얼마만큼 반영하여 갱신할 것인지를 의미하는 hyperparameter이다.
 
 한편, 위와 같은 알고리즘을 **batch gradient descent**라고도 하는데, 이는 w값을 한번 갱신하기 위해 전체 데이터셋(data)에 대한 그래디언트를 통째로 계산하기 때문이다. (여기서 **batch**란 하나의 Loss function 값을 계산하는 데이터셋을 의미한다.) 그런데 데이터셋이 매우 큰 경우 계산비용<sup>computational cost</sup>과 데이터를 임시저장할 RAM 리소스 등에 대한 부담이 과중된다. 따라서 이를 해결하기 위해 batch 크기를 축소하는 **Stochastic gradient descent** 알고리즘을 사용하게 된다.
@@ -79,16 +91,27 @@ for t in range(num_steps):
 ```
 
 위 알고리즘은 SGD를 표현하는데, vanilla gradient descent과의 차이는 데이터셋에 대해 minibatch를 만들어 각각에 대해 그래디언트를 계산한다는 점이다. 이때 batch의 크기는 보통 32, 64, 128 같은 단위가 사용되는데 이는 크게 중요하지 않으며, GPU 등 연산처리환경이 감당할 수 있는 선에서 크게 설정하면 된다. 
+
 $$
+
 L(W)=\text{E}_{(x,y)\sim P(x,y)}[L(x,y,W)]+\lambda R(W)\tag{2}
+
 $$
+
 우선 데이터셋 $(x,y)$가 확률분포 $P(x,y)$로부터 비롯되었다고 가정하고, 손실함수가 규제항 $R$을 포함한 형태로 식 (2)와 같이 주어졌다고 생각할 수 있다. 이때 기댓값은 표본평균으로 근사할 수 있으므로, 데이터 샘플 $\{(x_i,y_i):i=1,\ldots,N\}$ 에 대해 다음 식 (3)처럼 근사할 수 있다.
+
 $$
+
 L(W)\approx{1\over N}\sum_{i=1}^NL(x_i,y_i,W)+\lambda R(W)\tag{3}
+
 $$
+
 따라서 $L$에 대한 그래디언트 역시 다음과 같이 근사할 수 있다. 이처럼 손실함수를 전체 데이터셋의 확률분포에 대한 기댓값으로 가정한다는 의미에서 **stochastic** gradient descent 라고 한다.
+
 $$
+
 \nabla_WL(W)\approx\sum_{i=1}^N\nabla_WL_W(x_i,y_i,W)+\nabla_W R(W)
+
 $$
 
 #### Problems with SGD
@@ -160,13 +183,21 @@ for t in range(num_steps):
 ## Second-Order Optimization
 
 Taylor Expansion을 이용하면 손실함수를 다음과 같이 근사할 수 있다.
+
 $$
+
 	L(W) \approx L(W_0) + (W-W_0)^\top\nabla_WL(W_0)+{1\over2}(W-W_0)^\top\mathbf{H}_WL(W_0)(W-W_0)
+
 $$
+
 여기서 행렬 $\mathbf H_WL(W_0)$은 $W = W_0$에서의 헤시안 행렬을 의미한다. 이를 이용해 W을 다음과 같이 update할 수 있다:
+
 $$
+
 W^* = W_0 - \mathbf H_WL(W_0)^{-1}\nabla_WL(W_0)
+
 $$
+
 그러나 위 식에서 알 수 있듯 Hessian의 역행렬을 구하는 것은 $O(N^3)$의 연산이 필요하기 때문에, 데이터셋이 커질수록 연산이 과도해지며 데이터셋을 작게 하는 mini-batch 형태에서는 잘 작동하지 않게 된다. 그래서 Hessian의 역행렬 대신 이를 근사하는 BGFS 방법 등도 이차 최적화에 이용된다 (*full batch update가 가능한 환경이라면 시도해볼수는 있겠다*😅).
 
 ## Practice
@@ -177,3 +208,4 @@ $$
 
 - An overview of gradient descent optimization algorithms, S.Ruder
 - Lecture note of "Deep Learning for Computer Vision", UMich EECS
+{% endraw %}

@@ -7,7 +7,7 @@ last_modified_at: 2018-01-10T11:22:01-05:00
 
 The MIT License (MIT)
 
-Copyright (c) 2013-{{ site.time | date: '%Y' }} Michael Rose and contributors
+Copyright (c) 2013-{{ site.time \vert  date: '%Y' }} Michael Rose and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

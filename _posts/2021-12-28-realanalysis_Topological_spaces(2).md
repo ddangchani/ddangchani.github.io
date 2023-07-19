@@ -7,7 +7,7 @@ tags:
 category: math
 use_math: true
 ---
-
+{% raw %}
 
 ## 위상공간의 분리<sup> Separation</sup>
 위상공간 X의 부분집합 $A,B \subset X$ 가 서로소라고 하자. 만일 $A,B$ 각각의 서로소인 근방이 존재한다면, 이를 근방에 의해 분리된다고 표현한다. 이 장에서는 네 가지의 주요 분리 성질을 바탕으로 위상공간을 분류하는 것을 다룬다.   
@@ -40,8 +40,11 @@ use_math: true
 >티호노프 분리 성질이 성립하며, 각각의 닫힌집합 $F\subset X$와 $x\notin F$는 서로소인 근방에 의해 분리될 수 있다.
 
 **명제 8** $X$가 티호노프 위상공간이라고 하자. 이떄 X가 normal할 필요충분조건은 임의의 닫힌부분집합 $F\subset X$의 근방 $\mathcal{U}$에 대해 열린집합(근방) $\mathcal{O}$가 존재하여 다음을 만족하는 것이다.   
+
 $$
+
 F\subseteq \mathcal{O} \subseteq \overline{\mathcal{O}} \subseteq \mathcal{U}
+
 $$
 
 > ($\Rightarrow$). X가 normal하다고 가정하자. $\mathcal{U}$가 $F$의 근방이므로 $F$와 $X\backslash\mathcal{U}$는 서로소인 닫힌 집합이다. 따라서 normal의 정의로부터 서로소인 열린집합 $\mathcal{O,V}$ 가 존재하여 $F\subseteq\mathcal{O},X\backslash\mathcal{U}\subseteq\mathcal{V}$ 가 성립한다. 따라서 $\overline{\mathcal{O}}\subseteq X\backslash\mathcal{V}\subseteq\mathcal{U}$ 임을 알 수 있다.   
@@ -59,7 +62,9 @@ $$\mathcal{T}=\{\emptyset,X\}$$
 ### 가산성<sup>countability</sup>
 **Def** 위상공간 $X$의 각 점에 대한 기저가 가산일때, 이를 **제1가산공간**<sup>first countable topological space</sup>이라고 한다. 만약 $X$의 토폴로지 $\mathcal{T}$의 기저가 가산이면, 공간 $X$를 **제2가산공간**<sup>second countable topological space</sup>이라고 한다.    
 정의로부터 제2가산공간이 제1가산공간임은 명확하다(토폴로지에 대한 기저는 모든 점에서의 기저를 포함하므로). 예시로 거리공간을 살펴보자. 모든 거리공간 $X$는 제1가산공간임을 알 수 있는데, $x\in X$에 대해 열린근방들의 모임   
+
 $$
+
 \{N(x,1/n)\}^\infty_{n=1}
 $$   
 을 생각하면 이는 점 $x$에 대한 기저가 되고, 가산모임이다.   
@@ -72,7 +77,9 @@ $$
 **Def** 위상공간 $X$의 모든 열린집합이 $E\subset X$의 점을 포함하면, $E$가 $X$에서 **조밀**하다고 한다. 이때 $E$가 가산이면 $X$를 **분리가능**하다고 정의한다.   
 
 폐포점의 정의를 생각해보면, $x$가 $E$의 폐포점일 경우 $x$의 모든 근방이 $E$의 점을 포함한다. 이는 위에서 정의한 조밀성과 동치이므로,   
+
 $$
+
 \overline{E}=X
 $$   
 임을 알 수 있다.
@@ -81,3 +88,5 @@ $$
 
 ## Reference
  - Real Analysis 4th edition, Royden
+
+{% endraw %}

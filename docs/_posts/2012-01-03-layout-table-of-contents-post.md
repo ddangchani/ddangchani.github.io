@@ -57,15 +57,15 @@ HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, c
 
 ## Tables
 
-| Header1 | Header2 | Header3 |
-|:--------|:-------:|--------:|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-|----
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-|=====
-| Foot1   | Foot2   | Foot3
+\vert  Header1 \vert  Header2 \vert  Header3 \vert 
+\vert :--------\vert :-------:\vert --------:\vert 
+\vert  cell1   \vert  cell2   \vert  cell3   \vert 
+\vert  cell4   \vert  cell5   \vert  cell6   \vert 
+\vert ----
+\vert  cell1   \vert  cell2   \vert  cell3   \vert 
+\vert  cell4   \vert  cell5   \vert  cell6   \vert 
+\vert =====
+\vert  Foot1   \vert  Foot2   \vert  Foot3
 {: rules="groups"}
 
 ## Code Snippets

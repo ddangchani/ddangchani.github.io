@@ -6,16 +6,25 @@ tags:
 category: 'Category'
 use_math: true
 ---
+{% raw %}
 ## Partial Regression
 
-Linear Regression model에서 예측변수가 여러개일 때, 즉 multiple linear regression인 경우 각각의 변수 고유의 영향력을 파악하는 방법으로 partial regression이 있다(*[Partial Least Square algorithm](https://velog.io/@ddangchani/Linear-Regression-2)과 명백히 다르다!*). 이에 대해 간단히 다루어보도록 하자. 우선 다음과 같은 회귀모형
+Linear Regression model에서 예측변수가 여러개일 때, 즉 multiple linear regression인 경우 각각의 변수 고유의 영향력을 파악하는 방법으로 partial regression이 있다(*[Partial Least Square algorithm](https://ddangchani.github.io/Linear-Regression-2)과 명백히 다르다!*). 이에 대해 간단히 다루어보도록 하자. 우선 다음과 같은 회귀모형
+
 $$
+
 Y=X_1\beta_1+X_2\beta_2+\epsilon\tag{Full Model}
+
 $$
+
 이 존재한다고 하자. 이때, 예측변수 $X_1,X_2$ 중 $X_1$만을 사용하여 다음과 같이 새로운 모형을 만든다고 하자.
+
 $$
+
 Y=X_1\beta_1^*+\epsilon\tag{Reduced Model}
+
 $$
+
 그러면, 행렬 $X_1,X_2$가 직교하지 않는 한 OLS<sup>Ordinary Least Square</sup>를 이용해 추정한 회귀계수에 대해서 $\hat\beta_1\neq\hat\beta_1^*$ 이 성립한다(아래 참고).
 
 > Full Model에 대한 Least squares:
@@ -46,7 +55,7 @@ FWL Theorem이라고도 하는 위 정리는 앞서 설명한 Full Model과 Redu
 > Y^*=Y-X_1\hat\beta_1^*\\
 > =(I-H_1)Y
 > $$
-> 여기서 $I$는 identity matrix, $H_1=X_1(X_1^TX_1)^{-1}X_1^T$ 는 [Hat Matrix](https://velog.io/@ddangchani/Linear-Regression-1)이다. 마찬가지로, 이번에는 2단계에서의 잔차를 구해보도록 하자.
+> 여기서 $I$는 identity matrix, $H_1=X_1(X_1^TX_1)^{-1}X_1^T$ 는 [Hat Matrix](https://ddangchani.github.io/Linear-Regression-1)이다. 마찬가지로, 이번에는 2단계에서의 잔차를 구해보도록 하자.
 > $$
 > X_2^*=X_2-X_1(X_1^TX_1)^{-1}X_1^TX_2\\
 > =(I-H_1)X_2
@@ -66,11 +75,12 @@ FWL Theorem이라고도 하는 위 정리는 앞서 설명한 Full Model과 Redu
 
 데이터 분석에서는 선형모형의 변수 유의성을 확인하기 위해 Partial Regression Plot을 확인하는 경우가 종종 있다. 앞선 FWL 정리의 두 잔차 $X_2^*, Y^*$의 scatter plot과 Regression plot(Line)을 함께 나타낸 것이 Partial Regression Plot으로, 두 잔차는 모두 해당 변수($X_2, Y$)로부터 다른 변수들(각각 $X_1$, $X$ 전체)의 영향을 제거했다는 점에서 의미가 있는 벡터이다.
 
-## ![스크린샷 2022-04-09 오후 7.36.48](Partial Regression.assets/스크린샷 2022-04-09 오후 7.36.48.png)
+## ![스크린샷 2022-04-09 오후 7.36.48](/assets/img/Partial Regression.assets/스크린샷 2022-04-09 오후 7.36.48.png){: .align-center}
 
-위와 같은 형태를 가지는데(python `statsmodels`패키지를 이용한 그래프이다), 여기서 e(MEDV|X) 는 반응변수 MEDV를 예측변수 전체(X)로 회귀분석하여 나온 잔차(e)를 의미하고, e(AGE|X)는 변수 AGE를 남은 반응변수(X, AGE 제외)로 회귀분석하여 나온 잔차(e)를 의미한다. 위 plot의 경우는 AGE와 종속변수 MEDV가 상관관계가 없음을 보여주고 있고, 이러한 방식으로 선형모형의 각 변수들에 대한 partial regression을 진행하여 각각의 유의성을 파악할 수 있다.
+위와 같은 형태를 가지는데(python `statsmodels`패키지를 이용한 그래프이다), 여기서 e(MEDV\vert X) 는 반응변수 MEDV를 예측변수 전체(X)로 회귀분석하여 나온 잔차(e)를 의미하고, e(AGE\vert X)는 변수 AGE를 남은 반응변수(X, AGE 제외)로 회귀분석하여 나온 잔차(e)를 의미한다. 위 plot의 경우는 AGE와 종속변수 MEDV가 상관관계가 없음을 보여주고 있고, 이러한 방식으로 선형모형의 각 변수들에 대한 partial regression을 진행하여 각각의 유의성을 파악할 수 있다.
 
 ## References
 
 - https://datascienceschool.net/
 - The Elements of Statistical Learning
+{% endraw %}

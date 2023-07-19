@@ -16,10 +16,10 @@ This post should display a **header with a responsive video**, if the theme supp
 
 ## Settings
 
-| Parameter  | Required     | Description |
-|----------  |---------     | ----------- |
-| `id`       | **Required** | ID of the video |
-| `provider` | **Required** | Hosting provider of the video, either `youtube` or `vimeo` |
+\vert  Parameter  \vert  Required     \vert  Description \vert 
+\vert ----------  \vert ---------     \vert  ----------- \vert 
+\vert  `id`       \vert  **Required** \vert  ID of the video \vert 
+\vert  `provider` \vert  **Required** \vert  Hosting provider of the video, either `youtube` or `vimeo` \vert 
 
 ### YouTube
 
