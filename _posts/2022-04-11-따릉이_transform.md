@@ -1,6 +1,7 @@
 ---
 title: "따릉이 데이터 분석하기 (4) Transformation"
 tags:
+- Project
 - PCA
 - Transformation
 category: Project

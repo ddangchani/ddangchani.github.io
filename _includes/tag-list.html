@@ -6,7 +6,13 @@
 {% endcase %}
 
 {% if site.tag_archive.path %}
-  {% assign tags_sorted = page.tags | sort_natural %}
+  {% assign tags_sorted = '' | split: ',' %}
+  {% for tag in page.tags %}
+    {% if site.data.tags contains tag %}
+      {% assign tags_sorted = tags_sorted | push: tag %}
+    {% endif %}
+  {% endfor %}
+  {% assign tags_sorted = tags_sorted | sort_natural %}
 
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }} </strong>

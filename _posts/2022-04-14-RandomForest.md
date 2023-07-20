@@ -1,6 +1,7 @@
 ---
 title: "Random Forest"
 tags:
+- Machine Learning
 - Tree
 - Random Forest
 category: Machine Learning

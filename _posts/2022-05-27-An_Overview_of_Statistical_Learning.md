@@ -1,6 +1,7 @@
 ---
 title: "An Overview of Statistical Learning"
 tags:
+- Machine Learning
 - VC Dimension
 - Empirical Risk
 - Vapnik-Chervonenkis Dimension

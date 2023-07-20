@@ -1,6 +1,7 @@
 ---
 title: "Multivariate LSTM-FCN"
 tags:
+- Deep Learning
 - LSTM
 - Convolutional Neural Network
 - Neural Network

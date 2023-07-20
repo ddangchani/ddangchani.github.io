@@ -1,6 +1,7 @@
 ---
 title: "Causal Inference (2) : Structural Causal Model"
 tags:
+- Causal Inference
 - Statistics
 - Structural Causal Model
 category: Causal Inference

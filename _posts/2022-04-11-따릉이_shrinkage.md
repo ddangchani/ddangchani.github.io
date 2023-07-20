@@ -1,6 +1,7 @@
 ---
 title: "따릉이 데이터 분석하기 (3) Modified Linear Methods"
 tags:
+- Project
 - Shrinkage method
 - Linear Regression
 - Modified Linear Methods

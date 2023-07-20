@@ -1,6 +1,7 @@
 ---
 title: "Stochastic Optimization"
 tags:
+- Deep Learning
 - Stochastic Gradient Descent
 - Optimization
 category: Deep Learning

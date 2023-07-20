@@ -1,6 +1,7 @@
 ---
 title: "Metric Spaces"
 tags:
+- Mathematics
 - Real Analysis
 - Math
 - Metric spaces

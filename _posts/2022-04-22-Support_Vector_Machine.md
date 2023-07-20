@@ -1,6 +1,7 @@
 ---
 title: "Support Vector Machine"
 tags:
+- Machine Learning
 - SVM
 category: Machine Learning
 use_math: true

@@ -1,6 +1,7 @@
 ---
 title: "Support Vector Regression"
 tags:
+- Machine Learning
 - SVM
 - NuSVR
 - Regression

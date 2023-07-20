@@ -1,6 +1,7 @@
 ---
 title: "Gaussian Process"
 tags:
+- Machine Learning
 - Gaussian Process
 - Bayesian
 category: Machine Learning

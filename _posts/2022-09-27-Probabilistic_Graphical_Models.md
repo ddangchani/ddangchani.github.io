@@ -1,6 +1,7 @@
 ---
 title: "Probabilistic Graphical Models"
 tags:
+- Causal Inference
 - Graphical Model
 - Statistics
 category: Causal Inference

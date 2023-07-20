@@ -1,6 +1,7 @@
 ---
 title: "Gradient Boosting Machine"
 tags:
+- Machine Learning
 - GBM
 - Tree
 - Boosting

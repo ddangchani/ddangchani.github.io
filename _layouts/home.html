@@ -15,8 +15,44 @@ layout: archive
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% for post in posts %}
+    <div class="post-wrapper"
+      {% if post.tags %}
+        {% for tag in post.tags %}
+          data-{{tag}}
+        {% endfor %}
+      {% endif %}
+    >
     {% include archive-single.html type=entries_layout %}
+    {% if post.tags %}
+      <div class="archive__item-tags">
+        {% for tag in post.tags %}
+          {% if site.data.tags contains tag %}
+            <a href="/tags/#{{ tag | slugify }}" class="btn" id="tagged">{{ tag }}</a>
+          {% else %}
+            <a class="btn" id="untagged">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
   {% endfor %}
 </div>
 
 {% include paginator.html %}
+
+<script>
+  $("[data-tag]").click((e) => {
+    currentTag = e.target.dataset.tag;
+    filterByTagName(currentTag);
+  })
+
+  function filterByTagName(tagName) {
+    $('.hidden').removeClass('hidden');
+    $('.post-wrapper').each((i, el) => {
+      if (!el.hasAttribute(`data-${tagName}`)) {
+        $(el).addClass('hidden');
+      }
+    });
+    $('.tag').removeClass('selected')
+    $('.tag[data-tag=${tagName}]').addClass('selected')
+  }
+</script>

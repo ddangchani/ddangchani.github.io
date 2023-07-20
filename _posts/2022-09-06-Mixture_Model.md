@@ -1,6 +1,7 @@
 ---
 title: "Mixture Model"
 tags:
+- Machine Learning
 - EM
 - Gaussian Mixture Model
 category: Machine Learning

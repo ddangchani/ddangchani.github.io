@@ -1,6 +1,7 @@
 ---
 title: "Radical empiricism"
 tags:
+- Opinion
 - Paper Review
 - Data Science
 - Machine Learning

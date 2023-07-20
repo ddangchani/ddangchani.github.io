@@ -1,6 +1,7 @@
 ---
 title: "Banach Fixed Point Theorem"
 tags:
+- Mathematics
 - Real Analysis
 - Math
 - Metric spaces

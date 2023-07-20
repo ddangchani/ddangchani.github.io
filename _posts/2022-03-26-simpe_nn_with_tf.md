@@ -1,6 +1,7 @@
 ---
 title: Simple Neural Network with Tensorflow
 tags:
+- Deep Learning
 - Tensorflow
 - Neural Network
 category: Deep Learning

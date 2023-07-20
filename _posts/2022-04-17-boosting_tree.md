@@ -1,6 +1,7 @@
 ---
 title: "Boosting Tree"
 tags:
+- Machine Learning
 - Boosting
 - CART
 - Tree

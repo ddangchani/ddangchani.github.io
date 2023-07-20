@@ -1,6 +1,7 @@
 ---
 title: "Causal Inference (5) : Multivariate Causal Models"
 tags:
+- Causal Inference
 - Statistics
 - Graphical Model
 category: Causal Inference

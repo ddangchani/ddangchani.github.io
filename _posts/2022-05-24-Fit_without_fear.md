@@ -1,6 +1,7 @@
 ---
 title: "Fit without fear"
 tags:
+- Opinion
 - Paper Review
 - Data Science
 category: Opinion

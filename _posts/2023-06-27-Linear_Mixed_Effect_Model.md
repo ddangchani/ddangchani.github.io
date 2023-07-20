@@ -1,6 +1,7 @@
 ---
 title: "Linear Mixed Effect Model"
 tags:
+- Linear Model
 - Linear model
 - Experimental design
 category: Linear Model

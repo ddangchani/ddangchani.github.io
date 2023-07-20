@@ -1,6 +1,7 @@
 ---
 title: "Regularization on Neural Network"
 tags:
+- Deep Learning
 - Regularization
 - Neural Network
 category: Deep Learning

@@ -1,6 +1,7 @@
 ---
 title: "Partial Regression"
 tags:
+- Linear Model
 - Regression
 - Partial Regression
 category: Linear Model
