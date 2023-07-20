@@ -1,9 +1,10 @@
 ---
-title: "따릉이 shrinkage"
+title: "따릉이 데이터 분석하기 (3) Modified Linear Methods"
 tags:
-- tag1
-- tag2
-category: Category
+- Shrinkage method
+- Linear Regression
+- Modified Linear Methods
+category: Project
 use_math: true
 ---
 {% raw %}
@@ -62,18 +63,18 @@ print(df_ridge)
 
 결과는 다음과 같다.
 
-\vert             \vert    0.001 \vert    0.010 \vert    0.100 \vert   1.000 \vert  10.000 \vert 
-\vert  ---------: \vert  ------: \vert  ------: \vert  ------: \vert  -----: \vert  ------ \vert 
-\vert       const \vert  -47.021 \vert  -19.137 \vert   -2.610 \vert  -0.172 \vert  0.031  \vert 
-\vert        hour \vert    4.570 \vert    4.542 \vert    4.497 \vert   4.631 \vert  4.393  \vert 
-\vert        temp \vert    5.831 \vert    5.658 \vert    5.558 \vert   5.548 \vert  4.641  \vert 
-\vert   windspeed \vert    8.344 \vert    8.056 \vert    7.287 \vert   4.580 \vert  1.369  \vert 
-\vert    humidity \vert   -0.242 \vert   -0.424 \vert   -0.561 \vert  -0.597 \vert  -0.591 \vert 
-\vert  visibility \vert    0.008 \vert    0.002 \vert    0.000 \vert   0.002 \vert  0.013  \vert 
-\vert       ozone \vert   52.863 \vert    6.231 \vert    0.684 \vert   0.095 \vert  0.020  \vert 
-\vert        pm10 \vert   -0.331 \vert   -0.368 \vert   -0.381 \vert  -0.356 \vert  -0.281 \vert 
-\vert       pm2_5 \vert    0.165 \vert    0.067 \vert    0.011 \vert   0.009 \vert  0.174  \vert 
-\vert  precip_1.0 \vert  -59.797 \vert  -42.783 \vert  -11.126 \vert  -1.313 \vert  -0.127 \vert 
+|            |   0.001 |   0.010 |   0.100 |  1.000 | 10.000 |
+| ---------: | ------: | ------: | ------: | -----: | ------ |
+|      const | -47.021 | -19.137 |  -2.610 | -0.172 | 0.031  |
+|       hour |   4.570 |   4.542 |   4.497 |  4.631 | 4.393  |
+|       temp |   5.831 |   5.658 |   5.558 |  5.548 | 4.641  |
+|  windspeed |   8.344 |   8.056 |   7.287 |  4.580 | 1.369  |
+|   humidity |  -0.242 |  -0.424 |  -0.561 | -0.597 | -0.591 |
+| visibility |   0.008 |   0.002 |   0.000 |  0.002 | 0.013  |
+|      ozone |  52.863 |   6.231 |   0.684 |  0.095 | 0.020  |
+|       pm10 |  -0.331 |  -0.368 |  -0.381 | -0.356 | -0.281 |
+|      pm2_5 |   0.165 |   0.067 |   0.011 |  0.009 | 0.174  |
+| precip_1.0 | -59.797 | -42.783 | -11.126 | -1.313 | -0.127 |
 
 alpha 값이 커질수록 각 회귀계수가 0에 수렴함을 확인할 수 있으며, 이번에는 plot을 통해 ridge, lasso, elastic-net($\alpha=0.5$) 일 때의 변화를 비교해보도록 하자.
 
@@ -98,7 +99,7 @@ plt.title('Elnet')
 
 위 코드를 실행하면, 다음과 같은 세 그래프를 얻을 수 있는데, Lasso method가 계수의 수렴이 가장 느리며, Ridge가 가장 빠르게 수렴함을 확인할 수 있다.
 
- <img src="/assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 4.07.18.png" alt="스크린샷 2022-04-11 오후 4.07.18" style="zoom:25%;" />
+ <img src="/assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 4.07.18.png" alt="스크린샷 2022-04-11 오후 4.07.18" style="zoom:75%;" />
 
 반면, 최적의 alpha 값을 찾는 것은 train data가 아닌 validation data가 기준이 되어야 하므로, validation data를 이용해 간단한 hyperparameter tuning을 해보면 다음과 같다.
 
@@ -125,11 +126,11 @@ tune_alpha(y_train, X_train, y_val, X_val, wt_list=[1, 0.5, 0]) # lasso to ridge
 
 결과는 다음과 같은데, 각 행은 `L1_wt` 즉 elastic-net의 형태를 의미하고 각 열은 hyperparameter인 규제 강도 alpha 값을 의미하며 각 셀의 데이터는 validation data에 대한 rmse 값을 의미한다.
 
-\vert       \vert   0.001 \vert    0.01 \vert     0.1 \vert       1 \vert      10 \vert 
-\vert  ---: \vert  -----: \vert  -----: \vert  -----: \vert  -----: \vert  -----: \vert 
-\vert   1.0 \vert  53.806 \vert  53.830 \vert  54.141 \vert  53.682 \vert  53.168 \vert 
-\vert   0.5 \vert  54.171 \vert  54.114 \vert  54.388 \vert  53.496 \vert  53.287 \vert 
-\vert   0.0 \vert  53.244 \vert  53.110 \vert  53.496 \vert  53.349 \vert  53.480 \vert 
+|      |  0.001 |   0.01 |    0.1 |      1 |     10 |
+| ---: | -----: | -----: | -----: | -----: | -----: |
+|  1.0 | 53.806 | 53.830 | 54.141 | 53.682 | 53.168 |
+|  0.5 | 54.171 | 54.114 | 54.388 | 53.496 | 53.287 |
+|  0.0 | 53.244 | 53.110 | 53.496 | 53.349 | 53.480 |
 
 자세한 튜닝을 해보기 위해 이번에는 plot을 그려보고, alpha의 그리드를 더 잘게 탐색해보도록 하자. 우선 앞선 함수 `tune_alpha()`를 약간 수정해 `wt_list=[1,0.5,0]` 은 그대로 두고 alpha값들을 리스트로 받는 함수로 변경했다(코드는 생략, github full code 참고). 이후 아래와 같이 데이터프레임을 구하고 plot을 생성했다.
 
@@ -150,7 +151,7 @@ plt.savefig('plots/rmse_vs_alpha.png', facecolor='white', transparent=False)
 
 결과는 아래와 같은데, 이를 보면 Lasso의 경우 $\alpha=1.0$에서 전역 최소가 발생하고, Elastic-Net과 Ridge는 $\alpha=\sqrt{10}$에서 최소인 것 처럼 보이지만서도 Ridge의 경우는 $10^{-2}$에서 전역 최소가 된다. 세 모델을 모두 고려한다면, Ridge에서 $\alpha=0.01$인 경우가 가장 낮은 validation RMSE를 가지므로 이를 택하는 것이 좋아보인다.
 
-<img src="/assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 7.19.09.png" alt="스크린샷 2022-04-11 오후 7.19.09" style="zoom:50%;" />
+<img src="/assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 7.19.09.png" alt="스크린샷 2022-04-11 오후 7.19.09" style="zoom=75%;" />
 
 #### Least Angle Regression
 
@@ -174,18 +175,18 @@ pd.DataFrame(reg.coef_path_, index = X_train.columns).round(3)
 
 를 통해 각 변수(행)가 각 단계(열)마다 어떤 회귀계수를 갖는지 확인할 수 있다. 결과는 아래 표와 같은데, 가장 첫 단계에서 visibility가 반응변수와 가장 높은 상관관계를 가지게 되어 초기 변수로 선택되었고, 이를 기반으로 알고리즘이 진행되며 계수가 0이 아닌 변수가 hour, temp, humidity, visibility, pm10으로 5개가 도출된 것을 확인할 수 있다.
 
-\vert             \vert     0 \vert      1 \vert       2 \vert       3 \vert       4 \vert  5      \vert 
-\vert  ---------: \vert  ---: \vert  ----: \vert  -----: \vert  -----: \vert  -----: \vert  ------ \vert 
-\vert       const \vert   0.0 \vert  0.000 \vert   0.000 \vert   0.000 \vert   0.000 \vert  0.000  \vert 
-\vert        hour \vert   0.0 \vert  0.000 \vert   0.000 \vert   1.771 \vert   2.639 \vert  4.904  \vert 
-\vert        temp \vert   0.0 \vert  0.000 \vert   0.000 \vert   0.000 \vert   0.000 \vert  5.799  \vert 
-\vert   windspeed \vert   0.0 \vert  0.000 \vert   0.000 \vert   0.000 \vert   0.000 \vert  0.000  \vert 
-\vert    humidity \vert   0.0 \vert  0.000 \vert  -0.579 \vert  -0.694 \vert  -0.834 \vert  -0.516 \vert 
-\vert  visibility \vert   0.0 \vert  0.045 \vert   0.034 \vert   0.028 \vert   0.021 \vert  0.008  \vert 
-\vert       ozone \vert   0.0 \vert  0.000 \vert   0.000 \vert   0.000 \vert   0.000 \vert  0.000  \vert 
-\vert        pm10 \vert   0.0 \vert  0.000 \vert   0.000 \vert   0.000 \vert  -0.095 \vert  -0.270 \vert 
-\vert       pm2_5 \vert   0.0 \vert  0.000 \vert   0.000 \vert   0.000 \vert   0.000 \vert  0.000  \vert 
-\vert  precip_1.0 \vert   0.0 \vert  0.000 \vert   0.000 \vert   0.000 \vert   0.000 \vert  0.000  \vert 
+|            |    0 |     1 |      2 |      3 |      4 | 5      |
+| ---------: | ---: | ----: | -----: | -----: | -----: | ------ |
+|      const |  0.0 | 0.000 |  0.000 |  0.000 |  0.000 | 0.000  |
+|       hour |  0.0 | 0.000 |  0.000 |  1.771 |  2.639 | 4.904  |
+|       temp |  0.0 | 0.000 |  0.000 |  0.000 |  0.000 | 5.799  |
+|  windspeed |  0.0 | 0.000 |  0.000 |  0.000 |  0.000 | 0.000  |
+|   humidity |  0.0 | 0.000 | -0.579 | -0.694 | -0.834 | -0.516 |
+| visibility |  0.0 | 0.045 |  0.034 |  0.028 |  0.021 | 0.008  |
+|      ozone |  0.0 | 0.000 |  0.000 |  0.000 |  0.000 | 0.000  |
+|       pm10 |  0.0 | 0.000 |  0.000 |  0.000 | -0.095 | -0.270 |
+|      pm2_5 |  0.0 | 0.000 |  0.000 |  0.000 |  0.000 | 0.000  |
+| precip_1.0 |  0.0 | 0.000 |  0.000 |  0.000 |  0.000 | 0.000  |
 
 
 

@@ -39,11 +39,11 @@ Robust PCA는 앞서 언급한 Low rank matrix $L$과 Sparse matrix $S$를 동�
 
 $$
 
-\min_{\mathbf{L,S}} \Vert L\Vert_{\star}+\Vert S \Vert_{1}\quad \mathrm{s.t. } \;\;\mathbf{Y=L+S}
+\min_{\mathbf{L,S}} \Vert L\Vert_{\ast}+\Vert S \Vert_{1}\quad \mathrm{s.t. } \;\;\mathbf{Y=L+S}
 
 $$
 
-여기서 각 노음 $\Vert\cdot\Vert_{\star}$ 및 $\Vert\cdot\Vert_{1}$ 은 각각 Schatten 1-norm(특이값들의 합), 1-norm(모든 원소들의 절댓값들의 합)으로 정의된다. 위 최적화 문제를 푸는 알고리즘에는 여러 종류가 제안되었는데, 여기서는 Manifold Optimization을 이용한 알고리즘을 다루어보고자 한다.
+여기서 각 노음 $\Vert\cdot\Vert_{\ast}$ 및 $\Vert\cdot\Vert_{1}$ 은 각각 Schatten 1-norm(특이값들의 합), 1-norm(모든 원소들의 절댓값들의 합)으로 정의된다. 위 최적화 문제를 푸는 알고리즘에는 여러 종류가 제안되었는데, 여기서는 Manifold Optimization을 이용한 알고리즘을 다루어보고자 한다.
 
 ## MorPCA
 

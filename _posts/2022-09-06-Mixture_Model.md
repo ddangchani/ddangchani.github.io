@@ -1,9 +1,9 @@
 ---
 title: "Mixture Model"
 tags:
-- tag1
-- tag2
-category: Category
+- EM
+- Gaussian Mixture Model
+category: Machine Learning
 use_math: true
 ---
 {% raw %}

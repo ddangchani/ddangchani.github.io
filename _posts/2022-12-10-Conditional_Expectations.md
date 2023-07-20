@@ -1,9 +1,9 @@
 ---
 title: "Conditional Expectations"
 tags:
-- tag1
-- tag2
-category: Category
+- Probability Theory
+- Statistics
+category: Probability Theory
 use_math: true
 ---
 {% raw %}

@@ -1,9 +1,9 @@
 ---
 title: "Probabilistic Graphical Models"
 tags:
-- tag1
-- tag2
-category: Category
+- Graphical Model
+- Statistics
+category: Causal Inference
 use_math: true
 ---
 {% raw %}
@@ -64,7 +64,7 @@ dot = model2.draw()
 display(dot)
 ```
 
-<img src="/assets/img/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.20.57.png" alt="스크린샷 2022-09-28 오전 9.20.57" style="zoom:50%;" />
+![](/assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.20.57.png){: .align-center width="50%" height="50%"}
 
 설정한 네트워크의 각 노드별 조건부 확률분포(CPD)를 다음과 같은 tablular form으로 설정하여, 모델에 적용할 수 있다.
 
@@ -111,7 +111,7 @@ dot = pgm.visualize_model(model)
 display(dot)
 ```
 
-<img src="/assets/img/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.22.38.png" alt="스크린샷 2022-09-28 오전 9.22.38" style="zoom:50%;" />
+![](assets/img/../../../assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.22.38.png){: .align-center width="50%" height="50%"}
 
 또한, 각 treatment(여기서는 Grade가 B인 경우를 예시로 선택)에 대한 다른 노드들의 marginal distribution을 확인할 수 있다. 이러한 형태의 추론을 쿼리(query)라고도 하는데,  다음과 같이 evidence를 설정하고, `VariableElimination` 클래스를 활용해 조건부 분포를 찾거나 혹은 `get_marginals, visualize_marginals`을 이용해 시각화할 수 있다.
 
@@ -132,7 +132,7 @@ dot = pgm.visualize_marginals(model, evidence, marginals)
 display(dot)
 ```
 
-<img src="/assets/img/Probabilistic Graphical Models.assets/스크린샷 2022-09-28 오전 9.26.58.png" alt="스크린샷 2022-09-28 오전 9.26.58" style="zoom:50%;" />
+![](assets/img/../../../assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.26.58.png){: .align-center width="50%" height="50%"}
 
 ## References
 

@@ -1,21 +1,21 @@
 ---
-title: "Causal Inference (3)"
+title: "Causal Inference (3) : Learning Cause-Effect Models"
 tags:
-- tag1
-- tag2
-category: Category
+- Statistics
+- Causal Inference
+category: Causal Inference
 use_math: true
 ---
 {% raw %}
-## Learning Cause-Effect Models
+# Learning Cause-Effect Models
 
 통계적 학습이론(Statistical Learning)의 관점에서 살펴보면, 가장 간단한 케이스인 cause-effect model을 학습하는 것 조차 어려움이 존재한다. Statistical Learning은 소위 주어진 관측값 $(X,Y)_{i=1\ldots,N}$ 들로부터(observation) $X,Y$의 joint distribution을 추정하는 과정이다. 반면, 인과관계추론애서는 여기서 더 나아가 어떤 변수가 원인이고 어떤 변수가 결과인지를 파악해야한다. 그런데, 사실 joint distribution을 추정했다고 해도 만일 X,Y의 데이터에 대한 사전정보(ex. 변수의 의미, 측정 방법, 과정 등)가 존재하지 않는다면 관측값들은 단순한 실수 순서쌍에 불과하다. 즉, real-world information이 없다면 우리는 이 모델이 $X\to Y$인지 $Y\to X$인지 알 겨를이 없다는 것이다.
 
 이를 파악하게 해주는 개념이 바로 **Identifiability**(식별가능성)이다. 이는 확률변수의 joint distribution으로부터 cause-effect model이 $X\to Y$와 $Y\to X$ 의 두 모델 중 하나의 모델로 결정되는 특성을 말한다. 여기서는 식별가능성에 필요한 조건 및 가정 모델들을 다루어보도록 하겠다.
 
-### Assumptions
+## Assumptions
 
-#### Non-Uniqueness of graph structures
+### Non-Uniqueness of graph structures
 
 Prop. 확률변수 $X,Y$가 실수값을 가지면 모든 종류의 joint distribution $P_{X,Y}$ 에 대해 다음 SCM
 
@@ -39,7 +39,7 @@ $$
 
 ($\alpha$는 실수), 이때 Noise variable $N_E$가 Gaussian distribution을 따르지 않으면, 이는 identifiability의 충분조건이 된다. 다음 정리를 통해 이를 알 수 있다.
 
-#### Theorem
+### Theorem
 
 정리. Joint distribution $P_{X,Y}$가 다음 선형모델을 허용하면(admit)
 
@@ -98,11 +98,11 @@ $$
 
 여기서 확률변수가 non-degenerate하다는 것은 $P(X=c)=1$로 만드는 $c\in\mathbb R^p$($p$차원 확률벡터일때)가 존재하지 않는다는 것을 의미한다. 위 Darmois-Skitovic 정리로부터 앞선 정리 4.2를 증명할 수 있는데, 자세한 증명내용은 여기서 생략하도록 하겠다.
 
-## Nonlinear Additive Noise Models
+# Nonlinear Additive Noise Models
 
 앞선 내용에서는 선형모형을 살펴보았는데, 이번에는 일반적인 함수 $f_Y(X)$로 이루어진 nonlinear한 경우에 대해 식별가능성을 살펴보도록 하자. 우선, 다음과 같이 Additive Noise Model(**ANM**)을 정의하기로 하자.
 
-#### ANM
+## ANM
 
 결합분포 $P_{X,Y}$가 $X\to Y$의 ANM을 허용(admit)하기 위해서는 다음을 만족하는 가측함수 $f_Y$와 noise variable $N_Y$가 존재해야 한다.
 
@@ -114,13 +114,13 @@ $$
 
 편의상 이 경우 $P_{Y\vert X}$가 ANM을 admit한다고 표기한다(방향성을 condition으로 표기함).
 
-#### Smoothness
+### Smoothness
 
 ANM (1)이 **smooth**하다는 것은 $N_Y,X$가 strictly positive한 밀도함수 $p_{N_Y},p_X$를 가지고 $f_Y, p_{N_Y},p_X$가 3번 미분가능함을 의미한다.
 
 위 정의를 바탕으로 일반적인(generic) 경우에 대한 식별가능성을 다음과 같이 얻을 수 있다.
 
-####  Theorem
+###  Theorem
 
 $P_{Y\vert X}$가 X에서 Y로의 smooth ANM을 admit하고, all but countably many인 $x$에 대해
 
@@ -144,7 +144,7 @@ $$
 >
 >    
 >    $$
->    \forall i, \;\exist d_i\geq 0\;:\; C_i=C_0 + d_i
+>    \forall i, \;\exists d_i\geq 0\;:\; C_i=C_0 + d_i
 >    $$
 >    또한 함수 $f$는 각 영역 $C_i$에서 상수함수 $f=c_i$ 이다.
 >

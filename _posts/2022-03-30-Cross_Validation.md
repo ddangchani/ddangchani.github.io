@@ -83,7 +83,7 @@ $$
 
 $$
 
-\frac{1}{N}\sum_{i=1}^N[y_i-\hat f^{-i}(x_i)]^2\tag{\star}
+\frac{1}{N}\sum_{i=1}^N[y_i-\hat f^{-i}(x_i)]^2\tag{\ast}
 
 $$
 

@@ -81,11 +81,11 @@ $$
 
 ## Inference
 
-추론 과정은 우선 test data $x_{\star}$에 대한 latent variable $f_{\star}$ 의 확률분포를 계산하는 것으로부터 시작된다.
+추론 과정은 우선 test data $x_{\ast}$에 대한 latent variable $f_{\ast}$ 의 확률분포를 계산하는 것으로부터 시작된다.
 
 $$
 
-p(f_{\star}\vert X,y,x_{\star})= \int p(f_{\star}\vert X,x_{\star},\mathbf{f})p(\mathbf{f}\vert X,y)d\mathbf{f}
+p(f_{\ast}\vert X,y,x_{\ast})= \int p(f_{\ast}\vert X,x_{\ast},\mathbf{f})p(\mathbf{f}\vert X,y)d\mathbf{f}
 
 $$
 
@@ -101,7 +101,7 @@ $$
 
 $$
 
-\bar\pi_{\star} := p(y_{\star}=+1\vert X,y,x_{\star}) = \int \sigma(f_{\star})p(f_{\star}\vert X,y,x_{\star})df_{\star}
+\bar\pi_{\ast} := p(y_{\ast}=+1\vert X,y,x_{\ast}) = \int \sigma(f_{\ast})p(f_{\ast}\vert X,y,x_{\ast})df_{\ast}
 
 $$
 

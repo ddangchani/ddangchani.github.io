@@ -1,9 +1,9 @@
 ---
-title: "RandomForest"
+title: "Random Forest"
 tags:
-- tag1
-- tag2
-category: Category
+- Tree
+- Random Forest
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -17,9 +17,9 @@ Random Forest 모형의 전반적인 알고리즘은 다음과 같다.
 
 > 1. For $b=1,\ldots,B$ (Bootstrap size):
 >
->    1) Training data에서 size $N$인 Bootstrap sample $\mathbf Z^*$를 추출한다.
+>    1) Training data에서 size $N$인 Bootstrap sample $\mathbf Z^{\ast}$를 추출한다.
 >
->    2. $\mathbf Z^*$에 대한 random-forest tree $T_b$를 생성하는데, terminal node에 대해 다음 과정들을 반복하여 terminal node의 크기가 최소 노드 사이즈인 $n_{min}$이 될 때 Tree의 생성을 중단한다.
+>    2. $\mathbf Z^{\ast}$에 대한 random-forest tree $T_b$를 생성하는데, terminal node에 대해 다음 과정들을 반복하여 terminal node의 크기가 최소 노드 사이즈인 $n_{min}$이 될 때 Tree의 생성을 중단한다.
 >       - $p$개의 변수 중 $m$개의 변수를 랜덤하게 선택한다.
 >       - $m$개의 변수 중 최선의 변수와 split-point를 선택한다.
 >       - 해당 노드를 두개의 daughter node로 분할한다.

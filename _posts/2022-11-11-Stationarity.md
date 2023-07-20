@@ -1,9 +1,9 @@
 ---
 title: "Stationarity"
 tags:
-- tag1
-- tag2
-category: Category
+- Time Series
+- Statistics
+category: Time Series
 use_math: true
 ---
 {% raw %}

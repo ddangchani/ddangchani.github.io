@@ -1,9 +1,9 @@
 ---
-title: "Regularization on DL"
+title: "Regularization on Neural Network"
 tags:
-- tag1
-- tag2
-category: Category
+- Regularization
+- Neural Network
+category: Deep Learning
 use_math: true
 ---
 {% raw %}

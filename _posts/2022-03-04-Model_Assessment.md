@@ -151,7 +151,7 @@ $$
 
 $$
 
--2\text{E}[\log L(\hat\theta:Y)]\approx-\frac{2}{N}\cdot\text{E}[l(\hat\theta)]+\frac{2d}{N}\tag{\star}
+-2\text{E}[\log L(\hat\theta:Y)]\approx-\frac{2}{N}\cdot\text{E}[l(\hat\theta)]+\frac{2d}{N}\tag{\ast}
 
 $$
 

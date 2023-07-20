@@ -1,9 +1,11 @@
 ---
 title: "Radical empiricism"
 tags:
-- tag1
-- tag2
-category: Category
+- Paper Review
+- Data Science
+- Machine Learning
+- Deep Learning
+category: Opinion
 use_math: true
 ---
 {% raw %}

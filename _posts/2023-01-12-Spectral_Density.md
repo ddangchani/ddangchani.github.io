@@ -1,9 +1,9 @@
 ---
 title: "Spectral Density"
 tags:
-- tag1
-- tag2
-category: Category
+- Time Series
+- Fourier Transformation
+category: Time Series
 use_math: true
 ---
 {% raw %}
@@ -26,7 +26,7 @@ $$
 
 $$
 
-\gamma_x(h)=E[x_{t+h}x_{t}^{\star}]\text{ 로 주어질 때 } E\vert \sum_{s=1}^{n}a_{s}^{\star}x_{s}\vert ^{2}\geq 0\;\;for\;\;\forall a_{t}\in\mathbb C
+\gamma_x(h)=E[x_{t+h}x_{t}^{\ast}]\text{ 로 주어질 때 } E\vert \sum_{s=1}^{n}a_{s}^{\ast}x_{s}\vert ^{2}\geq 0\;\;for\;\;\forall a_{t}\in\mathbb C
 
 $$
 

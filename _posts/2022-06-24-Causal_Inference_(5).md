@@ -1,9 +1,9 @@
 ---
-title: "Causal Inference (5)"
+title: "Causal Inference (5) : Multivariate Causal Models"
 tags:
-- tag1
-- tag2
-category: Category
+- Statistics
+- Graphical Model
+category: Causal Inference
 use_math: true
 ---
 {% raw %}
@@ -21,46 +21,54 @@ use_math: true
 
 ### Pearl’s d-separation
 DAG $\mathcal G$에 대해 다음 두 경우 중 하나를 만족하는 노드 $i_k$가 존재한다면 $i_1$에서 $i_m$ 사이의 경로가 집합 $S$에 의해 가로막혀있다고(**blocked**) 정의한다.
-1. $i_k\in S$ 이고
-  $$
-  \begin{aligned}
-  &i_{k-1} \to i_k\to i_{k+1}\\
-  \text{or}\;\; &i_{k-1}\leftarrow i_k\leftarrow i_{k+1}\\
-  \text{or}\;\; &i_{k-1}\leftarrow i_k\to i_{k+1}
-  \end{aligned}
-  $$
 
-중 하나를 만족한다.
+1. $i_k\in S$ 이고
+
+    $$
+    \begin{aligned}
+    &i_{k-1} \to i_k\to i_{k+1}\\
+    \text{or}\;\; &i_{k-1}\leftarrow i_k\leftarrow i_{k+1}\\
+    \text{or}\;\; &i_{k-1}\leftarrow i_k\to i_{k+1}
+    \end{aligned}
+    $$
+
+    중 하나를 만족한다.
+
 2. 노드 $i_k$나 $i_k$의 어떤 descendant도 집합 $S$에 포함되지 않으며
 
-$$
+    $$
 
-i_{k-1}\to i_k\leftarrow i_{k+1}
+    i_{k-1}\to i_k\leftarrow i_{k+1}
 
-$$
+    $$
 
-을 만족한다.
+    을 만족한다.
 
-또한, DAG $\mathcal G$의 서로소인 세 노드 집합 $A,B,S$에 대해, $A$의 원소와 $B$의 원소를 잇는 모든 경로가 $S$의 원소에 의해 가로막혀있다면 이를
+    또한, DAG $\mathcal G$의 서로소인 세 노드 집합 $A,B,S$에 대해, $A$의 원소와 $B$의 원소를 잇는 모든 경로가 $S$의 원소에 의해 가로막혀있다면 이를
 
-$$
+    $$
 
-A\perp_\mathcal G B\;\vert \;S
+    A\perp_\mathcal G B\;\vert \;S
 
-$$
+    $$
 
-로 표기한다.
+    로 표기한다.
 
 ## Multivariate SCM
 
 이전까지는 cause-effect 모델에 관해 SCM을 살펴보았는데, 이를 일반화하여 다변량 모델에 대한 SCM을 정의하고 이를 살펴보도록 하자. 우선 다변량 SCM은 다음과 같이 정의한다.
+
 ### Definition
 
 노드가 $d$개로 주어지는 SCM $\mathfrak C =(S,P_N)$은 다음 $d$개의 **structural assignments**로 구성된 collection $S$와
 
+$$
+
 X_j = f_j(\text{PA}_j,N_j), \;\; j=1,\ldots,d
 
-각 i.i.d인 Noise variable $N_j$들의 joint distribution $P_N$으로 구성된다. 여기서 $\text{PA}_j$는 노드 $j$의 부모 노드들의 집합이며, 자기 자신은 제외한다.
+$$
+
+및, 각 i.i.d인 Noise variable $N_j$들의 joint distribution $P_N$으로 구성된다. 여기서 $\text{PA}_j$는 노드 $j$의 부모 노드들의 집합이며, 자기 자신은 제외한다.
 
 위와 같이 정의된 SCM은 확률변수 $\mathbf X=(X_1,\ldots,X_d)$에 대한 유일한 확률분포를 결정하는데, 이를 **entailed distribution**이라고 하며 $P_\mathbf X^\mathfrak C$ 혹은 $P_\mathbf X$ 라고 표기한다. 이는 i.i.d noise variable으로부터 생성된 표본으로 i.i.d random sample $\mathbf{X^1,\ldots.X^n \sim} P_\mathbf X$ 를 구성할 수 있다는 의미이다.
 #### Example
@@ -80,7 +88,8 @@ $$
 $$
 
 으로 주어지며, 각 noise variable이 모두 i.i.d인 정규분포를 따른다고 가정하자. 그러면 다음과 같이 $\mathbf X$의 random sample을 생성할 수 있다(Code on Github).
-![](/assets/img/16562068457631.jpg)
+
+![](/assets/img/16562068457631.jpg){: .align-center}
 
 ## Intervention
 이전에 다루었던 Cause-Effect 모델에서의 intervention과 마찬가지로, multivariate SCM에 대해서도 intervention distribution을 생각해볼 수 있다. SCM $\mathfrak C = (S,P_N)$ 이 주어졌을 때, 새로운 assignment

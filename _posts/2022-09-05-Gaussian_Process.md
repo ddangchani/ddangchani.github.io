@@ -1,9 +1,9 @@
 ---
 title: "Gaussian Process"
 tags:
-- tag1
-- tag2
-category: Category
+- Gaussian Process
+- Bayesian
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -76,30 +76,31 @@ $$
 
 1. Squared Exponential(SE) Kernel
 
-$$
+   $$
 
-\mathcal K(r;l) = \exp({-r^2 \over 2l^2})
+   \mathcal K(r;l) = \exp({-r^2 \over 2l^2})
 
-$$
+   $$
 
 2. Automatic Relevance Determination(ARD) Kernel
 
-   : RBF 커널에서 유클리드 거리를 마할라노비스 거리로 대체
+   RBF 커널에서 유클리드 거리를 마할라노비스 거리로 대체
+   
    $$
    \mathcal K(r;\Sigma,\sigma^2) = \sigma^2\exp(-{1\over2}r^T\Sigma^{-1}r)
    $$
 
 3. Matern Kernel
 
-​	: SE kernel보다 더 rough한 커널로, 더 널리 사용.
+   ​	SE kernel보다 더 rough한 커널로, 더 널리 사용.
 
-$$
+      $$
 
-\mathcal{K}(r;\nu,l) = {2^{1-\nu}\over\Gamma(\nu)}\bigg({\sqrt{2\nu}r\over l}\bigg)^\nu K_\nu\bigg({\sqrt{2\nu}r\over l}\bigg)
+      \mathcal{K}(r;\nu,l) = {2^{1-\nu}\over\Gamma(\nu)}\bigg({\sqrt{2\nu}r\over l}\bigg)^\nu K_\nu\bigg({\sqrt{2\nu}r\over l}\bigg)
 
-$$
+      $$
 
-​	($K_\nu$ 는 수정된 Bessel function)
+   ​	($K_\nu$ 는 수정된 Bessel function)
 
 ### Mercer's Theorem
 

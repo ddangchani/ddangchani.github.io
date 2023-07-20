@@ -126,7 +126,7 @@ $$
 
 SGD는 데이터 특성에 따라 최적화 과정에 문제가 발생할 수 있다. 데이터의 각 성분들에 대해, 어떤 차원에서는 가파르고(high derivative) 어떤 차원에서는 완만할(low derivative) 수 있다. SGD는 전체 데이터셋에 대한 그래디언트를 구하는 것이 아니라, 각 지점에서의 그래디언트를 구하는 것이므로 아래 그림처럼 가파른 성분에 대해서는 W의 변화가 크지만 완만한 성분에 대해서는 변화가 작아 최적화 과정이 매우 느려질 수 있다.
 
-![](assets/optimization1.png)
+![](/assets/img/optimization1.png)
 
 또한, 만일 손실함수가 Local Minimum이나 Saddle Point<sup>안장점</sup>을 가진다면 이 역시 최적화가 일어나지 않을 수 있는데, 두 지점에서 그래디언트가 모두 $0$이므로 최적화가 멈추게 된다. 특히 saddle point는 한 성분에서 극소이고 다른 성분에서 극대인 상황을 의미하므로, 데이터 차원이 커질수록 saddle point의 형성 가능성이 더 높아진다. 따라서 이런 문제들을 해결하기 위해 새로운 방법을 고안하게 된다.
 
@@ -134,11 +134,11 @@ SGD는 데이터 특성에 따라 최적화 과정에 문제가 발생할 수 �
 
 ### SGD + Momentum
 
-![](assets/optimization2.png)
+![](/assets/img/optimization2.png)
 
 Momentum이란, 위 그림과 같이 SGD 진행과정에 운동량이 있다고 생각하고 그래디언트에 속도<sup>velocity</sup>를 더해 최적화를 진행하는 과정을 의미한다(아래 그림).
 
-![](assets/optimization3.png)
+![](/assets/img/optimization3.png)
 
 ~~~python
 v = 0
@@ -204,7 +204,7 @@ $$
 
 $$
 
-W^* = W_0 - \mathbf H_WL(W_0)^{-1}\nabla_WL(W_0)
+W^{\ast} = W_0 - \mathbf H_WL(W_0)^{-1}\nabla_WL(W_0)
 
 $$
 

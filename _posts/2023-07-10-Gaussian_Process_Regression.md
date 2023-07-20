@@ -50,13 +50,13 @@ $$
 즉, posterior distribution 역시 정규분포를 따르는 것을 확인할 수 있고, 이로부터 posterior distribution의 평균이 $w$의 MAP(maximum a posteriori) estimate임을 알 수 있다.
 
 ### Prediction
-앞서 구한 사후분포를 바탕으로 새로운 test input data $x_{\star}$에 대한 predictive distribution을 구하기 위해서는 다음과 같이 posterior에 대해 가능한 모든 선형모형의 평균을 취하는 방식을 사용한다.
+앞서 구한 사후분포를 바탕으로 새로운 test input data $x_{\ast}$에 대한 predictive distribution을 구하기 위해서는 다음과 같이 posterior에 대해 가능한 모든 선형모형의 평균을 취하는 방식을 사용한다.
 
 $$
 
 \begin{aligned}
-p(f_{\star}\vert x_{\star},X,Y)&= \int p(f_{\star}\vert x_{\star},w)p(w\vert X,y)dw\\
-&= N(\frac{1}{\sigma_{n}^{2}}x_{\star}^{T}A^{-1}XY, x_{\star}^{T}A^{-1}x_{\star})
+p(f_{\ast}\vert x_{\ast},X,Y)&= \int p(f_{\ast}\vert x_{\ast},w)p(w\vert X,y)dw\\
+&= N(\frac{1}{\sigma_{n}^{2}}x_{\ast}^{T}A^{-1}XY, x_{\ast}^{T}A^{-1}x_{\ast})
 \end{aligned}
 
 $$
@@ -76,7 +76,7 @@ $$
 
 $$
 
-f_{\star}\vert \mathbf{x}_{\star},X,Y\sim N(\phi_{\star} ^{T}\Sigma_{p}\Phi(K+\sigma_{n}^{2}I)^{-1}Y, \phi_{\star}^{T}\Sigma_{p}\phi_{\star}-\phi_{\star}^{T}\Sigma_{p}\Phi(K+\sigma_{n}^{2}I)^{-1}\Phi^{T}\Sigma_{p}\phi_{\star} )
+f_{\ast}\vert \mathbf{x}_{\ast},X,Y\sim N(\phi_{\ast} ^{T}\Sigma_{p}\Phi(K+\sigma_{n}^{2}I)^{-1}Y, \phi_{\ast}^{T}\Sigma_{p}\phi_{\ast}-\phi_{\ast}^{T}\Sigma_{p}\Phi(K+\sigma_{n}^{2}I)^{-1}\Phi^{T}\Sigma_{p}\phi_{\ast} )
 
 $$
 
@@ -95,11 +95,11 @@ Gaussian process는 [정의](https://ddangchani.github.io/Gaussian-Process-1-fha
 
 $$
 
-\mathbf{f}_{\star}\sim N(0,K(X_{\star},X_{\star}))
+\mathbf{f}_{\ast}\sim N(0,K(X_{\ast},X_{\ast}))
 
 $$
 
-여기서 공분산행렬은 임의의 input data의 부분집합 $X_{\star}$에 대한 kernel matrix를 의미한다(input data가 feature space보다 높은 차원을 가지면 singular matrix가 됨).
+여기서 공분산행렬은 임의의 input data의 부분집합 $X_{\ast}$에 대한 kernel matrix를 의미한다(input data가 feature space보다 높은 차원을 가지면 singular matrix가 됨).
 
 ### Prediction
 주어진 사전분포 $GP(m,K)$로부터 random function을 생성하는 것에 그쳐서는 회귀분석을 진행할 수 없다. 추가적으로 실제 관측된 데이터가 주는 정보들을 해당 사전분포에 결합시키는 과정이 필요하다. 관측치 $(x_{1},y_{1}),\ldots,(x_{n},y_{n})$ 이 주어질 때, 모형
@@ -110,7 +110,7 @@ y=f(x)+\epsilon\qquad \epsilon\sim N(0,\sigma^{2})
 
 $$
 
-에 대해 $f$를 추정하고 이를 바탕으로 새로운 test data $X_{\star}$에 대한 output vector $\mathbf{f}_{\star}$를 예측해야 하는 문제를 생각해보자. 우선 함수 $f$는 Gaussian process $GP(0,K)$ 를 따른다고 설정하면 관측치 $X$에 대한 evaluation은 random gaussian vector
+에 대해 $f$를 추정하고 이를 바탕으로 새로운 test data $X_{\ast}$에 대한 output vector $\mathbf{f}_{\ast}$를 예측해야 하는 문제를 생각해보자. 우선 함수 $f$는 Gaussian process $GP(0,K)$ 를 따른다고 설정하면 관측치 $X$에 대한 evaluation은 random gaussian vector
 
 $$
 
@@ -126,14 +126,14 @@ Y\sim N(0, K(X,X)+\sigma^{2}I_n)
 
 $$
 
-이 된다. 그러면 $Y$와 prediction output vector $\mathbf{f}_{\star}$의 결합분포는
+이 된다. 그러면 $Y$와 prediction output vector $\mathbf{f}_{\ast}$의 결합분포는
 
 $$
 
-\begin{pmatrix}Y\\ \mathbf{f}_{\star}\end{pmatrix} \sim
+\begin{pmatrix}Y\\ \mathbf{f}_{\ast}\end{pmatrix} \sim
 N\bigg(
 \mathbf{0},
-\begin{pmatrix}K(X,X) + \sigma^{2}I & K(X,X_{\star}\\ K(X_{\star},X) & K(X_{\star}, X_{\star})\end{pmatrix}
+\begin{pmatrix}K(X,X) + \sigma^{2}I & K(X,X_{\ast}\\ K(X_{\ast},X) & K(X_{\ast}, X_{\ast})\end{pmatrix}
 \bigg)
 
 $$
@@ -143,21 +143,21 @@ $$
 $$
 
 \begin{aligned}
-\mathbf{f}_{\star}\vert X,Y,X_{\star} &\sim N(\bar{\mathbf{f}_{\star}},\mathrm{cov}(\mathbf{f}_{\star}))\\
-\bar{\mathbf{f}_{\star}} &= K(X_{\star},X)[K(X,X)+\sigma^{2}I]^{-1}Y\\
-\mathrm{cov}(\mathbf{f}_{\star})&= K(X_{\star},X_{\star})-K(X_{\star},X)[K(X,X)+\sigma^{2}I]^{-1}K(X,X_{\star})
+\mathbf{f}_{\ast}\vert X,Y,X_{\ast} &\sim N(\bar{\mathbf{f}_{\ast}},\mathrm{cov}(\mathbf{f}_{\ast}))\\
+\bar{\mathbf{f}_{\ast}} &= K(X_{\ast},X)[K(X,X)+\sigma^{2}I]^{-1}Y\\
+\mathrm{cov}(\mathbf{f}_{\ast})&= K(X_{\ast},X_{\ast})-K(X_{\ast},X)[K(X,X)+\sigma^{2}I]^{-1}K(X,X_{\ast})
 \end{aligned}
 
 $$
 
 ### Prediction for single point
-앞서 구한 prediction equation을 하나의 $x_{\star}$에 대한 예측값을 구하는 과정에 사용해보면 다음과 같다.
+앞서 구한 prediction equation을 하나의 $x_{\ast}$에 대한 예측값을 구하는 과정에 사용해보면 다음과 같다.
 
 $$
 
 \begin{aligned}
-\bar f_{\star}&= \mathbf{k}_{\star}^T(K+\sigma^{2}I)^{-1}Y\\
-\mathrm{Var}(f_{\star})&= k(x_{\star},x_{\star})-\mathbf{k}_{\star}^{T}(K+\sigma^{2}I)^{-1}\mathbf{k}_{\star}
+\bar f_{\ast}&= \mathbf{k}_{\ast}^T(K+\sigma^{2}I)^{-1}Y\\
+\mathrm{Var}(f_{\ast})&= k(x_{\ast},x_{\ast})-\mathbf{k}_{\ast}^{T}(K+\sigma^{2}I)^{-1}\mathbf{k}_{\ast}
 \end{aligned}
 
 $$
@@ -166,7 +166,7 @@ $$
 
 $$
 
-\bar f_{\star}=\sum_{i=1}^{n}\alpha_{i}k(x_{i},x_* )
+\bar f_{\ast}=\sum_{i=1}^{n}\alpha_{i}k(x_{i},x_* )
 
 $$
 

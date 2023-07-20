@@ -1,9 +1,10 @@
 ---
 title: "Multivariate LSTM-FCN"
 tags:
-- tag1
-- tag2
-category: Category
+- LSTM
+- Convolutional Neural Network
+- Neural Network
+category: Deep Learning
 use_math: true
 ---
 {% raw %}

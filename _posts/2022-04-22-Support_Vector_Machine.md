@@ -1,9 +1,8 @@
 ---
 title: "Support Vector Machine"
 tags:
-- tag1
-- tag2
-category: Category
+- SVM
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -33,7 +32,7 @@ $$
 
 으로 주어진다. 만일 데이터가 선형경계로 분리될 수 있다고(separable) 가정하면, $y_if(x_i)>0$ 을 만족하는, 즉 실제 클래스와 예측 클래스가 일치하게끔 하는 함수 $f(x)$ 를 찾을 수 있다(아래 그림 참고).
 
-<img src="/assets/img/Support Vector Machine.assets/스크린샷 2022-04-22 오후 5.01.41.png" alt="스크린샷 2022-04-22 오후 5.01.41" style="zoom:50%;" />
+![](/assets/img/Support%20Vector%20Machine.assets/스크린샷%202022-04-22%20오후%205.01.41.png){: .align-center width="70%" height="70%"}
 
 그런데, 이를 만족하는 함수 $f$는 한 개 이상 존재할 수 있으므로, 최적의 classifier을 선택하기 위해서는 다른 기준이 필요하다. 이때 위 그림과 같이 결정경계에서 가장 가까운 데이터들까지의 거리를 **margin**이라고 정의하면, margin $M$을 최대화하는 최적화문제
 
@@ -218,16 +217,16 @@ $$
 
 $$
 
-\hat\beta = \sum_{i=1}^N(\hat\alpha_i^*-\hat\alpha_i)x_i\\
-\hat f(x) = \sum_{i=1}^N(\hat\alpha_i^*-\hat\alpha_i)\langle x,x_i\rangle+\beta_0
+\hat\beta = \sum_{i=1}^N(\hat\alpha_i^{\ast}-\hat\alpha_i)x_i\\
+\hat f(x) = \sum_{i=1}^N(\hat\alpha_i^{\ast}-\hat\alpha_i)\langle x,x_i\rangle+\beta_0
 
 $$
 
-으로 주어지는데, 여기서 각 $\hat\alpha,\hat\alpha^*$는 양수이며 다음과 같은 quadratic optimization problem
+으로 주어지는데, 여기서 각 $\hat\alpha,\hat\alpha^{\ast}$는 양수이며 다음과 같은 quadratic optimization problem
 
 $$
 
-\min_{\alpha_i,\alpha^*_i}\epsilon\sum_{i=1}^N(\alpha_i^*+\alpha_i)-\sum_{i=1}^Ny_i(\alpha^*_i-\alpha_i)+{1\over2}\sum_{i,i'=1}^N(\alpha_i^*-\alpha_i)(\alpha_{i'}^*-\alpha_{i'})\langle x_i,x_{i'}\rangle
+\min_{\alpha_i,\alpha^{\ast}_i}\epsilon\sum_{i=1}^N(\alpha_i^{\ast}+\alpha_i)-\sum_{i=1}^Ny_i(\alpha^{\ast}_i-\alpha_i)+{1\over2}\sum_{i,i'=1}^N(\alpha_i^{\ast}-\alpha_i)(\alpha_{i'}^{\ast}-\alpha_{i'})\langle x_i,x_{i'}\rangle
 
 $$
 
@@ -235,13 +234,13 @@ $$
 
 $$
 
-0\leq\alpha_i,\alpha_i^*\leq1/\lambda,\\
-\sum_{i=1}^N(\alpha_i^*-\alpha_i) = 0,\\
-\alpha_i\alpha_i^* = 0
+0\leq\alpha_i,\alpha_i^{\ast}\leq1/\lambda,\\
+\sum_{i=1}^N(\alpha_i^{\ast}-\alpha_i) = 0,\\
+\alpha_i\alpha_i^{\ast} = 0
 
 $$
 
-그런데 위 세 제약조건에 의해 $(\hat\alpha_i^*-\hat\alpha_i)$의 값은 특정 부분집합을 제외하고 0이 되는데, 이때 0이 아닌 값을 갖는 $i$번째 관측값들을 **support vector**로 정의한다.
+그런데 위 세 제약조건에 의해 $(\hat\alpha_i^{\ast}-\hat\alpha_i)$의 값은 특정 부분집합을 제외하고 0이 되는데, 이때 0이 아닌 값을 갖는 $i$번째 관측값들을 **support vector**로 정의한다.
 
 
 

@@ -1,9 +1,9 @@
 ---
-title: "Causal Inference (2)"
+title: "Causal Inference (2) : Structural Causal Model"
 tags:
-- tag1
-- tag2
-category: Category
+- Statistics
+- Structural Causal Model
+category: Causal Inference
 use_math: true
 ---
 {% raw %}

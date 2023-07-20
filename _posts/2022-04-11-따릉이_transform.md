@@ -1,9 +1,9 @@
 ---
-title: "따릉이 transform"
+title: "따릉이 데이터 분석하기 (4) Transformation"
 tags:
-- tag1
-- tag2
-category: Category
+- PCA
+- Transformation
+category: Project
 use_math: true
 ---
 {% raw %}

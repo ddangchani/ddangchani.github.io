@@ -1,9 +1,10 @@
 ---
-title: "boosting tree"
+title: "Boosting Tree"
 tags:
-- tag1
-- tag2
-category: Category
+- Boosting
+- CART
+- Tree
+category: Machine Learning
 use_math: true
 ---
 {% raw %}

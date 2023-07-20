@@ -1,9 +1,9 @@
 ---
 title: "Fit without fear"
 tags:
-- tag1
-- tag2
-category: Category
+- Paper Review
+- Data Science
+category: Opinion
 use_math: true
 ---
 {% raw %}
@@ -22,16 +22,13 @@ use_math: true
 
 ### Classical regime vs. Modern regime of ML
 
-\vert                         \vert  Classical regime                        \vert  Modern regime                                   \vert 
-\vert ------------------------\vert -----------------------------------------\vert -------------------------------------------------\vert 
-\vert  Generalization curve   \vert  U-shaped                                \vert  Descending                                      \vert 
-\vert  Optimal model          \vert  Bottom of U                             \vert  Any large model                                 \vert 
-\vert  Optimization landscape \vert  Locally convex                          \vert  Not locally convex, but satisfying PL condition \vert 
-\vert  GD/SGD convergence	    \vert  GD converges but not SGD with fixed eta \vert  GD/SGD both converge                            \vert 
+|                        | Classical regime                        | Modern regime                                   |
+|------------------------|-----------------------------------------|-------------------------------------------------|
+| Generalization curve   | U-shaped                                | Descending                                      |
+| Optimal model          | Bottom of U                             | Any large model                                 |
+| Optimization landscape | Locally convex                          | Not locally convex, but satisfying PL condition |
+| GD/SGD convergence	    | GD converges but not SGD with fixed eta | GD/SGD both converge                            |
 
-위 표는 classical regime과 modern regime의 특징을 비교해서 설명한 것이다(논문 summary 참고). 각각의 내용에 대해 살펴보도록 하자.
-#### Setting
-
-
+위 표는 classical regime과 modern regime의 특징을 비교해서 설명한 것이다(논문 summary 참고). 
 
 {% endraw %}

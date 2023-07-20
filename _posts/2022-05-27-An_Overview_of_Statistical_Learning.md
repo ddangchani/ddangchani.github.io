@@ -1,9 +1,11 @@
 ---
 title: "An Overview of Statistical Learning"
 tags:
-- tag1
-- tag2
-category: Category
+- VC Dimension
+- Empirical Risk
+- Vapnik-Chervonenkis Dimension
+- Statistical Learning
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -100,11 +102,11 @@ q(\alpha) = (Q(z_1,\alpha),\ldots,Q(z_N,\alpha)),\alpha\in\Lambda
 
 $$
 
-을 정의할 수 있다. 이때 C metric에 대한 위 벡터모임의 minimal $\epsilon$-net의 원소 개수 $N^\Lambda(\epsilon:z_1,\ldots,z_N)$을 $n$이라고 하자. 이는 임의의 $q(\alpha^*),\alpha^*\in\Lambda$에 대해 다음을 만족하는 $q(\alpha_k)$가 $n$개의 vector $q(\alpha_1),\ldots,q(\alpha_n)$중에 항상 존재함을 의미한다.
+을 정의할 수 있다. 이때 C metric에 대한 위 벡터모임의 minimal $\epsilon$-net의 원소 개수 $N^\Lambda(\epsilon:z_1,\ldots,z_N)$을 $n$이라고 하자. 이는 임의의 $q(\alpha^{\ast}),\alpha^{\ast}\in\Lambda$에 대해 다음을 만족하는 $q(\alpha_k)$가 $n$개의 vector $q(\alpha_1),\ldots,q(\alpha_n)$중에 항상 존재함을 의미한다.
 
 $$
 
-\rho(q(\alpha^*),\rho(\alpha_k)) = \max_{1\leq i\leq N}\vert Q(z_i,\alpha^*),Q(z_i,\alpha_k)\vert \leq \epsilon
+\rho(q(\alpha^{\ast}),\rho(\alpha_k)) = \max_{1\leq i\leq N}\vert Q(z_i,\alpha^{\ast}),Q(z_i,\alpha_k)\vert \leq \epsilon
 
 $$
 
@@ -249,7 +251,7 @@ $$
 
 를 만족하는 부분집합열 $\{S_k\ = \{Q(z,\alpha):\alpha\in\Lambda_k\}\}$ 이 존재하면 이러한 부분집합열을 S에 부여된 **structure**라고 정의한다.
 이때 **admissible structure**는 다음 세 조건을 만족하는 structure을 의미한다.
-> 1. 집합 $S^* = \cup_k S_k$ 가 S에서 조밀하다.
+> 1. 집합 $S^{\ast} = \cup_k S_k$ 가 S에서 조밀하다.
 > 2. $S_k$의 VC-dimension $h_k$는 모두 유한하다.
 > 3. $S_k$의 모든 함수는 totally bounded($0\leq Q(z,\alpha)\leq B_k$)이다.
 
