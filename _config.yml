@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Dangchan"
-  avatar           : "/assets/logos/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/logos/bio-photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "행정학도 경찰의 데이터사이언티스트 되기"
   location         : "South Korea"
   email            : 
