@@ -4,7 +4,7 @@ tags:
 - Machine Learning
 - Gaussian Process
 - Bayesian
-category: 'ML'
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -71,27 +71,27 @@ $$
 
 ## Prediction
 
-Test data $x_{*}$에 대한 predictive distribution을 구하는 과정에서 앞서 구한 Laplace approximation을 이용하면 다음과 같다. 우선 test data에 대한 latent mean은
+Test data $x_{\star}$에 대한 predictive distribution을 구하는 과정에서 앞서 구한 Laplace approximation을 이용하면 다음과 같다. 우선 test data에 대한 latent mean은
 
 $$
 
 \begin{aligned}
-\mathrm{E}_{q}[f_{*}\vert X,Y,x_{*}] &= \int \mathrm{E}[f_{*}\vert \mathbf{f},X,x_{*}]q(\mathbf{f}\vert X,y)d\mathbf{f} \\ 
-&= \int \mathbf{k}(x_{*})^{T}K^{-1}\mathbf{f}q(\mathbf{f}\vert X,y )d\mathbf{f}\\
-&= \mathbf{k}(x_{*})^{T}K^{-1}\mathrm{E}_{q}[\mathbf{f}\vert X,y]\\
-&= \mathbf{k}(x_{*})^{T}K^{-1}\mathbf{\hat f} \\
-&= \mathbf{k}(x_{*})^{T}\nabla\log p(y\vert \mathbf{\hat f})
+\mathrm{E}_{q}[f_{\star}\vert X,Y,x_{\star}] &= \int \mathrm{E}[f_{\star}\vert \mathbf{f},X,x_{\star}]q(\mathbf{f}\vert X,y)d\mathbf{f} \\ 
+&= \int \mathbf{k}(x_{\star})^{T}K^{-1}\mathbf{f}q(\mathbf{f}\vert X,y )d\mathbf{f}\\
+&= \mathbf{k}(x_{\star})^{T}K^{-1}\mathrm{E}_{q}[\mathbf{f}\vert X,y]\\
+&= \mathbf{k}(x_{\star})^{T}K^{-1}\mathbf{\hat f} \\
+&= \mathbf{k}(x_{\star})^{T}\nabla\log p(y\vert \mathbf{\hat f})
 \end{aligned}
 
 $$
 
-으로 주어지고, 이를 이용하면 실제 prediction $\pi_{*}$ 에 대한 MAP estimator는 다음과 같이 구할 수 있다.
+으로 주어지고, 이를 이용하면 실제 prediction $\pi_{\star}$ 에 대한 MAP estimator는 다음과 같이 구할 수 있다.
 
 $$
 
 \begin{aligned}
-\bar\pi_{*}&= \mathrm{E_{q}[\pi_{*}\vert X,Y,x_{*}}]\\
-&= \int \sigma(f_{*})q(f_{*}\vert X,Y,x_{*})df_{*}
+\bar\pi_{\star}&= \mathrm{E_{q}[\pi_{\star}\vert X,Y,x_{\star}}]\\
+&= \int \sigma(f_{\star})q(f_{\star}\vert X,Y,x_{\star})df_{\star}
 \end{aligned}
 
 $$

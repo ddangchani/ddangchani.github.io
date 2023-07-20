@@ -4,7 +4,7 @@ tags:
 - Optimization
 - Machine Learning
 - Statistics
-category: 'Statistics'
+category: Statistics
 use_math: true
 ---
 {% raw %}

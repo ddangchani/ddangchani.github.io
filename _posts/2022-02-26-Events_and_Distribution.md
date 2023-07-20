@@ -1,9 +1,9 @@
 ---
 title: "Events and Distribution"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Probability Theory
+- Measure Theory
+category: Probability Theory
 use_math: true
 ---
 {% raw %}
@@ -62,9 +62,13 @@ $$
 사건열 $A_1,A_2,\ldots\in\mathcal{F}$에 대해 $\sum_nP(A_n)<\infty$ 이면 $P\{A_n\;\;\text{i.o}\}=0$ 이다.
 
 > pf. 확률측도의 연속성과 가산가법성에 의해
+> 
 > $$
+> 
 > P\{A_n\;\;\text{i.o}\}=\lim_nP(\bigcup_{k\geq n }A_k)\leq\lim_n\sum_{k\geq n} P(A_k)
+> 
 > $$
+> 
 > 인데, 이때 $\sum_nP(A_n)<\infty$ 이면 부등호 우변이 $0$이 된다.
 
 ### Distribution
@@ -81,7 +85,7 @@ $$
 
 으로 정의되는 새로운 set function $P\circ\xi^{-1}$을 정의할 수 있고, 이는 $S$에서 정의되는 새로운 확률측도가 되고, 이를 $\xi$의 (확률)**분포**<sup>distribution</sup>라고 부른다.
 
-이렇게 정의되는 random element는 $S$가 어떤 공간이냐에 따라 다른 명칭으로 불린다. 대표적으로 $S=\R$인 경우 random variable<sup>확률변수</sup>가 되며, $S=\R^d$인 경우 random vector가 된다. 만일 $S$가 함수공간<sup>function space</sup> 인 경우는 이를 stochastic(*or random*) process<sup>확률과정</sup>이 된다. 또한, 만일 두 random elements $\xi,\eta$가 $(S,\mathcal{S})$에서 같은 distribution을 갖는다면 이를 $\xi\stackrel{d}{=}\eta$ 로 표기한다.
+이렇게 정의되는 random element는 $S$가 어떤 공간이냐에 따라 다른 명칭으로 불린다. 대표적으로 $S=\mathbb{R}$인 경우 random variable<sup>확률변수</sup>가 되며, $S=\mathbb{R}^d$인 경우 random vector가 된다. 만일 $S$가 함수공간<sup>function space</sup> 인 경우는 이를 stochastic(*or random*) process<sup>확률과정</sup>이 된다. 또한, 만일 두 random elements $\xi,\eta$가 $(S,\mathcal{S})$에서 같은 distribution을 갖는다면 이를 $\xi\stackrel{d}{=}\eta$ 로 표기한다.
 
 
 

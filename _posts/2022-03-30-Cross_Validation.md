@@ -1,9 +1,9 @@
 ---
 title: "Cross Validation"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Machine Learning
+- Cross Validation
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -83,7 +83,7 @@ $$
 
 $$
 
-\frac{1}{N}\sum_{i=1}^N[y_i-\hat f^{-i}(x_i)]^2\tag{*}
+\frac{1}{N}\sum_{i=1}^N[y_i-\hat f^{-i}(x_i)]^2\tag{\star}
 
 $$
 

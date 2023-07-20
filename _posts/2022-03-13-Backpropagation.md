@@ -1,9 +1,9 @@
 ---
 title: "Backpropagation"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Deep Learning
+- Backpropagation
+category: Deep Learning
 use_math: true
 ---
 {% raw %}

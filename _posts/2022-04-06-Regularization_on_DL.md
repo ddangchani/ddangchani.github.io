@@ -3,7 +3,7 @@ title: "Regularization on DL"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}

@@ -3,7 +3,7 @@ title: "Causal Inference (1)"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -32,7 +32,6 @@ $$
 >   P(A\cap B\;\vert \; C) = P(A\vert C)P(B\vert C)\\
 >   P(A\cap B\;\vert \; \bar C) = P(A\vert \bar C)P(B\vert \bar C)
 >   $$
-
 > 여기서 $\bar C$는 event $C$가 일어나지 않는 여사건을 의미한다.
 
 이때 3번의 경우가 핵심인데, A와 B가 인과관계처럼 보일 수 있으면서도 사실은 선행되는 별개의 사건이 각각의 원인이 되어 원래 독립인 사건들을 인과관계가 있는 것 처럼 만들 수 있다는 사실이다. 다음과 같은 예시를 살펴보도록 하자.
@@ -54,10 +53,13 @@ MNIST 데이터셋을 생성하는 과정을 생각해보자. 즉, 특정 한자
 
 > EX. 도시의 고도(A)와 기온(T)의 관계
 > 고도와 기온의 인과관계를 파악해보는 문제를 생각해보자. 이때 모델에 대한 인위적인 개입(Intervention)은 고도의 변화와 기온의 변화 두 가지로 가능하다. 먼저 어떤 도시에 대해 초대형 엘리베이터를 설치하여 고도를 변화시키면 이는 기온의 변화로 이어질 수 있다. 반면, 어떤 도시에 초대형 산불 등으로 인한 기온의 변화(증가)가 있다고 해서 이는 도시의 고도 변화로 이어지지 않는다(고도는 이미 측정된 것이므로). 즉, physical mechanism으로서 $T\rightarrow A$​보다는 $A\rightarrow T$​가 더 타당하다는 것을 알 수 있고 이를 이용해
+> 
 > $$
+> 
 > P(A,T) = P(T\;\vert \;A)P(A)
+> 
 > $$
-
+> 
 의 설명 모델을 만들 수 있다. 이때 physical mechanism은 첫번째 항 $P(T\vert A)$에 해당하는데, Intervenability는 모델에 대한 개입, 즉 $P(A)$의 변화가 physical mechanism $P(T\vert A)$ 에 영향을 주지 않는다는 것이다. 예시에서도 어떤 도시의 고도를 변화시키는 Intervention이 가정된다고 해서 고도와 온도의 실제 물리적 관계가 변화하지는 않는다는 것이 자명하다. 또한, 이러한 Physical mechanism은 실제로 Autonomous, Modular, Invariant 해야한다.
 
 2. Independence of Information in Mechanisms

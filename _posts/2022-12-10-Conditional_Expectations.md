@@ -3,7 +3,7 @@ title: "Conditional Expectations"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -22,10 +22,13 @@ Measure Theory를 기반으로 한 조건부 기댓값 및 조건부 확률을 �
 > 1. $E(X\vert \mathcal A)$ 는 $(\Omega,\mathcal A)\to(\mathbb R, \mathcal B)$ 로의 가측함수이다(i.e. Borel Function).
 > 2. 모든 $A\in \mathcal A$ 에 대해
 >
+> 
 > $$
+> 
 > \int_A E(X\vert \mathcal A)dP = \int_A XdP
+> 
 > $$
-
+> 
 즉, 일반적으로 정의되는 두 확률변수 사이의 조건부 기댓값과는 다르게 가장 먼저 sub-$\sigma$-field를 이용한 조건부 기댓값이 정의된다. 이를 바탕으로 다음과 같이 조건부 확률 및 두 확률변수 간의 조건부 기댓값을 정의한다.
 
 ### Conditional Probability

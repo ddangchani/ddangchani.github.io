@@ -3,7 +3,7 @@ title: "Causal Inference (6)"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -32,9 +32,13 @@ $$
 를 만족하는 것을 의미한다. 이때 좌변은 d-separation(아래 정의 참고)을 의미한다.(우변은 conditional independence를 의미)
 
 > **d-separation** : DAG $\cal G$의 disoint한 부분 노드집합 $\bf A,B$에 대해 $\bf A$의 노드와 $\bf B$의 노드를 잇는 모든 경로가 집합 $\bf E$의 노드에 의해 가로막혀있다면(**blocked**) 이를 $\bf E$에 의해 d-separated 되었다고 한다.
+> 
 > $$
+> 
 > \bf A\bot_\cal G \bf B\vert E
+> 
 > $$
+> 
 > 이때 d-separation의 경우는 다음과 같은 세 가지 중 하나 이상의 형태로 나타난다.
 >
 > 1. pipe : $s\to m\to t$ or $s\leftarrow m\leftarrow t$ where $m\in E$

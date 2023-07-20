@@ -4,7 +4,7 @@ tags:
 - Generalized Linear Model
 - Linear Model
 - Statistics
-category: 'Linear Model'
+category: Linear Model
 use_math: true
 ---
 {% raw %}

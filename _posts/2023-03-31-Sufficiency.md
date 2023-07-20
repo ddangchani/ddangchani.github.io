@@ -2,7 +2,7 @@
 title: "Sufficiency"
 tags:
 - Statistics
-category: 'Statistics'
+category: Statistics
 use_math: true
 ---
 {% raw %}
@@ -63,12 +63,15 @@ Random sample $X\sim P_{\theta},\theta\in\Theta$에 대해 통계량 $T(X)$가 �
 
 > 1. $T(X)$가 $\theta$에 대한 충분통계량이다.
 > 2. 모든 충분통계량 $S(X)$에 대해
+> 
 > $$ T(X)=r(S(X))\;\;\text{a.s.}\;\;\forall\theta$$
-
+> 
 이때 minimal sufficiency와 관련하여 다음 정리가 성립한다.
 
 > Suppose that $\mathcal{P}$ contains p.d.f.'s $f_{P}$ w.r.t. a $\sigma$-finite measure and that there exists a sufficient statistic $T(X)$ such that, for any possible values $x,y\in X$ 
+> 
 > $$f_{P}(x)=f_{P}(y)\phi(x,y)\;\forall P \Rightarrow T(x)=T(y)$$
+> 
 > Then $T(X)$ is minimal sufficient for $P\in\mathcal{P}$
 
 

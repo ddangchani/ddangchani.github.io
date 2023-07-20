@@ -1,9 +1,9 @@
 ---
 title: "Lebesgue Integration with General measure"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Real Analysis
+- Measure Theory
+category: Mathematics
 use_math: true
 ---
 {% raw %}
@@ -16,15 +16,23 @@ use_math: true
 이전에 살펴본 [단순함수근사](https://ddangchani.github.io/실해석학-5.-르벡-가측함수)로부터 양함수 $f:X\to[0,\infty)$ 로 수렴하는 단순함수 $S:X\to[0,\infty)$ 의 열이 존재하므로 르벡적분을 다음과 같이 정의할 수 있다.
 
 > Measure space $(X,\mathcal{X},\mu)$ 에서 정의되는 단순함수 $s=\sum_i^n c_i I_{A_i}$ 에 대한 르벡적분은
+> 
 > $$
+> 
 > \int_Esd\mu=\sum_{i=1}^n c_i\mu(A_i\cap E)
+> 
 > $$
+> 
 > 으로 정의되며(단, $E\in\mathcal{X}$ ),
 >
 > 함수 $f$​에 대한 르벡적분은
+> 
 > $$
+> 
 > \int_Efd\mu = \sup_{0\leq s\leq f}\int_E sd\mu
+> 
 > $$
+> 
 > 으로 정의된다.
 
 *✅르벡측도 $m$을 이용해 정의한 르벡적분과 동일한 형태이다.*
@@ -59,7 +67,7 @@ $$
 
 로 정의한다(르벡측도에서 살펴본 것과 동일하다).
 
-리만적분의 경우 측도공간 $(\R,\mathcal{B}(\R),m)$ 에서 정의되는 르벡적분
+리만적분의 경우 측도공간 $(\mathbb{R},\mathcal{B}(\mathbb{R}),m)$ 에서 정의되는 르벡적분
 
 $$
 
@@ -75,7 +83,7 @@ $$
 
 ### LDCT<sup>르벡지배수렴정리</sup>
 
-가측함수열 $\{f_n:n\in\N\}$ 에 대해 극한 $\lim_nf_n(x)$이 모든 점 $x\in X$에서 존재하고 이를 지배하는<sup>dominate</sup> 함수(**envelope** 라고 한다) $g\in L^1(\mu)$ 가 존재한다고 하자. 그러면 $f\in L^1(\mu)$이며 
+가측함수열 $\{f_n:n\in\mathbb{N}\}$ 에 대해 극한 $\lim_nf_n(x)$이 모든 점 $x\in X$에서 존재하고 이를 지배하는<sup>dominate</sup> 함수(**envelope** 라고 한다) $g\in L^1(\mu)$ 가 존재한다고 하자. 그러면 $f\in L^1(\mu)$이며 
 
 $$
 
@@ -95,10 +103,14 @@ $$
 
 간단한 예제를 보면
 
-> $\forall f\in L^1(\R)$ 에 대해
+> $\forall f\in L^1(\mathbb{R})$ 에 대해
+> 
 > $$
-> \lim_{n\to\infty}\int_{-\infty}^\infty \cos(\frac{x}{n})f(x)dx=\int_\R f(x)dx
+> 
+> \lim_{n\to\infty}\int_{-\infty}^\infty \cos(\frac{x}{n})f(x)dx=\int_\mathbb{R} f(x)dx
+> 
 > $$
+> 
 > 임이 성립함을 보여라.
 
 위와 같은 문제에서 LDCT를 이용하기 위해서는이 적분함수의 $L^1$ envelope을 찾아내는 것이 필요하다. 위 문제에서는 $\vert \cos(x/n)f(x)\vert \leq \vert f(x)\vert $ 가 성립하고, $f$가 $L^1$ 공간의 원소이므로 LDCT를 사용해 쉽게 보일 수 있다.
@@ -117,7 +129,7 @@ $$
    $$
    으로 정의하고, $p=\infty$​ 인 경우는
    $$
-   \Vert f\Vert_\infty = \inf\{\alpha\in\R:\mu(f^{-1}(\alpha,\infty ])=0\}
+   \Vert f\Vert_\infty = \inf\{\alpha\in\mathbb{R}:\mu(f^{-1}(\alpha,\infty ])=0\}
    $$
    으로 정의된다.
 

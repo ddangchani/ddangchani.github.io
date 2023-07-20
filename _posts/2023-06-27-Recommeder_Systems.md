@@ -2,7 +2,7 @@
 title: "Recommeder Systems"
 tags:
 - Recommender Systems
-category: 'Recommender Systems'
+category: Recommender Systems
 use_math: true
 ---
 {% raw %}

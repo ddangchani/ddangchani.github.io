@@ -5,7 +5,7 @@ tags:
 - Bayesian
 - Classification
 - Machine Learning
-category: 'ML'
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -85,7 +85,7 @@ $$
 
 $$
 
-p(f_{*}\vert X,y,x_{*})= \int p(f_{*}\vert X,x_{*},\mathbf{f})p(\mathbf{f}\vert X,y)d\mathbf{f}
+p(f_{\star}\vert X,y,x_{\star})= \int p(f_{\star}\vert X,x_{\star},\mathbf{f})p(\mathbf{f}\vert X,y)d\mathbf{f}
 
 $$
 
@@ -101,7 +101,7 @@ $$
 
 $$
 
-\bar\pi_{*} := p(y_{*}=+1\vert X,y,x_{*}) = \int \sigma(f_{*})p(f_{*}\vert X,y,x_{*})df_{*}
+\bar\pi_{\star} := p(y_{\star}=+1\vert X,y,x_{\star}) = \int \sigma(f_{\star})p(f_{\star}\vert X,y,x_{\star})df_{\star}
 
 $$
 

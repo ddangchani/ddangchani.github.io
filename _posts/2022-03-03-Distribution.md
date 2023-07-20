@@ -1,9 +1,9 @@
 ---
 title: "Distribution"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Probability Theory
+- Distribution
+category: Probability Theory
 use_math: true
 ---
 {% raw %}
@@ -36,9 +36,13 @@ $$
 이다.
 
 > 증명. 조건 (1)을 가정하자. $P\{X\in A\}=P\{Y\in A\}$ 가 성립하는 집합 $A\in S^T$들의 모임을 $\mathcal{D}$라고 하자. 그리고 
+> 
 > $$
+> 
 > A=\{f\in S^T:(f_{t_1},\ldots,f_{t_n})\in B\}, \\ t_1,\ldots,t_n\in T, B\in \mathcal{S}^n,n\in\mathbb N
+> 
 > $$
+> 
 > 로 정의되는 모든 집합 $A$들의 모임을 $\mathcal{C}$ 라고 하자. 그러면 $\mathcal C$는 $\pi$-system이고, $\mathcal{D}$는 $\lambda$-system이다.
 
 

@@ -3,7 +3,7 @@ title: "Linear Mixed Effect Model"
 tags:
 - Linear model
 - Experimental design
-category: 'Linear Model'
+category: Linear Model
 use_math: true
 ---
 {% raw %}
@@ -100,7 +100,9 @@ $$
 이를 고정효과의 추정 결과와 비교해보면, additional term 
 
 $$
+
 \frac{\hat\sigma_{a}^{2}}{\hat\sigma_{a}^{2}+\hat\sigma^{2}/n_{i}}
+
 $$
 
 가 1보다 작으므로 추정량의 수축(shrinkage)이 발생했다고 볼 수 있다. 다만, 그룹 간 분산 $\sigma_{a}^{2}$이 커질수록 그 수축효과가 작아지는 것 역시 확인가능한데, 이는 그룹간 분산이 클수록 임의효과가 random effect와 같이 작용한다는 것을 의미한다. 좀 더 생각해보면, 그룹간 분산을 바탕으로 그룹 간 평균의 모델링을 임의효과로 설정할지, 고정효과로 설정할지 판단할 수 있다는 것을 의미한다.

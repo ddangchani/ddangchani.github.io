@@ -3,7 +3,7 @@ title: "Causal Inference (4)"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -17,7 +17,9 @@ Post-nonlinear model은 이전에 살펴본 Nonlinear ANM의 일반화된 모델
 $$
 
 Y=g_Y(f_Y(X)+N_Y),\;\; N_Y\bot X\tag{1}
+
 $$     
+
 을 만족하는 함수 $f_Y,g_Y$와 noise variable $N_Y$가 존재하는 것이다. 이러한 post-nonlinear model에 대해 다음 정리가 성립하는데, 이는 post-nonlinear model이 일반적이지 않은 경우를 제외하고는 **identifiable**하다는 것을 의미한다.
 
 ### Theorem
@@ -30,9 +32,14 @@ $$
 결합분포 $P_{X,Y}$가 다음 조건을 만족하면 $X$에서 $Y$로의 IGCI 모델을 admit한다:
 > 1. strictly monotonic이고 $f(0)=0, f(1)=1$ 을 만족하는 diffeomorphism($f$가 미분가능이고 bijective이며, 역함수도 미분가능함) $f:[0,1]\to[0,1]$에 대해 $Y=f(X)$로 주어진다.
 > 2. $P_X$의 strictly positive continuous density $p_X$가 
+> 
 > $$
+> 
 \text{cov}[\log f’,p_X] =0
+
+> 
 > $$
+> 
 > 을 만족한다(independence condition).
 
 이때, 조건 2에서 함수 $\log f’$와 확률밀도함수 $p_X$는 모두 probability space $[0,1]$에서 균등분포를 갖는 확률변수로 여겨진다. 즉, 위 독립성 조건은

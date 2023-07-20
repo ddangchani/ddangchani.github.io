@@ -3,7 +3,7 @@ title: "0709 KISS Summer school DL Lecture"
 tags:
 - Deep Learning
 - Machine Learning
-category: 'DL'
+category: Deep Learning
 use_math: true
 ---
 {% raw %}
@@ -33,7 +33,6 @@ $$
 Output layer $g^{(\lambda)}$ is determined as dist of $Y$
 
 > Neural Network is equivalent to GLM with **Data-Driven** Basis function
-
 > PCA is also data driven but it is (1) linear (2) do not consider Y.
 
 - $g$ is nonlinear (Ex. ReLU : piecewise linear)

@@ -5,7 +5,7 @@ tags:
 - PCA
 - Machine Learning
 - Manifold Learning
-category: 'ML'
+category: Machine Learning
 use_math: true
 ---
 {% raw %}

@@ -3,7 +3,7 @@ title: "Partial Regression"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -28,13 +28,21 @@ $$
 그러면, 행렬 $X_1,X_2$가 직교하지 않는 한 OLS<sup>Ordinary Least Square</sup>를 이용해 추정한 회귀계수에 대해서 $\hat\beta_1\neq\hat\beta_1^*$ 이 성립한다(아래 참고).
 
 > Full Model에 대한 Least squares:
+> 
 > $$
+> 
 > [ \hat\beta_1 \;\; \hat\beta_2 ]^\top = \begin{bmatrix}X_1^TX_1 & X_1^TX_2\\X_2^TX_1&X_2^TX_2\end{bmatrix}^{-1}\begin{bmatrix}X_1^TY\\X_2^TY\end{bmatrix}\tag{1}
+> 
 > $$
+> 
 > Reduced Model에 대한 Least squares:
+> 
 > $$
+> 
 > \hat\beta_1^* = (X_1^TX_1)^{-1}X_1^TY
+> 
 > $$
+> 
 > 로 주어지므로, 식 (1)에서 $X_1^TX_2=0$ 인 조건이 주어지면 $\hat\beta_1=\hat\beta_1^*$이 성립한다.
 
 하지만 일반적으로 두 예측변수 행렬이 직교하는 경우는 거의 존재하지 않으므로, 예측변수 $X_1$에 대해 Full-Model에서의 회귀계수(벡터)와 Reduced-Model에서의 회귀계수는 편차가 존재하게 된다. 이와 관련하여 다음 정리가 성립한다.
@@ -51,24 +59,40 @@ FWL Theorem이라고도 하는 위 정리는 앞서 설명한 Full Model과 Redu
 > 증명. 
 >
 > 먼저 1단계에서의 잔차를 구하면 다음과 같다.
+> 
 > $$
+> 
 > Y^*=Y-X_1\hat\beta_1^*\\
 > =(I-H_1)Y
+> 
 > $$
+> 
 > 여기서 $I$는 identity matrix, $H_1=X_1(X_1^TX_1)^{-1}X_1^T$ 는 [Hat Matrix](https://ddangchani.github.io/Linear-Regression-1)이다. 마찬가지로, 이번에는 2단계에서의 잔차를 구해보도록 하자.
+> 
 > $$
+> 
 > X_2^*=X_2-X_1(X_1^TX_1)^{-1}X_1^TX_2\\
 > =(I-H_1)X_2
+> 
 > $$
+> 
 > 이를 바탕으로 $Y^*$와 $X_2^*$를 이용한 회귀계수 $\hat\beta_2^*$ 를 구하면
+> 
 > $$
+> 
 > \hat\beta_2^* = (X_2^{*T}X_2^*)^{-1}X_2^{*T}Y^* \\
 > = (X_2^T(I-H_1)^2X_2)^{-1}X_2^T(I-H_1)^2Y
+> 
 > $$
+> 
 > 이때 $I-H_1$은 idempotent, symmetric 하므로
+> 
 > $$
+> 
 > \hat\beta_2^* = (X_2^T(I-H_1)X_2)^{-1}X_2^T(I-H_1)Y
+> 
 > $$
+> 
 > 으로 주어진다. 반면, Full Model에서 $X_2$의 계수를 구하면 위 식 (1)의 Block Matrix의 역행렬을 구하는 것으로부터 $\hat\beta_2$가 $\hat\beta_2^*$ 와 동일하게 주어짐을 확인할 수 있다. *(Block Matrix의 역행렬을 구하는 것은 어렵진 않으나 작성의 어려움으로 인해 생략*)
 
 ### Partial Regression Plot

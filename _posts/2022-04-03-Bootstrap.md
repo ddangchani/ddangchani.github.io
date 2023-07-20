@@ -1,9 +1,9 @@
 ---
 title: "Bootstrap"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Machine Learning
+- Bootstrap
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -40,16 +40,24 @@ $$
 $\widehat{\text{Err}}_{boot}$의 성능을 개선하기 위해, 우선 bootstrap이 예측오차 추정에 주는 영향을 간단한 예를 통해 살펴보도록 하자.
 
 > 클래스 $\{0,1\}$ 각각 $N$개의 데이터가 있는 분류 문제에 1-Nearest Neighbor 분류기를 이용한다고 하자. 그러면 0-1 loss를 이용할 때 원 데이터셋의 true error(rate)는 0.5가 된다. 하지만 bootstrap을 이용하게 되는 경우 $\widehat{\text{Err}}_{boot}$은 true error보다 낮아지게 된다. 만일 $j$번째 관측값이 $k$번째 bootstrap sample에 포함되지 않으면
+> 
 > $$
+> 
 > \widehat{\text{Err}}_{boot}={1\over N}\sum_{i=1}^N{1\over B}\sum_{b=1}^B L(y_i,\hat f^b(x_i))
+> 
 > $$
+> 
 > 위 식에서 $i=j, b=k$인 항의 값이 $0$이 되므로 true error보다 낮아지게 된다. 이때 낮아지는 정도는 $i$번째 관측값이 $b$번째 bootstrap sample에 속하지 않을 확률, 즉
+> 
 > $$
+> 
 > \begin{aligned}
 > P\{\text{observation  }i\notin \text{bootstrap sample } b\} &=1-[1-(1-{1\over N})^N]\\
 > &\approx e^{-1} = 0.368
 > \end{aligned}
+> 
 > $$
+> 
 > 에 비례한다. 즉, $\widehat{\text{Err}}_{boot}$의 기댓값은 대략 $0.5\times0.368 = 0.184$ 가 되고, 실제 true error 0.5에 비해 많이 낮은 수치이다.
 
 즉, 위 예시에서 문제가 되었던 것은 bootstrap이 특정 관측값을 포함하지 않는 경우이고, 이를 해결하기 위해 [LOOCV](https://ddangchani.github.io/Cross-Validation)와 유사한 방법을 사용해야 한다. 각각의 관측값 $z_i$에 대해 $z_i$를 포함하지 않는 bootstrap sample만을 다루자. 즉, $z_i$를 포함하지 않는 bootstrap sample들의 인덱스 집합을 $C^{-i}$로 두고, 이때 샘플의 개수를 $\vert C^{-i}\vert $로 쓰자. 이를 이용해 다음과 같이 예측오차에 대한 *Leave-one-out* bootstrap(LOOB) 추정치를 정의할 수 있다.

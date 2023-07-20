@@ -1,10 +1,10 @@
 ---
-title: "realanalysis Topological spaces(3)"
+title: "Topological spaces(3)"
 tags:
 - Real Analysis
 - Math
 - Topological spaces
-category: math
+category: Mathematics
 use_math: true
 ---
 {% raw %}
@@ -27,13 +27,17 @@ use_math: true
 $$
 
 \mathcal{F} = \{f_\alpha:X\to X_\alpha\}
+
 $$   
+
 로 정의된 사상들의 모임 형태를 생각하자. 이때 각 $X_\alpha$ 는 위상공간이다. 만약 사상들의 모임을 다음과 같이 정의한다면,   
 
 $$
 
 \mathcal{F}=\{f_\alpha^{-1}(\mathcal{O_\alpha}):f_\alpha\in \mathcal{F},\mathcal{O_\alpha}\text{  open  in   }X_\alpha\}
+
 $$   
+
 $\mathcal{F}$를 포함하는 $X$의 토폴로지 중, 가장 약한 토폴로지를 $\mathcal{F}$애 의한 $X$의 **weak topology(약한 토폴로지)** 라고 정의한다.   
 
 **명제 13** 만약 약한 토폴로지를 정의하는 과정에서, $\mathcal{F}$의 각 사상 $f_\alpha$ 들이 연속이라면, $\mathcal{F}$에 의한 $X$의 약한 토폴로지는 $X$의 모든 토폴로지들 중에 **가장 적은** 집합을 갖는다.    
@@ -50,7 +54,9 @@ $\mathcal{F}$를 포함하는 $X$의 토폴로지 중, 가장 약한 토폴로�
 $$
 
 \Phi(f)(x) = sgn(f(x))\vert f(x)\vert ^{1/2}
+
 $$    
+
 를 생각하자($f\in L^1(E)$). 그러면 임의의 두 수 $a,b$에 대해 다음 부등식이 성립하므로   
 
 $$
@@ -64,7 +70,9 @@ $$
 $$
 
 \Vert \Phi(f)-\Phi(g)\Vert_2^2\leq 2\Vert f-g\Vert_1
+
 $$    
+
 이렇게 정의된 사상 $\Phi$ 는 위상동형사상의 조건을 만족하고 $L^1$ 공간과 $L^2$ 공간은 위상동형임을 알 수 있다.   
 
 ## 위상공간의 컴팩트성
@@ -79,11 +87,11 @@ $$
 
 또한, 하우스도르프 공간과 관련해서, 컴팩트한 하우스도르프 위상공간은 normal하다(일반 분리 성질을 만족시킨다).   
 
-#### 점렬컴팩트
-위상공간에서 정의된 각각의 수열이 수렴하고, 그 수렴값이 해당 위상공간의 점이면 그 위상공간을 **점렬컴팩트**하다고 한다.   
-[거리공간](https://ddangchani.github.io/math/realanalysis_metricspaces)에서는 컴팩트성과 점렬컴팩트성이 동치임을 확인했었는데, 위상공간에서는 [제2가산성](https://ddangchani.github.io/math/realanalysis_Topological_spaces(2))을 갖는 위상공간에 대해 성립한다.     
+#### 점열컴팩트
+위상공간에서 정의된 각각의 수열이 수렴하고, 그 수렴값이 해당 위상공간의 점이면 그 위상공간을 **점열컴팩트**하다고 한다.   
+[거리공간](https://ddangchani.github.io/math/realanalysis_metricspaces)에서는 컴팩트성과 점열컴팩트성이 동치임을 확인했었는데, 위상공간에서는 [제2가산성](https://ddangchani.github.io/math/realanalysis_Topological_spaces(2))을 갖는 위상공간에 대해 성립한다.     
 
-**명제 17** 제2가산위상공간에서 컴팩트성과 점렬컴팩트성은 동치이다.   
+**명제 17** 제2가산위상공간에서 컴팩트성과 점열컴팩트성은 동치이다.   
 
 ### 연속사상과 컴팩트성
 **명제 20** 컴팩트위상공간 $X$의 연속사상 $f$에 의한 상(image) $f(X)$는 컴팩트하다.   

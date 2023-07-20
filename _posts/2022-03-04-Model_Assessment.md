@@ -1,9 +1,9 @@
 ---
 title: "Model Assessment"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Machine Learning
+- Model Assessment
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
@@ -151,7 +151,7 @@ $$
 
 $$
 
--2\text{E}[\log L(\hat\theta:Y)]\approx-\frac{2}{N}\cdot\text{E}[l(\hat\theta)]+\frac{2d}{N}\tag{*}
+-2\text{E}[\log L(\hat\theta:Y)]\approx-\frac{2}{N}\cdot\text{E}[l(\hat\theta)]+\frac{2d}{N}\tag{\star}
 
 $$
 
@@ -174,16 +174,24 @@ $$
 > **Linear Regression 문제에서 AIC**
 >
 > $\theta = (\beta,\sigma^2)$, $\beta = (\beta_0,\beta_1,\ldots,\beta_p)^\top$ 조건에서 Linear model $Y=X\beta+\epsilon$ 을 추정한다고 하자(단, $\epsilon\sim N(0,\sigma^2\mathbf I)$). 그러면 확률밀도함수가
+> 
 > $$
+> 
 > f(Y_i,\beta,\sigma^2) = {1\over\sqrt{2\pi}\sigma}\exp[-(Y_i-\beta_0-\beta_1x_{i1}-\cdots-\beta_px_{ip})^2/(2\sigma^2)]
+> 
 > $$
+> 
 > 으로 주어지고 $S$를 $\{1,\ldots,p\}$ 의 부분집합이라 할 때 분산에 대한 추정량 $\hat\sigma_S^2=n^{-1}\Vert Y-X\hat\beta_S\Vert^2$ 을 취하면 AIC는 다음과 같다.
+> 
 > $$
+> 
 > \begin{aligned}
 > \text{AIC}(S)&=\log(2\pi\hat\sigma^2_S)+\frac{\Vert Y-X\hat\beta_S\Vert^2}{n\hat\sigma_S^2}+\frac{2(\vert S\vert +1)}{n}\\
 > &=\log\text{SSE}(S) + {2\vert S\vert \over n}
 > \end{aligned}
+> 
 > $$
+>
 
 ### BIC
 

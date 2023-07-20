@@ -3,7 +3,7 @@ title: "Support Vector Regression"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -29,17 +29,29 @@ $$
 > **Induction**
 >
 > 함수 $f(x) = \langle w, x\rangle + b$ 를 추정하기 위해 Risk functional(*위험 범함수*)
+> 
 > $$
+> 
 > R[f] = \int_\mathcal X L(f,x,y) dP(x,y)
+> 
 > $$
+> 
 > 을 최소화하는 함수 $f$ 를 찾는 과정을 생각하자. 이때 Input space $\mathcal X$에서의 확률분포 $P(x,y)$ 는 알 수 없으므로, empirical risk를 사용하게 되고 이 과정에서 $\epsilon$-insensitive loss function(아래 내용 참고)을 이용하여 다음과 같다.
+> 
 > $$
+> 
 > R_\text{emp}[f]:={1\over N}\sum_{i=1}^N\vert y-f(x_i)\vert _\epsilon
+> 
 > $$
+> 
 > Empirical risk를 이용해 다음과 같이 regularized risk functional
+> 
 > $$
+> 
 > {1\over2}\Vert w\Vert^2 + C\cdot R_\text{emp}[f]
+> 
 > $$
+> 
 > 을 최소화하는 $f$를 찾는 문제는 결국 식 (1)와 동일한 최적화문제로 귀결된다($\epsilon$ 미만의 오차를 용인하는 것을 slack variable $\xi$ 를 이용해 표현한 것이다. 아래 그림 참고).
 
 여기서 상수 $C>0$ 은 hyperplane $f$의 flatness와 $\epsilon$ 이상의 오차를 얼마만큼 용인(tolerate)할지에 대한 trade-off 이다. $\xi_i,\xi_i^*$ 는 margin과 관련된 penalize 변수이며, $\phi(x)$ 는 각 feature transformation을 의미한다. 제약조건의 앞선 두 식을 살펴보면, 실제 관측값 $y_i$와 추정값 $w^T\phi(x_i)+b$ 의 오차가 최소 $\epsilon$ 보다는 큰 관측 샘플들에 대해 penalize variable $\xi_i$ 를 부과한다. 즉, 오차가 $\epsilon$ 보다 작은 관측값에 대해서는 penalizing이 이루어지지 않으며, 이는 이전 게시글에서 언급한 $\epsilon$-insensitive과 일맥상통한다. $\epsilon$-sensitive loss function은 
@@ -175,14 +187,19 @@ $$
 
 SVR에서와 마찬가지로, 위 네개의 식 중 첫번째 식을 SV expansion(Support Vector expansion)이라고 정의하며, 이때 식 (5)의 첫번째 및 두번째 제약조건을 등식으로(=) 만족하는 관측값(i)들에 대해서만 $\alpha_i^{(*)}$ 값이 0이 아닌 값을 갖게 된다. 마찬가지로 이러한 관측값들을 support vector로 정의한다. 앞선 네 제약조건을 Lagrangrian $L$에 대입하면 새로운 optimization 문제를 얻는데, 이를 Wolfe dual problem이라고 한다. 이때, 최적화 문제의 내적을 커널 $k(x,y) := \langle \phi(x),\phi(y)\rangle$ 로 대체하면 위의 dual problem을 다음과 같은 새로운 형태로 쓸 수 있으며, 이 과정에서 dual varaible $\beta,\eta_i^{(*)}\geq 0$ 은 등장하지 않게 된다.
 > NuSVR Optimization Problem
+> 
 > $$\max W(\alpha^{(*)}) = \sum_{i=1}^N(\alpha_i^{(*)} - \alpha_i)y_i - {1\over2}\sum_{i,j=1}^N(\alpha_i^*-\alpha_i)(\alpha_j^*-\alpha_j) k(x_i,x_j)$$
+> 
 > $$\begin{aligned}\text{subject to}\quad &\sum_{i=1}^N(\alpha_i-\alpha_i^*)=0 \\
+> 
 &\alpha_i^{(*)}\in[0,{C\over N}] \\
 &\sum_{i=1}^N(\alpha_i+\alpha_i^*) \leq C\cdot\nu
 \end{aligned}$$
 
 위 NuSVR optimization 문제의 regression estimate는 다음과 같은 형태를 취하게 된다.
+
 $$ 
+
 f(x) = \sum_{i=1}^N(\alpha_i^*-\alpha_i)k(x_i,x) + b
 
 $$

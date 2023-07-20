@@ -3,7 +3,7 @@ title: "Causal Inference (2)"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -11,11 +11,16 @@ use_math: true
 ### Structural Causal Model
 줄여서 SCM이라고 하는 **Structural Causal Model**은 인과관계모델을 구조화한 표현이다. 여기서는 우선 원인(C)과 결과(E) 두 변수로 구성된 Cause-Effect 모델만을 다루고, 이에 대한 SCM을 다음과 같이 정의한다.
 > Def. $C\to E$에 대한 SCM $\mathfrak C$는 두 assignment로 구성된다.
+> 
 > $$
+> 
 > C:= N_C,\;\;E:=f_E(C, N_E)\\
 > \text{where} \;\;N_C \bot N_E
+> 
 > $$
+> 
 > 이때 $C\to E$로 표기한 것을 **causal graph**라고 하며, effect에 직접적으로 연결된 cause 변수를 direct cause라고도 한다.
+
 ### Intervention
 
 [이전 글](https://ddangchani.github.io/CausalInference1)에서도 잠시 언급했다시피, intervention은 causal model의 한 변수를 변화시키는 것을 의미한다. 이때 interevention이 이루어지면 해당 시스템은 또 다른 분포를 취하는데, 이는 기존의 observational distribution과 별개의 것이다. 예를 들어 SCM $\mathfrak C: C\to E$ 에서 effect의 값을 4로 변경시키는 intervention이 이루어진다고 하자. 이렇게 직접적으로 값을 변경시키는 것을 *hard intervention*이라고도 부르는데, 이를 $do(E:=4)$ 로 표현한다.

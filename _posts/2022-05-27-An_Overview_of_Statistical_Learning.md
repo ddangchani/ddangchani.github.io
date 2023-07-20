@@ -3,7 +3,7 @@ title: "An Overview of Statistical Learning"
 tags:
 - tag1
 - tag2
-category: 'Category'
+category: Category
 use_math: true
 ---
 {% raw %}
@@ -49,9 +49,13 @@ Risk functional(식 1)을 최소화하는 함수 $Q(z,\alpha_0)$에 대응하는
 ### Key Theorem of the Learning Theory
 Vapnik이 제시한 학습이론에서의 핵심 정리는 다음과 같다.
 > Key Theorem : 함수모임 $Q(z,\alpha),\alpha\in\Lambda$이 확률측도 $P(z)$에 대해 bounded loss를 가진다고 하자. 즉,
+> 
 > $$A\leq\int Q(z,\alpha)dP(z)\leq B\quad\forall\alpha\in\Lambda$$
+> 
 > 그러면 ERM principle이 일치성을 갖기 위할 필요충분조건은 $Q(z,\alpha),\alpha\in\Lambda$에서 $R_{emp}(\alpha)$가 $R(\alpha)$로 **균등수렴(uniformly convergence)**하는 것이다. 즉, 임의의 $\epsilon>0$에 대해
+> 
 > $$\lim_{N\to\infty} P\bigg(\sup_{\alpha\in\Lambda}(R(\alpha)-R_{emp}(\alpha))>\epsilon\bigg)=0\tag{2}$$
+> 
 > 을 만족해야 한다.
 
 위와 같은 형태의 수렴을 uniform one-sided convergence라고도 한다(절대값 없이 한 방향으로의 수렴이기 때문). 위 정리가 Key theorem인 이유는, ERM principle에서의 어떠한 형태의 수렴여부를 판정하기 위해서는 worst case를 판별해야 한다는 조건을 제시해주기 때문이다. 위 정리에서는 함수집합들 중에서 상한을 취했기 때문에 risk value와 empirical risk value가 가장 크게 차이나는 worst case가 기준이 되는 것이다.
@@ -79,9 +83,13 @@ $$
 이를 Indicator functions $Q(z,\alpha),\alpha\in\Lambda$ 의 집합에 대한 entropy라고 정의한다. random entropy와 다르게 위 값은 sample들에 의존하지 않고, 확률측도에만 의존하게 된다. 이로부터 다음과 같이 Indicator loss function에 대한 일치성(consistency)의 필요충분조건이 성립한다.
 > Theorem.
 > ERM principle의 uniform two-sided convergence, 즉 임의의 $\epsilon>0$에 대해 다음 조건
+> 
 > $$\lim_{N\to\infty} P(\sup_{\alpha\in\Lambda}\vert R(\alpha)-R_{emp}(\alpha)\vert >\epsilon)$$ = 0
+> 
 > 이 성립할 **필요충분조건**은 다음 식이 성립하는 것이다.
+> 
 > $$\lim_{N\to\infty}{H^\Lambda(N)\over N}=0$$
+> 
 
 #### Entropy of the Set of Real Functions
 앞에서 살펴본 Indicator function들의 집합에 대한 entropy를 이번에는 실함수 집합으로 확장시켜보도록 하자. 유계인 손실함수들의 집합 $A\leq Q(z,\alpha)\leq B,\alpha\in\Lambda$ 에 대해 앞선 내용과 마찬가지로 $N$개의 random sample이 주어졌다고 하자. 이때 다음과 같은 N-dimensional real-valued vector들의 모임
@@ -105,7 +113,9 @@ $$
 $$
 
 H^\Lambda(\epsilon,z_1,\ldots,z_N) = \ln N^\Lambda(\epsilon:z_1,\ldots,z_N)
+
 $$ 
+
 을 유계함수모임 $Q(z,\alpha),\alpha\in\Lambda$의 **random VC-entropy**라고 정의하며, Indicator function의 경우와 마찬가지로 기댓값을 취한
 
 $$
@@ -117,9 +127,13 @@ $$
 을 함수모임에 대한 **VC-entropy**라고 정의한다. 이를 이용하여 유계인 (실함수)손실함수들에 대한 일치성의 필요충분조건을 다음과 같이 정리할 수 있다.
 > Theorem.
 > 유계실함수인 손실함수에 대한 ERM principle의 uniform two-sided convergence, 즉 임의의 $\epsilon>0$에 대해 다음 조건
+> 
 > $$\lim_{N\to\infty} P(\sup_{\alpha\in\Lambda}\vert R(\alpha)-R_{emp}(\alpha)\vert >\epsilon)$$ = 0
+> 
 > 이 성립할 **필요충분조건**은 임의의 $\epsilon>0$에 대해 다음 식이 성립하는 것이다.
+> 
 > $$\lim_{N\to\infty}{H^\Lambda(\epsilon:N)\over N}=0$$
+> 
 
 ### VC Dimension
 앞선 내용에서 ERM principle이 일치성을 갖기 위한 필요충분조건에 대해 살펴보았다. 그러나 앞선 식들은 수렴의 속도(rate of convergence)에 대한 정보를 제공하고 있지 않다. 이를 해결하기 위해서는 VC-dimension이라는 새로운 capacity 개념과 Growth function $G^\Lambda(N)$을 이용해야 하는데, 먼저 이들을 정의해보도록 하자.
@@ -151,11 +165,15 @@ $$
 을 **growth function**이라고 정의하며, 이는 상한에 의해 annealed VC-entropy 이상의 값을 갖는다. 이때 growth function에 대해 다음 정리가 성립한다.
 > Theorem.
 > 임의의 growth function은 다음 등식
+> 
 > $$G^\Lambda(N) = N\ln2$$
+> 
 > 를 만족하거나 다음과 같이 위로 유계이다.
 > $G^\Lambda(N)<h\bigg(\ln{N\over h}+1\bigg)$
 > 이때 $h$는 다음을 만족하는 정수이다.
+> 
 > $$G^\Lambda(h) = h\ln 2 \\ G^\Lambda(h+1)\neq (h+1)\ln2$$
+> 
 위 정리는 growth function이 선형함수이거나, 로그함수에 의해 유계라는 사실을 의미한다. 만일 $Q(z,\alpha),\alpha\in\Lambda$ 에 대한 growth function이 선형함수라면 함수집합의 VC-dimension이 무한(infinite)하다고 정의한다. 만일 선형함수가 아니라면(로그함수에 의해 유계) VC-dimension이 유한(finite)하다고 정의하며 이때 위 정리를 만족하는 $h$의 값을 VC-dimension으로 정의한다.
 
 #### Another Definition
@@ -245,11 +263,17 @@ $$
 
 > Theorem.
 > Admissible structure에 대해 SRM을 적용하여 N개의 sample에 대해 $k=n(N)$번째 structure가 대응된다고 하자. 이때 expected best risk $R(\alpha_0)$으로 수렴하는 risk의 열 $\{R(\alpha_N^{n(N)}\}$을 구성하고, 이때 각 단계에서의 근사함수를 $Q(z,\alpha_N^{n(N)})$ 이라고 두면 근사적 수렴속도(asymptotic rate of convergence)는
+> 
 > $$V(N) = r_{n(N)} + B_{n(N)}\sqrt{h_{n(N)}\ln N\over N}$$
+> 
 > 으로 주어진다. 이때 $B_n$은 $S_n$에 속한 함수들의 bound를 의미하며
+> 
 > $$\lim_{n\to\infty}{B_{n(N)}^2 h_{n(N)}\ln N\over N} = 0$$
+> 
 > 을 만족한다. 또한 $r_n(N)$은 근사의 속도(rate of approximation)
+> 
 > $$r_n = \inf_{\alpha\in\Lambda_n}\int Q(z,\alpha) dP(z) - \inf_{\alpha\in\Lambda}\int Q(z,\alpha)dP(z) $$
+> 
 > 를 의미한다.
 
 

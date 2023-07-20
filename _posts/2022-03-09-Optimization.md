@@ -1,9 +1,9 @@
 ---
-title: "Optimization"
+title: "Stochastic Optimization"
 tags:
-- tag1
-- tag2
-category: 'Category'
+- Stochastic Gradient Descent
+- Optimization
+category: Deep Learning
 use_math: true
 ---
 {% raw %}
@@ -13,7 +13,7 @@ use_math: true
 
 $$
 
-w^*=\arg\min_w L(w)
+w^{*}=\arg\min_w L(w)
 
 $$
 
@@ -40,7 +40,15 @@ for num in range(1000):
 
 ### Gradient
 
-그래디언트<sup>gradient</sup>는 벡터에 대해 정의된 미분계수이다. 즉, 일차원 유클리드공간에서의 함수 $f:\mathbb\R\to\mathbb\R$ 의 대한 미분계수
+그래디언트<sup>gradient</sup>는 벡터에 대해 정의된 미분계수이다. 즉, 일차원 유클리드공간에서의 함수 
+
+$$
+
+f:\mathbb{R}\to\mathbb{R}
+
+$$
+
+에 대한 미분계수
 
 $$
 
@@ -49,11 +57,11 @@ $$
 $$
 
 
-와 유사하게, 손실함수 $L:\mathbb\R^d\to\mathbb\R$ 의 그래디언트는 각 성분의 편미분계수로 이루어진 $d$차원 벡터로 주어진다. (이계는 $d\times d$ 행렬로 주어지며 이를 Hessian Matrix<sup>헤시안행렬</sup>이라고 한다.) 고교 수학과정에서의 간단한 개념으로 살펴보면, 어떤 점에서의 미분계수는 그 점에서의 접선의 기울기를 의미한다. 즉, 함수값이 그 점에서부터 어떤 방향으로 증가 혹은 감소하는지를 파악하게끔 해준다. 그래디언트도 마찬가지로 특정 차원(성분)에 대한 전체 함수값의 변화를 파악하는 도구이며, 이를 $\nabla_WL(W)$ 로 나타낸다.
+와 유사하게, 손실함수 $$L:\mathbb{R}^d\to\mathbb{R}$$ 의 그래디언트는 각 성분의 편미분계수로 이루어진 $d$차원 벡터로 주어진다. (이계는 $d\times d$ 행렬로 주어지며 이를 Hessian Matrix<sup>헤시안행렬</sup>이라고 한다.) 고교 수학과정에서의 간단한 개념으로 살펴보면, 어떤 점에서의 미분계수는 그 점에서의 접선의 기울기를 의미한다. 즉, 함수값이 그 점에서부터 어떤 방향으로 증가 혹은 감소하는지를 파악하게끔 해준다. 그래디언트도 마찬가지로 특정 차원(성분)에 대한 전체 함수값의 변화를 파악하는 도구이며, 이를 $\nabla_WL(W)$ 로 나타낸다.
 
 이때 그래디언트를 구하는 것은 미분계수와 마찬가지로 두 가지 방법이 있다. 첫번째는 Analytic gradient로, 이는 우리가 도함수를 구하는 것과 마찬가지이며 함수를 변수들로 직접 미분(벡터 미분 등을 이용)히여 도함수를 구하고, 이에 구하고자 하는 점의 데이터를 대입해 그래디언트를 구한다. 반면, Numerical gradient는 미분계수의 정의  식 (1)에서 극한을 취하지 않고, $h$에 $10^{-3}$ 처럼 작은 값을 대입하여 수치적인 방식으로 빠르게 계산하는 것을 말한다. 따라서 일반적으로는 **analytical gradient** 를 사용하는 것이 맞고, 대개 이를 검산하기 위해 numerical gradient을 사용한다(이를 Gradient check 라고 한다).
 
-Pytorch에는 gradient check를 위해 *torch.autograd.gradcheck* 와 그래디언트의 그래디언트를 check하기 위한 *gradgradcheck* 함수가 있다.
+Pytorch에는 gradient check를 위해 *torch.autograd.gradcheck* 와 그래디언트의 그래디언트를 check하기 위한 `gradgradcheck` 함수가 있다.
 
 ### Gradient Descent
 
@@ -118,7 +126,7 @@ $$
 
 SGD는 데이터 특성에 따라 최적화 과정에 문제가 발생할 수 있다. 데이터의 각 성분들에 대해, 어떤 차원에서는 가파르고(high derivative) 어떤 차원에서는 완만할(low derivative) 수 있다. SGD는 전체 데이터셋에 대한 그래디언트를 구하는 것이 아니라, 각 지점에서의 그래디언트를 구하는 것이므로 아래 그림처럼 가파른 성분에 대해서는 W의 변화가 크지만 완만한 성분에 대해서는 변화가 작아 최적화 과정이 매우 느려질 수 있다.
 
-[사진]
+![](assets/optimization1.png)
 
 또한, 만일 손실함수가 Local Minimum이나 Saddle Point<sup>안장점</sup>을 가진다면 이 역시 최적화가 일어나지 않을 수 있는데, 두 지점에서 그래디언트가 모두 $0$이므로 최적화가 멈추게 된다. 특히 saddle point는 한 성분에서 극소이고 다른 성분에서 극대인 상황을 의미하므로, 데이터 차원이 커질수록 saddle point의 형성 가능성이 더 높아진다. 따라서 이런 문제들을 해결하기 위해 새로운 방법을 고안하게 된다.
 
@@ -126,9 +134,11 @@ SGD는 데이터 특성에 따라 최적화 과정에 문제가 발생할 수 �
 
 ### SGD + Momentum
 
-[사진]
+![](assets/optimization2.png)
 
-Momentum이란, 위 그림과 같이 SGD 진행과정에 운동량이 있다고 생각하고 그래디언트에 속도<sup>velocity</sup>를 더해 최적화를 진행하는 과정을 의미한다.
+Momentum이란, 위 그림과 같이 SGD 진행과정에 운동량이 있다고 생각하고 그래디언트에 속도<sup>velocity</sup>를 더해 최적화를 진행하는 과정을 의미한다(아래 그림).
+
+![](assets/optimization3.png)
 
 ~~~python
 v = 0
@@ -164,7 +174,7 @@ for t in range(num_steps):
 
 RMSProp은 grad_squared를 누적하는 과정에서, decay_rate라는 변수를 설정해 일방적인 누적이 아닌 일부 값이 손실된 상태로 누적이 진행되게 된다. 이를 통해 AdaGrad의 시간 흐름에 따른 학습률 손실 문제를 어느정도 보완할 수 있게 된다.
 
-### Adam❗️
+### Adam
 
 Adam은 RMSProp에 앞서 설명한 Momentum 효과를 추가한 알고리즘으로, 딥러닝에서 사용되는 가장 기본적이고 대중적인 손실함수이다.
 

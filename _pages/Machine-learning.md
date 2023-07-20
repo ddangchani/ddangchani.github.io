@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning"
-permalink: /categories/ML/
+permalink: /categories/MachineLearning/
 layout: category
 author_profile: true
 taxonomy: ML

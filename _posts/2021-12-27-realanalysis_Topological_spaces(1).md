@@ -1,10 +1,10 @@
 ---
-title: "realanalysis Topological spaces(1)"
+title: "Topological spaces(1)"
 tags:
 - Real Analysis
 - Math
 - Topological spaces
-category: math
+category: Mathematics
 use_math: true
 ---
 {% raw %}
@@ -58,11 +58,11 @@ X의 어떤 점 $x\in X$ 에 대해 $x$ 를 포함하는 열린 집합을 $x$의
 > 1. $\mathcal{B}$가 $X$를 덮는다. ($X=\bigcup_{B\in\mathcal{B}}B$ )
 > 2. $B_1,B_2 \in \mathcal{B}$ 에 대해 $x\in B_1\cap B_2$ 이면 $x\in B\subseteq B_1\cap B_2$ 인 $\exists B\in \mathcal{B}$ 이다.
 
-각각의 기저는 유일한 토폴로지를 결정하지만 하나의 토폴로지는 여러 기저를 가질 수 있다. 수직선 $\R$의 유클릐드 토폴로지를 생각해보면, 열린구간들의 모임은 이의 기저가 되며, 동시에 양 끝점이 유리수인 구간들(열림/닫힘)의 모임 역시 기저가 되는 것을 알 수 있다.    
+각각의 기저는 유일한 토폴로지를 결정하지만 하나의 토폴로지는 여러 기저를 가질 수 있다. 수직선 $\mathbb{R}$의 유클릐드 토폴로지를 생각해보면, 열린구간들의 모임은 이의 기저가 되며, 동시에 양 끝점이 유리수인 구간들(열림/닫힘)의 모임 역시 기저가 되는 것을 알 수 있다.    
 
 **부분기저<sup>subbsse</sup>**   
 위상공간 $(X,\mathcal{T})$에 대해 $\mathcal{T}$의 부분모임 $\mathcal{S}$가 $X$를 덮는다고 하자. 이때 $\mathcal{S}$의 유한 부분모임들의 교집합들이 $\mathcal{T}$ 의 기저이면 $\mathcal{S}$를 토폴로지 $\mathcal{T}$의 **부분기저**라고 한다.   
-유계닫힌구간 $[a,b]$에 $\R$로부터의 토폴로지를 상속하여 이를 위상공간으로 하자. 그렇다면 $a<c<b$ 인 $c$에 대해 $[a,c)$나 $(c,b]$ 형태로 구성된 모임은 부분기저가 된다. (두 반열린구간의 교집합을 열린구간이 되게끔 잡으면, 열린구간들의 모임은 토폴로지이기 때문이다.)   
+유계닫힌구간 $[a,b]$에 $\mathbb{R}$로부터의 토폴로지를 상속하여 이를 위상공간으로 하자. 그렇다면 $a<c<b$ 인 $c$에 대해 $[a,c)$나 $(c,b]$ 형태로 구성된 모임은 부분기저가 된다. (두 반열린구간의 교집합을 열린구간이 되게끔 잡으면, 열린구간들의 모임은 토폴로지이기 때문이다.)   
 
 #### 폐포<sup> closure</sup>
 위상공간 $X$의 부분집합 $E$에 대해 점 $x\in X$의 모든 근방이 $E$의 점을 포함한다면 $x$를 $E$의 **폐포점**<sup>point of closure</sup>이라고 한다. 또한, $E$의 폐포점들의 모임을 $E$의 페포라고 하며, $\bar{E}$ 라고 표기한다.   

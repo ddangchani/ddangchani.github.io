@@ -5,7 +5,7 @@ tags:
 - Machine Learning
 - Manifold Learning
 - Clustering
-category: 'ML'
+category: Machine Learning
 use_math: true
 ---
 {% raw %}

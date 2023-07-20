@@ -4,7 +4,7 @@ tags:
 - Gaussian Process
 - Bayesian
 - Machine Learning
-category: 'ML'
+category: Machine Learning
 use_math: true
 ---
 {% raw %}
