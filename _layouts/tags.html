@@ -9,15 +9,17 @@ layout: archive
 <!--Assign Tag List-->
 {% assign tags_sorted = tags | sort_natural %}
 
-<ul class="taxonomy__index">
+<div class="taxonomy__index">
   {% for tag in tags_sorted %}
-    <li>
-      <a href="#{{ tag | slugify }}">
-        <strong>{{ tag }}</strong> <span class="taxonomy__count">{{ site.tags[tag] | size }}</span>
-      </a>
-    </li>
+    {% capture tag_size %}{{ site.tags[tag] | size }}{% endcapture %}
+    {% capture font_size %}{{ tag_size | divided_by: 2 | plus: 14 }}{% endcapture %}
+      {% if tag_size > "0" %}
+        <a href="#{{ tag | slugify }}" style="font-size: {{font_size}}px;">
+          <strong>{{ tag }}</strong> <span class="taxonomy__count">{{ tag_size }}</span>
+        </a>
+      {% endif %}
   {% endfor %}
-</ul>
+</div>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 {% for tag in tags_sorted %}
