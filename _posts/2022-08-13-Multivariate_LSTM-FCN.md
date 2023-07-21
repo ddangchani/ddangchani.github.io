@@ -7,6 +7,8 @@ tags:
 - Neural Network
 category: Deep Learning
 use_math: true
+header: 
+  teaser: /assets/img/16603496815995.jpg
 ---
 {% raw %}
 ## Multivariate LSTM-FCN

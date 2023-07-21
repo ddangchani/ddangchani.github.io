@@ -7,6 +7,8 @@ tags:
 - Dimension Reduction
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/pca.jpg
 ---
 {% raw %}
 

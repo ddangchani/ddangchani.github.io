@@ -7,6 +7,8 @@ tags:
 - Boosting
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 10.26.16.png
 ---
 {% raw %}
 ## Gradient Boosting Machine

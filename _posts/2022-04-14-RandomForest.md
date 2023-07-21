@@ -6,6 +6,8 @@ tags:
 - Random Forest
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/RandomForest.assets/스크린샷 2022-04-18 오후 4.49.27.png
 ---
 {% raw %}
 ## Random Forest

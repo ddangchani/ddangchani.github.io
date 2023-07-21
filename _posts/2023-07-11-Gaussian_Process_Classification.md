@@ -7,6 +7,8 @@ tags:
 - Machine Learning
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/스크린샷 2023-07-11 오후 8.01.32.png
 ---
 {% raw %}
 # Classification Problem

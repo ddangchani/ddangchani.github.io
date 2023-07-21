@@ -6,6 +6,8 @@ tags:
 - Neural Network
 category: Deep Learning
 use_math: true
+header: 
+  teaser: /assets/img/simpe nn with tf.assets/스크린샷 2022-03-26 오후 2.28.16.png
 ---
 {% raw %}
 ## Simple Neural Network with Tensorflow

@@ -5,6 +5,8 @@ tags:
 - Deep Learning
 category: Deep Learning
 use_math: true
+header: 
+  teaser: /assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 3.50.25.png
 ---
 {% raw %}
 

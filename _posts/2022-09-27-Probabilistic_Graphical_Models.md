@@ -6,6 +6,8 @@ tags:
 - Statistics
 category: Causal Inference
 use_math: true
+header: 
+  teaser: assets/img/../../../assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.22.38.png
 ---
 {% raw %}
 # Probabilistic Graphical Models

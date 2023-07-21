@@ -7,6 +7,8 @@ tags:
 - Modified Linear Methods
 category: Project
 use_math: true
+header: 
+  teaser: /assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 7.19.09.png
 ---
 {% raw %}
 ## 따릉이 데이터 분석하기 (3) Modified Linear Methods

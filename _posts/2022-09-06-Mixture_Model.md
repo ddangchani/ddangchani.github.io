@@ -6,6 +6,8 @@ tags:
 - Gaussian Mixture Model
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/Mixture Model.assets/스크린샷 2022-09-08 오후 2.03.10.png
 ---
 {% raw %}
 # Mixture Model & EM Algorithm

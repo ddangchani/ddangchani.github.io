@@ -6,6 +6,8 @@ tags:
 - Optimization
 category: Deep Learning
 use_math: true
+header: 
+  teaser: /assets/img/optimization3.png
 ---
 {% raw %}
 # Optimization

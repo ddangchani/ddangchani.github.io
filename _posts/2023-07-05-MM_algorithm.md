@@ -6,6 +6,8 @@ tags:
 - Statistics
 category: Statistics
 use_math: true
+header: 
+  teaser: /assets/img/Pasted image 20230705102723.png
 ---
 {% raw %}
 MM algorithm은 EM algorithm의 일반화된 버전으로 이해하면 되는데, MM은 maximization 관점에서 minorize-maximize를 나타낸다. MM algorithm은 최대화하고자 하는 목적함수 $l(\theta)$ 에 대한 lower bound function(**surrogate function**) $Q(\theta,\theta^{t})$ 를 찾고 이를 maximize하는 $\theta^{t+1}$을 찾아 updating하는 방식으로 이루어진다. 이 메커니즘은 다음과 같은 monotonic increasing property를 보장한다.

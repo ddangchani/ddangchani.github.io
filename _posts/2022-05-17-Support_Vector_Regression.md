@@ -7,6 +7,8 @@ tags:
 - Regression
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/Support Vector Regression.assets/스크린샷 2022-05-17 오전 10.25.02.png
 ---
 {% raw %}
 ## Support Vector Regression

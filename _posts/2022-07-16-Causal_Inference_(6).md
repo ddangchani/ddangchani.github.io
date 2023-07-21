@@ -6,6 +6,8 @@ tags:
 - Markov Property
 category: Causal Inference
 use_math: true
+header: 
+  teaser: /assets/img/Causal%20Inference%20
 ---
 {% raw %}
 # Multivariate Causal Model (2)

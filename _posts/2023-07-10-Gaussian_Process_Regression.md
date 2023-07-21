@@ -7,6 +7,8 @@ tags:
 - Machine Learning
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/Pasted image 20230710174145.png
 ---
 {% raw %}
 Gaussian Process는 **함수들의 사전분포**에 대한 것이다. 이때, 함수들의 사전분포를 정하는 이유는 주어진 데이터로부터 함수를 추정하는 과정에서 특정 조건을 부여하여 추론 혹은 예측 과정을 더 용이하게 하기 위함이다. 이 과정에서 Gaussian, especially Multivariate Gaussian distribution을 사용하는 이유는 조건부 확률분포의 정규성 등 Gaussian distribution의 좋은 성질이 있기 때문이다.

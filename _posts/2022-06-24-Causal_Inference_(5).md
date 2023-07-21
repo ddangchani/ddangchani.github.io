@@ -6,6 +6,8 @@ tags:
 - Graphical Model
 category: Causal Inference
 use_math: true
+header: 
+  teaser: Causal Inference 
 ---
 {% raw %}
 ## Multivariate Causal Models

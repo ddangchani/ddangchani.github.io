@@ -5,6 +5,8 @@ tags:
 - Statistics
 category: Causal Inference
 use_math: true
+header: 
+  teaser: /assets/img/16555540745593.jpg
 ---
 {% raw %}
 ## Learning Cause-Effect Models (2)

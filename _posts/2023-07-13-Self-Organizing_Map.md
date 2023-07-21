@@ -7,6 +7,8 @@ tags:
 - Clustering
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/SOM_MNIST.png
 ---
 {% raw %}
 SOM 이라고 줄여 부르는 Self-organizing maps는 고차원(High dimensional) 데이터를 저차원(주로 2차원 평면)에 표현하는 차원축소 기법의 일종이다. 차원축소 기법으로 많이 사용되는 PCA와는 다르게, SOM은 데이터의 고차원 구조(topological structure)를 보존하여 Feature space에 embedded된 2D manifold(다양체)로 표현한다. SOM의 알고리즘을 간단하게 이해하면, 2차원 평면을 고차원 데이터에 적합시키기 위해 해당 평면을 휘거나, 구부리는 등의 2차원 manifold로 바꾼다고 생각하면 된다(아래 그림).

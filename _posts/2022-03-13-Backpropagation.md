@@ -5,6 +5,8 @@ tags:
 - Backpropagation
 category: Deep Learning
 use_math: true
+header: 
+  teaser: /assets/img/Backpropagation.assets/스크린샷 2022-03-13 오후 7.22.18.png
 ---
 {% raw %}
 # Backpropagation

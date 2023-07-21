@@ -5,6 +5,8 @@ tags:
 - Cross Validation
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/Cross Validation.assets/스크린샷 2022-04-03 오후 12.17.56.png
 ---
 {% raw %}
 ## Cross-Validation

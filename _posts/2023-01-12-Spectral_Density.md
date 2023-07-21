@@ -5,6 +5,8 @@ tags:
 - Fourier Transformation
 category: Time Series
 use_math: true
+header: 
+  teaser: /assets/img/24272B9E-4803-4BE9-990B-ABB46E487C5C.png
 ---
 {% raw %}
 ## Spectral Representation Theorem

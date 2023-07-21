@@ -6,6 +6,8 @@ tags:
 - Bayesian
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/Pasted image 20230712191810.png
 ---
 {% raw %}
 [바로 이전 글에서](https://ddangchani.github.io/ML/Gaussian-Process-Classification) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}\vert X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.

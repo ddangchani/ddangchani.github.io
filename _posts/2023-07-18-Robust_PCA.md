@@ -7,6 +7,8 @@ tags:
 - Manifold Learning
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/before_frame0.png
 ---
 {% raw %}
 

@@ -5,6 +5,8 @@ tags:
 - Causal Inference
 category: Causal Inference
 use_math: true
+header: 
+  teaser: Causal Inference 
 ---
 {% raw %}
 # Learning Cause-Effect Models

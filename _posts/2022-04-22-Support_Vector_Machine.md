@@ -5,6 +5,8 @@ tags:
 - SVM
 category: Machine Learning
 use_math: true
+header: 
+  teaser: /assets/img/Support%20Vector%20Machine.assets/스크린샷%202022-04-22%20오후%205.01.41.png
 ---
 {% raw %}
 ## Support Vector Machine

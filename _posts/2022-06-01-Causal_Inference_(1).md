@@ -5,6 +5,8 @@ tags:
 - Statistics
 category: Causal Inference
 use_math: true
+header: 
+  teaser: /assets/img/16540710916399.jpg
 ---
 {% raw %}
 ## Causal Inference

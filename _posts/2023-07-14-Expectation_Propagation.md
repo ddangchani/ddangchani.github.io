@@ -6,6 +6,8 @@ tags:
 - Machine Learning
 category: Machine Learning
 use_math: true
+header:
+    teaser: /assets/img/Mean_STD_EP_Laplace.png
 ---
 {% raw %}
 
