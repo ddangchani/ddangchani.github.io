@@ -54,6 +54,12 @@ body {
     margin-right: 0;
     width: 100%;
     clear: both;
+    
+    .toc__menu {
+      li {
+        font-size: $type-size-5;
+      }
+    }
 
     .page__content {
       /* paragraph indents */

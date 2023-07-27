@@ -4,6 +4,7 @@ tags:
 - Spatial Statistics
 - Point Process
 - Poisson Point Process
+- Probability Theory
 category: 'Statistics'
 use_math: true
 ---
@@ -27,8 +28,9 @@ use_math: true
 
 **Definition 2** (Point Process). A point process $X$ defined on $\mathcal{S}$ is a measurable mapping defined on some probability space $(\Omega,\mathcal{F},P)$ and taking values in $$(\mathbb{N}_{lf},\mathcal{N}_{lf})$$
 
--   $\mathbb N_{lf}=\{x\subset\mathcal{S}:n(x_B)<\infty,\;\;\forall\mathrm{bounded}\;\; B\subset\mathcal{S}\}$
--   $$\mathcal{N}_{lf}$$is a $\sigma$-algebra on $$\mathbb N_{lf}$$such that
+- $\mathbb N_{lf}=\{x\subset\mathcal{S}:n(x_B)<\infty,\;\;\forall\;\mathrm{bounded}\;\; B\subset\mathcal{S}\}$
+
+- $$\mathcal{N}_{lf}$$ is a $$\sigma$$-algebra on $$\mathbb N_{lf}$$ such that
 
 $$
 \mathcal{N}_{lf}=\sigma(\{x\in\Bbb N_{lf}:n(x_B)=m)\}:B\in\mathcal{B}_0,m\in\Bbb{N}_0)
