@@ -12,7 +12,7 @@ header:
 {% raw %}
 ## Partial Regression
 
-Linear Regression model에서 예측변수가 여러개일 때, 즉 multiple linear regression인 경우 각각의 변수 고유의 영향력을 파악하는 방법으로 partial regression이 있다(*[Partial Least Square algorithm](https://ddangchani.github.io/Linear_Model/Linear-Regression-2)과 명백히 다르다!*). 이에 대해 간단히 다루어보도록 하자. 우선 다음과 같은 회귀모형
+Linear Regression model에서 예측변수가 여러개일 때, 즉 multiple linear regression인 경우 각각의 변수 고유의 영향력을 파악하는 방법으로 partial regression이 있다(*[Partial Least Square algorithm](https://ddangchani.github.io/linear%20model/linearreg2/)과 명백히 다르다!*). 이에 대해 간단히 다루어보도록 하자. 우선 다음과 같은 회귀모형
 
 $$
 
@@ -70,7 +70,7 @@ FWL Theorem이라고도 하는 위 정리는 앞서 설명한 Full Model과 Redu
 > 
 > $$
 > 
-> 여기서 $I$는 identity matrix, $H_1=X_1(X_1^TX_1)^{-1}X_1^T$ 는 [Hat Matrix](https://ddangchani.github.io/Linear-Regression-1)이다. 마찬가지로, 이번에는 2단계에서의 잔차를 구해보도록 하자.
+> 여기서 $I$는 identity matrix, $H_1=X_1(X_1^TX_1)^{-1}X_1^T$ 는 [Hat Matrix](https://ddangchani.github.io/linear%20model/linearreg1/)이다. 마찬가지로, 이번에는 2단계에서의 잔차를 구해보도록 하자.
 > 
 > $$
 > 

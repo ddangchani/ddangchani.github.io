@@ -11,7 +11,7 @@ use_math: true
 {% raw %}
 ## Boosting Tree
 
-이전에 Regression Tree와 Classification Tree([CART](https://ddangchani.github.io/machine%20learning/Tree/)) 모형에 대해 살펴보았는데, Tree에 대해서도 [boosting algorithm](https://ddangchani.github.io/Boosting)을 적용할 수 있다. Tree 모델은 기본적으로 partition된 region $R_m$들에 대한 예측값 $\gamma_m$을 부여하는 것인데, 이를 이용해 $J$개의 region을 분리하는 Tree를
+이전에 Regression Tree와 Classification Tree([CART](https://ddangchani.github.io/machine%20learning/Tree/)) 모형에 대해 살펴보았는데, Tree에 대해서도 [boosting algorithm](https://ddangchani.github.io/machine%20learning/boosting/)을 적용할 수 있다. Tree 모델은 기본적으로 partition된 region $R_m$들에 대한 예측값 $\gamma_m$을 부여하는 것인데, 이를 이용해 $J$개의 region을 분리하는 Tree를
 
 $$
 
@@ -37,7 +37,7 @@ f_M(x)=\sum_{m=1}^M T(x:\theta_m)
 
 $$
 
-와 같은 형태인데, 이는 [forward-stagewise additive modeling](https://ddangchani.github.io/Boosting)의 알고리즘으로부터 유도된다. 각 단계 $m=1,\ldots,M$에 대해 다음의 최적화 과정
+와 같은 형태인데, 이는 [forward-stagewise additive modeling](https://ddangchani.github.io/machine%20learning/boosting/)의 알고리즘으로부터 유도된다. 각 단계 $m=1,\ldots,M$에 대해 다음의 최적화 과정
 
 $$
 

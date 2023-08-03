@@ -11,13 +11,13 @@ header:
 {% raw %}
 ## Support Vector Machine
 
-이전에 Linear Classification에서 [Fischer's LDA](https://ddangchani.github.io/LDA)에 대해 다룬 적 있었다. 이는 특성공간에서 데이터들을 분류하기 위한 선형 경계를 만드는 것인데, support vector classifier/machine은 이와 유사하나 비선형인 결정경계를 만들 수 있다는 점에서 좀 더 일반화된 개념으로 생각하면 된다.
+이전에 Linear Classification에서 [Fischer's LDA](https://ddangchani.github.io/linear%20model/lda1/)에 대해 다룬 적 있었다. 이는 특성공간에서 데이터들을 분류하기 위한 선형 경계를 만드는 것인데, support vector classifier/machine은 이와 유사하나 비선형인 결정경계를 만들 수 있다는 점에서 좀 더 일반화된 개념으로 생각하면 된다.
 
 ### Support Vector Classifier
 
 #### Hard Margin
 
-$N$개의 observation으로 구성된 데이터셋 $(x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)$이 주어지고 이때 $x_i\in \mathbb R^p$, $y_i\in\{-1,1\}$ 이라고 하자. 이때 데이터의 분류를 위한 초평면([hyperplane](https://ddangchani.github.io/LDA))을 다음과 같이 정의하자.
+$N$개의 observation으로 구성된 데이터셋 $(x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)$이 주어지고 이때 $x_i\in \mathbb R^p$, $y_i\in\{-1,1\}$ 이라고 하자. 이때 데이터의 분류를 위한 초평면([hyperplane](https://ddangchani.github.io/linear%20model/lda1/))을 다음과 같이 정의하자.
 
 $$
 
@@ -138,7 +138,7 @@ L_D = \sum_{i=1}^N\alpha_i - {1\over2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_
 
 $$
 
-SVM에서는 위 식의 내적($x_i^Tx_j$) 대신에 feature transformation $h(x)$의([참고](https://ddangchani.github.io/Splines)) inner product을 이용해 다음과 같이 정의한다.
+SVM에서는 위 식의 내적($x_i^Tx_j$) 대신에 feature transformation $h(x)$의([참고](https://ddangchani.github.io/machine%20learning/Splines/)) inner product을 이용해 다음과 같이 정의한다.
 
 $$
 
@@ -155,7 +155,7 @@ f(x) = h(x)^T\beta+\beta_0\\
 
 $$
 
-으로 주어진다. 하지만 굳이 feature transformation의 내적을 구할 필요 없이, [Kernel Trick](https://ddangchani.github.io/Kernel-Algorithm-2)을 이용하여 내적의 형태를 
+으로 주어진다. 하지만 굳이 feature transformation의 내적을 구할 필요 없이, [Kernel Trick](https://ddangchani.github.io/machine%20learning/kernel2/)을 이용하여 내적의 형태를 
 
 $$
 

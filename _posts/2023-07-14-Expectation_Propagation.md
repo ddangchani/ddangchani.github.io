@@ -11,7 +11,7 @@ header:
 ---
 {% raw %}
 
-Expectation Propagation(EP) 알고리즘은 [Laplace approximation](https://ddangchani.github.io/ML/Laplace-Approximation-GP-classifier)에서 살펴본 것과 같이 사후확률분포를 근사하는 알고리즘 중 하나이다. 이번 글에서는 Expectation Propagation 알고리즘을 살펴보고 Gaussian Process에 어떻게 적용될 수 있는지와 Laplace approximation과 어떤 성능 차이를 보이는지를 살펴보고자 한다.
+Expectation Propagation(EP) 알고리즘은 [Laplace approximation](https://ddangchani.github.io/machine learning/Laplace-Approximation-GP-classifier)에서 살펴본 것과 같이 사후확률분포를 근사하는 알고리즘 중 하나이다. 이번 글에서는 Expectation Propagation 알고리즘을 살펴보고 Gaussian Process에 어떻게 적용될 수 있는지와 Laplace approximation과 어떤 성능 차이를 보이는지를 살펴보고자 한다.
 
 ## Expectation Propagation
 

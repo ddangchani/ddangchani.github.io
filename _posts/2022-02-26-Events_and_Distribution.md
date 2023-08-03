@@ -47,7 +47,7 @@ I_{\{A_n\;\text{a.b.f}\}} = \liminf_{n\to\infty}I_{A_n}
 
 $$
 
-으로 표현된다. 이때 [Fatou's Lemma](https://ddangchani.github.io/실해석학-7.-르벡-적분1)을 이용하면
+으로 표현된다. 이때 [Fatou's Lemma](https://ddangchani.github.io/mathematics/실해석학7)을 이용하면
 
 $$
 

@@ -20,7 +20,7 @@ w^{*}=\arg\min_w L(w)
 
 $$
 
-이때 argmin, 즉 최대화가 아닌 **최소화** 표현이 사용되는 이유는 머신러닝에서 사용하는 최적화는 [손실함수](https://ddangchani.github.io/Model-Assessment) $L(w)$를 최소화하는데 초점이 맞춰져있기 때문이다(본격적으로 최적화를 다루는 convex optimization 영역에서도 함수의 convex와 일치하게끔 최소화로 치환하여 문제를 생각하는 경우가 많다). 손실함수는 squared loss function 뿐 아니라 softmax, SVM, Full loss function과 같이 딥러닝에서도 이용되는 다양한 종류가 있는데, 각각에 대해서는 추후에 더 살펴보도록 하겠다. 우선 여기서는 손실함수의 종류에 관계없이, 손실함수를 최소화하는 방법, 즉 알고리즘들에 대해 살펴보자.
+이때 argmin, 즉 최대화가 아닌 **최소화** 표현이 사용되는 이유는 머신러닝에서 사용하는 최적화는 [손실함수](https://ddangchani.github.io/machine%20learning/Model_Assessment/) $L(w)$를 최소화하는데 초점이 맞춰져있기 때문이다(본격적으로 최적화를 다루는 convex optimization 영역에서도 함수의 convex와 일치하게끔 최소화로 치환하여 문제를 생각하는 경우가 많다). 손실함수는 squared loss function 뿐 아니라 softmax, SVM, Full loss function과 같이 딥러닝에서도 이용되는 다양한 종류가 있는데, 각각에 대해서는 추후에 더 살펴보도록 하겠다. 우선 여기서는 손실함수의 종류에 관계없이, 손실함수를 최소화하는 방법, 즉 알고리즘들에 대해 살펴보자.
 
 ### Is Random Search🔍 an Optimization?
 

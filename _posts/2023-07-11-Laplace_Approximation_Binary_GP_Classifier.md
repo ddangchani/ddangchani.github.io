@@ -10,7 +10,7 @@ header:
   teaser: /assets/img/Pasted image 20230712191810.png
 ---
 {% raw %}
-[바로 이전 글에서](https://ddangchani.github.io/ML/Gaussian-Process-Classification) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}\vert X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.
+[바로 이전 글에서](https://ddangchani.github.io/machine learning/Gaussian-Process-Classification) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}\vert X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.
 
 ## Laplace Approximation
 
@@ -100,7 +100,7 @@ $$
 
 ## Example
 
-이전 [Linear Classification Model](https://ddangchani.github.io/Gaussian-Process-Classification)에서 다루었던 데이터를 바탕으로 예측 확률분포를 구하는 과정을 알고리즘으로 살펴보도록 하자. 우선 데이터는 다음과 같이 각 클래스별로 4개씩 주어졌다고 가정하자.
+이전 [Linear Classification Model](https://ddangchani.github.io/machine%20learning/Gaussian_Process_Classification/)에서 다루었던 데이터를 바탕으로 예측 확률분포를 구하는 과정을 알고리즘으로 살펴보도록 하자. 우선 데이터는 다음과 같이 각 클래스별로 4개씩 주어졌다고 가정하자.
 ![](/assets/img/Pasted image 20230712191857.png){: .align-center}{: .align-center}
 
 Kernel function은 Gaussian RBF

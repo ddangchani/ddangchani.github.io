@@ -11,7 +11,7 @@ header:
 {% raw %}
 ## Learning Cause-Effect Models (2)
 
-이번 게시글에서는 [저번](https://ddangchani.github.io/CausalInference3)에 이어 다른 Cause-Effect 모델들과 이들의 식별가능성에 대해 계속 살펴보도록 하자.
+이번 게시글에서는 [저번](https://ddangchani.github.io/causal%20inference/Causal_Inference_(3)/)에 이어 다른 Cause-Effect 모델들과 이들의 식별가능성에 대해 계속 살펴보도록 하자.
 
 ## Post-nonlinear Models
 Post-nonlinear model은 이전에 살펴본 Nonlinear ANM의 일반화된 모델이다. 결합분포 $P_{X,Y}$가 X에서 Y로의 post-nonlinear model을 admit한다는 것은 다음 관계

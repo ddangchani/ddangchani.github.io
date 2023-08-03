@@ -47,7 +47,7 @@ $$
 
 이밖에도 시그모이드<sup>sigmoid</sup> $\sigma(x)=1/(1+e^{-x})$, 하이퍼볼릭 탄젠트<sup>tangent hyperbolic</sup> $f(x) = \tanh(x)$ 등이 있다. 그렇지만 대부분의 딥러닝 문제에서(특히 Computer Vision같은 영역에서) 기본적으로 ReLU를 사용하며, 또한 문제의 특성(분류, 회귀) 등에 따라 주로 사용하는 함수가 바뀌기도 한다.
 
-[Optimization](https://ddangchani.github.io/Optimization)에서 살펴본 (Vanilla) Gradient Descent를 최적화 과정으로, 손실함수를 L2 loss function으로, 활성함수는 sigmoid function으로 설정한 간단한 2-layer 신경망을 numpy를 이용해 다음과 같은 코드로 보일 수 있다.
+[Optimization](https://ddangchani.github.io/deep%20learning/Optimization/)에서 살펴본 (Vanilla) Gradient Descent를 최적화 과정으로, 손실함수를 L2 loss function으로, 활성함수는 sigmoid function으로 설정한 간단한 2-layer 신경망을 numpy를 이용해 다음과 같은 코드로 보일 수 있다.
 
 ~~~python
 import numpy as np

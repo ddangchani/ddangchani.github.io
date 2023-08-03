@@ -71,7 +71,7 @@ $$
 
 ### Mercer Kernel
 
-커널에 대한 기본적인 설명은 [예전에 다룬 글](https://ddangchani.github.io/Kernel-Algorithm-1)로 대체하고, 여기서는 주로 사용되는 커널들에 대해 다루어보도록 하자. 우선, 만약 입력벡터가 유클리드공간($\mathbb R^D$)인 경우 **stationary kernel**이 주로 사용된다. Stationary kernel은 $\mathcal K(x,x') = \mathcal K(x-x') = \mathcal K(r)$ 꼴로 표현되는 커널함수를 의미한다.
+커널에 대한 기본적인 설명은 [예전에 다룬 글](https://ddangchani.github.io/machine%20learning/kernel2/)로 대체하고, 여기서는 주로 사용되는 커널들에 대해 다루어보도록 하자. 우선, 만약 입력벡터가 유클리드공간($\mathbb R^D$)인 경우 **stationary kernel**이 주로 사용된다. Stationary kernel은 $\mathcal K(x,x') = \mathcal K(x-x') = \mathcal K(r)$ 꼴로 표현되는 커널함수를 의미한다.
 
 #### Examples
 
@@ -147,7 +147,7 @@ $$
 
 Training data $\mathcal D = \{(x_n,y_n) : n=1:N, x_i\in\mathbb R^D\}$ 이 주어지고, 이때 noise-free인(오차항이 없는) 함수 $y_n=f(x_n)$ 로 관계식이 주어진다고 하자. 이때, 이미 관측된(Training data) $x$에 대한 함수값 $f(x)$를 추정하는 문제가 주어진다고 하자. 이 경우에는 **GP를 가정**한 함수 $f$를 추정하는 것이 비교적 간단하다. 오차항이 없으므로 Training data를 보간(Interpolate)하는 함수를 찾으면 된다.
 
-반면, 이번에는 Training data 외부에서 관측된 $x$,에서의 문제를 생각해보자. 예컨대 $N_*\times D$ 크기의 test dataseet $\mathbf X_*$의 원소들에 대응하는 가우시안 벡터
+반면, 이번에는 Training data 외부에서 관측된 $x$,에서의 문제를 생각해보자. 예컨대 $$N_*\times D$$ 크기의 test dataseet $$\mathbf X_*$$ 의 원소들에 대응하는 가우시안 벡터
 
 $$
 

@@ -7,7 +7,7 @@ tags:
 category: Causal Inference
 use_math: true
 header: 
-  teaser: Causal Inference 
+  teaser: /assets/img/16562068457631.jpg
 ---
 {% raw %}
 ## Multivariate Causal Models

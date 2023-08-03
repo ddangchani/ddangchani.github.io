@@ -9,7 +9,7 @@ use_math: true
 {% raw %}
 ## Bootstrap Methods
 
-Bootstrap 방법은 정확도(accuracy)를 측정하기 위해 사용되는 일반적인 방법이다. Cross-validation과 마찬가지로 bootstrap은 (conditional) [test error](https://ddangchani.github.io/model-assessment) $\text{Err}_\mathcal T$ 를 추정하기 위해 사용되지만, 일반적으로 기대예측오차 $\text {Err}$ 만을 잘 추정해낸다.
+Bootstrap 방법은 정확도(accuracy)를 측정하기 위해 사용되는 일반적인 방법이다. Cross-validation과 마찬가지로 bootstrap은 (conditional) [test error](https://ddangchani.github.io/machine%20learning/Model_Assessment/) $\text{Err}_\mathcal T$ 를 추정하기 위해 사용되지만, 일반적으로 기대예측오차 $\text {Err}$ 만을 잘 추정해낸다.
 
 ### 정의
 
@@ -33,7 +33,7 @@ $$
 
 $$
 
-그러나, 이는 올바른 추정량이 될 수 없다. 손실함수를 계산하는데 쓰이는 데이터, 즉 test sample의 역할을 하는 데이터가 각 $z_i=(x_i,y_i)$ 로 원래 Training set $\mathbf Z$인 반면 훈련에 쓰인 데이터는 $\mathbf Z$에서 추출한 bootstrap set들이기 때문이다. 즉, 훈련과 테스트 데이터의 성격이 매우 유사하여 test error의 추정량으로서의 의미가 없어진다. 만일 위 추정량을 이용하게 되면 예측오차가 비현실적으로 좋게 추정되고, 그렇기 때문에 [cross-validation](https://ddangchani.github.io/Cross-Validation)의 경우 training-test data가 중첩되지 않도록 하는 것이다.
+그러나, 이는 올바른 추정량이 될 수 없다. 손실함수를 계산하는데 쓰이는 데이터, 즉 test sample의 역할을 하는 데이터가 각 $z_i=(x_i,y_i)$ 로 원래 Training set $\mathbf Z$인 반면 훈련에 쓰인 데이터는 $\mathbf Z$에서 추출한 bootstrap set들이기 때문이다. 즉, 훈련과 테스트 데이터의 성격이 매우 유사하여 test error의 추정량으로서의 의미가 없어진다. 만일 위 추정량을 이용하게 되면 예측오차가 비현실적으로 좋게 추정되고, 그렇기 때문에 [cross-validation](https://ddangchani.github.io/machine%20learning/Cross_Validation/)의 경우 training-test data가 중첩되지 않도록 하는 것이다.
 
 ### Bootstrap error의 개선
 
@@ -60,7 +60,7 @@ $\widehat{\text{Err}}_{boot}$의 성능을 개선하기 위해, 우선 bootstrap
 > 
 > 에 비례한다. 즉, $\widehat{\text{Err}}_{boot}$의 기댓값은 대략 $0.5\times0.368 = 0.184$ 가 되고, 실제 true error 0.5에 비해 많이 낮은 수치이다.
 
-즉, 위 예시에서 문제가 되었던 것은 bootstrap이 특정 관측값을 포함하지 않는 경우이고, 이를 해결하기 위해 [LOOCV](https://ddangchani.github.io/Cross-Validation)와 유사한 방법을 사용해야 한다. 각각의 관측값 $z_i$에 대해 $z_i$를 포함하지 않는 bootstrap sample만을 다루자. 즉, $z_i$를 포함하지 않는 bootstrap sample들의 인덱스 집합을 $C^{-i}$로 두고, 이때 샘플의 개수를 $\vert C^{-i}\vert $로 쓰자. 이를 이용해 다음과 같이 예측오차에 대한 *Leave-one-out* bootstrap(LOOB) 추정치를 정의할 수 있다.
+즉, 위 예시에서 문제가 되었던 것은 bootstrap이 특정 관측값을 포함하지 않는 경우이고, 이를 해결하기 위해 [LOOCV](https://ddangchani.github.io/machine%20learning/Cross_Validation/)와 유사한 방법을 사용해야 한다. 각각의 관측값 $z_i$에 대해 $z_i$를 포함하지 않는 bootstrap sample만을 다루자. 즉, $z_i$를 포함하지 않는 bootstrap sample들의 인덱스 집합을 $C^{-i}$로 두고, 이때 샘플의 개수를 $\vert C^{-i}\vert $로 쓰자. 이를 이용해 다음과 같이 예측오차에 대한 *Leave-one-out* bootstrap(LOOB) 추정치를 정의할 수 있다.
 
 $$
 

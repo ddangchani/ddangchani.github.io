@@ -13,7 +13,7 @@ header:
 {% raw %}
 ## Gradient Boosting Machine
 
-이번 글에서는 [Boosting](https://ddangchani.github.io/Boosting) 알고리즘과 관련하여, 특히 함수추정과 예측 문제에서 뛰어난 성능을 보이는 Gradient Boosting Machine에 대해 살펴보고자 한다. 여기서는 GBM을 제안한 Jerome H. Friedman의 *Greedy Function Approximation: A Gradient Boosting Machine* 이라는 논문을 리뷰해보며 함수추정의 전반적인 내용과 GBM에 대해 살펴보도록 하겠다.
+이번 글에서는 [Boosting](https://ddangchani.github.io/machine%20learning/boosting/) 알고리즘과 관련하여, 특히 함수추정과 예측 문제에서 뛰어난 성능을 보이는 Gradient Boosting Machine에 대해 살펴보고자 한다. 여기서는 GBM을 제안한 Jerome H. Friedman의 *Greedy Function Approximation: A Gradient Boosting Machine* 이라는 논문을 리뷰해보며 함수추정의 전반적인 내용과 GBM에 대해 살펴보도록 하겠다.
 
 ## Function Estimation
 
@@ -25,7 +25,7 @@ L(f)=\sum_{i=1}^N L(y_i,f(x_i))
 
 $$
 
-와 같이 주어진다. 여기서 핵심은 $f$에 대해 $E_{y,x}L(f)$ 값을 최소화하는 것이다. 그런데, 아무것도 주어지지 않은 상태에서 어떤 함수를 추정하는 것은 불가능에 가깝다. 그렇기에 우리는 이러한 함수가 존재할 수 있는 함수들의 집합, 즉 함수족<sup>class of functions</sup> $\mathcal F(X:P)$ 를 정의하고, 함수족의 원소 중에서 손실함수으 최적화가 이루어지는 특정 함수 $\hat f$ 를 선택하는 것이다. 여기서 $P=\{P_1,P_2,\ldots\}$는 parameter들의 유한집합, 즉 함수족의 개별 함수들을 구분짓는 모수 집합이다. **Boosting** 알고리즘의 경우, 특별히 개별 함수들을 additive한 모델로 표현하여(Boosting - basis expansion과의 관계 [참조](https://ddangchani.github.io/Boosting)) 모수화<sup>parameterization</sup>하였다. 즉, 
+와 같이 주어진다. 여기서 핵심은 $f$에 대해 $E_{y,x}L(f)$ 값을 최소화하는 것이다. 그런데, 아무것도 주어지지 않은 상태에서 어떤 함수를 추정하는 것은 불가능에 가깝다. 그렇기에 우리는 이러한 함수가 존재할 수 있는 함수들의 집합, 즉 함수족<sup>class of functions</sup> $\mathcal F(X:P)$ 를 정의하고, 함수족의 원소 중에서 손실함수으 최적화가 이루어지는 특정 함수 $\hat f$ 를 선택하는 것이다. 여기서 $P=\{P_1,P_2,\ldots\}$는 parameter들의 유한집합, 즉 함수족의 개별 함수들을 구분짓는 모수 집합이다. **Boosting** 알고리즘의 경우, 특별히 개별 함수들을 additive한 모델로 표현하여(Boosting - basis expansion과의 관계 [참조](https://ddangchani.github.io/machine%20learning/boosting/)) 모수화<sup>parameterization</sup>하였다. 즉, 
 
 $$
 
@@ -128,7 +128,7 @@ L\bigg(y_i,\sum_{m=1}^M\beta_m' h(x_i:\gamma_m')\bigg)
 
 $$
 
-이를 해결하기 위해, 다음과 같은 [Forward-stagewise additive modeling](https://ddangchani.github.io/Boosting)과 유사한 *greedy-stagewise* approach를 생각해 볼 수 있다. 즉, 각 단계 $m=1,\ldots,M$ 에 대해 
+이를 해결하기 위해, 다음과 같은 [Forward-stagewise additive modeling](https://ddangchani.github.io/machine%20learning/boosting/)과 유사한 *greedy-stagewise* approach를 생각해 볼 수 있다. 즉, 각 단계 $m=1,\ldots,M$ 에 대해 
 
 $$
 
@@ -186,7 +186,7 @@ $$
 
 Least Squares에서는 손실함수가 $L(y,F) = (y-F)^2/2$ 로 주어진다(*미분의 편의를 위해 2로 나누어줌*). 이를 바탕으로 다음과 같은 Gradient Boost가 이루어진 Least Squares 알고리즘을 고안할 수 있다.
 
-![스크린샷 2022-04-18 오전 10.29.52](/assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 10.29.52.png){: .align-center}
+![](/assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 10.29.52.png){: .align-center}
 
 3번째 줄의 $\tilde y_i$는 current residual을 의미하고, current residual을 fit하는 $\rho_m$은 $m$번째 단계에서 생성되는 회귀계수 $\beta_m$을 의미한다.
 
@@ -251,7 +251,7 @@ $$
 
 전체적인 알고리즘은 다음과 같다.
 
-![스크린샷 2022-04-18 오전 11.05.00](/assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 11.05.00.png){: .align-center}
+![](/assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 11.05.00.png){: .align-center}
 
 ## Interpretation
 

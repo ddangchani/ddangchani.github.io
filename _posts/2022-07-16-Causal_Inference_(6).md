@@ -7,7 +7,7 @@ tags:
 category: Causal Inference
 use_math: true
 header: 
-  teaser: /assets/img/Causal%20Inference%20
+  teaser: /assets/img/Causal%20Inference%20(6).assets/image-20220803153132412.png
 ---
 {% raw %}
 # Multivariate Causal Model (2)
@@ -66,7 +66,7 @@ $$
 
 위 세개의 Markov property들은 얼핏 보면 별개의 것처럼 보이지만, 실제로는 결합확률밀도($p$)가 주어지기만 한다면 모두 **동치관계**에 있다. 아래 그림과 같은 그래프 $\mathcal G$의 예시를 살펴보자.(자세한 증명 생략)
 
-![](/assets/img/../../../assets/img/Causal%20Inference%20(6).assets/image-20220803153132412.png){: .align-center width="40%" height="40%"}
+![](/assets/img/Causal%20Inference%20(6).assets/image-20220803153132412.png){: .align-center width="40%" height="40%"}
 
 1. 우선 그래프 관계에 의해
 

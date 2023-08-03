@@ -95,7 +95,7 @@ $$
 
 $$ \forall f\in\mathcal{H_k},\quad \Psi(f)=\frac{1}{n\Vert f\Vert^2}\sum_{j=1}^nf(\mathbf{x_j})^2 $$     
 
-는 [표현자정리](https://ddangchani.github.io/ml/kernel2)의 조건을 만족시킨다(범함수 $\Psi$ 가 $\Vert f\Vert$에 대해 단조감소하므로). 그러므로 표현자정리를 적용하면 우리는 위 최적화 문제, 즉 선형PCA의 해가 되는 함수들이 다음의 형태를 취함을 알 수 있다.   
+는 [표현자정리](https://ddangchani.github.io/machine learning/kernel2)의 조건을 만족시킨다(범함수 $\Psi$ 가 $\Vert f\Vert$에 대해 단조감소하므로). 그러므로 표현자정리를 적용하면 우리는 위 최적화 문제, 즉 선형PCA의 해가 되는 함수들이 다음의 형태를 취함을 알 수 있다.   
 
 $$\forall\mathbf{x\in X},\quad f_i(\mathbf{x})=\sum_{j=1}^n\alpha_{i,j}k(\mathbf{x_j,x})$$   
 

@@ -13,7 +13,7 @@ header:
 {% raw %}
 ## Multivariate LSTM-FCN
 
-이번 글에서는 저번에 살펴본 단변량 시계열 분류모형인 [LSTM-FCN](https://ddangchani.github.io/LSTM-FCN)을 다변량으로 확장한 *Multivariate LSTM-FCN*을 살펴보도록 할 것이다. 모형의 근본적인 구조는 LSTM-FCN과 동일하지만 convolutional layer들에서 **Squeeze and Excite** 라는 새로운 블록이 추가된다. Squeeze and Excite 블록은 본래 합성곱 신경망을 발전시키는 과정에서 고안된 네트워크인데 여기서는 LSTM-FCN의 합성곱 부분에 이를 응용한 것이다. 먼저, 네트워크의 전체 구조는 다음과 같다.
+이번 글에서는 저번에 살펴본 단변량 시계열 분류모형인 [LSTM-FCN](https://ddangchani.github.io/deep%20learning/LSTM-FCN/)을 다변량으로 확장한 *Multivariate LSTM-FCN*을 살펴보도록 할 것이다. 모형의 근본적인 구조는 LSTM-FCN과 동일하지만 convolutional layer들에서 **Squeeze and Excite** 라는 새로운 블록이 추가된다. Squeeze and Excite 블록은 본래 합성곱 신경망을 발전시키는 과정에서 고안된 네트워크인데 여기서는 LSTM-FCN의 합성곱 부분에 이를 응용한 것이다. 먼저, 네트워크의 전체 구조는 다음과 같다.
 
 ![](/assets/img/16603496815995.jpg)
 

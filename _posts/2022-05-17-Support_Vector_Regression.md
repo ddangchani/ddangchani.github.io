@@ -13,7 +13,7 @@ header:
 {% raw %}
 ## Support Vector Regression
 
-[이전 게시글](https://ddangchani.github.io/Support-Vector-Machine)에서 SVM의 작동 원리와 SVR, 즉 support vector regression이 SVM의 원리를 차용하여 생성되는 모델이라는 점에 대해 살펴보았다. 이번에는 paper *"A Tutorial on Support Vector Regression(2003)"*을 바탕으로 SVM이 회귀분석에 사용되는 경우만 특히 집중해서 살펴보고, 이와 더불어 사용되는 *NuSVR* 모델에 대해서도 간략히 다루어보도록 하자.
+[이전 게시글](https://ddangchani.github.io/machine%20learning/Support-Vector-Machine)에서 SVM의 작동 원리와 SVR, 즉 support vector regression이 SVM의 원리를 차용하여 생성되는 모델이라는 점에 대해 살펴보았다. 이번에는 paper *"A Tutorial on Support Vector Regression(2003)"*을 바탕으로 SVM이 회귀분석에 사용되는 경우만 특히 집중해서 살펴보고, 이와 더불어 사용되는 *NuSVR* 모델에 대해서도 간략히 다루어보도록 하자.
 
 ### SVR
 

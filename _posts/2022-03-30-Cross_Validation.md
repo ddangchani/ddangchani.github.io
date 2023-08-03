@@ -49,7 +49,7 @@ $$
 
 >  일반적으로 K-cross-validation의 K는 5 또는 10개를 설정하고, 특별히 $K=N$인 경우를 *Leave-one-out cross-validation(LOOCV)*이라고 한다.
 
-$K=5,10$ 인 경우, 각 fold의 training set들이 원래 training set($N$ data)와 다르기 때문에 $\text{CV}(\hat f)$ 값은 [Expected error](https://ddangchani.github.io/model-assessment)($\text{Err}$, Test error의 기댓값)
+$K=5,10$ 인 경우, 각 fold의 training set들이 원래 training set($N$ data)와 다르기 때문에 $\text{CV}(\hat f)$ 값은 [Expected error](https://ddangchani.github.io/machine%20learning/Model_Assessment/)($\text{Err}$, Test error의 기댓값)
 
 $$
 
@@ -57,7 +57,7 @@ $$
 
 $$
 
-을 추정한다. 반면, LOOCV인 경우 cross-validation estimator($\text{CV}(\hat f)$) 값이 [EPE](https://ddangchani.github.io/model-assessment)(Expected prediction error) 
+을 추정한다. 반면, LOOCV인 경우 cross-validation estimator($\text{CV}(\hat f)$) 값이 [EPE](https://ddangchani.github.io/machine%20learning/Model_Assessment/)(Expected prediction error) 
 
 $$
 

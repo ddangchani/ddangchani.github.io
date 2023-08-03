@@ -22,7 +22,7 @@ Early Stopping<sup>조기 종료</sup> 방법은 경사하강법과 같이 반�
 
 ### L1, L2 Regularization
 
-이전에 Linear Regression에서의 대표적인 규제 방법으로 Lasso, Ridge 방법을 살펴보았다([링크](https://ddangchani.github.io/Linear-Regression)). 이때 사용된 방법이 L1, L2 Norm을 이용한 규제인데, 이는 신경망에서도 마찬가지로 사용될 수 있다. 다만, 신경망에서는 parameter가 행렬로 주어지므로, 행렬에 대해 L1,L2 노음을 어떻게 정의할 것인지에 대한 논의가 우선되어야 한다.
+이전에 Linear Regression에서의 대표적인 규제 방법으로 Lasso, Ridge 방법을 살펴보았다([링크](https://ddangchani.github.io/linear%20model/linearreg1/)). 이때 사용된 방법이 L1, L2 Norm을 이용한 규제인데, 이는 신경망에서도 마찬가지로 사용될 수 있다. 다만, 신경망에서는 parameter가 행렬로 주어지므로, 행렬에 대해 L1,L2 노음을 어떻게 정의할 것인지에 대한 논의가 우선되어야 한다.
 
 #### Matrix Norm
 
@@ -78,7 +78,7 @@ $$
 
 ### Dropout
 
-드롭아웃에 대한 기본적인 내용은 [AlexNet](https://ddangchani.github.io/AlexNet) paper review에서 다룬 것을 살펴보면 되고, 자세한 내용은 다른 논문 리뷰에서 다루도록 하겠다.
+드롭아웃에 대한 기본적인 내용은 [AlexNet](https://ddangchani.github.io/deep%20learning/AlexNet/) paper review에서 다룬 것을 살펴보면 되고, 자세한 내용은 다른 논문 리뷰에서 다루도록 하겠다.
 
 ### Max-Norm Regularization
 

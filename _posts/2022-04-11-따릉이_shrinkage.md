@@ -158,7 +158,7 @@ plt.savefig('plots/rmse_vs_alpha.png', facecolor='white', transparent=False)
 
 #### Least Angle Regression
 
-LARS로 불리는 [Least Angle Regression](https://ddangchani.github.io/Linear-Regression)은 고차원 데이터에 대해 효과적인 방법인데, forward-stepwise regression(이전 포스트 참고)와 유사하게 변수들을 하나씩 추가하면서 모형을 생성해나간다(자세한 알고리즘은 링크 참고). 다만, high-dimensional data에서 특별히 계산적으로 유용한 것이므로(*추후 고차원데이터 샘플을 구하면 연구해보도록 하겠다*), 여기서는 작동 코드만 파악해보도록 하자. 안타깝게도, `statsmodels` 패키지는 LARS를 직접 수행할 수 있는 모듈을 제공하지 않으므로 대표적인 머신러닝 패키지 `scikit-learn`을 이용해보도록 하자. `sklearn.linear_model`의 `Lars`를 이용해 다음 코드와 같이 Lars 모델을 생성하고 validation data에 대한 RMSE를 계산할 수 있다.
+LARS로 불리는 [Least Angle Regression](https://ddangchani.github.io/linear%20model/linearreg1/)은 고차원 데이터에 대해 효과적인 방법인데, forward-stepwise regression(이전 포스트 참고)와 유사하게 변수들을 하나씩 추가하면서 모형을 생성해나간다(자세한 알고리즘은 링크 참고). 다만, high-dimensional data에서 특별히 계산적으로 유용한 것이므로(*추후 고차원데이터 샘플을 구하면 연구해보도록 하겠다*), 여기서는 작동 코드만 파악해보도록 하자. 안타깝게도, `statsmodels` 패키지는 LARS를 직접 수행할 수 있는 모듈을 제공하지 않으므로 대표적인 머신러닝 패키지 `scikit-learn`을 이용해보도록 하자. `sklearn.linear_model`의 `Lars`를 이용해 다음 코드와 같이 Lars 모델을 생성하고 validation data에 대한 RMSE를 계산할 수 있다.
 
 ```python
 # LARS

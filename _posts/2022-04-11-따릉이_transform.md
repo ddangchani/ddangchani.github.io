@@ -141,7 +141,7 @@ pca_res.iloc[:3,:].sum(axis=0) # Ex.ratio of first three components
 
 ### Principal Component Regression & Partial Least Squares
 
-PCR<sup>주성분회귀</sup>은 예측변수행렬의 고유값분해를 기반으로 회귀계수를 추정하는 방법이다([참고](https://ddangchani.github.io/Linear-Regression-2)). 즉, PCA를 training data에 적용시킴으로써 차원 축소가 가능하게 하고, 이를 바탕으로 선형 회귀를 진행하는 것이다.  이때 PCA는 반응변수에 무관하게 작동하므로, **unsupervised** transformation이 일어난다고 볼 수 있다.[PLS](https://ddangchani.github.io/Linear-Regression-2)는 Linear regression 알고리즘의 일종인데, PCR과 유사하게 예측변수 열벡터들의 선형결합을 바탕으로 선형 모형을 구성하지만, 그 과정에서 반응변수와의 관계가 개입되므로 **supervised** transformation이라는 것이 PCR과의 차이점이다.
+PCR<sup>주성분회귀</sup>은 예측변수행렬의 고유값분해를 기반으로 회귀계수를 추정하는 방법이다([참고](https://ddangchani.github.io/linear%20model/linearreg2/)). 즉, PCA를 training data에 적용시킴으로써 차원 축소가 가능하게 하고, 이를 바탕으로 선형 회귀를 진행하는 것이다.  이때 PCA는 반응변수에 무관하게 작동하므로, **unsupervised** transformation이 일어난다고 볼 수 있다.[PLS](https://ddangchani.github.io/linear%20model/linearreg2/)는 Linear regression 알고리즘의 일종인데, PCR과 유사하게 예측변수 열벡터들의 선형결합을 바탕으로 선형 모형을 구성하지만, 그 과정에서 반응변수와의 관계가 개입되므로 **supervised** transformation이라는 것이 PCR과의 차이점이다.
 
 #### PCR
 

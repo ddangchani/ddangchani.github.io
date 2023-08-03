@@ -14,7 +14,7 @@ use_math: true
 
 ## 르벡적분의 정의
 
-이전에 살펴본 [단순함수근사](https://ddangchani.github.io/실해석학-5.-르벡-가측함수)로부터 양함수 $f:X\to[0,\infty)$ 로 수렴하는 단순함수 $S:X\to[0,\infty)$ 의 열이 존재하므로 르벡적분을 다음과 같이 정의할 수 있다.
+이전에 살펴본 [단순함수근사](https://ddangchani.github.io/mathematics/실해석학5)로부터 양함수 $f:X\to[0,\infty)$ 로 수렴하는 단순함수 $S:X\to[0,\infty)$ 의 열이 존재하므로 르벡적분을 다음과 같이 정의할 수 있다.
 
 > Measure space $(X,\mathcal{X},\mu)$ 에서 정의되는 단순함수 $s=\sum_i^n c_i I_{A_i}$ 에 대한 르벡적분은
 > 
@@ -120,9 +120,9 @@ $$
 
 엘피공간에 대해 살펴보았던 횔더/민코우스키 부등식 역시 그대로 성립하는 것을 보일 수 있다. 요약한다면 다음과 같다.
 
-1. $L^p$ 공간은 벡터공간이다 : [민코우스키 부등식](https://ddangchani.github.io/실해석학-10.-Lp-Space)에 의해 벡터공간의 요건인 삼각부등식이 성립한다.
+1. $L^p$ 공간은 벡터공간이다 : [민코우스키 부등식](https://ddangchani.github.io/mathematics/실해석학10)에 의해 벡터공간의 요건인 삼각부등식이 성립한다.
 
-2. $L^p$ 공간은 완비공간이다 : [Riesz-Fischer](https://ddangchani.github.io/실해석학-11.-Lp-공간의-완비성) 정리 참고
+2. $L^p$ 공간은 완비공간이다 : [Riesz-Fischer](https://ddangchani.github.io/mathematics/실해석학11) 정리 참고
 
 3. $L^p$ 공간은 Banach Space이다 : 
    $$

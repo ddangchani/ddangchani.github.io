@@ -33,7 +33,7 @@ Dynkin's $\pi-\lambda$ system이라고도 불리는 체계는 실변수함수론
 >    $$
 >    가 성립한다.
 
-위와 같이 각각 $\pi$ system, $\lambda$ system을 정의한다. 이때 $\lambda$ system과 $\sigma$-algebra는 유사한 형태를 가지고 있는데([정의](https://ddangchani.github.io/실해석학-2.-sigma-algebra) 참고), 3번의 mutually disjoint union으로부터의 닫힘 조건만이 다르다는 것을 알 수 있다. 즉, $\sigma-$algebra는 $\pi-$system이면서 동시에 $\lambda$-system이기도 하다. 이 정의를 바탕으로, 다음과 같이 Dynkin's THM이 성립한다.
+위와 같이 각각 $\pi$ system, $\lambda$ system을 정의한다. 이때 $\lambda$ system과 $\sigma$-algebra는 유사한 형태를 가지고 있는데([정의](https://ddangchani.github.io/mathematics/실해석학2) 참고), 3번의 mutually disjoint union으로부터의 닫힘 조건만이 다르다는 것을 알 수 있다. 즉, $\sigma-$algebra는 $\pi-$system이면서 동시에 $\lambda$-system이기도 하다. 이 정의를 바탕으로, 다음과 같이 Dynkin's THM이 성립한다.
 
 ### Dynkin's $\pi-\lambda$ Theorem
 
@@ -53,7 +53,7 @@ $\mathcal{F}=\{(a,b):a,b\in\mathbb{R}, a<b\}$ 는 Measurable Space $(\mathbb{R},
 
 ### Measurability of function
 
-앞서 [Lebesgue measurable function](https://ddangchani.github.io/실해석학-5.-르벡-가측함수)을 정의할 때 실함수들의 치역이 가측인지를 기반으로 가측함수를 정의했었다. 여기서는 보다 일반적으로 함수의 measurability를 정의하고 르벡가측함수의 정의와 동치가 됨을 앞선 pi-lambda system 논의를 이용해 보여보도록 하자.
+앞서 [Lebesgue measurable function](https://ddangchani.github.io/mathematics/실해석학5)을 정의할 때 실함수들의 치역이 가측인지를 기반으로 가측함수를 정의했었다. 여기서는 보다 일반적으로 함수의 measurability를 정의하고 르벡가측함수의 정의와 동치가 됨을 앞선 pi-lambda system 논의를 이용해 보여보도록 하자.
 
 #### 가측함수
 
@@ -89,7 +89,7 @@ $$
 
 만약 위에서 $Y$가 위상공간이고 Borel-$\sigma$-algebra $\mathcal{B}(Y)$ 가 존재한다면 $Y$의 토폴로지가 $\mathcal{B}(Y)$의 separating class이므로(보렐 시그마 대수의 정의에 의해) 토폴로지의 원소, 즉 임의의 열린 집합 $V$들에 대해 $f^{-1}(V)\in\mathcal{X}$ 이 성립하는지를 보면 될 것이다.
 
-#### [Lebesgue measurable function](https://ddangchani.github.io/실해석학-5.-르벡-가측함수) 의 정의 도출
+#### [Lebesgue measurable function](https://ddangchani.github.io/mathematics/실해석학5) 의 정의 도출
 
 (Real-valued) Lebesgue measurable funciton $f:X\to\mathbb{R}$ 의 경우 임의의 실수 $c\in\mathbb{R}$ 에 대해 집합 $\{x\in X:f(x)\leq c\}$ 이 가측집합이면 $f$를 가측함수라고 정의했었다. 이 정의를 앞선 Monotone class argument를 이용해 보여보도록 하자.
 

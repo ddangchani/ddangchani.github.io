@@ -19,7 +19,7 @@ use_math: true
 위 성질을 티호노프 분리 성질이라고 하며, 이를 만족하는 위상공간을 **티호노프 공간**이라고 한다. 
 
 **명제 6**  위상공간 $X$가 티호노프 공간일 필요충분조건은 $X$의 단 한점으로 구성된 모든 집합이 닫혀있는 것이다.   
-> 증명. $x\in X$에 대해 집합 {$x$}이 닫힘과 여집합 $X\backslash${$x$} 이 열림은 동치이다 ([이전포스팅](https://ddangchani.github.io/math/realanalysis_Topological_spaces(1)) 참조). 이떄, $X\backslash${$x$} 가 열려있기 위해서는 각 점 $y\in X\backslash${$x$} 에 대해 $y$의 어떤 근방이 존재해 $X\backslash${$x$}에 포함되어야 하고, 이는 티호노프 분리 성질을 만족시킨다.   
+> 증명. $x\in X$에 대해 집합 {$x$}이 닫힘과 여집합 $X\backslash${$x$} 이 열림은 동치이다 ([이전포스팅](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(1)) 참조). 이떄, $X\backslash${$x$} 가 열려있기 위해서는 각 점 $y\in X\backslash${$x$} 에 대해 $y$의 어떤 근방이 존재해 $X\backslash${$x$}에 포함되어야 하고, 이는 티호노프 분리 성질을 만족시킨다.   
 
 ### 일반 분리 성질<sup>Normal Separation Property</sup>
 > 티호노프 분리 성질을 만족하며, 두 개의 서로소인 닫힌 집합들은 서로소인 근방에 의해 분리될 수 있다.

@@ -12,7 +12,7 @@ header:
 {% raw %}
 # Probabilistic Graphical Models
 
-이전에 graph의 [markov property](https://ddangchani.github.io/CausalInference6)을 살펴보며 markov property 하에서(parent 노드가 주어질 때 다른 노드들과의 조건부 독립성) graphical model을 다음과 같은 markov chain 형태로 나타낼 수 있음을 알았다.
+이전에 graph의 [markov property](https://ddangchani.github.io/causal%20inference/Causal_Inference_(6)/)을 살펴보며 markov property 하에서(parent 노드가 주어질 때 다른 노드들과의 조건부 독립성) graphical model을 다음과 같은 markov chain 형태로 나타낼 수 있음을 알았다.
 
 $$
 

@@ -18,7 +18,7 @@ use_math: true
 마찬가지로, $X$의 모든 점에서 연속이면 $f$를 연속사상이라고 한다. 실연속함수의 성질과 유사하게, 위상공간의 연속사상에 대해서도 다음 명제가 성립한다.    
 
 **명제 10** 위상공간에서의 사상 $f:X\to Y$ 가 연속인 것과 $Y$의 임의의 열린부분집합 $\mathcal{O}$ 에 대해 $f^{-1}(\mathcal{O})$ 가 $X$의 열린부분집합인 것은 **동치**이다.   
-> $(\because)$ 이전 포스팅에서 살펴본 [명제 1](https://ddangchani.github.io/math/realanalysis_Topological_spaces(1))로부터 열림을 보이는 것은 각 점에 대한 근방의 존재성과 동치임을 알 수 있다. 이때 위상공간의 연속사상은 근방을 통해 정의했으므로, 위 동치관계는 쉽게 보일 수 있다.   
+> $(\because)$ 이전 포스팅에서 살펴본 [명제 1](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(1))로부터 열림을 보이는 것은 각 점에 대한 근방의 존재성과 동치임을 알 수 있다. 이때 위상공간의 연속사상은 근방을 통해 정의했으므로, 위 동치관계는 쉽게 보일 수 있다.   
 
 #### 토폴로지의 강약관계
 어떤 집합 $X$에 대한 토폴로지는, $X$의 부분집합들을 모아놓은 것으로 정의했다. 만약 $\mathcal{T_1},\mathcal{T_2}$ 가 $X$의 토폴로지이고 이때 $\mathcal{T_1}\subseteq\mathcal{T_2}$ 가 성립한다면 $\mathcal{T_2}$ 를 더 **약한**(weaker), 반대로 $\mathcal{T_1}$ 을 더 **강한**(stronger) 토폴로지라고 한다. 
@@ -83,14 +83,14 @@ $$
 
 **명제 15** 컴팩트위상공간 $X$의 닫힌부분집합 $K$는 컴팩트하다.   
 
-**명제 16** [하우스도르프](https://ddangchani.github.io/math/realanalysis_Topological_spaces(2)) 위상공간 $X$의 컴팩트한 부분공간 $K$는 닫혀있다.
+**명제 16** [하우스도르프](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(2)) 위상공간 $X$의 컴팩트한 부분공간 $K$는 닫혀있다.
 > $X\backslash K$가 열림을 보이자. $y\in X\backslash K$를 잡으면 하우스도르프 분리성질에 의해 각 $x\in K$와 $y$에 대해 각각 서로소인 근방 $\mathcal{O_x,U_x}$ 가 존재한다. 이를 $$\{\mathcal{O_x}\}_{x\in K}$$ 로 두면 이는 $K$의 열린 덮개이다. 컴팩트성에 의해 유한부분덮개 $$\{\mathcal{O_{x_1}\ldots O_{x_n}}\}$$ 이 존재한다. 이떄 $\mathcal{N}=\cap_{i=1}^n\mathcal{U_{x_i}}$ 로 두면 이는 $y$의 근방이고 각 $O_x$들과 서로소이므로 이는 $X\backslash K$에 속한다. 따라서 $X\backslash K$는 열려있다.   
 
 또한, 하우스도르프 공간과 관련해서, 컴팩트한 하우스도르프 위상공간은 normal하다(일반 분리 성질을 만족시킨다).   
 
 #### 점열컴팩트
 위상공간에서 정의된 각각의 수열이 수렴하고, 그 수렴값이 해당 위상공간의 점이면 그 위상공간을 **점열컴팩트**하다고 한다.   
-[거리공간](https://ddangchani.github.io/math/realanalysis_metricspaces)에서는 컴팩트성과 점열컴팩트성이 동치임을 확인했었는데, 위상공간에서는 [제2가산성](https://ddangchani.github.io/math/realanalysis_Topological_spaces(2))을 갖는 위상공간에 대해 성립한다.     
+[거리공간](https://ddangchani.github.io/mathematics/realanalysis_metricspaces)에서는 컴팩트성과 점열컴팩트성이 동치임을 확인했었는데, 위상공간에서는 [제2가산성](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(2))을 갖는 위상공간에 대해 성립한다.     
 
 **명제 17** 제2가산위상공간에서 컴팩트성과 점열컴팩트성은 동치이다.   
 
