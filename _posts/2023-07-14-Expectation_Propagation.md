@@ -147,10 +147,10 @@ def predict_EP(X, y, nu, tau, x_new, kernel):
 ```
 
 여기서 `cavity_var`은 $\tau_{-i}=\sigma_{-i}^{-2}$ 를 의미하는데, 계산의 편의성을 위해 사용한다. 또한, 전체 스텝 진행 후 업데이트하는 Parallel EP 대신 Sequential EP를 사용했다(교재 참고). 위 코드와 데이터로 예측확률분포(predictive probability distribution)을 다음과 같이 구하였는데, 이전에 살펴본 Laplace approximation과 결과를 비교했다.
-![/Users/dangchan/Desktop/Github/Velog/Statistical Learning/plots/Predictive_EP_Laplace.png](/assets/img/Predictive_EP_Laplace.png){: .align-center}
+![](/assets/img/Predictive_EP_Laplace.png){: .align-center}
 
 또한, Mean function $\bar f(x)$ 는 다음과 같다. Mean function 위 아래로 칠해진 영역은 $\pm$표준편차 만큼의 영역을 의미한다.
-![/Users/dangchan/Desktop/Github/Velog/Statistical Learning/plots/Mean_STD_EP_Laplace.png](/assets/img/Mean_STD_EP_Laplace.png){: .align-center}
+![](/assets/img/Mean_STD_EP_Laplace.png){: .align-center}
 
  
 ## References

@@ -24,7 +24,7 @@ use_math: true
 
 ### Intervention
 
-[이전 글](https://ddangchani.github.io/CausalInference1)에서도 잠시 언급했다시피, intervention은 causal model의 한 변수를 변화시키는 것을 의미한다. 이때 interevention이 이루어지면 해당 시스템은 또 다른 분포를 취하는데, 이는 기존의 observational distribution과 별개의 것이다. 예를 들어 SCM $\mathfrak C: C\to E$ 에서 effect의 값을 4로 변경시키는 intervention이 이루어진다고 하자. 이렇게 직접적으로 값을 변경시키는 것을 *hard intervention*이라고도 부르는데, 이를 $do(E:=4)$ 로 표현한다.
+[이전 글](https://ddangchani.github.io/causal inference/Causal_Inference_1)에서도 잠시 언급했다시피, intervention은 causal model의 한 변수를 변화시키는 것을 의미한다. 이때 interevention이 이루어지면 해당 시스템은 또 다른 분포를 취하는데, 이는 기존의 observational distribution과 별개의 것이다. 예를 들어 SCM $\mathfrak C: C\to E$ 에서 effect의 값을 4로 변경시키는 intervention이 이루어진다고 하자. 이렇게 직접적으로 값을 변경시키는 것을 *hard intervention*이라고도 부르는데, 이를 $do(E:=4)$ 로 표현한다.
 
 $$
 

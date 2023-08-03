@@ -11,7 +11,7 @@ use_math: true
 {% raw %}
 ## Boosting Tree
 
-이전에 Regression Tree와 Classification Tree([CART](https://velog,io/@ddangchani/Trees)) 모형에 대해 살펴보았는데, Tree에 대해서도 [boosting algorithm](https://ddangchani.github.io/Boosting)을 적용할 수 있다. Tree 모델은 기본적으로 partition된 region $R_m$들에 대한 예측값 $\gamma_m$을 부여하는 것인데, 이를 이용해 $J$개의 region을 분리하는 Tree를
+이전에 Regression Tree와 Classification Tree([CART](https://ddangchani.github.io/machine%20learning/Tree/)) 모형에 대해 살펴보았는데, Tree에 대해서도 [boosting algorithm](https://ddangchani.github.io/Boosting)을 적용할 수 있다. Tree 모델은 기본적으로 partition된 region $R_m$들에 대한 예측값 $\gamma_m$을 부여하는 것인데, 이를 이용해 $J$개의 region을 분리하는 Tree를
 
 $$
 
@@ -27,7 +27,7 @@ $$
 
 $$
 
-으로 이루어진다. 이 과정에서 optimization은 두 개의 문제로 이루어지는데, $R_j$가 주어졌을 때 split point $\gamma_j$를 찾는 것과 $R_j$를 찾는 것이다. 첫 번째 optimization은 비교적 쉬운 방법으로 구현할 수 있다. 주어진 classification loss에 대한 $\hat\gamma$로 modal class<sup>최빈값</sup> 을 설정하거나, 평균치를 이용하는 방법을 사용하면 된다. 반면, 두 번째 optimization, 즉 Region을 어떻게 분리할 것인지 찾는 것은 어려운 문제이다. $R_j$를 찾는 것은 곧 $\gamma_j$를 추정하는 것을 수반하며, 이는 주로 top-down 방식으로, 다른 criterion index를(ex. Gini Index) 바탕으로 이루어진다([Tree 게시글](https://velog,io/@ddangchani/Trees) 참고).
+으로 이루어진다. 이 과정에서 optimization은 두 개의 문제로 이루어지는데, $R_j$가 주어졌을 때 split point $\gamma_j$를 찾는 것과 $R_j$를 찾는 것이다. 첫 번째 optimization은 비교적 쉬운 방법으로 구현할 수 있다. 주어진 classification loss에 대한 $\hat\gamma$로 modal class<sup>최빈값</sup> 을 설정하거나, 평균치를 이용하는 방법을 사용하면 된다. 반면, 두 번째 optimization, 즉 Region을 어떻게 분리할 것인지 찾는 것은 어려운 문제이다. $R_j$를 찾는 것은 곧 $\gamma_j$를 추정하는 것을 수반하며, 이는 주로 top-down 방식으로, 다른 criterion index를(ex. Gini Index) 바탕으로 이루어진다([Tree 게시글](https://ddangchani.github.io/machine%20learning/Tree/) 참고).
 
 Boosted Tree model은 이러한 트리들의 합으로 주어진다. 즉,
 
@@ -51,7 +51,7 @@ $$
 >
 > 2. Binary Classification과 Exponential Loss :
 >
->    이진 분류와 exponential loss에 대해서 위 식 (1)의 stagewise 알고리즘은 AdaBoost 알고리즘과 동일하며, AdaBoost를 Classification Tree에 적용하는 것으로 치환된다. 이는 [이전](https://velog,io/@ddangchani/Boosting)에 살펴본 AdaBoost - Stagewise Modeling 간의 관계로부터 도출된다. 즉, exponential loss의 경우 임의의 $R_{jm}$이 주어질 때 optimal constant는
+>    이진 분류와 exponential loss에 대해서 위 식 (1)의 stagewise 알고리즘은 AdaBoost 알고리즘과 동일하며, AdaBoost를 Classification Tree에 적용하는 것으로 치환된다. 이는 [이전](https://ddangchani.github.io/machine%20learning/boosting/)에 살펴본 AdaBoost - Stagewise Modeling 간의 관계로부터 도출된다. 즉, exponential loss의 경우 임의의 $R_{jm}$이 주어질 때 optimal constant는
 >    $$
 >    \hat\gamma_{jm}={1\over 2}\log\frac{\sum_{x_i\in R_{jm}}w_i^{(m)}I(y_i=1)}{\sum_{x_i\in R_{jm}}w_i^{(m)}I(y_i=-1)}
 >    $$

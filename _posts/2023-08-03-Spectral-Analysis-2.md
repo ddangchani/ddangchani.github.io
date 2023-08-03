@@ -13,7 +13,7 @@ use_math: true
 # Preliminary
 ## Matrix Bernstein Inequality
 ### Theorem
-Independent random matrix sequence $\{X_{i}\}_{1\leq i\leq m}, X_{i}\in\mathbb{R}^{n_{1}\times n_{2}}$ 에 대해 다음을 가정하자.
+Independent random matrix sequence $$\{X_{i}\}_{1\leq i\leq m}, X_{i}\in\mathbb{R}^{n_{1}\times n_{2}}$$ 에 대해 다음을 가정하자.
 
 
 $$
@@ -76,7 +76,10 @@ Bernstein inequality를 이용하면, 랜덤행렬 $\mathbf{X}=[X_{i,j}]$ 에서
 > 
 > \mathbb{E}X_{i,j}=0,\quad \vert X_{i,j}\vert\leq B
 >
+> 
+> 
 > $$
+> 
 >
 > 이때 matrix variance statistic
 > 
@@ -86,7 +89,10 @@ Bernstein inequality를 이용하면, 랜덤행렬 $\mathbf{X}=[X_{i,j}]$ 에서
 > v:=\max_{i}\sum_{j}\mathbb{E}X_{i,j}^{2}
 >
 >
+> 
+> 
 > $$
+> 
 >
 > 를 정의하면 spectral norm에 대해 모든 $t\geq 0$ 에 대해 다음 부등식을 만족하는 universal constant $c>0$ 이 존재한다.
 > 
@@ -94,7 +100,10 @@ Bernstein inequality를 이용하면, 랜덤행렬 $\mathbf{X}=[X_{i,j}]$ 에서
 > $$
 > 
 > \mathbb{P}(\Vert X\Vert\geq 4\sqrt{v}+t)\leq n\exp\big(-\frac{t^{2}}{cB^{2}}\big)
+> 
+> 
 > $$
+> 
 
 # Low-rank matrix Denoising
 

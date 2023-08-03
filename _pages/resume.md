@@ -7,12 +7,13 @@ toc: false
 ---
 ## Education
 
-- Master of Science in Statistics - Seoul National University - 2022.03 ~
-  - Department of Statistics
+- Department of Statistics, Seoul National University - 2022.03 ~
+  - M.S in Statistics
+  - Spatial Statistics Lab. (Advisor: Prof. Lim Chae Young)
 
 - Korea National Police University - 2021.02
   - Bachelor of Public Administration
-  - Bachelor of Police Science (Double major)
+  - Bachelor of Police Science
 
 
 ## Work Experience

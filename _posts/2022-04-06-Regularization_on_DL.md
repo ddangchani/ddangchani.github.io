@@ -35,7 +35,7 @@ Early Stopping<sup>조기 종료</sup> 방법은 경사하강법과 같이 반�
 > 3. $\Vert\mathbf A\Vert\geq0$
 > 4. $\Vert\mathbf A\Vert = 0 \iff \mathbf A=\mathbf O$
 
-이는 해석학에서 살펴본 [노음공간의 성질](ttps://velog.io/@ddangchani/실해석학-10.-Lp-Space)을 행렬 공간에 대해 그대로 적용한 것이다. 다만, 행렬에서 노음을 정의하기 위해서는 행렬곱셈이 정의될 때 아래와 같이 하나의 특성을 더 추가해야 한다.
+이는 해석학에서 살펴본 [노음공간의 성질](https://ddangchani.github.io/mathematics/실해석학10/)을 행렬 공간에 대해 그대로 적용한 것이다. 다만, 행렬에서 노음을 정의하기 위해서는 행렬곱셈이 정의될 때 아래와 같이 하나의 특성을 더 추가해야 한다.
 
 $$
 
