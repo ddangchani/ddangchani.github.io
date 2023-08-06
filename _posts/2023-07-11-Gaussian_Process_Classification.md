@@ -74,7 +74,7 @@ $$
   ![](/assets/img/스크린샷 2023-07-11 오후 7.59.50.png){: .align-center width="50%" height="50%"}
 - Posterior Distribution $p(\mathbf{w}\vert \mathbf{x})$ 
   ![](/assets/img/스크린샷 2023-07-11 오후 8.00.45.png){: .align-center width="50%" height="50%"}
-- Predictiove Distribution
+- Predictive Distribution
   ![](/assets/img/스크린샷 2023-07-11 오후 8.01.32.png){: .align-center width="50%" height="50%"}
 
 # Gaussian Process Classification
