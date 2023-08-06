@@ -44,7 +44,7 @@ $$
 
 ## Radon-Nikodym THM
 
-Measurable space $(X,\mathcal{X})$ 에서 $\sigma$-finite 한 두 측도 $\mu,\nu$ 가 정의된다고 하자. 이떄 $\nu\ll\mu$ 일 **필요충분조건**은 $[\mu]$-a.e <sup>$\mu$에 대해 almost everywhere을 의미한다</sup>인 **유일**한 가측함수 $f\geq 0$ 이 $(X,\mathcal{X})$ 에 존재하여 $\nu=(f\cdot\mu)$ (식 1)를 만족하는 것이다. 또한 이를 만족하는 $f\geq0$을 $\mu$에 대한 $\nu$의 **Radon-Nikodym** derivate, 또는 $\mu$-density function 이라고 하며 $f=d\nu/d\mu$ 로 표기한다.
+Measurable space $(X,\mathcal{X})$ 에서 $\sigma$-finite 한 두 측도 $\mu,\nu$ 가 정의된다고 하자. 이때 $\nu\ll\mu$ 일 **필요충분조건**은 $[\mu]$-a.e <sup>$\mu$에 대해 almost everywhere을 의미한다</sup>인 **유일**한 가측함수 $f\geq 0$ 이 $(X,\mathcal{X})$ 에 존재하여 $\nu=(f\cdot\mu)$ (식 1)를 만족하는 것이다. 또한 이를 만족하는 $f\geq0$을 $\mu$에 대한 $\nu$의 **Radon-Nikodym** derivate, 또는 $\mu$-density function 이라고 하며 $f=d\nu/d\mu$ 로 표기한다.
 
 $\mu$-density function $f$가 유일함은 위의 예시로부터 자명하다($f=g$ at $[\mu]$-a.e.). 특히, $X=\mathbb{R}$ 이고 $\mu=m$, 즉 르벡측도공간이 주어질 때 $f=d\nu/dm$ 을 $\nu$의 **density function** 이라고 하며, 이는 확률론에서 다루는 내용의 근간을 이룬다.
 {% endraw %}

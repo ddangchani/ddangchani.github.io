@@ -19,7 +19,7 @@ use_math: true
 위 성질을 티호노프 분리 성질이라고 하며, 이를 만족하는 위상공간을 **티호노프 공간**이라고 한다. 
 
 **명제 6**  위상공간 $X$가 티호노프 공간일 필요충분조건은 $X$의 단 한점으로 구성된 모든 집합이 닫혀있는 것이다.   
-> 증명. $x\in X$에 대해 집합 {$x$}이 닫힘과 여집합 $X\backslash${$x$} 이 열림은 동치이다 ([이전포스팅](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(1)) 참조). 이떄, $X\backslash${$x$} 가 열려있기 위해서는 각 점 $y\in X\backslash${$x$} 에 대해 $y$의 어떤 근방이 존재해 $X\backslash${$x$}에 포함되어야 하고, 이는 티호노프 분리 성질을 만족시킨다.   
+> 증명. $x\in X$에 대해 집합 {$x$}이 닫힘과 여집합 $X\backslash${$x$} 이 열림은 동치이다 ([이전포스팅](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(1)) 참조). 이때, $X\backslash${$x$} 가 열려있기 위해서는 각 점 $y\in X\backslash${$x$} 에 대해 $y$의 어떤 근방이 존재해 $X\backslash${$x$}에 포함되어야 하고, 이는 티호노프 분리 성질을 만족시킨다.   
 
 ### 일반 분리 성질<sup>Normal Separation Property</sup>
 > 티호노프 분리 성질을 만족하며, 두 개의 서로소인 닫힌 집합들은 서로소인 근방에 의해 분리될 수 있다.
@@ -45,7 +45,7 @@ use_math: true
 ### 정규 분리 성질<sup>Regular Separation Property</sup>
 >티호노프 분리 성질이 성립하며, 각각의 닫힌집합 $F\subset X$와 $x\notin F$는 서로소인 근방에 의해 분리될 수 있다.
 
-**명제 8** $X$가 티호노프 위상공간이라고 하자. 이떄 X가 normal할 필요충분조건은 임의의 닫힌부분집합 $F\subset X$의 근방 $\mathcal{U}$에 대해 열린집합(근방) $\mathcal{O}$가 존재하여 다음을 만족하는 것이다.   
+**명제 8** $X$가 티호노프 위상공간이라고 하자. 이때 X가 normal할 필요충분조건은 임의의 닫힌부분집합 $F\subset X$의 근방 $\mathcal{U}$에 대해 열린집합(근방) $\mathcal{O}$가 존재하여 다음을 만족하는 것이다.   
 
 $$
 

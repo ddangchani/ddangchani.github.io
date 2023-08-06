@@ -44,7 +44,7 @@ use_math: true
    $$
    \int_Efdc=\sum_{x\in E} f(x)
    $$
-   로 주어진다. 이떄 counting measure은 $X$의 모든 부분집합들에 대해 동일한 mass를 주는 측도이므로, counting measure space에서 정의되는 함수는 수열<sup>series</sup>이고, 르벡적분은 수열의 합으로 주어진다.
+   로 주어진다. 이때 counting measure은 $X$의 모든 부분집합들에 대해 동일한 mass를 주는 측도이므로, counting measure space에서 정의되는 함수는 수열<sup>series</sup>이고, 르벡적분은 수열의 합으로 주어진다.
 
 2. 확률공간 $(X,\mathcal{X},\mathbb{P})$ 에서의 함수는 distribution function이므로(추은는 확률변수의 기댓값으로 주어진다.
 

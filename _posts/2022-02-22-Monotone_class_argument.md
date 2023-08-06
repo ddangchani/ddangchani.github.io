@@ -59,7 +59,7 @@ $\mathcal{F}=\{(a,b):a,b\in\mathbb{R}, a<b\}$ 는 Measurable Space $(\mathbb{R},
 
 > 가측공간 $(X,\mathcal{X}),(Y,\mathcal{Y})$ 에 대해 함수 $f:X\to Y$ 가 주어진다고 하자. 이때 임의의 $A\in\mathcal{Y}$ 에 대해 $f^{-1}(A)\in\mathcal{X}$  가 성립하면 함수 $f$를 $\mathcal{X/Y}$-measurable 하다고 정의한다.
 
-이떄 임의의 $A\in\mathcal{Y}$ 에 대해 $f^{-1}(A)\in\mathcal{X}$ 이 성립한다는 것은 $f^{-1}(\mathcal{Y})\subset\mathcal{X}$ 과 동치이므로 이를 이용해도 된다. 우선 다음 보조정리를 살펴보자.
+이때 임의의 $A\in\mathcal{Y}$ 에 대해 $f^{-1}(A)\in\mathcal{X}$ 이 성립한다는 것은 $f^{-1}(\mathcal{Y})\subset\mathcal{X}$ 과 동치이므로 이를 이용해도 된다. 우선 다음 보조정리를 살펴보자.
 
 #### Lemma (Induced $\sigma$-algebra)
 

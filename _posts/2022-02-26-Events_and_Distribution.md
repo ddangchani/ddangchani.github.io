@@ -91,13 +91,13 @@ $$
 
 Measurable space $(S,\mathcal{S})$ 와 $A\subset S$ 에 대해 $(A,A\cap\mathcal{S})$ 도 measurable space가 된다. 그러면 역으로, $(A,A\cap\mathcal{S})$ 에서의 random element는 $S$에서의 random element로 여겨질 수 있다.
 
-Measurable space $(S,\mathcal{S})$ 와 index set $T$가 주어질 떄 $S^T$를 함수 $f:T\to S$ 들의 모임<sup>class</sup>으로 정의하자. 이때 $S^T$에서의 $\sigma$-field $\mathcal{S}^T$ 를 정의하는데, 이는 $\pi_t:S^T\to S,\;\;t\in T$ , $\pi_tf=f(t)$ 로 정의되는 모든 **evaluation map** $\pi_i$들로부터 생성된다. 만일 어떤 $X:\Omega\to U\subset S^T$ 가 주어지고 이떄 $X_t=\pi_t\circ X$ 로 정의하면 이는 $\Omega$에서 $S$로의 사상이다. 즉, $X$는 $t\in T,\omega\in\Omega$ 에 대해 $T\times\Omega\to S$ 의 사상으로 볼 수 있다. 이와 관련하여 다음 보조정리가 성립한다.
+Measurable space $(S,\mathcal{S})$ 와 index set $T$가 주어질 때 $S^T$를 함수 $f:T\to S$ 들의 모임<sup>class</sup>으로 정의하자. 이때 $S^T$에서의 $\sigma$-field $\mathcal{S}^T$ 를 정의하는데, 이는 $\pi_t:S^T\to S,\;\;t\in T$ , $\pi_tf=f(t)$ 로 정의되는 모든 **evaluation map** $\pi_i$들로부터 생성된다. 만일 어떤 $X:\Omega\to U\subset S^T$ 가 주어지고 이때 $X_t=\pi_t\circ X$ 로 정의하면 이는 $\Omega$에서 $S$로의 사상이다. 즉, $X$는 $t\in T,\omega\in\Omega$ 에 대해 $T\times\Omega\to S$ 의 사상으로 볼 수 있다. 이와 관련하여 다음 보조정리가 성립한다.
 
 ##### Lemma 2.1
 
 Measurable space $(S,\mathcal{S})$ 와 index set $T$, $U\subset S^T$ 를 고정하자. 이때 사상 $X_t:\Omega\to S$ 가 모든 $t\in T$ 에 대해 $\mathcal{S}$-measurable 하면, 사상 $X:\Omega\to U$ 는 $U\cap \mathcal{S}^T$-measurable 하다.
 
-이떄 위 성질을 만족하는 사상 $X$를 $U$에서 path를 갖는 $T$에서의 $S$-valued random process라고 정의한다. 또한, Lemma에  의해 $X$를 **state space** $S$에서의 random elements $X_t$ 들의 모임으로 볼 수 있다.
+이때 위 성질을 만족하는 사상 $X$를 $U$에서 path를 갖는 $T$에서의 $S$-valued random process라고 정의한다. 또한, Lemma에  의해 $X$를 **state space** $S$에서의 random elements $X_t$ 들의 모임으로 볼 수 있다.
 
 
 
