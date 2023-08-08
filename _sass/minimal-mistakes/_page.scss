@@ -117,7 +117,7 @@ body {
   }
 
   .MathJax_Display {
-    scale: 0.75;
+    font-size: $type-size-6 !important;
   }
 
   h2 {
@@ -156,7 +156,7 @@ body {
 
   p,
   dl {
-    font-size: $type-size-6;
+    font-size: $type-size-5;
   }
 
   li {

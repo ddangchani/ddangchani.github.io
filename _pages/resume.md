@@ -38,10 +38,16 @@ toc: false
 
 - Statistics Lab - Spring 2023
   - Teaching Assistant
+  - Seoul National University
 
 - Introduction to Data Science - Fall 2023
-  - Teaching Assistant
+  - Teaching Assistant: Conducted practice lecture(2hrs/week)
+  - Seoul National University
 
+## Lecture
+
+- Sejong City Public Security Safety Data Analysis Best Practices Presentation - 2023.03
+  - Sejoing City Police Agency
 
 ## Skills
 - Programming Languages:
