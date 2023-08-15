@@ -1,7 +1,6 @@
 ---
 title: Spectral Analysis - Matrix Completion
 tags:
-- 
 - Matrix Completion
 - Spectral Analysis
 - Missing Data Analysis
