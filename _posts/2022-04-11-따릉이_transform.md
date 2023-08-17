@@ -7,7 +7,7 @@ tags:
 category: Project
 use_math: true
 header: 
- teaser: /assets/img/따릉이_transform.assets/따릉이_transform_1.png
+ teaser: /assets/img/따릉이_transform_1.png
 ---
 {% raw %}
 ## 따릉이 데이터 분석하기 (4) Transformation
@@ -106,7 +106,7 @@ pca_1.fit(X_train,y_train)
 pca_2.fit(X_train,y_train)
 ```
 
-<img src="/assets/img/따릉이_transform.assets/따릉이_transform_0.png" alt="스크린샷 2022-04-12 오후 3.27.26" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform_0.png" alt="스크린샷 2022-04-12 오후 3.27.26" style="zoom:50%;" />
 
 그러면 위와 같이 Interactive한 html 객체가 나오는데, 각 항목을 클릭하면 적용된 각 메서드에 대해 hyperparmeter나 설정을 어떻게 취했는지 파악할 수 있다. 이제 PCA가 적용된 결과를 파악해보도록 하자. Pipeline의 각 단계와 해당 단계에서의 attribute는 리스트로 저장되고 Pipelline 형성 단계에서 설정한 각 단계의 이름으로 이를 불러올 수 있는데(`.named_steps['이름']` attribute 이용), 아래와 같이 `pca_1`,`pca_2`에서의` explained_variance_ratio`를 파악할 수 있다. 이는 각 주성분이 전체 분산의 얼마만큼의 비율을 설명하는지 의미한다. 
 
@@ -156,7 +156,7 @@ pcr = Pipeline(
 pcr.fit(X_train, y_train)
 ```
 
-<img src="/assets/img/따릉이_transform.assets/따릉이_transform_1.png" alt="스크린샷 2022-04-12 오후 3.53.18" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform_1.png" alt="스크린샷 2022-04-12 오후 3.53.18" style="zoom:50%;" />
 
 위 코드를 통해, 그림과 같은 Pipeline을 갖는 Principal Component Regression method를 구현할 수 있다. 마찬가지로, `sklearn.cross_decomposition`의 `PLSRegression`을 이용하여 다음과 같은 PLS 파이프라인을 생성할 수 있다.
 
@@ -172,7 +172,7 @@ pls = Pipeline(
 pls.fit(X_train, y_train)
 ```
 
-<img src="/assets/img/따릉이_transform.assets/따릉이_transform_2.png" alt="스크린샷 2022-04-12 오후 7.35.06" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform_2.png" alt="스크린샷 2022-04-12 오후 7.35.06" style="zoom:50%;" />
 
 #### Comparison between PCR / PLS
 
@@ -210,7 +210,7 @@ plt.savefig('plots/pcr_vs_pls.png', transparent=False, facecolor = 'white')
 
 첫 줄의 `pca`는 PCR 파이프라인에서 Linear Regression을 제외한 PCA까지의 프로세스만 분리한 또다른 파이프라인이다. 코드를 실행하면 다음과 같은 두 plot을 얻을 수 있는데, 왼쪽은 PCA를 통해 얻은 분포와 PCR을 통해 얻은 예측값의 분포를 보이며, 오른쪽은 PLS를 통해 얻은 분포와 예측값의 분포를 나타낸 것이다.
 
-![pcr_vs_pls](/assets/img/따릉이_transform.assets/따릉이_transform_3.png){: .align-center}
+![pcr_vs_pls](/assets/img/따릉이_transform_3.png){: .align-center}
 
 그림으로만 보면 성능이 쉽게 구분되지 않으므로, validation data에 대한 R-squared value와 RMSE value를 모두 비교해보도록 하자. 각 pipeline의 경우 모두 Regression model 이고, `.score` 메서드로  결정계수 $R^2$를 얻을 수 있다.
 
