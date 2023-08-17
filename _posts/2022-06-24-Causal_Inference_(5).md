@@ -76,7 +76,9 @@ $$
 위와 같이 정의된 SCM은 확률변수 $\mathbf X=(X_1,\ldots,X_d)$에 대한 유일한 확률분포를 결정하는데, 이를 **entailed distribution**이라고 하며 $P_\mathbf X^\mathfrak C$ 혹은 $P_\mathbf X$ 라고 표기한다. 이는 i.i.d noise variable으로부터 생성된 표본으로 i.i.d random sample $\mathbf{X^1,\ldots.X^n \sim} P_\mathbf X$ 를 구성할 수 있다는 의미이다.
 #### Example
 다음과 같은 SCM
-![](Causal Inference (5).assets/16562033783507.jpg)
+
+![](assets/img/Causal Inference (5).assets/16562033783507.jpg)
+
 에 대해 
 
 $$
