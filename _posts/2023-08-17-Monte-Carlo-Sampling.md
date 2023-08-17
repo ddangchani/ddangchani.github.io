@@ -1,7 +1,6 @@
 ---
 title: Monte Carlo Sampling
 tags:
-- 
 - Statistics
 - Sampling
 category: 
