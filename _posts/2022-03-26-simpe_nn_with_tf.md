@@ -7,7 +7,7 @@ tags:
 category: Deep Learning
 use_math: true
 header: 
-  teaser: /assets/img/simpe nn with tf.assets/스크린샷 2022-03-26 오후 2.28.16.png
+  teaser: /assets/img/simpe_nn_with_tf.assets/simpe_nn_with_tf_1.png
 ---
 {% raw %}
 ## Simple Neural Network with Tensorflow
@@ -49,7 +49,7 @@ plt.show()
 
 아래와 같은 훈련 데이터셋의 첫 번째 이미지(그래프)를 얻을 수 있다.
 
-<img src="/assets/img/simpe nn with tf.assets/스크린샷 2022-03-26 오후 2.28.16.png" alt="스크린샷 2022-03-26 오후 2.28.16" style="zoom:50%;">
+<img src="/assets/img/simpe_nn_with_tf.assets/simpe_nn_with_tf_1.png" alt="스크린샷 2022-03-26 오후 2.28.16" style="zoom:50%;">
 
 ### Simple Feedfoward Neural Network
 
