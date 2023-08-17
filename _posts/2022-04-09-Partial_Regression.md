@@ -7,7 +7,7 @@ tags:
 category: Linear Model
 use_math: true
 header: 
-  teaser: /assets/img/Partial Regression.assets/스크린샷 2022-04-09 오후 7.36.48.png
+ teaser: /assets/img/Partial Regression.assets/Partial_Regression_0.png
 ---
 {% raw %}
 ## Partial Regression
@@ -102,7 +102,7 @@ FWL Theorem이라고도 하는 위 정리는 앞서 설명한 Full Model과 Redu
 
 데이터 분석에서는 선형모형의 변수 유의성을 확인하기 위해 Partial Regression Plot을 확인하는 경우가 종종 있다. 앞선 FWL 정리의 두 잔차 $X_2^{\ast}, Y^{\ast}$의 scatter plot과 Regression plot(Line)을 함께 나타낸 것이 Partial Regression Plot으로, 두 잔차는 모두 해당 변수($X_2, Y$)로부터 다른 변수들(각각 $X_1$, $X$ 전체)의 영향을 제거했다는 점에서 의미가 있는 벡터이다.
 
-## ![스크린샷 2022-04-09 오후 7.36.48](/assets/img/Partial Regression.assets/스크린샷 2022-04-09 오후 7.36.48.png){: .align-center}
+## ![스크린샷 2022-04-09 오후 7.36.48](/assets/img/Partial Regression.assets/Partial_Regression_0.png){: .align-center}
 
 위와 같은 형태를 가지는데(python `statsmodels`패키지를 이용한 그래프이다), 여기서 $e(MEDV\vert X)$ 는 반응변수 MEDV를 예측변수 전체(X)로 회귀분석하여 나온 잔차(e)를 의미하고, $e(AGE\vert X)$는 변수 AGE를 남은 반응변수(X, AGE 제외)로 회귀분석하여 나온 잔차(e)를 의미한다. 위 plot의 경우는 AGE와 종속변수 MEDV가 상관관계가 없음을 보여주고 있고, 이러한 방식으로 선형모형의 각 변수들에 대한 partial regression을 진행하여 각각의 유의성을 파악할 수 있다.
 

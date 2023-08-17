@@ -6,7 +6,7 @@ tags:
 category: Deep Learning
 use_math: true
 header: 
-  teaser: /assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 3.50.25.png
+ teaser: /assets/img/Neural Network.assets/Neural_Network_2.png
 ---
 {% raw %}
 
@@ -79,11 +79,11 @@ for t in range(10000):
 
 Linear Classifier는 선형변환 $h=Wx$ 을 의미한다. 이때 선형변환을 Data Space에서 Feature space으로의 mapping으로 생각할 수 있다(Kernel Theory 참조). 즉 아래 그림처럼 기존 두 개의 차원 $x_1,x_2$ 으로 주어지는 데이터들을 $h_1,h_2$ 차원으로 주어지는 특성공간으로 변환시키는 것이다.
 
-![스크린샷 2022-03-12 오후 2.43.15](/assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 2.43.15.png){: .align-center}
+![스크린샷 2022-03-12 오후 2.43.15](/assets/img/Neural Network.assets/Neural_Network_0.png){: .align-center}
 
 위 scatter plot에서는 왼쪽과 오른쪽 모두 두 개의 클래스를 linear한 형태로 분리할 수 없다. 반면, ReLU함수까지 취한 feature transformation을 생각해보면, ReLu는 0 이하의 값들에 대해 0의 값을 반환하므로, 데이터를 1사분면으로 변환시킨다. 따라서 아래 그림과 같이 **Linearly separable**한 특성공간이 만들어진다.
 
-![스크린샷 2022-03-12 오후 2.47.37](/assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 2.47.37.png){: .align-center}
+![스크린샷 2022-03-12 오후 2.47.37](/assets/img/Neural Network.assets/Neural_Network_1.png){: .align-center}
 
 그런데 오른쪽 특성공간에서 만들어진 linear classifier은, 사실 원 데이터공간에서는 linear하지 않게 된다. 즉, 선형변환과 활성함수를 모두 적용한 feature transformation을 통해 non-linear한 decision boundary를 생성할 수 있다. 이는 곧 신경망을 통해 **non-linear function**을 근사할 수 있다는 말이고, 이러한 점이 인공신경망을 매우 **강력**하게 해준다.
 
@@ -91,25 +91,25 @@ Linear Classifier는 선형변환 $h=Wx$ 을 의미한다. 이때 선형변환�
 
 바로 위에서 설명한 것 처럼 Neural Network는 사상 $f:\mathbb R^N\to\mathbb R^M$ 을 근사할 수 있게 해주는데, 이를 neural network의 **universality**라고 한다. Universality theorem을 증명하는 방법은 여러가지가 알려져 있는데, *리즈표현정리*와 *한-바나흐 정리*를 이용한 방법이나 *스톤-바이어슈트라스 정리*를 이용하는 방법이 있다. 여기서는 간단한 추론을 통해 원리를 살펴보고자 한다. (더 수학적인 접근은 다른 글에서 별도로 다루도록 하겠다😅)
 
-<img src="/assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 2.54.17.png" alt="스크린샷 2022-03-12 오후 2.54.17" style="zoom:40%;" />
+<img src="/assets/img/Neural Network.assets/Neural_Network_2.png" alt="스크린샷 2022-03-12 오후 2.54.17" style="zoom:40%;" />
 
 *(심지어 위처럼 어떻게 생성했는지조차 모르는 🐶같이 생긴 함수도 근사가능하다 )*
 
 쉬운 설명을 위해 가장 간단한 형태인 $f:\mathbb R\to \mathbb R$ 만을 고려하도록 하자. 우선, 활성함수를 선택해야하는데 한 가지 주목해야 할 것은 모든 종류의 활성함수는 계단함수<sup>step function</sup>처럼 보이게 할 수 있다는 것이다.
 
-<img src="/assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 3.10.44.png" alt="스크린샷 2022-03-12 오후 3.10.44" style="zoom:30%;" />
+<img src="/assets/img/Neural Network.assets/Neural_Network_3.png" alt="스크린샷 2022-03-12 오후 3.10.44" style="zoom:30%;" />
 
 위 그림처럼 single layer network을 구성하고, 하나의 perceptron에서 $h(8x-4)$의 연산이 일어난다고 하자. 그러면 시그모이드 활성함수를 적용하면  input data $x$에 대해 오른쪽 그래프와 같은 연산이 일어난다. 그런데 만일 가중치와 편향값을 아래 그림처럼 크게(w=200, b=-100) 입력하면 perceptron 연산 $h(200x-100)$ 는 오른쪽 그래프와 같이 계단함수에 거의 근접하게 작동해버린다.
 
-<img src="/assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 3.39.06.png" alt="스크린샷 2022-03-12 오후 3.39.06" style="zoom:50%;" />
+<img src="/assets/img/Neural Network.assets/Neural_Network_4.png" alt="스크린샷 2022-03-12 오후 3.39.06" style="zoom:50%;" />
 
 그렇다면, 각각의 hidden layer 노드들을 step function으로 생각하고 두 개의 노드 각각 $s_1, s_2$에서 step(*함수값이 jump*)이 일어난다고 하자. 또한 hidden layer에서 output layer로 이동할 때 역시 가중치가 적용되므로, 이를 각각 $w_1,w_2$로 생각하면
 
-![스크린샷 2022-03-12 오후 3.50.25](/assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 3.50.25.png){: .align-center width="50%" height="50%"}
+![스크린샷 2022-03-12 오후 3.50.25](/assets/img/Neural Network.assets/Neural_Network_5.png){: .align-center width="50%" height="50%"}
 
 그림과 같이 두 개의 step function이 겹쳐진 형태를 취하게 된다. 그런데, 만일 output layer로의 두 가중치를 부호만 반대인 동일한 절대값을 취하게끔 하면
 
-![스크린샷 2022-03-12 오후 3.51.55](/assets/img/Neural Network.assets/스크린샷 2022-03-12 오후 3.51.55.png){: .align-center width="50%" height="50%"}
+![스크린샷 2022-03-12 오후 3.51.55](/assets/img/Neural Network.assets/Neural_Network_6.png){: .align-center width="50%" height="50%"}
 
 위 그림과 같은 형태의 함수를 얻는데, 이를 **bump function**이라고 한다. 이때 임의의 함수에 대해 hidden layer 개수를 늘리면서 bump function으로 근사함수를 취할 수 있는데, 이는 **리만 적분**의 기본적인 개념과 유사하다. 그런데 연속실함수는 리만적분가능하므로, 임의의 연속함수를 신경망 연산으로 근사할 수 있게되는 것이다. 마찬가지로, Input과 Output vector가 1차원이 아닌 경우 역시 Input/Output layer의 노드 수를 조정하고 bump function의 공간적 개념인 **tower function**을 통해 근사할 수 있다.
 

@@ -8,7 +8,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/스크린샷 2023-07-11 오후 8.01.32.png
+ teaser: /assets/img/Gaussian_Process_Classification_1.png
 ---
 {% raw %}
 # Classification Problem
@@ -69,13 +69,13 @@ $$
 
 ## Example
 - $\mathbf{w}\in \mathbb{R}^{2}, \mathbf{x}_{i}\in\mathbb{R}^{2}, i=1,\ldots,8$ 
-  ![](/assets/img/스크린샷 2023-07-11 오후 7.59.31.png){: .align-center width="50%" height="50%"}
+  ![](/assets/img/Gaussian_Process_Classification_0.png){: .align-center width="50%" height="50%"}
 - Prior Distribution $\mathbf{w} \sim N(0, I_{2})$
-  ![](/assets/img/스크린샷 2023-07-11 오후 7.59.50.png){: .align-center width="50%" height="50%"}
+  ![](/assets/img/Gaussian_Process_Classification_1.png){: .align-center width="50%" height="50%"}
 - Posterior Distribution $p(\mathbf{w}\vert \mathbf{x})$ 
-  ![](/assets/img/스크린샷 2023-07-11 오후 8.00.45.png){: .align-center width="50%" height="50%"}
+  ![](/assets/img/Gaussian_Process_Classification_2.png){: .align-center width="50%" height="50%"}
 - Predictive Distribution
-  ![](/assets/img/스크린샷 2023-07-11 오후 8.01.32.png){: .align-center width="50%" height="50%"}
+  ![](/assets/img/Gaussian_Process_Classification_3.png){: .align-center width="50%" height="50%"}
 
 # Gaussian Process Classification
 

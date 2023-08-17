@@ -7,12 +7,12 @@ tags:
 category: 
 use_math: true
 header: 
-  teaser: /assets/img/스크린샷 2023-08-07 오후 4.10.39.png
+ teaser: /assets/img/Spectral-Analysis-5_0.png
 ---
 {% raw %}
 # Matrix Completion
 
-![](/assets/img/스크린샷 2023-08-07 오후 4.10.39.png){: .align-center width="50%"}
+![](/assets/img/Spectral-Analysis-5_0.png){: .align-center width="50%"}
 
 행렬에서의 결측치(missing data) 문제는 최근 데이터사이언스 분야에서 중요한 화두이다. 특히 Netflix, Youtube 등의 알고리즘 기반 미디어 플랫폼들이 등장하며 사용자에게 적합한 미디어를 추천해주는 알고리즘이 중요해졌다. 추천 알고리즘의 큰 비중을 차지하는 **협업 필터링(Collaborative Filtering)** 같은 대부분의 추천 시스템은 결과적으로 행렬에서의 결측치 추정으로 귀결된다. 각 사용자들을 행으로, 각 미디어(혹은 상품)을 열로 하는 행렬을 구성한 뒤, 각 행렬의 성분을 추정하는 문제의 일종이기 때문이다(위 그림). 
 

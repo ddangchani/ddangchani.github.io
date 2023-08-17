@@ -6,7 +6,7 @@ tags:
 category: Causal Inference
 use_math: true
 header: 
-  teaser: /assets/img/Causal Inference (3).assets/image-20220610194348077.png
+ teaser: /assets/img/Causal Inference (3).assets/Causal_Inference_(3)_0.png
 ---
 {% raw %}
 # Learning Cause-Effect Models
@@ -63,7 +63,7 @@ $$
 
 즉, 위 정리로부터 식별불가능함과 gaussian additive noise가 동치이므로 non-Gaussian additive noise model은 식별가능하다는 결론이 도출된다. 다음 예시를 살펴보면 이해가 쉽다.
 
-![image-20220610194348077](/assets/img/Causal Inference (3).assets/image-20220610194348077.png){: .align-center}
+![image-20220610194348077](/assets/img/Causal Inference (3).assets/Causal_Inference_(3)_0.png){: .align-center}
 
 위 plot에서 회색 영역은 두 확률변수 $X,Y$의 joint distribution에 대한 support를 영역으로 나타낸 것이다. 파란색 선은
 

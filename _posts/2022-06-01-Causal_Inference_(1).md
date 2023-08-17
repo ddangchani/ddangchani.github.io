@@ -6,14 +6,14 @@ tags:
 category: Causal Inference
 use_math: true
 header: 
-  teaser: /assets/img/16540710916399.jpg
+ teaser: /assets/img/Causal_Inference_(1)_0.jpg
 ---
 {% raw %}
 ## Causal Inference
 Causal Inference, 즉 인과관계추론은 통계학의 한 분야로 사회과학 등 다양한 분야에 응용될 수 있는 영역이다. 2021년 노벨경제학상이 인과관계추론 분야에서 수상되며 전통적인 방법론이었으면서도, 최근 통계학의 중요한 분야로 떠오르는 추세이다. 기존의 선형모형론부터 최근의 데이터사이언스 기법들은 대개 input data와 target variable 사이의 상관관계만을 파악할 수 있지만, 사실 사회과학적 영역부터 다양한 비즈니스 도메인까지 인과관계를 파악할 수 있는 것은 대단한 이점이다. 이에 대학원 복학 전까지 Causal Infernece 분야를 대략적으로 살펴보고자 *Elements of Causal Infernece* 교재를 공부해보기로 했는데, 이 책을 고른 이유는 인과관계추론을 statistical learning의 관점에서 설명해놓았기 때문이다. Causal Infernece 관련 강의를 진행하는(Youtube) Brady Neal이라는 사람이 [홈페이지](https://www.bradyneal.com/which-causal-inference-book)에 어떤 교재를 읽으면 좋을지 추천해준 글이 있는데, 이를 참고해보는 것도 좋을 것이다. 필자는 앞선 교재를 공부해보며, 공부 내용을 정리하여 주기적으로 포스팅해보도록 하겠다.
 
 ## Causal Modeling
-![](/assets/img/16540495903604.jpg)
+![](/assets/img/Causal_Inference_(1)_0.jpg)
 일반적으로 통계학에서 다루는 모델을 확률론적 모델, 즉 probabilistic model이라고 한다면 이는 변수 간의 joint distribution, 혹은 확률변수 간의 관계식 등으로 나타난다. 반면, 통계학의 유명한 격언인 **’Correlation doesn’t imply causation’** 과 같이 인과관계 모델(causal model)은 상관관계를 나타내는 probabilistic model에 비해 추가적인 정보를 요구한다. 즉, causal model은 probabilistic model을 수반하지만 그 역은 성립하지 않는다.
 Statistical Learning 관점에서 살펴보면, statistical learning(ML,DL 포함)의 영역은 관측 데이터(empirical)로부터 probabilistic model을 추론하는 과정이다. 따라서 만일 관측 데이터로부터 causal model을 추론하고 싶다면(causal learning), 관측 데이터에 추가적인 정보(데이터의 변화나 개입에 대한 정보)가 필요할 것이다(위 그림 참고).
 
@@ -42,7 +42,7 @@ $$
 
 Ex. MNIST Digit Problem
 MNIST 데이터셋을 생성하는 과정을 생각해보자. 즉, 특정 한자리 자연수에 대한 손글씨 이미지를 생성하는 과정을 생각하면 된다. 이때, 우리는 다음 그림에서와 같은 두 경우를 생각할 수 있다.
-![](/assets/img/16540710916399.jpg)
+![](/assets/img/Causal_Inference_(1)_1.jpg)
 * 모델 1은 Target Variable Y가 주어지고(ex. 2, 3…) 이에 따라 손글씨를 쓰는 상황을 의미한다. 이 경우 생성된 데이터 X는 Y에 의해 영향을 받으므로 Y와 Noise Variable $N_X$의 함수로 나타내진다(그림 왼쪽).
 * 반면, 모델 2의 경우는 데이터를 생성하는 주체(여기서는 사람)가 무슨 글자를 쓸지 미리 생각한 후(intention) 이를 바탕으로 Target Variable, 즉 글자의 레이블과 데이터를 생성하는 방식이다. 따라서 여기서는 주체의 의도인 새로운 제3의 변수 Z가 포함되며, 각 데이터와 레이블은 Z와 각 Noise Variable의 함수로 표현된다.
 

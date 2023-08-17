@@ -7,7 +7,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/Mixture Model.assets/스크린샷 2022-09-08 오후 2.03.10.png
+ teaser: /assets/img/Mixture Model.assets/Mixture_Model_0.png
 ---
 {% raw %}
 # Mixture Model & EM Algorithm
@@ -60,7 +60,7 @@ $$
 
 문제는 잠재변수들이 관측되지 않는다는 점인데, 이 경우 각각의 잠재변수 $z_i$ 에 대해 서로 다른 unimodal likelihood가 존재한다. 예시로 다음 Plot을 살펴보자.
 
-![스크린샷 2022-09-08 오후 2.03.10](/assets/img/Mixture Model.assets/스크린샷 2022-09-08 오후 2.03.10.png){: .align-center}
+![스크린샷 2022-09-08 오후 2.03.10](/assets/img/Mixture Model.assets/Mixture_Model_0.png){: .align-center}
 
 위 히스토그램과 밀도함수(pdf)는 서로 다른 세 개의 정규분포를 동일한 weight(1/3)으로 혼합한 모형이다. 각 정규분포는 $(\mu,\sigma)\in\{(-10,5),(1,3),(10,3)\}$의 모수를 갖는 것으로 설정하였다. 역으로 생각해보면, 위 plot과 같은 혼합 모형이 주어졌을 때 각 모수 $\mu_1,\mu_2,\mu_3$ 이 각각 -10, 1, 10에 대응한다고 장담할 수는 없다. $(-10, 1, 10)$ 혹은 $(1, -10, 10)$  으로 주어지는 경우 모두 같은 weight를 가지는 한 동일한 혼합모형을 형성하기 때문이다. 이러한 성질을 **Not Identifiable**하다고 하며, 이 경우 사전분포에 대해 각 모수의 라벨(1,2,3)을 특정할 수 없으므로($K!$개의 경우의 수가 존재한다) 유일한 MAP 추정량이 존재하지 않는다.
 

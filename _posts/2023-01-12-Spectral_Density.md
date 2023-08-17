@@ -6,7 +6,7 @@ tags:
 category: Time Series
 use_math: true
 header: 
-  teaser: /assets/img/24272B9E-4803-4BE9-990B-ABB46E487C5C.png
+ teaser: /assets/img/Spectral_Density_0.png
 ---
 {% raw %}
 ## Spectral Representation Theorem
@@ -97,7 +97,7 @@ $$
 다음은 R 코드로 작성한 SOI data의 periodogram이다.
 
 
-![](/assets/img/24272B9E-4803-4BE9-990B-ABB46E487C5C.png){: .align-center}
+![](/assets/img/Spectral_Density_0.png){: .align-center}
 
 ## References
 - Time Series Analysis with its applications with R

@@ -8,7 +8,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 10.26.16.png
+ teaser: /assets/img/Gradient Boosting.assets/Gradient_Boosting_1.png
 ---
 {% raw %}
 ## Gradient Boosting Machine
@@ -176,7 +176,7 @@ $$
 
 전체적인 알고리즘은 아래 그림과 같다.
 
-![스크린샷 2022-04-18 오전 10.26.16](/assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 10.26.16.png){: .align-center}
+![스크린샷 2022-04-18 오전 10.26.16](/assets/img/Gradient Boosting.assets/Gradient_Boosting_0.png){: .align-center}
 
 ## Application
 
@@ -186,7 +186,7 @@ $$
 
 Least Squares에서는 손실함수가 $L(y,F) = (y-F)^2/2$ 로 주어진다(*미분의 편의를 위해 2로 나누어줌*). 이를 바탕으로 다음과 같은 Gradient Boost가 이루어진 Least Squares 알고리즘을 고안할 수 있다.
 
-![](/assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 10.29.52.png){: .align-center}
+![](/assets/img/Gradient Boosting.assets/Gradient_Boosting_1.png){: .align-center}
 
 3번째 줄의 $\tilde y_i$는 current residual을 의미하고, current residual을 fit하는 $\rho_m$은 $m$번째 단계에서 생성되는 회귀계수 $\beta_m$을 의미한다.
 
@@ -251,7 +251,7 @@ $$
 
 전체적인 알고리즘은 다음과 같다.
 
-![](/assets/img/Gradient Boosting.assets/스크린샷 2022-04-18 오전 11.05.00.png){: .align-center}
+![](/assets/img/Gradient Boosting.assets/Gradient_Boosting_2.png){: .align-center}
 
 ## Interpretation
 

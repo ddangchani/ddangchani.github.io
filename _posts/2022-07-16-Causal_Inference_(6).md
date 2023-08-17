@@ -7,7 +7,7 @@ tags:
 category: Causal Inference
 use_math: true
 header: 
-  teaser: /assets/img/Causal Inference (6).assets/image-20220803153132412.png
+ teaser: /assets/img/Causal Inference (6).assets/Causal_Inference_(6)_1.jpeg
 ---
 {% raw %}
 # Multivariate Causal Model (2)
@@ -66,7 +66,7 @@ $$
 
 위 세개의 Markov property들은 얼핏 보면 별개의 것처럼 보이지만, 실제로는 결합확률밀도($p$)가 주어지기만 한다면 모두 **동치관계**에 있다. 아래 그림과 같은 그래프 $\mathcal G$의 예시를 살펴보자.(자세한 증명 생략)
 
-![](/assets/img/Causal Inference (6).assets/image-20220803153132412.png){: .align-center width="40%" height="40%"}
+![](/assets/img/Causal Inference (6).assets/Causal_Inference_(6)_0.png){: .align-center width="40%" height="40%"}
 
 1. 우선 그래프 관계에 의해
 
@@ -98,7 +98,7 @@ DAG $\cal G$에 대해 Markovian인 (결합)분포들의 모임을 $\mathcal M(\
 
 이때, 어떤 DAG의 세 노드 $A,B,C$ 가 immortality(v-structure라고도 한다)를 형성한다는 것은 연결구조 $A\rightarrow B\leftarrow C$ 를 만족하면서 $A,C$가 직접 연결되어있지 않는 것을 의미한다.
 
-![](/assets/img/Causal Inference (6).assets/IMG_BF4ED0EB7667-1.jpeg){: .align-center width="70%" height="70%"}
+![](/assets/img/Causal Inference (6).assets/Causal_Inference_(6)_1.jpeg){: .align-center width="70%" height="70%"}
 
 예를 들어 위 두 그래프는 같은 뼈대와 유일한 immortality($X\rightarrow Z\leftarrow V$)를 가지므로 Markov 동치이다.
 

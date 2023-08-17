@@ -7,7 +7,7 @@ tags:
 category: Machine Learning
 use_math: true
 header:
-    teaser: /assets/img/Mean_STD_EP_Laplace.png
+ teaser: /assets/img/Expectation_Propagation_2.png
 ---
 {% raw %}
 
@@ -81,7 +81,7 @@ EP algorithm은 단계별로 근사분포 $g_{i}$들을 계속 업데이트하�
 ## Example. Gaussian Process Binary Classification
 
 - Data : 설명변수 1개(1차원), 2개 클래스 분류
-![](/assets/img/GP_binary_data.png){: .align-center}
+![](/assets/img/Expectation_Propagation_0.png){: .align-center}
 
 EP 알고리즘을 실행하기 위한 코드는 다음과 같다. 
 ```python
@@ -147,10 +147,10 @@ def predict_EP(X, y, nu, tau, x_new, kernel):
 ```
 
 여기서 `cavity_var`은 $\tau_{-i}=\sigma_{-i}^{-2}$ 를 의미하는데, 계산의 편의성을 위해 사용한다. 또한, 전체 스텝 진행 후 업데이트하는 Parallel EP 대신 Sequential EP를 사용했다(교재 참고). 위 코드와 데이터로 예측확률분포(predictive probability distribution)을 다음과 같이 구하였는데, 이전에 살펴본 Laplace approximation과 결과를 비교했다.
-![](/assets/img/Predictive_EP_Laplace.png){: .align-center}
+![](/assets/img/Expectation_Propagation_1.png){: .align-center}
 
 또한, Mean function $\bar f(x)$ 는 다음과 같다. Mean function 위 아래로 칠해진 영역은 $\pm$표준편차 만큼의 영역을 의미한다.
-![](/assets/img/Mean_STD_EP_Laplace.png){: .align-center}
+![](/assets/img/Expectation_Propagation_2.png){: .align-center}
 
  
 ## References

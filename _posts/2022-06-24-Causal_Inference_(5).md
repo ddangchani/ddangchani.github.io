@@ -7,7 +7,7 @@ tags:
 category: Causal Inference
 use_math: true
 header: 
-  teaser: /assets/img/16562068457631.jpg
+ teaser: /assets/img/Causal Inference (5).assets/Causal_Inference_(5)_0.jpg
 ---
 {% raw %}
 ## Multivariate Causal Models
@@ -77,7 +77,7 @@ $$
 #### Example
 다음과 같은 SCM
 
-![](/assets/img/Causal Inference (5).assets/16562033783507.jpg)
+![](/assets/img/Causal Inference (5).assets/Causal_Inference_(5)_0.jpg)
 
 에 대해 
 
@@ -94,7 +94,7 @@ $$
 
 으로 주어지며, 각 noise variable이 모두 i.i.d인 정규분포를 따른다고 가정하자. 그러면 다음과 같이 $\mathbf X$의 random sample을 생성할 수 있다(Code on Github).
 
-![](/assets/img/16562068457631.jpg){: .align-center}
+![](/assets/img/Causal_Inference_(5)_1.jpg){: .align-center}
 
 ## Intervention
 이전에 다루었던 Cause-Effect 모델에서의 intervention과 마찬가지로, multivariate SCM에 대해서도 intervention distribution을 생각해볼 수 있다. SCM $\mathfrak C = (S,P_N)$ 이 주어졌을 때, 새로운 assignment

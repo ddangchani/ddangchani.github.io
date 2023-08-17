@@ -8,7 +8,7 @@ tags:
 category: Project
 use_math: true
 header: 
-  teaser: /assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 7.19.09.png
+ teaser: /assets/img/따릉이_ModifiedLinear.assets/따릉이_shrinkage_0.png
 ---
 {% raw %}
 ## 따릉이 데이터 분석하기 (3) Modified Linear Methods
@@ -102,7 +102,7 @@ plt.title('Elnet')
 
 위 코드를 실행하면, 다음과 같은 세 그래프를 얻을 수 있는데, Lasso method가 계수의 수렴이 가장 느리며, Ridge가 가장 빠르게 수렴함을 확인할 수 있다.
 
- <img src="/assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 4.07.18.png" alt="스크린샷 2022-04-11 오후 4.07.18" style="zoom:75%;" />
+ <img src="/assets/img/따릉이_ModifiedLinear.assets/따릉이_shrinkage_0.png" alt="스크린샷 2022-04-11 오후 4.07.18" style="zoom:75%;" />
 
 반면, 최적의 alpha 값을 찾는 것은 train data가 아닌 validation data가 기준이 되어야 하므로, validation data를 이용해 간단한 hyperparameter tuning을 해보면 다음과 같다.
 
@@ -154,7 +154,7 @@ plt.savefig('plots/rmse_vs_alpha.png', facecolor='white', transparent=False)
 
 결과는 아래와 같은데, 이를 보면 Lasso의 경우 $\alpha=1.0$에서 전역 최소가 발생하고, Elastic-Net과 Ridge는 $\alpha=\sqrt{10}$에서 최소인 것 처럼 보이지만서도 Ridge의 경우는 $10^{-2}$에서 전역 최소가 된다. 세 모델을 모두 고려한다면, Ridge에서 $\alpha=0.01$인 경우가 가장 낮은 validation RMSE를 가지므로 이를 택하는 것이 좋아보인다.
 
-<img src="/assets/img/따릉이_ModifiedLinear.assets/스크린샷 2022-04-11 오후 7.19.09.png" alt="스크린샷 2022-04-11 오후 7.19.09" style="zoom=75%;" />
+<img src="/assets/img/따릉이_ModifiedLinear.assets/따릉이_shrinkage_1.png" alt="스크린샷 2022-04-11 오후 7.19.09" style="zoom=75%;" />
 
 #### Least Angle Regression
 

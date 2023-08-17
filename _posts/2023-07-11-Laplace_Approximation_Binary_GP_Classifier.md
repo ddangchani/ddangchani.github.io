@@ -7,7 +7,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/Pasted image 20230712191810.png
+ teaser: /assets/img/Laplace_Approximation_Binary_GP_Classifier_0.png
 ---
 {% raw %}
 [바로 이전 글에서](https://ddangchani.github.io/machine learning/Gaussian-Process-Classification) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}\vert X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.
@@ -101,7 +101,7 @@ $$
 ## Example
 
 이전 [Linear Classification Model](https://ddangchani.github.io/machine%20learning/Gaussian_Process_Classification/)에서 다루었던 데이터를 바탕으로 예측 확률분포를 구하는 과정을 알고리즘으로 살펴보도록 하자. 우선 데이터는 다음과 같이 각 클래스별로 4개씩 주어졌다고 가정하자.
-![](/assets/img/Pasted image 20230712191857.png){: .align-center}{: .align-center}
+![](/assets/img/Laplace_Approximation_Binary_GP_Classifier_0.png){: .align-center}{: .align-center}
 
 Kernel function은 Gaussian RBF
 
@@ -173,7 +173,7 @@ def laplace_approximation(y, K, X, x_new=None, max_iter=100):
 ```
 
 이를 바탕으로 Predictive distribution의 contour plot을 다음과 같이 그릴 수 있다.
-![](/assets/img/Pasted image 20230712191810.png){: .align-center}{: .align-center}
+![](/assets/img/Laplace_Approximation_Binary_GP_Classifier_1.png){: .align-center}{: .align-center}
 
 ## References
 - Gaussian Process for Machine Learning

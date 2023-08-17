@@ -7,7 +7,7 @@ tags:
 category: 
 use_math: true
 header: 
-  teaser: /assets/img/Pasted image 20230803164237.png
+ teaser: /assets/img/Randomized-Experiment_1.png
 ---
 {% raw %}
 # Randomized Experiment
@@ -137,11 +137,11 @@ $$
 
 만일 confounder $X$가 존재하여 $T\leftarrow X\rightarrow Y$ 의 backdoor path가 존재하면 인과관계의 파악이 어려운 문제가 존재한다. (아래)
 
-![](/assets/img/Pasted image 20230803164237.png){: width="500" .align-center}
+![](/assets/img/Randomized-Experiment_0.png){: width="500" .align-center}
 
 RCT를 이용하면 처치효과에 confounder 영향을 배제할 수 있으므로, 결국 $Y$에 미치는 $T$의 영향을 측정하기만 한다면 이러한 연관관계를 이용해 인과관계를 설정할 수 있다(아래).
 
-![](/assets/img/Pasted image 20230803164408.png){: width="500" .align-center}
+![](/assets/img/Randomized-Experiment_1.png){: width="500" .align-center}
 
 
 ## References

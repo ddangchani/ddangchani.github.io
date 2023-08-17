@@ -8,7 +8,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/pca.jpg
+ teaser: /assets/img/kernelpca_0.jpg
 ---
 {% raw %}
 
@@ -61,7 +61,7 @@ $$
 $$   
 
 또한, 이렇게 정의된 분산을 empirical variance라고 한다.   
-![PCA](/assets/img/pca.jpg)   
+![PCA](/assets/img/kernelpca_0.jpg)   
 *Input Data가 두개의 성분 x1,x2를 가질 때 PCA는 분산을 최대화하는 두 축 $w_1,w_2$(파란색) 를 찾는 것이다.*     
 이렇게 설명되는 PCA와 앞서 설명한 행렬의 고유값분해를 이용한 정의가 동치임은 아래에서 선형커널을 이용해 설명할 수 있다.
 
@@ -128,7 +128,7 @@ $$
 ### 비선형커널을 이용한 PCA
 비선형커널 PCA의 대략적인 원리를 설명하는 다음 그림을 살펴보자.  
 
-![Kernel PCA](/assets/img/kernelpca.png){: .align-center} 
+![Kernel PCA](/assets/img/kernelpca_1.png){: .align-center} 
   
 왼쪽과 오른쪽 그림 모두 두개의 성분을 가지는 $\mathbb{R^2}$ 상의 데이터셋을 표현한 것이다. 이때 특성공간 $\mathcal{F}$ 로의 사상 $\Phi:\mathbb{R^2}\to \mathcal{F}$ 가 주어진다고 하자. 오른쪽 그림은 각 데이터를(x로 표시된 점들) 특성함수로 mapping해서 Linear PCA를 실행시킨 것이다. 이때 오른쪽 그림의 대각 화살표는 주성분을 나타내고, 이와 수직으로 그려진 점선들은 주성분의 등고선을 의미한다. 반면, 왼쪽 그림은 다항커널($(\mathbf{x,y})^d$)과 같은 비선형커널을 이용해 커널행렬을 구하고 PCA를 진행한 결과이다. 오른쪽 그림의 직선형태인 등고선은 왼쪽에서 비선형으로 나타남을 확인할 수 있으며, 고유벡터의 존재성 역시 확실하지 않기 때문에 주성분이 표시되지 않음을 의미한다.   
 핵심은, 이미지, 영상과 같은 **고차원 대용량 데이터**를 처리하게 될 경우 오른쪽과 같이 특성공간으로 매핑하게 된다면 계산 비용이 과도해지는 문제가 발생하게 될 수 있다는 것이다. 이때 커널함수를 이용한다면 커널행렬을 구하는 연산만으로도 주성분 분석을 쉽게 할 수 있다. 이는 계산비용을 효과적으로 사용할 수 있게 해준다.   

@@ -6,7 +6,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/Cross Validation.assets/스크린샷 2022-04-03 오후 12.17.56.png
+ teaser: /assets/img/Cross Validation.assets/Cross_Validation_0.png
 ---
 {% raw %}
 ## Cross-Validation
@@ -17,7 +17,7 @@ Cross-validation<sup>교차검증</sup>은 prediction error을 추정하는 과�
 
 만일 어떤 머신러닝 알고리즘을 개발할 때 데이터가 매우 충분하다면, 우리는 임의로 Training set, Validation set, Test set을 각각 충분한 sample 수로 설정할 수 있을 것이다. 그러나 실제로는 데이터가 충분하지 않은 경우가 많으며, training 만으로도 벅찰 경우가 있다. 이런 경우를 해결하기 위해 전체 훈련 데이터셋을 $K$개로 나누어 ($K-1$)개 데이터셋으로 훈련을 하고, 이를 나머지 1개 데이터셋으로 검증하는 방법을 사용하는데 이를 **K-fold cross validation**이라고 한다.
 
-![스크린샷 2022-04-03 오전 9.54.26](/assets/img/Cross Validation.assets/스크린샷 2022-04-03 오전 9.54.26.png){: .align-center}
+![스크린샷 2022-04-03 오전 9.54.26](/assets/img/Cross Validation.assets/Cross_Validation_0.png){: .align-center}
 
 위 그림은 $K=5$인 CV를 나타내는데, $k=3$인 경우 나머지 $k=1,2,4,5$ 의 데이터를 이용해 모델을 훈련시키고, 이를 $k=3$인 부분의 데이터로 검증한다. 좀 더 일반적으로, 다음과 같은 인덱싱 함수(kappa)
 
@@ -67,7 +67,7 @@ $$
 
 값의 근사적인 불편추정량<sup>unbiased estimator</sup>이 된다. 그러나 EPE의 bias-variance decomposition에서 알 수 있듯이, 불편추정량 수준으로 편향이 낮아지는 만큼 분산이 증가하는데, 각 training dataset($N$개의 sets)이 서로 매우 유사하기 때문이다(임의의 두 training set은 $N-2$개의 데이터가 동일하므로).
 
-<img src="/assets/img/Cross Validation.assets/스크린샷 2022-04-03 오후 12.17.56.png" alt="스크린샷 2022-04-03 오후 12.17.56" style="zoom:50%;" />
+<img src="/assets/img/Cross Validation.assets/Cross_Validation_1.png" alt="스크린샷 2022-04-03 오후 12.17.56" style="zoom:50%;" />
 
 위 그래프는 어떤 분류 문제가 주어졌을 때 training set 크기에 따른 classifier의 $1-\text{Err}$ 값을 나타낸 가상의 learning curve이다. 여기서 training set의 크기는 $N\cdot\frac{K-1}{K}$, 즉 만일 $N=50$인 데이터셋에 5-fold CV를 적용할 경우 training set의 크기는 40이 된다. 이때 분류기의 성능은 크기가 100인 training set까지 증가하지만, 그 뒤로는 성능 증가폭이 미미하다. 반면, training set 크기가 50보다 작은 경우 해당 분류기는 $1-\text{Err}$을 제대로 추정하지 못하고(underestimation), 편향이 발생한다. 
 

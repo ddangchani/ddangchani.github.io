@@ -7,7 +7,7 @@ tags:
 category: Statistics
 use_math: true
 header: 
-  teaser: /assets/img/Pasted image 20230705102723.png
+ teaser: /assets/img/MM_algorithm_0.png
 ---
 {% raw %}
 MM algorithm은 EM algorithm의 일반화된 버전으로 이해하면 되는데, MM은 maximization 관점에서 minorize-maximize를 나타낸다. MM algorithm은 최대화하고자 하는 목적함수 $l(\theta)$ 에 대한 lower bound function(**surrogate function**) $Q(\theta,\theta^{t})$ 를 찾고 이를 maximize하는 $\theta^{t+1}$을 찾아 updating하는 방식으로 이루어진다. 이 메커니즘은 다음과 같은 monotonic increasing property를 보장한다.
@@ -18,7 +18,7 @@ l(\theta^{t+1})\geq Q(\theta^{t+1},\theta^{t})\geq Q(\theta^{t},\theta^{t})=l(\t
 
 $$
 
-![](/assets/img/Pasted image 20230705102723.png){: .align-center}
+![](/assets/img/MM_algorithm_0.png){: .align-center}
 위 그림에서와 같이, $t$ 시점에서의 값 $\theta_{t}$ 에서의 surrogate function(파란색)을 찾고,해당 function을 최대로 하는 $\theta$를 다음 step의 값으로 설정하는 과정을 반복하면 함수의 local maximum과 local maximum에 대응하는 parameter를 찾을 수 있다.
 
 Surrogate function을 찾는 방법에는 여러 가지 방법이 있을 수 있으나, 가장 쉽게 생각하면 Taylor expansion을 활용하여 구할 수 있다. 다음과 같은 Taylor expansion을 생각해보자.

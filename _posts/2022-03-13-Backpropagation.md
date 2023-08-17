@@ -6,7 +6,7 @@ tags:
 category: Deep Learning
 use_math: true
 header: 
-  teaser: /assets/img/Backpropagation.assets/스크린샷 2022-03-13 오후 7.22.18.png
+ teaser: /assets/img/Backpropagation.assets/Backpropagation_0.png
 ---
 {% raw %}
 # Backpropagation
@@ -15,7 +15,7 @@ header:
 
 ## Basic backpropagation
 
-![스크린샷 2022-03-13 오후 7.08.53](/assets/img/Backpropagation.assets/스크린샷 2022-03-13 오후 7.08.53.png){: .align-center}
+![스크린샷 2022-03-13 오후 7.08.53](/assets/img/Backpropagation.assets/Backpropagation_0.png){: .align-center}
 
 위와 같이 가장 간단한 형태의 네트워크를 생각하자. 위 네트워크는 3개의 입력값을 바탕으로 두 개의 노드 연산을 거쳐 출력값 $f(x,y,z)=(x+y)z$ 를 도출한다. 이때 $q(x,y)=x+y$ 를 첫번째 연산 노드로 하고 곱셈을 두번째 노드로 하자. 만일 데이터 $(x,y,z)=(-2,3,5)$ 가 주어졌다고 하자. 그러면 아주아주 간단한 연산으로 우리는 출력값 $f=5$와 중간출력값 $q=1$을 얻어낼 수 있다. 이렇게 입력받은 데이터로부터 순서대로 노드연산을 진행해 출력값을 얻는 것을 **Forward pass**라고 한다.
 
@@ -31,7 +31,7 @@ $$
 
 ### Up/Downstream Gradient
 
-![스크린샷 2022-03-13 오후 7.22.18](/assets/img/Backpropagation.assets/스크린샷 2022-03-13 오후 7.22.18.png){: .align-center}
+![스크린샷 2022-03-13 오후 7.22.18](/assets/img/Backpropagation.assets/Backpropagation_1.png){: .align-center}
 
 신경망의 한 노드 f에 대해 위와 같은 형태의 연결관계가 있다고 하자. 이때 이 노드는, 오른쪽으로는 신경망이 진행되며 출력값($L\in\mathbb R$, 손실함수값 )이 도출되고, 왼쪽으로는 입력 데이터가 처리되어 전해져오는 구조이다. 노드 f의 출력값 $z$와 손실함수값 $L$에 대해 구해지는 그래디언트 $\partial L/\partial z$ 을 **Upstream gradient**라고 한다. 마찬가지로, 노드의 입력값 $x,y$ 에 대해서 구해지는 그래디언트 $\partial L/\partial x, \partial L/\partial y$ 들을 **Downstream gradient**라고 한다. 반면, 노드 f의 연산자(ex. $z=x+y$, $z=\max(x,y)$)에 의해 발생하는 그래디언트 $\partial z/\partial x, \partial z/\partial y$ 들을 **Local gradient**라고 정의한다.
 

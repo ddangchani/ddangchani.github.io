@@ -8,7 +8,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/Support Vector Regression.assets/스크린샷 2022-05-17 오전 10.25.02.png
+ teaser: /assets/img/Support Vector Regression.assets/Support_Vector_Regression_0.png
 ---
 {% raw %}
 ## Support Vector Regression
@@ -68,7 +68,7 @@ $$
 
 으로 쓸 수 있으며, 실제 관측값 $y_i$로부터 $\epsilon$ 만큼의 범위를 $\epsilon$**-tube** 라고도 한다(아래 그림의 회색 영역).
 
-![스크린샷 2022-05-17 오전 10.25.02](/assets/img/Support Vector Regression.assets/스크린샷 2022-05-17 오전 10.25.02.png){: .align-center}
+![스크린샷 2022-05-17 오전 10.25.02](/assets/img/Support Vector Regression.assets/Support_Vector_Regression_0.png){: .align-center}
 
 앞선 최적화문제 식 (1)은 dual formulation을 이용하여 쉽게 해결할 수 있는데, Lagrange multipliers 방법을 이용하여 다음과 같이 유도할 수 있다.
 

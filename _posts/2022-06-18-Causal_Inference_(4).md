@@ -6,7 +6,7 @@ tags:
 category: Causal Inference
 use_math: true
 header: 
-  teaser: /assets/img/16555540745593.jpg
+ teaser: /assets/img/Causal_Inference_(4)_0.jpg
 ---
 {% raw %}
 ## Learning Cause-Effect Models (2)
@@ -86,11 +86,11 @@ Y= 0.5 X+ N_Y
 $$
 
 로 주어지는 Cause-Effect model에 대해 랜덤 샘플 500개를 생성하고, 우선 정방향에 대해 위 알고리즘의 1-2 과정을 실행하면 다음과 같은 결과를 얻을 수 있다.
-![](/assets/img/16555539959017.jpg)
+![](/assets/img/Causal_Inference_(4)_0.jpg)
 
 왼쪽 그림은 샘플 산점도 위에 추정된 정방향 선형회귀모형(Y on X)을 그린 것이다. 오른쪽 그림은 정방향 회귀에서 잔차와 예측변수의 상관관계를 나타낸 산점도인데, 실제로 pearson 상관계수가 0에 수렴하고 p-value 역시 0.99 이상으로 나타나 잔차의 독립성이 검증된다(실제로는(practically) *Hilbert-Schmidt Independence Criterion* 등을 사용한다).
 
-![](/assets/img/16555540745593.jpg)
+![](/assets/img/Causal_Inference_(4)_1.jpg)
 
 반면, 위 그림은 역방향 모델에 대해 선형모형(X on Y)을 추정하고, 마찬가지로 오른쪽에 잔차 산점도를 그렸다. 이때, 여기서는 잔차와 예측변수 $Y$의 관계가 독립적이지 않음을 가시적으로 확인가능한데, 실제로 pearson 상관계수 역시 유의미하게 나타났으며 p-value 역시 0에 수렴하는 것으로 나타났다. 즉, 이를 종합하면 RESIT 알고리즘에 의해 역방향 ANM이 성립하지 않고, 정방향 모델이 유일한 것으로 **식별가능하다**. (샘플 생성부터 plot까지의 Full code는 [github](https://github.com/ddangchani/Velog/blob/main/Causal%20Inference/RESIT.ipynb)에서 확인가능하다.)
 

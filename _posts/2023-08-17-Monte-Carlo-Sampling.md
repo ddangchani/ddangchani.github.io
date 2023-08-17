@@ -7,7 +7,7 @@ tags:
 category: 
 use_math: true
 header: 
-  teaser: /assets/img/sampling_normal.png
+ teaser: /assets/img/Monte-Carlo-Sampling_0.png
 ---
 {% raw %}
 # Generating random samples
@@ -70,7 +70,7 @@ plt.show()
 
 ```
 
-![](/assets/img/sampling_normal.png)
+![](/assets/img/Monte-Carlo-Sampling_0.png)
 
 ## Importance sampling
 

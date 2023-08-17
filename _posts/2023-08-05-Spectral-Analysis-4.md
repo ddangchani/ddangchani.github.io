@@ -8,13 +8,13 @@ tags:
 category: 
 use_math: true
 header: 
-  teaser: /assets/img/Pasted image 20230804104124.png
+ teaser: /assets/img/Spectral-Analysis-4_1.png
 ---
 {% raw %}
 
 # Graph Clustering
 
-![](/assets/img/Pasted image 20230804104124.png)
+![](/assets/img/Spectral-Analysis-4_0.png)
 *Graph Clustering*
 
 Graph Clustering(혹은 community recovery)란, 위 그림과 같이 그래프의 노드들을 서로 다른 커뮤니티(그룹)으로 나누는 방법론을 의미한다. 특히 소셜 미디어의 발달로 인해 최근 들어 개인간 연결성이 강조되며, SNA(social network analysis) 영역에서 주로 연구되는 방법론이며, 컴퓨터 비전이나 의학통계 영역에서도 많이 사용된다고 한다. 일반적으로 graph clustering은 **stochastic block model**을 기반으로 이루어지는데, 이에 대해 다루어보도록 하겠다.
@@ -218,7 +218,7 @@ array([-0.10430201, -0.14665696, -0.15684866, -0.148169  , -0.08294298,
 
 분석 결과 실제로 노드 0-19까지에 해당하는 고유벡터 성분은 음수로, 20-39까지의 고유벡터 성분은 양수로 나타나 clustering이 잘 이루어졌음을 확인할 수 있다.
 
-![](/assets/img/Pasted image 20230804123159.png){: .align-center}
+![](/assets/img/Spectral-Analysis-4_1.png){: .align-center}
 
 ## References
 - Yuxin Chen et al. - Spectral Methods for Data Science: A Statistical Perspective (2021)

@@ -8,7 +8,7 @@ tags:
 category: Machine Learning
 use_math: true
 header: 
-  teaser: /assets/img/before_frame0.png
+ teaser: /assets/img/Robust_PCA_3.png
 ---
 {% raw %}
 
@@ -17,9 +17,9 @@ header:
 ## Background
 
 Robust PCA는 Principal component analysis가 그 이름에 포함되어 있지만, 본질적으로 접근 방식이 일반적인 PCA와는 사뭇 다르다. PCA는 일반적으로 특이값분해(SVD)를 이용해 분산을 최대화하는 고유벡터와 그것에 대한 projection을 구하는 방식이다. 다만, PCA의 경우 **이상치**에 대해 매우 민감한데, 아래 그림처럼 일부의 이상치(빨간색 데이터)에 대해 주성분 벡터가 상당히 변화할 수 있다.
-![](/assets/img/PCA_no_outlier.png){: .align-center}
+![](/assets/img/Robust_PCA_0.png){: .align-center}
 
-![](/assets/img/PCA_outlier.png){: .align-center}
+![](/assets/img/Robust_PCA_1.png){: .align-center}
 *이상치가 있는 경우(빨간색 점)*
 
 Robust PCA는 이러한 PCA의 non-robustness를 보완하는 방법이지만, 근본적으로 살펴보면 다음과 같은 행렬 분해를 추정하는 기법이다.
@@ -122,11 +122,11 @@ r &=  3\;:\;\text{rank of low-rank approximation } \mathbf{L}\\
 $$
 
 Gradient descent 알고리즘은 총 반복횟수를 100회로 지정하였으며(`maxiter`), 예시 결과는 다음과 같다.
-![](/assets/img/before_frame0.png){: .align-center}
-![](/assets/img/result_frame0.png){: .align-center}
+![](/assets/img/Robust_PCA_2.png){: .align-center}
+![](/assets/img/Robust_PCA_3.png){: .align-center}
 
-![](/assets/img/before_frame25.png){: .align-center}
-![](/assets/img/result_frame25.png){: .align-center}
+![](/assets/img/Robust_PCA_4.png){: .align-center}
+![](/assets/img/Robust_PCA_5.png){: .align-center}
 
 위 두 사진은 첫 번째 프레임 이미지에 대한 처리 전/후 사진을, 아래 두 사진은 25번째 프레임에 대한 처리 전/후 사진을 나타낸다. 각 처리 후 사진은 low-rank approximation $\mathbf{L}$의 각 프레임에 해당하는 열벡터를 이미지로 재구성한 것인데, 배경 추출이 잘 이루어졌음을 확인할 수 있다.
 
