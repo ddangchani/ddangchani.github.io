@@ -114,7 +114,7 @@ dot = pgm.visualize_model(model)
 display(dot)
 ```
 
-![](assets/img/../../../assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.22.38.png){: .align-center width="50%" height="50%"}
+![](/assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.22.38.png){: .align-center width="50%" height="50%"}
 
 또한, 각 treatment(여기서는 Grade가 B인 경우를 예시로 선택)에 대한 다른 노드들의 marginal distribution을 확인할 수 있다. 이러한 형태의 추론을 쿼리(query)라고도 하는데,  다음과 같이 evidence를 설정하고, `VariableElimination` 클래스를 활용해 조건부 분포를 찾거나 혹은 `get_marginals, visualize_marginals`을 이용해 시각화할 수 있다.
 
@@ -135,7 +135,7 @@ dot = pgm.visualize_marginals(model, evidence, marginals)
 display(dot)
 ```
 
-![](assets/img/../../../assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.26.58.png){: .align-center width="50%" height="50%"}
+![](/assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.26.58.png){: .align-center width="50%" height="50%"}
 
 ## References
 
