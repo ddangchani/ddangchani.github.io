@@ -77,7 +77,7 @@ $$
 #### Example
 다음과 같은 SCM
 
-![](assets/img/Causal Inference (5).assets/16562033783507.jpg)
+![](/assets/img/Causal Inference (5).assets/16562033783507.jpg)
 
 에 대해 
 
