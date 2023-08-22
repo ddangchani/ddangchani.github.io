@@ -32,10 +32,6 @@ layout: archive
     const postWrappers = document.querySelectorAll('.post-wrapper');
     const selectedTags = document.querySelectorAll('.tag.selected');
 
-    console.log(Array.from(selectedTags).map(function(tag) {
-      return tag.dataset.tag;
-    }));
-
     postWrappers.forEach(function(postWrapper) {
       const postTags = postWrapper.dataset;
       // 태그가 하나도 선택되지 않았을 때
@@ -72,6 +68,7 @@ layout: archive
   });
 
 
+
 </script>
 
 
@@ -97,9 +94,9 @@ layout: archive
       <div class="archive__item-tags">
         {% for tag in post.tags %}
           {% if site.data.tags contains tag %}
-            <a href="/tags/#{{ tag | slugify }}" class="btn" id="tagged">{{ tag }}</a>
+            <a class="posttag" id="tagged">{{ tag }}</a>
           {% else %}
-            <a class="btn" id="untagged">{{ tag }}</a>
+            <a class="posttag" id="untagged">{{ tag }}</a>
           {% endif %}
         {% endfor %}
       </div>
