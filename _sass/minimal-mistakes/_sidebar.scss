@@ -15,6 +15,8 @@
   //   -webkit-transform: translate3d(0, 0, 0);
   //   transform: translate3d(0, 0, 0);
   // }
+  
+  display: none;
 
   @include breakpoint($large) {
     float: left;
@@ -28,6 +30,7 @@
     }
 
     &.sticky {
+      display: block;
       overflow-y: auto;
       /* calculate height of nav list
          viewport height - nav height - masthead x-padding
@@ -85,6 +88,7 @@
     z-index: 10;
 
     &.sticky {
+      display: block;
       @include clearfix();
       position: -webkit-sticky;
       position: sticky;

@@ -6,15 +6,13 @@ author_profile: false
 header:
     overlay_image: /assets/logos/background.png
 ---
+{% include author-profile-about.html %}
 
-<p style="font-size:1em">
-"꾸준히 데이터사이언스와 통계학을 공부하고 있습니다. <br>
- 평소 공부하는 자료를 정리해서 업로드하는 블로그로 사용하고 있습니다.
- 수정이 필요한 사항 또는 어떤 사소한 내용이든 댓글 모두 환영합니다😀"
+<p align="center">
+"데이터를 기반으로 보다 <strong>안전한 사회</strong>, 나아가 더 나은 세상에 기여하고 싶다는 가치관을 가지고 있습니다. 꾸준히 데이터사이언스와 통계학을 공부하고 있습니다. 이 사이트는 평소 공부하는 자료를 정리해서 업로드하는 블로그로 사용하고 있습니다. 수정이 필요한 사항 또는 어떤 사소한 내용이든 댓글 모두 환영합니다😀"
 </p>
 
-
-# 📚 Interest : 데이터 기반 도시안전 구현
+# 📚 Interest : Data-based Public Safety
 
 - Smart city (IoT data)
 - Spatial Data Analysis
@@ -49,6 +47,9 @@ header:
 
 
 <style>
+  body {
+    word-break: keep-all;
+  }
   h1 {
     font-size: 1.5em;
   }
