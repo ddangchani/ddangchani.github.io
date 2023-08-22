@@ -4,17 +4,94 @@ layout: archive
 
 {{ content }}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+{% assign n_posts = site.posts | size %}
 
-{% if paginator %}
+<h3 class="archive__subtitle">전체 게시글 
+  <span class="n_posts">({{n_posts}})</span>
+</h3>
+
+{% assign tags = site.data.tags | sort_natural %}
+
+<!--Tag List-->
+<ul class="tags">
+  {% for tag in tags %}
+    {% capture tag_size %}{{ site.tags[tag] | size }}{% endcapture %}
+    {% if tag_size > "0" %}
+    <li><span class="tag" data-tag="{{tag | replace : ' ', '_' }}">{{ tag }}</span></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<script>
+  // Tag Filter
+  // Function to handle the click events on tags
+  function toggleSelected(element) {
+    element.classList.toggle("selected");
+
+    // 필터링하여 선택된 태그에 해당하는 포스트 보이기/숨기기
+    const postWrappers = document.querySelectorAll('.post-wrapper');
+    const selectedTags = document.querySelectorAll('.tag.selected');
+
+    console.log(Array.from(selectedTags).map(function(tag) {
+      return tag.dataset.tag;
+    }));
+
+    postWrappers.forEach(function(postWrapper) {
+      const postTags = postWrapper.dataset;
+      // 태그가 하나도 선택되지 않았을 때
+      if (selectedTags.length === 0) {
+        postWrapper.style.display = 'block';
+        return;
+      }
+      // 선택된 태그들을 하나라도 포함하는 포스트는 보이기
+      else {
+        var show = false;
+        selectedTags.forEach(function(selectedTag) {
+          if (postTags[selectedTag.dataset.tag.toLowerCase()] === "") {
+            show = true;
+            console.log(postTags[selectedTag.dataset.tag])
+          }
+        });
+        if (show) {
+          postWrapper.style.display = 'block';
+        } else {
+          postWrapper.style.display = 'none';
+        }
+      }
+  });
+  }
+
+  // Add click event listenrs to tag elements
+  document.addEventListener('DOMContentLoaded', function() {
+    const tagElements = document.querySelectorAll('.tag');
+    tagElements.forEach(function(tagElement) {
+      tagElement.addEventListener('click', function() {
+        toggleSelected(tagElement);
+      });
+    });
+  });
+
+
+</script>
+
+
+<!-- {% if paginator %}
   {% assign posts = paginator.posts %}
 {% else %}
   {% assign posts = site.posts %}
-{% endif %}
+{% endif %} -->
+
+{% assign posts = site.posts %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
   {% for post in posts %}
+  <div class="post-wrapper" 
+  {% if post.tags %}
+    {% for tag in post.tags %}
+      data-{{ tag | replace : ' ', '_' }}
+    {% endfor %}
+  {% endif %}>
     {% include archive-single.html type=entries_layout %}
     {% if post.tags %}
       <div class="archive__item-tags">
@@ -27,7 +104,8 @@ layout: archive
         {% endfor %}
       </div>
     {% endif %}
+  </div>
   {% endfor %}
 </div>
 
-{% include paginator.html %}
+<!-- {% include paginator.html %}-->

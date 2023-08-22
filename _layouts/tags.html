@@ -22,6 +22,8 @@ layout: archive
 </div>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
+
+
 {% for tag in tags_sorted %}
   <section id="{{ tag | slugify | downcase }}" class="taxonomy__section">
     <h2 class="archive__subtitle">{{ tag }}</h2>
