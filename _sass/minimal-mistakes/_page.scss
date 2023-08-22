@@ -84,6 +84,7 @@ body {
 }
 
 .page__title {
+  word-break: keep-all;
   margin-top: 0;
   line-height: 1;
 
@@ -271,7 +272,9 @@ body {
     }
 
     .page__lead {
-      max-width: $medium;
+      max-width: $large;
+      word-break: keep-all;
+      font-family: $monospace;
     }
 
     .page__title {
