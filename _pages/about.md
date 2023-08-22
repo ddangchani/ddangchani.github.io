@@ -3,11 +3,13 @@ title: "About"
 layout: single
 permalink: /about/
 author_profile: false
+header:
+    overlay_image: /assets/logos/background.png
 ---
 
 <p style="font-size:1em">
-"꾸준히 데이터사이언스와 통계학을 공부하고 있습니다.<br/>
- 평소 공부하는 자료를 정리해서 업로드하는 블로그로 사용하고 있습니다.<br/>
+"꾸준히 데이터사이언스와 통계학을 공부하고 있습니다. <br>
+ 평소 공부하는 자료를 정리해서 업로드하는 블로그로 사용하고 있습니다.
  수정이 필요한 사항 또는 어떤 사소한 내용이든 댓글 모두 환영합니다😀"
 </p>
 
@@ -20,3 +22,6 @@ author_profile: false
 <li>Crime Pattern Analysis</li>
 <li>Transportation Data Analysis</li>
 </ul>
+
+<style>
+</style>
