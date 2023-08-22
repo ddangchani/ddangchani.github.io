@@ -1,7 +1,7 @@
 ---
 title: Jekyll 블로그에 태그 정렬기능 추가하기
 tags:
-- 
+- Front-end
 - Jekyll
 - Blog
 category: 
@@ -23,7 +23,6 @@ tags:
 header: 
   teaser: /assets/img/스크린샷 2023-08-22 오후 9.22.50.png
 ---
-{% raw %}
 
 ```
 
@@ -338,4 +337,4 @@ Jekyll에서 포스트를 작성할 때에는 위 코드와 같이 앞에 YAML �
 ## References
 - 원 자료 : [https://wormwlrm.github.io/2019/09/22/How-to-add-tags-on-Jekyll.html](https://wormwlrm.github.io/2019/09/22/How-to-add-tags-on-Jekyll.html)
 - CSS 태그 : [https://codepen.io/wbeeftink/pen/AJjVZQ](https://codepen.io/wbeeftink/pen/AJjVZQ)
-{% endraw %}{% endraw %}
+{% endraw %}

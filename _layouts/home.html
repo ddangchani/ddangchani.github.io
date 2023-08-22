@@ -94,9 +94,9 @@ layout: archive
       <div class="archive__item-tags">
         {% for tag in post.tags %}
           {% if site.data.tags contains tag %}
-            <a class="posttag" id="tagged">{{ tag }}</a>
+            <a class="posttag tagged">{{ tag }}</a>
           {% else %}
-            <a class="posttag" id="untagged">{{ tag }}</a>
+            <a class="posttag untagged">{{ tag }}</a>
           {% endif %}
         {% endfor %}
       </div>
