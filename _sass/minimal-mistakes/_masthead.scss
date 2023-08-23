@@ -44,18 +44,19 @@
 }
 
 .site-title {
+  font-family: 'Orbitron', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
   align-self: center;
-  font-weight: bold;
+  font-weight: 700;
   z-index: 20;
   
 
-  @media (max-width: 376px) {
-    font-size: 14px;
-  }
+  // @media (max-width: 376px) {
+  //   font-size: 14px;
+  // }
     
   }
 
