@@ -471,7 +471,7 @@
 
 /* Tag List */
 
-@media (hover: hover) {}
+/* 모바일 환경에서 hover 효과 무시 */
 
 .tags {
   list-style: none;
@@ -526,14 +526,18 @@
   top: 0;
 }
 
-.tag:hover {
-  background-color: rgb(20, 120, 220);
-  color: white;
+@media (hover: hover) { // 모바일 환경에서 hover 효과 무시
+  .tag:hover {
+    background-color: rgb(20, 120, 220);
+    color: white;
+  }
+  
+  .tag:hover::after {
+     border-left-color: rgb(20, 120, 220); 
+  }
 }
 
-.tag:hover::after {
-   border-left-color: rgb(20, 120, 220); 
-}
+
 
 .tag.selected {
   background-color: rgb(20, 120, 220);
