@@ -53,12 +53,8 @@
   z-index: 20;
   
 
-  @media (max-width: 360px) {
-    font-size: $type-size-6;
-  }
-
-  @media (max-width: 330px) {
-    font-size: 0.8em;
+  @media (max-width: 376px) {
+    font-size: 14px;
   }
     
   }

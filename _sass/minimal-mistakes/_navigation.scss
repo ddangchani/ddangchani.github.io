@@ -296,10 +296,11 @@
   .hidden-links {
     position: fixed;
     margin-top: 10px;
-    top: $nav-height;
+    top: 2em;
     left: 0;
     width: 100%;
-    height: calc(100vh - $nav-height);
+    height: calc(100vh - 2em);
+    height: -webkit-fill-available; // iOS fix
     display: flex;
     flex-direction: column;
     align-items: center;
