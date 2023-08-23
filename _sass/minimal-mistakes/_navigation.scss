@@ -194,6 +194,7 @@
     &.site-logo {
       margin-left: 0;
       margin-right: 0.5rem;
+      z-index: 10;
     }
 
     &.site-title {
@@ -293,69 +294,58 @@
   }
 
   .hidden-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 15px;
-    padding: 5px;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background: $background-color;
-    -webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
-      0 2px 10px 0 rgba(#000, 0.12);
-    box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
+    position: fixed;
+    margin-top: 10px;
+    top: $nav-height;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - $nav-height);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+  
+    &.visible {
+      opacity: 0.6;
+      pointer-events: auto;
+      z-index: 100;
 
-    &.hidden {
-      display: none;
+      li {
+        text-align: center;
+        font-size: $type-size-4;
+        width: 80vw;
+        border-bottom: 1px solid $border-color;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
     }
 
     a {
-      margin: 0;
+      display: block;
+      margin: 10px 0; /* 메뉴 링크들 간의 간격 조정 */
       padding: 10px 20px;
       font-size: $type-size-5;
-
+      text-decoration: none;
+      color: $masthead-link-color;
+      
+  
       &:hover {
         color: $masthead-link-color-hover;
         background: $navicon-link-color-hover;
       }
     }
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: -11px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: $border-color transparent;
-      display: block;
-      z-index: 0;
     }
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: $background-color transparent;
-      display: block;
-      z-index: 1;
-    }
 
-    li {
-      display: block;
-      border-bottom: 1px solid $border-color;
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
   }
-}
+
 
 .no-js {
   .greedy-nav {

@@ -1,9 +1,3 @@
-/*
-GreedyNav.js - https://github.com/lukejacksonn/GreedyNav
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-Copyright (c) 2015 Luke Jackson http://lukejacksonn.com
-*/
-
 $(function() {
 
   var $btn = $("nav.greedy-nav .greedy-nav__toggle");
@@ -99,6 +93,7 @@ $(function() {
 
   $btn.on('click', function() {
     $hlinks.toggleClass('hidden');
+    $hlinks.toggleClass('visible');
     $(this).toggleClass('close');
     clearTimeout(timer);
   });
