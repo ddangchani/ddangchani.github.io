@@ -15,6 +15,7 @@
     {% if page.use_math %}
       {% include mathjax.html %}
     {% endif %}
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
