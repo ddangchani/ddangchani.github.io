@@ -3,6 +3,7 @@ title: "Stationarity"
 tags:
 - Time Series
 - Statistics
+- Stationarity
 category: Time Series
 use_math: true
 ---

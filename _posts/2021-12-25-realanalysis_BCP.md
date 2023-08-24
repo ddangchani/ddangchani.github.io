@@ -3,7 +3,6 @@ title: "Banach Fixed Point Theorem"
 tags:
 - Mathematics
 - Real Analysis
-- Math
 - Metric spaces
 category: Mathematics
 use_math: true

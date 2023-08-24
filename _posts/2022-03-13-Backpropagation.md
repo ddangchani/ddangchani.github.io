@@ -3,6 +3,7 @@ title: "Backpropagation"
 tags:
 - Deep Learning
 - Backpropagation
+- Neural Network
 category: Deep Learning
 use_math: true
 header: 

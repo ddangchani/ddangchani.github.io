@@ -3,7 +3,6 @@ title: "Topological spaces(3)"
 tags:
 - Mathematics
 - Real Analysis
-- Math
 - Topological spaces
 category: Mathematics
 use_math: true

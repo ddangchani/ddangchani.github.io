@@ -9,7 +9,7 @@ use_math: true
 {% raw %}
 ## Distributions
 
-이전 게시글에서는 random elements에 대해 다루었으며, 확률분포가 어떻게 새로운 측도로 정의되는지 살펴보았다. 이번에는 random elements의 분포와 분포 함수 및 수리통계학에서 다룬 기댓값, 적률 등을 살펴보고자 한다.
+이전 게시글에서는 random elements에 대해 다루었으며, 확률분포<sup>distribution</sup>가 어떻게 새로운 측도로 정의되는지 살펴보았다. 이번에는 random elements의 분포와 분포 함수 및 수리통계학에서 다룬 기댓값, 적률 등을 살펴보고자 한다.
 
 ### Finite-dimensional distribution
 

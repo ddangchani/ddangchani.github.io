@@ -3,6 +3,7 @@ title: "Bootstrap"
 tags:
 - Machine Learning
 - Bootstrap
+- Statistics
 category: Machine Learning
 use_math: true
 ---

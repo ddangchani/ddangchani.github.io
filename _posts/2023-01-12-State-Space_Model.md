@@ -11,7 +11,7 @@ use_math: true
 
 ## Definition
 
-상태공간모형은 다음과 같이 정의된다. 각 t 시점에서는 세 종류의 벡터가 주어지는데, 먼저 벡터 $$\mathbf{x}_t \in \mathbb{R}^p$$ 는 각 시점의 hidden state vector로, 관측할 수 없다. 반면 $$\mathbf{y}_{t}\in \mathbb{R}^{p}$ 와 $\mathbf{u}_{t}\in\mathbb{R}^{r}$$ 는 각각 observation vector, exogenous vector(외생변수)로 이들은 관측가능한 데이터로 주어진다. 이때 다음과 같은 관계식으로 주어지는 모형을 **상태공간모형**이라고 한다.
+상태공간모형은 다음과 같이 정의된다. 각 t 시점에서는 세 종류의 벡터가 주어지는데, 먼저 벡터 $$\mathbf{x}_t \in \mathbb{R}^p$$ 는 각 시점의 hidden state vector로, 관측할 수 없다. 반면 $$\mathbf{y}_{t}\in \mathbb{R}^{p}$$ 와 $$\mathbf{u}_{t}\in\mathbb{R}^{r}$$ 는 각각 observation vector, exogenous vector(외생변수)로 이들은 관측가능한 데이터로 주어진다. 이때 다음과 같은 관계식으로 주어지는 모형을 **상태공간모형**이라고 한다.
 
 $$
 

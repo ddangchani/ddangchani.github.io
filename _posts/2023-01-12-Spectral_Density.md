@@ -3,6 +3,7 @@ title: "Spectral Density"
 tags:
 - Time Series
 - Fourier Transformation
+- Periodogram
 category: Time Series
 use_math: true
 header: 

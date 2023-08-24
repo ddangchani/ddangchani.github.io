@@ -3,7 +3,6 @@ title: "Metric Spaces"
 tags:
 - Mathematics
 - Real Analysis
-- Math
 - Metric spaces
 category: Mathematics
 use_math: true
