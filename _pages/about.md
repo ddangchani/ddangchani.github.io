@@ -24,29 +24,33 @@ header:
 
 # 🎓 Education 
 
-- Department of Statistics, Seoul National University - 2022.03 ~
-    - M.S in Statistics
-    - Spatial Statistics Lab. (Advisor: Prof. Lim Chae Young)
-- Korea National Police University - 2021.02
-    - Bachelor of Public Administration
-    - Bachelor of Police Science
+## Department of Statistics, Seoul National University - 2022.03 ~
+  - M.S in Statistics
+  - Spatial Statistics Lab. (Advisor: Prof. Lim Chae Young)
+
+
+## Korea National Police University - 2021.02
+  - Bachelor of Public Administration
+  - Bachelor of Police Science
 
 # 🥇 Projects and Awards
-- **2nd Prize**, Safety Data Analysis Competition - 2023.02
-  - Developed a prediction model for voice phishing crime risk areas
-  - Used space-time kernel density estimation and spatial lag regression model      
+
+## 2nd Prize, Safety Data Analysis Competition - 2023.02
+- Developed a prediction model for voice phishing crime risk areas
+- Used space-time kernel density estimation and spatial lag regression model      
     
-- **3rd Prize**, Seoul IoT city data hackathon - 2022.07
-  - Analyzed accident risk factors and predicted accident severity for personal mobility devices (PMs)
-  - Used S-DoT city data and ordinal regression model as methodology
+## 3rd Prize, Seoul IoT city data hackathon - 2022.07
+- Analyzed accident risk factors and predicted accident severity for personal mobility devices (PMs)
+- Used S-DoT city data and ordinal regression model as methodology
 
 # 👮‍♂️ Experience
-- Korea National Police Agency - 2021.03 ~
-  - Police Officer
-  - Platoon Leader of Auxiliary Police, Seoul Metropolitan Police Agency
-- Teaching Assistant, Seoul National University
-  - Statistics Lab - Spring 2023
-  - Introduction to Data Science - Fall 2023
+## Korea National Police Agency - 2021.03 ~
+- Police Officer
+- Platoon Leader of Auxiliary Police, Seoul Metropolitan Police Agency
+
+## Teaching Assistant, Seoul National University
+- Statistics Lab - Spring 2023
+- Introduction to Data Science - Fall 2023
 
 
 <style>
@@ -60,6 +64,7 @@ header:
 
   }
   h2 {
+    padding-left: 0.5em !important;
     font-size: 1.25em;
     font-weight: normal !important;
     border-bottom: none !important;

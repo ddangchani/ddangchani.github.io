@@ -278,6 +278,7 @@ body {
     }
 
     .page__title {
+      font-family: 'Orbitron', sans-serif;
       font-size: $type-size-2;
 
       @include breakpoint($small) {
