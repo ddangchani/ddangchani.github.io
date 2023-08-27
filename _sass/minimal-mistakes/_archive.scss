@@ -643,6 +643,9 @@
   margin: 0 10px 5px 0;
   text-decoration: none;
 
+  &:hover {
+    color: rgb(10, 75, 119);
+  }
 }
 
 .posttag.untagged {
@@ -656,6 +659,10 @@
   position: relative;
   margin: 0 10px 5px 0;
   text-decoration: none;
+
+  &:hover {
+    color: #135f80;
+  }
 }
 
 
@@ -671,6 +678,7 @@
   width: 6px;
   top: 10px;
 }
+
 
 .posttag.untagged::before {
   background: #fff;
@@ -694,6 +702,7 @@
   position: absolute;
   right: 0;
   top: 0;
+
 }
 
 .posttag.untagged::after {

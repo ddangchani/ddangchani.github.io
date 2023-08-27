@@ -323,8 +323,8 @@ body {
    ========================================================================== */
 
 .page__share {
-  margin-top: 2em;
-  padding-top: 1em;
+  margin-top: 1em;
+  padding-top: 0em;
   border-top: 1px solid $border-color;
 
   @include breakpoint(max-width $small) {
@@ -401,20 +401,20 @@ body {
 
 .page__taxonomy-item {
   background: rgb(29, 129, 179);
-  color: white;
   border-radius: 3px 0 0 3px;
+  color: #fff;
   display: inline-block;
   height: 26px;
   line-height: 26px;
-  padding: 0 20px 0 23px;
+  padding: 0 20px 0 20px;
   position: relative;
-  margin: 0 10px 10px 0;
-  // text-decoration: none;
-  // -webkit-transition: color 0.2s;
+  margin: 0 10px 5px 0;
+  text-decoration: none;
 }
 
 .page__taxonomy-item::before {
   background: #fff;
+  color: rgb(29, 129, 179);
   border-radius: 10px;
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
   content: '';
