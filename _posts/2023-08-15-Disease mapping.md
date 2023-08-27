@@ -3,6 +3,7 @@ title: Disease mapping
 tags:
 - Spatial Statistics
 - Public Health
+- Mapping
 category: ''
 use_math: true
 ---

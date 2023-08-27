@@ -1,8 +1,9 @@
 ---
 title: "Recommeder Systems"
 tags:
-- Recommender Systems
-category: Recommender Systems
+- Recommender System
+- Machine Learning
+category: Recommender System
 use_math: true
 ---
 {% raw %}

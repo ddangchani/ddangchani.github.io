@@ -2,6 +2,7 @@
 title: 코딩 테스트 문제풀이 블로그에 자동 포스팅하기 with 백준허브
 tags:
 - ETC 
+- Jekyll
 category: ''
 use_math: true
 ---
