@@ -19,7 +19,7 @@ layout: archive
   {% for tag in tags %}
     {% capture tag_size %}{{ site.tags[tag] | size }}{% endcapture %}
     {% if tag_size > "0" %}
-    <li><span class="tag" data-tag="{{tag | replace : ' ', '_' }}">{{ tag }}</span></li>
+    <li><span class="tag" data-tag="{{tag | replace : ' ', '_' }}">{{ tag }} ({{ tag_size }})</span></li>
     {% endif %}
   {% endfor %}
 </ul>

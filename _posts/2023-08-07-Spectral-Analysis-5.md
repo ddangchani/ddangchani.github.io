@@ -4,6 +4,7 @@ tags:
 - Matrix Completion
 - Spectral Analysis
 - Missing Data Analysis
+- Recommender System
 category: 
 use_math: true
 header: 
