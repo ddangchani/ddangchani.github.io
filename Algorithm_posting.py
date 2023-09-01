@@ -23,7 +23,7 @@ print(output)
 for root, dirs, files in os.walk(target_dir):
     # check .py file in files
     for file in files:
-        if file.endswith(".py"):
+        if file.endswith(".py") and 'unpost' not in root:
             # save root at questions
             questions.append(root)
 
@@ -50,6 +50,8 @@ for q_dir in questions:
         # Y/N 입력받아 N이면 넘어가기
         question = f'{date}에 작성된 게시글 {title} 포스팅 하시겠습니까?'
         if not yes_or_no(question):
+            # unpost 폴더로 옮김
+            os.system(f'mv {q_dir} {target_dir}/unpost')
             continue
 
     # YAML
