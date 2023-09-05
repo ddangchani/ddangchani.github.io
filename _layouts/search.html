@@ -6,12 +6,6 @@ layout: default
   {% include page__hero.html %}
 {% endif %}
 
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
 <div id="main" role="main">
   {% include sidebar.html %}
 
@@ -22,7 +16,7 @@ layout: default
 
     {{ content }}
 
-    {%- assign search_provider = site.search_provider | default: "lunr" -%}
+    <!-- {%- assign search_provider = site.search_provider | default: "lunr" -%}
     {%- case search_provider -%}
       {%- when "lunr" -%}
         <input type="text" id="search" class="search-input" placeholder="{{ site.data.ui-text[site.locale].search_placeholder_text | default: 'Enter your search term...' }}" />
@@ -37,6 +31,6 @@ layout: default
       {%- when "algolia" -%}
         <div class="search-searchbar"></div>
         <div class="search-hits"></div>
-    {%- endcase -%}
+    {%- endcase -%} -->
   </div>
 </div>

@@ -6,13 +6,29 @@ layout: archive
 
 <script src="/assets/js/home.js"></script>
 
+
 {% assign n_posts = site.posts | size %}
 
-<h3 class="archive__subtitle">전체 게시글 
+<h3 class="archive__subtitle">전체 게시글
   <span class="n_posts">({{n_posts}})</span>
 </h3>
+<!-- 
+<div class="container">
+  <div class="row">
+   <div class="col-12">
+     <div id="search-bar">
+       <i class="fa fa-search" aria-hidden="true"></i>
+       <input id="search-input" type="text" placeholder="검색어를 입력하세요." />
+     </div>
+     <ul id="results-container"></ul>
+   </div>
+  </div>
+</div> -->
+
 
 {% assign tags = site.data.tags | sort_natural %}
+
+
 
 <!--Tag List-->
 <ul class="tags">

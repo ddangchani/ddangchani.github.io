@@ -119,6 +119,7 @@
   .archive__item {
     margin-bottom: 2em;
     width: 100%;
+    text-align: left;
 
     @include breakpoint($large) {
       width: 75%;
@@ -130,11 +131,14 @@
   }
 
   .archive__item-title {
+    text-align: left;
+    font-weight: 300;
     margin-top: 0;
   }
 
   .archive__item-teaser {
     size-adjust: 0.5;
+    display: none !important;
   }
 
   .archive__item-excerpt {
