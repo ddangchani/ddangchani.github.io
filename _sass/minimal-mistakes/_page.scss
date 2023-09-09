@@ -20,6 +20,7 @@
 }
 
 body {
+  padding-top: 4em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,6 +121,11 @@ body {
     overflow-x: auto;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    
+    .mtable {
+      margin-top: 0.3em !important;
+      margin-bottom: 0.3em !important;
+    }
   }
 
   h2 {
