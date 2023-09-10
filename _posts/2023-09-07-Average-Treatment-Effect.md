@@ -35,7 +35,11 @@ $$
 
 ## Identification
 
-ATE의 정의에서, 각 intervention에 대한 average output $\mathrm{E}[Y\vert do(A=1)]$ 을 *causal estimand*라고 부른다. 그러나, 현실에서는 관측한 표본으로부터 인과구조를 곧바로 파악하는 것이 매우 어렵기 때문에, intervention에 대한 확률분포 $P(Y\vert do(A=1))$ 을 학습할 수 없다. 따라서, 근본적으로 인과구조에 대한 가정들이 필요하다. 이때, 만일 어떤 가정들 하에서 해당 causal estimand가 유일한 값으로 추정되는 경우 이를 **식별가능**<sup>identifiable</sup>하다고 정의한다.
+ATE의 정의에서, 각 intervention에 대한 average output $\mathrm{E}[Y\vert do(A=1)]$ 을 *causal estimand*라고 부른다. 
+
+> Causal estimands : 잠재적 결과변수 $Y$ 의 함수
+
+그러나, 현실에서는 관측한 표본으로부터 인과구조를 곧바로 파악하는 것이 매우 어렵기 때문에, intervention에 대한 확률분포 $P(Y\vert do(A=1))$ 을 학습할 수 없다. 따라서, 근본적으로 인과구조에 대한 가정들이 필요하다. 이때, 만일 어떤 가정들 하에서 해당 causal estimand가 유일한 값으로 추정되는 경우 이를 **식별가능**<sup>identifiable</sup>하다고 정의한다.
 
 또한, 만일 causal estimand가 해당 가정들 하에서 *관측가능한 확률분포*들의 함수로 표현가능하다면 이를 **statistical estimand**라고 정의한다. 위 example에서 ATE(식 1)은 다음과 같은 statistical estimand와 동일하다.
 

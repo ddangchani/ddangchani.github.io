@@ -9,7 +9,7 @@ use_math: true
 ---
 # ATE estimation
 
-바로 [이전 글](https://ddangchani.github.io/Confounder-Adjustment)에서 살펴보았듯이, 교란변수<sup>confounder</sup>(공변량)이 모두 관측된다는 가정하에서 평균처치효과가 statistical estimand $\tau$의 함수로 식별가능함을 확인했다. 이제 이로부터 평균처치효과 ATE를 관측데이터로부터 어떻게 추정할지 다루어보도록 하겠다.
+바로 [이전 글](https://ddangchani.github.io/Confounder-Adjustment)에서 살펴보았듯이, 교란변수<sup>confounder</sup>(공변량)이 모두 관측된다는 가정하에서 평균처치효과가 statistical estimand $\tau$의 함수로 식별가능함을 확인했다. 이제 이로부터 평균처치효과 ATE를 관측데이터로부터 어떻게 추정할지 다루어보도록 하겠다. 평균처치효과를 추정하는 방법에는 크게 두 가지 (1) Outcome Regression(혹은 Outcome Adjustment)와 (2) 역확률 가중치(IPW estimator)가 존재한다.
 
 ## Outcome Adjustment
 
@@ -107,12 +107,12 @@ $$
 
 $$
 
-\hat\tau^{IPW} = \frac{1}{n}\sum_{i} \frac{{Y_{i}A_{i}}}{\hat g(X_{i})} - \frac{{Y_{i}(1-A_{i})}}{1-\hat g(X_{i})} 
+\hat\tau^{HT} = \frac{1}{n}\sum_{i} \frac{{Y_{i}A_{i}}}{\hat g(X_{i})} - \frac{{Y_{i}(1-A_{i})}}{1-\hat g(X_{i})} 
 
 
 $$
 
-이를 **Inverse probability weighted estimator**<sup>역확률가중추정치</sup> 라고 정의하는데, 여기서 *역확률 가중*이란, 주어진 관측 데이터로는 처치변수 $A$가 랜덤하게 설정되었는지 모르는 문제를 극복하기 위함이다. 즉, 처치를 받을 가능성이 낮은 대상인데 처치를 우연히 받게 된 대상에게는 높은 가중치를 주고, 반대의 경우도 마찬가지로 가중치를 준다.
+이를 **Horvitz-Thompson Inverse probability weighted estimator**<sup>역확률가중추정치</sup> 라고 정의하는데, 여기서 *역확률 가중*이란, 주어진 관측 데이터로는 처치변수 $A$가 랜덤하게 설정되었는지 모르는 문제를 극복하기 위함이다. 즉, 처치를 받을 가능성이 낮은 대상인데 처치를 우연히 받게 된 대상에게는 높은 가중치를 주고, 반대의 경우도 마찬가지로 가중치를 준다.
 
 이때, IPW 추정치를 사용하기 위해서는 propensity score의 추정치를 구해야 한다. 그런데 Cross-entropy 손실함수나 제곱손실함수를 사용하면 각 손실함수 $L$에 대해 다음이 성립한다.
 
@@ -131,26 +131,45 @@ $$
 
 $$
 
-\hat \tau^{h-IPW} := \sum_{i} Y_{i}A_{i}\frac{\hat g(X_{i})^{-1}}{\sum_{i} A_{i}\hat g(X_{i})^{-1}} - \sum_{i} Y_{i}(1-A_{i})\frac{(1-\hat g(X_{i}))^{-1}}{\sum_{i}(1-A_{i})(1-\hat g(X_{i}))^{-1}}
+\hat \tau^{\mathrm{Hajek}} := \sum_{i} Y_{i}A_{i}\frac{\hat g(X_{i})^{-1}}{\sum_{i} A_{i}\hat g(X_{i})^{-1}} - \sum_{i} Y_{i}(1-A_{i})\frac{(1-\hat g(X_{i}))^{-1}}{\sum_{i}(1-A_{i})(1-\hat g(X_{i}))^{-1}}
 
 
 $$
 
-이를 **Hajek estimator**라고 한다. Hajek estimator의 분산은 일반적인 IPW의 분산보다 더 낮고 더 안정적인 추정이 가능하다 (Hirano, Imbens, Ridder, 2003).
+이를 **Hajek estimator**라고 한다. Hajek estimator의 분산은 일반적인 IPW의 분산보다 더 낮고 더 안정적인 추정이 가능하다 (Hirano, Imbens, Ridder, 2003). 또한, Hajek estimator는 각 가중치를 정규화했기 때문에, 각 그룹에서의 합이 1이 되는 특성이 존재한다.
 
 ## Augmented IPW estimator
 
 앞서 살펴본 두 가지 방법은 각각 교란변수와 결과변수, 교란변수와 처치변수 간의 관계를 모델링하는 관점을 근간으로 한다. 각 방법에서 핵심은 결국 추정치 $\hat Q,\hat g$ 를 구하는 것인데, 이는 표본의 수가 많지 않으면 좋은 추정치가 되지 못한다. 수렴속도<sup>convergence rate</sup>이 매우 느리기 때문이다($\sqrt{n}$ 의 수렴속도, Xinwei Ma, Jinshen Wang, 2019).
 
-따라서, 이를 해결하기 위해 $Q,g$의 추정치를 결합해 사용하기도 하는데 이러한 방식을 **augmented inverse probability weighted estimator**<sup>AIPW estimator</sup>라고 한다. 이는 다음과 같이 outcome adjustment 추정치에 propensity score에 기반한 안정화 항이 추가된 형태로 정의된다.
+구체적으로, 역확률 추정치는 propensity score $g$가 정확한 경우 일치성<sup>consistency</sup>을 갖는 반면 outcome adjustment 추정치는 모형 $Q(A,X)$가 정확할 경우 일치성을 갖는다.
+
+따라서, 이를 해결하기 위해 $Q,g$의 추정치를 결합해 사용하기도 하는데 이러한 방식을 **augmented inverse probability weighted estimator**<sup>AIPW estimator</sup>라고 하며, 두 방식을 모두 사용해 robust하다는 의미에서 **Doubly Robust Estimator**라고도 한다. 이는 다음과 같이 outcome adjustment 추정치에 propensity score에 기반한 안정화 항이 추가된 형태로 정의된다.
 
 $$
 
-\hat \tau^{AIPW}:= \frac{1}{n}\sum_{i}\hat Q(1,X_{i}) - \hat Q(0, X_{i}) + A_{i}\frac{Y_{i}-\hat Q(1,X_{i})}{\hat g(x_{i})} -(1-A_{i})\frac{Y_{i}-\hat Q(0,X_{i})}{1-\hat g(X_{i})}
-
+\hat \tau^{dr}:= \frac{1}{n}\sum_{i}\hat Q(1,X_{i}) - \hat Q(0, X_{i}) + A_{i}\frac{Y_{i}-\hat Q(1,X_{i})}{\hat g(x_{i})} -(1-A_{i})\frac{Y_{i}-\hat Q(0,X_{i})}{1-\hat g(X_{i})}
 
 $$
 
+### Induction
+
+이는 다음 성질로부터 유도된다. 맞게 설정된 $Q,g$에 대해
+
+
+$$
+\begin{align}
+\tau &= \mathrm{E}\bigg[ \frac{AY}{g(X)} - \frac{{Z-g(X)}}{g(X)}Q(1,X)\bigg]- \mathrm{E}\bigg[\frac{(1-A)Y}{1-g(X)} + \frac{A-g(X)}{1-g(X)}Q(0,X)\bigg]\\
+&= \mathrm{E}\bigg[ Q(1,X_{i})+ \frac{A_{i}(Y_{i}-Q(1,X_{i}))}{g(X_{i})} \bigg]- \mathrm{E}\bigg[ Q(0,X_{i})+ \frac{(1-A_{i})(Y_{i}-Q(0,X_{i}))}{1-g(X_{i})} \bigg]\\
+&= \mathrm{E}[Y\vert do(A=1)] - \mathrm{E}[Y\vert do(A=0)]
+\end{align}
+$$
+
+### Properties
+
+- Doubly Robust estimator $\hat \tau^{dr}$ 는 propensity score나 outcome regression의 두 모델 중 하나만 정확하게 설정되어 있으면 일치성을 갖는다.
+- $g,Q$가 모두 정확히 모델링 되어있다면 DR 추정치는 역확률가중추정치보다 더 적은 분산을 갖는다.
+- Outcome model $Q$만 정확히 모델링 된다면, DR 추정치는 일반적인 outcome adjustment 추정치보다 더 큰 분산을 갖는다.
 
 
 ## Reference
