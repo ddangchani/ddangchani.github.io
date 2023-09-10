@@ -1,5 +1,5 @@
 ---
-title: 평균처치효과의 추정
+title: ATE estimation
 tags:
 - ATE
 - Causal Inference
@@ -107,7 +107,7 @@ $$
 
 $$
 
-\hat\tau^{HT} = \frac{1}{n}\sum_{i} \frac{{Y_{i}A_{i}}}{\hat g(X_{i})} - \frac{{Y_{i}(1-A_{i})}}{1-\hat g(X_{i})} 
+\hat\tau^{HT} = \frac{1}{n}\sum_{i} \frac{Y_{i}A_{i}}{\hat g(X_{i})} - \frac{Y_{i}(1-A_{i})}{1-\hat g(X_{i})} 
 
 
 $$
