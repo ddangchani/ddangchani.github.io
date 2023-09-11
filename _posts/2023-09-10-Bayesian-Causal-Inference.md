@@ -145,7 +145,7 @@ $$
 
 ## Prior Independence
 
-ATE를 추정하기 위한 두 가지 Assumption(Unconfoundness, [Overlap](https://ddangchani.github.io/Confounder-Adjustment)) 외에도 베이지안 추정을 위해서는 사전분포에 대한 가정이 필요하다. 이는 다음과 같다.
+ATE를 추정하기 위한 두 가지 Assumption(unconfoundedness, [Overlap](https://ddangchani.github.io/Confounder-Adjustment)) 외에도 베이지안 추정을 위해서는 사전분포에 대한 가정이 필요하다. 이는 다음과 같다.
 
 > Assumption : 처치변수, 결과변수, 공변량에 각각 해당되는 parameter $\theta_{Z},\theta_{Y},\theta_{X}$ 는 각각 독립이고 구별<sup>distinct</sup>되어야 한다. 이를 prior independence라고 한다.
 
