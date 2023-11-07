@@ -20,26 +20,29 @@ Markov Random Field란, 공간자료 중 격자형(lattice) 자료를 모델링�
 
 그래프 $\mathcal{G}=(V,E)$ 가 주어지고, 노드집합 $V$의 각 인덱스에 확률변수 $X_{i}, i\in V$ 가 대응된다고 하자. 이때 $i$번째 노드의 인접노드들의 인덱스 집합을 $\mathcal{N}_{i}$ 라고 하자. 이때 Markov property는 다음의 세 가지 경우가 존재한다.
 
-1. Pairwise Markov property
-: 두 개의 인접 노드가 나머지 변수들이 주어졌을 때 조건부 독립
+1. **Pairwise Markov property**
 
-$$
-X_{i}\perp X_{j}\;\vert\;X_{V\backslash\{u,v\}}
-$$
+    두 개의 인접 노드가 나머지 변수들이 주어졌을 때 조건부 독립
 
-2. **Local Markov property**
-: 어떤 노드의 인접 노드들이 주어졌을 때, 해당 노드와 나머지 노드들과 조건부 독립
+    $$
+    X_{i}\perp X_{j}\;\vert\;X_{V\backslash\{u,v\}}
+    $$
 
-$$
-X_{i}\perp X_{V\backslash\mathcal{N}_{i}}\;\vert\;X_{\mathcal{N}_{i}}
-$$
+1. **Local Markov property**
 
-3. Global Markov property
-: 노드집합 $V$의 어떤 두 부분집합 $A,B\subset V$ 가 separating subset $S\subset V$ 에 의해 조건부 독립. 이때 $A$의 노드에서 $B$의 노드로 가는 경로는 $S$의 노드를 거쳐간다. 
+    어떤 노드의 인접 노드들이 주어졌을 때, 해당 노드와 나머지 노드들과 조건부 독립
 
-$$
-X_{A}\perp X_{B}\;\vert\;X_{S}\tag{1}
-$$
+    $$
+    X_{i}\perp X_{V\backslash\mathcal{N}_{i}}\;\vert\;X_{\mathcal{N}_{i}}
+    $$
+
+2. **Global Markov property**
+
+    노드집합 $V$의 어떤 두 부분집합 $A,B\subset V$ 가 separating subset $S\subset V$ 에 의해 조건부 독립. 이때 $A$의 노드에서 $B$의 노드로 가는 경로는 $S$의 노드를 거쳐간다. 
+
+    $$
+    X_{A}\perp X_{B}\;\vert\;X_{S}\tag{1}
+    $$
 
 ### Example
 
@@ -47,20 +50,21 @@ $$
 
 1. Auto-logistic model : $X_{1},\ldots,X_{n}$ 이 $0,1$의 값을 갖는 이진확률변수일 때
 
-$$
-P(X_{i}=1|X_{j}=x_{j},j\neq i)=\frac{\exp(\alpha_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}x_{j})}{1+\exp(\alpha_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}x_{j})}
-$$
+    $$
+    P(X_{i}=1|X_{j}=x_{j},j\neq i)=\frac{\exp(\alpha_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}x_{j})}{1+\exp(\alpha_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}x_{j})}
+    $$
 
 2. Auto-normal model :
 
-$$
-X_{i}\;\vert\;X_{j}=x_{j},j\neq i\sim N(\mu_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}(x_{j}-\mu_{j}),\sigma^{2})
-$$
+    $$
+    X_{i}\;\vert\;X_{j}=x_{j},j\neq i\sim N(\mu_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}(x_{j}-\mu_{j}),\sigma^{2})
+    $$
+
 3. Simultaneous equation model :
 
-$$
-X_{i}=\mu_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}(X_{j}-\mu_{j})+\epsilon_{i},\quad \epsilon_{i}\sim N(0,\sigma^{2})
-$$
+    $$
+    X_{i}=\mu_{i}+\sum_{j\in\mathcal{N}_{i}}\beta_{ij}(X_{j}-\mu_{j})+\epsilon_{i},\quad \epsilon_{i}\sim N(0,\sigma^{2})
+    $$
 
 ## Hammersley-Clifford Theorem
 
