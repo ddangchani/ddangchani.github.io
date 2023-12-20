@@ -35,6 +35,10 @@ header:
 
 # 🥇 Projects and Awards
 
+## Team Leader, Deep Learning Project - Fall 2023
+- Developed a flow-based VAE for learning semi-Markovian DAGs
+- Github: [https://github.com/ddangchani/NFG-VAE](https://github.com/ddangchani/NFG-VAE)
+
 ## 2nd Prize, Safety Data Analysis Competition - 2023.02
 - Developed a prediction model for voice phishing crime risk areas
 - Used space-time kernel density estimation and spatial lag regression model      
@@ -51,6 +55,8 @@ header:
 ## Teaching Assistant, Seoul National University
 - Statistics Lab - Spring 2023
 - Introduction to Data Science - Fall 2023
+- LG Electronics Advanced Data Science Course - 2023.01.
+- Samsung Electronics DS Advanced Statistics and Bayesian Statistics Course - 2023.01.
 
 
 <style>
