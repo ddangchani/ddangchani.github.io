@@ -17,7 +17,7 @@ header:
 # 📚 Interest
 ## Data-based Public Safety
 
-- Smart city (IoT data)
+- Smart city and IoT data analysis
 - Spatial Data Analysis
 - Crime Pattern Analysis
 - Transportation Data Analysis
@@ -55,8 +55,8 @@ header:
 ## Teaching Assistant, Seoul National University
 - Statistics Lab - Spring 2023
 - Introduction to Data Science - Fall 2023
-- LG Electronics Advanced Data Science Course - 2023.01.
-- Samsung Electronics DS Advanced Statistics and Bayesian Statistics Course - 2023.01.
+- LG Electronics Advanced Data Science Course - 2024.01.
+- Samsung Electronics DS Advanced Statistics and Bayesian Statistics Course - 2024.01.
 
 
 <style>
