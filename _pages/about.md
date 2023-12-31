@@ -41,11 +41,13 @@ header:
 
 ## 2nd Prize, Safety Data Analysis Competition - 2023.02
 - Developed a prediction model for voice phishing crime risk areas
-- Used space-time kernel density estimation and spatial lag regression model      
+- Used space-time kernel density estimation and spatial lag regression model
+- Github: [https://github.com/ddangchani/LocalSecurity_competition](https://github.com/ddangchani/LocalSecurity_competition)
     
 ## 3rd Prize, Seoul IoT city data hackathon - 2022.07
 - Analyzed accident risk factors and predicted accident severity for personal mobility devices (PMs)
 - Used S-DoT city data and ordinal regression model as methodology
+- Github: [https://github.com/ddangchani/IOT_hackathon](https://github.com/ddangchani/IOT_hackathon)
 
 # 👮‍♂️ Experience
 ## Korea National Police Agency - 2021.03 ~
