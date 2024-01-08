@@ -186,5 +186,7 @@ $$
 여기서 $C$는 적절한 상수를 의미하고, $G\sim GP(0,\Sigma)$ 이다. 이렇게 추정된 밀도함수는 매우 복잡하지만, 차등적 정보보호를 만족하기는 한다. 또한, 수렴속도가 기존의 커널밀도추정치 $\hat p$와 동일하다는 장점이 있다.
 
 
+## References
 
-
+- Dwork, C. (2006). Differential Privacy. In M. Bugliesi, B. Preneel, V. Sassone, & I. Wegener (Eds.), _Automata, Languages and Programming_ (pp. 1–12). Springer. [https://doi.org/10.1007/11787006_1](https://doi.org/10.1007/11787006_1)
+- Wasserman, L., & Zhou, S. (2010). A Statistical Framework for Differential Privacy. _Journal of the American Statistical Association_, _105_(489), 375–389. [https://doi.org/10.1198/jasa.2009.tm08651](https://doi.org/10.1198/jasa.2009.tm08651)

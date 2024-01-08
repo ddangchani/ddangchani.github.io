@@ -190,3 +190,4 @@ Optimal transport는 이미지 데이터에 사용하기 좋은데, 한 이미�
 
 ## References
 - https://pythonot.github.io/
+- Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.

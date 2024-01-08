@@ -129,5 +129,9 @@ class FlowLayer(nn.Module):
 
 
 ## References
-- Danilo, Shakir - Variational Inference with Normalizing Flows (2016)
-- Kingma et al. - Improved Variational Inference with Inverse Autoregressive Flow (2017)
+
+Kingma, D. P., Salimans, T., Jozefowicz, R., Chen, X., Sutskever, I., & Welling, M. (2016). Improved Variational Inference with Inverse Autoregressive Flow. _Advances in Neural Information Processing Systems_, _29_. [https://proceedings.neurips.cc/paper_files/paper/2016/hash/ddeebdeefdb7e7e7a697e1c3e3d8ef54-Abstract.html](https://proceedings.neurips.cc/paper_files/paper/2016/hash/ddeebdeefdb7e7e7a697e1c3e3d8ef54-Abstract.html)
+
+Rezende, D., & Mohamed, S. (2015). Variational Inference with Normalizing Flows. _Proceedings of the 32nd International Conference on Machine Learning_, 1530–1538. [https://proceedings.mlr.press/v37/rezende15.html](https://proceedings.mlr.press/v37/rezende15.html)
+
+Tomczak, J. M., & Welling, M. (2017). _Improving Variational Auto-Encoders using convex combination linear Inverse Autoregressive Flow_ (arXiv:1706.02326). arXiv. [http://arxiv.org/abs/1706.02326](http://arxiv.org/abs/1706.02326)
