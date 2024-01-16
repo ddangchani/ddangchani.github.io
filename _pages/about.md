@@ -19,8 +19,13 @@ header:
 
 - Smart city and IoT data analysis
 - Spatial Data Analysis
-- Crime Pattern Analysis
-- Transportation Data Analysis
+- Crime/Transportation Data Analysis
+
+## Data Science
+
+- Differential Privacy for Spatial Data
+- Causal Inference
+- Graph Neural Network
 
 # 🎓 Education 
 
@@ -37,17 +42,17 @@ header:
 
 ## Team Leader, Deep Learning Project - Fall 2023
 - Developed a flow-based VAE for learning semi-Markovian DAGs
-- Github: [https://github.com/ddangchani/NFG-VAE](https://github.com/ddangchani/NFG-VAE)
+- [Github](https://github.com/ddangchani/NFG-VAE)
 
 ## 2nd Prize, Safety Data Analysis Competition - 2023.02
 - Developed a prediction model for voice phishing crime risk areas
 - Used space-time kernel density estimation and spatial lag regression model
-- Github: [https://github.com/ddangchani/LocalSecurity_competition](https://github.com/ddangchani/LocalSecurity_competition)
+- [Github](https://github.com/ddangchani/LocalSecurity_competition)
     
 ## 3rd Prize, Seoul IoT city data hackathon - 2022.07
 - Analyzed accident risk factors and predicted accident severity for personal mobility devices (PMs)
 - Used S-DoT city data and ordinal regression model as methodology
-- Github: [https://github.com/ddangchani/IOT_hackathon](https://github.com/ddangchani/IOT_hackathon)
+- [Github](https://github.com/ddangchani/IOT_hackathon)
 
 # 👮‍♂️ Experience
 ## Korea National Police Agency - 2021.03 ~
@@ -58,6 +63,7 @@ header:
 - Statistics Lab - Spring 2023
 - Introduction to Data Science - Fall 2023
 - LG Electronics Advanced Data Science Course - 2024.01.
+- Samsung Electronics Data Science Course - 2024.02.
 
 
 <style>
