@@ -131,7 +131,7 @@ $$
 
 ## Reference
 * Full code on Github : https://github.com/ddangchani/Velog/blob/main/Causal%20Inference/
-* Elements of Causal Inference
+* Shanmugam, R. (2018). Elements of causal inference: Foundations and learning algorithms. _Journal of Statistical Computation and Simulation_, _88_(16), 3248–3248. [https://doi.org/10.1080/00949655.2018.1505197](https://doi.org/10.1080/00949655.2018.1505197)
 
 
 
