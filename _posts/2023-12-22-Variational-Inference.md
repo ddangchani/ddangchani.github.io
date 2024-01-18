@@ -9,7 +9,9 @@ header:
   teaser: /assets/img/4. 변분추론 실습_7_0.png
 ---
 
-# Variational Inference
+# Coordinate Ascent Variational Inference
+
+## Variational Inference
 
 변분추론<sup>Variational Inference</sup>이란, 베이지안 추론의 근사적 방법론 중 하나입니다. 베이지안 추론에서 사후분포의 확률밀도함수는 다음과 같이 계산할 수 있습니다.
 
@@ -125,9 +127,6 @@ $$
 
 ## Example. Gaussian Mixture
 
-
-## 예시
-
 - 예시를 통해 CAVI를 이해해보도록 하겠습니다.
 - 예시에서는 다음과 같은 $K$-Gaussian Mixture Model을 가정합니다.
 
@@ -197,6 +196,8 @@ $$
     $$
 
 CAVI 알고리즘을 이용하여, 잠재변수의 학습이 이루어지는 과정을 살펴보도록 하겠습니다.
+
+## Python Implementation
 
 패키지 불러오기
 
