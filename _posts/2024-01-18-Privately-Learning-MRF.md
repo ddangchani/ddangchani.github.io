@@ -143,7 +143,7 @@ where $P,Q$ are discrete probability distribution with $p_{i}=\Pr(X=x_{i}), X\si
 
 For a sequence of DP algorithms $$\mathcal{A}_{1},\cdots,\mathcal{A}_{T}$$ and $$\mathcal{A}=\mathcal{A}_{T}\circ\cdots\circ \mathcal{A}_{1}$$, the following hold.
 
-1.  If $$\mathcal{A}_{1},\cdots,\mathcal{A}_{T}$$ are $$(\epsilon_{0},\delta_{1}),\cdots,(\epsilon_{0},\delta_{T})$$-DP respectively, then for every $\delta_{0}>0$, $$\mathcal{A}$ is $(\epsilon,\delta)$$-DP for $$\epsilon=\epsilon_{0}\sqrt{6T\log(\frac{1}{\delta_{0}})}$$ and $$\delta=\delta_{0}+\sum_{t}\delta_{t}$$.
+1.  If $$\mathcal{A}_{1},\cdots,\mathcal{A}_{T}$$ are $$(\epsilon_{0},\delta_{1}),\cdots,(\epsilon_{0},\delta_{T})$$-DP respectively, then for every $\delta_{0}>0$, $\mathcal{A}$ is $(\epsilon,\delta)$-DP for $$\epsilon=\epsilon_{0}\sqrt{6T\log(\frac{1}{\delta_{0}})}$$ and $$\delta=\delta_{0}+\sum_{t}\delta_{t}$$.
 2. If $$\mathcal{A}_{1},\cdots,\mathcal{A}_{T}$$ are $$\rho_{1},\cdots,\rho_{T}-z$$CDP respectively, then $\mathcal{A}$ is $\rho$-zCDP for $$\rho=\sum_{t}\rho_{t}$$.
 
 ## Parameter Learning of Pairwise MRF
