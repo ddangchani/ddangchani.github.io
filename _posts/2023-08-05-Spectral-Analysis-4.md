@@ -142,7 +142,7 @@ $$
 ## Performance
 
 ### Lemma
-이전 spectral analysis 방법론들과 마찬가지로 David-Kahan $\sin\Theta$ [theorem](https://ddangchani.github.io/Spectral-Analysis-1) 을 사용하기 위해 우선 perturbation matrix $E$의 크기를 제한해야 한다. 이는 다음 lemma로부터 얻을 수 있다.
+이전 spectral analysis 방법론들과 마찬가지로 David-Kahan $\sin\Theta$ [theorem]({% post_url 2023-08-02-Spectral-Analysis-1 %}) 을 사용하기 위해 우선 perturbation matrix $E$의 크기를 제한해야 한다. 이는 다음 lemma로부터 얻을 수 있다.
 
 > $np\gtrsim \log n$ 인 경우 확률 $1-O(n^{-8})$ 으로 다음이 성립한다.
 > 

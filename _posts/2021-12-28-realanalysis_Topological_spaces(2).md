@@ -1,5 +1,5 @@
 ---
-title: "Topological spaces(2)"
+title: \[실해석학\] 위상공간의 분리(Separation)
 tags:
 - Mathematics
 - Real Analysis

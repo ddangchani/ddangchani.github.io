@@ -116,7 +116,7 @@ $$
 
 ### Special Case : Markov Chain
 
-만일 잠재변수 간에 Bayes Net이 존재한다면, 앞서 언급한 $\mathrm{E}_{-i}$ 처럼 $i$번째 잠재변수를 제외한 나머지를 모두 사용할 필요가 없게 됩니다. 이는 $p(x,z)$ 가 factorized 될 수 있기 때문인데, 이로부터 기댓값을 계산할 때 [Markov blanket](https://ddangchani.github.io/BN-and-MRF_)만을 이용하면 됩니다. 즉, 아래와 같이 업데이트가 이루어집니다.
+만일 잠재변수 간에 Bayes Net이 존재한다면, 앞서 언급한 $\mathrm{E}_{-i}$ 처럼 $i$번째 잠재변수를 제외한 나머지를 모두 사용할 필요가 없게 됩니다. 이는 $p(x,z)$ 가 factorized 될 수 있기 때문인데, 이로부터 기댓값을 계산할 때 [Markov blanket]({% post_url 2023-11-07-BN-and-MRF %})만을 이용하면 됩니다. 즉, 아래와 같이 업데이트가 이루어집니다.
 
 $$
 

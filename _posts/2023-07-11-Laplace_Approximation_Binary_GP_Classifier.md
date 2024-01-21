@@ -10,7 +10,7 @@ header:
  teaser: /assets/img/Laplace_Approximation_Binary_GP_Classifier_0.png
 ---
 {% raw %}
-[바로 이전 글에서](https://ddangchani.github.io/machine learning/Gaussian-Process-Classification) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}\vert X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.
+[바로 이전 글에서]({% post_url 2023-07-11-Gaussian_Process_Classification %}) Gaussian Process classifier는 사후확률분포가 정규분포형태가 아니고, 이로 인해 직접 계산이 어렵다는 점을 살펴보았다. Laplace Approximation은 사후확률분포 $p(\mathbf{f}\vert X,y)$ 를 정규분포 형태로 근사할 수 있는 테크닉이다.
 
 ## Laplace Approximation
 
