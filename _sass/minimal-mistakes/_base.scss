@@ -346,3 +346,16 @@ img + em {
   font-size: $type-size-5;
   color: rgb(107, 104, 104);
 }
+
+
+// link color in p tag
+
+.page__content {
+  p a {
+    color: rgb(59, 167, 194) !important;
+  }
+  
+  h2#references + ul {
+    font-size: 0.8em !important;
+  }
+}

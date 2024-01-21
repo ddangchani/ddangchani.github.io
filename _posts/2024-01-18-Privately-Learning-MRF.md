@@ -295,14 +295,6 @@ For $p$-variable pairwise MRF, $\epsilon$-DP algorithm requires $n=\Omega \left(
 
 ## References
 
-[1]
-
-C. Dwork, G. N. Rothblum, and S. Vadhan, “Boosting and Differential Privacy,” in _2010 IEEE 51st Annual Symposium on Foundations of Computer Science_, Las Vegas, NV, USA: IEEE, Oct. 2010, pp. 51–60. doi: [10.1109/FOCS.2010.12](https://doi.org/10.1109/FOCS.2010.12).
-
-[2]
-
-H. Zhang, G. Kamath, J. Kulkarni, and S. Wu, “Privately learning Markov random fields,” in _International conference on machine learning_, PMLR, 2020, pp. 11129–11140. Accessed: Jan. 17, 2024. [Online]. Available: [http://proceedings.mlr.press/v119/zhang20l.html](http://proceedings.mlr.press/v119/zhang20l.html)
-
-[3]
-
-S. Wu, S. Sanghavi, and A. G. Dimakis, “Sparse Logistic Regression Learns All Discrete Pairwise Graphical Models.” arXiv, Jun. 18, 2019. doi: [10.48550/arXiv.1810.11905](https://doi.org/10.48550/arXiv.1810.11905).
+- C. Dwork, G. N. Rothblum, and S. Vadhan, “Boosting and Differential Privacy,” in _2010 IEEE 51st Annual Symposium on Foundations of Computer Science_, Las Vegas, NV, USA: IEEE, Oct. 2010, pp. 51–60. doi: [10.1109/FOCS.2010.12](https://doi.org/10.1109/FOCS.2010.12).
+- H. Zhang, G. Kamath, J. Kulkarni, and S. Wu, “Privately learning Markov random fields,” in _International conference on machine learning_, PMLR, 2020, pp. 11129–11140. Accessed: Jan. 17, 2024. [Online]. Available: [http://proceedings.mlr.press/v119/zhang20l.html](http://proceedings.mlr.press/v119/zhang20l.html)
+- S. Wu, S. Sanghavi, and A. G. Dimakis, “Sparse Logistic Regression Learns All Discrete Pairwise Graphical Models.” arXiv, Jun. 18, 2019. doi: [10.48550/arXiv.1810.11905](https://doi.org/10.48550/arXiv.1810.11905).
