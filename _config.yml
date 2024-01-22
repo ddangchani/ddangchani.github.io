@@ -20,7 +20,7 @@ title                    : "DDangchani's DataLog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Dangchan"
-description              : "행정학도 경찰의 데이터사이언티스트 되기"
+description              : "데이터로 보다 안전한 세상을 만들고 싶습니다."
 url                      : https://ddangchani.github.io
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Dangchan"
   avatar           : "/assets/logos/bio-photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "행정학도 경찰의 데이터사이언티스트 되기"
+  bio              : "Safer society with data"
   location         : "South Korea"
   email            : 
   links:

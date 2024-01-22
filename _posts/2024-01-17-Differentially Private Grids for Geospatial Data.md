@@ -3,6 +3,7 @@ title: \[Paper Review\] Differentially Private Grids for Geospatial Data
 tags: 
 - Differential Privacy
 - Spatial Statistics
+- Paper Review
 category: ""
 use_math: true
 ---
