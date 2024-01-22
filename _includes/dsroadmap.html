@@ -7,7 +7,7 @@
 
 <div class="bg-dark h-100 w-100 py-4">
     <div class="d-flex justify-content-center align-items-center flex-column mb-4 mt-4">
-       <h1 class="mb-4 text-white text-center">데이터사이언스 로드맵 (ver. 2024)</h1>
+       <h1 class="mb-4 text-white text-center">데이터사이언스 로드맵</h1>
        <p class="w-75 text-white text-center" style="word-break: keep-all;">
         데이터사이언스의 핵심은 수학과 통계학에 기반한 통찰력이라고 생각합니다. <br>
         데이터사이언스를 공부하는 과정에 필요한 영역들과 추천하는 교재, 강의를 정리해놓았습니다.
@@ -97,7 +97,7 @@
        <section class="step two text-warning">
           <div class="circle">
              <i class="fa-solid fa-desktop display-1 mb-3"></i>
-             <h4>STEP 2.</h4>Machine Learning
+             <h4>STEP 2</h4>Machine Learning
           </div>
           <article data-step="6">
              <header class="d-flex align-items-center text-warning bg-warning bg-opacity-10">
@@ -177,7 +177,7 @@
        <section class="step three text-success">
           <div class="circle">
              <i class="fa-solid fa-book display-1 mb-3"></i>
-             <h4>STEP 3.</h4>Other Skills
+             <h4>STEP 3</h4>Other Skills
           </div>
           <article data-step="11">
              <header class="d-flex align-items-center text-success bg-success bg-opacity-10">
@@ -254,8 +254,8 @@
           <!-- final step -->
 
           <article data-step="16">
-             <header class="d-flex align-items-center text-success bg-success bg-opacity-10">
-                <i class="fa-solid fa-flag-checkered bg-success display-2 p-4"></i>
+             <header class="d-flex align-items-center text-primary bg-primary bg-opacity-10">
+                <i class="fa-solid fa-flag-checkered bg-primary display-2 p-4"></i>
                 <h6 class="text-uppercase my-3 ps-4">Content</h6>
              </header>
  
@@ -263,8 +263,8 @@
              <div class="body">
                 <small> Content, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </small>
                 <div class="d-flex justify-content-between mt-3 controls">
-                   <a class="btn btn-outline-success" href="#">Prev</a>
-                   <a class="btn btn-outline-success invisible" href="#">Next</a>
+                   <a class="btn btn-outline-primary" href="#">Prev</a>
+                   <a class="btn btn-outline-primary invisible" href="#">Next</a>
                 </div>
              </div>
           </article>
@@ -287,6 +287,15 @@ p {
 #infographic .circle {
    width: 320px;
    height: 320px;
+
+    @media screen and (max-width: 768px) {
+        width: 190px;
+        height: 190px;
+        padding: 8px;
+        position: absolute;
+        left: 55%;
+    }
+
    border-radius: 50%;
    border: 7px double;
    display: flex;
@@ -298,13 +307,21 @@ p {
    left: 50%;
    margin: 40px 0;
 }
+
 #infographic section:nth-child(odd) .circle {
-   transform: translateX(-100%);
+   transform: translateX(-120%);
 }
 
 #infographic article {
    max-width: 410px;
-   margin-bottom: 20px;
+
+   @media screen and (max-width: 768px) {
+        max-width: 200px;
+        margin-bottom: 15px;
+        left: 40%;
+    }
+
+   margin-bottom: 30px;
    cursor: pointer;
    left: 50%;
    position: relative;
@@ -312,6 +329,12 @@ p {
 #infographic article header {
    border-top-right-radius: 30px;
    border-bottom-right-radius: 30px;
+
+   @media screen and (max-width: 768px) {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        max-height: 50px;
+    }
 }
 #infographic article header i {
    display: flex;
@@ -323,6 +346,12 @@ p {
    color: #fff;
    border: 16px solid var(--bs-dark);
    margin: -16px 0 -16px -20px;
+
+   @media screen and (max-width: 768px) {
+        border: 12px solid var(--bs-dark);
+        font-size: 1.5em;
+    }
+    
 }
 #infographic article:hover header i {
    transform: scale(1.2);
@@ -345,16 +374,17 @@ p {
    text-transform: uppercase;
 }
 #infographic :nth-child(even) article {
-   text-align: right;
+   text-align: left;
    transform: translateX(-100%);
+
+   @media screen and (max-width: 768px) {
+    transform: translateX(-60%);
+   }
 }
 #infographic :nth-child(even) article header {
    flex-flow: row-reverse;
    border-top-left-radius: 30px;
    border-bottom-left-radius: 30px;
-}
-#infographic :nth-child(even) article header i {
-   margin: -16px -20px -16px 0;
 }
 
 #infographic section:nth-child(odd) article.active header {
@@ -394,18 +424,33 @@ p {
 
 #infographic article[data-step="1"] {
    margin-left: 6px;
+   @media screen and (max-width: 768px) {
+        margin-left: 0px;
+   }
 }
 #infographic article[data-step="2"] {
    margin-left: 54px;
+    @media screen and (max-width: 768px) {
+          margin-left: 25px;
+    }
 }
 #infographic article[data-step="3"] {
    margin-left: 71px;
+    @media screen and (max-width: 768px) {
+          margin-left: 40px;
+    }
 }
 #infographic article[data-step="4"] {
    margin-left: 61px;
+    @media screen and (max-width: 768px) {
+          margin-left: 20px;
+    }
 }
 #infographic article[data-step="5"] {
    margin-left: 22px;
+    @media screen and (max-width: 768px) {
+          margin-left: 0px;
+    }
 }
 #infographic article[data-step="6"] {
    margin-left: -5px;
@@ -424,24 +469,85 @@ p {
 }
 #infographic article[data-step="11"] {
    margin-left: 7px;
+
+    @media screen and (max-width: 768px) {
+          margin-left: 0px;
+    }
 }
 #infographic article[data-step="12"] {
    margin-left: 55px;
+
+    @media screen and (max-width: 768px) {
+          margin-left: 25px;
+    }
 }
 #infographic article[data-step="13"] {
    margin-left: 73px;
+
+    @media screen and (max-width: 768px) {
+          margin-left: 40px;
+    }
 }
 #infographic article[data-step="14"] {
    margin-left: 62px;
+
+    @media screen and (max-width: 768px) {
+          margin-left: 20px;
+    }
 }
 #infographic article[data-step="15"] {
    margin-left: 23px;
+
+    @media screen and (max-width: 768px) {
+          margin-left: 0px;
+    }
 }
 #infographic article[data-step="16"] {
-   margin-left: -102px;
+   left: 10%;
+   color: rgb(13, 110, 253);
+   width: 200%;
+   margin-top: 4em;
+   i {
+    font-size: 2em;
+    padding: 12px !important;
+   }
+   h6 {
+    font-size: 1.2em;
+    padding-left: 20% !important;
+
+    @media screen and (max-width: 768px) {
+        padding-left: 10% !important;
+    }
+   }
 }
 
-/*  */
+/* Icon size adjust */
+
+#infographic section:nth-child(1) article header i {
+   padding: 14px 14px;
+
+   @media screen and (max-width: 768px) {
+    padding: 10px;
+   }
+}
+
+#infographic section:nth-child(2) article header i {
+   margin: -16px -20px -16px 0;
+   padding: 16px 14px;
+
+    @media screen and (max-width: 768px) {
+     padding: 10px 8px;
+    }
+}
+
+#infographic section:nth-child(3) article header i {
+    padding: 16px 14px;
+
+    @media screen and (max-width: 768px) {
+     padding: 11px !important;
+    }
+}
+
 
 </style>
 
