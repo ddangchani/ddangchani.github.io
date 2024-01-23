@@ -555,14 +555,27 @@ li > p {
 }
 
 #infographic .circle {
-   width: 320px;
-   height: 320px;
+   --circleSize: min(calc(100vw / 3), 400px);
+   width: var(--circleSize);
+   height: var(--circleSize);
+
    z-index: 1;
+   border-radius: 50% !important;
+   border: 7px double;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   padding: 40px;
+   position: absolute;
+   left: 50%;
+   margin: 40px 0;
+
    h5{
       font-size: 1.0em
    }
 
-    @media screen and (max-width: 768px) {
+   @media screen and (max-width: 768px) {
         width: 190px;
         height: 190px;
         padding: 8px;
@@ -580,17 +593,10 @@ li > p {
       position: absolute;
       left: 55%;
    }
+}
 
-   border-radius: 50%;
-   border: 7px double;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   text-align: center;
-   padding: 40px;
-   position: absolute;
-   left: 50%;
-   margin: 40px 0;
+#infographic section {
+   margin-bottom: 1em;
 }
 
 #infographic section:nth-child(odd) .circle {
@@ -811,6 +817,7 @@ li > p {
           margin-left: 0px;
     }
 }
+
 #infographic article[data-step="16"] {
    left: -20% !important;
    color: rgb(56, 135, 255);
@@ -823,7 +830,7 @@ li > p {
    }
    
    b {
-      color: rgb(153, 194, 255);
+      color: rgb(153, 194, 255) !important;
    }
 
    h6 {
