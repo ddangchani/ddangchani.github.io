@@ -1,8 +1,8 @@
 // Dark mode setting
 
 .dark {
-    background-color: $dark-background-color !important;
-    color: $dark-text-color !important;
+    background-color: $dark-background-color;
+    color: $dark-text-color;
 
     .masthead {
         background-color: $dark-background-color !important;
@@ -31,12 +31,119 @@
         color: $dark-text-color !important;
         border-color: $dark-border-color !important;
 
+        h2 > a {
+            color : $dark-link-color;
+        }
+        .page__meta {
+            color: $dark-muted-text-color !important;
+        }
+
         .archive__subtitle {
             color: $dark-text-color !important;
         }
 
-        a {
-            color: $dark-link-color;
+       .archive__item-tags {
+            a {
+                text-color: $dark-text-color;
+            }
+
+            .posttag::after {
+                background-color: $dark-background-color;
+            }
+       }
+
+       .tag::after {
+            background-color: $dark-background-color;
+       }
+
+    }
+
+    .about_urls {
+        li > a {
+            color: $dark-text-color !important;
         }
+    }
+
+    .page__title a {
+        color: $dark-text-color !important;
+    }
+
+    .page__meta {
+        p {
+            color: $dark-muted-text-color !important;
+        }
+
+        .posttag::after {
+            background-color: $dark-background-color;
+        }
+    }
+
+    .page__content {
+        p a {
+            color: $dark-link-color !important;
+        }
+        li a {
+            color: $dark-link-color !important;
+        }
+    }
+
+    .search__toggle {
+        color: $dark-text-color !important;
+    }
+
+    .greedy-nav__toggle {
+        color: $dark-text-color !important;
+
+        &:before {
+            background-color: rgb(0,0,0) !important;
+        }
+
+        .navicon {
+            background-color: $dark-text-color;
+    
+            &:hover.close {
+                background-color: $dark-background-color !important;
+            }
+            
+            &:before {
+                background-color: $dark-text-color !important;
+            }
+    
+            &:after {
+                background-color: $dark-text-color !important;
+            }
+        }
+        
+    }
+    .hidden-links {
+        background-color: $dark-background-color !important;
+    }
+
+
+    .word-highlight {
+        &:after {
+            background-color: rgba(155,251,225,0.3);
+            z-index: 1;
+        }
+    }
+
+    .page__content :not(pre)>code {
+        background-color: #e9e9ea45 !important;
+        color: $dark-text-color !important;
+    }
+
+    blockquote {
+        color: #828282;
+    }
+
+    thead {
+        background-color: #e9e9ea45;
+        color: $dark-text-color !important;
+    }
+
+    .btn-toggle {
+        background-color: $dark-background-color !important;
+        color: $dark-text-color !important;
+        border: 1px solid $dark-border-color !important;
     }
   }

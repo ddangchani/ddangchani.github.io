@@ -14,10 +14,10 @@
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
         <!-- Dark mode toggle -->
-        <!-- <input type="checkbox" id="switch" name="theme">
+        <input type="checkbox" id="switch" name="theme">
         <label for="switch" class="switch_label">
           <span class="onf_btn"></span>
-        </label> -->
+        </label>
 
 
         <ul class="visible-links">
@@ -100,7 +100,7 @@ if (localStorage.getItem('theme') === 'dark') {
 
 checkbox.addEventListener('change', function() {
   // 테마를 토글하고 로컬 스토리지에 저장합니다.
-  trans();
+  // trans();
   document.body.classList.toggle('dark');
   localStorage.setItem('theme', this.checked ? 'dark' : 'light');
 });
@@ -109,6 +109,6 @@ let trans = () => {
   document.documentElement.classList.add('transition');
   window.setTimeout(() => {
     document.documentElement.classList.remove('transition');
-  }, 1000);
+  }, 500);
 }
 </script>
