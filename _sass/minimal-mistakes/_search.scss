@@ -65,6 +65,11 @@
   .results {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+
     align-items: center;
 
     .results__found {
@@ -128,21 +133,26 @@
   .archive__item {
     margin-bottom: 2em;
     width: 100%;
-    text-align: left;
+    text-align: center;
+
+    @include breakpoint($small) {
+      width: 50%;
+    }
 
     @include breakpoint($large) {
       width: 75%;
     }
 
     @include breakpoint($x-large) {
-      width: 50%;
+      width: 100%;
     }
   }
 
   .archive__item-title {
-    text-align: left;
+    text-align: center;
     font-weight: 300;
     margin-top: 0;
+    margin-bottom: 0.5em;
   }
 
   .archive__item-teaser {

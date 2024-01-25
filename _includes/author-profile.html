@@ -31,13 +31,13 @@
         </li>
       {% endif %}
 
-      {% if author.links %}
+      <!-- {% if author.links %}
         {% for link in author.links %}
           {% if link.label and link.url %}
             <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer me"{% if link.url contains 'http' %} itemprop="sameAs"{% endif %}><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i><span class="label">{{ link.label }}</span></a></li>
           {% endif %}
         {% endfor %}
-      {% endif %}
+      {% endif %} -->
 
       {% if author.uri %}
         <li>
@@ -47,14 +47,12 @@
         </li>
       {% endif %}
 
-      {% if author.email %}
         <li>
-          <a href="mailto:{{ author.email }}" rel="me" class="u-email">
-            <meta itemprop="email" content="{{ author.email }}" />
+          <a href="mailto:dang11230@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="dang11230@gmail.com" />
             <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span>
           </a>
         </li>
-      {% endif %}
 
       {% if author.keybase %}
         <li>
@@ -72,29 +70,11 @@
         </li>
       {% endif %}
 
-      {% if author.facebook %}
         <li>
-          <a href="https://www.facebook.com/{{ author.facebook }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span>
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.linkedin %}
-        <li>
-          <a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+          <a href="https://www.linkedin.com/in/dangchan-kim-13932b213" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
-      {% endif %}
-
-      {% if author.xing %}
-        <li>
-          <a href="https://www.xing.com/profile/{{ author.xing }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-xing-square" aria-hidden="true"></i><span class="label">XING</span>
-          </a>
-        </li>
-      {% endif %}
 
       {% if author.instagram %}
         <li>
@@ -104,29 +84,12 @@
         </li>
       {% endif %}
 
-      {% if author.tumblr %}
-        <li>
-          <a href="https://{{ author.tumblr }}.tumblr.com" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i><span class="label">Tumblr</span>
-          </a>
-        </li>
-      {% endif %}
 
-      {% if author.bitbucket %}
         <li>
-          <a href="https://bitbucket.org/{{ author.bitbucket }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i><span class="label">Bitbucket</span>
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.github %}
-        <li>
-          <a href="https://github.com/{{ author.github }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+          <a href="https://github.com/ddangchani" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
           </a>
         </li>
-      {% endif %}
 
       {% if author.gitlab %}
         <li>

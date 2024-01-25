@@ -160,4 +160,42 @@
             }
         }
     }
+
+    // search
+
+    .search-input {
+        color: $dark-text-color !important;
+    }
+
+    .results {
+        h2 a {
+            color: $dark-link-color !important;
+        }
+    }
+
+    .search-content {
+        background-color: $dark-background-color !important;
+        color: $dark-text-color !important;
+
+        p {
+            color: $dark-text-color !important;
+        }
+    }
+
+    // footer
+
+    .page__footer {
+        background-color: $dark-background-color !important;
+        color: $dark-text-color !important;
+        border-color: $dark-border-color !important;
+        border-top: 1px solid $dark-border-color !important;
+
+        a {
+            color: $dark-link-color !important;
+        }
+
+        .fa-github {
+            color: #fff !important;
+        }
+    }
   }

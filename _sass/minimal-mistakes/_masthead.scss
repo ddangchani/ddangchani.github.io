@@ -47,6 +47,13 @@
     justify-content: space-between;
     font-family: $sans-serif-narrow;
 
+    @media screen and (max-width: 768px){
+      padding-top: 1em;
+      padding-bottom: 1em;
+      padding-left: 0.5em;
+      padding-right: 0em;
+    }
+
     @include breakpoint($x-large) {
       max-width: $max-width;
     }
