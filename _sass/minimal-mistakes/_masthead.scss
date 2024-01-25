@@ -2,6 +2,8 @@
    MASTHEAD
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 .masthead {
   position: fixed;
   top: 0;
@@ -11,6 +13,7 @@
   $masthead-height: 4em;
   height: $masthead-height;
   background-color: rgba($color: #fff, $alpha: 1.0);
+
   border-bottom: 1px solid $border-color;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
@@ -120,4 +123,57 @@
     padding-right: 2em;
     font-weight: 700;
   }
+}
+
+// Switch
+
+#switch {
+  position: absolute;
+  /* hidden */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.switch_label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 58px;
+  height: 28px;
+  background: #fff;
+  border: 2px solid rgb(122, 186, 239);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.switch_label:hover {
+  background: rgb(209, 240, 255);
+}
+.onf_btn {
+  position: absolute;
+  top: 10%;
+  left: 3px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: rgb(122, 186, 239);
+  transition: 0.2s;
+}
+
+/* checking style */
+#switch:checked+.switch_label {
+  background: rgb(0, 113, 205);
+  border: 2px solid rgb(0, 113, 205);
+}
+
+#switch:checked+.switch_label:hover {
+  background: rgb(72, 172, 255);
+}
+
+/* move */
+#switch:checked+.switch_label .onf_btn {
+  left: 32px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
 }

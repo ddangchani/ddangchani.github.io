@@ -1,0 +1,42 @@
+// Dark mode setting
+
+.dark {
+    background-color: $dark-background-color !important;
+    color: $dark-text-color !important;
+
+    .masthead {
+        background-color: $dark-background-color !important;
+        color: $dark-text-color !important;
+
+        nav {
+            background-color: $dark-background-color !important;
+            a {
+                color: $dark-text-color !important;
+            }
+        }
+    }
+
+    .sidebar {
+        background-color: $dark-background-color !important;
+        color: $dark-text-color !important;
+        border-color: $dark-border-color !important;
+
+        i {
+            color: $dark-text-color !important;
+        }
+    }
+
+    .archive {
+        background-color: $dark-background-color !important;
+        color: $dark-text-color !important;
+        border-color: $dark-border-color !important;
+
+        .archive__subtitle {
+            color: $dark-text-color !important;
+        }
+
+        a {
+            color: $dark-link-color;
+        }
+    }
+  }
