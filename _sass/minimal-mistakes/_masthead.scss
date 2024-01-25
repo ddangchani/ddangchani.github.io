@@ -15,15 +15,15 @@
   background-color: rgba($color: #fff, $alpha: 1.0);
 
   border-bottom: 1px solid $border-color;
-  -webkit-animation: $intro-transition;
-  animation: $intro-transition;
-  -webkit-animation-delay: 0.15s;
-  animation-delay: 0.15s;
+  // -webkit-animation: $intro-transition;
+  // animation: $intro-transition;
+  // -webkit-animation-delay: 0.15s;
+  // animation-delay: 0.15s;
   z-index: 20;
-  -webkit-transition-duration:0.4s;
-  -webkit-transition-timing-function:ease;
-  transition-duration:0.4s;
-  transition-timing-function:ease;
+  // -webkit-transition-duration:0.4s;
+  // -webkit-transition-timing-function:ease;
+  // transition-duration:0.4s;
+  // transition-timing-function:ease;
 
   .down {
     background-color:rgba(0,0,0,.8);
@@ -137,6 +137,7 @@
 
 .switch_label {
   position: relative;
+  margin-bottom: 0em;
   cursor: pointer;
   display: inline-block;
   width: 58px;

@@ -32,10 +32,10 @@
         border-color: $dark-border-color !important;
 
         h2 > a {
-            color : $dark-link-color;
+            color : #fff;
         }
         .page__meta {
-            color: $dark-muted-text-color !important;
+            color: rgb(194 194 194) !important;
         }
 
         .archive__subtitle {
@@ -133,7 +133,11 @@
     }
 
     blockquote {
-        color: #828282;
+        color: #c6c6c6;
+    }
+
+    img+em {
+        color: #a6a6a6;
     }
 
     thead {
@@ -145,5 +149,15 @@
         background-color: $dark-background-color !important;
         color: $dark-text-color !important;
         border: 1px solid $dark-border-color !important;
+    }
+
+    // navbar  
+    .greedy-nav .visible-links {
+        a {
+            &:before {
+                height: 3px;
+                top: 1.3em !important;
+            }
+        }
     }
   }

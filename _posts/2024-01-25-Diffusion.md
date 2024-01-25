@@ -251,7 +251,7 @@ $$
 
 $$
 
-여기서 $$\mathbf{z}_{t}=\alpha_{t}\mathbf{x}_{0}+\sigma_{t}\epsilon$이고 $\epsilon\sim \mathcal{N}(\mathbf{0},\mathbf{I})$$ 이다. 그런데, SNR 함수 $R$은 역함수가 존재하기 때문에, $$\tilde{\mathbf{x}}_{\theta}(\mathbf{z},t)=\hat{\mathbf{x}}_{\theta}(\mathbf{z}_{t},R^{-1}(t))$$ 가 성립하고 diffusion loss는 다음과 같이 변환가능하다.
+여기서 $$\mathbf{z}_{t}=\alpha_{t}\mathbf{x}_{0}+\sigma_{t}\epsilon$$이고 $$\epsilon\sim \mathcal{N}(\mathbf{0},\mathbf{I})$$ 이다. 그런데, SNR 함수 $R$은 역함수가 존재하기 때문에, $$\tilde{\mathbf{x}}_{\theta}(\mathbf{z},t)=\hat{\mathbf{x}}_{\theta}(\mathbf{z}_{t},R^{-1}(t))$$ 가 성립하고 diffusion loss는 다음과 같이 변환가능하다.
 
 
 $$
