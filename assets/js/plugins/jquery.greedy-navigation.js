@@ -8,6 +8,7 @@ $(function() {
   var $logoImg = $('nav.greedy-nav .site-logo img');
   var $title = $("nav.greedy-nav .site-title");
   var $search = $('nav.greedy-nav button.search__toggle');
+  var $switch = $('nav.greedy-nav .switch_label');
 
   var numOfItems, totalSpace, closingTime, breakWidths;
 
@@ -66,6 +67,7 @@ $(function() {
                    - /* title */ $title.outerWidth(true)
                    - /* search */ ($search.length !== 0 ? $search.outerWidth(true) : 0)
                    - /* toggle */ (numOfVisibleItems !== breakWidths.length ? $btn.outerWidth(true) : 0);
+                   - /* switch */ ($switch.length !== 0 ? $switch.outerWidth(true) : 0);
     requiredSpace = breakWidths[numOfVisibleItems - 1];
 
     // There is not enought space
