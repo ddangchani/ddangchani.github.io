@@ -362,11 +362,15 @@ img {
 .page__content {
   p a {
     color: rgb(59, 167, 194) !important;
+    word-break: break-all !important;
   }
   
-  h2#references + ul {
+  h2#references {
+    ul {
     font-size: 0.8em !important;
+    word-break: break-all;
   }
+}
 }
 
 
