@@ -159,7 +159,7 @@ $$
 
 $$
 \begin{align}
-\tau &= \mathrm{E}\bigg[ \frac{AY}{g(X)} - \frac{{Z-g(X)}}{g(X)}Q(1,X)\bigg]- \mathrm{E}\bigg[\frac{(1-A)Y}{1-g(X)} + \frac{A-g(X)}{1-g(X)}Q(0,X)\bigg]\\
+\tau &= \mathrm{E}\bigg[ \frac{AY}{g(X)} - \frac{Z-g(X)}{g(X)}Q(1,X)\bigg]- \mathrm{E}\bigg[\frac{(1-A)Y}{1-g(X)} + \frac{A-g(X)}{1-g(X)}Q(0,X)\bigg]\\
 &= \mathrm{E}\bigg[ Q(1,X_{i})+ \frac{A_{i}(Y_{i}-Q(1,X_{i}))}{g(X_{i})} \bigg]- \mathrm{E}\bigg[ Q(0,X_{i})+ \frac{(1-A_{i})(Y_{i}-Q(0,X_{i}))}{1-g(X_{i})} \bigg]\\
 &= \mathrm{E}[Y\vert do(A=1)] - \mathrm{E}[Y\vert do(A=0)]
 \end{align}
