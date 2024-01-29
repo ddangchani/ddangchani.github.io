@@ -69,8 +69,25 @@ body {
         line-height: 2;
       }
 
-      // text break
+      // text break for 
       word-break:keep-all;
+
+      a {
+        word-break: break-all;
+      }
+
+      // link color in p tag
+
+
+      a {
+        color: rgb(59, 167, 194) !important;
+        word-break: break-all !important;
+      }
+      
+      h2#references + ul {
+        font-size: 0.8em !important;
+      }
+
     }
 
     .page__share {

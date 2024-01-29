@@ -188,7 +188,7 @@ $$
 그러나, 임의의 결과(ex. $C=0, E=0$)에 대해 counterfactual *’만일 C가 다른값을 취했다면 E가 다른 값을 나타냈을 것이다’* 를 생각해보면
 $P_{N_E}^1$에 대해서는 함수가 $(C,E)=(0,0)$으로 결정되어 counterfactual에 대해 $E=1$이 도출된다. 반면, $P_{N_E}^2$에 대해서는 함수가 $(0,1)$로 결정되는데, 이에 반대되는 함수는 $(1,0)$이므로 $E=0$이 도출된다. 즉, counterfactual statement에 대한 두 진술이 다르게 나타나고, 이는 Noise variable vector의 성분이 서로 종속이기 때문에 발생한 현상이다.
 
-## Reference
+## References
 
 - Elements of Causal Inference, Jonas Peters et al.
 

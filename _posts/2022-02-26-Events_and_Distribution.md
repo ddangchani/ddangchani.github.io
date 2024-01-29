@@ -101,7 +101,7 @@ Measurable space $(S,\mathcal{S})$ 와 index set $T$, $U\subset S^T$ 를 고정�
 
 
 
-## Reference
+## References
 
 - Foundations of Modern Probability, O.Kallenberg
 

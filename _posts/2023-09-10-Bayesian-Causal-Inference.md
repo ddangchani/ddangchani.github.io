@@ -296,5 +296,5 @@ $$
 
 여기서 $\rho$는 sensitivity analysis의 parameter로서 작용한다.
 
-## Reference
+## References
 - STA 790 Lecture Notes of Duke University, Fan Li.

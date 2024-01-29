@@ -156,7 +156,7 @@ $$
 
 가 성립한다.
 
-## Reference
+## References
 
 - Mathematical Statistics, Jun Shao.
 {% endraw %}

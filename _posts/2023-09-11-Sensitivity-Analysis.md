@@ -210,5 +210,5 @@ $$
 
 
 
-## Reference
+## References
 - STA 640 Lecture Notes of Duke University, Fan Li.

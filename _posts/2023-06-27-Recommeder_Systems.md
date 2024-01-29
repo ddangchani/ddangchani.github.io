@@ -44,6 +44,6 @@ use_math: true
 
 앞선 세 가지 분류 외에도, 사용자의 인구통계학적인(demographic) 요소(ex. 성별, 나이대 등)을 고려하는 등의 context-sensitive recommender system과 같은 방법론 역시 존재한다. 또한 각각의 추천 시스템에는 장단점이 모두 존재하기 때문에, 여러 종류의 추천 시스템을 조합한 ensemble-based recommender system 역시 고려할 수 있다.
 
-## Reference
+## References
 - *Charu C. Aggarwal - Recommender Systems*
 {% endraw %}

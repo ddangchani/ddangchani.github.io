@@ -203,7 +203,7 @@ $$
 
 where $\mathbf{p}_{n}=\text{vec(n-th patch)}$.
 
-## Reference
+## References
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017, June 12). _Attention Is All You Need_. arXiv.Org. [https://arxiv.org/abs/1706.03762v7](https://arxiv.org/abs/1706.03762v7)
 - Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2020, October 2). _An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale_. International Conference on Learning Representations. [https://openreview.net/forum?id=YicbFdNTTy](https://openreview.net/forum?id=YicbFdNTTy)
