@@ -1,8 +1,9 @@
 ---
-title: 
+title: ""
 tags:
 - 
 - 
-category: ''
+category: 
+collection:
 use_math: true
 ---

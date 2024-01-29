@@ -1,5 +1,5 @@
 ---
-title: \[실해석학\] Banach Fixed Point Theorem
+title: "[실해석학] Banach Fixed Point Theorem"
 tags:
 - Mathematics
 - Real Analysis
