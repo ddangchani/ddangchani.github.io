@@ -123,7 +123,7 @@ $$
 
 
 ## References
-- Arjovsky, M., Chintala, S., & Bottou, L. (2017). _Wasserstein GAN_ (arXiv:1701.07875). arXiv. [https://doi.org/10.48550/arXiv.1701.07875](https://doi.org/10.48550/arXiv.1701.07875
+- Arjovsky, M., Chintala, S., & Bottou, L. (2017). _Wasserstein GAN_ (arXiv:1701.07875). arXiv. [https://doi.org/10.48550/arXiv.1701.07875](https://doi.org/10.48550/arXiv.1701.07875)
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.
 - Xie, L., Lin, K., Wang, S., Wang, F., & Zhou, J. (2018). _Differentially Private Generative Adversarial Network_ (arXiv:1802.06739). arXiv. [https://doi.org/10.48550/arXiv.1802.06739](https://doi.org/10.48550/arXiv.1802.06739)
 - Gulrajani, I., Ahmed, F., Arjovsky, M., Dumoulin, V., & Courville, A. (2017). _Improved Training of Wasserstein GANs_ (arXiv:1704.00028). arXiv. [https://doi.org/10.48550/arXiv.1704.00028](https://doi.org/10.48550/arXiv.1704.00028)
