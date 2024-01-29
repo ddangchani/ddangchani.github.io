@@ -1,6 +1,8 @@
 <script>
   'use strict';
 
+  var theme = localStorage.getItem('theme');
+
   (function() {
     var commentContainer = document.querySelector('#utterances-comments');
 
@@ -13,7 +15,12 @@
     script.setAttribute('repo', '{{ site.repository }}');
     script.setAttribute('issue-term', '{{ site.comments.utterances.issue_term | default: "pathname" }}');
     {% if site.comments.utterances.label %}script.setAttribute('label', '{{ site.comments.utterances.label }}');{% endif %}
-    script.setAttribute('theme', '{{ site.comments.utterances.theme | default: "github-light" }}');
+
+    if (theme === 'dark') {
+      script.setAttribute('theme', 'github-dark');
+    } else {
+      script.setAttribute('theme', 'github-light');
+    }
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
