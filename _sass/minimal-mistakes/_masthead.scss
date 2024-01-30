@@ -37,7 +37,7 @@
     @include clearfix;
     margin-left: auto;
     margin-right: auto;
-    padding: 1em;
+    padding: 0.8em 1em 1em 1em;
     max-width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -46,13 +46,6 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     font-family: $sans-serif-narrow;
-
-    @media screen and (max-width: 768px){
-      padding-top: 1em;
-      padding-bottom: 1em;
-      padding-left: 0.5em;
-      padding-right: 0em;
-    }
 
     @include breakpoint($x-large) {
       max-width: $max-width;
@@ -69,7 +62,8 @@
 }
 
 .site-logo img {
-  max-height: 2rem;
+  max-height: 2.5rem;
+  margin-right: 0.1em;
 }
 
 .site-title {
@@ -91,8 +85,15 @@
 
 
 .site-subtitle {
+  margin-top: 0.1em;
   display: block;
+  font-family: 'Oswald';
+  text-transform: uppercase;
   font-size: $type-size-8;
+  // text center
+  text-align: center;
+  background-color: #206db6;
+  color: #fff;
 }
 
 .masthead__menu {

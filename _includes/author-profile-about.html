@@ -8,6 +8,7 @@
   </div>
   
   <div class="grid-item about_content">
+
     <div class="my-name">Dangchan Kim</div>
     {% if author.bio %}
       <div class="about__bio p-note" itemprop="description">
@@ -77,7 +78,24 @@
           {% endif %}
         {% endif %}
         
-        {% include author-profile-custom-links.html %}
+        <a href="https://hits.seeyoufarm.com">
+          <style>
+            @media screen and (max-width: 1024px) {
+              .hits {
+                display: none;
+              }
+            }
+            @media screen and (min-width: 1025px) {
+              .hits {
+              width: auto;
+              height: auto;
+              max-width: 150px;
+              max-height: 30px;
+            } 
+            }
+          </style>
+          <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fddangchani.github.io&count_bg=%233D99C8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+        </a>
       </ul>
     </div>
   </div>
@@ -112,6 +130,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .about_urls {
@@ -120,6 +139,10 @@
   list-style: none;
   text-align: center;
   font-size: 0.8em;
+
+  a {
+    color: #1e515c !important;
+  }
 
   @media (max-width: 415px) {
     display: flex;

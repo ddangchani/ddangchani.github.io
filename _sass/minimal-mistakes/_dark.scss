@@ -14,6 +14,15 @@
                 color: $dark-text-color !important;
             }
         }
+
+        .site-logo img {
+            filter: invert(1);
+        }
+
+        .site-subtitle {
+            color: $dark-background-color;
+            background-color: #6eb5f3;
+        }
     }
 
     .sidebar {
@@ -203,4 +212,6 @@
     .index-header {
         border-bottom : 30px solid #fff;
     }
+
+    // Masthead
   }
