@@ -278,5 +278,21 @@ defaults:
       image: true
 
 
-# Utterances
+# Jekyll-ga
+jekyll_ga:
+  service_account_email: ddangchani@githubblog-412702.iam.gserviceaccount.com     # service account email address
+  key_file: githubblog-412702-379dd2390047.p12  # service account private key file
+  key_secret: notasecret    # service account private key's password
+  profileID: ga:397192433       # profile ID 
+  start: last month        # Beginning of report
+  end: now                  # End of report
+  metric: ga:pageviews      # Metric code
+  segment:                  # optional
+  filters:                  # optional
+  sort: false                # Sort posts by this metric
 
+jekyll_sort:
+  - src: posts
+    by: _ga
+    direction: down
+    dest: posts_popular

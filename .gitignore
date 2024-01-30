@@ -30,3 +30,6 @@ _site
 
 # Obsidian
 .obsidian
+
+# p12
+*.p12

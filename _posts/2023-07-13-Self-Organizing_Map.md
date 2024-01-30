@@ -2,7 +2,7 @@
 title: "Self-Organizing Map"
 tags:
 - Dimension Reduction
-- Topological Data Analysis
+- TDA
 - Manifold Learning
 - Clustering
 category: Machine Learning

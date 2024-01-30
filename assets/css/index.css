@@ -35,7 +35,7 @@ body {
   .header {
     position:relative;
     text-align:center;
-    background: linear-gradient(60deg, rgb(10, 75, 119) 0%, rgb(0, 187, 193) 100%);
+    background: #03396c;
     color:white;
   }
   .logo {

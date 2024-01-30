@@ -2,7 +2,7 @@
 title: "[Paper Review] Differentially Private Markov Random Field"
 tags: 
 - Differential Privacy
-- Probabilistic Graphical Model
+- PGM
 - Spatial Statistics
 - Paper Review
 category: ""
