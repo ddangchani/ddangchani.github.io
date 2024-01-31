@@ -13,10 +13,11 @@
           <span class="site-subtitle">Datascience Blog</span>
         </a>
         <!-- Dark mode toggle -->
-        <input type="checkbox" id="switch" name="theme">
+        <!-- <input type="checkbox" id="switch" name="theme">
         <label for="switch" class="switch_label">
           <span class="onf_btn"></span>
-        </label>
+        </label> -->
+        {% include toggle.html %}
 
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}

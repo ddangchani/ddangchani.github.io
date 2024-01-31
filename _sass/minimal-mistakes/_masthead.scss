@@ -143,30 +143,30 @@
   -moz-appearance: none;
 }
 
-.switch_label {
-  position: relative;
-  margin-bottom: 0em;
-  margin-right: 0em;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 58px;
-  height: 28px;
+// .switch_label {
+//   position: relative;
+//   margin-bottom: 0em;
+//   margin-right: 0em;
+//   cursor: pointer;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   width: 58px;
+//   height: 28px;
 
-  @media screen and (max-width: 768px){
-    width: 36px;
-    height: 18px;
-  }
+//   @media screen and (max-width: 768px){
+//     width: 36px;
+//     height: 18px;
+//   }
 
-  background: #fff;
-  border: 2px solid rgb(122, 186, 239);
-  border-radius: 20px;
-  transition: 0.2s;
-}
-.switch_label:hover {
-  background: rgb(209, 240, 255);
-}
+//   background: #fff;
+//   border: 2px solid rgb(122, 186, 239);
+//   border-radius: 20px;
+//   transition: 0.2s;
+// }
+// .switch_label:hover {
+//   background: rgb(209, 240, 255);
+// }
 .onf_btn {
   position: absolute;
   top: 10%;
