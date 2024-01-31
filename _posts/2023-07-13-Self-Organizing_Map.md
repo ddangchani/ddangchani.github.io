@@ -14,7 +14,7 @@ header:
 SOM 이라고 줄여 부르는 Self-organizing maps는 고차원(High dimensional) 데이터를 저차원(주로 2차원 평면)에 표현하는 차원축소 기법의 일종이다. 차원축소 기법으로 많이 사용되는 PCA와는 다르게, SOM은 데이터의 고차원 구조(topological structure)를 보존하여 Feature space에 embedded된 2D manifold(다양체)로 표현한다. SOM의 알고리즘을 간단하게 이해하면, 2차원 평면을 고차원 데이터에 적합시키기 위해 해당 평면을 휘거나, 구부리는 등의 2차원 manifold로 바꾼다고 생각하면 된다(아래 그림).
 
 ![](/assets/img/Self-Organizing_Map_0.png){: .align-center}
-출처 : https://en.wikipedia.org/wiki/Self-organizing_map
+*출처 : https://en.wikipedia.org/wiki/Self-organizing_map*
 
 High-dimensional data $X_{i}\in \mathbb{R}^{p}$ 가 주어진다고 하자. 일반적으로 데이터의 시각화를 위해 2차원 격자가 자주 사용되며, 격자의 가로, 세로 크기가 각각 $q_{1}, q_{2}$ 라면 각 격자를 prototype $m_{j}\in \mathbb{R}^{p}, j\in \{1,\ldots, q_{1}\}\times \{1,\ldots,q_{2}\}$ 라고 한다. 각 prototype이 2차원 벡터가 아니라 $p$차원 벡터인 이유는, PCA 처럼 기존 고차원 데이터를 저차원(ex. 주성분)에 직접 projection하지 않고, 각 prototype과 기존 데이터의 Euclidean distance를 구하는 과정으로 projection시키기 때문이다. 따라서, projection이라는 개념보다 각 prototype이 자신과 가장 가까운 데이터들을 포함시킨다는 의미에서 오히려 **clustering**의 개념이 더 적절하다.
 
