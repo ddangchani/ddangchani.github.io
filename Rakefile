@@ -74,3 +74,8 @@ task :preview do
 
   Jekyll::Commands::Serve.process(options)
 end
+
+task :serve do
+  sh 'python get_analytics.py'
+  sh 'bundle exec jekyll serve'
+end
