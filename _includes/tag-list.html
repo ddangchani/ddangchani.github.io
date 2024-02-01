@@ -8,7 +8,7 @@
 {% if site.tag_archive.path %}
 
   <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags:" }} </strong>
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].tags_label | default: "Tags :" }} </strong>
     <span class="archive__item-tags">
     {% for tag in page.tags %}
     {% if site.data.tags contains tag %}

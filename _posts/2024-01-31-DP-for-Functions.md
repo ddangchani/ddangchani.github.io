@@ -1,10 +1,10 @@
 ---
 title: "[Paper Review] Differential Privacy for Functions"
 tags: 
+- Paper Review
 - Differential Privacy
 - Kernel Density Estimation
 - Gaussian Process
-- Paper Review
 category: 
 collection: 
 use_math: true

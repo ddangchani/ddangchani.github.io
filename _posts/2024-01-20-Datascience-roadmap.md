@@ -14,3 +14,5 @@ use_math: true
 이 로드맵은 데이터사이언스를 공부하고자 하는 분들에게 도움이 되고자 만들어졌습니다. 데이터사이언스를 공부하고자 하는 분들은 아래 로드맵을 참고하여 공부하시면 좋을 것 같습니다.
 
 [데이터사이언스 로드맵](https://ddangchani.github.io/dsroadmap)
+
+다음 사이트를 일부 참고하여 만들었습니다. : [링크](https://datasciencetexts.com/)
