@@ -7,6 +7,7 @@ of Simple CSS Waves-->
 {% assign author = page.author | default: page.authors[0] | default: site.author %}
 {% assign author = site.data.authors[author] | default: author %}
 
+
 <div class="index-header">
 
     <!--Content before waves-->
@@ -40,31 +41,14 @@ of Simple CSS Waves-->
     
 </div>
 
-<!-- Recent posts -->
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2 class="text-center">Recent Posts</h2>
-    </div>
-  </div>
-  <div class="row">
-    {% for post in site.posts limit:4 %}
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ post.title }}</h5>
-          {% if post.excerpt %}<p class="card-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 50 }}</p>{% endif %}
-          <a href="{{ post.url }}" class="btn btn-primary">Read More</a>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div> -->
+<!-- popular post -->
+
+<h1 class="index-title">Popular Posts</h1>
+
+{% include popular_posts.html %}
 
 
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
 <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/index.css"></style>
-
+<link rel="stylesheet" href="/assets/css/index.css">

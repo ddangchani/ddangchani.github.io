@@ -8,7 +8,7 @@ tags:
 category: 
 use_math: true
 header: 
- teaser: /assets/img/Spectral-Analysis-4_1.png
+ teaser: /assets/img/Spectral-Analysis-4_0.png
 ---
 {% raw %}
 

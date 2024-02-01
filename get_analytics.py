@@ -34,14 +34,17 @@ def run_report(property_id):
 
     for row in response.rows:
         link = row.dimension_values[0].value
-        count = row.metric_values[0].value
-        link_parsed = parse.unquote(link)
+        count = int(row.metric_values[0].value)
+        link_parsed = parse.unquote(link, encoding='utf-8')
         
         if link_parsed not in not_to_include:
-            dict_response[link_parsed] = count
+            dict_response[link] = {
+                "link": link,
+                "count": count
+            }
 
-    with open('analytics.json', 'w') as f:
-        json.dump(dict_response, f)
+    with open('_data/analytics.json', 'w', encoding='utf-8') as f:
+        json.dump(dict_response, f, ensure_ascii=False)
 
     print("Finished")
 

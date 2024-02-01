@@ -37,6 +37,7 @@ body {
     text-align:center;
     background: #03396c;
     color:white;
+    border-bottom : 15px solid #fff;
   }
   .logo {
     width:50px;
