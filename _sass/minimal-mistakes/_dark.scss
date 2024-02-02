@@ -127,12 +127,12 @@
     .hidden-links {
         background-color: $dark-background-color !important;
     }
-
+    
 
     .word-highlight {
         &:after {
             background-color: rgba(155,251,225,0.3);
-            z-index: 1;
+            z-index: -1;
         }
     }
 

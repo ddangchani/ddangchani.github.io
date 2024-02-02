@@ -93,24 +93,30 @@
 
   &__form {
     background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    display: flex;
   }
 
   .search-input {
     display: block;
+    text-align: center;
     margin-bottom: 0;
-    padding: 0;
-    border: none;
+    padding: 0.5em 1em;
+    border: 1px solid gray;
+    border-radius: 10px;
     outline: none;
     box-shadow: none;
     background-color: transparent;
-    font-size: $type-size-3;
+    font-size: $type-size-5;
 
     @include breakpoint($large) {
-      font-size: $type-size-2;
+      font-size: $type-size-4;
     }
 
     @include breakpoint($x-large) {
-      font-size: $type-size-1;
+      font-size: $type-size-4;
     }
   }
 
@@ -125,14 +131,15 @@
   }
 
   .results__found {
+    display: flex;
+    margin: 0.5em auto;
     font-family: $monospace;
-    margin-top: 0.5em;
     font-size: $type-size-5;
   }
 
   .archive__item {
     margin-bottom: 2em;
-    width: 100%;
+    width: 95%;
     text-align: center;
 
     @include breakpoint($small) {
@@ -144,7 +151,7 @@
     }
 
     @include breakpoint($x-large) {
-      width: 100%;
+      width: 95%;
     }
   }
 
