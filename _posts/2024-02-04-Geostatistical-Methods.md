@@ -34,7 +34,7 @@ $$
 
 $$
 
-또한, 약정상과정 $e(\cdot)$의 semivarigram $\gamma$에 대해 다음이 성립한다.
+또한, 약정상과정 $e(\cdot)$의 semivariogram $\gamma$에 대해 다음이 성립한다.
 
 
 $$
@@ -92,7 +92,7 @@ $$
 
 $$
 
-## Semivarigram estimation
+## Semivariogram estimation
 
 Geostatistical 데이터 분석의 두번째 과정은 second-order structure를 추정하는 것이다. 이는 공간자료의 공분산 구조, 즉 공간 종속성을 추정하는 과정이라고 생각하면 되는데, 일반적으로 $e(\cdot)$을 intrinsically stationary하다고 가정하고 이에 대해 semivariogram $\gamma$에 대한 추정함수 $\hat\gamma$를 구하는 것을 목표로 한다. 
 
