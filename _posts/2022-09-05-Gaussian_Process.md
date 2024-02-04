@@ -205,7 +205,7 @@ Gausaain Process 모델의 적합 과정은 다음 게시글에서 이어서 다
 
 
 
-## References
+# References
 
 - *Probabilistic Machine Learning - Advanced Topics*, K.Murphy.
 

@@ -178,7 +178,7 @@ Results show that choosing an appropriate grid size is crucial, and the suggeste
 The AG method consistently outperforms other methods, including KD-hybrid, Quadopt, UG with the lowest observed relative error size, and Privlet on the same grid size. The AG method with suggested grid sizes performs competitively with the experimentally observed best grid sizes. The authors also conduct a final comparison using absolute error, confirming that AG consistently and significantly outperforms other methods across various datasets and privacy settings.
 
 
-## References
+# References
 
 - G. Cormode, C. Procopiuc, D. Srivastava, E. Shen, and T. Yu, “Differentially Private Spatial Decompositions,” in _2012 IEEE 28th International Conference on Data Engineering_, Arlington, VA, USA: IEEE, Apr. 2012, pp. 20–31. doi: [10.1109/ICDE.2012.16](https://doi.org/10.1109/ICDE.2012.16).
 

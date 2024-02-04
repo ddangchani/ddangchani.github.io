@@ -47,7 +47,7 @@ $$
 
 
 
-## References
+# References
 
 - Foundations of Modern Probability, O.Kallenberg
 {% endraw %}

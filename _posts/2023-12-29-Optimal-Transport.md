@@ -188,6 +188,6 @@ Optimal transport는 이미지 데이터에 사용하기 좋은데, 한 이미�
 
 확인해보면, Target 이미지의 색상 분포가 기존 source 이미지에 학습된 것을 확인할 수 있다.
 
-## References
+# References
 - https://pythonot.github.io/
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.

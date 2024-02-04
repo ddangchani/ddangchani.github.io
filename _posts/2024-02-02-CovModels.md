@@ -265,7 +265,7 @@ $$
 이러한 과정으로 geostatistical data에 대해 예측 문제를 해결하는 과정을 **Kriging**이라고도 하는데, 이에 대해서는 다른 포스트로 자세히 다루도록 하겠다.
 
 
-## References
+# References
 - 서울대학교 공간통계학 강의노트
 - Fuentes, A. E. G., Peter Diggle, Peter Guttorp, Montserrat (Ed.). (2010). _Handbook of Spatial Statistics_. CRC Press. [https://doi.org/10.1201/9781420072884](https://doi.org/10.1201/9781420072884)
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.

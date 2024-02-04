@@ -362,6 +362,6 @@ plt.show()
 
 
 
-## References
+# References
 - Probabilistic Machine Learning, Advanced Topics
 - https://zhiyzuo.github.io/VI/

@@ -217,7 +217,7 @@ $$
 
 코드 연습은 아니지만 아래에 있는 프로그램을 통해 앞서 살펴본 일차 최적화 방법들의 최적화 경로 및 속도를 파악할 수 있다. 마우스로 한 지점을 누르면 그 점에서부터 왼쪽의 검은 점(전역최소)과 오른쪽 하얀점(지역최소)으로의 최적화를 시행한다. 각 최적화 방법들을 비교해보자😃
 
-## References
+# References
 
 - An overview of gradient descent optimization algorithms, S.Ruder
 - Lecture note of "Deep Learning for Computer Vision", UMich EECS

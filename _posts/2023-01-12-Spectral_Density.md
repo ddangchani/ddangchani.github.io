@@ -100,7 +100,7 @@ $$
 
 ![](/assets/img/Spectral_Density_0.png){: .align-center}
 
-## References
+# References
 - Time Series Analysis with its applications with R
 
 

@@ -263,7 +263,7 @@ $$
 
 위 적분은 timestep $t\in[T]$ 를 샘플링하여 근사할 수 있다. 다만, 무작위로 독립적인 timestep들을 추출하는 것 대신에 *low-discrepancy sampler*을 이용할 수 있는데, 이는 $u_{0}\sim\mathrm{Unif}(0,1)$ 을 샘플링하여 $i$번째 timestep으로 $t^{i}=\mod (u_{0} + \dfrac{i}{k}, 1)$ 을 사용한다.
 
-## References
+# References
 - Ho, J., Jain, A., & Abbeel, P. (2020). _Denoising Diffusion Probabilistic Models_ (arXiv:2006.11239). arXiv. [http://arxiv.org/abs/2006.11239](http://arxiv.org/abs/2006.11239)
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.
 - Kingma, D. P., Salimans, T., Poole, B., & Ho, J. (2023). _Variational Diffusion Models_ (arXiv:2107.00630). arXiv. [https://doi.org/10.48550/arXiv.2107.00630](https://doi.org/10.48550/arXiv.2107.00630)

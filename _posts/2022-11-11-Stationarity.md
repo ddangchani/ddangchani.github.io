@@ -63,7 +63,7 @@ $$
 
 $$
 
-## References
+# References
 
 - Time Series Analysis Lecture notes, Kichun Lee, HYU (2013)
 

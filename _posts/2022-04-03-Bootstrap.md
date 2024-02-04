@@ -107,7 +107,7 @@ $$
 $$
 
 
-## References
+# References
 
 - The Elements of Statistical Learning, 2e.
 

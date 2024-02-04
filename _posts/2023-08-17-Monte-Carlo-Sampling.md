@@ -169,7 +169,7 @@ W_{n} &= \frac{\tilde w_{n}}{\sum_{n^{\prime}=1}^{N_{s}}\tilde w_{n^{\prime}}}
 
 $$
 
-## References
+# References
 
 - Probabilistic Machine Learning - Advanced Topics
 

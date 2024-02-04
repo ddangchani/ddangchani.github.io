@@ -236,7 +236,7 @@ $$
 $$
 
 
-## References
+# References
 - Yuxin Chen et al. - Spectral Methods for Data Science: A Statistical Perspective (2021)
 - KOCW 현대통계학(김충락) 강의
 {% endraw %}

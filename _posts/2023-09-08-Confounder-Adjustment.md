@@ -73,5 +73,5 @@ $$
 
 
 
-## References
+# References
 - K. Murphy, Probabilistic Machine Learning-Advanced Topics

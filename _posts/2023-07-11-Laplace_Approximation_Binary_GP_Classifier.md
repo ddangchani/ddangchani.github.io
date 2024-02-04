@@ -175,7 +175,7 @@ def laplace_approximation(y, K, X, x_new=None, max_iter=100):
 이를 바탕으로 Predictive distribution의 contour plot을 다음과 같이 그릴 수 있다.
 ![](/assets/img/Laplace_Approximation_Binary_GP_Classifier_1.png){: .align-center}{: .align-center}
 
-## References
+# References
 - Gaussian Process for Machine Learning
 - Code on Github: https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/Linear%20Classification.ipynb
 {% endraw %}

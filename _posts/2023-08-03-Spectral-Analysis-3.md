@@ -138,6 +138,6 @@ $$
 여기서 $\kappa:=\lambda_{1}^{\star}/\lambda_{r}^{\star}$ 는 $M^{\star}$ 에서의 가장 큰 고유값과 가장 작은 고유값의 비를 의미한다. 정리는 David-Kahan $\sin\Theta$ theorem으로부터 얻어지며, 이는 Lemma에 의해 perturbation size가 컨트롤되기 때문에 가능하다.
 
 
-## References
+# References
 - Yuxin Chen et al. - Spectral Methods for Data Science: A Statistical Perspective (2021)
 {% endraw %}

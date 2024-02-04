@@ -60,5 +60,5 @@ $$
 
 이러한 가정 집합으로부터 위 예시와 같은 SCM을 식별해낼 수 있다.
 
-## References
+# References
 - K. Murphy, Probabilistic Machine Learning - Advanced Topics.

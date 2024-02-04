@@ -172,5 +172,5 @@ $$
 - Outcome model $Q$만 정확히 모델링 된다면, DR 추정치는 일반적인 outcome adjustment 추정치보다 더 큰 분산을 갖는다.
 
 
-## References
+# References
 - K. Murphy, Probabilistic Machine Learning-Advanced Topics

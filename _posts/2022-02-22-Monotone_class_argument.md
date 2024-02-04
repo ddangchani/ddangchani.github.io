@@ -97,7 +97,7 @@ $$
 
 
 
-## References
+# References
 
 - Foundations of Modern Probability, O.Kallenberg
 - Real and Complex Analysis, W.Rudin

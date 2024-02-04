@@ -75,7 +75,7 @@ Squeeze-Excitation Block의 전체적인 흐름을 요약하면 다음 그림과
 ![](/assets/img/Multivariate_LSTM-FCN_1.jpg)
 
 
-## References
+# References
 - Squeeze and Excitation Networks, Hu et al.
 - Multivariate LSTM-FCNs for Time Series Classification, F.Karim et al. 2018.
 {% endraw %}

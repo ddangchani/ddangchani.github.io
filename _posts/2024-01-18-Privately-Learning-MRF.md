@@ -294,7 +294,7 @@ samples. Also, for $\rho$-zCDP algorithm $n=\Omega \left(\sqrt{\dfrac{p}{\rho}}\
 For $p$-variable pairwise MRF, $\epsilon$-DP algorithm requires $n=\Omega \left(\dfrac{\sqrt{p}}{\eta\epsilon}+ \dfrac{k^{2}p}{\epsilon}\right)$ samples and $\rho$-zCDP algorithm requires $n=\Omega \left(\sqrt{\dfrac{k^{2}p}{\rho}}\right)$ samples.
 
 
-## References
+# References
 
 - C. Dwork, G. N. Rothblum, and S. Vadhan, “Boosting and Differential Privacy,” in _2010 IEEE 51st Annual Symposium on Foundations of Computer Science_, Las Vegas, NV, USA: IEEE, Oct. 2010, pp. 51–60. doi: [10.1109/FOCS.2010.12](https://doi.org/10.1109/FOCS.2010.12).
 - H. Zhang, G. Kamath, J. Kulkarni, and S. Wu, “Privately learning Markov random fields,” in _International conference on machine learning_, PMLR, 2020, pp. 11129–11140. Accessed: Jan. 17, 2024. [Online]. Available: [http://proceedings.mlr.press/v119/zhang20l.html](http://proceedings.mlr.press/v119/zhang20l.html)

@@ -214,7 +214,7 @@ NuSVR에서 $\nu$의 역할에 대해서 살펴보도록 하자. 만일 $\nu>1$ 
 
 
 
-## References
+# References
 
 - *A Tutorial on Support Vector Regression*, A.J. Smola, Bernhard Scholkopf. (2003).
 - *New Support Vector Algorithm*, B.Scholkopf et al. (2000).

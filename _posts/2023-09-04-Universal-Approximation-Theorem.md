@@ -239,6 +239,6 @@ $$
 
 즉, SRU에서는 각 레이어의 처음 $n+2$개 노드들은 output이 일정한 *memory element*인 반면, 나머지 두 노드는 *computation element*으로 기능한다.
 
-## References
+# References
 - Simon J.D. Prince, Understanding Deep Learning.
 - Lu et al., The Expressive Power of Neural Networks: A View from the Width

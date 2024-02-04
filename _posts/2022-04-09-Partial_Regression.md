@@ -106,7 +106,7 @@ FWL Theorem이라고도 하는 위 정리는 앞서 설명한 Full Model과 Redu
 
 위와 같은 형태를 가지는데(python `statsmodels`패키지를 이용한 그래프이다), 여기서 $e(MEDV\vert X)$ 는 반응변수 MEDV를 예측변수 전체(X)로 회귀분석하여 나온 잔차(e)를 의미하고, $e(AGE\vert X)$는 변수 AGE를 남은 반응변수(X, AGE 제외)로 회귀분석하여 나온 잔차(e)를 의미한다. 위 plot의 경우는 AGE와 종속변수 MEDV가 상관관계가 없음을 보여주고 있고, 이러한 방식으로 선형모형의 각 변수들에 대한 partial regression을 진행하여 각각의 유의성을 파악할 수 있다.
 
-## References
+# References
 
 - https://datascienceschool.net/
 - The Elements of Statistical Learning

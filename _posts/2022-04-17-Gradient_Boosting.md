@@ -288,7 +288,7 @@ $$
 $$
 
 
-## References
+# References
 
 - The Elements of Statistical Learning
 - Greedy Function Approximation: A Gradient Boosting Machine, Jerome Friedman, 1999

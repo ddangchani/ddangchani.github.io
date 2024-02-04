@@ -115,7 +115,7 @@ Linear Classifier는 선형변환 $h=Wx$ 을 의미한다. 이때 선형변환�
 
 *✅이는 일종의 유추에 의한 설명이고, 시그모이드 활성함수를 이용한 수학적인 증명은 다른 글에서 다루도록 하겠다.*
 
-## References
+# References
 
 - Lecture note of "Deep Learning for Computer Vision", UMich EECS
 

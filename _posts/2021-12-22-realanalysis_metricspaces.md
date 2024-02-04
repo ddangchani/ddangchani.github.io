@@ -131,7 +131,7 @@ $$\{N(x_k,\epsilon)\}_{k=1}^n\quad \text{and} \quad E\subset\bigcup_{k=1}^n N(x_
 또한, 분해가능거리공간의 부분공간을 잡으면 이 부분공간 또한 분해가능임을 알 수 있다. 
 
 
-## References
+# References
  - Real Analysis 4th edition, Royden
 
 {% endraw %}

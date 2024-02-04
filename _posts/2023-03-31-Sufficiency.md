@@ -75,7 +75,7 @@ Random sample $X\sim P_{\theta},\theta\in\Theta$에 대해 통계량 $T(X)$가 �
 > Then $T(X)$ is minimal sufficient for $P\in\mathcal{P}$
 
 
-## References
+# References
 - Mathematical Statistics, Jun Shao.
 - Mathematical Statistics, Bickel and Doksum.
 {% endraw %}

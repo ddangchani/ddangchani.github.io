@@ -105,7 +105,7 @@ $$
 이때 공분산행렬 $\Sigma$의 역행렬을 *precision matrix*라고 하며, $Q=\Sigma^{-1}$ 라고 쓰기도 한다.
 
 
-## References
+# References
 
 - 서울대학교 공간통계 강의노트
 - Handbook of spatial statistics

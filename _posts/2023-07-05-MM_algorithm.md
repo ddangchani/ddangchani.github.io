@@ -189,7 +189,7 @@ print('IRLS: ', time_IRLS)
 ```
 
 
-## References
+# References
 - Probabilistic Machine Learning : Advanced Topics - K.Murphy
 - Code on github : https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/MM%20algorithm.ipynb
 {% endraw %}

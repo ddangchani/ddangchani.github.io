@@ -144,7 +144,7 @@ RCT를 이용하면 처치효과에 confounder 영향을 배제할 수 있으므
 ![](/assets/img/Randomized-Experiment_1.png){: width="500" .align-center}
 
 
-## References
+# References
 - Brady Neal - Introduction to Causal Inference
 
 {% endraw %}

@@ -247,7 +247,7 @@ $$
 
 
 
-## References
+# References
 - Elements of Statistical Leraning
 
 

@@ -168,7 +168,7 @@ $$
 
 를 얻을 수 있다. 이 과정을 반복하여 EM algorithm의 추정량을 찾을 수 있다.
 
-## References
+# References
 
 - Machine Learning - A Probabilistic Perspective, K.Murphy
 - Code at Github : https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/MixtureModels.ipynb

@@ -227,7 +227,7 @@ print(np.sqrt(mean_squared_error(y_val, pls.predict(X_val))).round(3)) # PLS = 5
 
 비교 결과, $R^2$ 측면에서는 PCR이 우수한 것으로 파악되었다. 반면 RMSE 측면에서는 PLS가 더 우수한 값을 가지는 것으로 파악되었는데, 이는 이전까지 shrinkage method, model selection을 통해 얻은 RMSE값들보다 더욱 우수한 값이다 (의미있는 진전😃).
 
-## References
+# References
 
 - scikit-learn 공식 문서 : https://scikit-learn.org/stable/auto_examples/cross_decomposition/plot_pcr_vs_pls.html
 

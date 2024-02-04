@@ -175,6 +175,6 @@ $$
 
 $$
 
-## References
+# References
 - Time Series Analysis with its applications
 {% endraw %}

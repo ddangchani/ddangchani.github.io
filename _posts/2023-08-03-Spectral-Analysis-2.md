@@ -189,7 +189,7 @@ $$
 
 $$
 
-## References
+# References
 - Yuxin Chen et al. - Spectral Methods for Data Science: A Statistical Perspective (2021)
 
 {% endraw %}

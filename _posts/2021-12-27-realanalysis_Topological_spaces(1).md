@@ -72,7 +72,7 @@ X의 어떤 점 $x\in X$ 에 대해 $x$ 를 포함하는 열린 집합을 $x$의
 **명제 4** 위상공간 $X$의 부분집합 $E$가 열려있는 것과 $E$의 여집합이 닫혀있는 것은 동치이다.   
 > 증명. $E$가 열림이라 가정하자. 점 $x$가 $X\backslash E$의 폐포의 원소라고 하면, $x\notin E$ 임은 자명하다. 따라서 $x\in X\backslash E$ 역시 성립한다. 이때 $X\backslash E = \overline{X\backslash E}$ 이므로 $X\backslash E = E^C$는 닫혀있다. 역도 비슷한 방식으로 증명가능하다.
 
-## References
+# References
  - Real Analysis 4th edition, Royden
  - Topology and Groupoids, Brwon(2006)
 {% endraw %}

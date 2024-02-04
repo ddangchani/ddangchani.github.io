@@ -334,7 +334,7 @@ Jekyll에서 포스트를 작성할 때에는 위 코드와 같이 앞에 YAML �
 
 ```
 
-## References
+# References
 - 원 자료 : [https://wormwlrm.github.io/2019/09/22/How-to-add-tags-on-Jekyll.html](https://wormwlrm.github.io/2019/09/22/How-to-add-tags-on-Jekyll.html)
 - CSS 태그 : [https://codepen.io/wbeeftink/pen/AJjVZQ](https://codepen.io/wbeeftink/pen/AJjVZQ)
 {% endraw %}

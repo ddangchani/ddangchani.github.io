@@ -82,7 +82,7 @@ $$
 
 
 
-## References
+# References
 
 - Lecture note of "Deep Learning for Compuer Vision", UMich EECS
 - Hands-On Machine Learning with Scikit-Learn, Kerras & Tensorflow.

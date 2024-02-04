@@ -163,7 +163,7 @@ for epoch in range(epochs):
 
 전체 코드 : [https://github.com/ddangchani/braverep/blob/main/Supplyments/simplenn.ipynb](https://github.com/ddangchani/braverep/blob/main/Supplyments/simplenn.ipynb)
 
-## References
+# References
 
 - https://medium.com/analytics-vidhya/how-to-write-a-neural-network-in-tensorflow-from-scratch-without-using-keras-e056bb143d78
 - 핸즈온 머신러닝 2e

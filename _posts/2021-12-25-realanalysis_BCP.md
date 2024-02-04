@@ -70,7 +70,7 @@ $$
 인데, c는 1보다 작으므로 $\rho(u,v)=0$ 이어야 한다. 따라서, 오직 한개의 고정점이 존재한다.
  
 
-## References
+# References
  - Real Analysis 4th edition, Royden
 
 {% endraw %}

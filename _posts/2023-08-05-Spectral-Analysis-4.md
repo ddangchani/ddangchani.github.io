@@ -220,7 +220,7 @@ array([-0.10430201, -0.14665696, -0.15684866, -0.148169  , -0.08294298,
 
 ![](/assets/img/Spectral-Analysis-4_1.png){: .align-center}
 
-## References
+# References
 - Yuxin Chen et al. - Spectral Methods for Data Science: A Statistical Perspective (2021)
 
 {% endraw %}

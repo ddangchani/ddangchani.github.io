@@ -139,7 +139,7 @@ $$
 
 
 
-## References
+# References
 - A primer on kernel methods, J.Philippe Vert et al.
 - Linear Models in Statistics
 - Nonlinear Component Analysis as a Kernel Eigenvalue Problem, B.Scholkopf et al. 1998

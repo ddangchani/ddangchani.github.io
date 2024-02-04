@@ -117,7 +117,7 @@ $$
 
 가 gaussian distribution이 아니므로, 가능도함수를 직접 계산하는 방식으로 추론 및 예측하는 것은 어렵다. 이를 위해 non-Gaussian joint posterior를 근사하기 위한 Laplace approximation, Expectation propagation 혹은 MCMC approximation 등이 사용된다.
 
-## References
+# References
 - Gaussian Process for Machine Learning
 - Code on Github: https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/Linear%20Classification.ipynb
 {% endraw %}

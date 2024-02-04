@@ -137,7 +137,7 @@ display(dot)
 
 ![](/assets/img/Probabilistic%20Graphical%20Models.assets/스크린샷%202022-09-28%20오전%209.26.58.png){: .align-center width="50%" height="50%"}
 
-## References
+# References
 
 - Probabilistic Machine Learning - Advanced Topics
 - https://colab.research.google.com/github/probml/pyprobml/blob/master/notebooks/book2/04/student_pgm.ipynb#scrollTo=8FEYdsYCXYj5

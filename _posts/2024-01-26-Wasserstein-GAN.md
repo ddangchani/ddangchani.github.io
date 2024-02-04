@@ -122,7 +122,7 @@ $$
 실제로 결과를 확인해보면, gradient penalty를 부여하는 방법에서 더 안정적인 그래디언트 학습이 진행됨을 확인할 수 있다.
 
 
-## References
+# References
 - Arjovsky, M., Chintala, S., & Bottou, L. (2017). _Wasserstein GAN_ (arXiv:1701.07875). arXiv. [https://doi.org/10.48550/arXiv.1701.07875](https://doi.org/10.48550/arXiv.1701.07875)
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.
 - Xie, L., Lin, K., Wang, S., Wang, F., & Zhou, J. (2018). _Differentially Private Generative Adversarial Network_ (arXiv:1802.06739). arXiv. [https://doi.org/10.48550/arXiv.1802.06739](https://doi.org/10.48550/arXiv.1802.06739)

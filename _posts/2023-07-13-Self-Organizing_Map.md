@@ -91,7 +91,7 @@ accuracy_score(y_test, y_pred)
 # 0.9428026692087702
 ```
 
-## References
+# References
 - Wikipedia : https://en.wikipedia.org/wiki/Self-organizing_map
 - KOCW Manifold Learning 김충락 교수님 강의(현대통계학특강)
 - Code on Github : https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/Self%20Organizing%20map.ipynb

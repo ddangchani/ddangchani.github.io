@@ -103,7 +103,7 @@ $$
 
 
 
-## References
+# References
  - Real Analysis 4th edition, Royden
 
 {% endraw %}

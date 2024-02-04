@@ -336,7 +336,7 @@ $$\{m_\xi:\xi\in Y\}\sim poisson(\mathcal{M},\kappa)$$
     are mutually independent and the distribution of $m_\xi$ does not
     depend on $Y$.
 
-## References
+# References
 - 서울대학교 공간자료분석 강의노트
 - Handbook of Spatial Statistics
 

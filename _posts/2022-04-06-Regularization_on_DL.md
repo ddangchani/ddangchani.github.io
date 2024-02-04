@@ -86,7 +86,7 @@ Max-norm regularization 기법은 신경망에서 널리 사용되는 기법 중
 
 
 
-## References
+# References
 
 - Hands on Machine Learning, 2e.
 - https://hichoe95.tistory.com/58

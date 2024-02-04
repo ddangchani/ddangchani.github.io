@@ -195,7 +195,7 @@ pd.DataFrame(reg.coef_path_, index = X_train.columns).round(3)
 
 🖥 Full code on Github : https://github.com/ddangchani/project_ddareungi
 
-## References
+# References
 
 - https://datascienceschool.net/03%20machine%20learning/06.05%20정규화%20선형회귀.html
 {% endraw %}

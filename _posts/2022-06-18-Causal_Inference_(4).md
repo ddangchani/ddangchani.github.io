@@ -129,7 +129,7 @@ $$
 이렇게 문제를 정의해버리면 결국 causal learning은 classical한 지도학습 문제에 대응된다는 것을 확인할 수 있고, train data에 대해 학습시킨 분류기는 관측되지 않은 test 데이터셋에 대해서도 인과관계추론이 가능하다고 가정할 수 있다. 다만, causal learning 영역에서 지도학습이 독자적으로 사용되지는 않고, 이는 추가적인 연구가 필요한 영역이다.
 
 
-## References
+# References
 * Full code on Github : https://github.com/ddangchani/Velog/blob/main/Causal%20Inference/
 * Shanmugam, R. (2018). Elements of causal inference: Foundations and learning algorithms. _Journal of Statistical Computation and Simulation_, _88_(16), 3248–3248. [https://doi.org/10.1080/00949655.2018.1505197](https://doi.org/10.1080/00949655.2018.1505197)
 

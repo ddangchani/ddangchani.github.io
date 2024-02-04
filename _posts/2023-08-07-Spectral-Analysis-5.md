@@ -214,6 +214,6 @@ $$
 
 행렬 뿐 아니라 고차원 텐서(3차원 이상)에서도 spectral analysis를 이용하여 tensor completion 문제를 풀 수 있다. 다만, 표기와 내용이 복잡하기 때문에 여기서는 다루지 않도록 하겠다.
 
-## References
+# References
 - Yuxin Chen et al. - Spectral Methods for Data Science: A Statistical Perspective (2021)
 {% endraw %}

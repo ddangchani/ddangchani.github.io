@@ -133,7 +133,7 @@ Gradient descent 알고리즘은 총 반복횟수를 100회로 지정하였으�
 전체 코드는 아래 Github repository를 참고하면 된다.
 
 
-## References
+# References
 - Robust PCA by Manifold Optimization, Teng Zhang et al. (2018)
 - [https://github.com/ddangchani/RobustPCA](https://github.com/ddangchani/RobustPCA)
 

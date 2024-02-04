@@ -174,7 +174,7 @@ $$
 
 
 
-## References
+# References
 
 - Elements of Causal Inference, Jonas Peters et al.
 {% endraw %}

@@ -435,7 +435,7 @@ $$
 	여기서 $\mathrm{IQR}_{j}$는 $j$번째 변수의 interquartile range이다.
 
 
-## References
+# References
 - Hall, R., Rinaldo, A., & Wasserman, L. (n.d.). _Differential Privacy for Functions and Functional Data_.
 - Billingsley, P. (1995). _Probability and Measure_. Wiley.
 - McSherry, F., & Mironov, I. (2009). Differentially private recommender systems: Building privacy into the Netflix Prize contenders. _Proceedings of the 15th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining_, 627–636. [https://doi.org/10.1145/1557019.1557090](https://doi.org/10.1145/1557019.1557090)
