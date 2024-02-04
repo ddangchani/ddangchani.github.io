@@ -67,7 +67,7 @@ $$
 
 값의 근사적인 불편추정량<sup>unbiased estimator</sup>이 된다. 그러나 EPE의 bias-variance decomposition에서 알 수 있듯이, 불편추정량 수준으로 편향이 낮아지는 만큼 분산이 증가하는데, 각 training dataset($N$개의 sets)이 서로 매우 유사하기 때문이다(임의의 두 training set은 $N-2$개의 데이터가 동일하므로).
 
-<img src="/assets/img/Cross Validation.assets/Cross_Validation_1.png" alt="스크린샷 2022-04-03 오후 12.17.56" style="zoom:50%;" />
+<img src="/assets/img/Cross Validation.assets/Cross_Validation_1.png" alt="스크린샷 2022-04-03 오후 12.17.56"/>
 
 위 그래프는 어떤 분류 문제가 주어졌을 때 training set 크기에 따른 classifier의 $1-\text{Err}$ 값을 나타낸 가상의 learning curve이다. 여기서 training set의 크기는 $N\cdot\frac{K-1}{K}$, 즉 만일 $N=50$인 데이터셋에 5-fold CV를 적용할 경우 training set의 크기는 40이 된다. 이때 분류기의 성능은 크기가 100인 training set까지 증가하지만, 그 뒤로는 성능 증가폭이 미미하다. 반면, training set 크기가 50보다 작은 경우 해당 분류기는 $1-\text{Err}$을 제대로 추정하지 못하고(underestimation), 편향이 발생한다. 
 

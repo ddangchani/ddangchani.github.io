@@ -115,7 +115,7 @@ $$
 
 를 의미한다. 이때 주의해야 할 것은, $\rho(x)$가 이미 주어진 random forest ensemble에 대한 표본상관계수가 아니라는 점이다. $\rho$는 임의의 샘플에 대한 상관계수이므로, 이론적인(theoretical) 상관계수라고 보는 것이 더 적절하다. 통계학적으로는, 이는 training data $Z$와 $\theta$의 **sampling distribution**<sup>표본분포</sup>로부터의 상관관계를 의미하는 것이다. 즉 식 (2)에서의 variability는 각 split 단계에서의 sampling으로 인해 $Z$에 종속적일 뿐 아니라, $Z$를 sampling하는 것에서의 variability도 포함한다.
 
-<img src="/assets/img/RandomForest.assets/RandomForest_0.png" alt="스크린샷 2022-04-18 오후 4.49.27" style="zoom:50%;" />
+<img src="/assets/img/RandomForest.assets/RandomForest_0.png" alt="스크린샷 2022-04-18 오후 4.49.27"/>
 
 위 plot은 식 (2)의 correlation이 splitting variable의 개수와 어떤 관련이 있는지를 나타낸다. 즉, 같은 splitting variable을 사용하는 트리 간에는 예측 값 간에 유사성이 발생할 가능성이 높으므로, 변수 개수가 증가하면 그에 따라 트리 간의 correlation 역시 증가하게 된다. 반면, 개별 트리에 대한 분산의 경우 다음과 같이
 

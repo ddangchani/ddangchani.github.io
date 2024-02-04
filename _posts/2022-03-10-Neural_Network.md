@@ -91,17 +91,17 @@ Linear Classifier는 선형변환 $h=Wx$ 을 의미한다. 이때 선형변환�
 
 바로 위에서 설명한 것 처럼 Neural Network는 사상 $f:\mathbb R^N\to\mathbb R^M$ 을 근사할 수 있게 해주는데, 이를 neural network의 **universality**라고 한다. Universality theorem을 증명하는 방법은 여러가지가 알려져 있는데, *리즈표현정리*와 *한-바나흐 정리*를 이용한 방법이나 *스톤-바이어슈트라스 정리*를 이용하는 방법이 있다. 여기서는 간단한 추론을 통해 원리를 살펴보고자 한다. (더 수학적인 접근은 다른 글에서 별도로 다루도록 하겠다😅)
 
-<img src="/assets/img/Neural Network.assets/Neural_Network_2.png" alt="스크린샷 2022-03-12 오후 2.54.17" style="zoom:40%;" />
+<img src="/assets/img/Neural Network.assets/Neural_Network_2.png" alt="스크린샷 2022-03-12 오후 2.54.17"/>
 
 *(심지어 위처럼 어떻게 생성했는지조차 모르는 🐶같이 생긴 함수도 근사가능하다 )*
 
 쉬운 설명을 위해 가장 간단한 형태인 $f:\mathbb R\to \mathbb R$ 만을 고려하도록 하자. 우선, 활성함수를 선택해야하는데 한 가지 주목해야 할 것은 모든 종류의 활성함수는 계단함수<sup>step function</sup>처럼 보이게 할 수 있다는 것이다.
 
-<img src="/assets/img/Neural Network.assets/Neural_Network_3.png" alt="스크린샷 2022-03-12 오후 3.10.44" style="zoom:30%;" />
+<img src="/assets/img/Neural Network.assets/Neural_Network_3.png" alt="스크린샷 2022-03-12 오후 3.10.44"/>
 
 위 그림처럼 single layer network을 구성하고, 하나의 perceptron에서 $h(8x-4)$의 연산이 일어난다고 하자. 그러면 시그모이드 활성함수를 적용하면  input data $x$에 대해 오른쪽 그래프와 같은 연산이 일어난다. 그런데 만일 가중치와 편향값을 아래 그림처럼 크게(w=200, b=-100) 입력하면 perceptron 연산 $h(200x-100)$ 는 오른쪽 그래프와 같이 계단함수에 거의 근접하게 작동해버린다.
 
-<img src="/assets/img/Neural Network.assets/Neural_Network_4.png" alt="스크린샷 2022-03-12 오후 3.39.06" style="zoom:50%;" />
+<img src="/assets/img/Neural Network.assets/Neural_Network_4.png" alt="스크린샷 2022-03-12 오후 3.39.06"/>
 
 그렇다면, 각각의 hidden layer 노드들을 step function으로 생각하고 두 개의 노드 각각 $s_1, s_2$에서 step(*함수값이 jump*)이 일어난다고 하자. 또한 hidden layer에서 output layer로 이동할 때 역시 가중치가 적용되므로, 이를 각각 $w_1,w_2$로 생각하면
 

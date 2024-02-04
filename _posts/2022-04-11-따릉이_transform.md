@@ -106,7 +106,7 @@ pca_1.fit(X_train,y_train)
 pca_2.fit(X_train,y_train)
 ```
 
-<img src="/assets/img/따릉이_transform_0.png" alt="스크린샷 2022-04-12 오후 3.27.26" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform_0.png" alt="스크린샷 2022-04-12 오후 3.27.26"/>
 
 그러면 위와 같이 Interactive한 html 객체가 나오는데, 각 항목을 클릭하면 적용된 각 메서드에 대해 hyperparmeter나 설정을 어떻게 취했는지 파악할 수 있다. 이제 PCA가 적용된 결과를 파악해보도록 하자. Pipeline의 각 단계와 해당 단계에서의 attribute는 리스트로 저장되고 Pipelline 형성 단계에서 설정한 각 단계의 이름으로 이를 불러올 수 있는데(`.named_steps['이름']` attribute 이용), 아래와 같이 `pca_1`,`pca_2`에서의` explained_variance_ratio`를 파악할 수 있다. 이는 각 주성분이 전체 분산의 얼마만큼의 비율을 설명하는지 의미한다. 
 
@@ -156,7 +156,7 @@ pcr = Pipeline(
 pcr.fit(X_train, y_train)
 ```
 
-<img src="/assets/img/따릉이_transform_1.png" alt="스크린샷 2022-04-12 오후 3.53.18" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform_1.png" alt="스크린샷 2022-04-12 오후 3.53.18"/>
 
 위 코드를 통해, 그림과 같은 Pipeline을 갖는 Principal Component Regression method를 구현할 수 있다. 마찬가지로, `sklearn.cross_decomposition`의 `PLSRegression`을 이용하여 다음과 같은 PLS 파이프라인을 생성할 수 있다.
 
@@ -172,7 +172,7 @@ pls = Pipeline(
 pls.fit(X_train, y_train)
 ```
 
-<img src="/assets/img/따릉이_transform_2.png" alt="스크린샷 2022-04-12 오후 7.35.06" style="zoom:50%;" />
+<img src="/assets/img/따릉이_transform_2.png" alt="스크린샷 2022-04-12 오후 7.35.06"/>
 
 #### Comparison between PCR / PLS
 

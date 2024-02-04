@@ -49,7 +49,7 @@ plt.show()
 
 아래와 같은 훈련 데이터셋의 첫 번째 이미지(그래프)를 얻을 수 있다.
 
-<img src="/assets/img/simpe_nn_with_tf.assets/simpe_nn_with_tf_0.png" alt="스크린샷 2022-03-26 오후 2.28.16" style="zoom:50%;">
+<img src="/assets/img/simpe_nn_with_tf.assets/simpe_nn_with_tf_0.png" alt="스크린샷 2022-03-26 오후 2.28.16">
 
 ### Simple Feedfoward Neural Network
 
