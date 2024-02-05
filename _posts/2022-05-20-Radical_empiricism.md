@@ -3,9 +3,7 @@ title: "Radical empiricism"
 tags:
 - Opinion
 - Paper Review
-- Data Science
 - Machine Learning
-- Deep Learning
 category: Opinion
 use_math: true
 ---

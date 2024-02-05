@@ -3,6 +3,7 @@ title: Optimal Transport
 tags: 
 - Machine Learning
 - Optimization
+- Python
 category: ""
 use_math: true
 header: 

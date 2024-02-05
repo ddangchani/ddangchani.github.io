@@ -4,7 +4,7 @@ tags:
 - Project
 - Shrinkage method
 - Linear Regression
-- Modified Linear Methods
+- Python
 category: Project
 use_math: true
 header: 
