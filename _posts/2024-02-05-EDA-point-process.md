@@ -59,9 +59,17 @@ libpysal.examples.explain('SanFran Crime')
 
 ```
 
-![](/assets/img/스크린샷 2024-02-05 오후 2.30.43.png)
 
-위 그림과 같이 interactive한 화면으로 데이터 분포를 확인할 수 있다. 이제 데이터 파일을 로드해보자. SanFran Crime 데이터는 기본으로 다운로드 되어 있지 않으므로, 다음 코드를 실행시켜 다운로드하고, 파일명 리스트를 출력해보도록 하자.
+<iframe
+    width="100%"
+    height="400px"
+    src="https://geodacenter.github.io/data-and-lab//SFcrimes_vars/"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+        
+
+위와 같이 interactive한 화면으로 데이터 분포를 확인할 수 있다. 이제 데이터 파일을 로드해보자. SanFran Crime 데이터는 기본으로 다운로드 되어 있지 않으므로, 다음 코드를 실행시켜 다운로드하고, 파일명 리스트를 출력해보도록 하자.
 
 ```python
 # Download the data
