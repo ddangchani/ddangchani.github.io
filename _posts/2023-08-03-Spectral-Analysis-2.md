@@ -1,7 +1,6 @@
 ---
 title: Spectral Analysis - Low-rank matrix denoising
 tags:
-- 
 - Spectral Analysis
 - Matrix Denoising
 - Mathematics

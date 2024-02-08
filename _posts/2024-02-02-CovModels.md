@@ -12,7 +12,9 @@ header:
 
 # Covariance Models
 
-연속형 공간자료는 공간 $\mathcal{D}\subset \mathbb{R}^{d}$와 확률공간 $(\Omega,\mathcal{F},P)$ 에서 정의되는 일종의 확률과정 
+## Definition
+
+연속형 공간자료는 공간 $\mathcal{D}\subset \mathbb{R}^{d}$와 확률공간 $(\Omega,\mathcal{F},P)$ 에서 정의되는 일종의 확률과정<sup>stochastic process</sup>
 
 
 $$
@@ -22,7 +24,15 @@ Z(s,\omega),s\in \mathcal{D}, \omega\in\Omega
 
 $$
 
-으로 나타낼 수 있다. 공간자료의 종속성을 파악하기 위한 방법으로 공분산을 고려하는 방법이 있다. 이러한 방법들을 **covariance model**이라고 하며, 이번 글에서는 해당 방법들에 대해 다루어보도록 하겠다.
+으로 나타낼 수 있다. 이때 $Z(s,\omega)$의 output space를 $(S,\mathcal{S})$ 라고 하면(여기서 $\mathcal{S}$는 $\sigma$-field를 의미한다), 어떤 공간 지점 $s$를 고정한 $Z(s,\cdot)=Z(s)$ 는 확률공간 $(\Omega,\mathcal{F})$ 에서 $(S,\mathcal{S})$로의 사상이므로 이는 확률변수가 된다.
+
+일반적으로 확률과정
+$$
+Z(t,\omega):T\times (\Omega,\mathcal{F})\to (S,\mathcal{S)}
+$$
+을 $S^{T}$-valued random variable이라고도 하므로, 위 연속형 공간자료를 나타내는 (1차원) 확률과정은 $\mathbb{R}^\mathcal{D}$-valued random variable이라고 할 수 있을 것이다.
+
+공간자료의 종속성을 파악하기 위한 방법으로 공분산을 고려하는 방법이 있다. 이러한 방법들을 **covariance model**이라고 하며, 이번 글에서는 해당 방법들에 대해 다루어보도록 하겠다.
 
 ## Stationarity
 

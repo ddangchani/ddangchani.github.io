@@ -1,7 +1,6 @@
 ---
 title: Spectral Analysis - Perturbation Theory
 tags:
-- 
 - Spectral Analysis
 - Clustering
 - Mathematics

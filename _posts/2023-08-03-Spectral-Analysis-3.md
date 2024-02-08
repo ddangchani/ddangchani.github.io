@@ -1,7 +1,6 @@
 ---
 title: Spectral Analysis - Factor Models
 tags:
-- 
 - PCA
 - Dimension Reduction
 - Spectral Analysis

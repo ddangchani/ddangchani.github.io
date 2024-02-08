@@ -4,7 +4,7 @@ tags:
 - Clustering
 - Spectral Analysis
 - Manifold Learning
-- Network Analysis
+- python
 category: 
 use_math: true
 header: 
