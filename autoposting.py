@@ -197,9 +197,15 @@ for md_file in md_files:
 for md_file in md_files:
     with open(post_dir + md_file, 'r') as f:
         lines = f.readlines()
+    opened = False # check if the code block is open or not
     for i, line in enumerate(lines):
-        if line.startswith('```') and lines[i-1] != '\n':
-            lines.insert(i, '\n')
+        if line.startswith('```'):
+            if opened:
+                opened = False
+            else:
+                opened = True
+                if lines[i-1] != '\n':
+                    lines.insert(i, '\n')
 
     with open(post_dir + md_file, 'w') as f:
         f.writelines(lines)
