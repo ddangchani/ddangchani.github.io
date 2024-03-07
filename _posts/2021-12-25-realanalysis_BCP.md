@@ -62,15 +62,13 @@ $$
 가 성립한다. 따라서 고정점이 한 개 이상임은 알 수 있다. 만약 고정점이 두개, 즉 $u,v\in X$ 가 존재한다고 가정하면   
 
 $$
-
 0\leq \rho(u,v) = \rho(T(u),T(v))\leq c\rho(u,v)
-
 $$    
 
 인데, c는 1보다 작으므로 $\rho(u,v)=0$ 이어야 한다. 따라서, 오직 한개의 고정점이 존재한다.
  
 
-# References
+## References
  - Real Analysis 4th edition, Royden
 
 {% endraw %}
