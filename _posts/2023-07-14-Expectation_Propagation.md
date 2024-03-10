@@ -156,5 +156,5 @@ def predict_EP(X, y, nu, tau, x_new, kernel):
 # References
 - Gelman - Bayesian Data Analysis
 - Gaussian Process for Machine Learning
-- Code on Github : [https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/GP%20binary_EP.ipynb](https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/GP%20binary_EP.ipynb)
+- Code on [Github](https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/GP%20binary_EP.ipynb)
 {% endraw %}

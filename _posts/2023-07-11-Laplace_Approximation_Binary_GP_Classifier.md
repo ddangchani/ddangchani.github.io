@@ -177,5 +177,5 @@ def laplace_approximation(y, K, X, x_new=None, max_iter=100):
 
 # References
 - Gaussian Process for Machine Learning
-- Code on Github: https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/Linear%20Classification.ipynb
+- Code on [Github](https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/Linear%20Classification.ipynb)
 {% endraw %}

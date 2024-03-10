@@ -198,5 +198,5 @@ ytest = np.dot(Ktest.T, alpha) # prediction values
 
 # References
 - C. E. Rasmussen - Gaussian Process for Machine Learning
-- Code on GIthub : [https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/GP%20Regression.ipynb](https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/GP%20Regression.ipynb)
+- Code on [Github](https://github.com/ddangchani/Velog/blob/main/Statistical%20Learning/GP%20Regression.ipynb)
 {% endraw %}
