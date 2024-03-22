@@ -15,7 +15,7 @@ from google.analytics.data_v1beta.types import RunReportRequest
 
 property_id = 397192433
 
-not_to_include = ['/','/about/','/posts/','/tags/']
+not_to_include = ['/','/about/','/posts/','/tags/','/dsroadmap/']
 
 def run_report(property_id):
     # Instantiates a client
