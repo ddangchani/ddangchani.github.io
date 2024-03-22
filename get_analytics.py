@@ -1,8 +1,11 @@
 import os
 import json
 from urllib import parse
+import datetime
 # Set environment variables
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'githubblog-412702-55c0c9eefcfd.json'
+
+yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
 
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import DateRange
@@ -24,7 +27,7 @@ def run_report(property_id):
         property=f"properties/{property_id}",
         dimensions=[Dimension(name="pagePath")],
         metrics=[Metric(name="activeUsers")],
-        date_ranges=[DateRange(start_date="2023-01-01", end_date="2023-12-31")]
+        date_ranges=[DateRange(start_date="2023-01-01", end_date=yesterday.strftime("%Y-%m-%d"))],
     )
 
     response = client.run_report(request)
