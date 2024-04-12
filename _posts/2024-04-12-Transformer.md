@@ -9,6 +9,7 @@ header:
 ---
 
 # Transformer
+(Updated on 2024-04-12)
 
 트랜스포머<sup>Transformer</sup>는 자연어 처리 분야에서 최근 주를 이루고 있는 딥러닝 모델이다. 이전까지는 LSTM 등의 순환신경망을 주로 이용했지만, sequence-to-sequence function approximation에서 대형 트랜스포머들이 좋은 성능을 보이는 것이 알려지며 주요 모델로 자리잡게 되었다. 트랜스포머의 전반적인 구조는 다음과 같다.
 
@@ -18,7 +19,7 @@ header:
 
 ## Transformer block
 
-트랜스포머는 block 단위의 연산을 sequential하게 적용하여 결과를 도출해낸다. Input $X^{(0)}\in \mathbb{R}^{D\times N}$ 에 대한 output은 다음과 같다.
+트랜스포머는 block 단위의 연산을 sequential하게 적용하여 결과를 도출해낸다. Input $X^{(0)}\in \mathbb{R}^{D\times N}$ 에 대한 output은 다음과 같다. 여기서 $D$는 차원, $N$은 토큰의 개수(length of sequence)를 의미한다.
 
 
 $$
@@ -77,8 +78,39 @@ A_{n.n'} = \dfrac{\exp(\mathbf{x}_{n}^{\top}U_{k}^{\top}U_{q}\mathbf{x}_{n'})}{\
 $$
 
 이때 다음과 같이 용어를 정의한다.
-- query : $$\mathbf{q}_{n}= U_{q}\mathbf{x}_{n}$$
-- key : $$\mathbf{k}_{n}= U_{k}\mathbf{x}_{n}$$
+
+$$
+\begin{aligned}
+\text{query} & : \mathbf{q}_{n}= U_{q}\mathbf{x}_{n}\\
+\text{key} & : \mathbf{k}_{n}= U_{k}\mathbf{x}_{n}
+\end{aligned}
+$$
+
+$A$의 계산 과정의 분모에서 $U_k^\top U_q$가 계산되므로 query와 key의 차원이 $d_K$로 같아야 한다. 즉, $U_q,U_k \in \mathbb{R}^{d_K \times D}$ 이다.
+
+위 Attention matrix를 계산하는 과정에서, 차원에 대한 의존성을 줄이기 위해 다음과 같이 일종의 normalization을 취하기도 한다.
+
+$$
+A_{n.n'} = \dfrac{\exp(\mathbf{x}_{n}^{\top}U_{k}^{\top}U_{q}\mathbf{x}_{n'}/\sqrt{d_K})}
+{\sum_{n''=1}^{N}\exp(\mathbf{x_{n''}}^{\top}U_{k}^{\top}U_{q}\mathbf{x}_{n'}/\sqrt{d_K})}
+$$
+
+이러한 형태로 구성되는 Attention을 **scaled dot-product attention**이라고 부른다. $\sqrt{d_K}$로 나누어주는 이유는, 차원이 커질수록 내적값이 커지기 때문에, 이를 방지하기 위함이다. 이를 직관적으로 이해하면 다음과 같다.
+
+> $(\mathbf q_n)_r \sim N(0,1)$ 이라고 하면,
+>
+> $$
+> 
+> \begin{aligned}
+> {\rm Var}(\mathbf q_i^\top \mathbf k_j) &= \sum_{r=1}^{d_K} {\rm Var}((\mathbf q_n)_r (\mathbf k_n)_r)\\
+> &= \sum_{r=1}^{d_K} {\rm Var}((\mathbf q_n)_r) {\rm Var}((\mathbf k_n)_r)\\
+> &= d_k
+>
+> \end{aligned}
+>
+> $$
+>
+> 따라서, ${\rm Var}(d_K^{-1/2} \mathbf q_i^\top \mathbf k_j) = 1$ 이 되도록 scaling을 해주는 것이다.
 
 #### Self-attention vs RNN
 
@@ -151,6 +183,7 @@ $$
 
 \bar x_{d,n} = \text{LayerNorm}(X)_{d,n}= \frac{1}{\sqrt{\mathrm{Var}(\mathbf{x}_{n})}}\left(x_{d,n}- \frac{1}{D}\sum_{d=1}^{D}x_{d,n}\right)
 
+Layer normalization에서 주의할 것은, sequence의 토큰들에 대해 normalization을 수행하는 것이 아닌, 각 토큰의 차원에 대해 normalization을 수행한다는 것이다. 이는 batch normalization이나 CNN에서의 Layer normalization과 다른 점이다.
 
 $$
 
@@ -188,10 +221,25 @@ $$
 \mathbf{e}_{n}\end{pmatrix}
 \end{align}
 
-
 $$
 
-Vision transformer에서는 다음과 같은 선형변환을 사용하기도 한다.  (Dosovitskiy et al., 2020)
+혹은, positional embedding vector $\{p_l\} \in \mathbb{R}^{D}$을 더해주는 방식으로도 사용된다. 즉, $\mathbf{x}_{n}^{(0)}\leftarrow \mathbf{x}_{n}^{(0)}+p_{l}$ 이다.
+
+NLP 분야에서는 다음과 같은 형태의 sinusoidal positional encoding을 사용하기도 한다. (Vaswani et al., 2017)
+
+$$
+p_l =
+\begin{pmatrix}
+  \sin(l/10000^{2\cdot 1/D})\\
+  \cos(l/10000^{2\cdot 1/D})\\
+  \vdots\\
+  \sin(l/10000^{2\cdot \frac{D}{2}/D})\\
+  \cos(l/10000^{2\cdot \frac{D}{2}/D})
+\end{pmatrix}
+$$
+
+
+Vision transformer에서는 다음과 같은 선형변환을 사용하기도 한다. (Dosovitskiy et al., 2020)
 
 
 $$
@@ -201,11 +249,11 @@ $$
 
 $$
 
-where $\mathbf{p}_{n}=\text{vec(n-th patch)}$.
+여기서 $\mathbf{p}_{n}=\text{vec(n-th patch)}$ 이고, $W$는 학습 가능한 파라미터이다. 즉, 위치정보를 나타내는 벡터를 학습을 통해 얻는다.
 
 # References
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017, June 12). _Attention Is All You Need_. arXiv.Org. [https://arxiv.org/abs/1706.03762v7](https://arxiv.org/abs/1706.03762v7)
 - Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2020, October 2). _An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale_. International Conference on Learning Representations. [https://openreview.net/forum?id=YicbFdNTTy](https://openreview.net/forum?id=YicbFdNTTy)
-- https: // jalammar. github. io/ illustrated-transformer
+- [https://jalammar.github.io/illustrated-transformer](https://jalammar.github.io/illustrated-transformer)
 - 서울대학교 딥러닝의 통계적 이해 강의노트
