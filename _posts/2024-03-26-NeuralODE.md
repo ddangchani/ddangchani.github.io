@@ -230,7 +230,7 @@ $$
 그래디언트의 계산은 Neural ODE와 동일하게 Adjoint State Method를 사용하여 진행하면, FFJORD 모델을 학습할 수 있다.
 
 
-## References
+# References
 - He, K., Zhang, X., Ren, S., & Sun, J. (2015). _Deep Residual Learning for Image Recognition_ (arXiv:1512.03385). arXiv. [https://doi.org/10.48550/arXiv.1512.03385](https://doi.org/10.48550/arXiv.1512.03385)
 - Chen, R. T. Q., Rubanova, Y., Bettencourt, J., & Duvenaud, D. (2019). _Neural Ordinary Differential Equations_ (arXiv:1806.07366). arXiv. [https://doi.org/10.48550/arXiv.1806.07366](https://doi.org/10.48550/arXiv.1806.07366)
 - Grathwohl, W., Chen, R. T. Q., Bettencourt, J., Sutskever, I., & Duvenaud, D. (2018). _FFJORD: Free-form Continuous Dynamics for Scalable Reversible Generative Models_ (arXiv:1810.01367). arXiv. [https://doi.org/10.48550/arXiv.1810.01367](https://doi.org/10.48550/arXiv.1810.01367)
