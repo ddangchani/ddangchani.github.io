@@ -92,7 +92,7 @@ $$
 
 
 
-## References
+# References
 - K. P. Murphy, Probabilistic machine learning: an introduction. in Adaptive computation and machine learning. Cambridge, Massachusetts London, England: The MIT Press, 2022.
 - K. P. Murphy, Probabilistic machine learning: advanced topics. in Adaptive computation and machine learning series. Cambridge, Massachusetts: The MIT Press, 2023.
 - T. Chen, S. Kornblith, M. Norouzi, and G. Hinton, “A Simple Framework for Contrastive Learning of Visual Representations.” arXiv, Jun. 30, 2020. doi: 10.48550/arXiv.2002.05709.
