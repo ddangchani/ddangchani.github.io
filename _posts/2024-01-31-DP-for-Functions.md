@@ -1,5 +1,5 @@
 ---
-title: "[Paper Review] Differential Privacy for Functions"
+title: "Differential Privacy for Functions"
 tags: 
 - Paper Review
 - Differential Privacy

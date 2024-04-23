@@ -1,5 +1,5 @@
 ---
-title: "[Paper Review] Differentially Private Markov Random Field"
+title: "Differentially Private Markov Random Field"
 tags: 
 - Differential Privacy
 - PGM

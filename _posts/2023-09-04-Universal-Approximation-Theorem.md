@@ -1,5 +1,5 @@
 ---
-title: "[Paper Review] Universal Approximation Theorem"
+title: "Universal Approximation Theorem"
 tags:
   - Mathematics
   - Machine Learning
