@@ -223,7 +223,15 @@ $$
 
 $$
 
-혹은, positional embedding vector $\{p_l\} \in \mathbb{R}^{D}$을 더해주는 방식으로도 사용된다. 즉, $\mathbf{x}_{n}^{(0)}\leftarrow \mathbf{x}_{n}^{(0)}+p_{l}$ 이다.
+혹은, positional embedding vector $\{p_l\} \in \mathbb{R}^{D}$을 더해주는 방식으로도 사용된다. 즉, 
+
+$$
+
+\mathbf{x}_{n}^{(0)}\leftarrow \mathbf{x}_{n}^{(0)}+p_{l}
+
+$$
+
+이다.
 
 NLP 분야에서는 다음과 같은 형태의 sinusoidal positional encoding을 사용하기도 한다. (Vaswani et al., 2017)
 
