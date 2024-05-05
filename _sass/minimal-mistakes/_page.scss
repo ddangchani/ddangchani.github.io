@@ -414,8 +414,8 @@ body {
 
 .page__meta-sep::before {
   content: "\2022";
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
 }
 
 /*
@@ -492,6 +492,7 @@ body {
   .archive__subtitle {
     clear: both;
     border: 0;
+
   }
 
   + .taxonomy__section {

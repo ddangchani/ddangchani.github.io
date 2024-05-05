@@ -134,3 +134,50 @@ function removeQuery(tag) {
         updateQueryString();
     }
 }
+
+// Get the button and the post container
+var sortToggleButton = document.getElementById('sort-toggle');
+var postContainer = document.querySelector('.entries-list');
+
+// Function to sort by date
+function sortByDate() {
+  var posts = Array.from(postContainer.children);
+  posts.sort(function(a, b) {
+    var aDate = new Date(a.getAttribute('data-date'));
+    var bDate = new Date(b.getAttribute('data-date'));
+    return bDate - aDate;
+  });
+  posts.forEach(function(post) {
+    postContainer.appendChild(post);
+  });
+}
+
+// Function to sort by popularity
+function sortByPopularity() {
+  var posts = Array.from(postContainer.children);
+  posts.sort(function(a, b) {
+    var aPopularity = Number(a.getAttribute('data-popularity'));
+    var bPopularity = Number(b.getAttribute('data-popularity'));
+    return bPopularity - aPopularity;
+  });
+  posts.forEach(function(post) {
+    postContainer.appendChild(post);
+  });
+}
+
+// Add event listener to the button
+sortToggleButton.addEventListener('click', function() {
+  var currentSort = sortToggleButton.getAttribute('data-sort');
+  if (currentSort === 'date') {
+    sortByPopularity();
+    sortToggleButton.setAttribute('data-sort', 'popularity');
+    sortToggleButton.textContent = 'View';
+  } else {
+    sortByDate();
+    sortToggleButton.setAttribute('data-sort', 'date');
+    sortToggleButton.textContent = 'Date';
+  }
+});
+
+sortDateButton.addEventListener('click', sortByDate);
+sortPopularityButton.addEventListener('click', sortByPopularity);
