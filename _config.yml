@@ -20,7 +20,7 @@ title                    : "DDangchani's DataLog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Dangchan"
-description              : "데이터로 보다 안전한 세상을 만들고 싶습니다."
+description              : "Data science blog"
 url                      : https://ddangchani.github.io
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "ddangchani/ddangchani.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
