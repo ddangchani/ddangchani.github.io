@@ -1,11 +1,13 @@
 ---
-title: "Cox Process with HMC"
+title: "Cox Process with Hamiltonian Monte Carlo"
 tags: 
 - Spatial Statistics
 - Machine Learning
 - Bayesian
-- MCMC
+- HMC
 use_math: true
+header: 
+  teaser: /assets/img/coximg1.png
 ---
 
 # Cox Process
@@ -17,7 +19,10 @@ use_math: true
 Cox process는 intensity function $\lambda(x)$를 random process로 가정한다. Point process $X$가 $\mathbb R^2$에서 정의되어 있을 때, $X$가 Cox process라면 random intensity process $\Lambda = \{\Lambda(s): s\in \mathbb R^2\}$가 존재하여 다음과 같은 조건을 만족한다.
 
 $$
+
 X \mid \Lambda \sim \text{Poisson}(\Lambda)
+
+
 $$
 
 다만 $\Lambda$가 어떤 분포를 따르는지에 대해서는 추가적인 가정이 필요하다. 가장 일반적인 가정은 $\log \Lambda$가 Gaussian process를 따른다는 것이다. 이러한 가정을 **Log Gaussian Cox Process (LGCP)**라고 한다. 즉, 실변수 Gaussian process $Y(s)$가 존재하여 $\Lambda = \exp(Y)$이다.
@@ -27,7 +32,10 @@ $$
 LGCP가 stationary, isotropic이라고 가정하면 이는 mean function $\mu(s)$와 covariance function $C(s, t)$로 유일하게 결정된다. Isotropic LGCP의 경우, covariance function은 다음과 같이 정의된다.
 
 $$
+
 C(s, t) = \sigma^2 r(\Vert s-t\Vert )
+
+
 $$
 
 여기서 $r$은 correlation function이라고 하는데, 대표적인 correlation function으로는 exponential, Matern 등이 있다.
@@ -35,8 +43,11 @@ $$
 이러한 가정하에서, $K$개의 지점 $\{s_1,\ldots,s_K\}\subset \mathbb R^2$에서의 가능도는 다음과 같이 주어진다.
 
 $$
+
 \pi(\{s_k\}\mid \lambda(s)) = \exp\left(\int (1 - \lambda(s))ds \right) \prod_{k=1}^K \lambda(s_k)
 \tag{1}
+
+
 $$
 
 # HMC for LGCP
@@ -46,13 +57,19 @@ LGCP $(1)$의 가능도를 직접 최대화하는 것은 어렵기 때문에, �
 주어진 도메인 $S$를 $n\times n$개의 격자로 나누고, 각 지점의 중심점을 $c_1,\ldots,c_{n^2}$라고 하자. 각 격자에서의 log intensity는 $\mathbf Y = (Y(c_1),\ldots,Y(c_{n^2}))$로 나타낼 수 있고, 결합분포는 
 
 $$
+
 \mathbf Y \sim N(\mu\mathbf{1}, \sigma^2 \mathbf C)
+
+
 $$
 
 이다. 이때, $\mathbf 1$은 $n^2$개의 1로 이루어진 벡터이고, $\mathbf C$는 $n^2\times n^2$의 covariance matrix이다. 파라미터를 $\theta=(\mu, \sigma^2, \phi)$로 나타내면, log likelihood는 다음과 같이 주어진다.
 
 $$
+
 \log p(\{s_k\}\mid \theta, \mathbf Y) = \text{const} + \sum_i \left(y_in_i - A \exp(y_i)\right)
+
+
 $$
 
 여기서 $y_i = Y(c_i)$이고, $n_i$는 $i$번째 격자에서의 관측된 점의 개수이다. $A$는 각 격자의 넓이를 의미한다.
@@ -60,11 +77,14 @@ $$
 이로부터 log posterior는 다음과 같이 주어진다.
 
 $$
+
 \begin{aligned}
 \log p(\theta, \mathbf y\mid \{s_k\}) &\propto \rm{const} + \sum_i \left(y_in_i - A \exp(y_i)\right) \\
 &- \frac{1}{2}(\mathbf y - \mu \mathbf 1)^T \sigma^{-2} \mathbf C^{-1} (\mathbf y - \mu \mathbf 1) \\
 &- \frac{n^2}{2}\log \sigma^2 - \frac{1}{2} \log \det \mathbf C + \log {\rm prior}(\theta)
 \end{aligned}
+
+
 $$
 
 ## HMC
@@ -78,7 +98,10 @@ HMC는 [Metropolis-Hastings]({% post_url 2022-09-08-MCMC %}) 알고리즘을 개
 $\mathbf p, \mathbf q$를 각각 momentum<sup>운동량</sup>과 position<sup>위치</sup>으로 정의하자. 이때, Hamiltonian은 다음과 같이 주어진다. 
 
 $$
+
 H(\mathbf p, \mathbf q) = U(\mathbf q) + K(\mathbf p)
+
+
 $$
 
 여기서 $U(\mathbf q)$는 potential energy, $K(\mathbf p)$는 kinetic energy로 정의된다. 이러한 Hamiltonian이 사용될 수 있는 근거는, 베이지안 추론에서 $U(\mathbf q)$를 사후분포로 사용하고, $\bf q$를 파라미터로 사용할 수 있기 때문이다.
@@ -86,13 +109,19 @@ $$
 물리학에서는 위치에너지를 중력에 의한 것으로 생각하고, 운동에너지를 입자의 움직임에 의한 것으로 생각한다. 통계학에서는 위치에너지를
 
 $$
+
 U(\mathbf q) = -\log p(\theta, \mathbf y\mid \{s_k\})
+
+
 $$
 
 와 같이 (unnormalized) log distribution으로 정의하고, 운동에너지는
 
 $$
+
 K(\mathbf p) = \frac{1}{2} \mathbf p^T \Sigma^{-1} \mathbf p
+
+
 $$
 
 와 같이 정의한다. 이때, $\Sigma$은 *inverse mass matrix*라고 부르며 이는 positive definite matrix이다.
@@ -102,16 +131,22 @@ $$
 Hamiltonian dynamics는 다음과 같은 미분방정식으로 주어지는데, 이를 **Hamilton's equations**라고 한다.
 
 $$
+
 \begin{aligned}
 \frac{d\mathbf q}{dt} &= \frac{\partial H}{\partial \mathbf p} = \Sigma^{-1} \mathbf p \\
 \frac{d\mathbf p}{dt} &= -\frac{\partial H}{\partial \mathbf q} = -\nabla U(\mathbf q)
 \end{aligned}
+
+
 $$
 
 에너지 보존 법칙에 의해, Hamiltonian은 시간에 대해 불변인데, 이는 다음과 같이 확인할 수 있다.
 
 $$
+
 \frac{dH}{dt} = \sum_i \left[\frac{\partial H}{\partial q_i} \frac{dq_i}{dt} + \frac{\partial H}{\partial p_i} \frac{dp_i}{dt}\right] = \sum_i \left[\frac{\partial H}{\partial q_i} \frac{\partial H}{\partial p_i} - \frac{\partial H}{\partial p_i} \frac{\partial H}{\partial q_i}\right] = 0
+
+
 $$
 
 ### Leapfrog Integration
@@ -119,11 +154,14 @@ $$
 Discrete한 시점 $t$에서 Hamiltonian dynamics를 풀기 위해 **leapfrog integration**을 사용한다. 이는 일반적으로 미분방정식을 풀기 위해 사용되는 Euler method를 개선한 방법으로, 다음과 같이 주어진다.
 
 $$
+
 \begin{aligned}
 p_{t+\epsilon/2} &= p_t - \frac{\epsilon}{2} \nabla U(q_t) \\
 q_{t+\epsilon} &= q_t + \epsilon \Sigma^{-1} p_{t+\epsilon/2} \\
 p_{t+\epsilon} &= p_{t+\epsilon/2} - \frac{\epsilon}{2} \nabla U(q_{t+\epsilon})
 \end{aligned}
+
+
 $$
 
 즉, momentum을 반스텝만큼 업데이트하고, position을 한스텝만큼 업데이트한 후, momentum을 다시 반스텝만큼 업데이트한다. 이러한 과정을 반복하면, Hamiltonian dynamics를 풀 수 있다.
@@ -135,17 +173,23 @@ $$
 Target distribution은 다음과 같다.
 
 $$
+
 p(\mathbf p, \mathbf q) = \frac{1}{Z}\exp(-H(\mathbf p, \mathbf q)) = \frac{1}{Z}\exp(-U(\mathbf q) - K(\mathbf p))
+
+
 $$
 
 이때 관심 대상인 $\mathbf q=\theta$에 대한 주변분포는 다음과 같이 주어진다.
 
 $$
+
 \begin{aligned}
 p(\theta) &= \int p(\mathbf p, \mathbf q) d\mathbf p \\
 &= \frac{1}{Z_q}\exp(-U(\theta))\int \frac{1}{Z_p}\exp(-\frac{1}{2} \mathbf p^T \Sigma^{-1} \mathbf p) d\mathbf p \\
 &= \frac{1}{Z_q}\exp(-U(\theta))
 \end{aligned}
+
+
 $$
 
 이전 단계의 state가 $(\mathbf p_{t-1}, \mathbf q_{t-1})$이라고 하자. 이때, 다음 단계의 state를 $(\mathbf p_t, \mathbf q_t)$라고 하면, 다음과 같은 과정을 거친다.
@@ -213,7 +257,8 @@ fo = ps.io.open(f)
 data = gpd.GeoSeries.from_file(f)
 
 # Window size
-print(data.total_bounds) # [ 273959.66438135 4049220.9034143   972595.98957796 4359604.85977962]
+print(data.total_bounds) 
+# [ 273959.66438135 4049220.9034143   972595.98957796 4359604.85977962]
 
 # Plot data
 data.plot()
@@ -221,7 +266,8 @@ plt.axis('off')
 plt.show()
 ```
 
-![alt text](assets/coximg1.png)
+![alt text](/assets/img/coximg1.png)
+*Data Points*
 
 추론을 위해서는 주어진 공간을 격자로 나누어야 한다. 예시에서는 격자 크기를 `30000`으로 설정하였다.
 
@@ -246,7 +292,8 @@ plt.axis('off')
 plt.show()
 ```
 
-![alt text](assets/coximg2.png)
+![alt text](/assets/img/coximg2.png)
+*Data points and Grid*
 
 다음과 같이 각 격자에서의 점의 개수를 구할 수 있다. 또한, 이를 `pymc`에서 사용할 수 있게 `numpy` array로 변환한다.
 
@@ -296,11 +343,42 @@ with lgcp_model:
     trace = pm.sample(1000, tune=1000, cores=4, target_accept=0.95, progressbar=True)
 ```
 
-여기서는 `target_accept`를 0.95로 설정하였는데, 이는 MH algorithm에서의 acceptance rate를 0.95로 유지하기 위한 hyperparameter이다.
+여기서는 `target_accept`를 0.95로 설정하였는데, 이는 MH algorithm에서의 acceptance rate를 0.95로 유지하기 위한 hyperparameter이다. 코어 4개로 4개의 체인을 학습하였는데, 로컬 환경에서 대략 1시간 정도의 학습 시간이 소요되었다.
 
 ## Results
 
+![](/assets/img/Pasted image 20240507190549.png)
+*Trace Plot*
 
+다음 코드로 hyperparameter $\mu,\rho,\sigma^{2}$ 에 대한 사후분포를 확인할 수 있다. (위 그림 참고)
+
+```python
+pm.plot_trace(trace, var_names=['mu', 'rho', 'variance'])
+plt.tight_layout()
+plt.show()
+```
+
+Lengthscale $\rho$의 경우 $\mathrm{Unif}[1000,100000]$ 의 범위를 주었는데, MAP가 $100000$ 근방인 것으로 보아 범위를 더 크게 주어 학습시키는 것이 바람직할 것으로 보인다. 
+
+또한, 다음 코드로 log intensity $Y(s)$ 에 대한 사후 평균(posterior mean)을 구하고 이를 바탕으로 intensity plot을 그릴 수 있다.
+
+```python
+# Posterior mean
+posterior_mean = pm.find_MAP(model=lgcp_model, vars=[log_intensity])
+intensities = np.exp(posterior_mean['log_intensity'])
+
+# Plot intensities
+grid['intensity_MAP'] = intensities
+ax = grid.plot(column='intensity_MAP', figsize=(10, 5), legend=True, cmap='Blues')
+data.plot(ax=ax, color='red', markersize=5)
+grid.boundary.plot(ax=ax, linewidth=0.5)
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+```
+
+![](/assets/img/Pasted image 20240507190933.png)
+*Posterior mean Intensities*
 
 # References
 
