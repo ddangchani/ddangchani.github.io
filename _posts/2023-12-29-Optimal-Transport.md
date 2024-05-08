@@ -13,9 +13,11 @@ header:
 
 # Optimal Transport
 
+Optimal Transport는 하나의 확률분포를 다른 확률분포로 옮기는데 필요한 비용을 계산하는 문제라고 생각하면 된다. 즉, 두 확률분포 간의 거리를 측정하는 것이 주요 목적이다. 이러한 문제는 다양한 분야에서 활용되는데, 예를 들어 이미지 처리에서는 두 이미지 간의 색상 분포를 매핑하는데 사용할 수 있다. 이번 포스트에서는 Optimal Transport의 개념과 이를 구현하는 방법에 대해 알아보도록 하자.
+
 ## Distance of densities
 
-확률변수 $X,Y$가 분포 $P,Q$를 갖고, 확률밀도함수를 각각 $p,q$라고 하자. 확률밀도함수 간의 거리를 측정하는 방법에는 여러 종류가 있다. 대표적으로, 다음과 같은 것들이 있다.
+확률변수 $X,Y$가 분포 $P,Q$를 갖고, 확률밀도함수를 각각 $p,q$라고 하자. 확률밀도함수 간의 거리를 측정하는 방법에는 여러 종류가 있다. 대표적으로, 다음과 같은 것들이 있다. (각각 Total Variation, Hellinger distance, L2 distance 이고 $\mu$는 Lebesgue measure를 의미한다.)
 
 
 $$
@@ -30,11 +32,14 @@ L_{2}(p,q) &:= \int (p-q)^{2}d\mu
 $$
 
 그러나, 이러한 거리 개념들은 분포 간의 거리를 측정할 때 위치 정보를 반영하지 못한다는 문제가 있다. 아래 그림을 살펴보면 이해가 가능하다.
+
 ![](/assets/img/Pasted image 20231229142238.png)
 
 위 세 개의 밀도함수는 TV, Hellinger distance, L2 distance 등의 관점에선 서로 동일한 거리를 갖는다. 그러나, 1번과 2번의 밀도함수가 더 가깝다는 정보를 반영하고 싶다면 해당 거리함수는 사용할 수 없게 된다. 이러한 관점을 반영한 것이 *optimal transport*이다.
 
 ## 정의
+
+### Monge Optimal Transport
 
 함수 $T:\mathbb{R}^{d}\to \mathbb{R}^{d}$ 에 대해 분포 $P$의 push-forward를 다음과 같이 정의한다.
 
@@ -66,8 +71,17 @@ P=\delta_{0}\quad Q=\frac{1}{2}\delta_{-1}+ \frac{1}{2}\delta_{1}
 
 $$
 
-위 경우의 $P,Q$를 살펴보면, 두 분포의 support가 다르기 때문에 $P$에서 $Q$를 매핑하는 사상이 존재하지 않게 된다. 이를 해결하기 위해 다음 **Wasserstein** distance(or **Kantorovich** distance)을 이용하여 정의한다.
+여기서 $\delta_{x}$는 $x$에서의 Dirac delta function을 의미한다. 즉, $P$는 $x=0$에서 확률이 1이고, $Q$는 $x=-1,1$에서 확률이 1/2인 분포이다. 이러한 예시의 경우, 두 분포의 support가 다르기 때문에 $P$에서 $Q$를 매핑하는 사상이 존재하지 않게 된다. Monge optimal transport는 $P$의 support에 속하는 $x$를 $T(x)$로 옮기는 $T$를 찾는 것이기 때문에, 이러한 경우에는 optimal transport map이 존재하지 않는다. 이를 해결하기 위해,다음 **Wasserstein** distance(or **Kantorovich** distance)을 이용하여 optimal transport를 정의할 수 있다.
 
+### Wasserstein Distance
+
+Wasserstein distance에 대한 [wikipedia](https://en.wikipedia.org/wiki/Wasserstein_metric)의 직관적인 설명은 다음과 같다.
+
+> Intuitively, if each distribution is viewed as a unit amount of earth (soil) piled on $M$, the metric is the minimum "cost" of turning one pile into the other, which is assumed to be the amount of earth that needs to be moved times the mean distance it has to be moved.
+>
+> 직관적으로, 각 분포가 $M$에 쌓인 흙더미로 본다면, 이 거리(Wasserstein distance)는 한 더미를 다른 더미로 바꾸는 최소 "비용"이다. 이 비용은 이동해야 하는 토양의 양에 이동해야 하는 평균 거리를 곱한 것이라고 가정한다.
+
+이러한 설명에서 Wasserstein distance를 'earth mover distance'라고도 부르기도 한다. Wasserstein distance는 다음과 같이 정의된다.
 
 $$
 
@@ -190,5 +204,6 @@ Optimal transport는 이미지 데이터에 사용하기 좋은데, 한 이미�
 확인해보면, Target 이미지의 색상 분포가 기존 source 이미지에 학습된 것을 확인할 수 있다.
 
 # References
-- https://pythonot.github.io/
+- [https://pythonot.github.io/]([https://pythonot.github.io/])
 - Murphy, K. P. (2023). _Probabilistic machine learning: Advanced topics_. The MIT Press.
+- 서울대학교 M2480.001200 *인공지능을 위한 이론과 모델링* 강의노트

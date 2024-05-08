@@ -35,7 +35,7 @@ $$
 
 으로 주어진다. 만일 데이터가 선형경계로 분리될 수 있다고(separable) 가정하면, $y_if(x_i)>0$ 을 만족하는, 즉 실제 클래스와 예측 클래스가 일치하게끔 하는 함수 $f(x)$ 를 찾을 수 있다(아래 그림 참고).
 
-![](/assets/img/Support%20Vector%20Machine.assets/스크린샷%202022-04-22%20오후%205.01.41.png){: .align-center width="70%" height="70%"}
+![](/assets/img/Support Vector Machine.assets/Support_Vector_Machine_0.png){: .align-center width="70%" height="70%"}
 
 그런데, 이를 만족하는 함수 $f$는 한 개 이상 존재할 수 있으므로, 최적의 classifier을 선택하기 위해서는 다른 기준이 필요하다. 이때 위 그림과 같이 결정경계에서 가장 가까운 데이터들까지의 거리를 **margin**이라고 정의하면, margin $M$을 최대화하는 최적화문제
 
