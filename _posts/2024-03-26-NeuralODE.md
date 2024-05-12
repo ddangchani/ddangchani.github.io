@@ -3,6 +3,7 @@ title: "Neural ODE and FFJORD"
 tags: 
 - Deep Learning
 - Generative AI
+- Neural ODE
 use_math: true
 header: 
   teaser: /assets/img/Pasted image 20240326184125.png

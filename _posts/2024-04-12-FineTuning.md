@@ -3,6 +3,7 @@ title: Transfer Learning and Fine Tuning
 tags: 
 - Deep Learning
 - Self-supervised Learning
+- Transfer Learning
 category: ""
 use_math: true
 header:

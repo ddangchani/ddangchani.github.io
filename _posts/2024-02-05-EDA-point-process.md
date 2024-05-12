@@ -4,6 +4,7 @@ tags:
 - Spatial Statistics
 - PySAL
 - Python
+- Point Process
 use_math: true
 header: 
   teaser: /assets/img/Pasted image 20240205155448.png

@@ -197,7 +197,7 @@ body {
   }
   &__pagination {
     position: absolute;
-    z-index: 21;
+    z-index: auto;
     right: 20px;
     width: 11px !important;
     text-align: center;

@@ -2,6 +2,8 @@
 title: Transformer
 tags: 
 - Deep Learning
+- NLP
+- Transformer
 category: ""
 use_math: true
 header: 

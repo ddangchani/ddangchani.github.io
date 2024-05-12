@@ -2,7 +2,7 @@
 title: "Cox Process with Hamiltonian Monte Carlo"
 tags: 
 - Spatial Statistics
-- Machine Learning
+- Point Process
 - Bayesian
 - HMC
 use_math: true
