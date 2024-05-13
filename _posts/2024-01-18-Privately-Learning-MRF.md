@@ -266,7 +266,7 @@ The implementation algorithm is based on the private FW algorithm, and it satisf
 #### Theorem (Wu et al., 2019)
 There exists an algorithm that learns the structure of a pairwise graphical model w.p. at least $\frac{2}{3}$. It requires $n=O \left(\dfrac{\lambda^{2}k^{4}e^{14\lambda}\log(pk)}{\eta^{4}}\right)$ samples.
 
-From the theorem above, for $(\epsilon-\delta)$-DP structure learning algorithm the sample size is given as follows.
+From the theorem above, for $(\epsilon,\delta)$-DP structure learning algorithm the sample size is given as follows.
 
 
 $$
