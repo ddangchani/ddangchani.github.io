@@ -6,6 +6,7 @@ import datetime
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'githubblog-412702-55c0c9eefcfd.json'
 
 yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
+recent_month = datetime.datetime.now() - datetime.timedelta(days=30)
 
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import DateRange
@@ -17,7 +18,7 @@ property_id = 397192433
 
 not_to_include = ['/','/about/','/posts/','/tags/','/dsroadmap/']
 
-def run_report(property_id):
+def run_report(property_id, start_date='2023-01-01', filename='_data/analytics.json'):
     # Instantiates a client
     client = BetaAnalyticsDataClient()
 
@@ -27,7 +28,7 @@ def run_report(property_id):
         property=f"properties/{property_id}",
         dimensions=[Dimension(name="pagePath")],
         metrics=[Metric(name="activeUsers")],
-        date_ranges=[DateRange(start_date="2023-01-01", end_date=yesterday.strftime("%Y-%m-%d"))],
+        date_ranges=[DateRange(start_date=start_date, end_date=yesterday.strftime("%Y-%m-%d"))],
     )
 
     response = client.run_report(request)
@@ -46,7 +47,7 @@ def run_report(property_id):
                 "count": count
             }
 
-    with open('_data/analytics.json', 'w', encoding='utf-8') as f:
+    with open(filename, 'w', encoding='utf-8') as f:
         json.dump(dict_response, f, ensure_ascii=False)
 
     print("Finished")
@@ -54,3 +55,4 @@ def run_report(property_id):
 # Run the report
 
 run_report(property_id)
+run_report(property_id, recent_month.strftime("%Y-%m-%d"), '_data/analytics_month.json')
