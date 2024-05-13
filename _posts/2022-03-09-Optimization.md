@@ -9,7 +9,6 @@ use_math: true
 header: 
  teaser: /assets/img/Optimization_1.png
 ---
-{% raw %}
 # Optimization
 
 최적화<sup>optimization</sup>과 관련된 내용은 통계학 및 머신러닝 뿐 아니라 다른 자연과학, 사회과학 분야들에서 널리 사용된다. 머신러닝 영역에서 최적화 문제는 다음 식 한줄로 표현할 수 있다.
@@ -215,10 +214,21 @@ $$
 
 ## Practice
 
-코드 연습은 아니지만 아래에 있는 프로그램을 통해 앞서 살펴본 일차 최적화 방법들의 최적화 경로 및 속도를 파악할 수 있다. 마우스로 한 지점을 누르면 그 점에서부터 왼쪽의 검은 점(전역최소)과 오른쪽 하얀점(지역최소)으로의 최적화를 시행한다. 각 최적화 방법들을 비교해보자😃
+코드 연습은 아니지만 아래에 있는 프로그램을 통해 앞서 살펴본 일차 최적화 방법들의 최적화 경로 및 속도를 파악할 수 있다. 마우스로 한 지점을 누르면 그 점에서부터 왼쪽의 하얀 부분 (전역최소)와 오른쪽 하얀 부분(지역최소)으로의 최적화를 시행한다. 각 최적화 방법들을 비교해보자😃
+
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="QWOXbGx" data-user="dangchan" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 1em; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/dangchan/pen/QWOXbGx">
+  Untitled</a> by dangchan (<a href="https://codepen.io/dangchan">@dangchan</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+
+<br>
+
 
 # References
 
 - An overview of gradient descent optimization algorithms, S.Ruder
 - Lecture note of "Deep Learning for Computer Vision", UMich EECS
-{% endraw %}
+- SGD code from [here](https://gist.github.com/EmilienDupont/aaf429be5705b219aaaf8d691e27ca87)
