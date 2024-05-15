@@ -184,10 +184,5 @@ checkbox.addEventListener('change', function() {
   // trans();
   document.body.classList.toggle('dark');
   localStorage.setItem('theme', this.checked ? 'dark' : 'light');
-
-  // 테마가 변경되면 Utterances의 테마도 변경합니다.
-  var theme = this.checked ? 'dark' : 'light';
-  var script = document.querySelector('#utterances-comments script');
-  script.setAttribute('theme', 'github-' + theme);
 });
 </script>
