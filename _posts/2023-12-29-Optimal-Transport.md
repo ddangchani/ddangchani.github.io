@@ -4,6 +4,7 @@ tags:
 - Machine Learning
 - Optimization
 - Python
+- POT
 category: ""
 use_math: true
 header: 
