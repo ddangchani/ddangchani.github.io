@@ -168,14 +168,15 @@ function sortByPopularity() {
 // Add event listener to the button
 sortToggleButton.addEventListener('click', function() {
   var currentSort = sortToggleButton.getAttribute('data-sort');
+  var iconElement = sortToggleButton.querySelector('.sort-text i');
   if (currentSort === 'date') {
     sortByPopularity();
     sortToggleButton.setAttribute('data-sort', 'popularity');
-    sortToggleButton.textContent = 'View';
+    iconElement.className = 'fas fa-fire';
   } else {
     sortByDate();
     sortToggleButton.setAttribute('data-sort', 'date');
-    sortToggleButton.textContent = 'Date';
+    iconElement.className = 'fas fa-calendar-alt';
   }
 });
 

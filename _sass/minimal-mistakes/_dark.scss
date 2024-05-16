@@ -53,14 +53,20 @@
 
         .archive__subtitle {
             color: $dark-text-color !important;
+            .sort {
+                background-color: $dark-background-color !important;
+                color: $dark-text-color !important;
+                border: 1px solid $dark-border-color !important;
+            }
+
             .sort-toggle {
                 background-color: $dark-background-color !important;
                 color: $dark-text-color !important;
 
-                &:hover {
-                    background-color: $dark-background-color !important;
-                    color: $dark-text-color !important;
-                }
+                // &:hover {
+                //     background-color: $dark-background-color !important;
+                //     color: $dark-text-color !important;
+                // }
             }
         }
 
