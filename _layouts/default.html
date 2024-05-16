@@ -10,12 +10,9 @@
 -->
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
-
     {% include head.html %}
     {% include head/custom.html %}
     {% include mathjax.html %}
-    {% include scripts.html %}
-
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
 
@@ -40,7 +37,7 @@
       </footer>
     </div>
 
-
+    {% include scripts.html %}
 
     <aside class="sidebar__home">
       <a href="/posts">
