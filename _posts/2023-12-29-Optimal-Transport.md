@@ -10,7 +10,6 @@ use_math: true
 header: 
   teaser: /assets/img/Pasted image 20231229142238.png
 ---
-(Revision Date : 2024-05-17)
 
 # Optimal Transport
 

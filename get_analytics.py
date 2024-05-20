@@ -27,7 +27,7 @@ def run_report(property_id, start_date='2023-01-01', filename='_data/analytics.j
     request = RunReportRequest(
         property=f"properties/{property_id}",
         dimensions=[Dimension(name="pagePath")],
-        metrics=[Metric(name="activeUsers")],
+        metrics=[Metric(name="screenPageViews")],
         date_ranges=[DateRange(start_date=start_date, end_date=yesterday.strftime("%Y-%m-%d"))],
     )
 
@@ -40,6 +40,9 @@ def run_report(property_id, start_date='2023-01-01', filename='_data/analytics.j
         link = row.dimension_values[0].value
         count = int(row.metric_values[0].value)
         link_parsed = parse.unquote(link, encoding='utf-8')
+
+        # replace ' ' with '%20'
+        link = link.replace(' ', '%20')
         
         if link_parsed not in not_to_include:
             dict_response[link] = {
