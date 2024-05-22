@@ -52,7 +52,7 @@ $$
 
 ## Theorem for Width-bounded ReLU
 
-임의의 르벡적분가능한 $f:\mathbb{R}^{n}\to \mathbb{R}$ 과 임의의 양수 $\epsilon>0$ 에 대해, 너비<sup>width</sup>가 $d_{m}\leq n+4$ 인 완전연결 ReLU 신경망 $F$가 존재하여 다음을 만족한다.
+임의의 [르벡적분가능]({% post_url 2021-12-03-실해석학5 %})한 $f:\mathbb{R}^{n}\to \mathbb{R}$ 과 임의의 양수 $\epsilon>0$ 에 대해, 너비<sup>width</sup>가 $d_{m}\leq n+4$ 인 완전연결 ReLU 신경망 $F$가 존재하여 다음을 만족한다.
 
 $$
 
@@ -230,12 +230,22 @@ $$
 4. $j=n+1,n+2$에 대해 $R_{i,j,\mathcal{N}_{k}}$ 과 관련된 가중치들은 모두 0이다.
 5. 첫번째 레이어(입력 레이어를 제외한)의 $n+3$번째 노드 $R_{1,n+3,\mathcal{N}_{k}}$ 는 다음을 만족한다.
 	- $0\leq R_{1,n+3,\mathcal{N}_{k}}(x)\leq 1, \quad \forall x$ 
-	- $$R_{1,n+3,\mathcal{N}_{k}}(x)=0$$ if $$(x_{1},\ldots,x_{k-1})\notin [a_{1},b_{1}]\times\cdots\times[a_{k-1},b_{k-1}]$$
-	- $$R_{1,n+3,\mathcal{N}_{k}}(x)=1$$ if $$(x_{1},\ldots,x_{k-1})\in [a_{1}+\delta(b_{1}-a_{1}),b_{1}-\delta(b_{1}-a_{1})]\times\cdots\times[a_{k-1}+\delta(b_{k-1}-a_{k-1}),b_{k-1}-\delta(b_{k-1}-a_{k-1})]$$
-6. 마지막 레이어의 $n+3$번째 노드 $R_{4,n+3,\mathcal{N}_{k}}$ 는 다음을 만족한다.
+	- $$R_{1,n+3,\mathcal{N}_{k}}(x)=0$$ if 
+  		
+		$$(x_{1},\ldots,x_{k-1})\notin [a_{1},b_{1}]\times\cdots\times[a_{k-1},b_{k-1}]$$
+
+	- $$R_{1,n+3,\mathcal{N}_{k}}(x)=1$$ if 
+  
+		$$(x_{1},\ldots,x_{k-1})\in [a_{1}+\delta(b_{1}-a_{1}),b_{1}-\delta(b_{1}-a_{1})]\times\cdots\times[a_{k-1}+\delta(b_{k-1}-a_{k-1}),b_{k-1}-\delta(b_{k-1}-a_{k-1})]$$
+1. 마지막 레이어의 $n+3$번째 노드 $R_{4,n+3,\mathcal{N}_{k}}$ 는 다음을 만족한다.
 	- $0\leq R_{4,n+3,\mathcal{N}_{k}}(x)\leq 1, \quad \forall x$ 
-	- $$R_{4,n+3,\mathcal{N}_{k}}(x)=0$$ if $$(x_{1},\ldots,x_{k-1})\notin [a_{1},b_{1}]\times\cdots\times[a_{k-1},b_{k-1}]$$
-	- $$R_{4,n+3,\mathcal{N}_{k}}(x)=1$$ if $$(x_{1},\ldots,x_{k-1})\in [a_{1}+\delta(b_{1}-a_{1}),b_{1}-\delta(b_{1}-a_{1})]\times\cdots\times[a_{k}+\delta(b_{k}-a_{k}),b_{k}-\delta(b_{k}-a_{k})]$$
+	- $$R_{4,n+3,\mathcal{N}_{k}}(x)=0$$ if 
+  		
+		$$(x_{1},\ldots,x_{k-1})\notin [a_{1},b_{1}]\times\cdots\times[a_{k-1},b_{k-1}]$$
+
+	- $$R_{4,n+3,\mathcal{N}_{k}}(x)=1$$ if 
+		
+		$$(x_{1},\ldots,x_{k-1})\in [a_{1}+\delta(b_{1}-a_{1}),b_{1}-\delta(b_{1}-a_{1})]\times\cdots\times[a_{k}+\delta(b_{k}-a_{k}),b_{k}-\delta(b_{k}-a_{k})]$$
 
 즉, SRU에서는 각 레이어의 처음 $n+2$개 노드들은 output이 일정한 *memory element*인 반면, 나머지 두 노드는 *computation element*으로 기능한다.
 

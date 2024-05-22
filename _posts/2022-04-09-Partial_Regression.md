@@ -109,5 +109,5 @@ FWL Theorem이라고도 하는 위 정리는 앞서 설명한 Full Model과 Redu
 # References
 
 - https://datascienceschool.net/
-- The Elements of Statistical Learning
+- The Hastie, T., Tibshirani, R., Friedman, J. H., & Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction (Vol. 2, pp. 1-758). New York: springer.
 {% endraw %}

@@ -140,5 +140,7 @@ $$
    $$
    이 정의된다.
 
+# References
+- Royden, H., & Fitzpatrick, P. M. (2010). Real analysis. China Machine Press.
 
 {% endraw %}

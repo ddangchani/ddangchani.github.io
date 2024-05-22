@@ -140,7 +140,7 @@ $$
 
 $$
 
-에너지 보존 법칙에 의해, Hamiltonian은 시간에 대해 불변인데, 이는 다음과 같이 확인할 수 있다.
+*에너지 보존 법칙*과 유사하게 Hamiltonian은 시간에 대해 불변인데, 이는 다음과 같이 확인할 수 있다.
 
 $$
 
@@ -151,7 +151,7 @@ $$
 
 ### Leapfrog Integration
 
-Discrete한 시점 $t$에서 Hamiltonian dynamics를 풀기 위해 **leapfrog integration**을 사용한다. 이는 일반적으로 미분방정식을 풀기 위해 사용되는 Euler method를 개선한 방법으로, 다음과 같이 주어진다.
+Discrete한 시점 $t$에서 Hamiltonian dynamics를 풀기 위해 **leapfrog integration**을 사용한다. 이는 일반적으로 미분방정식을 풀기 위해 사용되는 [Euler method](https://en.wikipedia.org/wiki/Euler_method)를 개선한 방법으로, 다음과 같이 주어진다.
 
 $$
 

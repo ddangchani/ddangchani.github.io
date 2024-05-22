@@ -1,5 +1,5 @@
 ---
-title: "[실해석학] Banach Fixed Point Theorem"
+title: "Banach Fixed Point Theorem"
 tags:
 - Mathematics
 - Real Analysis
@@ -25,7 +25,7 @@ $$
 **Banach Contradiction Principle**   
 완비거리공간 X와 축약사상 $T:X\to X$ 에 대해, T의 고정점은 **단 하나**만 존재한다.    
 
-<증명>   
+**pf.**
 축약사상의 정의를 만족하는 $0\leq c<1$ 을 잡고, X의 원소 $x_0$을 택하자. 이를 바탕으로 수열을 구성하는데, $x_1 = T(x_0)$ 으로 시작하여 $x_k=T(x_{k-1})$ 의 방식으로 구성하자. 그러면 $T$의 상(image)가 X의 부분집합이므로 수열 {$x_n$} 은 X에 속한다. 이때, 축약사상 성질에 의해 다음이 성립한다.   
 
 $$
@@ -68,7 +68,7 @@ $$
 인데, c는 1보다 작으므로 $\rho(u,v)=0$ 이어야 한다. 따라서, 오직 한개의 고정점이 존재한다.
  
 
-## References
- - Real Analysis 4th edition, Royden
+# References
+ - Royden, H., & Fitzpatrick, P. M. (2010). Real analysis. China Machine Press.
 
 {% endraw %}

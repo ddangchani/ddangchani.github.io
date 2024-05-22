@@ -1,5 +1,5 @@
 ---
-title: "[실해석학] Metric Spaces"
+title: "Metric Spaces"
 tags:
 - Mathematics
 - Real Analysis
@@ -132,6 +132,6 @@ $$\{N(x_k,\epsilon)\}_{k=1}^n\quad \text{and} \quad E\subset\bigcup_{k=1}^n N(x_
 
 
 # References
- - Real Analysis 4th edition, Royden
+ - Royden, H., & Fitzpatrick, P. M. (2010). Real analysis. China Machine Press.
 
 {% endraw %}

@@ -109,7 +109,7 @@ $$
 
 # References
 
-- The Elements of Statistical Learning, 2e.
+- The Hastie, T., Tibshirani, R., Friedman, J. H., & Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction (Vol. 2, pp. 1-758). New York: springer., 2e.
 
  
 {% endraw %}

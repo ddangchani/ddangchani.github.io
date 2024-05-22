@@ -174,7 +174,9 @@ c.PDFExporter.latex_command = ['xelatex', '{filename}']
 
 ## html > PDF 출력 시 글자 잘림
 
-만일 Latex 환경 설치에 어려움이 있는 경우, 대부분 우선 다음 명령어로 노트북 파일을 html로 바꾼 뒤, 웹브라우저에 접속해서 해당 파일을 프린트하여 pdf로 변환하게 된다. 
+만일 Latex 환경 설치에 어려움이 있는 경우, jupyter notebook을 html로 바꾼 뒤 pdf로 변환하는 방법을 사용할 수 있다.
+
+우선 다음 명령어로 노트북 파일을 html로 바꾼 뒤, 웹브라우저에 접속해서 해당 파일을 프린트하여 pdf로 저장하자.
 
 ```zsh
 jupyter nbconvert --to html notebook.ipynb

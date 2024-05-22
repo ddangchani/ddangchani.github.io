@@ -1,5 +1,5 @@
 ---
-title : "[실해석학] 위상공간의 분리(Separation)"
+title : "위상공간의 분리(Separation)"
 tags:
 - Mathematics
 - Real Analysis
@@ -98,6 +98,6 @@ $$
 
 
 # References
- - Real Analysis 4th edition, Royden
+ - Royden, H., & Fitzpatrick, P. M. (2010). Real analysis. China Machine Press.
 
 {% endraw %}

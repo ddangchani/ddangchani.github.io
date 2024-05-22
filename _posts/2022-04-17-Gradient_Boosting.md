@@ -290,6 +290,6 @@ $$
 
 # References
 
-- The Elements of Statistical Learning
+- The Hastie, T., Tibshirani, R., Friedman, J. H., & Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction (Vol. 2, pp. 1-758). New York: springer.
 - Greedy Function Approximation: A Gradient Boosting Machine, Jerome Friedman, 1999
 {% endraw %}

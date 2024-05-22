@@ -218,7 +218,7 @@ $$
 
 $$
 
-\mathrm{E}\left[\frac{{Z(s+h)-Z(s)}}{h} -Z'(s)\right]^{2}\to 0\quad \text{as}\quad \left\vert h\right\vert\to 0
+\mathrm{E}\left[\frac{Z(s+h)-Z(s)}{h} -Z'(s)\right]^{2}\to 0\quad \text{as}\quad \left\vert h\right\vert\to 0
 
 
 $$

@@ -119,7 +119,7 @@ Linear Classifier는 선형변환 $h=Wx$ 을 의미한다. 이때 선형변환�
 
 - Lecture note of "Deep Learning for Computer Vision", UMich EECS
 
-- Elements of Statistical Learning
+- Hastie, T., Tibshirani, R., Friedman, J. H., & Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction (Vol. 2, pp. 1-758). New York: springer.
 - 'A visual proof that neural nets can compute any function', M.Nielsen, 2019.
 
 {% endraw %}

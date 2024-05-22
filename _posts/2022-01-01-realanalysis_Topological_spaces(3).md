@@ -1,5 +1,5 @@
 ---
-title: "[실해석학] 위상공간에서 연속사상(Continuous mapping)"
+title: "위상공간에서 연속사상(Continuous mapping)"
 tags:
 - Mathematics
 - Real Analysis
@@ -17,7 +17,7 @@ use_math: true
 마찬가지로, $X$의 모든 점에서 연속이면 $f$를 연속사상이라고 한다. 실연속함수의 성질과 유사하게, 위상공간의 연속사상에 대해서도 다음 명제가 성립한다.    
 
 **명제 10** 위상공간에서의 사상 $f:X\to Y$ 가 연속인 것과 $Y$의 임의의 열린부분집합 $\mathcal{O}$ 에 대해 $f^{-1}(\mathcal{O})$ 가 $X$의 열린부분집합인 것은 **동치**이다.   
-> $(\because)$ 이전 포스팅에서 살펴본 [명제 1](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(1))로부터 열림을 보이는 것은 각 점에 대한 근방의 존재성과 동치임을 알 수 있다. 이때 위상공간의 연속사상은 근방을 통해 정의했으므로, 위 동치관계는 쉽게 보일 수 있다.   
+> $(\because)$ 이전 게시글에서 살펴본 [명제 1](https://ddangchani.github.io/mathematics/realanalysis_Topological_spaces(1))로부터 열림을 보이는 것은 각 점에 대한 근방의 존재성과 동치임을 알 수 있다. 이때 위상공간의 연속사상은 근방을 통해 정의했으므로, 위 동치관계는 쉽게 보일 수 있다.   
 
 #### 토폴로지의 강약관계
 어떤 집합 $X$에 대한 토폴로지는, $X$의 부분집합들을 모아놓은 것으로 정의했다. 만약 $\mathcal{T_1},\mathcal{T_2}$ 가 $X$의 토폴로지이고 이때 $\mathcal{T_1}\subseteq\mathcal{T_2}$ 가 성립한다면 $\mathcal{T_2}$ 를 더 **약한**(weaker), 반대로 $\mathcal{T_1}$ 을 더 **강한**(stronger) 토폴로지라고 한다. 
@@ -104,6 +104,6 @@ $$
 
 
 # References
- - Real Analysis 4th edition, Royden
+ - Royden, H., & Fitzpatrick, P. M. (2010). Real analysis. China Machine Press.
 
 {% endraw %}
