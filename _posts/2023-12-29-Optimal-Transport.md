@@ -52,25 +52,25 @@ $$
 그렇다면, 최적의 매칭을 찾는 것은 다음과 같은 최적화 문제로 나타낼 수 있다.
 
 $$
-\min_{\sigma}E(\sigma ) = \sum_{i=1}^{n}c(\mathbf{x}_{i},\mathbf{y}_{\sigma_{j}}) \tag{OM}
+\min_{\sigma}E(\sigma ) = \sum_{i=1}^{n}c(\mathbf{x}_{i},\mathbf{y}_{\sigma_{i}}) \tag{OM}
 $$
 
-이는 $n!$개의 $\sigma$를 탐색하여 풀 수 있지만, [Hungarian algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm)을 이용하면 $O(n^{3})$ 시간에 풀 수 있는 문제가 된다.
+이는 $n!$개의 $\sigma$를 탐색하여 풀 수 있지만, [Hungarian algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm)을 이용하면 $O(n^{3})$ 시간에 풀 수 있는 문제가 된다는 것이 알려져 있다.
 
 ## Optimal Transport
 
 앞서 살펴본 optimal matching problem (식 $(\mathrm{OM})$)을 일반적인 상황으로 확장한 것이 **optimal transport** 문제라고 생각하면 된다. Optimal matching은 다음과 같은 상황에서 최적화 문제가 잘 정의되지 않기 때문이다.
 
 1. 두 집합의 원소의 개수가 동일하지 않을 때
-2. 연속형 측도를 다룰 때 : 두 확률밀도함수 간의 매칭
+2. 연속형 측도를 다룰 때 : 두 **확률밀도함수** 간의 optimal matching을 어떻게 정의할 것인가?
 
 ### Mass Splitting
 
-다음과 같은 예시 상황을 생각해보자. 우선, $n$명의 사람과 $n$명의 작업이 존재하여, 각 작업을 효율적으로 처리하고자 한다. 이때, 다음과 같이 나타내자.
+Optimal transport를 쉽게 이해하기 위해 다음과 같은 예시 상황을 생각해보자. 우선, $n$명의 사람(worker)과 $n$개의 작업(task)이 존재하여, 각 작업을 효율적으로 처리하고자 한다. 이때, 다음과 같이 각 사람과 작업에 대한 능력을 정의할 수 있다.
 
 - $\mathbf{x}_{i}$ : $i$번째 사람의 작업 수행 능력
 - $\mathbf{y}_{j}$ : $j$번째 작업이 요구하는 능력
-- *여기서 능력이란, 단위 시간 내 일을 처리하는 능력이라기보다는, 종류를 의미한다고 보면 적절하다 (ex. 청소, 분해, 조립 등)* 
+- *여기서 능력이란, 단위 시간 내 일을 처리하는 능력이라기보다는, 종류를 의미한다고 보면 적절하다 (ex. 청소, 분해, 조립 등 : 아래 그림과 같이 좌표상의 위치로 표현가능함)*
 
 그러면, 앞서 살펴본 것 처럼 $$(\mathbf{x}_{1},\ldots,\mathbf{x}_{n})$$과 $$(\mathbf{y}_{1},\ldots,\mathbf{y}_{n})$$에 대한 optimal matching을 구할 수 있을 것이다. $n=5$일 때 다음 그림과 같이 optimal matching $\sigma^{\ast}$를 구할 수 있다.
 
