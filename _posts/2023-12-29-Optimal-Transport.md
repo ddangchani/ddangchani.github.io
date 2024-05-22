@@ -101,7 +101,7 @@ $$
 \mathrm{OT}(\mathbf{a,b}) \triangleq \min_{P\in \mathbb{R}^{n\times m}_{+},P\mathbf{1}_{n}=\mathbf{a},P^{\top}\mathbf{1}_{m}=\mathbf{b}} \langle P,C\rangle \triangleq \sum_{i,j}P_{ij}C_{ij}
 $$
 
-정의가 어려워 보이지만, 행렬 $P$ 관점에서는 매우 간단하다. 우선 $n\times m$ 행렬 $P$의 $(i,j)$ 번째 원소는 각각 $i$번째 작업자가 $j$번째 작업에 사용하는 시간을 나타낸다. 따라서 $$P\mathbf{1}_{n}=\mathbf{a}$와 $P^{\top}\mathbf{1}_{m}=\mathbf{b}$$ 제약 조건이 필요하다. 즉, 위 최적화 문제는 이러한 행렬 $P$를 최적화하는 문제로 생각하면 되며, 이는 다음 그림과 같이 나타낼 수 있다.
+정의가 어려워 보이지만, 행렬 $P$ 관점에서는 매우 간단하다. 우선 $n\times m$ 행렬 $P$의 $(i,j)$ 번째 원소는 각각 $i$번째 작업자가 $j$번째 작업에 사용하는 시간을 나타낸다. 따라서 $$P\mathbf{1}_{n}=\mathbf{a}$$와 $$P^{\top}\mathbf{1}_{m}=\mathbf{b}$$ 제약 조건이 필요하다. 즉, 위 최적화 문제는 이러한 행렬 $P$를 최적화하는 문제로 생각하면 되며, 이는 다음 그림과 같이 나타낼 수 있다.
 
 ![](/assets/img/Pasted%20image%2020240517114027.png)
 *Kantorovich Optimal matching when $n=5$ (Source : Murphy, 2023)*
