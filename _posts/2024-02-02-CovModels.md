@@ -102,13 +102,7 @@ $$
 >
 > 
 > 
-> $$\begin{align}
-> 
-2\gamma(h) &= \mathrm{E}\left[Z(s)-Z(s+h)\right]^{2}\\
-&= \mathrm{E}\left[Z(s)-\mathrm{E}Z(s) + \mathrm{E}Z(s+h)-Z(s+h)\right]^{2}\\
-&= \mathrm{Var}(Z(s))+\mathrm{Var}(Z(s+h)) - 2C(s,s+h)\\
-&= 2C(0) -2C(h)
-\end{align}$$
+> $$\begin{align} 2\gamma(h) &= \mathrm{E}\left[Z(s)-Z(s+h)\right]^{2}\\&= \mathrm{E}\left[Z(s)-\mathrm{E}Z(s) + \mathrm{E}Z(s+h)-Z(s+h)\right]^{2}\\&= \mathrm{Var}(Z(s))+\mathrm{Var}(Z(s+h)) - 2C(s,s+h)\\&= 2C(0) -2C(h)\end{align}$$
 
 ### Nugget Effect
 
