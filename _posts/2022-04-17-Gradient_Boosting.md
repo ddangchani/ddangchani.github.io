@@ -41,7 +41,7 @@ Parameterization이 이루어지면, 함수 추정의 문제는 곧 모수 최�
 
 $$
 
-\hat P = \arg\min_P E_{y,x}L(y,f(x:P))
+\hat P = \mathop{\arg\min}\limits_P E_{y,x}L(y,f(x:P))
 
 $$
 
@@ -59,7 +59,7 @@ $$
 
 $$
 
-\hat {\mathbf f} = \arg\min_{\mathbf f} E_{y,x}L(\mathbf f)\tag{1}
+\hat {\mathbf f} = \mathop{\arg\min}\limits_{\mathbf f} E_{y,x}L(\mathbf f)\tag{1}
 
 $$
 
@@ -103,7 +103,7 @@ $$
 
 $$
 
-\rho_m = \arg\min_\rho E_{y,x}L(y,\mathbf f_{m-1}-\rho\mathbf g_m)
+\rho_m = \mathop{\arg\min}\limits_\rho E_{y,x}L(y,\mathbf f_{m-1}-\rho\mathbf g_m)
 
 $$
 
@@ -123,7 +123,7 @@ $$
 
 $$
 
-\lbrace \beta_m,\gamma_m\rbrace _1^M = \arg\min_{\lbrace \beta_m',\gamma_m'\rbrace }\sum_{i=1}^N
+\lbrace \beta_m,\gamma_m\rbrace _1^M = \mathop{\arg\min}\limits_{\lbrace \beta_m',\gamma_m'\rbrace }\sum_{i=1}^N
 L\bigg(y_i,\sum_{m=1}^M\beta_m' h(x_i:\gamma_m')\bigg)
 
 $$
@@ -132,7 +132,7 @@ $$
 
 $$
 
-(\beta_m,\gamma_m) = \arg\min_{\beta,\gamma}\sum_{i=1}^NL(y_i, f_{m-1}(x_i)+\beta h(x_i:\gamma))\tag{2}
+(\beta_m,\gamma_m) = \mathop{\arg\min}\limits_{\beta,\gamma}\sum_{i=1}^NL(y_i, f_{m-1}(x_i)+\beta h(x_i:\gamma))\tag{2}
 
 $$
 
@@ -154,7 +154,7 @@ $$
 
 $$
 
-\gamma_m = \arg\min_{\gamma,\beta}\sum_{i=1}^N[-g_m(x_i)-\beta h(x_i,\gamma)]^2
+\gamma_m = \mathop{\arg\min}\limits_{\gamma,\beta}\sum_{i=1}^N[-g_m(x_i)-\beta h(x_i,\gamma)]^2
 
 $$
 
@@ -162,7 +162,7 @@ $$
 
 $$
 
-\rho_m = \arg\min_\rho\sum_{i=1}^N L(y_i,f_{m-1}(x_i+\rho h(x_i:\gamma_m)))
+\rho_m = \mathop{\arg\min}\limits_\rho\sum_{i=1}^N L(y_i,f_{m-1}(x_i+\rho h(x_i:\gamma_m)))
 
 $$
 
@@ -228,7 +228,7 @@ $$
 
 $$
 
-\lbrace \gamma_{jm}\rbrace _1^J = \arg\min_{\lbrace \gamma_j\rbrace _1^J}
+\lbrace \gamma_{jm}\rbrace _1^J = \mathop{\arg\min}\limits_{\lbrace \gamma_j\rbrace _1^J}
 \sum_{i=1}^N L\bigg(y_i, f_{m-1}(x_i)+\sum_{j=1}^J\gamma_j I(x\in R_{jm})\bigg)
 
 $$
@@ -237,7 +237,7 @@ $$
 
 $$
 
-\gamma_{jm}=\arg\min_\gamma\sum_{x_i\in R_{jm}}L(y_i, f_{m-1}(x_i)+\gamma)
+\gamma_{jm}=\mathop{\arg\min}\limits_\gamma\sum_{x_i\in R_{jm}}L(y_i, f_{m-1}(x_i)+\gamma)
 
 $$
 

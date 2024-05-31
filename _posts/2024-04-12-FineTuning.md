@@ -37,13 +37,13 @@ $$
 가장 널리 사용되며, 가장 간단한 전이학습 방법은 fine tuning이다. 우선, pre-training 단계에서는 
 
 $$
-f^s = \arg\min_{f\in\mathcal F} \hat R(f, \mathcal D^s)
+f^s = \mathop{\arg\min}\limits_{f\in\mathcal F} \hat R(f, \mathcal D^s)
 $$
 
 을 학습시키고, fine-tuning 단계에서는
 
 $$
-f^t = \arg\min_{f\in\mathcal F} \hat R(f, \mathcal D^t) + \lambda\Vert f - f^s \Vert
+f^t = \mathop{\arg\min}\limits_{f\in\mathcal F} \hat R(f, \mathcal D^t) + \lambda\Vert f - f^s \Vert
 $$
 
 와 같은 형태로 target distribution에 대한 모델을 얻는다. 이때, $\lambda$는 규제항의 강도를 조절하는 하이퍼파라미터이며, $\Vert f - f^s \Vert$는 두 함수 $f$와 $f^s$의 거리를 나타낸다.

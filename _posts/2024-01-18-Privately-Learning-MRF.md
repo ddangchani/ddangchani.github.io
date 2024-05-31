@@ -156,7 +156,7 @@ Consider training data $D=\lbrace d^{1},\ldots d^{n}\rbrace \overset{iid}{\sim} 
 
 $$
 
-w = \arg\min_{w} \mathcal{L}(w:D) = \frac{1}{n}\sum_{j}\log \left(1+e^{-y^{j}\langle w,x^{j}\rangle}\right)
+w = \mathop{\arg\min}\limits_{w} \mathcal{L}(w:D) = \frac{1}{n}\sum_{j}\log \left(1+e^{-y^{j}\langle w,x^{j}\rangle}\right)
 
 
 $$
@@ -173,7 +173,7 @@ $$
 &\textbf{Input: } \text{D}, \mathcal{L}, \text{convex set }\mathcal{C}=\lbrace w\in \mathbb{R}^{p}:\Vert w\Vert_{1}\le \lambda\rbrace \\
 &\textbf{For } t=1 \text{ to } T-1 \textbf{ do:}\\
 &\quad \forall s\in S, \alpha_{s} \leftarrow \langle s,\nabla \mathcal{L}(w;D)\rangle+\text{Laplace}\left(0, \dfrac{L_{1}\Vert C\Vert_{1}\sqrt{T}}{n\sqrt{\rho}}\right)\\
-&\quad \tilde w_{t}\leftarrow \arg\min_{s\in S}\alpha_{s}\\
+&\quad \tilde w_{t}\leftarrow \mathop{\arg\min}\limits_{s\in S}\alpha_{s}\\
 &\quad w_{t+1}=(1-\mu_{t})w_{t}+ \mu_{t}\tilde w_{t}\quad \text{where } \mu_{t}=\frac{2}{t+2}\\
 &\textbf{end for}\\
 &\textbf{Output: } w^{priv} = w_{T}

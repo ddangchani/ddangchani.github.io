@@ -23,7 +23,7 @@ $$
 
 $$
 
-\hat \theta =\arg\min_\theta\sum_{j=1}^J\sum_{x_i\in R_j} L(y_i,\gamma_j)
+\hat \theta =\mathop{\arg\min}\limits_\theta\sum_{j=1}^J\sum_{x_i\in R_j} L(y_i,\gamma_j)
 
 $$
 
@@ -41,7 +41,7 @@ $$
 
 $$
 
-\hat\theta_m = \arg\min_{\theta_m}\sum_{i=1}^N L(y_i, f_{m-1}(x_i)+T(x_i:\theta_m))\tag{1}
+\hat\theta_m = \mathop{\arg\min}\limits_{\theta_m}\sum_{i=1}^N L(y_i, f_{m-1}(x_i)+T(x_i:\theta_m))\tag{1}
 
 $$
 
@@ -61,7 +61,7 @@ $$
 
 $$
 
-\tilde\theta = \arg\min_\theta\sum_{i=1}^N \tilde L(y_i,T(x_i,\theta))
+\tilde\theta = \mathop{\arg\min}\limits_\theta\sum_{i=1}^N \tilde L(y_i,T(x_i,\theta))
 
 $$
 

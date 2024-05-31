@@ -47,7 +47,7 @@ $$
 
 $$
 
-Q(a,x) = \mathrm{E}[Y\vert a,x] = \arg\min_{Q}\mathrm{E}[Y-Q(A,X)]^{2}
+Q(a,x) = \mathrm{E}[Y\vert a,x] = \mathop{\arg\min}\limits_{Q}\mathrm{E}[Y-Q(A,X)]^{2}
 
 
 $$
@@ -118,7 +118,7 @@ $$
 
 $$
 
-P(A=1\vert X) = \arg\min_{g}\mathrm{E}[L(A,g(X)]
+P(A=1\vert X) = \mathop{\arg\min}\limits_{g}\mathrm{E}[L(A,g(X)]
 
 
 $$

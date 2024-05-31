@@ -193,7 +193,7 @@ $$
 
 $$
 
-\hat \theta^{LS }=\arg\min_\theta(\hat \gamma-\gamma(\theta))^{\top}(\hat \gamma-\gamma(\theta))
+\hat \theta^{LS }=\mathop{\arg\min}\limits_\theta(\hat \gamma-\gamma(\theta))^{\top}(\hat \gamma-\gamma(\theta))
 
 
 $$
@@ -203,7 +203,7 @@ $$
 
 $$
 
-\hat \theta^{GLS}=\arg\min_\theta(\hat \gamma-\gamma(\theta ))^{\top}V^{-1}(\theta)(\hat \gamma-\gamma(\theta)),\quad V(\theta)=\mathrm{Var}(\hat \gamma)
+\hat \theta^{GLS}=\mathop{\arg\min}\limits_\theta(\hat \gamma-\gamma(\theta ))^{\top}V^{-1}(\theta)(\hat \gamma-\gamma(\theta)),\quad V(\theta)=\mathrm{Var}(\hat \gamma)
 
 
 $$
@@ -213,7 +213,7 @@ $$
 
 $$
 
-\hat \theta^{WLS}=\arg\min_\theta(\hat \gamma-\gamma(\theta))^{\top}W^{-1}(\theta)(\hat \gamma-\gamma(\theta)),\quad W(\theta)=\mathrm{diag}(V(\theta)).
+\hat \theta^{WLS}=\mathop{\arg\min}\limits_\theta(\hat \gamma-\gamma(\theta))^{\top}W^{-1}(\theta)(\hat \gamma-\gamma(\theta)),\quad W(\theta)=\mathrm{diag}(V(\theta)).
 
 
 $$

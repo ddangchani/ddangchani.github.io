@@ -77,7 +77,7 @@ $$
 
 $$
 
-\arg\min_{b,c} E[X-bY-c]^2
+\mathop{\arg\min}\limits_{b,c} E[X-bY-c]^2
 
 $$
 

@@ -15,7 +15,7 @@ header:
 
 $$
 
-w^{*}=\arg\min_w L(w)
+w^{*}=\mathop{\arg\min}\limits_w L(w)
 
 $$
 
