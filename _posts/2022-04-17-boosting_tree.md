@@ -19,7 +19,7 @@ T(x:\theta) = \sum_{j=1}^J \gamma_j I(x\in R_j)
 
 $$
 
-로 표현할 수 있다. 이때 parmeter $\theta$는 $\{R_j,\gamma_j\}_1^J$ 를 의미하고, $J$는 Tree의 깊이를 설정하는 hyperparmeter이다. parameter의 최적화는
+로 표현할 수 있다. 이때 parmeter $\theta$는 $\lbrace R_j,\gamma_j\rbrace _1^J$ 를 의미하고, $J$는 Tree의 깊이를 설정하는 hyperparmeter이다. parameter의 최적화는
 
 $$
 
@@ -45,7 +45,7 @@ $$
 
 $$
 
-의 해를 구하는 과정으로 $\hat\theta_m$의 update가 이루어진다. 식 (1)의 해를 찾는 것은 $\theta_m = \{R_{jm},\gamma_{jm}\}_1^{J_m}$ , 즉 region과 optimal constant $\gamma$ 모두에 대한 추정치를 구하는 것을 의미한다. 하지만 앞서 말했듯 Region을 찾는 것은 어려운 문제이며, 특히 boosting algorithm 과정에서 이를 찾는 것은 개별 트리에 대한 문제보다 더 복잡하다. 그러나, 아래와 같이 몇 가지 경우에 대해 위 식 (1)의 문제는 단순화된다.
+의 해를 구하는 과정으로 $\hat\theta_m$의 update가 이루어진다. 식 (1)의 해를 찾는 것은 $\theta_m = \lbrace R_{jm},\gamma_{jm}\rbrace _1^{J_m}$ , 즉 region과 optimal constant $\gamma$ 모두에 대한 추정치를 구하는 것을 의미한다. 하지만 앞서 말했듯 Region을 찾는 것은 어려운 문제이며, 특히 boosting algorithm 과정에서 이를 찾는 것은 개별 트리에 대한 문제보다 더 복잡하다. 그러나, 아래와 같이 몇 가지 경우에 대해 위 식 (1)의 문제는 단순화된다.
 
 > 1. Squared-error Loss : 식 (1)의 문제는 Regression Tree를 만드는 것과 동일하다. 즉, region의 경우 current residual $y_i-f_{m-1}(x_i)$를 최적화하는 Region으로 update하고, region의 평균값을 $\hat\gamma_{jm}$ 으로 사용하게 된다.
 >

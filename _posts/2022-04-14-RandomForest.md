@@ -9,10 +9,18 @@ use_math: true
 header: 
  teaser: /assets/img/RandomForest.assets/RandomForest_0.png
 ---
-{% raw %}
+
 ## Random Forest
 
-Random Forest는 Bagging<sup>배깅</sup> 방식을 이용한 Tree algorithm의 일종이다. 즉, 서로 상관관계가 없는(de-correlated, randomized) tree들을 매우 많이 생성하여, 이들의 평균값을 바탕으로 분류 혹은 회귀를 진행하는 알고리즘이다. Tree model이 Bagging algorithm을 실행하는데 가장 최적인 이유는 데이터 내부의 복잡한 상호작용을 확인할 수 있으며 tree를 깊게 만들수록 낮은 bias를 가지는 모델이 되기 때문이다. 또한, Tree는 noisy한 특성이 있기 때문에, 여러 tree들의 평균치를 구하는 것은 noise들을 제거할 수 있다는 점에서 의미있고, 이는 한 Tree의 기댓값으로도 의미있는 수치이다.
+Random Forest는 **Bagging**<sup>배깅</sup> 방식을 이용한 Tree algorithm의 일종이다. 즉, 서로 상관관계가 없는 (de-correlated, randomized) tree들을 매우 많이 생성하여, 이들의 평균값을 바탕으로 분류 혹은 회귀를 진행하는 알고리즘이다. Tree model이 Bagging algorithm을 실행하는데 가장 최적인 이유는 데이터 내부의 복잡한 상호작용을 확인할 수 있으며 tree를 깊게 만들수록 낮은 bias를 가지는 모델이 되기 때문이다. 또한, Tree는 noisy한 특성이 있기 때문에, 여러 tree들의 평균치를 구하는 것은 noise들을 제거할 수 있다는 점에서 의미있고, 이는 한 Tree의 기댓값으로도 의미있는 수치이다.
+
+> ✅ Bagging vs. [Boosting](https://ddangchani.github.io/machine%20learning/boosting/)
+>
+> - Bagging : Bootstrap Aggregating의 줄임말로, Bootstrap sample을 이용해 여러 모델을 생성하고 이들의 평균을 통해 예측값을 구하는 방법이다. Random Forest는 이러한 Bagging 방식을 이용한 Tree model의 일종이다. (각 모델이 **서로 독립)**
+>
+> - Boosting : 앞서 언급한 Bagging과는 다르게, Boosting은 weak classifier를 순차적으로 학습시켜 예측값을 개선시키는 방법이다. 이는 각 classifier의 결과를 이용해 다음 classifier의 결과를 개선시키는 방식으로 진행된다. (각 모델이 **독립이 아님**)
+>
+> - Ensemble : 여러 모델을 결합하는 방법으로, Bagging과 Boosting은 이러한 Ensemble 방법의 일종이다.
 
 ### Algorithm
 
@@ -26,12 +34,12 @@ Random Forest 모형의 전반적인 알고리즘은 다음과 같다.
 >       - $p$개의 변수 중 $m$개의 변수를 랜덤하게 선택한다.
 >       - $m$개의 변수 중 최선의 변수와 split-point를 선택한다.
 >       - 해당 노드를 두개의 daughter node로 분할한다.
->    3. Tree들의 Ensemble $\{T_b\}_1^B$ 를 출력한다.
+>    3. Tree들의 Ensemble $$\lbrace T_b\rbrace _1^B$$ 를 출력한다.
 >
 > 2. 새로운 데이터 $x$에 대한 예측값으로 다음을 사용한다.
 >
 >    - Regression : $\hat f^B(x) = {1\over B}\sum_{b=1}^B T_b(x)$
->    - Classification : $\hat C^B(x)=\text{mode of }\{\hat C_b(x)\}_1^B$
+>    - Classification : $\hat C^B(x)=\text{mode of }\lbrace \hat C_b(x)\rbrace _1^B$
 
 이러한 알고리즘으로 생성된 Random Forest model은, 개별 트리들에 비해 비슷한 편향을 가지지만 분산은 더 낮게끔 개선된 결과를 갖는다. Adaptive한 방법으로 편향의 개선이 이루어지는 Boosting 알고리즘과는 다르게, RandomForest의 개별 트리들은 모두 Bootstrap 방식으로 이루어진 i.i.d 한 확률변수이다. 그러므로, 만약 개별 트리들이 분산 $\sigma^2$를 갖는다면 $B$개의 트리들의 평균인 RandomForest의 분산은 $\sigma^2/B$가 된다.
 
@@ -47,7 +55,7 @@ $$
 
 > Tree를 split하는 각 단계들 이전에 $m\leq p$ 개의 Input variable들을 랜덤으로 선택하고(candidates) 이들 중에서 split할 variable을 정한다.
 
-위와 같은 과정을 통해 random selection을 실행할 수 있고, 일반적으로 $m$값은 $\sqrt p$의 값을 쓰는데, $1$처럼 낮은 값을 갖는 경우도 있다. 각 Tree에 대해 split variable과 split point를 parameter $\theta_b$ 로 표현하면 Random Forest algorithm을 통해 생성한 트리의 열을 $\{T(x:\theta_b\}_1^B$ 로 표기할 수 있고, 새로운 데이터에 대한 예측값을
+위와 같은 과정을 통해 random selection을 실행할 수 있고, 일반적으로 $m$값은 $\sqrt p$의 값을 쓰는데, $1$처럼 낮은 값을 갖는 경우도 있다. 각 Tree에 대해 split variable과 split point를 parameter $\theta_b$ 로 표현하면 Random Forest algorithm을 통해 생성한 트리의 열을 $$\lbrace T(x:\theta_b\rbrace _1^B$$ 로 표기할 수 있고, 새로운 데이터에 대한 예측값을
 
 $$
 
@@ -131,12 +139,7 @@ $$
 
 
 
-
-
-
-
 # References
 
 - The Hastie, T., Tibshirani, R., Friedman, J. H., & Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction (Vol. 2, pp. 1-758). New York: springer.
 
-{% endraw %}

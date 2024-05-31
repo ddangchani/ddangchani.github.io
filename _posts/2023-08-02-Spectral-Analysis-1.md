@@ -143,7 +143,8 @@ $$
 
 \begin{aligned}
 M^{\star}&= \sum_{i=1}^{n}\lambda_{i}^{\star}u_{i}^{\star}{u_{i}^{\star}}^{T}=\begin{pmatrix}U^{\star}&U_{\perp}^{\star}\end{pmatrix}\begin{pmatrix}\Lambda^{\star}&0\\
-0&\Lambda^{\star}_{\perp}\end{pmatrix}\begin{pmatrix}{U^{\star}}^{T}\\{U^{\star}_{\perp}}^{T}
+0&\Lambda^{\star}_{\perp}\end{pmatrix}\begin{pmatrix}{U^{\star}}^{T}\\ 
+{U^{\star}_{\perp}}^{T}
 \end{pmatrix}\\
 M&= \sum_{i=1}^{n}\lambda_{i}u_{i}{u_{i}}^{T}=\begin{pmatrix}U&U_{\perp}\end{pmatrix}\begin{pmatrix}\Lambda&0\\
 0&\Lambda_{\perp}\end{pmatrix}\begin{pmatrix}{U}^{T}\\{U_{\perp}}^{T}
@@ -181,7 +182,7 @@ $$
 추후에 다루겠지만, $E$가 sparse한 경우 위 부등식의 상한이 더욱 유용해지는 결과를 갖는다. 또한, 위 정리로부터 더 사용하기 편한 따름정리를 얻을 수 있는데, 다음과 같다.
 
 > Corollary.
-> 행렬 $M^{\star},M$ 의 고유값들이 각각 $|\lambda_{1}^{\star}|\geq\cdots\geq|\lambda_{r}^{\star}|>|\lambda_{r+1}^{\star}|\geq\cdots\geq|\lambda_{n}^{\star}|$ 와 $$|\lambda_{1}|\geq\cdots\geq|\lambda_{r}\}|>|\lambda_{r+1}|\geq\cdots\geq|\lambda_{n}|$$ 으로 주어진다고 하자. 
+> 행렬 $M^{\star},M$ 의 고유값들이 각각 $|\lambda_{1}^{\star}|\geq\cdots\geq|\lambda_{r}^{\star}|>|\lambda_{r+1}^{\star}|\geq\cdots\geq|\lambda_{n}^{\star}|$ 와 $$|\lambda_{1}|\geq\cdots\geq|\lambda_{r}\rbrace |>|\lambda_{r+1}|\geq\cdots\geq|\lambda_{n}|$$ 으로 주어진다고 하자. 
 > 
 > 만일 perturbation $E$에서 다음 성질이 성립하면
 > 
@@ -212,10 +213,10 @@ $$
 
 \begin{aligned}
 M^{\star}&= \sum_{i=1}^{n}\sigma_{i}^{\star}u_{i}^{\star}{u_{i}^{\star}}^{T}=\begin{pmatrix}U^{\star}&U_{\perp}^{\star}\end{pmatrix}\begin{pmatrix}\Sigma^{\star}&0&0\\
-0&\Sigma^{\star}_{\perp}&0\end{pmatrix}\begin{pmatrix}{V^{\star}}^{T}\\{V^{\star}_{\perp}}^{T}
+0&\Sigma^{\star}_{\perp}&0\end{pmatrix}\begin{pmatrix}{V^{\star}}^{T}\\lbrace V^{\star}_{\perp}}^{T}
 \end{pmatrix}\\
 M&= \sum_{i=1}^{n}\sigma_{i}u_{i}{u_{i}}^{T}=\begin{pmatrix}U&U_{\perp}\end{pmatrix}\begin{pmatrix}\Sigma&0&0\\
-0&\Sigma_{\perp}&0\end{pmatrix}\begin{pmatrix}{V}^{T}\\{V_{\perp}}^{T}
+0&\Sigma_{\perp}&0\end{pmatrix}\begin{pmatrix}{V}^{T}\\lbrace V_{\perp}}^{T}
 \end{pmatrix}
 \end{aligned}
 
@@ -227,8 +228,8 @@ $$
 $$
 
 \begin{aligned}
-\max\{\mathrm{dist}(U,U^{\star}),\mathrm{dist}(V,V^{\star})\} &\leq \frac{\sqrt{2}\max \{\Vert E^{T}U^{\star}\Vert,\Vert EV^{\star}\Vert\}}{\sigma_{r}^{\star}-\sigma_{r+1}^{\star}-\Vert E\Vert}\\
-\max\{\mathrm{dist}_F(U,U^{\star}),\mathrm{dist}_F(V,V^{\star})\} &\leq \frac{\sqrt{2}\max \{\Vert E^{T}U^{\star}\Vert_{F},\Vert EV^{\star}\Vert_{F}\}}{\sigma_{r}^{\star}-\sigma_{r+1}^{\star}-\Vert E\Vert}
+\max\lbrace \mathrm{dist}(U,U^{\star}),\mathrm{dist}(V,V^{\star})\rbrace  &\leq \frac{\sqrt{2}\max \lbrace \Vert E^{T}U^{\star}\Vert,\Vert EV^{\star}\Vert\rbrace }{\sigma_{r}^{\star}-\sigma_{r+1}^{\star}-\Vert E\Vert}\\
+\max\lbrace \mathrm{dist}_F(U,U^{\star}),\mathrm{dist}_F(V,V^{\star})\rbrace  &\leq \frac{\sqrt{2}\max \lbrace \Vert E^{T}U^{\star}\Vert_{F},\Vert EV^{\star}\Vert_{F}\rbrace }{\sigma_{r}^{\star}-\sigma_{r+1}^{\star}-\Vert E\Vert}
 \end{aligned}
 
 

@@ -40,7 +40,7 @@ $$
 
 $$
 
-이때 $\sigma_{i}$ 는 행렬의 $i$ 번째(로 큰) 특이값을 의미한다. 이제, 각 성분의 결측여부를 파악하기 위해 index set $\Omega\subset\{1,\ldots,n_{1}\}\times\{1,\ldots,n_{2} \}$ 를 정의하는데, 행렬의 각 성분 $M_{i,j}^{\star}$ 가 관측된 것은 $(i,j)\in\Omega$ 와 동치이다.
+이때 $\sigma_{i}$ 는 행렬의 $i$ 번째(로 큰) 특이값을 의미한다. 이제, 각 성분의 결측여부를 파악하기 위해 index set $\Omega\subset\lbrace 1,\ldots,n_{1}\rbrace \times\lbrace 1,\ldots,n_{2} \rbrace $ 를 정의하는데, 행렬의 각 성분 $M_{i,j}^{\star}$ 가 관측된 것은 $(i,j)\in\Omega$ 와 동치이다.
 
 ### Random sampling
 행렬 $M^{\star}$ 의 추정을 위해 다음과 같은 가정이 필요하다.
@@ -78,9 +78,9 @@ $$
 
 $$
 
-\mu := \max\bigg\{
+\mu := \max\bigg\lbrace 
 \frac{n_{1}\Vert U^{\star}\Vert_{2,\infty}^{2}}{r},\frac{n_{2}\Vert V^{\star}\Vert_{2,\infty}^{2}}{r}
-\bigg\}
+\bigg\rbrace 
 
 
 $$
@@ -95,7 +95,7 @@ $$
 
 $$
 
-$1\leq\mu\leq\max\{n_{1},n_{2}\}/r$ 이 성립한다.
+$1\leq\mu\leq\max\lbrace n_{1},n_{2}\rbrace /r$ 이 성립한다.
 
 #### Lemma
 또한, 행렬 $M^{\star}$가 $\mu$-incoherent할 때 다음이 성립한다.
@@ -178,9 +178,9 @@ $$
 
 $$
 
-\max\big\{
+\max\lbrace 
 \mathrm{dist}(U,U^{\star}),\mathrm{dist(V,V^{\star})}
-\big\}\lesssim
+\rbrace \lesssim
 \kappa\sqrt{\frac{\mu r\log n_{2}}{n_{1}p}}
 
 

@@ -12,7 +12,7 @@ use_math: true
 # Preliminary
 ## Matrix Bernstein Inequality
 ### Theorem
-Independent random matrix sequence $$\{X_{i}\}_{1\leq i\leq m}, X_{i}\in\mathbb{R}^{n_{1}\times n_{2}}$$ 에 대해 다음을 가정하자.
+Independent random matrix sequence $$\lbrace X_{i}\rbrace _{1\leq i\leq m}, X_{i}\in\mathbb{R}^{n_{1}\times n_{2}}$$ 에 대해 다음을 가정하자.
 
 
 $$
@@ -29,7 +29,7 @@ $$
 
 $$
 
-v:= \max\bigg\{\bigg\Vert\sum_{i=1}^{m}\mathbb{E}\big[(X_{i}-\mathbb{E}X_{i})(X_{i}-\mathbb{E}X_{i})^{T}\big]\bigg\Vert, \\ \bigg\Vert\sum_{i=1}^{m}\mathbb{E}\big[(X_{i}-\mathbb{E}X_{i})^{T}(X_{i}-\mathbb{E}X_{i})\big]\bigg\Vert\bigg\}
+v:= \max\bigg\lbrace \bigg\Vert\sum_{i=1}^{m}\mathbb{E}\big[(X_{i}-\mathbb{E}X_{i})(X_{i}-\mathbb{E}X_{i})^{T}\big]\bigg\Vert, \\ \bigg\Vert\sum_{i=1}^{m}\mathbb{E}\big[(X_{i}-\mathbb{E}X_{i})^{T}(X_{i}-\mathbb{E}X_{i})\big]\bigg\Vert\bigg\rbrace 
 
 
 $$
@@ -54,7 +54,7 @@ $$
 
 $$
 
-그러면 $n=\max\{n_1,n_2\}$ 라고 둘 때 임의의 $a\geq 2$ 에 대해 다음이 성립한다.
+그러면 $n=\max\lbrace n_1,n_2\rbrace $ 라고 둘 때 임의의 $a\geq 2$ 에 대해 다음이 성립한다.
 
 
 $$

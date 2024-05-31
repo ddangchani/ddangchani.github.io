@@ -211,3 +211,19 @@ for md_file in md_files:
         f.writelines(lines)
 
 print('Done')
+
+# brace error : replace '\{' with '\lbrace ' and '\}' with '\rbrace ' (note: there should be a space after each '\rbrace' and '\lbrace')
+
+for md_file in md_files:
+    with open(post_dir + md_file, 'r') as f:
+        lines = f.readlines()
+    
+    for i, line in enumerate(lines):
+        if '\{' in line:
+            lines[i] = line.replace('\{', '\lbrace ')
+        
+        if '\}' in line:
+            lines[i] = line.replace('\}', '\rbrace ')
+
+    with open(post_dir + md_file, 'w') as f:
+        f.writelines(lines)

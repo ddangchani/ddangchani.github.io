@@ -26,7 +26,7 @@ x_{i}=L^{\star}f_{i}+\eta_{i} \quad 1\leq i\leq n
 
 $$
 
-여기서 $f_{i}\in\mathbb{R}^{r}$ 은 잠재변수이고 $L^{\star}\in\mathbb{R}^{p\times r}$ 은 **loading matrix**라고 부르며, 마지막으로 $\eta_{i}\in\mathbb{R}^{p}$ 는 랜덤 노이즈에 해당하는 벡터이다. 즉, 각 샘플 $\{x_{i}\}$ 를 저차원($r$) 부분공간에 embedded 된 것으로 간주하고 이 과정에서 loading matrix $L^{\star}$ 는 서로 다른 변수 간의 종속성을 나타내는 것으로 간주한다. PCA에서는 일반적으로 $L^{\star}$ *principal subspace*라고 부른다. 다만, loading matrix는 apriori-unknown, 즉 데이터가 주어져야 비로소 추정할 수 있으므로(사전분포가 주어지지 않음) 추정을 위해 잠재변수와 노이즈 벡터에 대한 가정이 이루어져야 한다.
+여기서 $f_{i}\in\mathbb{R}^{r}$ 은 잠재변수이고 $L^{\star}\in\mathbb{R}^{p\times r}$ 은 **loading matrix**라고 부르며, 마지막으로 $\eta_{i}\in\mathbb{R}^{p}$ 는 랜덤 노이즈에 해당하는 벡터이다. 즉, 각 샘플 $\lbrace x_{i}\rbrace $ 를 저차원($r$) 부분공간에 embedded 된 것으로 간주하고 이 과정에서 loading matrix $L^{\star}$ 는 서로 다른 변수 간의 종속성을 나타내는 것으로 간주한다. PCA에서는 일반적으로 $L^{\star}$ *principal subspace*라고 부른다. 다만, loading matrix는 apriori-unknown, 즉 데이터가 주어져야 비로소 추정할 수 있으므로(사전분포가 주어지지 않음) 추정을 위해 잠재변수와 노이즈 벡터에 대한 가정이 이루어져야 한다.
 
 ## Algorithm
 ### Assumption
