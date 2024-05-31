@@ -39,7 +39,7 @@ $$
 위와 같이 정의되는 합성곱 블록에 대해, SE block은 Squeeze와 Excitation의 두 단계에 걸쳐 연산을 수행한다.
 
 ### Squeeze
-Squeeze block은 말 뜻 그대로 입력 벡터의 정보를 추출하며 차원을 축소시키는 계산인데, 이 과정은 **전역 평균 풀링**(global average pooling)을 이용한다. 이때 차원의 축소는 각 채널을 기준으로 이루어지는데, 앞서 언급한 feature map $\mathbf U$을 $\mathbf U$의 두 차원($H\times W$)으로 축소시켜 각 채널에 대한 통계량 $\mathbf z=\{z_1,\ldots,z_C\}\in \mathbb R^C$ 를 얻는다. 즉,
+Squeeze block은 말 뜻 그대로 입력 벡터의 정보를 추출하며 차원을 축소시키는 계산인데, 이 과정은 **전역 평균 풀링**(global average pooling)을 이용한다. 이때 차원의 축소는 각 채널을 기준으로 이루어지는데, 앞서 언급한 feature map $\mathbf U$을 $\mathbf U$의 두 차원($H\times W$)으로 축소시켜 각 채널에 대한 통계량 $\mathbf z=\lbrace z_1,\ldots,z_C\rbrace \in \mathbb R^C$ 를 얻는다. 즉,
 
 $$
 

@@ -16,7 +16,7 @@ Fine tuning은 전이학습<sup>Transfer Learning</sup>의 한 형태로 볼 수
 
 # Transfer Learning
 
-Source distribution $p$에 대해 labeled data $\mathcal D^s = \{(\mathbf x_n, y_n) \sim p : n=1,\ldots,N_s\}$ 가 주어지고, target distribution $q$에 대해 labeled data $\mathcal D^t = \{(\mathbf x_n, y_n) \sim q : n=1,\ldots,N_t\}$가 주어졌다고 하자. 우리가 관심있는 것은 target distribution $q$에 대한 예측 모델 $f(\mathbf x)$를 학습하는 것이다. 
+Source distribution $p$에 대해 labeled data $\mathcal D^s = \lbrace (\mathbf x_n, y_n) \sim p : n=1,\ldots,N_s\rbrace $ 가 주어지고, target distribution $q$에 대해 labeled data $\mathcal D^t = \lbrace (\mathbf x_n, y_n) \sim q : n=1,\ldots,N_t\rbrace $가 주어졌다고 하자. 우리가 관심있는 것은 target distribution $q$에 대한 예측 모델 $f(\mathbf x)$를 학습하는 것이다. 
 
 이에 대해 Empirical risk minimization(ERM) 관점은
 

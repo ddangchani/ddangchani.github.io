@@ -174,7 +174,7 @@ $$
 
 $$
 
-따라서, MHSA에서의 파라미터는 $\{U_{q,h},U_{k,h},V_{h}\}$ 로 구성된다.
+따라서, MHSA에서의 파라미터는 $\lbrace U_{q,h},U_{k,h},V_{h}\rbrace $ 로 구성된다.
 
 ### Layer Normalization
 
@@ -225,7 +225,7 @@ $$
 
 $$
 
-혹은, positional embedding vector $\{p_l\} \in \mathbb{R}^{D}$을 더해주는 방식으로도 사용된다. 즉, 
+혹은, positional embedding vector $\lbrace p_l\rbrace  \in \mathbb{R}^{D}$을 더해주는 방식으로도 사용된다. 즉, 
 
 $$
 

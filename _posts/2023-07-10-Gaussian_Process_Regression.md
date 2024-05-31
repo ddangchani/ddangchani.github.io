@@ -93,7 +93,7 @@ Y=f(X)+\epsilon\qquad f(X)\sim GP(m(x),k(x,x'))
 
 $$
 
-Gaussian process는 [정의](https://ddangchani.github.io/machine%20learning/Gaussian_Process/)에 의해 임의의 input point들의 finite subset $X_{n}=\{x_{1},\ldots,x_{n}\}$ 에 대한 evaluation $f(x_{1}),\ldots,f(x_{n})$ 이 Multivariate gaussian distribution을 따르므로, 다음과 같이 주어진 Gaussian process로 부터 random Gaussian vector를 생성할 수 있다.
+Gaussian process는 [정의](https://ddangchani.github.io/machine%20learning/Gaussian_Process/)에 의해 임의의 input point들의 finite subset $X_{n}=\lbrace x_{1},\ldots,x_{n}\rbrace $ 에 대한 evaluation $f(x_{1}),\ldots,f(x_{n})$ 이 Multivariate gaussian distribution을 따르므로, 다음과 같이 주어진 Gaussian process로 부터 random Gaussian vector를 생성할 수 있다.
 
 $$
 

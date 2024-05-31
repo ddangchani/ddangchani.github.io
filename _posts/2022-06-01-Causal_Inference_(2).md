@@ -137,7 +137,7 @@ $$
 
 $$
 
-\mathcal{E^C} = \{f\;\vert \; f:C\to E\}
+\mathcal{E^C} = \lbrace f\;\vert \; f:C\to E\rbrace 
 
 $$
 
@@ -153,7 +153,7 @@ $$
 
 의 형태로 간추릴 수 있는데, 이를 *canonical representation* of structural equation이라고 한다.
 
-만일 $\mathcal C = \{1,\ldots,k\}$, 즉 finite 하다면
+만일 $\mathcal C = \lbrace 1,\ldots,k\rbrace $, 즉 finite 하다면
 
 $$
 
@@ -176,11 +176,11 @@ $$
 #### Dependencies between noise vector
 만일 앞서 살펴본 $\mathcal E^k$의 원소인 Noise variable vector의 각 성분이 확률적으로 독립이 아니라면 어떻게 될지 살펴보도록 하자. 각 성분이 종속일 경우 SCM의 구조에는 큰 영향을 주지 않지만, counterfactual statement 판단에는 영향을 줄 수 있다. 다음 예시를 살펴보도록 하자.
 
-앞선 두 집합이 $\mathcal{C=E}=\{0,1\}$ 로 주어진다면
+앞선 두 집합이 $\mathcal{C=E}=\lbrace 0,1\rbrace $ 로 주어진다면
 
 $$
 
-\mathcal E^\mathcal C = \{\mathbf {0, 1}, I, NOT\}
+\mathcal E^\mathcal C = \lbrace \mathbf {0, 1}, I, NOT\rbrace 
 
 $$
 

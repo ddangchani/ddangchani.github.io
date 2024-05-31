@@ -55,7 +55,7 @@ $$
 
 ## Ex. Logistic Regression
 
-Binary logistic regression에서 앞서 살펴본 MM algorithm이 어떻게 적용되는지 살펴보자. 우선 n번째 sample이 class $c\in \{1,2\}$ 에 포함될 확률은 각각
+Binary logistic regression에서 앞서 살펴본 MM algorithm이 어떻게 적용되는지 살펴보자. 우선 n번째 sample이 class $c\in \lbrace 1,2\rbrace $ 에 포함될 확률은 각각
 
 $$
 

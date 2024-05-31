@@ -28,19 +28,19 @@ use_math: true
 
 **Definition 2** (Point Process). A point process $X$ defined on $\mathcal{S}$ is a measurable mapping defined on some probability space $(\Omega,\mathcal{F},P)$ and taking values in $$(\mathbb{N}_{lf},\mathcal{N}_{lf})$$
 
-- $\mathbb N_{lf}=\{x\subset\mathcal{S}:n(x_B)<\infty,\;\;\forall\;\mathrm{bounded}\;\; B\subset\mathcal{S}\}$
+- $\mathbb N_{lf}=\lbrace x\subset\mathcal{S}:n(x_B)<\infty,\;\;\forall\;\mathrm{bounded}\;\; B\subset\mathcal{S}\rbrace $
 
 - $$\mathcal{N}_{lf}$$ is a $$\sigma$$-algebra on $$\mathbb N_{lf}$$ such that
 
 $$
-\mathcal{N}_{lf}=\sigma(\{x\in\Bbb N_{lf}:n(x_B)=m)\}:B\in\mathcal{B}_0,m\in\Bbb{N}_0)
+\mathcal{N}_{lf}=\sigma(\lbrace x\in\Bbb N_{lf}:n(x_B)=m)\rbrace :B\in\mathcal{B}_0,m\in\Bbb{N}_0)
 $$
 
 where $\mathcal{B}_0$ is the class of bounded Borel sets of Borel $\sigma$-algebra on $\mathcal{S}$
 
 The distribution $P_X$ of point process $X$ is given by
 
-$$P_X(F) = P(\{\omega\in\Omega:X(\omega)\in F\})\quad\forall F\in\mathcal{N}_{lf}$$
+$$P_X(F) = P(\lbrace \omega\in\Omega:X(\omega)\in F\rbrace )\quad\forall F\in\mathcal{N}_{lf}$$
 
 
 **Remarks 1**.
@@ -50,7 +50,7 @@ $$P_X(F) = P(\{\omega\in\Omega:X(\omega)\in F\})\quad\forall F\in\mathcal{N}_{lf
 -   The distribution of a point process $X$ is determined by the finite dimensional distributions of its count function.
 
 -   $$\mathcal{N}_{lf}=\sigma(\mathcal{N}^\circ_{lf})$$ where
-    $$\mathcal{N}^\circ_{lf} = \{\{x\in\mathcal{N}_{lf}:n(x_B)=0\}:B\in\mathcal{B}_0\}$$
+    $$\mathcal{N}^\circ_{lf} = \lbrace \lbrace x\in\mathcal{N}_{lf}:n(x_B)=0\rbrace :B\in\mathcal{B}_0\rbrace $$
     is the class of void events
 
 -   $v(B):=P(N(B)=0)$ for $B\in\mathcal{B}_0$ is a void probability
@@ -61,7 +61,7 @@ $$P_X(F) = P(\{\omega\in\Omega:X(\omega)\in F\})\quad\forall F\in\mathcal{N}_{lf
 **Definition 3** (Marked Point Process). *Marked point process $X$ with points in $T$ and mark space $\mathcal{M}\subset\mathbb R^p$ (or marked point pattern) means a point process with extra information attached to
 each point.*
 
-$X=\{(\xi,m_\xi):\xi\in Y\}$, where $Y$ is a point process on $T$ and $m_\xi\in \mathcal{M}$ is called a **mark**.
+$X=\lbrace (\xi,m_\xi):\xi\in Y\rbrace $, where $Y$ is a point process on $T$ and $m_\xi\in \mathcal{M}$ is called a **mark**.
   
 
 ## Poisson Point process
@@ -112,13 +112,13 @@ $X\sim\textrm{poisson}(\mathcal{S},\rho)$ is defined if*
 -   If the distribution of process is invariant under translation, the
     process is called as *stationary*
 
-    $$X+s=\{\xi+s:\xi\in X\} \equiv X\quad\forall s\in\mathbb R^d$$
+    $$X+s=\lbrace \xi+s:\xi\in X\rbrace  \equiv X\quad\forall s\in\mathbb R^d$$
 
 -   If the distribution of process is invariant under rotations about
     the origin in $\mathbb R^d$ then the process is called as
     *isotropic*.
 
-    $$\mathcal{O}X=\{\mathcal{O}\xi:\xi\in X\}\equiv X\quad\forall\mathcal{O}\text{  is rotation }$$
+    $$\mathcal{O}X=\lbrace \mathcal{O}\xi:\xi\in X\rbrace \equiv X\quad\forall\mathcal{O}\text{  is rotation }$$
 
 ## Properties of Poisson point process
 
@@ -129,13 +129,13 @@ $X\sim\textrm{poisson}(\mathcal{S},\rho)$ is defined if*
     $\mu(B)=\int_B\rho(\xi)d\xi<\infty$ and
     $\forall F\in\mathcal{N}_{lf}$
 
-    $$P(x_B\in F) = \sum_{n=0}^\infty\frac{\exp(-\mu(B))}{n!}\int_B\cdots\int_B\mathbf{1}[\{\xi_1,\ldots,\xi_n\}\in F]\times\prod_{i=1}^n\rho(\xi_i)d\xi_1\cdots d\xi_n$$
+    $$P(x_B\in F) = \sum_{n=0}^\infty\frac{\exp(-\mu(B))}{n!}\int_B\cdots\int_B\mathbf{1}[\lbrace \xi_1,\ldots,\xi_n\rbrace \in F]\times\prod_{i=1}^n\rho(\xi_i)d\xi_1\cdots d\xi_n$$
 
 2.  If $X\sim poisson(\mathcal{S},\rho)$, then for functions
     $h:\Bbb N_{lf}\to[0,\infty)$ and $B\subset \mathcal{S}$ with
     $\mu(B)<\infty$,
 
-    $$\Bbb Eh(x_B) = \sum_{n=0}^\infty\frac{\exp(-\mu(B))}{n!}\int_B\cdots\int_Bh(\{\xi_1,\ldots,\xi_n\})\times\prod_{i=1}^n\rho(\xi_i)d\xi_1\cdots d\xi_n$$
+    $$\Bbb Eh(x_B) = \sum_{n=0}^\infty\frac{\exp(-\mu(B))}{n!}\int_B\cdots\int_Bh(\lbrace \xi_1,\ldots,\xi_n\rbrace )\times\prod_{i=1}^n\rho(\xi_i)d\xi_1\cdots d\xi_n$$
 
 
 **Theorem 1** (Existence). *$X\sim poisson(\mathcal{S},\rho)$ exists and
@@ -160,12 +160,12 @@ for functions $u:\mathcal{S}\to[0,1]$
 
 **Proposition 4** (Construction of stationary Poisson point process).
 Let $s_1,u_1,s_2,u_2,\ldots$ be mutually independent, where each $u_i$
-is uniformly distributed on $\{u\in\Bbb R^d:\Vert u\Vert = 1\}$ and
+is uniformly distributed on $\lbrace u\in\Bbb R^d:\Vert u\Vert = 1\rbrace $ and
 $s_i\sim Exp(\rho w_d)$ with mean $1/(\rho w_d)$ for $\rho>0$.
 $w_d=\pi^{d/2}/\Gamma(1+d/2)$ is the volume of the $d$-dimensional unit
 ball. Let $R_0=0$ and $R_i^d=R^d_{i-1}+s_i, i=1,2,\cdots$. Then,
 
-$$X=\{R_1u_1,R_2u_2,\cdots\} \sim poisson(\mathbb R^d,\rho)$$*\
+$$X=\lbrace R_1u_1,R_2u_2,\cdots\rbrace  \sim poisson(\mathbb R^d,\rho)$$*\
   
 
 **Theorem 2** (Slivnyak-Mecke). If $X\sim poisson(\mathcal{S},\rho)$,
@@ -177,7 +177,7 @@ $$\Bbb E\bigg[\sum_{\xi\in X}h(\xi,X\backslash\xi)\bigg] = \int_\mathcal{S}\Bbb 
 $X\sim poisson(\mathcal{S},\rho)$, for any $n\in\Bbb N$ and any function
 $h:\mathcal{S}^n\times\Bbb N_{lf}\to[0,\infty)$,
 
-$$\Bbb E\bigg[\sum_{\xi_1,\cdots,\xi_n\in X}^{\neq} h(\xi_1,\cdots,\xi_n,X\backslash\{\xi_1,\cdots,\xi_n\})\bigg] = \int_\mathcal{S} \Bbb E[h(\xi_1,\cdots,\xi_n,X]\prod_{i=1}^n\rho(\xi_i)d\xi_1,\cdots d\xi_n$$
+$$\Bbb E\bigg[\sum_{\xi_1,\cdots,\xi_n\in X}^{\neq} h(\xi_1,\cdots,\xi_n,X\backslash\lbrace \xi_1,\cdots,\xi_n\rbrace )\bigg] = \int_\mathcal{S} \Bbb E[h(\xi_1,\cdots,\xi_n,X]\prod_{i=1}^n\rho(\xi_i)d\xi_1,\cdots d\xi_n$$
 
 where $\neq$ means the $n$ points $\xi_1,\cdots,\xi_n$ are pairwise
 distinct.
@@ -201,7 +201,7 @@ distinct.
         $X_{thin}$ with probability $p(\xi)$, where points are
         included/excluded independently each other.
 
-    -   $X_{thin}=\{\xi\in X:R(\xi)\leq p(\xi)\}$ where
+    -   $X_{thin}=\lbrace \xi\in X:R(\xi)\leq p(\xi)\rbrace $ where
         $R(\xi)\sim uniform(0,1), \xi\in\mathcal{S}$ are mutually
         independent and independent of $X$.
 
@@ -229,9 +229,9 @@ Simulation of $X\sim poisson(\Bbb R^d,\rho)$ within bounded $B$
 
 1.  if $B=b(0,r)$ :
 
-    Use proposition 4 : i.e. generate $$s_1,\ldots,s_m\sim Exp(\rho w_d)$$ and $$u_1,\ldots,u_m\sim uniform(\{u:\Vert u\Vert = 1\})$$, where $m$ is given by $R_{m-1}\leq r\leq R_m$. Then, return 
+    Use proposition 4 : i.e. generate $$s_1,\ldots,s_m\sim Exp(\rho w_d)$$ and $$u_1,\ldots,u_m\sim uniform(\lbrace u:\Vert u\Vert = 1\rbrace )$$, where $m$ is given by $R_{m-1}\leq r\leq R_m$. Then, return 
     
-    $$x_B = \{R_1u_1,\cdots,R_{m-1}u_{m-1}\}$$
+    $$x_B = \lbrace R_1u_1,\cdots,R_{m-1}u_{m-1}\rbrace $$
 
 1.  if $B=[0,a_1]\times\cdots\times[0,a_d]$ :
 
@@ -292,17 +292,17 @@ $$f(x)=\exp(|\mathcal{S}|-\mu_1(\mathcal{S}))\prod_{\xi\in X}\rho_1(\xi)$$
 ## Marked Poisson Point process
 
  
-**Definition 6**. *$X=\{(\xi,m_\xi):\xi\in Y\}$,
+**Definition 6**. *$X=\lbrace (\xi,m_\xi):\xi\in Y\rbrace $,
 $(\xi,m_\xi)\in\mathcal{T\times M}$ is a marked Poisson point process if
 $Y\sim poisson(\mathcal{T},\phi)$ where $\phi$ is locally integrable
-intensity function, and the *marks* $\{m_\xi,\xi\in Y\}$ are mutually
+intensity function, and the *marks* $\lbrace m_\xi,\xi\in Y\rbrace $ are mutually
 independent condional on $Y$.*
   
 
 -   If the marks are identically distributed with a common distribution
     $Q$, then $Q$ is called the mark distribution.
 
--   If $\mathcal{M}=\{1,\cdots,K\}$, it is called multitype Poisson
+-   If $\mathcal{M}=\lbrace 1,\cdots,K\rbrace $, it is called multitype Poisson
     point process.
 
 **Proposition 7**. *Let $X$ be a marked Poisson point process with
@@ -315,12 +315,12 @@ depend on $Y\backslash\xi$. Let $\rho(\xi,m)=\phi(\xi)p_\xi(m)$. Then,*
 2.  If $\kappa(m)=\int_\mathcal{T}\rho(\xi,m)d\xi$ is locally
     integrable, then
 
-$$\{m_\xi:\xi\in Y\}\sim poisson(\mathcal{M},\kappa)$$
+$$\lbrace m_\xi:\xi\in Y\rbrace \sim poisson(\mathcal{M},\kappa)$$
   
 
 ## Multivariate Poisson process and random labeling
 
--   Multitype point process $X$ with $\mathcal{M}=\{1,\ldots,K\}$ is
+-   Multitype point process $X$ with $\mathcal{M}=\lbrace 1,\ldots,K\rbrace $ is
     equivalent to multivariate point process $(X_1,\ldots,X_K)$
 
 -   The following two statements are equivalent.

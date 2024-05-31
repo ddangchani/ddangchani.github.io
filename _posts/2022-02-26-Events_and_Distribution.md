@@ -15,11 +15,11 @@ use_math: true
 
 특별히 확률공간의 $\sigma$-algebra $\mathcal{F}$ 의 원소들을 사건<sup>event</sup>이라고 칭하고, 각각의 사건에 대한 확률측도 값 $P(A)$ 를 확률<sup>probability</sup>이라고 정의한다. 또한 사건 $A$가 True라는 것은 **확률 실험**<sup>probability experiment</sup>이 랜덤하게 생성하는 원소 $\omega\in\Omega$ 가 $\omega\in A$ 를 만족함을 의미한다. (반대로 $\omega\notin A$ 이면 $A$가 False 라고 정의한다.) 만일 확률공간에 사건열 $A_1,A_2,\ldots\in\mathcal{F}$ 들이 주어진다고 하자. 우선 사건열에 대해 다음 두 가지 경우를 정의하도록 하겠다.
 
-1. **Infinitely Often**(i.o) : $A_n$이 무한한 index set $n\in\{1,2,3,\ldots\}$ 에서 True임을 의미한다. 이때 다음과 같이 무한한 사건열을 True로 하는 outcome $\omega\in\Omega$ 들의 집합 $\{A_n \;\text{i.o}\}$ 은 다음과 같이 표현할 수 있다. 
+1. **Infinitely Often**(i.o) : $A_n$이 무한한 index set $n\in\lbrace 1,2,3,\ldots\rbrace $ 에서 True임을 의미한다. 이때 다음과 같이 무한한 사건열을 True로 하는 outcome $\omega\in\Omega$ 들의 집합 $\lbrace A_n \;\text{i.o}\rbrace $ 은 다음과 같이 표현할 수 있다. 
 
 $$
 
-\{A_n \;\text{i.o}\}=\limsup_nA_n=\bigcap_n\bigcup_{k\geq n}A_k=\{\omega\in\Omega:\sum_nI_{A_n}(\omega)=\infty\}
+\lbrace A_n \;\text{i.o}\rbrace =\limsup_nA_n=\bigcap_n\bigcup_{k\geq n}A_k=\lbrace \omega\in\Omega:\sum_nI_{A_n}(\omega)=\infty\rbrace 
 
 $$
 
@@ -27,7 +27,7 @@ $$
 
 $$
 
-\{A_n \;\text{a.b.f}\}=\liminf_nA_n=\bigcup_n\bigcap_{k\geq n}A_k=\{\omega\in\Omega:\sum_nI_{A_n^c}(\omega)<\infty\}
+\lbrace A_n \;\text{a.b.f}\rbrace =\liminf_nA_n=\bigcup_n\bigcap_{k\geq n}A_k=\lbrace \omega\in\Omega:\sum_nI_{A_n^c}(\omega)<\infty\rbrace 
 
 $$
 
@@ -37,13 +37,13 @@ $$
 
 $$
 
-I_{\{A_n\;\text{i.o}\}} = \limsup_{n\to\infty}I_{A_n}
+I_{\lbrace A_n\;\text{i.o}\rbrace } = \limsup_{n\to\infty}I_{A_n}
 
 $$
 
 $$
 
-I_{\{A_n\;\text{a.b.f}\}} = \liminf_{n\to\infty}I_{A_n}
+I_{\lbrace A_n\;\text{a.b.f}\rbrace } = \liminf_{n\to\infty}I_{A_n}
 
 $$
 
@@ -51,7 +51,7 @@ $$
 
 $$
 
-P\{A_n\; \text{i.o}\}\geq\limsup_nP(A_n),\;\;P\{A_n\; \text{a.b.f}\}\leq\liminf_nP(A_n)
+P\lbrace A_n\; \text{i.o}\rbrace \geq\limsup_nP(A_n),\;\;P\lbrace A_n\; \text{a.b.f}\rbrace \leq\liminf_nP(A_n)
 
 $$
 
@@ -59,13 +59,13 @@ $$
 
 #### Borel-Canteli Lemma
 
-사건열 $A_1,A_2,\ldots\in\mathcal{F}$에 대해 $\sum_nP(A_n)<\infty$ 이면 $P\{A_n\;\;\text{i.o}\}=0$ 이다.
+사건열 $A_1,A_2,\ldots\in\mathcal{F}$에 대해 $\sum_nP(A_n)<\infty$ 이면 $P\lbrace A_n\;\;\text{i.o}\rbrace =0$ 이다.
 
 > pf. 확률측도의 연속성과 가산가법성에 의해
 > 
 > $$
 > 
-> P\{A_n\;\;\text{i.o}\}=\lim_nP(\bigcup_{k\geq n }A_k)\leq\lim_n\sum_{k\geq n} P(A_k)
+> P\lbrace A_n\;\;\text{i.o}\rbrace =\lim_nP(\bigcup_{k\geq n }A_k)\leq\lim_n\sum_{k\geq n} P(A_k)
 > 
 > $$
 > 
@@ -75,11 +75,11 @@ $$
 
 #### Random Element
 
-Probability space $(\Omega,\mathcal{F},P)$의 Sample space $\Omega$ 에서 어떤 가측공간 $(S,\mathcal{S})$ 로 정의된 measurable한 사상 $\xi:\Omega\to S$을 $S$의  **random element**라고 정의한다. 또한 $\mathcal{S}$의 원소 $B\in\mathcal{S}$ 을 생각하면 이에 대해 $\{\xi\in B\}=\xi^{-1}(B)\in\mathcal{F}$ 을 대응시킬 수 있다. 그러면
+Probability space $(\Omega,\mathcal{F},P)$의 Sample space $\Omega$ 에서 어떤 가측공간 $(S,\mathcal{S})$ 로 정의된 measurable한 사상 $\xi:\Omega\to S$을 $S$의  **random element**라고 정의한다. 또한 $\mathcal{S}$의 원소 $B\in\mathcal{S}$ 을 생각하면 이에 대해 $\lbrace \xi\in B\rbrace =\xi^{-1}(B)\in\mathcal{F}$ 을 대응시킬 수 있다. 그러면
 
 $$
 
-P\{\xi\in B\}=P(\xi^{-1}(B))=(P\circ\xi^{-1})(B),\quad B\in \mathcal{S}
+P\lbrace \xi\in B\rbrace =P(\xi^{-1}(B))=(P\circ\xi^{-1})(B),\quad B\in \mathcal{S}
 
 $$
 

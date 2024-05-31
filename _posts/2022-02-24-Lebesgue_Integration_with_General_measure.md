@@ -84,7 +84,7 @@ $$
 
 ### LDCT<sup>르벡지배수렴정리</sup>
 
-가측함수열 $\{f_n:n\in\mathbb{N}\}$ 에 대해 극한 $\lim_nf_n(x)$이 모든 점 $x\in X$에서 존재하고 이를 지배하는<sup>dominate</sup> 함수(**envelope** 라고 한다) $g\in L^1(\mu)$ 가 존재한다고 하자. 그러면 $f\in L^1(\mu)$이며 
+가측함수열 $\lbrace f_n:n\in\mathbb{N}\rbrace $ 에 대해 극한 $\lim_nf_n(x)$이 모든 점 $x\in X$에서 존재하고 이를 지배하는<sup>dominate</sup> 함수(**envelope** 라고 한다) $g\in L^1(\mu)$ 가 존재한다고 하자. 그러면 $f\in L^1(\mu)$이며 
 
 $$
 
@@ -130,7 +130,7 @@ $$
    $$
    으로 정의하고, $p=\infty$​ 인 경우는
    $$
-   \Vert f\Vert_\infty = \inf\{\alpha\in\mathbb{R}:\mu(f^{-1}(\alpha,\infty ])=0\}
+   \Vert f\Vert_\infty = \inf\lbrace \alpha\in\mathbb{R}:\mu(f^{-1}(\alpha,\infty ])=0\rbrace 
    $$
    으로 정의된다.
 

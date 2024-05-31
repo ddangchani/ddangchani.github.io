@@ -25,11 +25,11 @@ L(f)=\sum_{i=1}^N L(y_i,f(x_i))
 
 $$
 
-와 같이 주어진다. 여기서 핵심은 $f$에 대해 $E_{y,x}L(f)$ 값을 최소화하는 것이다. 그런데, 아무것도 주어지지 않은 상태에서 어떤 함수를 추정하는 것은 불가능에 가깝다. 그렇기에 우리는 이러한 함수가 존재할 수 있는 함수들의 집합, 즉 함수족<sup>class of functions</sup> $\mathcal F(X:P)$ 를 정의하고, 함수족의 원소 중에서 손실함수으 최적화가 이루어지는 특정 함수 $\hat f$ 를 선택하는 것이다. 여기서 $P=\{P_1,P_2,\ldots\}$는 parameter들의 유한집합, 즉 함수족의 개별 함수들을 구분짓는 모수 집합이다. **Boosting** 알고리즘의 경우, 특별히 개별 함수들을 additive한 모델로 표현하여(Boosting - basis expansion과의 관계 [참조](https://ddangchani.github.io/machine%20learning/boosting/)) 모수화<sup>parameterization</sup>하였다. 즉, 
+와 같이 주어진다. 여기서 핵심은 $f$에 대해 $E_{y,x}L(f)$ 값을 최소화하는 것이다. 그런데, 아무것도 주어지지 않은 상태에서 어떤 함수를 추정하는 것은 불가능에 가깝다. 그렇기에 우리는 이러한 함수가 존재할 수 있는 함수들의 집합, 즉 함수족<sup>class of functions</sup> $\mathcal F(X:P)$ 를 정의하고, 함수족의 원소 중에서 손실함수으 최적화가 이루어지는 특정 함수 $\hat f$ 를 선택하는 것이다. 여기서 $P=\lbrace P_1,P_2,\ldots\rbrace $는 parameter들의 유한집합, 즉 함수족의 개별 함수들을 구분짓는 모수 집합이다. **Boosting** 알고리즘의 경우, 특별히 개별 함수들을 additive한 모델로 표현하여(Boosting - basis expansion과의 관계 [참조](https://ddangchani.github.io/machine%20learning/boosting/)) 모수화<sup>parameterization</sup>하였다. 즉, 
 
 $$
 
-f(x:\{\beta_m,\gamma_m\}_1^M) = \sum_{m=1}^M\beta_mh(x:\gamma_m)\tag{1}
+f(x:\lbrace \beta_m,\gamma_m\rbrace _1^M) = \sum_{m=1}^M\beta_mh(x:\gamma_m)\tag{1}
 
 $$
 
@@ -67,7 +67,7 @@ $$
 
 $$
 
-\mathbf f = \{f(x_1),f(x_2),\ldots,f(x_N)\}^T
+\mathbf f = \lbrace f(x_1),f(x_2),\ldots,f(x_N)\rbrace ^T
 
 $$
 
@@ -87,7 +87,7 @@ Steepest Descent 방식에서는 scalar $\rho_m$, vector $\mathbf g_m\in \mathbb
 
 $$
 
-\mathbf g_m=\{g_{im}\}_{i=1}^N = \bigg[\frac{\partial L(y_i, f(x_i))}{\partial f(x_i)}\bigg]_{f(x_i) = f_{m-1}(x_i)}
+\mathbf g_m=\lbrace g_{im}\rbrace _{i=1}^N = \bigg[\frac{\partial L(y_i, f(x_i))}{\partial f(x_i)}\bigg]_{f(x_i) = f_{m-1}(x_i)}
 
 $$
 
@@ -119,11 +119,11 @@ $$
 
 ## Finite Data
 
-앞선 nonparametic numerical optimization은 타당해보이지만, 만일 데이터셋이 $\{y_i,x_i\}_{i=1}^N$ 처럼 유한하게 주어지고, 이를 바탕으로 joint distribution을 추정하는 경우 문제가 생긴다. 이 경우 $x$에 대한 $y$의 조건부 기대값 $E_y[\cdot\vert x]$ 가 정확하게 추정될 수 없으며, 추정이 가능할지라도 실제 머신러닝 문제에서는 training data가 아닌 새로운 데이터셋에 대한 추정치를 구해야하는 상황이 요지이기 때문이다. 이를 해결하기 위해서는 앞선 식 (1)의 parameterized form을 이용해 다음과 같이 손실함수의 기댓값<sup>expected loss</sup>를 최소화하하는 문제로 치환해야한다.
+앞선 nonparametic numerical optimization은 타당해보이지만, 만일 데이터셋이 $\lbrace y_i,x_i\rbrace _{i=1}^N$ 처럼 유한하게 주어지고, 이를 바탕으로 joint distribution을 추정하는 경우 문제가 생긴다. 이 경우 $x$에 대한 $y$의 조건부 기대값 $E_y[\cdot\vert x]$ 가 정확하게 추정될 수 없으며, 추정이 가능할지라도 실제 머신러닝 문제에서는 training data가 아닌 새로운 데이터셋에 대한 추정치를 구해야하는 상황이 요지이기 때문이다. 이를 해결하기 위해서는 앞선 식 (1)의 parameterized form을 이용해 다음과 같이 손실함수의 기댓값<sup>expected loss</sup>를 최소화하하는 문제로 치환해야한다.
 
 $$
 
-\{\beta_m,\gamma_m\}_1^M = \arg\min_{\{\beta_m',\gamma_m'\}}\sum_{i=1}^N
+\lbrace \beta_m,\gamma_m\rbrace _1^M = \arg\min_{\lbrace \beta_m',\gamma_m'\rbrace }\sum_{i=1}^N
 L\bigg(y_i,\sum_{m=1}^M\beta_m' h(x_i:\gamma_m')\bigg)
 
 $$
@@ -144,13 +144,13 @@ f_m(x)= f_{m-1}(x)+\beta_mh(x:\gamma_m)
 
 $$
 
-으로 update를 진행하는 방식이다. 여기서 $y\in\{-1,1\}$이고 $L(y,f) = e^{-yf}$ 로 주어지면 이를 Boosting이라고 한다(Boosting 게시글 참고).
+으로 update를 진행하는 방식이다. 여기서 $y\in\lbrace -1,1\rbrace $이고 $L(y,f) = e^{-yf}$ 로 주어지면 이를 Boosting이라고 한다(Boosting 게시글 참고).
 
 ### Gradient Boosting
 
-그런데, 만일 앞선 최적화 과정에서 식 (2)에 대한 최적화 해가 쉽게 구해지지 않는다고 하자. 그러면 전 단계의 근사함수 $f_{m-1}(x)$ 에 대해 steepest-descent 방식으로 $N$-dimensional vector인 steepest-descent step direction $-\mathbf g_m$을 구하는 방법을 고려해볼 수 있다. 그러나 이 그래디언트는 오직 training data $\{x_i\}_{i=1}^N$ 에 대해서만 정의되고, 다른 $x$값들에 대해서는 일반화되기 어렵다. 
+그런데, 만일 앞선 최적화 과정에서 식 (2)에 대한 최적화 해가 쉽게 구해지지 않는다고 하자. 그러면 전 단계의 근사함수 $f_{m-1}(x)$ 에 대해 steepest-descent 방식으로 $N$-dimensional vector인 steepest-descent step direction $-\mathbf g_m$을 구하는 방법을 고려해볼 수 있다. 그러나 이 그래디언트는 오직 training data $\lbrace x_i\rbrace _{i=1}^N$ 에 대해서만 정의되고, 다른 $x$값들에 대해서는 일반화되기 어렵다. 
 
-따라서 다른 $x$값에도 일반화하기 위해 Steepest-descnet의 $\rho_m \mathbf g_m$ 을 이용한 최적화 과정 대신 $\beta_m h(x)$ 를 이용해야 할 것이다. 이때 함수족 $\{h(x:\gamma_m)\}$ 에서 $-\mathbf g_m\in \mathbb R^N$ 에 가장 평행한<sup>parallel</sup> 함수를 고른다면 이는 전체 데이터 분포에 걸쳐 $-g_m(x)$와 가장 큰 상관관계를 갖는 solution이 될 것이다. 이는 다음 식으로부터 구할 수 있다.
+따라서 다른 $x$값에도 일반화하기 위해 Steepest-descnet의 $\rho_m \mathbf g_m$ 을 이용한 최적화 과정 대신 $\beta_m h(x)$ 를 이용해야 할 것이다. 이때 함수족 $\lbrace h(x:\gamma_m)\rbrace $ 에서 $-\mathbf g_m\in \mathbb R^N$ 에 가장 평행한<sup>parallel</sup> 함수를 고른다면 이는 전체 데이터 분포에 걸쳐 $-g_m(x)$와 가장 큰 상관관계를 갖는 solution이 될 것이다. 이는 다음 식으로부터 구할 수 있다.
 
 $$
 
@@ -196,7 +196,7 @@ Least Squares에서는 손실함수가 $L(y,F) = (y-F)^2/2$ 로 주어진다(*�
 
 $$
 
-h(x:\{b_j,R_j\}_1^J) = \sum_{j=1}^J b_j I(x\in R_j)
+h(x:\lbrace b_j,R_j\rbrace _1^J) = \sum_{j=1}^J b_j I(x\in R_j)
 
 $$
 
@@ -228,7 +228,7 @@ $$
 
 $$
 
-\{\gamma_{jm}\}_1^J = \arg\min_{\{\gamma_j\}_1^J}
+\lbrace \gamma_{jm}\rbrace _1^J = \arg\min_{\lbrace \gamma_j\rbrace _1^J}
 \sum_{i=1}^N L\bigg(y_i, f_{m-1}(x_i)+\sum_{j=1}^J\gamma_j I(x\in R_{jm})\bigg)
 
 $$
@@ -279,7 +279,7 @@ i^2(R_l,R_r) = \frac{w_lw_r}{w_l+w_r}(\bar y_l - \bar y_r)^2
 
 $$
 
-로 주어진다. Gradient-Boosted Tree의 경우 Tree들의 합 $\{T_m\}_1^M$ 으로 주어지므로, Influence 추정치는 다음과 같이 개별 트리들의 추정치들의 합 형태로 주어진다.
+로 주어진다. Gradient-Boosted Tree의 경우 Tree들의 합 $\lbrace T_m\rbrace _1^M$ 으로 주어지므로, Influence 추정치는 다음과 같이 개별 트리들의 추정치들의 합 형태로 주어진다.
 
 $$
 

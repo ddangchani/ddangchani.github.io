@@ -13,7 +13,7 @@ use_math: true
 
 ### Finite-dimensional distribution
 
-$X$를 어떤 finite index set $T=\{t_1,\ldots,t_n\}$에서 정의되는 random process라고 하자. 이에 관한 finite-dimensional distributions은 다음과 같이 주어진다.
+$X$를 어떤 finite index set $T=\lbrace t_1,\ldots,t_n\rbrace $에서 정의되는 random process라고 하자. 이에 관한 finite-dimensional distributions은 다음과 같이 주어진다.
 
 $$
 
@@ -35,11 +35,11 @@ $$
 
 이다.
 
-> 증명. 조건 (1)을 가정하자. $P\{X\in A\}=P\{Y\in A\}$ 가 성립하는 집합 $A\in S^T$들의 모임을 $\mathcal{D}$라고 하자. 그리고 
+> 증명. 조건 (1)을 가정하자. $P\lbrace X\in A\rbrace =P\lbrace Y\in A\rbrace $ 가 성립하는 집합 $A\in S^T$들의 모임을 $\mathcal{D}$라고 하자. 그리고 
 > 
 > $$
 > 
-> A=\{f\in S^T:(f_{t_1},\ldots,f_{t_n})\in B\}, \\ t_1,\ldots,t_n\in T, B\in \mathcal{S}^n,n\in\mathbb N
+> A=\lbrace f\in S^T:(f_{t_1},\ldots,f_{t_n})\in B\rbrace , \\ t_1,\ldots,t_n\in T, B\in \mathcal{S}^n,n\in\mathbb N
 > 
 > $$
 > 

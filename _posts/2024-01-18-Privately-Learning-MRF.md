@@ -27,7 +27,7 @@ where $\mathbf{x}_{c}$ is the subset of $\mathbf{x}$ that belongs to clique $c$.
 - $k=2$ : **binary** MRF
 - $k=t=2$ : **Ising** model (binary and pairwise)
 
-It is easy to think that for pairwise MRF, $$\psi_{c}(\mathbf{x}_{c})$$ is given as $$w_{i}x_{i}x_{j}$$ for $$\mathbf{x}_{c}=\{x_{i},x_{j}\}$$ since the maximal clique size is $2$.
+It is easy to think that for pairwise MRF, $$\psi_{c}(\mathbf{x}_{c})$$ is given as $$w_{i}x_{i}x_{j}$$ for $$\mathbf{x}_{c}=\lbrace x_{i},x_{j}\rbrace $$ since the maximal clique size is $2$.
 
 ### Learning problem
 
@@ -39,7 +39,7 @@ It is easy to think that for pairwise MRF, $$\psi_{c}(\mathbf{x}_{c})$$ is given
 ### Markov random field
 #### Ising model
 
-The $p$-variable **Ising** model is a distribution $\mathcal{D}(A,\theta)$ on $\{-1,1\}^{p}$ that satisfies
+The $p$-variable **Ising** model is a distribution $\mathcal{D}(A,\theta)$ on $\lbrace -1,1\rbrace ^{p}$ that satisfies
 
 
 $$
@@ -83,7 +83,7 @@ p(\mathbf{x})\propto \exp \left(\sum_{1\le i\le j\le p}W_{i,j}(x_{i},x_{j})+\sum
 
 $$
 
-and $\Theta=\{\theta_{i}\in \mathbb{R}^{k}:i\in[p]\}$ is a set of mean-field vectors. The width and minimum edge weight are defined as below.
+and $\Theta=\lbrace \theta_{i}\in \mathbb{R}^{k}:i\in[p]\rbrace $ is a set of mean-field vectors. The width and minimum edge weight are defined as below.
 
 
 $$
@@ -151,7 +151,7 @@ For a sequence of DP algorithms $$\mathcal{A}_{1},\cdots,\mathcal{A}_{T}$$ and $
 
 ### Private sparse logistic regression
 
-Consider training data $D=\{d^{1},\ldots d^{n}\}\overset{iid}{\sim} P$ where $d^{i}=(x^{i},y^{i}), \Vert x^{i}\Vert_{\infty}\leq 1, y^{i}\in\{-1,1\}$. To minimize population logistic loss $\mathrm{E}\left[\log(1+e^{-Y\langle w,X\rangle}\right]$, consider the following empirical risk minimization.
+Consider training data $D=\lbrace d^{1},\ldots d^{n}\rbrace \overset{iid}{\sim} P$ where $d^{i}=(x^{i},y^{i}), \Vert x^{i}\Vert_{\infty}\leq 1, y^{i}\in\lbrace -1,1\rbrace $. To minimize population logistic loss $\mathrm{E}\left[\log(1+e^{-Y\langle w,X\rangle}\right]$, consider the following empirical risk minimization.
 
 
 $$
@@ -170,7 +170,7 @@ $$
 
 \begin{align}
 &\textbf{Algorithm } \text{Private Frank-Wolfe algorithm}\\
-&\textbf{Input: } \text{D}, \mathcal{L}, \text{convex set }\mathcal{C}=\{w\in \mathbb{R}^{p}:\Vert w\Vert_{1}\le \lambda\}\\
+&\textbf{Input: } \text{D}, \mathcal{L}, \text{convex set }\mathcal{C}=\lbrace w\in \mathbb{R}^{p}:\Vert w\Vert_{1}\le \lambda\rbrace \\
 &\textbf{For } t=1 \text{ to } T-1 \textbf{ do:}\\
 &\quad \forall s\in S, \alpha_{s} \leftarrow \langle s,\nabla \mathcal{L}(w;D)\rangle+\text{Laplace}\left(0, \dfrac{L_{1}\Vert C\Vert_{1}\sqrt{T}}{n\sqrt{\rho}}\right)\\
 &\quad \tilde w_{t}\leftarrow \arg\min_{s\in S}\alpha_{s}\\
@@ -197,7 +197,7 @@ $$
 
 #### Lemma (Klivans & Meka, 2017)
 
-Let $Z\sim \mathcal{D}(A,\theta)$ and $Z\in\{-1,1\}^{p}$, then for all $i\in[p]$,
+Let $Z\sim \mathcal{D}(A,\theta)$ and $Z\in\lbrace -1,1\rbrace ^{p}$, then for all $i\in[p]$,
 
 
 $$
@@ -216,7 +216,7 @@ $$
 
 \begin{align}
 &\textbf{Algorithm } \text{Privately Learning Ising Models}\\
-&\textbf{Input: } \{z^{1},\cdots,z^{n}\},\text{ upper bound on }\lambda(A,\theta)\le \lambda,\text{ privacy parameter }\rho\\
+&\textbf{Input: } \lbrace z^{1},\cdots,z^{n}\rbrace ,\text{ upper bound on }\lambda(A,\theta)\le \lambda,\text{ privacy parameter }\rho\\
 &\textbf{For } \text{$i=1$ to $p$} \textbf{ do:}\\
 &\quad \forall m\in[n],x^{m}=(z_{-i}^{m},1), y^{m}=z_{i}^{m}\\
 &\quad w^{priv}\leftarrow \mathcal{A}_{PFW}(D,\mathcal{L},\rho',\mathcal{C}),\quad \rho'=\frac{\rho}{p}\\
@@ -232,7 +232,7 @@ It can be proved that the algorithm above satisfies $\rho$-zCDP.
 
 ### Privately Learning general pairwise model
 
-Given $n$ i.i.d samples $\{z^{1},\cdots,z^{n}\}$ drawn from unknown $\mathcal{D}(\mathcal{W},\Theta)$, the purpose is to design $\rho$-zCDP estimator $\hat{\mathcal{W}}$ such that w.p. at least $\frac{2}{3}$,
+Given $n$ i.i.d samples $\lbrace z^{1},\cdots,z^{n}\rbrace $ drawn from unknown $\mathcal{D}(\mathcal{W},\Theta)$, the purpose is to design $\rho$-zCDP estimator $\hat{\mathcal{W}}$ such that w.p. at least $\frac{2}{3}$,
 
 
 $$
@@ -250,7 +250,7 @@ Like the Ising model, a pairwise MRF $Z\sim \mathcal{D}(\mathcal{W},\Theta)$ sho
 
 $$
 
-\Pr(Z_{i}=u\vert Z_{i}\in\{u,v\},Z_{-i}=x) =
+\Pr(Z_{i}=u\vert Z_{i}\in\lbrace u,v\rbrace ,Z_{-i}=x) =
 \sigma \left(\sum_{j\neq i} \left(W_{i,j}(u,x_{j})-W_{i,j}(v,x_{j})\right)+\theta_{i}(u)-\theta_{i}(v)\right)
 
 

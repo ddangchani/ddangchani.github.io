@@ -15,7 +15,7 @@ use_math: true
 ## Unconfoundedness
 
 $$
-\{Y(1),Y(0)\} \perp\!\!\!\perp Z\;\vert \;X\tag{1}
+\lbrace Y(1),Y(0)\rbrace  \perp\!\!\!\perp Z\;\vert \;X\tag{1}
 $$
 
 Unconfoundedness 가정(식 1)은 본질적으로 측정되지 않은 자료에 대한 가정이다. 왜냐하면 우리가 관측하는 자료들은 대상이 처치집단에 속하는 경우 $Y(0)$에 대한 정보를 알려주지 않고, 그 반대의 경우도 마찬가지이기 때문이다. 따라서, 이 가정은 검정이 불가능하다. 그렇지만, **balance**의 개념에서 간접적으로 측정할 수 있다.
@@ -35,24 +35,24 @@ $$
 
 #### Multiple Control Groups
 
-다변량 대조군 (ex. $T_{i}\in \{-1,0,1\}$)을 가정하고, 처치변수는 1에만 대응된다고 하자. 그러면 처치변수는 $Z_{i}=I(T_{i}=1)$ 이 되고 결과변수는 다음과 같이 쓸 수 있다.
+다변량 대조군 (ex. $T_{i}\in \lbrace -1,0,1\rbrace $)을 가정하고, 처치변수는 1에만 대응된다고 하자. 그러면 처치변수는 $Z_{i}=I(T_{i}=1)$ 이 되고 결과변수는 다음과 같이 쓸 수 있다.
 $$
 Y_{i}=\begin{cases}
-Y_{i}(0) & \text{if } T_{i}\in\{-1,0\} \\
+Y_{i}(0) & \text{if } T_{i}\in\lbrace -1,0\rbrace  \\
 Y_{i}(1) & \text{if } T_{i}=1
 \end{cases}
 $$
 이때, unconfoundedness 가정을 확장하여 다음과 같이 결과변수와 다변량 대조군 지시함수 $T_{i}$의 독립으로 나타내자.
 $$
-\{Y_{i}(0),Y_{i}(1)\}\perp\!\!\!\perp T_{i}\;\vert\;X_{i}
+\lbrace Y_{i}(0),Y_{i}(1)\rbrace \perp\!\!\!\perp T_{i}\;\vert\;X_{i}
 $$
-그런데, 만일 $T_{i}$를 $\{-1,0\}$으로 제한하면 다음과 같은 검정가능한 가정을 얻을 수 있다.
+그런데, 만일 $T_{i}$를 $\lbrace -1,0\rbrace $으로 제한하면 다음과 같은 검정가능한 가정을 얻을 수 있다.
 $$
-Y_{i}(0)\perp\!\!\!\perp I(T_{i}=0)\;\vert\;X_{i},T_{i}\in\{-1,0\}
+Y_{i}(0)\perp\!\!\!\perp I(T_{i}=0)\;\vert\;X_{i},T_{i}\in\lbrace -1,0\rbrace 
 $$
 따라서, 관측치에 대한 가정
 $$
-Y_{i}^{obs}\perp\!\!\!\perp I(T_{i}=0)\;\vert\;X_{i},T_{i}\in\{-1,0\}
+Y_{i}^{obs}\perp\!\!\!\perp I(T_{i}=0)\;\vert\;X_{i},T_{i}\in\lbrace -1,0\rbrace 
 $$
 은 관측치로 측정할 수 있는 unconfoundedness 가정이 된 것이다.
 
@@ -76,7 +76,7 @@ NCO의 아이디어는 대상 결과변수 $Y$ 외에 또 다른 결과변수 $W
 
 이때 $W=ZW(1)+(1-Z)W(0)$을 NCO로 두면 unconfoundedness 가정은
 $$
-\{W(1),W(0)\}\perp Z\;\vert \;X
+\lbrace W(1),W(0)\rbrace \perp Z\;\vert \;X
 $$
 와 같고, 이는 검정가능하다. ($\mathrm{E}[W(1)-W(0)\vert X] =0$ 이기 때문)
 
@@ -95,7 +95,7 @@ $$
 P(Z\vert Y(0),Y(1),X,U)=P(Z\vert X,U)
 $$
 
-또한, $Y,Z,U$는 binary variable로 가정하고(각각 결과, 처치, 관찰되지 않은 교란변수), 공변량 $X$를 범주형 변수로 두자($X=x, x\in \{1,\ldots,k\}$).
+또한, $Y,Z,U$는 binary variable로 가정하고(각각 결과, 처치, 관찰되지 않은 교란변수), 공변량 $X$를 범주형 변수로 두자($X=x, x\in \lbrace 1,\ldots,k\rbrace $).
 
 이후, 다음과 같이 전체 변수들에 대한 결합분포를 분해하도록 하자.
 $$
@@ -186,7 +186,7 @@ $$
 $$
 - $Y$에 대한 $U$의 상대위험
 $$
-\mathrm{RR}_{UY\vert x}=\max\{\mathrm{RR}_{UY(0)\vert x}, \mathrm{RR}_{UY(1)\vert x}\}
+\mathrm{RR}_{UY\vert x}=\max\lbrace \mathrm{RR}_{UY(0)\vert x}, \mathrm{RR}_{UY(1)\vert x}\rbrace 
 $$
 
 이때, 주어진 인과모형에서 교란의 세기<sup>strength of confounding</sup>에 대한 측도로 다음을 사용한다(편의를 위해 아래부터 조건 $X=x$ 생략).

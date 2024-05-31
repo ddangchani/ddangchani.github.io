@@ -49,7 +49,7 @@ f(Z) =Z + uh(w^{T}Z+b)
 
 $$
 
-여기서 $\lambda=\{w\in \mathbb{R}^{d}, u\in \mathbb{R}^{d}, b\in \mathbb{R}\}$은 free parameter들이며, 이러한 모수들은 모델의 학습 과정에서 모델의 파라미터들과 마찬가지로 학습된다. 위와 같이 정의되는 linear transformation의 경우, 아래와 같이 자코비안의 계산이 가능하며 이는 $O(d)$ 시간에 계산가능하다.
+여기서 $\lambda=\lbrace w\in \mathbb{R}^{d}, u\in \mathbb{R}^{d}, b\in \mathbb{R}\rbrace $은 free parameter들이며, 이러한 모수들은 모델의 학습 과정에서 모델의 파라미터들과 마찬가지로 학습된다. 위와 같이 정의되는 linear transformation의 경우, 아래와 같이 자코비안의 계산이 가능하며 이는 $O(d)$ 시간에 계산가능하다.
 
 
 $$

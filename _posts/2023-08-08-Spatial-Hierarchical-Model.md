@@ -65,7 +65,7 @@ Suppose there are $m$ observations $\mathbf{Y}=(Y(\bar s_1),\cdots,Y(\bar s_m))^
 -   Data model: $\mathbf{Y}\vert\beta,\mathbf{\eta},\sigma_\epsilon^2\sim GP(\mathbf X\beta+\mathbf{H\eta},\sigma_\epsilon^2 I)$
 -   Process model: $\mathbf{\eta\vert\theta}\sim GP(0,\Sigma(\theta))$
 -   Parameter model: $[\beta,\sigma_\epsilon^2,\theta]$
--   Note that $\{\bar s_1,\cdots,\bar s_m\}$ may not coincide with $\{s_1,\cdots,s_n\}$
+-   Note that $\lbrace \bar s_1,\cdots,\bar s_m\rbrace $ may not coincide with $\lbrace s_1,\cdots,s_n\rbrace $
 -   If observation locations coincide with process locations, then $\mathbf{H}=I$
 
 By Bayes' rule, the posterior can be estimated as
@@ -231,7 +231,7 @@ $$g(\mu)=\mathbf{Z=X\beta+H\eta}$$
 
 -   In Bayesian approach, MCMC method is widely used.
 -   MCMC method obtains posterior samples of parameters through a  constructed Markov Chains.
--   The goal is to find samples from $[\theta\vert data]$. This can be done by sampling from $[\theta_i\vert\theta_{-i}^{(r-1)}, data]$ for $i=1,\cdots,k$ where $\theta_{-i}=\{\theta_1,\cdots,\theta_{i-1},\theta_{i+1},\cdots,\theta_k\}$ iteratively.
+-   The goal is to find samples from $[\theta\vert data]$. This can be done by sampling from $[\theta_i\vert\theta_{-i}^{(r-1)}, data]$ for $i=1,\cdots,k$ where $\theta_{-i}=\lbrace \theta_1,\cdots,\theta_{i-1},\theta_{i+1},\cdots,\theta_k\rbrace $ iteratively.
 -   If the distribution $[\theta_i\vert\theta_{-i},data]$ is a known distribution then the MCMC process is *Gibbs sampler*.
 -   If the distribution is not available, *Metropolis-Hastings algorithm*
     is used by introducing a proposal density.

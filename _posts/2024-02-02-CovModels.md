@@ -49,7 +49,7 @@ F(z_{1},\ldots,z_{k};s_{1},\ldots,s_{k}) = F(z_{1},\ldots,z_{k};s_{1}+h,\ldots,s
 
 $$
 
-이때 $\{s_{1},\cdots,s_{k},s_{1}+h,\cdots,s_{k}+h\}\subset \mathcal{D}$이고 $F$는 random vector $(Z(s_{1}),\ldots, Z(s_{k}))^{\top}$ 의 분포함수를 의미한다.
+이때 $\lbrace s_{1},\cdots,s_{k},s_{1}+h,\cdots,s_{k}+h\rbrace \subset \mathcal{D}$이고 $F$는 random vector $(Z(s_{1}),\ldots, Z(s_{k}))^{\top}$ 의 분포함수를 의미한다.
 
 ### Weakly stationary process
 
@@ -72,7 +72,7 @@ Process $Z(s)$에 대해, 확률과정 *increment process*를 다음과 같이 �
 
 $$
 
-I_{h}(s) = \{Z(s)-Z(s+h)\}
+I_{h}(s) = \lbrace Z(s)-Z(s+h)\rbrace 
 
 
 $$
@@ -237,7 +237,7 @@ $$
 
 $$
 
-여기서 $K_{v}$는 modified Bessel function이고, $v,\theta$ 는 각각 smoothness, scale을 나타내는 hyperparameter이다. $v$값은 일반적으로 $\{\frac{1}{2},\frac{3}{2},\frac{5}{2}\}$ 을 널리 이용하는데, $v=\frac{1}{2}$인 경우를 *Ornstein-Uhlenbeck process*라고 부르기도 한다. 
+여기서 $K_{v}$는 modified Bessel function이고, $v,\theta$ 는 각각 smoothness, scale을 나타내는 hyperparameter이다. $v$값은 일반적으로 $\lbrace \frac{1}{2},\frac{3}{2},\frac{5}{2}\rbrace $ 을 널리 이용하는데, $v=\frac{1}{2}$인 경우를 *Ornstein-Uhlenbeck process*라고 부르기도 한다. 
 
 ![](/assets/img/Pasted image 20240202214222.png)
 *Gaussian process sample function from Matern covariance function (Murphy, 2023)*

@@ -96,7 +96,7 @@ $$
 $$
 
 f_{1}(x) := \begin{cases}
-\max\{f,0\} & x\in E\\
+\max\lbrace f,0\rbrace  & x\in E\\
 0& x\notin E
 \end{cases}
 
@@ -106,7 +106,7 @@ $$
 $$
 
 f_{2}(x) := \begin{cases}
-\max\{-f,0\} & x\in E\\
+\max\lbrace -f,0\rbrace  & x\in E\\
 0& x\notin E
 \end{cases}
 
@@ -127,8 +127,8 @@ $$
 $$
 
 \begin{align}
-V_{E}^{1} :&= \{(x,y)\vert x\in E,0<y<f_{1}(x)\}\\
-V_{E}^{2} :&= \{(x,y)\vert x\in E,0<y<f_{2}(x)\}
+V_{E}^{1} :&= \lbrace (x,y)\vert x\in E,0<y<f_{1}(x)\rbrace \\
+V_{E}^{2} :&= \lbrace (x,y)\vert x\in E,0<y<f_{2}(x)\rbrace 
 \end{align}
 
 
@@ -198,7 +198,7 @@ $$
 
 $$
 
-즉, 임의의 $I\in\{\phi_{j,i}\}$ 와 $X=[a_{1},b_{1}]\times\cdots\times[a_{n},b_{n}]$ 에 대해
+즉, 임의의 $I\in\lbrace \phi_{j,i}\rbrace $ 와 $X=[a_{1},b_{1}]\times\cdots\times[a_{n},b_{n}]$ 에 대해
 
 
 $$

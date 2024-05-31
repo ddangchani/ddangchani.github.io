@@ -12,7 +12,7 @@ header:
 {% raw %}
 ## Spectral Representation Theorem
 
-시계열 자료는 $\{x_{t}: t=1\ldots T\}$ 형태로 discrete하게 주어진다. 반면, 파동함수(cosine, sine function)를 이용해 시계열 자료를 근사하는 방법이 있는데, 이러한 형태로 주어진 자료를 **spectral** 하다고 한다. Spectral Representation Theorem은, 임의의 discrete한 시계열 자료가 stationary하기만 하면 spectral form으로 근사할 수 있음을 의미한다. 이와 관련해 다음 두 정리가 성립한다.
+시계열 자료는 $\lbrace x_{t}: t=1\ldots T\rbrace $ 형태로 discrete하게 주어진다. 반면, 파동함수(cosine, sine function)를 이용해 시계열 자료를 근사하는 방법이 있는데, 이러한 형태로 주어진 자료를 **spectral** 하다고 한다. Spectral Representation Theorem은, 임의의 discrete한 시계열 자료가 stationary하기만 하면 spectral form으로 근사할 수 있음을 의미한다. 이와 관련해 다음 두 정리가 성립한다.
 
 ### Theorem 1
 함수 $\gamma(h) : h=0,\pm1,\pm2,\ldots$ 가 non-negative definite일 필요충분조건은
@@ -34,7 +34,7 @@ $$
 $$
 
 ### Theorem 2
-시계열 $\{x_t\}$가 stationary하고 평균이 0이며 spectral density가 앞선 정리 1과 같이 $F(w)$로 주어진다고 하자. 그러면 complex-valued stochastic process $Z(w)$가 $w\in[- \frac{1}{2},\frac{1}{2}]$ 에 존재하여 stationary한 uncorrelated increments를 갖고, 다음과 같이 주어진다.
+시계열 $\lbrace x_t\rbrace $가 stationary하고 평균이 0이며 spectral density가 앞선 정리 1과 같이 $F(w)$로 주어진다고 하자. 그러면 complex-valued stochastic process $Z(w)$가 $w\in[- \frac{1}{2},\frac{1}{2}]$ 에 존재하여 stationary한 uncorrelated increments를 갖고, 다음과 같이 주어진다.
 
 $$
 
@@ -75,7 +75,7 @@ $$
 이므로 spectral density는 주기가 1인 even function이다. 따라서 일반적으로 plot은 $0\leq w\leq \frac{1}{2}$ 인 범위에서 그린다.
 
 ## Discrete Fourier Tranformation(DFT)
-시계열 $\{x_t\}$ 에 대한 discrete fourier transformation은 다음과 같이 주어진다.
+시계열 $\lbrace x_t\rbrace $ 에 대한 discrete fourier transformation은 다음과 같이 주어진다.
 
 $$
 

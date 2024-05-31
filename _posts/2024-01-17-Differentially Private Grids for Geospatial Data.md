@@ -157,7 +157,7 @@ For query $r$, $A(r)$ denotes the correct answer and $Q_\mathcal{M}(r)$ denotes 
 
 $$
 
-\text{RE}_\mathcal{M}(r) = \dfrac{\vert Q_\mathcal{M}(r)-A(r)\vert}{\max\{A(r),\rho\}}
+\text{RE}_\mathcal{M}(r) = \dfrac{\vert Q_\mathcal{M}(r)-A(r)\vert}{\max\lbrace A(r),\rho\rbrace }
 
 
 $$

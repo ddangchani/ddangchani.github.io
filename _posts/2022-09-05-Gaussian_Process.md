@@ -22,7 +22,7 @@ $$
 
 의 형태로 주어지며, 평균벡터 $\mu = \rm{E}[\mathbf f]$, 공분산행렬 $\Sigma = \rm{Cov}[\mathbf f]$ 가 정의된다.
 
-Input data $\mathbf{X} = \{x_n\in \mathcal{X}\}_{n=1}^N$ 에서 정의되는 함수 $f:\mathcal X\to \mathbb R$ 의 형태가 주어진다고 하자. 이때
+Input data $\mathbf{X} = \lbrace x_n\in \mathcal{X}\rbrace _{n=1}^N$ 에서 정의되는 함수 $f:\mathcal X\to \mathbb R$ 의 형태가 주어진다고 하자. 이때
 
 $$
 
@@ -57,7 +57,7 @@ m(x) = \rm{E}[f(x)]\\
 
 $$
 
-또한, Gaussan Process의 정의에 의해 Input points $\mathbf X=\{x_1,\ldots,x_N\}$ 에 대해
+또한, Gaussan Process의 정의에 의해 Input points $\mathbf X=\lbrace x_1,\ldots,x_N\rbrace $ 에 대해
 
 $$
 
@@ -145,7 +145,7 @@ $$
 
 ### Noise-Free observation
 
-Training data $\mathcal D = \{(x_n,y_n) : n=1:N, x_i\in\mathbb R^D\}$ 이 주어지고, 이때 noise-free인(오차항이 없는) 함수 $y_n=f(x_n)$ 로 관계식이 주어진다고 하자. 이때, 이미 관측된(Training data) $x$에 대한 함수값 $f(x)$를 추정하는 문제가 주어진다고 하자. 이 경우에는 **GP를 가정**한 함수 $f$를 추정하는 것이 비교적 간단하다. 오차항이 없으므로 Training data를 보간(Interpolate)하는 함수를 찾으면 된다.
+Training data $\mathcal D = \lbrace (x_n,y_n) : n=1:N, x_i\in\mathbb R^D\rbrace $ 이 주어지고, 이때 noise-free인(오차항이 없는) 함수 $y_n=f(x_n)$ 로 관계식이 주어진다고 하자. 이때, 이미 관측된(Training data) $x$에 대한 함수값 $f(x)$를 추정하는 문제가 주어진다고 하자. 이 경우에는 **GP를 가정**한 함수 $f$를 추정하는 것이 비교적 간단하다. 오차항이 없으므로 Training data를 보간(Interpolate)하는 함수를 찾으면 된다.
 
 반면, 이번에는 Training data 외부에서 관측된 $x$,에서의 문제를 생각해보자. 예컨대 $$N_*\times D$$ 크기의 test dataseet $$\mathbf X_*$$ 의 원소들에 대응하는 가우시안 벡터
 

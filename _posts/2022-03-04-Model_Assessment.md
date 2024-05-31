@@ -60,7 +60,7 @@ $$
 
 ## Estimate of Training error
 
-Training set $\mathcal T=\{(x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)\}$ 가 주어지고 이를 바탕으로 어떤 모델 $f$ 를 만들었다고 하자. 이때 training data와 독립적인 새로운 test data $(X^0,Y^0)$에 대한 **test error**를 다음과 같이 나타내자. 이때 기댓값의 subscript $X^0,Y^0$은 test data를 확률변수로 한 기댓값임을 의미한다(*기댓값을 구할 때 test data의 joint pdf를 곱한다는 의미이다*).
+Training set $\mathcal T=\lbrace (x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)\rbrace $ 가 주어지고 이를 바탕으로 어떤 모델 $f$ 를 만들었다고 하자. 이때 training data와 독립적인 새로운 test data $(X^0,Y^0)$에 대한 **test error**를 다음과 같이 나타내자. 이때 기댓값의 subscript $X^0,Y^0$은 test data를 확률변수로 한 기댓값임을 의미한다(*기댓값을 구할 때 test data의 joint pdf를 곱한다는 의미이다*).
 
 $$
 
@@ -136,7 +136,7 @@ C_p=\overline{\text{err}}+\frac{2d}{N}\hat\sigma_\epsilon^2
 
 $$
 
-라는 형태로 In-sample estimate를 정의할 수 있는데, 이를 **(Mallow's) C<sub>p</sub> statistic**이라도고 한다. 이를 이용하면, Training error를 구하고 사용되는 basis function의 개수($d$)에 비례한 In-sample error를 추정할 수 있다. 예시로, Linear Regression의 model selection 과정에서 $d$는 $\mathbf X$의 변수 개수가 $k$ 개일 때 선택된 index set $\{1,\ldots,k\}$ 의 부분집합의 cardinality를 의미한다.
+라는 형태로 In-sample estimate를 정의할 수 있는데, 이를 **(Mallow's) C<sub>p</sub> statistic**이라도고 한다. 이를 이용하면, Training error를 구하고 사용되는 basis function의 개수($d$)에 비례한 In-sample error를 추정할 수 있다. 예시로, Linear Regression의 model selection 과정에서 $d$는 $\mathbf X$의 변수 개수가 $k$ 개일 때 선택된 index set $\lbrace 1,\ldots,k\rbrace $ 의 부분집합의 cardinality를 의미한다.
 
 #### AIC
 
@@ -182,7 +182,7 @@ $$
 > 
 > $$
 > 
-> 으로 주어지고 $S$를 $\{1,\ldots,p\}$ 의 부분집합이라 할 때 분산에 대한 추정량 $\hat\sigma_S^2=n^{-1}\Vert Y-X\hat\beta_S\Vert^2$ 을 취하면 AIC는 다음과 같다.
+> 으로 주어지고 $S$를 $\lbrace 1,\ldots,p\rbrace $ 의 부분집합이라 할 때 분산에 대한 추정량 $\hat\sigma_S^2=n^{-1}\Vert Y-X\hat\beta_S\Vert^2$ 을 취하면 AIC는 다음과 같다.
 > 
 > $$
 > 

@@ -16,7 +16,7 @@ use_math: true
 
 $$
 
-Y_{i}(0), Y_{i}(1), Z_{i}\in\{0,1\},X_{i} 
+Y_{i}(0), Y_{i}(1), Z_{i}\in\lbrace 0,1\rbrace ,X_{i} 
 
 
 $$
@@ -140,7 +140,7 @@ $$
 
 - CATE : $\tau(x) = (\beta_{1}-\beta_{0})^T x$
 - PATE : $\tau^{P} = (\beta_{1}-\beta_{0})^{T}\mathrm{E}X_{i}$
-- SATE : $\tau^{S}= N^{-1}\sum_{i=1}^{N}\{Y_{i}(1)-Y_{i}(0)\}$
+- SATE : $\tau^{S}= N^{-1}\sum_{i=1}^{N}\lbrace Y_{i}(1)-Y_{i}(0)\rbrace $
 - MATE : $\tau^{M} = (\beta_{1}-\beta_{0})^{T}\bar X$
 
 ## Prior Independence

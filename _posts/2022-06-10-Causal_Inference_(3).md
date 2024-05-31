@@ -157,7 +157,7 @@ $$
 >
 > 3. 집합 
 >    $$
->    c_i+\text{supp} N_Y := \{c_i + h : P(N_Y = h)>0\}
+>    c_i+\text{supp} N_Y := \lbrace c_i + h : P(N_Y = h)>0\rbrace 
 >    $$
 >    들은 서로소이다.
 
@@ -166,7 +166,7 @@ $$
 $$
 
 Y\equiv f(X) + N_Y \mod m\\
-\text{where}\;\; N_Y \in \{0,1,\ldots,m-1\}
+\text{where}\;\; N_Y \in \lbrace 0,1,\ldots,m-1\rbrace 
 
 $$
 

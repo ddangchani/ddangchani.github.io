@@ -25,7 +25,7 @@ Markov Random Field란, 공간자료 중 격자형(lattice) 자료를 모델링�
     두 개의 인접 노드가 나머지 변수들이 주어졌을 때 조건부 독립
 
     $$
-    X_{i}\perp X_{j}\;\vert\;X_{V\backslash\{u,v\}}
+    X_{i}\perp X_{j}\;\vert\;X_{V\backslash\lbrace u,v\rbrace }
     $$
 
 1. **Local Markov property**
@@ -98,7 +98,7 @@ $$
 \begin{align}
 \mathbf{X}=(X_{v})_{v\in V}&\sim MVN(\mathbf{\mu},\Sigma)\\\\
 
-(\Sigma^{-1})_{uv}=0\;\;&\text{iff}\;\;\{u,v\}\notin E
+(\Sigma^{-1})_{uv}=0\;\;&\text{iff}\;\;\lbrace u,v\rbrace \notin E
 \end{align}
 $$
 

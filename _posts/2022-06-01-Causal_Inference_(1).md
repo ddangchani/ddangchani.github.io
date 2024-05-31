@@ -72,7 +72,7 @@ MNIST 데이터셋을 생성하는 과정을 생각해보자. 즉, 특정 한자
 
 3. Independent Noise
 
-    마지막 원칙은 각 메커니즘에 포함된 Noise Variable이 서로 독립이어야 한다는 것이다. $C\to E$ 모델에서(각각 Cause, Effect) 메커니즘이 $E=f(C,N)$ 으로 주어지는 상황을 생각해보자. 이때 Noise variable $N$은 discrete하게 주어진다(finite set $S$의 원소로 주어진다). 만일 N이 특정 값 s로 고정되면($N=s$), 위 메커니즘은 $E=f^s(C)$로 reduce된다. 즉, Noise가 어떤 값으로 고정되는 것은 함수모임 $\{f^s(C):s\in S\}$ 에서 특정 메커니즘을 취하는 것과 동치이다.
+    마지막 원칙은 각 메커니즘에 포함된 Noise Variable이 서로 독립이어야 한다는 것이다. $C\to E$ 모델에서(각각 Cause, Effect) 메커니즘이 $E=f(C,N)$ 으로 주어지는 상황을 생각해보자. 이때 Noise variable $N$은 discrete하게 주어진다(finite set $S$의 원소로 주어진다). 만일 N이 특정 값 s로 고정되면($N=s$), 위 메커니즘은 $E=f^s(C)$로 reduce된다. 즉, Noise가 어떤 값으로 고정되는 것은 함수모임 $\lbrace f^s(C):s\in S\rbrace $ 에서 특정 메커니즘을 취하는 것과 동치이다.
     이번에는 세개 이상의 노드를 가진 조금 더 복잡한 causal model을 생각해보자. 이때 두 노드 $X_j,X_k$에 대한 노이즈 변수가 종속이라고 하자. 즉, $N_j$가 결정되면 $N_k$의 값에도 영향을 준다는 것이다. 그런데, 앞선 설명에서 Noise의 결정은 메커니즘의 결정과 동치이므로 이는 두 메커니즘 $f_j^s,f_k^s$가 서로 종속임을 의미한다. 이는 메커니즘의 독립을 의미하는 두번째 원칙에 위배되므로 노이즈 변수가 독립이어야만 한다.
 
 

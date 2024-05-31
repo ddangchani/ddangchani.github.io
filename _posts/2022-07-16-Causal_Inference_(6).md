@@ -108,7 +108,7 @@ Markov Blanket은 반응변수 Y의 값을 예측하는 과정에서 어떤 다�
 
 $$
 
-Y\bot_\mathcal G\;V\backslash(\{Y\}\cup M)\,\vert \,M
+Y\bot_\mathcal G\;V\backslash(\lbrace Y\rbrace \cup M)\,\vert \,M
 
 $$
 
@@ -116,7 +116,7 @@ $$
 
 $$
 
-Y\bot_\mathcal \;V\backslash(\{Y\}\cup M)\,\vert \,M
+Y\bot_\mathcal \;V\backslash(\lbrace Y\rbrace \cup M)\,\vert \,M
 
 $$
 

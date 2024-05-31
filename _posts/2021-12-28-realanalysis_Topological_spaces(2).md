@@ -28,13 +28,13 @@ use_math: true
 **명제 7** 모든 거리공간은 normal하다.   
 > 증명. 거리공간이 $(X,\rho)$로 주어지며 다음과 같이 $X$의 부분집합 $F$와 $x\in X$을 대응시키는 거리함수를 정의하자.   
 > 
-> $$dist(x,F)=\inf\{\rho(x,x'):x' \in F\}$$   
+> $$dist(x,F)=\inf\lbrace \rho(x,x'):x' \in F\rbrace $$   
 > 
 > 일반분리성질을 확인하기 위해 두 개의 서로소인, $X$의 닫힌 부분집합 $F_1,F_2$를 잡자. 이때 두 $X$의 부분집합   
 > 
-> $$\mathcal{O_1}=\{x\in X: dist(x,F_1)<dist(x,F_2)\}$$
+> $$\mathcal{O_1}=\lbrace x\in X: dist(x,F_1)<dist(x,F_2)\rbrace $$
 > 
-> $$\mathcal{O_2}=\{x\in X: dist(x,F_2)<dist(x,F_1)\}$$   
+> $$\mathcal{O_2}=\lbrace x\in X: dist(x,F_2)<dist(x,F_1)\rbrace $$   
 > 
 > 을 잡으면 $F_1\subseteq\mathcal{O_1}$, $F_2\subseteq\mathcal{O_2}$ 이고 $\mathcal{O_1\cap O_2} = \emptyset$ 이다. (if $x\in F_1$ then $x\in\mathcal{O_1}$) 이는 서로소인 근방에 의해 $F_1,F_2$ 가 분리되는 것을 의미하므로 거리공간 X가 normal 함을 알 수 있다.   
 
@@ -62,7 +62,7 @@ $$
 
 주의할 것은, 거리공간에서와는 다르게 위상공간에서의 수열은 두개 이상의 극한을 가질 수 있다. 예를 들어 위상공간 $X$에 대한 **Trivial Topology**
 
-$$\mathcal{T}=\{\emptyset,X\}$$
+$$\mathcal{T}=\lbrace \emptyset,X\rbrace $$
 
 를 생각하면 $(X,\mathcal{T})$에서 정의된 모든 수열은 모든 점으로 수렴하는데, 모든 점에 대한 근방은 전체집합 $X$로만 정의되기 때문이다. 반면, [하우스도르프](#하우스도르프-분리-성질suphausdorff-separation-propertysup) 위상공간에서는 각 점들을 서로소인 근방들로 분리할 수 있으므로 수열들은 각각 오직 하나의 극한만을 갖는다.   
 
@@ -72,7 +72,7 @@ $$\mathcal{T}=\{\emptyset,X\}$$
 
 $$
 
-\{N(x,1/n)\}^\infty_{n=1}
+\lbrace N(x,1/n)\rbrace ^\infty_{n=1}
 
 $$   
 

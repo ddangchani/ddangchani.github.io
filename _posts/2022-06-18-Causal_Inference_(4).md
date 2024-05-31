@@ -124,7 +124,7 @@ $$
 
 $$
 
-이때 각 $\mathcal D_i=\{(X_1,Y_1),\ldots,(X_{n_i},Y_{n_i})\}$는 데이터셋에 대응하는데, 각각의 데이터셋은 확률분포 $P_{X,Y}^i$의 realization이다. 또한, 각 label $A_i\in\{\leftarrow,\rightarrow\}$ 은 각 데이터셋 $\mathcal D_i$가 $X\to Y$에 대응하는지, $Y\to X$에 대응하는지를 설명하는 label이다.
+이때 각 $\mathcal D_i=\lbrace (X_1,Y_1),\ldots,(X_{n_i},Y_{n_i})\rbrace $는 데이터셋에 대응하는데, 각각의 데이터셋은 확률분포 $P_{X,Y}^i$의 realization이다. 또한, 각 label $A_i\in\lbrace \leftarrow,\rightarrow\rbrace $ 은 각 데이터셋 $\mathcal D_i$가 $X\to Y$에 대응하는지, $Y\to X$에 대응하는지를 설명하는 label이다.
 
 이렇게 문제를 정의해버리면 결국 causal learning은 classical한 지도학습 문제에 대응된다는 것을 확인할 수 있고, train data에 대해 학습시킨 분류기는 관측되지 않은 test 데이터셋에 대해서도 인과관계추론이 가능하다고 가정할 수 있다. 다만, causal learning 영역에서 지도학습이 독자적으로 사용되지는 않고, 이는 추가적인 연구가 필요한 영역이다.
 

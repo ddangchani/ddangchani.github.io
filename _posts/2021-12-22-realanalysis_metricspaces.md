@@ -56,7 +56,7 @@ $$
 
 $$
 
-\{x_n\}\to x \Rightarrow \{f(x_n)\}\to f(x)
+\lbrace x_n\rbrace \to x \Rightarrow \lbrace f(x_n)\rbrace \to f(x)
 
 $$   
 
@@ -91,7 +91,7 @@ $$
 
 어떤 거리공간 X에 대해 **$\epsilon$-net** 은 다음과 같은 유한덮개를 의미한다.   
 
-$$\{N(x_k,\epsilon)\}_{k=1}^n\quad \text{and} \quad E\subset\bigcup_{k=1}^n N(x_k,\epsilon)$$   
+$$\lbrace N(x_k,\epsilon)\rbrace _{k=1}^n\quad \text{and} \quad E\subset\bigcup_{k=1}^n N(x_k,\epsilon)$$   
 
 이때, 어떤 거리공간이 완전유계이면 정의에 의해, 임의의 $\epsilon$에 대해 해당 공간을 덮는 $\epsilon-$net 이 존재함을 알 수 있다. 또한, 임의의 $\epsilon$에 대해서 반대로 어떤 거리공간을 덮는 $\epsilon-$net이 존재한다면 해당 거리공간은 완전유계임도 자명하다. 이와 더불어, 어떤 거리공간이 완전유계이면 유한덮개가 존재하고, 유한덮개들의 합집합은 유계집합이므로 완전유계공간은 유계집합임 역시 알 수 있다.   
 

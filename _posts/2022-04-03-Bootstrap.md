@@ -40,7 +40,7 @@ $$
 
 $\widehat{\text{Err}}_{boot}$의 성능을 개선하기 위해, 우선 bootstrap이 예측오차 추정에 주는 영향을 간단한 예를 통해 살펴보도록 하자.
 
-> 클래스 $\{0,1\}$ 각각 $N$개의 데이터가 있는 분류 문제에 1-Nearest Neighbor 분류기를 이용한다고 하자. 그러면 0-1 loss를 이용할 때 원 데이터셋의 true error(rate)는 0.5가 된다. 하지만 bootstrap을 이용하게 되는 경우 $\widehat{\text{Err}}_{boot}$은 true error보다 낮아지게 된다. 만일 $j$번째 관측값이 $k$번째 bootstrap sample에 포함되지 않으면
+> 클래스 $\lbrace 0,1\rbrace $ 각각 $N$개의 데이터가 있는 분류 문제에 1-Nearest Neighbor 분류기를 이용한다고 하자. 그러면 0-1 loss를 이용할 때 원 데이터셋의 true error(rate)는 0.5가 된다. 하지만 bootstrap을 이용하게 되는 경우 $\widehat{\text{Err}}_{boot}$은 true error보다 낮아지게 된다. 만일 $j$번째 관측값이 $k$번째 bootstrap sample에 포함되지 않으면
 > 
 > $$
 > 
@@ -53,7 +53,7 @@ $\widehat{\text{Err}}_{boot}$의 성능을 개선하기 위해, 우선 bootstrap
 > $$
 > 
 > \begin{aligned}
-> P\{\text{observation  }i\notin \text{bootstrap sample } b\} &=1-[1-(1-{1\over N})^N]\\
+> P\lbrace \text{observation  }i\notin \text{bootstrap sample } b\rbrace  &=1-[1-(1-{1\over N})^N]\\
 > &\approx e^{-1} = 0.368
 > \end{aligned}
 > 

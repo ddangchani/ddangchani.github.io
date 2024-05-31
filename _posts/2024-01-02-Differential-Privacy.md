@@ -12,15 +12,15 @@ use_math: true
 
 차등적 정보보호<sup>differential privacy, DP</sup>란, 데이터 분석 과정에서 개별 데이터의 정확한 값(privacy)을 보호하면서 동시에 분석의 결과를 일정 수준 보장할 수 있도록 하는 이론이다. 인과추론 연구에서 무작위 실험(randomized experiment)과 그 결이 비슷한데, 정의는 다음과 같이 이루어진다.
 
-데이터셋 $D=\{X_{1},\ldots,X_{n}\}$가 주어졌다고 하자. 이때, 각 데이터의 sample space는 $X_{i}\in\mathcal{X}$로 주어진다. 데이터의 표본 공간을 명확히 아는 것은 차등적 정보보호에서 매우 중요하다. 차등적 정보보호에서 결과적으로 도출해야 하는 것은, 데이터셋에 대한 통계량<sup>statistic</sup> $Z=T(D)$ 이다. 이때, 통계량을 직접적으로 사용하기 보다는 일종의 randomization을 적용하여 $Z\sim Q(\cdot\vert D)$ 라는 분포를 가정하자.
+데이터셋 $D=\lbrace X_{1},\ldots,X_{n}\rbrace $가 주어졌다고 하자. 이때, 각 데이터의 sample space는 $X_{i}\in\mathcal{X}$로 주어진다. 데이터의 표본 공간을 명확히 아는 것은 차등적 정보보호에서 매우 중요하다. 차등적 정보보호에서 결과적으로 도출해야 하는 것은, 데이터셋에 대한 통계량<sup>statistic</sup> $Z=T(D)$ 이다. 이때, 통계량을 직접적으로 사용하기 보다는 일종의 randomization을 적용하여 $Z\sim Q(\cdot\vert D)$ 라는 분포를 가정하자.
 
 두 개의 데이터셋 $D,D'$가 서로 **이웃**이라는 것은 한 개의 성분 데이터에만 차이가 존재하는 것을 의미한다. 즉, 다음과 같고 이를 $D\sim D'$ 라고 정의하자.
 
 $$
 
 \begin{align}
-D &=  \{X_{1},\ldots,X_{i-1},X_{i},X_{i+1},\ldots,X_{n}\} \\
-D' &= \{X_{1},\ldots,X_{i-1},X'_{i},X_{i+1},\ldots,X_{n}\} \\
+D &=  \lbrace X_{1},\ldots,X_{i-1},X_{i},X_{i+1},\ldots,X_{n}\rbrace  \\
+D' &= \lbrace X_{1},\ldots,X_{i-1},X'_{i},X_{i+1},\ldots,X_{n}\rbrace  \\
 \end{align}
 
 

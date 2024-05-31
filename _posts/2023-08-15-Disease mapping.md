@@ -178,7 +178,7 @@ E_{ijkt}&= n_{ijkt}\hat r\\
 
 ### Clayton, Kalder(1987)
 
-Recall that the MLE of relative risk $\hat\theta_i=Y_i/E_i$ does not take into account the population size so that $\{\hat\theta_1,\cdots,\hat\theta_n\}$ may not be the best estimates. Suppose a Poisson-CAR model
+Recall that the MLE of relative risk $\hat\theta_i=Y_i/E_i$ does not take into account the population size so that $\lbrace \hat\theta_1,\cdots,\hat\theta_n\rbrace $ may not be the best estimates. Suppose a Poisson-CAR model
 
 $$\theta_i=\exp(\beta_i),\quad\beta\sim N(\mathbf{0},\Sigma)$$
 

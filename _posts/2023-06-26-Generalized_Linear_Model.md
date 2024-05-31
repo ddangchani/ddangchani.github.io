@@ -94,7 +94,7 @@ $$
 
 \begin{aligned}
 \frac{\partial}{\partial\beta}l(\beta) &= \sum_{i=1}^{n}\frac{\partial\eta_{i}}{\partial\beta}\frac{\partial\mu_i}{\partial\eta_{i}}\frac{\partial\theta_{i}}{\partial\mu_{i}} \frac{\partial}{\partial\theta_{i}}l(\beta)\\
-&=\sum_{i=1}^{n}X_{i}^{T}\{g'(\mu_{i})\mathrm{Var}(Y_{i})\}^{-1}(Y_{i}-\mu_{i})
+&=\sum_{i=1}^{n}X_{i}^{T}\lbrace g'(\mu_{i})\mathrm{Var}(Y_{i})\rbrace ^{-1}(Y_{i}-\mu_{i})
 \end{aligned}
 
 $$

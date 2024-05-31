@@ -15,7 +15,7 @@ use_math: true
 
 $$
 
-\mathcal{P}_{\theta} = \{N(\mu,\sigma^{2}):\mu\in\mathbb{R},\sigma^2>0\} 
+\mathcal{P}_{\theta} = \lbrace N(\mu,\sigma^{2}):\mu\in\mathbb{R},\sigma^2>0\rbrace  
 
 $$
 

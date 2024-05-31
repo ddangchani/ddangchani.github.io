@@ -23,7 +23,7 @@ Cross-validation<sup>교차검증</sup>은 prediction error을 추정하는 과�
 
 $$
 
-\kappa:\{1,\ldots,N\}\mapsto\{1,\ldots,K\}
+\kappa:\lbrace 1,\ldots,N\rbrace \mapsto\lbrace 1,\ldots,K\rbrace 
 
 $$
 

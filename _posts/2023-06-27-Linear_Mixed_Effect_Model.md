@@ -61,7 +61,7 @@ $$
 
 $$
 
-그런데 실제로 각 모수(행렬)들을 추정하는 과정에서 임의효과의 공분산행렬 $D$가 복잡한 경우, 즉 그룹간 임의효과의 상관관계가 존재하는 경우 해당 성분의 추정이 어려워지는 문제가 발생하기 때문에, **Variance component model**을 활용하여 공분산행렬들에 구조를 주어 추정가능하게끔 변환하는 과정을 거친다. 여기서는 $cov(\gamma)=D=diag\{\sigma_{i}^{2}I\}$ 형태를 주어 $cov(Y)=V=\sum_{l}\sigma_{l}^{2}Z_{l}Z_{l}^{T}+R$ 로 변환하고, 이를 이용해 최대가능도 추정량을 구할 수 있다.
+그런데 실제로 각 모수(행렬)들을 추정하는 과정에서 임의효과의 공분산행렬 $D$가 복잡한 경우, 즉 그룹간 임의효과의 상관관계가 존재하는 경우 해당 성분의 추정이 어려워지는 문제가 발생하기 때문에, **Variance component model**을 활용하여 공분산행렬들에 구조를 주어 추정가능하게끔 변환하는 과정을 거친다. 여기서는 $cov(\gamma)=D=diag\lbrace \sigma_{i}^{2}I\rbrace $ 형태를 주어 $cov(Y)=V=\sum_{l}\sigma_{l}^{2}Z_{l}Z_{l}^{T}+R$ 로 변환하고, 이를 이용해 최대가능도 추정량을 구할 수 있다.
 
 ### Mixed model equation
 $X\beta$의 best linear unbiased estimator(BLUE)와 $Z\gamma$의 best linear unbiased predictor(BLUP)은 다음과 같은 손실함수를 최소화하는 $\beta,\gamma$를 찾으면 구할 수 있는데, 이를 mixed model equation이라고 한다. 

@@ -73,8 +73,8 @@ that the *p-value* of Monte Carlo test is $(r+1)/s$.
 >    
 > $$
 > \begin{aligned}
-> U(t) &=\max_{2\leq i\leq s}\{\hat{H}_i(t)\}\\
-> L(t) &=\min_{2\leq i\leq s}\{\hat{H}_i(t)\}
+> U(t) &=\max_{2\leq i\leq s}\lbrace \hat{H}_i(t)\rbrace \\
+> L(t) &=\min_{2\leq i\leq s}\lbrace \hat{H}_i(t)\rbrace 
 > \end{aligned}
 > $$
 

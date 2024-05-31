@@ -43,7 +43,7 @@ $$
 
 $$
 
-$m\times n$ 행렬 $\mathbf A$의 열벡터가 $\{\mathbf a_i:i=1,\ldots,n\}$ 들로 주어진다고 하자, 그러면 벡터공간에 정의된 L1 노음을 이용해 행렬노음공간의 위 성질들을 만족하도록 다음과 같이 L1 Matrix Norm을 정의할 수 있다.
+$m\times n$ 행렬 $\mathbf A$의 열벡터가 $\lbrace \mathbf a_i:i=1,\ldots,n\rbrace $ 들로 주어진다고 하자, 그러면 벡터공간에 정의된 L1 노음을 이용해 행렬노음공간의 위 성질들을 만족하도록 다음과 같이 L1 Matrix Norm을 정의할 수 있다.
 
 $$
 
@@ -56,8 +56,8 @@ L2 Norm을 정의하기 위해서는, 우선 Operator Norm(Induced Norm)에 대�
 $$
 
 \begin{aligned}
-\Vert A\Vert_{\text{op}} &=\inf\{c\geq 0: \Vert Ax\Vert\leq c\Vert x\Vert\;\; \forall x\in\mathbb R^n\}\\
-&=\sup\{\Vert Ax\Vert : x\in \mathbb R^n,\;\;\Vert x \Vert=1\}
+\Vert A\Vert_{\text{op}} &=\inf\lbrace c\geq 0: \Vert Ax\Vert\leq c\Vert x\Vert\;\; \forall x\in\mathbb R^n\rbrace \\
+&=\sup\lbrace \Vert Ax\Vert : x\in \mathbb R^n,\;\;\Vert x \Vert=1\rbrace 
 
 \end{aligned}
 
@@ -68,7 +68,7 @@ $$
 $$
 
 \Vert A\Vert_2 = \sup_{\Vert x\Vert=1}\Vert Ax\Vert_2\\
-=\sup\biggl\{ \frac{\Vert Ax\Vert}{\Vert x\Vert} : x\in \mathbb R^n,\;\; x\neq 0 \biggr\}
+=\sup\biggl\lbrace  \frac{\Vert Ax\Vert}{\Vert x\Vert} : x\in \mathbb R^n,\;\; x\neq 0 \biggr\rbrace 
 
 $$
 

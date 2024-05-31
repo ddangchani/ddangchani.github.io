@@ -16,7 +16,7 @@ header:
 
 ## Definition
 
-Cox process는 intensity function $\lambda(x)$를 random process로 가정한다. Point process $X$가 $\mathbb R^2$에서 정의되어 있을 때, $X$가 Cox process라면 random intensity process $\Lambda = \{\Lambda(s): s\in \mathbb R^2\}$가 존재하여 다음과 같은 조건을 만족한다.
+Cox process는 intensity function $\lambda(x)$를 random process로 가정한다. Point process $X$가 $\mathbb R^2$에서 정의되어 있을 때, $X$가 Cox process라면 random intensity process $\Lambda = \lbrace \Lambda(s): s\in \mathbb R^2\rbrace $가 존재하여 다음과 같은 조건을 만족한다.
 
 $$
 
@@ -40,11 +40,11 @@ $$
 
 여기서 $r$은 correlation function이라고 하는데, 대표적인 correlation function으로는 exponential, Matern 등이 있다.
 
-이러한 가정하에서, $K$개의 지점 $\{s_1,\ldots,s_K\}\subset \mathbb R^2$에서의 가능도는 다음과 같이 주어진다.
+이러한 가정하에서, $K$개의 지점 $\lbrace s_1,\ldots,s_K\rbrace \subset \mathbb R^2$에서의 가능도는 다음과 같이 주어진다.
 
 $$
 
-\pi(\{s_k\}\mid \lambda(s)) = \exp\left(\int (1 - \lambda(s))ds \right) \prod_{k=1}^K \lambda(s_k)
+\pi(\lbrace s_k\rbrace \mid \lambda(s)) = \exp\left(\int (1 - \lambda(s))ds \right) \prod_{k=1}^K \lambda(s_k)
 \tag{1}
 
 
@@ -67,7 +67,7 @@ $$
 
 $$
 
-\log p(\{s_k\}\mid \theta, \mathbf Y) = \text{const} + \sum_i \left(y_in_i - A \exp(y_i)\right)
+\log p(\lbrace s_k\rbrace \mid \theta, \mathbf Y) = \text{const} + \sum_i \left(y_in_i - A \exp(y_i)\right)
 
 
 $$
@@ -79,7 +79,7 @@ $$
 $$
 
 \begin{aligned}
-\log p(\theta, \mathbf y\mid \{s_k\}) &\propto \rm{const} + \sum_i \left(y_in_i - A \exp(y_i)\right) \\
+\log p(\theta, \mathbf y\mid \lbrace s_k\rbrace ) &\propto \rm{const} + \sum_i \left(y_in_i - A \exp(y_i)\right) \\
 &- \frac{1}{2}(\mathbf y - \mu \mathbf 1)^T \sigma^{-2} \mathbf C^{-1} (\mathbf y - \mu \mathbf 1) \\
 &- \frac{n^2}{2}\log \sigma^2 - \frac{1}{2} \log \det \mathbf C + \log {\rm prior}(\theta)
 \end{aligned}
@@ -110,7 +110,7 @@ $$
 
 $$
 
-U(\mathbf q) = -\log p(\theta, \mathbf y\mid \{s_k\})
+U(\mathbf q) = -\log p(\theta, \mathbf y\mid \lbrace s_k\rbrace )
 
 
 $$

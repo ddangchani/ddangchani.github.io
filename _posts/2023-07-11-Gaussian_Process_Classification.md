@@ -56,7 +56,7 @@ p(y=+1\vert \mathbf{x,w})=\sigma(\mathbf{x}^T\mathbf{w})
 
 $$
 
-또한, 주어진 분류 문제에서 데이터셋이 $$\mathcal{D}=\{(\mathbf{x}_{i}, y_{i})\vert i=1,\ldots,n\}$$
+또한, 주어진 분류 문제에서 데이터셋이 $$\mathcal{D}=\lbrace (\mathbf{x}_{i}, y_{i})\vert i=1,\ldots,n\rbrace $$
  으로 주어지고, parameter $\mathbf{w}$ 에 대한 가우시안 사전분포($\mathbf{w}\sim N(0,\Sigma_{p})$)를 정해주면 다음과 같은 로그사후확률분포를 구할 수 있다.
 
 $$

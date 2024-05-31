@@ -14,7 +14,7 @@ header:
 이전까지는 변수가 2개인 SCM, 즉 원인-결과의 SCM을 살펴보았었다. 이제부터는 변수가 여러개인(multivariate) causal model들에 대해 살펴보도록 하자. 우선, cause-effect 모델도 포함되지만 다변량 causal model은 일반적으로 그래프(graph)의 형태로 표현된다.
 
 ## Graph의 정의
-**그래프**란, 확률변수 $\mathbf X = (X_1,\ldots,X_d)$의 index set $V=\{1,\ldots,d\}$와 $V^2$의 부분집합 $\mathcal E\subseteq\{(v,w): v,w\in V, v\neq w\}$ 로 이루어진 순서쌍 $\mathcal G = (V,\mathcal E)$을 의미한다. 이때 $V$의 각 원소를 그래프의 노드(node)라고 하며, $\mathcal E$의 각 원소 $(i,j)$를 변(edge)이라고 한다. 또한, 변 $(i,j)$가 존재한다는 것은 i번째 노드에서 j번째 노드로 가는 화살표(**방향**을 포함하는 의미)가 존재한다는 것을 의미한다. 
+**그래프**란, 확률변수 $\mathbf X = (X_1,\ldots,X_d)$의 index set $V=\lbrace 1,\ldots,d\rbrace $와 $V^2$의 부분집합 $\mathcal E\subseteq\lbrace (v,w): v,w\in V, v\neq w\rbrace $ 로 이루어진 순서쌍 $\mathcal G = (V,\mathcal E)$을 의미한다. 이때 $V$의 각 원소를 그래프의 노드(node)라고 하며, $\mathcal E$의 각 원소 $(i,j)$를 변(edge)이라고 한다. 또한, 변 $(i,j)$가 존재한다는 것은 i번째 노드에서 j번째 노드로 가는 화살표(**방향**을 포함하는 의미)가 존재한다는 것을 의미한다. 
 
 만일 노드 i,j에 대해 $(i,j)\in\mathcal E$가 성립하지만 $(j,i)\notin\mathcal E$인 경우, 즉 i에서 j의 방향으로만 연결이 존재하는 경우 노드 i를 j의 부모 노드(**parent node**)라고 하고 j를 i의 자식 노드(**child node**)라고 한다. 또한, 만일 $(i,j)\in\mathcal E$이고 $(j,i)\in\mathcal E$가 동시에 성립하면 노드 i,j를 인접(**adjacent**)하다고 한다.
 
@@ -161,7 +161,7 @@ $$
 
 $$
 
-를 생각하자. 또한, noise distribution은 $N_X,N_Y,N_Z\sim\bf U\rm(\{-5,-4,\ldots,4,5\})$, 즉 uniform (discrete) distribution으로 주어진다고 하자. 만일 관측값 $\rm(X,Y,Z) = (1,2,4)$가 주어진다면 $P_\bf N^{\frak C\vert \bf X=x}$에 대한 새로운 noise distribution은 $(N_X,N_Y,N_Z) = (1,1,-1)$, 즉 point mass 1을 갖는다. 따라서, 주어진 관측 아래 다음과 같은 명제
+를 생각하자. 또한, noise distribution은 $N_X,N_Y,N_Z\sim\bf U\rm(\lbrace -5,-4,\ldots,4,5\rbrace )$, 즉 uniform (discrete) distribution으로 주어진다고 하자. 만일 관측값 $\rm(X,Y,Z) = (1,2,4)$가 주어진다면 $P_\bf N^{\frak C\vert \bf X=x}$에 대한 새로운 noise distribution은 $(N_X,N_Y,N_Z) = (1,1,-1)$, 즉 point mass 1을 갖는다. 따라서, 주어진 관측 아래 다음과 같은 명제
 
 > “$Z$ would have been $11$ if had X been *set to* $2$”
 

@@ -17,11 +17,11 @@ header:
 
 #### Hard Margin
 
-$N$개의 observation으로 구성된 데이터셋 $(x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)$이 주어지고 이때 $x_i\in \mathbb R^p$, $y_i\in\{-1,1\}$ 이라고 하자. 이때 데이터의 분류를 위한 초평면([hyperplane](https://ddangchani.github.io/linear%20model/lda1/))을 다음과 같이 정의하자.
+$N$개의 observation으로 구성된 데이터셋 $(x_1,y_1),(x_2,y_2),\ldots,(x_N,y_N)$이 주어지고 이때 $x_i\in \mathbb R^p$, $y_i\in\lbrace -1,1\rbrace $ 이라고 하자. 이때 데이터의 분류를 위한 초평면([hyperplane](https://ddangchani.github.io/linear%20model/lda1/))을 다음과 같이 정의하자.
 
 $$
 
-\{x:f(x) = x^T\beta+\beta_0 = 0\}
+\lbrace x:f(x) = x^T\beta+\beta_0 = 0\rbrace 
 
 $$
 

@@ -27,7 +27,7 @@ $$
 ## Kalman Filter
 ### Filtering
 
-SSM 사용의 주된 목적은 주어진 관측가능한 데이터 $$Y_{s}=\{\mathbf{y}_{1},\ldots,\mathbf{y}_{s}\}$$ 를 바탕으로 underlying, unobserved signal $$\mathbf{x}_{t}$$ 를 추정하는 것이다. 이때 각 index $s,t$ 의 관계에 따라
+SSM 사용의 주된 목적은 주어진 관측가능한 데이터 $$Y_{s}=\lbrace \mathbf{y}_{1},\ldots,\mathbf{y}_{s}\rbrace $$ 를 바탕으로 underlying, unobserved signal $$\mathbf{x}_{t}$$ 를 추정하는 것이다. 이때 각 index $s,t$ 의 관계에 따라
 
 $$
 

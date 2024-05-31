@@ -41,7 +41,7 @@ $$
 
 우선, optimal transport를 살펴보기 이전에 간단한 warm-up example을 살펴보도록 하자.
 
-각각 $n$개의 점으로 구성된 두 개의 집합 $$(\mathbf{x}_{1},\ldots,\mathbf{x}_{n})$$, $$(\mathbf{y}_{1},\ldots,\mathbf{y}_{n})$$을 생각하자. 이때, 각 집합의 원소는 $\mathcal{X}$의 원소이다. **매칭**<sup>matching</sup>이란, 두 집합 사이의 전단사함수<sup>bijective</sup>를 의미한다. 이는 각 원소끼리의 대응인 $(i,j)\in \{1,\ldots,n\}^{2}$ 들로 표현할 수 있으며, 이를 **permutation** $\sigma$로 나타내기로 하자. 즉,
+각각 $n$개의 점으로 구성된 두 개의 집합 $$(\mathbf{x}_{1},\ldots,\mathbf{x}_{n})$$, $$(\mathbf{y}_{1},\ldots,\mathbf{y}_{n})$$을 생각하자. 이때, 각 집합의 원소는 $\mathcal{X}$의 원소이다. **매칭**<sup>matching</sup>이란, 두 집합 사이의 전단사함수<sup>bijective</sup>를 의미한다. 이는 각 원소끼리의 대응인 $(i,j)\in \lbrace 1,\ldots,n\rbrace ^{2}$ 들로 표현할 수 있으며, 이를 **permutation** $\sigma$로 나타내기로 하자. 즉,
 
 $$
 \mathbf{x}_{i}\mapsto \mathbf{y}_{\sigma_{i}}
@@ -117,7 +117,7 @@ $$
 
 $$
 
-T_{\#}P(A) = P(\{x:T(x)\in A\}) = P(T^{-1}(A)).
+T_{\#}P(A) = P(\lbrace x:T(x)\in A\rbrace ) = P(T^{-1}(A)).
 
 
 $$
@@ -163,7 +163,7 @@ $$
 여기서 $\Pi$는 주변확률분포가 두 측도 (변환 대상)인 결합확률분포들의 모임을 의미한다. 구체적으로는 다음과 같이 정의된다.
 
 $$
-\Pi(\mu,\nu) \triangleq \{\pi \in \mathcal{P}(\mathcal{X}^{2}) : \forall A\subset \mathcal{X}, \pi(A\times \mathcal{X})=\mu(A),\pi(\mathcal{X}\times A)=\nu(A)\}
+\Pi(\mu,\nu) \triangleq \lbrace \pi \in \mathcal{P}(\mathcal{X}^{2}) : \forall A\subset \mathcal{X}, \pi(A\times \mathcal{X})=\mu(A),\pi(\mathcal{X}\times A)=\nu(A)\rbrace 
 $$
 
 이 경우 **Optimal transport**는 다음과 같이 정의할 수 있다.
@@ -198,7 +198,7 @@ $p=1$인 경우, 다음과 같이 간단한 형태를 얻을 수 있다.
 
 $$
 
-W_{1}(P,Q) = \sup\bigg\{\int f(x)dP(x)-\int f(x)dQ(x) : f\in\mathcal{F}\bigg\}
+W_{1}(P,Q) = \sup\bigg\lbrace \int f(x)dP(x)-\int f(x)dQ(x) : f\in\mathcal{F}\bigg\rbrace 
 
 
 $$

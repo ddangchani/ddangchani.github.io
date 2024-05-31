@@ -15,11 +15,11 @@ header:
 
 ## Setting
 
-$D=(d_{1},\ldots,d_{n})\in \mathcal{D}$을 입력 데이터베이스라고 하자. 또한, $M:\mathcal{D} \to \mathbb{R}^{d}$를 non-private 알고리즘이라고 하고, $M(D)$를 그에 대응하는 출력이라고 하자. 그러면, 출력 공간 (e.g. $\mathbb{R}^{d}$)을 고려하여, 랜덤화된 메커니즘은 분포 $\{ P_{D}:D\in \mathcal{D}\}$로 특성화할 수 있다. $\Omega$를 $\sigma$-field $\mathcal{F}$가 부여된 공간이라고 하자. 그러면, 우리는 분포에 대한 DP를 정의할 수 있다.
+$D=(d_{1},\ldots,d_{n})\in \mathcal{D}$을 입력 데이터베이스라고 하자. 또한, $M:\mathcal{D} \to \mathbb{R}^{d}$를 non-private 알고리즘이라고 하고, $M(D)$를 그에 대응하는 출력이라고 하자. 그러면, 출력 공간 (e.g. $\mathbb{R}^{d}$)을 고려하여, 랜덤화된 메커니즘은 분포 $\lbrace  P_{D}:D\in \mathcal{D}\rbrace $로 특성화할 수 있다. $\Omega$를 $\sigma$-field $\mathcal{F}$가 부여된 공간이라고 하자. 그러면, 우리는 분포에 대한 DP를 정의할 수 있다.
 
 ### Definition
 
-분포들의 집합 $\{P_{D}:D\in\mathcal{D}\}$은 다음 조건을 만족하면 $(\epsilon,\delta)$-DP를 만족한다고 한다.
+분포들의 집합 $\lbrace P_{D}:D\in\mathcal{D}\rbrace $은 다음 조건을 만족하면 $(\epsilon,\delta)$-DP를 만족한다고 한다.
 
 
 $$
@@ -37,7 +37,7 @@ $$
 
 $\sigma$-field $\mathcal{F}$ 은 DP 알고리즘에서 중요한 역할을 한다.
 
-- $\mathcal{F}=\{\Omega,\phi\}$이면 조건 $(1)$은 자명하게 만족된다.
+- $\mathcal{F}=\lbrace \Omega,\phi\rbrace $이면 조건 $(1)$은 자명하게 만족된다.
 - 따라서 $\Omega$가 이산적일 때, 일반적인 $\sigma$-필드는 $\mathcal{F}=2^{\Omega}$이다.
 - $\Omega$가 위상 공간일 때, $\mathcal{F}=\mathcal{B}(\mathbb{R}^{d})$ (Borel $\sigma$-field)이다.
 
@@ -70,7 +70,7 @@ P_{D}(A^{\ast}_{D,D'})\geq 1-\delta
 
 $$
 
-그러면 분포족 $\{P_{D}\}$은 $(\epsilon,\delta)$-DP를 만족한다.
+그러면 분포족 $\lbrace P_{D}\rbrace $은 $(\epsilon,\delta)$-DP를 만족한다.
 
 ### Remark
 
@@ -98,7 +98,7 @@ $$
 
 ### Proposition
 
-정부호 대칭행렬 $M\in \mathbb{R}^{d\times d}$에 대해, 벡터들의 모임 $\{v_{D}:D\in \mathcal{D}\}\subset \mathbb{R}^{d}$이 다음을 만족하고
+정부호 대칭행렬 $M\in \mathbb{R}^{d\times d}$에 대해, 벡터들의 모임 $\lbrace v_{D}:D\in \mathcal{D}\rbrace \subset \mathbb{R}^{d}$이 다음을 만족하고
 
 
 $$
@@ -133,7 +133,7 @@ $$
 
 ### Implication
 
-프라이버시를 보호한다는 관점에서, 상대방<sup>adversary</sup>이 알고 있는 데이터베이스를 $D_{A}$라고 하자. 이때, $D_{A}=(d_{1},\ldots d_{n-1})$ 이고, 프라이버시를 보호하는 데이터베이스를 $D=(d_{1},\ldots,d_{n})$라고 하자. 이 경우 상대방은 $D_{A}\cup\{d\}=D$라고 생각할 수 있다. 이러한 상황에서 다음 명제가 성립한다.
+프라이버시를 보호한다는 관점에서, 상대방<sup>adversary</sup>이 알고 있는 데이터베이스를 $D_{A}$라고 하자. 이때, $D_{A}=(d_{1},\ldots d_{n-1})$ 이고, 프라이버시를 보호하는 데이터베이스를 $D=(d_{1},\ldots,d_{n})$라고 하자. 이 경우 상대방은 $D_{A}\cup\lbrace d\rbrace =D$라고 생각할 수 있다. 이러한 상황에서 다음 명제가 성립한다.
 
 #### Proposition
 
@@ -219,7 +219,7 @@ $$
 > 
 > $$ 
 > 
-> P_{D}\left(\left(\tilde f(x_{1}),\ldots, \tilde f(x_{n})\right)\in A\right) = P_{D}(\tilde f \in C_{\{x_{1},\ldots,x_{n}\},A}
+> P_{D}\left(\left(\tilde f(x_{1}),\ldots, \tilde f(x_{n})\right)\in A\right) = P_{D}(\tilde f \in C_{\lbrace x_{1},\ldots,x_{n}\rbrace ,A}
 > 
 > 
 > $$
@@ -240,7 +240,7 @@ $$
 
 $$ 
 
-C_{S,B}=\{f\in \mathbb{R}^{T}:f(x_{i})\in B_{i},i=1,2,\ldots\} = \bigcap_{i=1}^{\infty}C_{\{x_{i}\},B_{i}} 
+C_{S,B}=\lbrace f\in \mathbb{R}^{T}:f(x_{i})\in B_{i},i=1,2,\ldots\rbrace  = \bigcap_{i=1}^{\infty}C_{\lbrace x_{i}\rbrace ,B_{i}} 
 
 
 $$ 
@@ -260,7 +260,7 @@ $$
 
 ### Definition
 
-$T$에 의해 인덱싱된 **가우시안 프로세스**<sup>Gaussian Process, GP</sup>는 각각의 유한 부분집합이 다변량 가우시안 분포를 갖는 확률변수들의 집합(process) $\{X_{t}:t\in T\}$이다. 가우시안 프로세스에서의 sample은 함수 $T\to \mathbb{R}$를 의미한다(sample function).
+$T$에 의해 인덱싱된 **가우시안 프로세스**<sup>Gaussian Process, GP</sup>는 각각의 유한 부분집합이 다변량 가우시안 분포를 갖는 확률변수들의 집합(process) $\lbrace X_{t}:t\in T\rbrace $이다. 가우시안 프로세스에서의 sample은 함수 $T\to \mathbb{R}$를 의미한다(sample function).
 
 GP는 다음과 같은 mean function, covariance function으로 정의된다.
 
@@ -277,7 +277,7 @@ $$
 
 $$
 
-\{X_{t}:t\in S\} \sim \mathcal{N}(m(t),K)
+\lbrace X_{t}:t\in S\rbrace  \sim \mathcal{N}(m(t),K)
 
 
 $$
@@ -286,7 +286,7 @@ $$
 
 ### Proposition
 
-$G\sim GP(0,K)$ 이라고 하자. $M$은 Gram matrix를 의미하고, 집합 $\{f_{D}:D\in \mathcal{D}\}$은 입력 데이터베이스로 인덱싱된 함수들의 모임이라고 하자. 그러면 다음 함수의 releasing은
+$G\sim GP(0,K)$ 이라고 하자. $M$은 Gram matrix를 의미하고, 집합 $\lbrace f_{D}:D\in \mathcal{D}\rbrace $은 입력 데이터베이스로 인덱싱된 함수들의 모임이라고 하자. 그러면 다음 함수의 releasing은
 
 $$
 
@@ -299,7 +299,7 @@ cylinder $\sigma$-field $\mathcal{F}$에 대해 아래 조건 하에서 $(\epsil
 
 $$
 
-\sup_{D\sim D'} \sup_{n}\sup_{\{x_{1},\ldots,x_{n}\}\in T^{n}}
+\sup_{D\sim D'} \sup_{n}\sup_{\lbrace x_{1},\ldots,x_{n}\rbrace \in T^{n}}
 \left\Vert M^{- \frac{1}{2}}(x_{1},\ldots,x_{n}) 
 \begin{pmatrix}f_{D}(x_{1})-f_{D'}(x_{1}) \\ \vdots \\ f_{D}(x_{n})-f_{D'}(x_{n})\end{pmatrix}
 \right\Vert_{2}\leq \Delta
@@ -330,7 +330,7 @@ $$
 
 #### Corollary
 
-데이터셋 $D\in\mathcal{D}$와 Hilbert space의 부분집합 $\{f_{D}:D\in \mathcal{D}\}\subseteq H$를 고려하자. 그러면 다음 함수의 releasing은
+데이터셋 $D\in\mathcal{D}$와 Hilbert space의 부분집합 $\lbrace f_{D}:D\in \mathcal{D}\rbrace \subseteq H$를 고려하자. 그러면 다음 함수의 releasing은
 
 $$
 

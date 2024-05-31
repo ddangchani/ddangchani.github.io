@@ -108,7 +108,7 @@ $$
 
 $$
 
-이때 $N(h)=\{(s_{i},s_{j}:s_{i}-s_{j}=h\}$를 의미한다. 이는 관측된 자료로부터 경험적으로 추정한 semivariogram의 분포를 나타내므로, 이를 *empirical semivariogram*이라고도 한다. 문제는, 관측된 자료의 lag $h$의 분포가 균일하지 않은 경우 $\left\vert N(h)\right\vert$가 1또는 매우 작은 수를 갖게 된다. 이러한 경우에는 추정치로 사용하기 어렵기 때문에, 일종의 히스토그램 형태로 lag space $H=\{s-t:s,t\in\mathcal{D}\}$를 $H_{1},\ldots,H_{k}$로 분할하여 다음과 같은 추정치를 사용할 수 있을 것이다.
+이때 $N(h)=\lbrace (s_{i},s_{j}:s_{i}-s_{j}=h\rbrace $를 의미한다. 이는 관측된 자료로부터 경험적으로 추정한 semivariogram의 분포를 나타내므로, 이를 *empirical semivariogram*이라고도 한다. 문제는, 관측된 자료의 lag $h$의 분포가 균일하지 않은 경우 $\left\vert N(h)\right\vert$가 1또는 매우 작은 수를 갖게 된다. 이러한 경우에는 추정치로 사용하기 어렵기 때문에, 일종의 히스토그램 형태로 lag space $H=\lbrace s-t:s,t\in\mathcal{D}\rbrace $를 $H_{1},\ldots,H_{k}$로 분할하여 다음과 같은 추정치를 사용할 수 있을 것이다.
 
 
 $$
@@ -140,7 +140,7 @@ $$
 
 일반적으로 모수적 방법과 비모수적 방법은 어떤 추정 문제에서 별개의 솔루션으로 여겨질 때도 있지만, semivariogram $\gamma$를 추정하는 문제에서는 결합되어 이루어지는 경우가 많다. 구체적으로, 앞서 경험적으로 추정한 semivariogram을, 모수적 방법을 이용하여 일종의 smoothing을 진행하게 된다. 이는 smoothing은 모델의 분산을 낮출 수 있고 이에 따라 공간종속성 파악을 더 용이하게 하기 때문이다. 또한, empirical model을 사용할 경우 예측 문제(단계 3)로 넘어갔을 때 공분산행렬의 *역행렬*을 구하는 과정에서 문제가 발생할 수 있다는 것이 다른 이유이다.
 
-우선, 앞선 비모수적 방법론들로부터 얻은 semivariogram $\hat \gamma(h)$을 생각하자. 이때 $h\in\{h_{1},\ldots,h_{k}\}$ 이다. 모수공간 $\Theta$ 를 가정하여, 다음과 같은 parametric model을 생각하자.
+우선, 앞선 비모수적 방법론들로부터 얻은 semivariogram $\hat \gamma(h)$을 생각하자. 이때 $h\in\lbrace h_{1},\ldots,h_{k}\rbrace $ 이다. 모수공간 $\Theta$ 를 가정하여, 다음과 같은 parametric model을 생각하자.
 
 1. $\gamma(0;\theta)=0$
 2. $\gamma(-h;\theta)=\gamma(h;\theta)$ for all $h$.

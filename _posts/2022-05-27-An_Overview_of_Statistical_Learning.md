@@ -23,7 +23,7 @@ $$
 
 $$
 
-이 주어질 때 함수들의 집합 $\{f(x,\alpha):\alpha\in\Lambda\}$에서 데이터를 가장 잘 설명하는 특정 함수 $f(x,\alpha_0)$ 를 찾는 과정이다. 이때 이러한 과정은 risk functional(위험 범함수)
+이 주어질 때 함수들의 집합 $\lbrace f(x,\alpha):\alpha\in\Lambda\rbrace $에서 데이터를 가장 잘 설명하는 특정 함수 $f(x,\alpha_0)$ 를 찾는 과정이다. 이때 이러한 과정은 risk functional(위험 범함수)
 
 $$
 
@@ -242,7 +242,7 @@ $$
 으로 정의된다. 만일 식에서 $N/h$ 값이 작으면 empirical risk가 작아도 위 부등식의 우변의 두번째 항으로 인해 expected risk가 작은 값을 가질 수 없게 된다. 즉, empirical risk의 최소화만을 고려하는 ERM principle은 VC-dimension($h$) 값과 sample size($N$)을 모두 고려하지 못하므로, 새로운 원리가 필요하고, 이를 **Structural Risk Minimization(SRM)** 이라고 한다.
 
 ### Def of SRM
-함수모임 $S=\{Q(z,\alpha):\alpha\in\Lambda\}$ 에 대해
+함수모임 $S=\lbrace Q(z,\alpha):\alpha\in\Lambda\rbrace $ 에 대해
 
 $$
 
@@ -250,7 +250,7 @@ S_1\subset S_2\subset\cdots\subset S_n\cdots
 
 $$
 
-를 만족하는 부분집합열 $\{S_k\ = \{Q(z,\alpha):\alpha\in\Lambda_k\}\}$ 이 존재하면 이러한 부분집합열을 S에 부여된 **structure**라고 정의한다.
+를 만족하는 부분집합열 $\lbrace S_k\ = \lbrace Q(z,\alpha):\alpha\in\Lambda_k\rbrace \rbrace $ 이 존재하면 이러한 부분집합열을 S에 부여된 **structure**라고 정의한다.
 이때 **admissible structure**는 다음 세 조건을 만족하는 structure을 의미한다.
 > 1. 집합 $S^{\ast} = \cup_k S_k$ 가 S에서 조밀하다.
 > 2. $S_k$의 VC-dimension $h_k$는 모두 유한하다.
@@ -265,7 +265,7 @@ $$
 즉, 이는 SRM priciple이 전역적으로(universally) 일치성을 갖는다는 의미이다. 또한, SRM의 수렴 속도와 관련하여 다음 정리가 성립한다.
 
 > Theorem.
-> Admissible structure에 대해 SRM을 적용하여 N개의 sample에 대해 $k=n(N)$번째 structure가 대응된다고 하자. 이때 expected best risk $R(\alpha_0)$으로 수렴하는 risk의 열 $\{R(\alpha_N^{n(N)}\}$을 구성하고, 이때 각 단계에서의 근사함수를 $Q(z,\alpha_N^{n(N)})$ 이라고 두면 근사적 수렴속도(asymptotic rate of convergence)는
+> Admissible structure에 대해 SRM을 적용하여 N개의 sample에 대해 $k=n(N)$번째 structure가 대응된다고 하자. 이때 expected best risk $R(\alpha_0)$으로 수렴하는 risk의 열 $\lbrace R(\alpha_N^{n(N)}\rbrace $을 구성하고, 이때 각 단계에서의 근사함수를 $Q(z,\alpha_N^{n(N)})$ 이라고 두면 근사적 수렴속도(asymptotic rate of convergence)는
 > 
 > $$V(N) = r_{n(N)} + B_{n(N)}\sqrt{h_{n(N)}\ln N\over N}$$
 > 

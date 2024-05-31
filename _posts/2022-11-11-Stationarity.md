@@ -14,7 +14,7 @@ use_math: true
 
 $$
 
-\{X_t\}_{t\in\mathbb N} : x_1,\ldots,x_t
+\lbrace X_t\rbrace _{t\in\mathbb N} : x_1,\ldots,x_t
 
 $$
 
