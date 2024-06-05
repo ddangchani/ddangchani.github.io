@@ -193,19 +193,22 @@ for md_file in md_files:
         f.writelines(lines)
 
 # Codeblock error
+## If there is no blank line before the code block or after the code block, add a blank line
 
 for md_file in md_files:
     with open(post_dir + md_file, 'r') as f:
         lines = f.readlines()
-    opened = False # check if the code block is open or not
+    opened = True # check if the code block is open or not (for the first one of pair)
     for i, line in enumerate(lines):
         if line.startswith('```'):
             if opened:
-                opened = False
-            else:
-                opened = True
                 if lines[i-1] != '\n':
                     lines.insert(i, '\n')
+                opened = False
+            else:
+                if lines[i+1] != '\n':
+                    lines.insert(i+1, '\n')
+                opened = True
 
     with open(post_dir + md_file, 'w') as f:
         f.writelines(lines)
