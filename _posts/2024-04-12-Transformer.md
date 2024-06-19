@@ -185,9 +185,10 @@ $$
 
 \bar x_{d,n} = \text{LayerNorm}(X)_{d,n}= \frac{1}{\sqrt{\mathrm{Var}(\mathbf{x}_{n})}}\left(x_{d,n}- \frac{1}{D}\sum_{d=1}^{D}x_{d,n}\right)
 
+$$
+
 Layer normalization에서 주의할 것은, sequence의 토큰들에 대해 normalization을 수행하는 것이 아닌, 각 토큰의 차원에 대해 normalization을 수행한다는 것이다. 이는 batch normalization이나 CNN에서의 Layer normalization과 다른 점이다.
 
-$$
 
 ### Encoder block
 
