@@ -49,15 +49,14 @@ $$
 가 이용될 수 있다. 이렇게 정의되는 GP를 다음과 같이 표기한다.
 
 $$
-
+\begin{gathered}
 f(x) \sim GP(m(x),\mathcal K(x,x')) \\
-\text{where} \\
 m(x) = \rm{E}[f(x)]\\
 \mathcal K(x,x') = \rm{E}[(f(x)-m(x))(f(x')-m(x'))^T]
-
+\end{gathered}
 $$
 
-또한, Gaussan Process의 정의에 의해 Input points $\mathbf X=\lbrace x_1,\ldots,x_N\rbrace $ 에 대해
+또한, Gaussan Process의 정의에 의해 Input points $\mathbf X=\lbrace x_1,\ldots,x_N\rbrace$ 에 대해
 
 $$
 
@@ -85,7 +84,7 @@ $$
 
 2. Automatic Relevance Determination(ARD) Kernel
 
-   RBF 커널에서 유클리드 거리를 마할라노비스 거리로 대체
+   RBF 커널에서 유클리드 거리를 Mahalanobis 거리로 대체
    
    $$
    \mathcal K(r;\Sigma,\sigma^2) = \sigma^2\exp(-{1\over2}r^T\Sigma^{-1}r)
@@ -93,7 +92,7 @@ $$
 
 3. Matern Kernel
 
-   ​	SE kernel보다 더 rough한 커널로, 더 널리 사용.
+   ​	SE kernel보다 더 rough한 커널로, 더 널리 사용. (e.g. Spatial statistics)
 
       $$
 
