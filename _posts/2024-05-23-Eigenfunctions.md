@@ -39,7 +39,7 @@ use_math: true
 > $$
 > 
 >
-> 본래 공분산 함수는 확률과정<sup>stoachastic process</sup> 혹은 랜덤필드<sup>random field</sup>의 공분산을 정의합니다. 커널 함수는 반드시 두 입력값에 대한 유사도를 반환하는 것은 아니므로, 두 정의가 완전히 동일하다고 할 수는 없습니다. 다만, Gaussian process의 경우, 커널 함수가 공분산 함수의 역할을 한다고 생각할 수 있습니다. (명칭의 차이도 존재 : e.g. Gaussian RBF kernel vs Squared Exponential covariance function)
+> 본래 공분산 함수는 확률과정<sup>stoachastic process</sup> 혹은 랜덤필드<sup>random field</sup>의 공분산을 정의합니다. 커널 함수는 반드시 두 입력값에 대한 유사도를 반환하는 것은 아니므로, 두 정의가 완전히 동일하다고 할 수는 없습니다. 다만, [Gaussian process]({% post_url 2022-09-05-Gaussian_Process %})의 경우, 커널 함수가 공분산 함수의 역할을 한다고 생각할 수 있습니다. (명칭의 차이도 존재 : e.g. Gaussian RBF kernel vs Squared Exponential covariance function)
 
 ## Definition
 
