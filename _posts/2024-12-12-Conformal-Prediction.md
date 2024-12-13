@@ -112,7 +112,7 @@ $$
 만일 회귀문제에서 잔차 측도를 사용하였다면, 예측 집합은 $[y_{\mathrm{test}} - \hat q \hat \sigma(X_{\mathrm{test}}), y_{\mathrm{test}} + \hat q \hat \sigma(X_{\mathrm{test}})]$ 의 구간으로 나타낼 수 있다. 이러한 집합은 다음 정리에 의해 앞서 언급한 **validity**(타당성)을 만족한다.
 
 ### Theorem (Conformal coverage guarantee, Vovk et al.)
-데이터 $(X_{i},y_{i})_{i=1,\ldots, n}$ 와 예측 대상 데이터 $(X_{n+1},y_{n+1})$ 이 교환가능하다고 하자. 위 과정과 같이 $\hat q$를 계산하고, 이를 바탕으로 예측 집합 $\mathcal{C}(X_\mathrm{test})$ 을 만들었다면, 다음이 성립한다.
+데이터 $$(X_{i},y_{i})_{i=1,\ldots, n}$$ 와 예측 대상 데이터 $$(X_{n+1},y_{n+1})$$ 이 교환가능하다고 하자. 위 과정과 같이 $\hat q$를 계산하고, 이를 바탕으로 예측 집합 $$\mathcal{C}(X_\mathrm{test})$$ 을 만들었다면, 다음이 성립한다.
 
 
 $$
@@ -210,7 +210,7 @@ E_{i} := \max \{\hat q_\frac{\alpha}{2} (X_{i}) -Y_{i}, Y_{i}-\hat q_{1 - \frac{
 
 $$
 
-만일 실제 값 $Y_{i}$가 예측구간보다 아래 위치한다면 $E_{i}=|Y_{i}-\hat q_{\frac{\alpha}{2}}(X_{i})|$ 가 되는데, 이는 실제 값과 예측값의 nonconformity를 나타낸다는 측면에서 이치가 맞는 측도라고 볼 수 있다. 이를 바탕으로 또 다른 분위수 (여기서는 *conformal prediction set을 위한 분위수를 말한다*) $Q_{\alpha}(E, I_{2})$ 를 계산한다. 이는 calibration set 데이터들의 score $E_{1},\ldots E_{n_{\mathrm{cal}}}$ 들의 $(1-\alpha)(1+1/|I_{2}|)$ 번째 empirical한 분위수로 주어지며, 이를 바탕으로 최종적인 예측집합을 구성할 수 있다.
+만일 실제 값 $$Y_{i}$$가 예측구간보다 아래 위치한다면 $$E_{i}=|Y_{i}-\hat q_{\frac{\alpha}{2}}(X_{i})|$$ 가 되는데, 이는 실제 값과 예측값의 nonconformity를 나타낸다는 측면에서 이치가 맞는 측도라고 볼 수 있다. 이를 바탕으로 또 다른 분위수 (여기서는 *conformal prediction set을 위한 분위수를 말한다*) $$Q_{\alpha}(E, I_{2})$$ 를 계산한다. 이는 calibration set 데이터들의 score $$E_{1},\ldots E_{n_{\mathrm{cal}}}$$ 들의 $$(1-\alpha)(1+1/|I_{2}|)$$ 번째 empirical한 분위수로 주어지며, 이를 바탕으로 최종적인 예측집합을 구성할 수 있다.
 
 
 $$
