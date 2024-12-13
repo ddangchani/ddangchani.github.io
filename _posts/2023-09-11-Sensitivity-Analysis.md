@@ -108,7 +108,9 @@ $$
 라고 부른다.
 
 > $U\sim \mathrm{Ber}(\pi)$
+> 
 > $\mathrm{logit} P(Z=1\vert u)=\gamma +\alpha u$ : Assignment mechanism model
+> 
 > $\mathrm{logit} P(Y(z)=1\vert u) = \beta_{z}+\delta_{z}u$ : Outcome model
 
 각 모수는 다음과 같은 의미를 가지고 있다.
@@ -155,6 +157,7 @@ $$
 $$
 
 - Causal Relative Risk
+
 $$
 \begin{align}
 \mathrm{RR}_{ZY\vert x}^{\mathrm{true}} &= \frac{P(Y(1)=1\vert x)}{P(Y(0)=1\vert x)}\\
@@ -164,10 +167,13 @@ $$
 $$
 
 이때, $Z \not\perp (Y(1),Y(0))\;\vert\; X$ 이므로  두 상대위험은 같지 않다. 그 다음으로, 처치변수와 교란변수 $U$ 간의 상대위험은 다음과 같이 정의된다.
+
 $$
 \mathrm{RR}_{ZU\vert x}(u) = \frac{\mathrm{P}(u\vert Z=1,x)}{\mathrm{P}(u\vert Z=0,x)}
 $$
+
 또한, $U$에 대한 $Z$의($Z$ on $U$) 최대상대위험은 다음과 같이 정의한다.
+
 $$
 \mathrm{RR}_{ZU\vert x} = \max_{u}\mathrm{RR}_{ZU\vert x}(u)
 $$
@@ -181,15 +187,19 @@ $$
 $$
 
 - Exposed인 대상에 대한 최대상대위험
+
 $$
 \mathrm{RR}_{UY(1)\vert x}=\frac{\max_{u}\mathrm{P}(Y(1)=1\vert x,u)}{\min_{u}\mathrm{P}(Y(1)=1\vert x,u)}
 $$
+
 - $Y$에 대한 $U$의 상대위험
+
 $$
 \mathrm{RR}_{UY\vert x}=\max\lbrace \mathrm{RR}_{UY(0)\vert x}, \mathrm{RR}_{UY(1)\vert x}\rbrace 
 $$
 
 이때, 주어진 인과모형에서 교란의 세기<sup>strength of confounding</sup>에 대한 측도로 다음을 사용한다(편의를 위해 아래부터 조건 $X=x$ 생략).
+
 $$
 (\mathrm{RR}_{ZU},\mathrm{RR}_{UY})
 $$
@@ -198,12 +208,14 @@ $$
 
 민감도 분석의 목적은 다음과 같다.
 
-> Observed relative risk $\mathrm{RR}_{ZY}^{\mathrm{obs}}$ 와 교란의 세기 측도 $(\mathrm{RR}_{ZU},\mathrm{RR}_{UY})$으로부터 causal risk ratio $\mathrm{RR}_{ZY}^{\mathrm{true}}$ 를 부분적으로 파악하는 것이다.
+> Observed relative risk $$\mathrm{RR}_{ZY}^{\mathrm{obs}}$$ 와 교란의 세기 측도 $$(\mathrm{RR}_{ZU},\mathrm{RR}_{UY})$$ 으로부터 causal risk ratio $$\mathrm{RR}_{ZY}^{\mathrm{true}}$$ 를 부분적으로 파악하는 것이다.
 
 이때, causal risk ratio에 대해 다음의 **하한**이 존재한다.
+
 $$
 \mathrm{RR}_{ZY}^{\mathrm{true}}\geq \mathrm{RR}_{ZY}^{\mathrm{obs}} \bigg/\frac{\mathrm{RR}_{ZU}\times\mathrm{RR}_{UY}}{\mathrm{RR}_{ZU}+\mathrm{RR}_{UY}-1}
 $$
+
 이때 나누어주는 항 $\frac{\mathrm{RR}_{ZU}\times\mathrm{RR}_{UY}}{\mathrm{RR}_{ZU}+\mathrm{RR}_{UY}-1}$ 을 **bounding factor**라고 정의하고 $\mathrm{BF}_{U}$ 라고 나타낸다.
 
 
