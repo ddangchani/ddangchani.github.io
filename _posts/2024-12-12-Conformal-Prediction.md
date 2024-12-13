@@ -204,13 +204,18 @@ $$
 
 $$
 
-E_{i} := \max \{\hat q_\frac{\alpha}{2} (X_{i}) -Y_{i}, Y_{i}-\hat q_{1 - \frac{\alpha}{2}}(X_{i})
-\} 
+E_{i} := \max \{\hat q_\frac{\alpha}{2} (X_{i}) -Y_{i}, Y_{i}-\hat q_{1 - \frac{\alpha}{2}}(X_{i})\} 
 
 
 $$
 
-만일 실제 값 $$Y_{i}$$가 예측구간보다 아래 위치한다면 $$E_{i}=|Y_{i}-\hat q_{\frac{\alpha}{2}}(X_{i})|$$ 가 되는데, 이는 실제 값과 예측값의 nonconformity를 나타낸다는 측면에서 이치가 맞는 측도라고 볼 수 있다. 이를 바탕으로 또 다른 분위수 (여기서는 *conformal prediction set을 위한 분위수를 말한다*) $$Q_{\alpha}(E, I_{2})$$ 를 계산한다. 이는 calibration set 데이터들의 score $$E_{1},\ldots E_{n_{\mathrm{cal}}}$$ 들의 $$(1-\alpha)(1+1/|I_{2}|)$$ 번째 empirical한 분위수로 주어지며, 이를 바탕으로 최종적인 예측집합을 구성할 수 있다.
+만일 실제 값 $$Y_{i}$$가 예측구간보다 아래 위치한다면 
+
+$$E_{i}=|Y_{i}-\hat q_{\frac{\alpha}{2}}(X_{i})|$$
+
+가 되는데, 이는 실제 값과 예측값의 nonconformity를 나타낸다는 측면에서 이치가 맞는 측도라고 볼 수 있다. 
+이를 바탕으로 또 다른 분위수 (여기서는 *conformal prediction set을 위한 분위수를 말한다*) $$Q_{\alpha}(E, I_{2})$$ 를 계산한다. 
+이는 calibration set 데이터들의 score $$E_{1},\ldots E_{n_{\mathrm{cal}}}$$ 들의 $$(1-\alpha)(1+1/|I_{2}|)$$ 번째 분위수로 주어지며, 이를 바탕으로 최종적인 예측집합을 구성할 수 있다.
 
 
 $$
