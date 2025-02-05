@@ -1,10 +1,11 @@
-{% assign popular_links = site.data.analytics_month %}
+{% assign popular_links = site.data.analytics %}
 
 <div class="blog-slider">
     <div class="blog-slider__wrp swiper-wrapper">
 
     {% for link in popular_links limit: 5 %}
     {% assign post = site.posts | where: "url", link[0] | first %}
+    {% assign view = link[1].count %}
 
     {% if post.header.teaser %}
         {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
@@ -18,9 +19,12 @@
           <img src="{{ teaser | relative_url }}" alt="">
         </div>
         <div class="blog-slider__content">
-          <span class="blog-slider__code">{{ post.date | date: "%b %d, %Y" }}</span>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="blog-slider__code">{{ post.date | date: "%b %d, %Y" }}</span>
+              <span class="blog-slider__view"><i class="fas fa-eye" style="margin-left: 1px;"></i> {{ view }} views</span>
+            </div>
           <div class="blog-slider__title">{{ post.title }}</div>
-          <div class="blog-slider__text">{{ post.excerpt | markdownify | strip_html | truncate: 130 }}</div>
+          <div class="blog-slider__text">{{ post.excerpt | markdownify | strip_html | truncate: 120 }}</div>
           <a href="{{ post.url | relative_url }}" class="blog-slider__button">READ MORE</a>
         </div>
       </div>

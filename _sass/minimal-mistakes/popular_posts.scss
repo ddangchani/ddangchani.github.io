@@ -158,9 +158,17 @@ body {
 
   &__code {
     color: #7b7992;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: block;
     font-weight: 500;
+  }
+
+  &__view {
+    font-size: 14px;
+    color: #7b7992;
+    font-weight: 100;
+    display: block;
+    margin-bottom: 10px;
   }
 
   &__title {
