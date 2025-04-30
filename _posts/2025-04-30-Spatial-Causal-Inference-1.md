@@ -34,16 +34,16 @@ header:
 - $W_{t}(s), s\in\Omega$ : 시점 $t$에서의 **처치변수** (점 패턴)
 - $\mathcal{W}$ : set of all possible point patterns (i.e. $\forall t, W_{t}\in\mathcal{W}$)
 - $S_{W_{t}} = \{s\in\Omega\vert W_{t}(s)=1\}$ : Treatment-active locations
-- $\overline{\mathbf{W}_{t}}=(W_{1},\ldots,W_{t})$ : collection of treatments
-- $w_{t}$ : realisation of $W_{t}(s)$ (관측된 점 패턴)
-- $\bar w_{t}=(w_{1},\ldots,w_{t})$ : history of point pattern at $T=t$
-- $Y_{t}(\bar w_{t})$ : potential outcome at $t\in\mathcal{T}$, with given treatment sequence(history) $\bar w_{t}\in\mathcal{W}^{t}$
-- $S_{Y_{t}(\bar w_{t})}=S_{Y_{t}}$ : Outcome-active locations
-- $\bar{\mathcal{Y}}_{T}= \{Y_{t}(\bar w_{t})\vert \bar w_{t}\in\mathcal{W}^{t}, t\in \mathcal{T}\}$ :  set of all possible potential outcomes
-- $\overline{\mathbf{Y}_{t}}=\{Y_{1},\ldots,Y_{t}\}$ : collection of observed outcomes
-- $\mathbf{X}_{t}$: set of time-varying confounders that are realised prior to $W_{t}$ but after $W_{t-1}$
-- $\bar{\mathcal{X}}_{T} = \{X_{t}(\bar w_{t-1}\vert\bar w_{t-1}\in\mathcal{W}^{t-1},t\in\mathcal{T}\}$
-- $\bar H_{t} = \{\mathbf{W_{t},Y_{t},X_{t+1}}\}$ : observed history preceding $W_{t+1}$ 
+- $$\overline{\mathbf{W}_{t}}=(W_{1},\ldots,W_{t})$$ : collection of treatments
+- $$w_{t}$$ : realisation of $$W_{t}(s)$$ (관측된 점 패턴)
+- $$\bar w_{t}=(w_{1},\ldots,w_{t})$$ : history of point pattern at $T=t$
+- $$Y_{t}(\bar w_{t})$$ : potential outcome at $$t\in\mathcal{T}$$, with given treatment sequence(history) $$\bar w_{t}\in\mathcal{W}^{t}$$
+- $$S_{Y_{t}(\bar w_{t})}=S_{Y_{t}}$$ : Outcome-active locations
+- $$\bar{\mathcal{Y}}_{T}= \{Y_{t}(\bar w_{t})\vert \bar w_{t}\in\mathcal{W}^{t}, t\in \mathcal{T}\}$$ :  set of all possible potential outcomes
+- $$\overline{\mathbf{Y}_{t}}=\{Y_{1},\ldots,Y_{t}\}$$ : collection of observed outcomes
+- $$\mathbf{X}_{t}$$: set of time-varying confounders that are realised prior to $$W_{t}$$ but after $$W_{t-1}$$
+- $$\bar{\mathcal{X}}_{T} = \{X_{t}(\bar w_{t-1}\vert\bar w_{t-1}\in\mathcal{W}^{t-1},t\in\mathcal{T}\}$$
+- $$\bar H_{t} = \{\mathbf{W_{t},Y_{t},X_{t+1}}\}$$ : observed history preceding $$W_{t+1}$$ 
 
 모든 표기를 기억할 필요는 없습니다만, 처치 변수인 $W_{t}$가 공간 $\Omega$에 존재하는 점 패턴으로 주어지는 것과 $Y_t$가 시점 $t$에서 처치변수 $W_{t}$에 따라 달라지는 잠재적 결과변수라는 점을 기억하시면 좋습니다. 
 
