@@ -50,7 +50,7 @@ post_dir = '_posts/'
 # mdfiles = [f for f in os.listdir(post_dir) if f.endswith('.md')]
 for mdfile in md_files:
     # read the file
-    with open(os.path.join(post_dir, mdfile), 'r') as f:
+    with open(os.path.join(post_dir, mdfile), 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
     # find the image links
