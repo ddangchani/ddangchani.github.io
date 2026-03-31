@@ -1,38 +1,64 @@
 {
-  "name": "minimal-mistakes",
+  "name": "ddangchani.github.io",
   "private": true,
-  "version": "4.24.0",
-  "description": "Minimal Mistakes 2 column Jekyll theme.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mmistakes/minimal-mistakes.git"
-  },
-  "keywords": [
-    "jekyll",
-    "theme",
-    "minimal"
-  ],
-  "author": "Michael Rose",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mmistakes/minimal-mistakes/issues"
-  },
-  "homepage": "https://mmistakes.github.io/minimal-mistakes/",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "onchange": "^7.1.0",
-    "uglify-js": "^3.13.6"
-  },
+  "version": "1.0.0",
+  "description": "Editorial technical research blog built with Next.js static export.",
   "scripts": {
-    "uglify": "uglifyjs assets/js/vendor/jquery/jquery-3.6.0.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.greedy-navigation.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.ba-throttle-debounce.js assets/js/plugins/smooth-scroll.js assets/js/plugins/gumshoe.js assets/js/_main.js -c -m -o assets/js/main.min.js",
-    "add-banner": "node banner.js",
-    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
-    "build:js": "npm run uglify && npm run add-banner"
+    "dev": "npm run content:prepare && npm run public:sync && next dev",
+    "build": "npm run content:prepare && npm run public:sync && next build",
+    "lint": "eslint src",
+    "lint:frontend": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "typecheck:frontend": "tsc --noEmit -p tsconfig.frontend.json",
+    "typecheck:publishing": "tsc --noEmit -p tsconfig.publishing.json",
+    "validate:frontend": "npm run public:sync && npm run typecheck:frontend && npm run lint:frontend && npx next build",
+    "migrate:posts": "tsx scripts/migrate-posts.ts",
+    "content:bootstrap": "npm run migrate:posts && npm run content:prepare",
+    "generate:content": "tsx scripts/generate-content-artifacts.ts",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "check:route-parity": "tsx scripts/check-route-parity.ts",
+    "content:prepare": "npm run generate:content && npm run validate:content && npm run check:route-parity",
+    "public:sync": "tsx scripts/sync-static-public.ts",
+    "post:agent": "tsx scripts/post-agent.ts",
+    "refresh:popular": "tsx scripts/refresh-popular-posts.ts",
+    "validate:publish": "npm run typecheck:publishing && npm run generate:content && npm run validate:content && npm run validate:frontend"
+  },
+  "engines": {
+    "node": ">=24.0.0"
   },
   "dependencies": {
-    "swiper": "^11.0.5"
+    "@google-analytics/data": "^5.2.1",
+    "clsx": "^2.1.1",
+    "fast-glob": "^3.3.3",
+    "framer-motion": "^12.38.0",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "minisearch": "^7.1.2",
+    "next": "^16.2.1",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-pretty-code": "^0.14.1",
+    "rehype-raw": "^7.0.0",
+    "rehype-slug": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "unified": "^11.0.5",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "^16.2.1",
+    "tsx": "^4.20.6",
+    "typescript": "^6.0.2"
   }
 }

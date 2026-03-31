@@ -17,6 +17,7 @@ node_modules
 npm-debug.log*
 package-lock.json
 codekit-config.json
+*.tsbuildinfo
 
 # macOS
 .DS_Store
@@ -27,6 +28,10 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+generated/
+public/
+.next/
+out/
 
 # Obsidian
 .obsidian

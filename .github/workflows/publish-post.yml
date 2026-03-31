@@ -1,0 +1,91 @@
+name: Publish Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: plan, draft, or publish
+        required: true
+        default: draft
+        type: choice
+        options:
+          - plan
+          - draft
+          - publish
+      topic:
+        description: Topic or title prompt
+        required: true
+        type: string
+      audience:
+        description: Audience for the post
+        required: false
+        default: engineers and technical readers
+        type: string
+      tone:
+        description: Tone for the draft
+        required: false
+        default: rigorous, practical, and clear
+        type: string
+      language:
+        description: Output language
+        required: false
+        default: ko
+        type: string
+      source_urls:
+        description: Comma-separated source URLs
+        required: false
+        default: ""
+        type: string
+      tag_hints:
+        description: Comma-separated tag hints
+        required: false
+        default: ""
+        type: string
+      target_branch:
+        description: Target branch for publish mode
+        required: false
+        default: main
+        type: string
+
+jobs:
+  publish-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run post agent
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_BASE_URL: ${{ secrets.OPENAI_API_BASE_URL }}
+          POST_AGENT_MODEL: ${{ secrets.POST_AGENT_MODEL }}
+        run: >
+          npm run post:agent --
+          ${{ inputs.mode }}
+          --topic "${{ inputs.topic }}"
+          --audience "${{ inputs.audience }}"
+          --tone "${{ inputs.tone }}"
+          --language "${{ inputs.language }}"
+          --source-urls "${{ inputs.source_urls }}"
+          --tag-hints "${{ inputs.tag_hints }}"
+          --target-branch "${{ inputs.target_branch }}"
