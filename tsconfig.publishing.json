@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/lib/publishing/**/*.ts",
+    "scripts/post-agent.ts",
+    "scripts/refresh-popular-posts.ts",
+    "scripts/sync-static-public.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/app",
+    "src/components"
+  ]
+}
