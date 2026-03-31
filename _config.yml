@@ -159,6 +159,9 @@ exclude:
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
+  - content # Next.js content directory (MDX files)
+  - src # Next.js source directory
+  - scripts # Next.js build scripts
 keep_files:
   - .git
   - .svn
