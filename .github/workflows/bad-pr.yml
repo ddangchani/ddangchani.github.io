@@ -4,6 +4,10 @@ on:
   pull_request_target:
     types: [opened, reopened]
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   close-pr:
     runs-on: ubuntu-latest
