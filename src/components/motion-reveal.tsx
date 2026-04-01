@@ -1,5 +1,6 @@
 "use client";
 
+import { clsx } from "clsx";
 import { motion, useReducedMotion } from "framer-motion";
 import type { PropsWithChildren } from "react";
 
@@ -10,15 +11,16 @@ type MotionRevealProps = PropsWithChildren<{
 
 export function MotionReveal({ children, delay = 0, className }: MotionRevealProps) {
   const reducedMotion = useReducedMotion();
+  const mergedClassName = clsx("motion-reveal", className);
 
   if (reducedMotion) {
-    return <div className={className}>{children}</div>;
+    return <div className={mergedClassName}>{children}</div>;
   }
 
   return (
     <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 28 }}
+      className={mergedClassName}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.72, delay, ease: [0.16, 1, 0.3, 1] }}

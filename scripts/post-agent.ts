@@ -11,7 +11,7 @@ import {
   buildLegacyRouteSegments,
   encodeRouteSegments
 } from "@/lib/content/legacy-routes";
-import { readSourcePosts } from "@/lib/content/source-posts";
+import { getAllPosts } from "@/lib/content/loaders";
 
 type AgentMode = "plan" | "draft" | "publish";
 
@@ -123,19 +123,19 @@ function normalizeTags(tagHints: string[], topic: string): string[] {
 }
 
 function collectSiteContext() {
-  const sourcePosts = readSourcePosts();
-  const recentPosts = [...sourcePosts]
-    .sort((left, right) => right.date.localeCompare(left.date))
+  const posts = getAllPosts();
+  const recentPosts = [...posts]
+    .sort((left, right) => right.meta.date.localeCompare(left.meta.date))
     .slice(0, 8)
     .map((post) => ({
-      title: post.title,
-      route: post.route,
-      tags: post.tags
+      title: post.meta.title,
+      route: encodeRouteSegments(post.meta.routeSegments),
+      tags: post.meta.tags
     }));
   const tagCounts = new Map<string, number>();
 
-  for (const post of sourcePosts) {
-    for (const tag of post.tags) {
+  for (const post of posts) {
+    for (const tag of post.meta.tags) {
       tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
     }
   }

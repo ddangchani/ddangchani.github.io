@@ -3,6 +3,8 @@ import type {
   PopularPostEntry,
   SearchEntry
 } from "@/lib/content/contracts";
+import { buildPublicPostRouteSegments } from "@/lib/content/legacy-routes";
+import { isFilterTag } from "@/lib/filter-tags";
 import {
   loadCompiledPostByRouteSegments,
   loadCompiledPosts,
@@ -22,7 +24,17 @@ export type SiteSearchEntry = SearchEntry;
 
 export type SitePopularEntry = PopularPostEntry & {
   route: string;
+  date?: string;
+  categories?: string[];
 };
+
+function normalizeLookupValue(value: string): string {
+  try {
+    return decodeURIComponent(value).toLowerCase();
+  } catch {
+    return value.toLowerCase();
+  }
+}
 
 function toSitePost(post: CompiledPostDocument): SitePost {
   return {
@@ -47,6 +59,8 @@ function mergePopularPosts(popular: SitePopularEntry[], posts: SitePost[]): Site
 
     return {
       ...entry,
+      date: match.date,
+      categories: match.categories,
       title: entry.title || match.title,
       teaser: entry.teaser ?? match.teaser,
       excerpt: entry.excerpt || match.excerpt
@@ -76,7 +90,26 @@ export async function getRecentPosts(limit = 9): Promise<SitePost[]> {
 
 export async function getAllRouteSegments(): Promise<string[][]> {
   const posts = await getAllPosts();
-  return posts.map((post) => post.routeSegments);
+  const seen = new Set<string>();
+  const routes: string[][] = [];
+
+  for (const post of posts) {
+    for (const routeSegments of [
+      buildPublicPostRouteSegments(post.sourcePath),
+      post.routeSegments
+    ]) {
+      const key = JSON.stringify(routeSegments);
+
+      if (seen.has(key)) {
+        continue;
+      }
+
+      seen.add(key);
+      routes.push(routeSegments);
+    }
+  }
+
+  return routes;
 }
 
 export async function getPostBySegments(routeSegments: string[]): Promise<SitePost | null> {
@@ -100,13 +133,19 @@ export async function getAllCategories(): Promise<string[]> {
 
 export async function getPostsByTag(tag: string): Promise<SitePost[]> {
   const posts = await getAllPosts();
-  return posts.filter((post) => post.tags.some((item) => item.toLowerCase() === tag.toLowerCase()));
+  const normalizedTag = normalizeLookupValue(tag);
+
+  return posts.filter((post) =>
+    post.tags.some((item) => normalizeLookupValue(item) === normalizedTag)
+  );
 }
 
 export async function getPostsByCategory(category: string): Promise<SitePost[]> {
   const posts = await getAllPosts();
+  const normalizedCategory = normalizeLookupValue(category);
+
   return posts.filter((post) =>
-    post.categories.some((item) => item.toLowerCase() === category.toLowerCase())
+    post.categories.some((item) => normalizeLookupValue(item) === normalizedCategory)
   );
 }
 
@@ -158,6 +197,11 @@ export async function getTagSummaries(): Promise<Array<{ name: string; count: nu
   return [...counts.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, "ko"));
+}
+
+export async function getFilterTagSummaries(): Promise<Array<{ name: string; count: number }>> {
+  const tags = await getTagSummaries();
+  return tags.filter((tag) => isFilterTag(tag.name));
 }
 
 export async function getCategorySummaries(): Promise<Array<{ name: string; count: number }>> {

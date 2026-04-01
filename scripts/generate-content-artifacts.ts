@@ -11,7 +11,11 @@ import {
   type RouteManifestEntry,
   type SearchEntry
 } from "@/lib/content/contracts";
-import { encodeRouteSegments } from "@/lib/content/legacy-routes";
+import {
+  buildLegacyId,
+  buildPublicPostRoutePath,
+  encodeRouteSegments
+} from "@/lib/content/legacy-routes";
 import { detectLanguage, stripMarkdown } from "@/lib/content/markdown";
 import { getAllPosts } from "@/lib/content/loaders";
 import { extractHeadings, renderPostBodyToHtml } from "@/lib/content/render";
@@ -31,11 +35,11 @@ function writeJsonArtifact(fileName: string, value: unknown): void {
 
 function buildRouteManifest(): RouteManifestEntry[] {
   return getAllPosts().map((post) => ({
-    legacyId: path.basename(post.sourcePath, path.extname(post.sourcePath)),
+    legacyId: buildLegacyId(post.sourcePath),
     title: post.meta.title,
     date: post.meta.date,
     routeSegments: post.meta.routeSegments,
-    route: encodeRouteSegments(post.meta.routeSegments),
+    route: buildPublicPostRoutePath(post.sourcePath),
     canonicalUrl: post.meta.canonicalUrl,
     sourcePath: post.sourcePath
   }));
@@ -47,7 +51,7 @@ function buildSearchIndex(): SearchEntry[] {
 
     return {
       title: post.meta.title,
-      route: encodeRouteSegments(post.meta.routeSegments),
+      route: buildPublicPostRoutePath(post.sourcePath),
       description: post.meta.description,
       tags: post.meta.tags,
       categories: post.meta.categories,
@@ -91,7 +95,7 @@ async function buildCompiledPosts(): Promise<CompiledPostDocument[]> {
       ...post,
       html: await renderPostBodyToHtml(post.body),
       headings: extractHeadings(post.body),
-      route: encodeRouteSegments(post.meta.routeSegments)
+      route: buildPublicPostRoutePath(post.sourcePath)
     }))
   );
 }
@@ -119,7 +123,7 @@ function buildPopularPosts(): PopularPostEntry[] {
       }
 
       return {
-        route,
+        route: buildPublicPostRoutePath(post.sourcePath),
         viewCount: entry.count,
         title: post.meta.title,
         teaser: post.meta.teaser,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId } from "react";
+import { useEffect, useRef } from "react";
 
 import { siteConfig } from "@/lib/site-config";
 
@@ -9,32 +9,41 @@ type PostCommentsProps = {
 };
 
 export function PostComments({ pathname }: PostCommentsProps) {
-  const containerId = useId().replace(/:/g, "");
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const container = document.getElementById(containerId);
+    const container = containerRef.current;
 
     if (!container) {
       return;
     }
 
-    container.innerHTML = "";
+    let cancelled = false;
 
-    const script = document.createElement("script");
-    script.src = "https://utteranc.es/client.js";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    script.setAttribute("repo", siteConfig.utterances.repo);
-    script.setAttribute("issue-term", siteConfig.utterances.issueTerm);
-    script.setAttribute("label", siteConfig.utterances.label);
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("pathname", pathname);
-    container.appendChild(script);
+    const frame = window.requestAnimationFrame(() => {
+      if (cancelled || !container.isConnected) {
+        return;
+      }
+
+      container.replaceChildren();
+
+      const script = document.createElement("script");
+      script.src = "https://utteranc.es/client.js";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      script.setAttribute("repo", siteConfig.utterances.repo);
+      script.setAttribute("issue-term", siteConfig.utterances.issueTerm);
+      script.setAttribute("label", siteConfig.utterances.label);
+      script.setAttribute("theme", "github-light");
+      script.setAttribute("pathname", pathname);
+      container.appendChild(script);
+    });
 
     return () => {
-      container.innerHTML = "";
+      cancelled = true;
+      window.cancelAnimationFrame(frame);
     };
-  }, [containerId, pathname]);
+  }, [pathname]);
 
-  return <div id={containerId} className="post-comments" />;
+  return <div ref={containerRef} className="min-h-12" />;
 }

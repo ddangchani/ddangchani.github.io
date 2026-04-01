@@ -1,5 +1,4 @@
 export const SITE_URL = "https://ddangchani.github.io";
-export const SOURCE_POSTS_DIR = "_posts";
 export const CONTENT_POSTS_DIR = "content/posts";
 export const GENERATED_CONTENT_DIR = "generated/content";
 export const CONTENT_POSTS_GLOB = "content/posts/**/*.mdx";

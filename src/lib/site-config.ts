@@ -1,19 +1,18 @@
 export const siteConfig = {
   title: "DDangchani's DataLog",
-  description: "A technical writing archive focused on data science, AI, statistics, and practical research notes.",
+  description: "통계학과 데이터 사이언스를 학습하며 얻은 내용들을 공유합니다.",
   siteUrl: "https://ddangchani.github.io",
   locale: "ko-KR",
   author: {
     name: "Dangchan",
-    role: "Data scientist and technical writer",
-    bio: "Safer society with data. Research notes, implementation details, and long-form technical study.",
-    location: "South Korea",
+    fullName: "Dangchan Kim",
+    role: "Safer society with data",
+    bio: "Safer society with data",
+    location: "Seoul, South Korea",
     email: "dang11230@gmail.com"
   },
   nav: [
-    { href: "/", label: "Index" },
-    { href: "/posts/", label: "Archive" },
-    { href: "/search/", label: "Search" },
+    { href: "/posts/", label: "Articles" },
     { href: "/about/", label: "About" }
   ],
   links: [
@@ -27,8 +26,8 @@ export const siteConfig = {
     label: "commentary"
   },
   highlights: [
-    { label: "Topics", value: "AI · Statistics · Data" },
-    { label: "Format", value: "Long-form research notes" },
-    { label: "Mode", value: "Static React archive" }
+    { label: "Topics", value: "Statistics · Data Science" },
+    { label: "Writing", value: "공부한 내용을 정리해 공유" },
+    { label: "Goal", value: "Safer society with data" }
   ]
 } as const;

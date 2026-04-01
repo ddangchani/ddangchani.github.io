@@ -8,6 +8,7 @@ on:
 jobs:
   refresh-analytics:
     runs-on: ubuntu-latest
+    environment: OPENAI API KEY
     permissions:
       contents: write
 
@@ -28,7 +29,7 @@ jobs:
 
       - name: Refresh analytics data
         env:
-          GOOGLE_ANALYTICS_CREDENTIALS_JSON: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS_JSON }}
+          GOOGLE_ANALYTICS_CREDENTIALS_JSON: ${{ secrets.GITHUBBLOG || secrets.GOOGLE_ANALYTICS_CREDENTIALS_JSON }}
           GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
         run: npm run refresh:popular
 

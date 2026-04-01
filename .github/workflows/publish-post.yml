@@ -50,6 +50,7 @@ on:
 jobs:
   publish-post:
     runs-on: ubuntu-latest
+    environment: OPENAI API KEY
     permissions:
       contents: write
       pull-requests: write
@@ -76,9 +77,9 @@ jobs:
 
       - name: Run post agent
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_API_BASE_URL: ${{ secrets.OPENAI_API_BASE_URL }}
-          POST_AGENT_MODEL: ${{ secrets.POST_AGENT_MODEL }}
+          OPENAI_API_KEY: ${{ vars.OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
+          OPENAI_API_BASE_URL: ${{ vars.OPENAI_API_BASE_URL || secrets.OPENAI_API_BASE_URL }}
+          POST_AGENT_MODEL: ${{ vars.POST_AGENT_MODEL || secrets.POST_AGENT_MODEL }}
         run: >
           npm run post:agent --
           ${{ inputs.mode }}

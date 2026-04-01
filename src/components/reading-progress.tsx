@@ -26,8 +26,14 @@ export function ReadingProgress() {
   }, []);
 
   return (
-    <div className="reading-progress" aria-hidden="true">
-      <span className="reading-progress__bar" style={{ transform: `scaleX(${progress / 100})` }} />
+    <div
+      className="sticky top-[4.65rem] z-20 h-[0.35rem] w-full overflow-hidden rounded-full bg-[color:color-mix(in_srgb,var(--ink)_8%,transparent)]"
+      aria-hidden="true"
+    >
+      <span
+        className="block h-full w-full origin-left bg-[linear-gradient(90deg,var(--accent),var(--accent-strong))]"
+        style={{ transform: `scaleX(${progress / 100})` }}
+      />
     </div>
   );
 }

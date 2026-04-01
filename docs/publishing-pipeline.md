@@ -12,15 +12,17 @@
 
 - `publish` uses `npm run validate:publish`.
 - `validate:publish` is expected to call `npm run typecheck:publishing`, then the shared content generation and validation scripts, then the frontend validation script.
-- The pipeline does not duplicate content validation or route parity logic.
+- The pipeline validates the MDX content tree directly and does not depend on legacy Jekyll `_posts` parity checks.
 
 ## Environment And Secrets
 
 - `OPENAI_API_KEY`: enables model-backed drafting.
 - `OPENAI_API_BASE_URL`: optional base URL for an OpenAI-compatible endpoint. Defaults to `https://api.openai.com/v1`.
 - `POST_AGENT_MODEL`: model identifier for drafting.
-- `GOOGLE_ANALYTICS_CREDENTIALS_JSON`: service account JSON for GA4 refresh.
+- `GITHUBBLOG`: preferred GitHub secret name for the GA4 service account JSON used by the refresh workflow.
+- `GOOGLE_ANALYTICS_CREDENTIALS_JSON`: optional legacy/local env var name for the same GA4 service account JSON.
 - `GA_PROPERTY_ID`: optional GA4 property id. Defaults to `397192433`.
+- GitHub Actions `publish-post` reads OpenAI settings from `vars.*` first, then falls back to `secrets.*`.
 
 ## Guardrails
 

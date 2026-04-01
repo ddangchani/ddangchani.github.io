@@ -6,6 +6,7 @@ import { Analytics } from "@/components/analytics";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/lib/site-config";
+import { getSearchEntries } from "@/lib/site-data";
 
 import "katex/dist/katex.min.css";
 import "./globals.css";
@@ -52,13 +53,15 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export default async function RootLayout({ children }: PropsWithChildren) {
+  const searchEntries = await getSearchEntries();
+
   return (
-    <html lang="ko">
+    <html lang="ko" data-scroll-behavior="smooth">
       <body className={`${bodyFont.variable} ${displayFont.variable} ${monoFont.variable}`}>
         <Analytics trackingId={process.env.NEXT_PUBLIC_GA_ID ?? "G-QXX68H21RZ"} />
         <div className="site-frame">
-          <SiteHeader />
+          <SiteHeader entries={searchEntries} />
           <main className="site-main">{children}</main>
           <SiteFooter />
         </div>

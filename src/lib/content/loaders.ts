@@ -13,7 +13,12 @@ import {
   type RouteManifestEntry,
   type SearchEntry
 } from "@/lib/content/contracts";
-import { encodeRouteSegments } from "@/lib/content/legacy-routes";
+import {
+  buildPublicPostRoutePath,
+  buildRoutePath,
+  encodeRouteSegments,
+  normalizeRouteSegments
+} from "@/lib/content/legacy-routes";
 import {
   popularPostEntrySchema,
   postMetaSchema,
@@ -47,10 +52,16 @@ export function getAllPosts(contentDir = CONTENT_POSTS_DIR): PostDocument[] {
 }
 
 export function getPostByRouteSegments(routeSegments: string[]): PostDocument | null {
+  const normalizedSegments = normalizeRouteSegments(routeSegments);
+  const routePath = buildRoutePath(normalizedSegments);
+
   return (
-    getAllPosts().find(
-      (post) => encodeRouteSegments(post.meta.routeSegments) === encodeRouteSegments(routeSegments)
-    ) ?? null
+    getAllPosts().find((post) => {
+      const legacyRoute = encodeRouteSegments(post.meta.routeSegments);
+      const publicRoute = buildPublicPostRoutePath(post.sourcePath);
+
+      return legacyRoute === encodeRouteSegments(normalizedSegments) || publicRoute === routePath;
+    }) ?? null
   );
 }
 
@@ -82,9 +93,15 @@ export function loadCompiledPosts(): CompiledPostDocument[] {
 export function loadCompiledPostByRouteSegments(
   routeSegments: string[]
 ): CompiledPostDocument | null {
+  const normalizedSegments = normalizeRouteSegments(routeSegments);
+  const routePath = buildRoutePath(normalizedSegments);
+
   return (
-    loadCompiledPosts().find(
-      (post) => encodeRouteSegments(post.meta.routeSegments) === encodeRouteSegments(routeSegments)
-    ) ?? null
+    loadCompiledPosts().find((post) => {
+      const legacyRoute = encodeRouteSegments(post.meta.routeSegments);
+      const publicRoute = buildPublicPostRoutePath(post.sourcePath);
+
+      return legacyRoute === encodeRouteSegments(normalizedSegments) || publicRoute === routePath;
+    }) ?? null
   );
 }

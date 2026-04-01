@@ -12,12 +12,9 @@
     "typecheck:frontend": "tsc --noEmit -p tsconfig.frontend.json",
     "typecheck:publishing": "tsc --noEmit -p tsconfig.publishing.json",
     "validate:frontend": "npm run public:sync && npm run typecheck:frontend && npm run lint:frontend && npx next build",
-    "migrate:posts": "tsx scripts/migrate-posts.ts",
-    "content:bootstrap": "npm run migrate:posts && npm run content:prepare",
     "generate:content": "tsx scripts/generate-content-artifacts.ts",
     "validate:content": "tsx scripts/validate-content.ts",
-    "check:route-parity": "tsx scripts/check-route-parity.ts",
-    "content:prepare": "npm run generate:content && npm run validate:content && npm run check:route-parity",
+    "content:prepare": "npm run generate:content && npm run validate:content",
     "public:sync": "tsx scripts/sync-static-public.ts",
     "post:agent": "tsx scripts/post-agent.ts",
     "refresh:popular": "tsx scripts/refresh-popular-posts.ts",
@@ -52,12 +49,15 @@
     "zod": "^4.1.11"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.37.0",
     "eslint-config-next": "^16.2.1",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
     "tsx": "^4.20.6",
     "typescript": "^6.0.2"
   }
