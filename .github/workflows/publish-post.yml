@@ -44,7 +44,7 @@ on:
       target_branch:
         description: Target branch for publish mode
         required: false
-        default: main
+        default: master
         type: string
 
 jobs:
