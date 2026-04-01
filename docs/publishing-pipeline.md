@@ -23,6 +23,7 @@
 - `GOOGLE_ANALYTICS_CREDENTIALS_JSON`: optional legacy/local env var name for the same GA4 service account JSON.
 - `GA_PROPERTY_ID`: optional GA4 property id. Defaults to `397192433`.
 - GitHub Actions `publish-post` reads OpenAI settings from `vars.*` first, then falls back to `secrets.*`.
+- Model-backed drafting uses the OpenAI Responses API with the built-in `web_search` tool enabled.
 
 ## Guardrails
 

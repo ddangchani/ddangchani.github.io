@@ -30,6 +30,18 @@ type CliOptions = {
   input: PostJobInput;
 };
 
+type ResponsesApiOutputItem = {
+  type?: string;
+  content?: Array<{
+    type?: string;
+    text?: string;
+  }>;
+};
+
+type ResponsesApiPayload = {
+  output?: ResponsesApiOutputItem[];
+};
+
 function fail(message: string): never {
   throw new Error(message);
 }
@@ -162,6 +174,28 @@ function extractJsonObject(value: string): string {
   return value.slice(start, end + 1);
 }
 
+function extractTextFromResponsesPayload(payload: ResponsesApiPayload): string {
+  const texts: string[] = [];
+
+  for (const item of payload.output ?? []) {
+    if (item.type !== "message") {
+      continue;
+    }
+
+    for (const content of item.content ?? []) {
+      if (typeof content.text === "string" && content.text.trim().length > 0) {
+        texts.push(content.text);
+      }
+    }
+  }
+
+  if (texts.length === 0) {
+    fail("Model response was empty");
+  }
+
+  return texts.join("\n").trim();
+}
+
 async function requestDraftFromModel(input: PostJobInput, slug: string): Promise<DraftPayload | null> {
   const apiKey = process.env.OPENAI_API_KEY;
   const model = process.env.POST_AGENT_MODEL;
@@ -175,6 +209,8 @@ async function requestDraftFromModel(input: PostJobInput, slug: string): Promise
     "You are drafting a technical blog post for a Git-based writing archive.",
     "Return valid JSON only with keys: title, description, tags, category, useMath, teaser, body.",
     "Do not wrap the JSON in markdown fences.",
+    "If web search is available, use it when current or source-backed information would improve the draft.",
+    "Prefer conservative claims and include concrete source links in the final 'References' section of the body.",
     `Topic: ${input.topic}`,
     `Audience: ${input.audience}`,
     `Tone: ${input.tone}`,
@@ -194,7 +230,7 @@ async function requestDraftFromModel(input: PostJobInput, slug: string): Promise
   ].join("\n");
 
   const response = await fetch(
-    `${process.env.OPENAI_API_BASE_URL ?? "https://api.openai.com/v1"}/chat/completions`,
+    `${process.env.OPENAI_API_BASE_URL ?? "https://api.openai.com/v1"}/responses`,
     {
       method: "POST",
       headers: {
@@ -203,17 +239,12 @@ async function requestDraftFromModel(input: PostJobInput, slug: string): Promise
       },
       body: JSON.stringify({
         model,
-        messages: [
+        tools: [
           {
-            role: "system",
-            content: "You produce strict JSON for a technical writing pipeline."
-          },
-          {
-            role: "user",
-            content: prompt
+            type: "web_search"
           }
         ],
-        response_format: { type: "json_object" }
+        input: prompt
       })
     }
   );
@@ -222,14 +253,8 @@ async function requestDraftFromModel(input: PostJobInput, slug: string): Promise
     throw new Error(`Model request failed with ${response.status}: ${await response.text()}`);
   }
 
-  const payload = (await response.json()) as {
-    choices?: Array<{ message?: { content?: string } }>;
-  };
-  const content = payload.choices?.[0]?.message?.content;
-
-  if (!content) {
-    fail("Model response was empty");
-  }
+  const payload = (await response.json()) as ResponsesApiPayload;
+  const content = extractTextFromResponsesPayload(payload);
 
   return JSON.parse(extractJsonObject(content)) as DraftPayload;
 }
