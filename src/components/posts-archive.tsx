@@ -109,7 +109,7 @@ export function PostsArchive({ posts, tags }: PostsArchiveProps) {
         ) : null}
       </div>
 
-      <div className="relative flex flex-wrap gap-3 rounded-[calc(var(--radius-lg)-0.15rem)] border border-[color:color-mix(in_srgb,var(--accent-strong)_12%,var(--line))] bg-[radial-gradient(circle_at_0%_0%,color-mix(in_srgb,var(--accent)_10%,transparent),transparent_26%),radial-gradient(circle_at_100%_100%,color-mix(in_srgb,var(--accent-strong)_8%,transparent),transparent_30%),linear-gradient(180deg,color-mix(in_srgb,white_90%,var(--surface)_10%),color-mix(in_srgb,white_98%,var(--surface)_2%))] p-4 shadow-[inset_0_1px_0_color-mix(in_srgb,white_78%,transparent),0_22px_42px_color-mix(in_srgb,var(--accent-strong)_6%,transparent)] max-[720px]:p-[0.85rem]" aria-label="Tag filters">
+      <div className="relative flex flex-wrap gap-2.5 rounded-[calc(var(--radius-lg)-0.15rem)] border border-[color:color-mix(in_srgb,var(--accent-strong)_12%,var(--line))] bg-[radial-gradient(circle_at_0%_0%,color-mix(in_srgb,var(--accent)_10%,transparent),transparent_26%),radial-gradient(circle_at_100%_100%,color-mix(in_srgb,var(--accent-strong)_8%,transparent),transparent_30%),linear-gradient(180deg,color-mix(in_srgb,white_90%,var(--surface)_10%),color-mix(in_srgb,white_98%,var(--surface)_2%))] p-4 shadow-[inset_0_1px_0_color-mix(in_srgb,white_78%,transparent),0_22px_42px_color-mix(in_srgb,var(--accent-strong)_6%,transparent)] max-[720px]:gap-2 max-[720px]:p-[0.85rem]" aria-label="Tag filters">
         {tags.map((tag) => {
           const isActive = activeTags.some((activeTag) => activeTag.name === tag.name);
 

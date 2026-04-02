@@ -4,6 +4,7 @@ import { parseArgs } from "node:util";
 import { spawnSync } from "node:child_process";
 
 import yaml from "js-yaml";
+import { ZodError } from "zod";
 
 import type { PostJobInput, PostJobResult } from "@/lib/publishing/contracts";
 import {
@@ -12,6 +13,7 @@ import {
   encodeRouteSegments
 } from "@/lib/content/legacy-routes";
 import { getAllPosts } from "@/lib/content/loaders";
+import { postMetaSchema } from "@/lib/content/schema";
 
 type AgentMode = "plan" | "draft" | "publish";
 
@@ -295,6 +297,15 @@ function buildFallbackDraft(input: PostJobInput, slug: string): DraftPayload {
   };
 }
 
+function estimateReadingTimeMinutes(body: string): number {
+  const tokens = body.match(/[\p{Script=Hangul}\p{Script=Han}\p{Letter}\p{Number}]+/gu) ?? [];
+  return Math.max(1, Math.ceil(tokens.length / 220));
+}
+
+function formatZodIssues(error: ZodError): string {
+  return JSON.stringify(error.issues, null, 2);
+}
+
 async function buildDraftPayload(input: PostJobInput, slug: string): Promise<DraftPayload> {
   const modelDraft = await requestDraftFromModel(input, slug);
   const fallback = buildFallbackDraft(input, slug);
@@ -335,11 +346,22 @@ function createFrontmatter(payload: DraftPayload, date: string, slug: string): s
     teaser: payload.teaser,
     coverImage: payload.teaser,
     excerpt: payload.description,
+    readingTimeMinutes: estimateReadingTimeMinutes(payload.body),
     useMath: payload.useMath,
     featured: false,
     draft: false,
     canonicalUrl: buildCanonicalUrl(routeSegments)
   };
+
+  try {
+    postMetaSchema.parse(frontmatter);
+  } catch (error) {
+    if (error instanceof ZodError) {
+      throw new Error(`Generated frontmatter is invalid\n${formatZodIssues(error)}`);
+    }
+
+    throw error;
+  }
 
   return `---\n${yaml.dump(frontmatter, {
     lineWidth: 0,

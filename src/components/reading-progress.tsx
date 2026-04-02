@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const READING_PROGRESS_TOP = "4.65rem";
+
 export function ReadingProgress() {
   const [progress, setProgress] = useState(0);
 
@@ -27,7 +29,8 @@ export function ReadingProgress() {
 
   return (
     <div
-      className="sticky top-[4.65rem] z-20 h-[0.35rem] w-full overflow-hidden rounded-full bg-[color:color-mix(in_srgb,var(--ink)_8%,transparent)]"
+      className="sticky z-20 h-[0.35rem] w-full overflow-hidden rounded-full bg-[color:color-mix(in_srgb,var(--ink)_8%,transparent)]"
+      style={{ top: READING_PROGRESS_TOP }}
       aria-hidden="true"
     >
       <span

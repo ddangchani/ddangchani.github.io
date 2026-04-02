@@ -3,6 +3,7 @@ import path from "node:path";
 
 import fg from "fast-glob";
 import matter from "gray-matter";
+import { ZodError } from "zod";
 
 import {
   type CompiledPostDocument,
@@ -36,13 +37,24 @@ export function parsePostFile(relativePath: string, contentDir = CONTENT_POSTS_D
   const sourcePath = path.join(contentDir, relativePath);
   const raw = fs.readFileSync(sourcePath, "utf8");
   const parsed = matter(raw);
-  const meta = postMetaSchema.parse(parsed.data);
 
-  return {
-    meta,
-    body: parsed.content,
-    sourcePath
-  };
+  try {
+    const meta = postMetaSchema.parse(parsed.data);
+
+    return {
+      meta,
+      body: parsed.content,
+      sourcePath
+    };
+  } catch (error) {
+    if (error instanceof ZodError) {
+      throw new Error(
+        `Invalid frontmatter in ${sourcePath}\n${JSON.stringify(error.issues, null, 2)}`
+      );
+    }
+
+    throw error;
+  }
 }
 
 export function getAllPosts(contentDir = CONTENT_POSTS_DIR): PostDocument[] {

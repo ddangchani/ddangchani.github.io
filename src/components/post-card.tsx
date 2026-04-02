@@ -26,7 +26,7 @@ export function PostCard({ post, compact = false }: PostCardProps) {
   const primaryCategory = post.categories[0] ?? "Archive";
 
   return (
-    <article className="grid overflow-hidden rounded-[var(--radius-lg)] border border-[var(--line)] bg-[color:color-mix(in_srgb,var(--surface)_90%,white)] shadow-[var(--shadow)]">
+    <article className="grid min-w-0 overflow-hidden rounded-[var(--radius-lg)] border border-[var(--line)] bg-[color:color-mix(in_srgb,var(--surface)_90%,white)] shadow-[var(--shadow)]">
       <div className="relative aspect-[16/9] overflow-hidden bg-[linear-gradient(135deg,color-mix(in_srgb,var(--accent)_22%,white),transparent)]">
         {post.teaser ? (
           <Image src={post.teaser} alt="" fill unoptimized className="h-full w-full object-cover" sizes="(max-width: 960px) 100vw, 50vw" />
@@ -57,8 +57,8 @@ export function PostCard({ post, compact = false }: PostCardProps) {
           </div>
         )}
       </div>
-      <div className="grid gap-4 p-5 max-[720px]:p-4">
-        <div className="flex flex-wrap gap-x-[0.85rem] gap-y-[0.45rem] text-[0.84rem] text-[var(--ink-soft)]">
+      <div className="grid min-w-0 gap-4 p-5 max-[720px]:p-4">
+        <div className="flex min-w-0 flex-wrap gap-x-[0.85rem] gap-y-[0.45rem] text-[0.84rem] text-[var(--ink-soft)]">
           <span>{new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium" }).format(new Date(post.date))}</span>
           <span>{primaryCategory}</span>
         </div>
@@ -67,13 +67,13 @@ export function PostCard({ post, compact = false }: PostCardProps) {
             {post.title}
           </Link>
         </h3>
-        <p className="m-0 leading-[1.7] text-[var(--ink-soft)] max-[720px]:text-[0.97rem] max-[720px]:leading-[1.7]">
+        <p className="m-0 [overflow-wrap:anywhere] leading-[1.7] text-[var(--ink-soft)] max-[720px]:text-[0.97rem] max-[720px]:leading-[1.7]">
           {post.description || post.excerpt}
         </p>
-        <div className="flex flex-wrap items-center justify-between gap-[0.9rem]">
-          <ul className="m-0 flex list-none flex-wrap gap-[0.55rem] p-0" aria-label="Tags">
+        <div className="flex min-w-0 flex-wrap items-center justify-between gap-[0.9rem]">
+          <ul className="m-0 flex min-w-0 flex-1 list-none flex-wrap gap-[0.55rem] p-0" aria-label="Tags">
             {visibleTags.map((tag) => (
-              <li key={tag} className="max-[480px]:max-w-full">
+              <li key={tag} className="min-w-0 max-[480px]:max-w-full">
                 {isFilterTag(tag) ? (
                   <TagChip label={tag} href={buildTagFilterHref(tag)} />
                 ) : (
@@ -85,7 +85,7 @@ export function PostCard({ post, compact = false }: PostCardProps) {
           <Link
             href={route}
             className={clsx(
-              "inline-flex items-center rounded-full border border-transparent px-3 py-2 text-[var(--accent-strong)] transition duration-200 ease-out hover:-translate-y-px hover:border-[color:color-mix(in_srgb,var(--accent)_28%,var(--line))] hover:bg-[color:color-mix(in_srgb,var(--accent)_10%,white)]",
+              "inline-flex shrink-0 items-center rounded-full border border-transparent px-3 py-2 text-[var(--accent-strong)] transition duration-200 ease-out hover:-translate-y-px hover:border-[color:color-mix(in_srgb,var(--accent)_28%,var(--line))] hover:bg-[color:color-mix(in_srgb,var(--accent)_10%,white)]",
               compact && "max-[480px]:w-full max-[480px]:justify-center"
             )}
           >

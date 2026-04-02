@@ -55,17 +55,20 @@ export function SiteHeader({ entries }: SiteHeaderProps) {
       return undefined;
     }
 
-    const handlePointerDown = (event: PointerEvent) => {
-      if (!headerRef.current?.contains(event.target as Node)) {
+    const handleDocumentClick = (event: MouseEvent) => {
+      const eventPath = event.composedPath();
+      const isInsideHeader = headerRef.current ? eventPath.includes(headerRef.current) : false;
+
+      if (!isInsideHeader) {
         setIsMenuOpen(false);
         setIsSearchOpen(false);
       }
     };
 
-    window.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("click", handleDocumentClick);
 
     return () => {
-      window.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("click", handleDocumentClick);
     };
   }, [isMenuOpen, isSearchOpen]);
 
@@ -157,7 +160,7 @@ export function SiteHeader({ entries }: SiteHeaderProps) {
                 })}
               </nav>
             </div>
-            <div className="flex shrink-0 items-center gap-2 min-[721px]:hidden">
+            <div className="relative z-10 flex shrink-0 items-center gap-2 min-[721px]:hidden">
               <button
                 type="button"
                 className={clsx(
