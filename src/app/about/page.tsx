@@ -30,6 +30,48 @@ const authorLinks = [
   }
 ];
 
+type TimelineEntry = {
+  period: string;
+  title: string;
+  subtitle?: string;
+  details?: string[];
+};
+
+const educationEntries: TimelineEntry[] = [
+  {
+    period: "2022.03 ~",
+    title: "Seoul National University, Department of Statistics",
+    subtitle: "M.S. in Statistics",
+    details: ["Spatial Statistics Lab."]
+  },
+  {
+    period: "2021.02",
+    title: "Korea National Police University",
+    details: ["B.A. in Public Administration", "B.A. in Police Science"]
+  }
+];
+
+const experienceEntries: TimelineEntry[] = [
+  {
+    period: "2021.03 ~",
+    title: "Korea National Police Agency",
+    subtitle: "Police Officer, Inspector",
+    details: [ "AI Development Team - 2025.12 ~" , "Platoon Leader of Auxiliary Police, Seoul Metropolitan Police Agency",]
+  },
+  {
+    period: "2023 ~ 2024",
+    title: "Seoul National University",
+    subtitle: "Teaching Assistant",
+    details: [
+      "Statistics Lab - Spring 2023",
+      "Introduction to Data Science - Fall 2023, Fall 2024",
+      "LG Electronics Data Science Course - 2024.01",
+      "Samsung Electronics Data Science Course - 2024.02",
+      "Statistical Computing - Spring 2024"
+    ]
+  }
+];
+
 type AboutIconName = "email" | "github" | "linkedin" | "location";
 
 function AboutIcon({ name, ...props }: SVGProps<SVGSVGElement> & { name: AboutIconName }) {
@@ -63,11 +105,67 @@ function AboutIcon({ name, ...props }: SVGProps<SVGSVGElement> & { name: AboutIc
   }
 }
 
+function TimelineSection({
+  kicker,
+  title,
+  entries
+}: {
+  kicker: string;
+  title: string;
+  entries: TimelineEntry[];
+}) {
+  return (
+    <section className="grid gap-[1.1rem]">
+      <div className="grid gap-[0.35rem]">
+        <p className="m-0 text-[0.7rem] uppercase tracking-[0.2em] text-[var(--ink-soft)]">{kicker}</p>
+        <h2 className="m-0 font-[var(--font-display)] text-[clamp(1.45rem,2.3vw,1.9rem)] leading-[1.12] tracking-[-0.03em] text-[var(--ink)]">
+          {title}
+        </h2>
+      </div>
+      <div className="grid gap-4">
+        {entries.map((entry) => (
+          <article
+            key={`${title}-${entry.period}-${entry.title}`}
+            className="grid gap-4 rounded-[calc(var(--radius-lg)+0.12rem)] border border-[color:color-mix(in_srgb,var(--ink)_8%,transparent)] bg-[linear-gradient(180deg,color-mix(in_srgb,white_90%,var(--paper-strong)_10%),color-mix(in_srgb,white_97%,var(--surface)_3%))] p-[clamp(1rem,1.8vw,1.3rem)] shadow-[0_10px_24px_color-mix(in_srgb,var(--ink)_5%,transparent)] md:grid-cols-[minmax(0,8.2rem)_minmax(0,1fr)]"
+          >
+            <div className="flex items-start">
+              <span className="inline-flex rounded-full border border-[color:color-mix(in_srgb,var(--ink)_10%,transparent)] bg-[color:color-mix(in_srgb,var(--paper-strong)_35%,white)] px-3 py-[0.36rem] text-[0.72rem] font-medium tracking-[0.04em] text-[var(--ink-soft)]">
+                {entry.period}
+              </span>
+            </div>
+            <div className="grid gap-[0.7rem]">
+              <div className="grid gap-[0.25rem]">
+                <h3 className="m-0 text-[1.02rem] font-semibold leading-[1.45] text-[var(--ink)] [word-break:keep-all]">
+                  {entry.title}
+                </h3>
+                {entry.subtitle ? (
+                  <p className="m-0 text-[0.92rem] leading-[1.65] text-[var(--ink-soft)] [word-break:keep-all]">
+                    {entry.subtitle}
+                  </p>
+                ) : null}
+              </div>
+              {entry.details?.length ? (
+                <ul className="m-0 grid gap-[0.38rem] pl-[1.1rem] text-[0.93rem] leading-[1.72] text-[var(--ink)]">
+                  {entry.details.map((detail) => (
+                    <li key={detail} className="marker:text-[var(--accent-strong)] [word-break:keep-all]">
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function AboutPage() {
   return (
     <div className="page-stack [gap:clamp(2.75rem,7vw,4.75rem)]">
-      <MotionReveal>
-        <section className="content-section content-section--narrow [gap:clamp(1.25rem,3vw,2rem)]">
+      <MotionReveal className="mx-auto w-full max-w-[980px]">
+        <section className="content-section [gap:clamp(1.25rem,3vw,2rem)]">
           <p className="section-kicker">Author</p>
           <div className="grid items-start gap-6 rounded-[calc(var(--radius-lg)+0.35rem)] border border-[var(--line)] bg-[linear-gradient(135deg,color-mix(in_srgb,white_76%,var(--paper-strong)_24%),color-mix(in_srgb,white_92%,var(--surface)_8%)),radial-gradient(circle_at_100%_0%,color-mix(in_srgb,var(--accent)_10%,transparent),transparent_34%)] p-[clamp(1.35rem,3vw,2.2rem)] shadow-[var(--shadow)] md:grid-cols-[minmax(0,240px)_minmax(0,1fr)] md:gap-[clamp(1.5rem,4vw,3.25rem)]">
             <div className="grid max-w-[240px] gap-3 md:max-w-none">
@@ -85,11 +183,10 @@ export default function AboutPage() {
               <p className="m-0 text-[0.78rem] uppercase tracking-[0.18em] text-[var(--accent-strong)]">
                 {siteConfig.author.role}
               </p>
-              <h1 className="page-title">{siteConfig.author.fullName}</h1>
+              <h1 className="page-title text-[clamp(2.15rem,4vw,3.45rem)]">{siteConfig.author.fullName}</h1>
               <p className="m-0 max-w-[39rem] text-[clamp(1.08rem,2vw,1.32rem)] leading-[1.9] text-[var(--ink)] [word-break:keep-all]">
-                데이터를 기반으로 더 안전한 사회와 더 나은 세상에 기여하는 일에 관심이 있습니다.
-                통계학과 데이터 사이언스를 꾸준히 공부하며, 이해한 내용을 오래 남는 글로
-                정리하고 있습니다.
+                AI와 데이터를 기반으로 더 안전한 사회와 더 나은 세상에 기여하는 일에 관심이 있습니다. <br />
+                <strong>공공안전</strong> 관련 분야에서 AI·Data Science 활용과 관련된 연구와 실무 경험을 쌓아가고 있으며, 이를 바탕으로 다양한 지식과 인사이트를 나누고자 합니다.
               </p>
               <dl className="grid gap-x-[1.2rem] gap-y-[0.9rem] md:grid-cols-2">
                 <div className="grid gap-[0.45rem] border-t border-[color:color-mix(in_srgb,var(--ink)_10%,transparent)] pt-[0.95rem]">
@@ -129,6 +226,12 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </section>
+      </MotionReveal>
+      <MotionReveal delay={0.08} className="mx-auto w-full max-w-[980px]">
+        <section className="content-section content-section--split">
+          <TimelineSection kicker="Education" title="Education" entries={educationEntries} />
+          <TimelineSection kicker="Experience" title="Experience" entries={experienceEntries} />
         </section>
       </MotionReveal>
     </div>
