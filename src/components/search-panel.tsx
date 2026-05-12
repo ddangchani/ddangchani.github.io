@@ -37,7 +37,7 @@ export function SearchPanel({
       className={clsx(
         "grid rounded-[var(--radius-lg)] border border-[var(--line)] bg-[color:color-mix(in_srgb,var(--surface)_90%,white)] px-[clamp(1.2rem,3vw,2rem)] py-[clamp(1.2rem,3vw,2rem)] shadow-[var(--shadow)] max-[720px]:p-4",
         isCompact &&
-          "gap-[0.8rem] rounded-[1.55rem] bg-[linear-gradient(180deg,color-mix(in_srgb,white_82%,var(--surface)_18%),color-mix(in_srgb,white_94%,var(--surface)_6%))] p-4",
+          "min-h-0 grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-[0.8rem] overflow-y-auto overscroll-contain rounded-[1.55rem] bg-[linear-gradient(180deg,color-mix(in_srgb,white_82%,var(--surface)_18%),color-mix(in_srgb,white_94%,var(--surface)_6%))] p-4 [-webkit-overflow-scrolling:touch] max-[720px]:max-h-[calc(100dvh_-_7rem_-_env(safe-area-inset-top))]",
         !isCompact && "gap-4",
         className
       )}
@@ -67,7 +67,12 @@ export function SearchPanel({
       <div className="text-[0.84rem] text-[var(--ink-soft)]" aria-live="polite">
         {visibleResults.length} results
       </div>
-      <ul className={clsx("m-0 grid list-none gap-[0.85rem] p-0", isCompact && "gap-2")}>
+      <ul
+        className={clsx(
+          "m-0 grid list-none gap-[0.85rem] p-0",
+          isCompact && "min-h-0 gap-2 overflow-y-auto overscroll-contain pr-1 [-webkit-overflow-scrolling:touch]"
+        )}
+      >
         {visibleResults.map((entry) => (
           <li
             key={entry.route}
