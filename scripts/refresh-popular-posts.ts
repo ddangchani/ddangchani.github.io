@@ -11,7 +11,7 @@ function fail(message: string): never {
 }
 
 function getCredentials() {
-  const raw = process.env.GOOGLE_ANALYTICS_CREDENTIALS_JSON;
+  const raw = process.env.GOOGLE_ANALYTICS_CREDENTIALS_JSON?.trim();
 
   if (!raw) {
     fail("GOOGLE_ANALYTICS_CREDENTIALS_JSON is required");
@@ -43,7 +43,7 @@ function getYesterday(): string {
 
 async function runReport(startDate: string, outputPath: string) {
   const client = getClient();
-  const propertyId = process.env.GA_PROPERTY_ID ?? DEFAULT_PROPERTY_ID;
+  const propertyId = process.env.GA_PROPERTY_ID?.trim() || DEFAULT_PROPERTY_ID;
   const [response] = await client.runReport({
     property: `properties/${propertyId}`,
     dimensions: [{ name: "pagePath" }],

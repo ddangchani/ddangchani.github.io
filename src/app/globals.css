@@ -44,7 +44,7 @@
 html {
   width: 100%;
   scroll-behavior: smooth;
-  overflow-x: clip;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -53,7 +53,6 @@ body {
   min-height: 100vh;
   color: var(--ink);
   font-family: var(--font-body), sans-serif;
-  overflow-x: clip;
   background:
     radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 28%),
     radial-gradient(circle at 100% 20%, color-mix(in srgb, var(--accent-strong) 8%, transparent), transparent 34%),
@@ -80,12 +79,21 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
+}
+
+iframe,
+video,
+canvas,
+svg {
+  max-width: 100%;
 }
 
 .site-frame {
   position: relative;
   isolation: isolate;
+  max-width: 100%;
 }
 
 .site-frame,
@@ -160,6 +168,30 @@ img {
   overflow-wrap: anywhere;
 }
 
+.post-prose {
+  font-size: clamp(0.96rem, 2.8vw, 1rem);
+  overflow-wrap: anywhere;
+}
+
+.post-prose :where(p, li, blockquote, dd, dt, figcaption) {
+  overflow-wrap: anywhere;
+}
+
+.post-prose :where(pre, table, .katex-display) {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-prose :where(table) {
+  width: 100%;
+}
+
+.post-prose :where(img, video, iframe) {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 960px) {
   .content-section--split {
     grid-template-columns: 1fr;
@@ -178,6 +210,12 @@ img {
 
   .site-main {
     padding-bottom: 4.5rem;
+  }
+
+  .page-title {
+    font-size: clamp(1.9rem, 10vw, 2.7rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
   }
 }
 

@@ -8,7 +8,7 @@ type HeroProps = {
 
 export function Hero({ postCount, tagCount }: HeroProps) {
   return (
-    <section className="relative left-1/2 ml-[-50vw] w-screen overflow-hidden bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,white_10%,transparent),transparent_38%),linear-gradient(180deg,oklch(0.34_0.09_245),oklch(0.28_0.08_248))] text-[color:color-mix(in_srgb,white_92%,var(--paper)_8%)]">
+    <section className="relative left-1/2 ml-[calc(-50dvw)] w-[100dvw] overflow-hidden bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,white_10%,transparent),transparent_38%),linear-gradient(180deg,oklch(0.34_0.09_245),oklch(0.28_0.08_248))] text-[color:color-mix(in_srgb,white_92%,var(--paper)_8%)]">
       <MotionReveal className="mx-auto w-[var(--content-width)] pt-[clamp(4rem,8vw,6.5rem)] max-[720px]:pt-[3.4rem]">
         <div className="grid justify-items-center gap-4 px-[var(--page-gutter)] text-center max-[720px]:px-4">
           <p className="m-0 text-[0.74rem] uppercase tracking-[0.24em] text-[color:color-mix(in_srgb,white_70%,transparent)]">

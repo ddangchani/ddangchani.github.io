@@ -86,8 +86,8 @@ export function SiteHeader({ entries }: SiteHeaderProps) {
       className="sticky top-0 z-30 border-b border-[var(--line)] bg-[color:color-mix(in_srgb,var(--paper)_88%,transparent)] backdrop-blur-[18px]"
       ref={headerRef}
     >
-      <div className="mx-auto grid w-[var(--content-width)] gap-3 pt-[calc(env(safe-area-inset-top)*0.35+0.85rem)] pb-[0.85rem]">
-        <div className="flex items-center justify-between gap-4 max-[720px]:flex-wrap">
+      <div className="mx-auto grid w-[var(--content-width)] max-w-[calc(100dvw-(var(--page-gutter)*2))] gap-3 pt-[calc(env(safe-area-inset-top)*0.35+0.85rem)] pb-[0.85rem]">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
           <Link
             href="/"
             className="flex min-w-0 flex-col gap-[0.15rem] pr-3"
@@ -101,7 +101,7 @@ export function SiteHeader({ entries }: SiteHeaderProps) {
               {siteConfig.title}
             </span>
           </Link>
-          <div className="flex items-center justify-end gap-2 max-[720px]:ml-auto max-[720px]:flex-1 max-[720px]:flex-wrap">
+          <div className="flex min-w-0 items-center justify-end gap-2">
             <div className="hidden items-center gap-1 rounded-full border border-[color:color-mix(in_srgb,var(--accent-strong)_16%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_srgb,white_86%,var(--paper-strong)_14%),color-mix(in_srgb,var(--surface)_96%,white_4%))] p-1 shadow-[inset_0_1px_0_color-mix(in_srgb,white_82%,transparent),0_14px_32px_color-mix(in_srgb,var(--accent-strong)_8%,transparent)] min-[721px]:flex">
               <button
                 type="button"
@@ -160,11 +160,11 @@ export function SiteHeader({ entries }: SiteHeaderProps) {
                 })}
               </nav>
             </div>
-            <div className="relative z-10 flex shrink-0 items-center gap-2 min-[721px]:hidden">
+            <div className="relative z-10 flex shrink-0 items-center gap-2 min-[721px]:hidden max-[480px]:gap-[0.45rem]">
               <button
                 type="button"
                 className={clsx(
-                  "inline-flex h-[2.75rem] w-[2.75rem] items-center justify-center rounded-full border bg-[linear-gradient(180deg,color-mix(in_srgb,white_88%,var(--paper-strong)_12%),color-mix(in_srgb,var(--surface)_95%,white_5%))] text-[var(--ink)] shadow-[inset_0_1px_0_color-mix(in_srgb,white_82%,transparent),0_10px_24px_color-mix(in_srgb,var(--accent-strong)_7%,transparent)] transition duration-200 ease-out max-[480px]:h-[2.6rem] max-[480px]:w-[2.6rem]",
+                  "inline-flex h-[2.75rem] w-[2.75rem] items-center justify-center rounded-full border bg-[linear-gradient(180deg,color-mix(in_srgb,white_88%,var(--paper-strong)_12%),color-mix(in_srgb,var(--surface)_95%,white_5%))] text-[var(--ink)] shadow-[inset_0_1px_0_color-mix(in_srgb,white_82%,transparent),0_10px_24px_color-mix(in_srgb,var(--accent-strong)_7%,transparent)] transition duration-200 ease-out max-[480px]:h-[2.55rem] max-[480px]:w-[2.55rem]",
                   isSearchOpen
                     ? "border-[color:color-mix(in_srgb,var(--accent-strong)_26%,var(--line))] text-[var(--accent-strong)]"
                     : "border-[color:color-mix(in_srgb,var(--accent-strong)_16%,var(--line))] hover:-translate-y-px hover:border-[color:color-mix(in_srgb,var(--accent)_22%,var(--line))] hover:bg-[color:color-mix(in_srgb,var(--accent)_8%,white)]"
@@ -194,7 +194,7 @@ export function SiteHeader({ entries }: SiteHeaderProps) {
               <button
                 type="button"
                 className={clsx(
-                  "inline-flex shrink-0 items-center gap-3 rounded-full border bg-[linear-gradient(180deg,color-mix(in_srgb,white_88%,var(--paper-strong)_12%),color-mix(in_srgb,var(--surface)_95%,white_5%))] px-[0.95rem] py-[0.78rem] text-[var(--ink)] shadow-[inset_0_1px_0_color-mix(in_srgb,white_82%,transparent),0_10px_24px_color-mix(in_srgb,var(--accent-strong)_7%,transparent)] transition duration-200 ease-out max-[480px]:px-[0.85rem]",
+                  "inline-flex h-[2.75rem] shrink-0 items-center gap-3 rounded-full border bg-[linear-gradient(180deg,color-mix(in_srgb,white_88%,var(--paper-strong)_12%),color-mix(in_srgb,var(--surface)_95%,white_5%))] px-[0.95rem] text-[var(--ink)] shadow-[inset_0_1px_0_color-mix(in_srgb,white_82%,transparent),0_10px_24px_color-mix(in_srgb,var(--accent-strong)_7%,transparent)] transition duration-200 ease-out max-[480px]:h-[2.55rem] max-[480px]:w-[2.55rem] max-[480px]:justify-center max-[480px]:px-0",
                   isMenuOpen
                     ? "border-[color:color-mix(in_srgb,var(--accent-strong)_26%,var(--line))] text-[var(--accent-strong)]"
                     : "border-[color:color-mix(in_srgb,var(--accent-strong)_16%,var(--line))] hover:-translate-y-px hover:border-[color:color-mix(in_srgb,var(--accent)_22%,var(--line))] hover:bg-[color:color-mix(in_srgb,var(--accent)_8%,white)]"
@@ -220,8 +220,8 @@ export function SiteHeader({ entries }: SiteHeaderProps) {
         <nav
           id="site-navigation"
           className={clsx(
-            "hidden w-full gap-[0.7rem] min-[721px]:hidden",
-            isMenuOpen && "grid grid-cols-2 max-[480px]:grid-cols-1"
+            "w-full gap-[0.7rem] min-[721px]:hidden",
+            isMenuOpen ? "grid grid-cols-2 max-[480px]:grid-cols-1" : "hidden"
           )}
           aria-label="Primary"
         >
