@@ -1,27 +1,27 @@
 {
   "/Optimal-Transport/": {
     "link": "/Optimal-Transport/",
-    "count": 4890
+    "count": 4927
   },
   "/KAN/": {
     "link": "/KAN/",
-    "count": 4164
+    "count": 4171
   },
   "/SSM/": {
     "link": "/SSM/",
-    "count": 2538
+    "count": 2562
   },
   "/STGCN/": {
     "link": "/STGCN/",
-    "count": 1364
+    "count": 1378
   },
   "/Conformal-Prediction/": {
     "link": "/Conformal-Prediction/",
-    "count": 1042
+    "count": 1053
   },
   "/pymc/": {
     "link": "/pymc/",
-    "count": 915
+    "count": 917
   },
   "/Jupyter-convert/": {
     "link": "/Jupyter-convert/",
@@ -29,11 +29,11 @@
   },
   "/Universal-Approximation-Theorem/": {
     "link": "/Universal-Approximation-Theorem/",
-    "count": 583
+    "count": 584
   },
   "/KStest/": {
     "link": "/KStest/",
-    "count": 565
+    "count": 567
   },
   "/machine learning/Splines/": {
     "link": "/machine learning/Splines/",
@@ -49,11 +49,11 @@
   },
   "/BayesOpt/": {
     "link": "/BayesOpt/",
-    "count": 352
+    "count": 355
   },
   "/DPDL/": {
     "link": "/DPDL/",
-    "count": 320
+    "count": 323
   },
   "/최단경로알고리즘/": {
     "link": "/최단경로알고리즘/",
@@ -61,7 +61,7 @@
   },
   "/DAG-GNN/": {
     "link": "/DAG-GNN/",
-    "count": 202
+    "count": 203
   },
   "/Diffusion/": {
     "link": "/Diffusion/",
@@ -79,13 +79,13 @@
     "link": "/EDA-point-process/",
     "count": 155
   },
+  "/GP-and-DNN/": {
+    "link": "/GP-and-DNN/",
+    "count": 148
+  },
   "/statistics/MCMC/": {
     "link": "/statistics/MCMC/",
     "count": 148
-  },
-  "/GP-and-DNN/": {
-    "link": "/GP-and-DNN/",
-    "count": 147
   },
   "/FineTuning/": {
     "link": "/FineTuning/",
@@ -97,7 +97,7 @@
   },
   "/mathematics/realanalysis_Topological_spaces(3)/": {
     "link": "/mathematics/realanalysis_Topological_spaces(3)/",
-    "count": 138
+    "count": 139
   },
   "/swiftui-calendar/": {
     "link": "/swiftui-calendar/",
@@ -109,11 +109,11 @@
   },
   "/BN-and-MRF/": {
     "link": "/BN-and-MRF/",
-    "count": 126
+    "count": 127
   },
   "/Sensitivity-Analysis/": {
     "link": "/Sensitivity-Analysis/",
-    "count": 125
+    "count": 127
   },
   "/SwiftUI-TabView/": {
     "link": "/SwiftUI-TabView/",
@@ -121,7 +121,7 @@
   },
   "/SDE/": {
     "link": "/SDE/",
-    "count": 119
+    "count": 120
   },
   "/Datascience-roadmap/": {
     "link": "/Datascience-roadmap/",
@@ -133,7 +133,7 @@
   },
   "/HMM/": {
     "link": "/HMM/",
-    "count": 106
+    "count": 107
   },
   "/project/따릉이_EDA/": {
     "link": "/project/따릉이_EDA/",
@@ -145,7 +145,7 @@
   },
   "/time series/State-Space_Model/": {
     "link": "/time series/State-Space_Model/",
-    "count": 92
+    "count": 94
   },
   "/Transformer/": {
     "link": "/Transformer/",
@@ -185,7 +185,7 @@
   },
   "/etc/itreview2/": {
     "link": "/etc/itreview2/",
-    "count": 77
+    "count": 80
   },
   "/deep learning/Multivariate_LSTM-FCN/": {
     "link": "/deep learning/Multivariate_LSTM-FCN/",
@@ -193,7 +193,7 @@
   },
   "/linear model/Linear_Mixed_Effect_Model/": {
     "link": "/linear model/Linear_Mixed_Effect_Model/",
-    "count": 71
+    "count": 72
   },
   "/deep learning/Optimization/": {
     "link": "/deep learning/Optimization/",
@@ -211,6 +211,10 @@
     "link": "/LPP/",
     "count": 66
   },
+  "/Monte-Carlo-Sampling/": {
+    "link": "/Monte-Carlo-Sampling/",
+    "count": 66
+  },
   "/statistics/MM_algorithm/": {
     "link": "/statistics/MM_algorithm/",
     "count": 63
@@ -222,10 +226,6 @@
   "/mathematics/실해석학12/": {
     "link": "/mathematics/실해석학12/",
     "count": 61
-  },
-  "/Monte-Carlo-Sampling/": {
-    "link": "/Monte-Carlo-Sampling/",
-    "count": 60
   },
   "/Spatial-Causal-Inference-1/": {
     "link": "/Spatial-Causal-Inference-1/",
@@ -251,6 +251,10 @@
     "link": "/machine learning/Gaussian_Process/",
     "count": 48
   },
+  "/ATE-estimation/": {
+    "link": "/ATE-estimation/",
+    "count": 47
+  },
   "/Spatial-Causal-Inference-3/": {
     "link": "/Spatial-Causal-Inference-3/",
     "count": 47
@@ -258,10 +262,6 @@
   "/mathematics/realanalysis_Topological_spaces(1)/": {
     "link": "/mathematics/realanalysis_Topological_spaces(1)/",
     "count": 47
-  },
-  "/ATE-estimation/": {
-    "link": "/ATE-estimation/",
-    "count": 44
   },
   "/Uikit-Combine/": {
     "link": "/Uikit-Combine/",
@@ -403,13 +403,13 @@
     "link": "/mathematics/실해석학5/",
     "count": 25
   },
+  "/Spatial-Stat-1/": {
+    "link": "/Spatial-Stat-1/",
+    "count": 24
+  },
   "/causal inference/Causal_Inference_(5)/": {
     "link": "/causal inference/Causal_Inference_(5)/",
     "count": 24
-  },
-  "/Spatial-Stat-1/": {
-    "link": "/Spatial-Stat-1/",
-    "count": 23
   },
   "/causal inference/Causal_Inference_(6)/": {
     "link": "/causal inference/Causal_Inference_(6)/",
@@ -483,16 +483,16 @@
     "link": "/deep learning/AlexNet/",
     "count": 19
   },
+  "/mathematics/realanalysis_Topological_spaces(2)/": {
+    "link": "/mathematics/realanalysis_Topological_spaces(2)/",
+    "count": 19
+  },
   "/etc/신년계획/": {
     "link": "/etc/신년계획/",
     "count": 18
   },
   "/machine learning/boosting_tree/": {
     "link": "/machine learning/boosting_tree/",
-    "count": 18
-  },
-  "/mathematics/realanalysis_Topological_spaces(2)/": {
-    "link": "/mathematics/realanalysis_Topological_spaces(2)/",
     "count": 18
   },
   "/Spectral-Analysis-4/": {
@@ -509,6 +509,10 @@
   },
   "/Spectral-Analysis-5/": {
     "link": "/Spectral-Analysis-5/",
+    "count": 16
+  },
+  "/ai-9b0cdf/": {
+    "link": "/ai-9b0cdf/",
     "count": 16
   },
   "/causal inference/Probabilistic_Graphical_Models/": {
@@ -543,10 +547,6 @@
     "link": "/swiftui-Animation/",
     "count": 15
   },
-  "/ai-9b0cdf/": {
-    "link": "/ai-9b0cdf/",
-    "count": 14
-  },
   "/machine learning/Mixture_Model/": {
     "link": "/machine learning/Mixture_Model/",
     "count": 14
@@ -557,6 +557,10 @@
   },
   "/machine learning/Tree/": {
     "link": "/machine learning/Tree/",
+    "count": 14
+  },
+  "/policy-optimization/": {
+    "link": "/policy-optimization/",
     "count": 14
   },
   "/Confounder-Adjustment/": {
@@ -581,10 +585,6 @@
   },
   "/mathematics/Product_Integral/": {
     "link": "/mathematics/Product_Integral/",
-    "count": 13
-  },
-  "/policy-optimization/": {
-    "link": "/policy-optimization/",
     "count": 13
   },
   "/time series/Spectral_Density/": {
@@ -627,6 +627,14 @@
     "link": "/mathematics/실해석학14/",
     "count": 10
   },
+  "/spatial-causal-inference-2/": {
+    "link": "/spatial-causal-inference-2/",
+    "count": 10
+  },
+  "/statistics/Spatial-Stat-2/": {
+    "link": "/statistics/Spatial-Stat-2/",
+    "count": 10
+  },
   "/프로그래머스-42892/": {
     "link": "/프로그래머스-42892/",
     "count": 10
@@ -641,6 +649,10 @@
   },
   "/machine learning/An_Overview_of_Statistical_Learning/": {
     "link": "/machine learning/An_Overview_of_Statistical_Learning/",
+    "count": 9
+  },
+  "/machine learning/kernel3/": {
+    "link": "/machine learning/kernel3/",
     "count": 9
   },
   "/mathematics/realanalysis_BCP/": {
@@ -661,14 +673,6 @@
   },
   "/probability theory/prob_1/": {
     "link": "/probability theory/prob_1/",
-    "count": 9
-  },
-  "/spatial-causal-inference-2/": {
-    "link": "/spatial-causal-inference-2/",
-    "count": 9
-  },
-  "/statistics/Spatial-Stat-2/": {
-    "link": "/statistics/Spatial-Stat-2/",
     "count": 9
   },
   "/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/": {
@@ -737,10 +741,6 @@
   },
   "/kan-670884/": {
     "link": "/kan-670884/",
-    "count": 7
-  },
-  "/machine learning/kernel3/": {
-    "link": "/machine learning/kernel3/",
     "count": 7
   },
   "/mathematics/실해석학11/": {
@@ -1035,6 +1035,10 @@
     "link": "/an-overview-of-statistical-learning/",
     "count": 2
   },
+  "/bayesopt/": {
+    "link": "/bayesopt/",
+    "count": 2
+  },
   "/causal%20inference/Causal_Inference_(1)/": {
     "link": "/causal%20inference/Causal_Inference_(1)/",
     "count": 2
@@ -1147,8 +1151,16 @@
     "link": "/tags/Deep Learning",
     "count": 2
   },
+  "/tags/Real Analysis/": {
+    "link": "/tags/Real Analysis/",
+    "count": 2
+  },
   "/tags/Spatial Statistics": {
     "link": "/tags/Spatial Statistics",
+    "count": 2
+  },
+  "/tags/Spatial Statistics/": {
+    "link": "/tags/Spatial Statistics/",
     "count": 2
   },
   "/tags/Statistics/": {
@@ -1751,6 +1763,10 @@
     "link": "/opinion/Radical_empiricism",
     "count": 1
   },
+  "/optimal-transport/": {
+    "link": "/optimal-transport/",
+    "count": 1
+  },
   "/optimization/": {
     "link": "/optimization/",
     "count": 1
@@ -1929,14 +1945,6 @@
   },
   "/tags/Real Analysis": {
     "link": "/tags/Real Analysis",
-    "count": 1
-  },
-  "/tags/Real Analysis/": {
-    "link": "/tags/Real Analysis/",
-    "count": 1
-  },
-  "/tags/Spatial Statistics/": {
-    "link": "/tags/Spatial Statistics/",
     "count": 1
   },
   "/time series/State-Space_Model": {
