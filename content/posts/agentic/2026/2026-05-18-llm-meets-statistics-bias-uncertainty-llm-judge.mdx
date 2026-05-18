@@ -1,0 +1,207 @@
+---
+title: "Bias and Uncertainty in LLM-as-a-Judge Estimation"
+description: "LLM-as-a-Judge 평가를 민감도, 특이도, Youden's J, calibration instability 관점에서 재해석한 통계적 평가 논문"
+date: "2026-05-18"
+tags:
+  - llm-meets-statistics
+  - daily-paper
+  - llm-evaluation
+  - statistical-inference
+  - uncertainty
+categories:
+  - research paper
+routeSegments:
+  - "llm-meets-statistics-bias-uncertainty-llm-judge"
+teaser: null
+coverImage: null
+excerpt: "LLM-as-a-Judge 평가를 민감도, 특이도, Youden's J, calibration instability 관점에서 재해석한 통계적 평가 논문"
+readingTimeMinutes: 8
+useMath: true
+featured: false
+draft: false
+canonicalUrl: "https://ddangchani.github.io/llm-meets-statistics-bias-uncertainty-llm-judge/"
+
+curation_topic: "LLM meets Statistics"
+paper:
+  title: "Bias and Uncertainty in LLM-as-a-Judge Estimation"
+  authors:
+    - "James Fiedler"
+  year: "2026"
+  venue: "arXiv preprint"
+  url: "https://arxiv.org/abs/2605.06939"
+  pdf_url: "https://arxiv.org/pdf/2605.06939"
+  doi: "10.48550/arXiv.2605.06939"
+  arxiv_id: "2605.06939"
+cover_image: "not available"
+score:
+  topical_relevance: 39
+  statistical_depth: 24
+  recency: 15
+  credibility: 9
+  career_usefulness: 10
+  total: 97
+---
+
+# Bias and Uncertainty in LLM-as-a-Judge Estimation
+
+- Paper: **Bias and Uncertainty in LLM-as-a-Judge Estimation**
+- Author: James Fiedler
+- Venue / year: arXiv preprint, 2026
+- Curation date: 2026-05-18
+- Link: [arXiv](https://arxiv.org/abs/2605.06939), [PDF](https://arxiv.org/pdf/2605.06939)
+
+## One-Line Takeaway
+
+Korean: 이 논문은 LLM-as-a-Judge 점수를 "측정 오차가 있는 통계적 추정량"으로 보고, bias correction이 가능하더라도 judge quality와 calibration stability가 낮으면 비교 결론이 오히려 틀릴 수 있음을 보인다.
+
+English: This paper treats LLM-as-a-Judge evaluation as a noisy measurement problem and shows that corrected estimates can still fail when judge quality or cross-model calibration stability is weak.
+
+## Why This Paper Matters
+
+LLM-as-a-Judge는 이미 모델 평가, RAG 평가, agent 평가에서 표준 도구처럼 쓰인다. 하지만 많은 실험 보고서는 judge가 낸 raw score를 그대로 "모델 성능"처럼 해석한다. 이 논문은 그 관행을 통계학적으로 분해한다. 핵심은 raw judge output이 target performance를 직접 관측한 값이 아니라, 민감도와 특이도를 가진 noisy measurement라는 점이다.
+
+논문은 특히 "보정하면 끝"이라는 낙관을 경계한다. Rogan-Gladen estimator 같은 bias-corrected estimator는 judge의 sensitivity와 specificity를 이용해 naive estimate를 보정할 수 있다. 그러나 보정값은 judge quality를 나타내는 Youden's index
+
+$$
+J = q_0 + q_1 - 1
+$$
+
+에 강하게 의존한다. 여기서 $q_1$은 sensitivity, $q_0$은 specificity이다. $J$가 작으면 보정 과정이 불안정해지고, calibration set을 여러 모델에 공유하는 경우에는 작은 calibration mismatch도 $1/J$ 비율로 증폭될 수 있다.
+
+English technical summary: the paper studies binary LLM-as-a-Judge evaluation for single-model accuracy and model comparison. It analyzes naive estimates, Rogan-Gladen correction, PPI++, shared calibration, bootstrap uncertainty, and two diagnostics: $J$ for judge quality and $\Delta J$ for cross-model calibration instability.
+
+이 논문이 "LLM meets Statistics"에 중요한 이유는 LLM 평가를 leaderboard engineering이 아니라 measurement, calibration, uncertainty quantification 문제로 재정의하기 때문이다. 특히 연구에서 많이 필요한 "A 모델이 B보다 낫다"라는 결론은 single-model estimate보다 더 취약하다는 점을 명확히 보여준다.
+
+## Research Question / Motivation
+
+논문의 중심 질문은 다음과 같다.
+
+- LLM judge가 imperfect classifier일 때 raw judge score는 어떤 estimand를 추정하는가?
+- 민감도와 특이도를 이용한 bias correction은 언제 안정적인가?
+- 한 모델에서 얻은 calibration estimate를 다른 모델 비교에 재사용해도 되는가?
+- corrected confidence interval이 있어도 왜 잘못된 방향의 결론이 나올 수 있는가?
+
+문제 설정은 binary LaaJ evaluation이다. judge는 모델 응답이 맞는지 여부를 $\hat{Z} \in \{0, 1\}$로 출력하고, latent ground truth는 $Z \in \{0, 1\}$이다. 목표는 true accuracy
+
+$$
+\theta = \Pr(Z = 1)
+$$
+
+를 추정하는 것이다. 모델 비교에서는 $\Delta \theta = \theta_A - \theta_B$ 또는 그 반대 방향의 accuracy difference가 관심 대상이 된다.
+
+논문이 메우려는 gap은 efficiency가 아니라 reliability다. 기존 연구가 "bias-corrected LaaJ estimator가 naive estimator보다 효율적인가"를 주로 물었다면, 이 논문은 "보정된 estimator를 믿어도 되는 조건이 무엇인가"를 묻는다.
+
+## Method / Statistical Framework
+
+논문의 기본 measurement model은 단순하지만 강력하다.
+
+$$
+p = \Pr(\hat{Z} = 1) = \theta q_1 + (1 - \theta)(1 - q_0)
+$$
+
+여기서 $p$는 judge가 positive label을 낼 marginal probability다. 따라서 naive estimator $\hat{p}$는 $\theta$가 아니라 $p$를 추정한다. judge가 완벽하지 않으면 $\hat{p}$는 true accuracy에 대해 일반적으로 biased estimate가 된다.
+
+Rogan-Gladen correction은 calibration set에서 추정한 $\hat{q}_0, \hat{q}_1$을 사용해 다음처럼 보정한다.
+
+$$
+\hat{\theta}_{RG} = \frac{\hat{p} + \hat{q}_0 - 1}{\hat{q}_0 + \hat{q}_1 - 1}
+$$
+
+분모가 바로 $\hat{J}$다. 논문의 핵심 통찰은 이 분모가 작은 상황에서 correction이 noise와 mismatch를 확대한다는 점이다. 이는 단순한 수치적 불안정성이 아니라 measurement model 자체에서 나온다.
+
+논문이 직접 주장하는 내용:
+
+- Shared calibration은 judge의 $q_0, q_1$이 모델 간에 invariant하다는 강한 가정을 필요로 한다.
+- 이 가정이 깨지면 model comparison bias가 $1/J$에 의해 증폭된다.
+- $\Delta J$가 0에서 멀수록 shared-calibration comparison을 신뢰하기 어렵다.
+- Bootstrap CI는 test set uncertainty뿐 아니라 calibration set uncertainty, paired comparison 구조까지 반영해야 한다.
+
+내 해석: 이 논문은 LaaJ pipeline에 "judge prompt를 잘 만들자"보다 더 엄격한 사전 점검 절차를 요구한다. 즉, judge를 쓰기 전에 그 judge가 측정 도구로서 충분히 discriminative한지, 그리고 같은 judge가 서로 다른 base model에 대해 같은 방식으로 오차를 내는지 확인해야 한다.
+
+## Experiments / Evidence
+
+논문은 세 가지 증거 축을 사용한다.
+
+첫째, analytical results다. Shared calibration을 쓰는 model comparison에서 $J$가 낮으면 $\Delta p$를 $\Delta \theta$로 되돌리는 과정이 필연적으로 $1/J$ scaling을 갖는다는 점을 보인다. Appendix에서는 shared-calibration PPI++가 RG estimator로 환원되는 관계도 설명한다.
+
+둘째, simulations다. 논문은 binary LaaJ model comparison을 시뮬레이션하며 judge quality $J$와 cross-model calibration instability $\Delta J$를 변화시킨다. 결과적으로 naive estimator는 계속 biased하고, shared-calibration RG는 moderate mismatch에서도 undercoverage와 amplified bias를 보일 수 있다. Model-specific calibration을 쓰는 PPI++는 더 완만하게 망가지지만, low $J$에서는 모든 estimator를 조심해야 한다는 메시지가 유지된다.
+
+셋째, real-data case study다. 논문은 MMLU-Pro의 subject-level 데이터를 사용하고, base model로 Qwen 2.5 7B와 Gemma 3 12B를 비교한다. Judge model에는 Mistral Large와 Gemma 4 31B가 사용된다. 논문 부록에 따르면 각 문제에서 base model의 correctly formatted output을 선별하고, calibration/test split을 만든 뒤, RG, RG 2x, PPI++ 1x, PPI++ 2x를 비교한다. Bootstrap은 calibration과 test set을 별도로 resampling하고, comparison에서는 paired item structure를 반영한다.
+
+주요 실증 메시지는 다음과 같다.
+
+- 일부 subject에서는 estimator들이 비교적 잘 작동한다.
+- 더 어려운 subject에서는 shared-calibration comparison이 true positive gap을 confidently negative estimate로 바꾸는 sign reversal failure를 보인다.
+- Judge의 $J$는 subject와 model에 따라 크게 변하며, judge가 항상 안정적 측정 도구라고 보기 어렵다.
+- Code/data availability: arXiv PDF에서 별도 공식 code repository는 확인하지 못했다. MMLU-Pro는 공개 benchmark지만, 이 논문의 재현 코드 공개 여부는 정보 확인 불가.
+
+## Relevance Score
+
+| Criterion | Score | Reason |
+|---|---:|---|
+| Topical relevance to LLM meets statistics | 39 / 40 | LLM evaluation을 measurement error, calibration, CI 문제로 직접 모델링한다. |
+| Statistical depth / theoretical contribution | 24 / 25 | RG, PPI++, Youden's J, $\Delta J$, bootstrap uncertainty, bias amplification을 분석한다. |
+| Recency | 15 / 15 | 2026-05-07 arXiv 제출 논문이다. |
+| Credibility | 9 / 10 | arXiv source와 공식 DOI가 있으며 분석과 실험이 명확하다. 아직 peer review 여부는 정보 확인 불가. |
+| Usefulness for future PhD / AI research career | 10 / 10 | LLM 평가를 통계적 추론 문제로 다루는 연구 방향에 직접 연결된다. |
+| Total | 97 / 100 | 최신성, 통계적 깊이, 연구 확장성이 모두 높다. |
+
+## Why I Selected This Paper
+
+Korean: 오늘 후보 중 이 논문을 고른 이유는 LLM-as-a-Judge를 가장 명확하게 "통계적 측정 도구의 신뢰성" 문제로 다루기 때문이다. 단순히 judge accuracy를 올리거나 benchmark score를 비교하는 논문이 아니라, estimator가 어떤 조건에서 bias를 줄이고 어떤 조건에서 더 위험해지는지 분석한다. 특히 $J$와 $\Delta J$를 보고해야 한다는 제안은 실제 평가 pipeline에서 바로 쓸 수 있는 diagnostic이다.
+
+English: I selected this paper because it makes LLM evaluation statistically operational. It does not merely say that LLM judges are noisy; it gives a measurement model, bias-corrected estimators, failure modes, and diagnostics for deciding when corrected estimates should not be trusted.
+
+다른 후보들도 훌륭했지만, 이 논문은 2026년 최신 논문이며 "evaluation as measurement"라는 연구 방향을 가장 선명하게 보여준다. future work로 risk-aware evaluation, calibration-aware leaderboard, noisy-label inference, RAG/agent evaluator design까지 자연스럽게 확장된다.
+
+## Rejected Top Candidates
+
+1. [How to Correctly Report LLM-as-a-Judge Evaluations](https://arxiv.org/abs/2511.21140)
+   - Rejected reason: 매우 강한 후보였지만, 오늘 선정 논문이 이 계열을 이어 받아 shared calibration과 comparison failure를 더 직접적으로 분석한다.
+
+2. [Analyzing Uncertainty of LLM-as-a-Judge: Interval Evaluations with Conformal Prediction](https://arxiv.org/abs/2509.18658)
+   - Rejected reason: conformal prediction 기반 interval evaluation이 흥미롭지만, 오늘 선정 논문이 model comparison의 bias amplification을 더 날카롭게 다룬다.
+
+3. [Generalised Probabilistic Modelling and Improved Uncertainty Estimation in Comparative LLM-as-a-judge](https://arxiv.org/abs/2505.15240)
+   - Rejected reason: probabilistic modelling과 ranking uncertainty가 관련 깊지만, 오늘 선정 논문이 더 최근이며 calibration diagnostics 측면에서 더 직접적이다.
+
+4. [LLM Processes: Numerical Predictive Distributions](https://papers.neurips.cc/paper_files/paper/2024/hash/c5ec22711f3a4a2f4a0a8ffd92167190-Abstract-Conference.html)
+   - Rejected reason: LLM을 stochastic process와 predictive distribution 관점에서 다루는 훌륭한 논문이지만, 2024 NeurIPS 논문이라 오늘의 최신성 기준에서는 우선순위가 낮았다.
+
+## Research Notes / Possible Extensions
+
+Paper claims:
+
+- LaaJ raw outputs are generally biased estimates of true model performance.
+- Bias-corrected estimators depend on judge quality and calibration assumptions.
+- Shared calibration can create severe bias in model comparison when calibration differs across models.
+- $J$ and $\Delta J$ should be reported as diagnostics before trusting corrected LaaJ estimates.
+
+Possible future research ideas:
+
+- Causal inference: LLM judge output을 noisy proxy outcome으로 보고, human labels를 gold-standard calibration sample로 사용하는 measurement-error-aware causal evaluation을 만들 수 있다.
+- Spatial statistics: VLM이나 geospatial LLM이 공간 질의를 평가하는 경우, judge error가 지역, 해상도, object density에 따라 달라질 수 있다. 이때 $J(s)$나 $\Delta J(s)$처럼 spatially varying calibration diagnostic을 정의할 수 있다.
+- Time series: forecasting foundation model을 LLM judge가 평가할 때 horizon별 judge calibration이 달라질 수 있다. Short horizon과 long horizon의 $\Delta J$를 분리하면 평가 불안정성을 진단할 수 있다.
+- Bayesian optimization: model comparison을 sequential하게 수행할 때, low-$J$ judge를 acquisition function에 직접 넣으면 잘못된 ranking을 탐색하게 된다. Judge uncertainty를 acquisition에 포함하는 preferential BO가 필요하다.
+- LLM evaluation: leaderboard score에 point estimate만 올리는 대신, calibration set design, $J$, $\Delta J$, bootstrap CI, sign-reversal risk를 함께 보고하는 reporting standard가 가능하다.
+- RAG evaluation: answer correctness judge, citation faithfulness judge, retrieval relevance judge는 서로 다른 measurement error를 가진다. 각 judge별로 calibration invariance가 성립하는지 별도로 확인해야 한다.
+
+이 확장들은 논문이 직접 수행한 결과가 아니라, 논문의 measurement-error 관점을 바탕으로 한 연구 아이디어다.
+
+## Reference / Metadata
+
+- DOI: [10.48550/arXiv.2605.06939](https://doi.org/10.48550/arXiv.2605.06939)
+- arXiv ID: [2605.06939](https://arxiv.org/abs/2605.06939)
+- Official URL: [https://arxiv.org/abs/2605.06939](https://arxiv.org/abs/2605.06939)
+- PDF URL: [https://arxiv.org/pdf/2605.06939](https://arxiv.org/pdf/2605.06939)
+- Suggested tags: `llm-meets-statistics`, `daily-paper`, `llm-evaluation`, `statistical-inference`, `uncertainty`
+
+Manual reference-manager import metadata:
+
+- title: Bias and Uncertainty in LLM-as-a-Judge Estimation
+- authors: James Fiedler
+- year: 2026
+- URL: https://arxiv.org/abs/2605.06939
+- DOI/arXiv ID: 10.48550/arXiv.2605.06939 / arXiv:2605.06939
+- suggested tags: llm-meets-statistics, daily-paper, llm-evaluation, statistical-inference, uncertainty
+- collection: Recent Trends
