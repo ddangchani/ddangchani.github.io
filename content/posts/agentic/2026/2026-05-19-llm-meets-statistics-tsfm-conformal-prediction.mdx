@@ -1,0 +1,262 @@
+---
+title: "Foundation models for time series forecasting: Application in conformal prediction"
+description: "시계열 foundation model을 conformal prediction의 calibration 자원 배분 문제로 읽는 논문 정리"
+date: "2026-05-19"
+tags:
+  - llm-meets-statistics
+  - daily-paper
+  - time-series
+  - statistical-inference
+  - uncertainty
+categories:
+  - research paper
+routeSegments:
+  - "llm-meets-statistics-tsfm-conformal-prediction"
+teaser: null
+coverImage: null
+excerpt: "시계열 foundation model을 conformal prediction의 calibration 자원 배분 문제로 읽는 논문 정리"
+readingTimeMinutes: 8
+useMath: true
+featured: false
+draft: false
+canonicalUrl: "https://ddangchani.github.io/llm-meets-statistics-tsfm-conformal-prediction/"
+
+curation_topic: "LLM meets Statistics"
+paper:
+  title: "Foundation models for time series forecasting: Application in conformal prediction"
+  authors:
+    - "Sami Achour"
+    - "Yassine Bouher"
+    - "Duong Nguyen"
+    - "Nicolas Chesneau"
+  year: "2025"
+  venue: "arXiv preprint"
+  url: "https://arxiv.org/abs/2507.08858"
+  pdf_url: "https://arxiv.org/pdf/2507.08858"
+  doi: "10.48550/arXiv.2507.08858"
+  arxiv_id: "2507.08858"
+cover_image: "not available"
+score:
+  topical_relevance: 35
+  statistical_depth: 21
+  recency: 12
+  credibility: 9
+  career_usefulness: 9
+  total: 86
+---
+
+# Introduction
+
+시계열 예측에서 point forecast만 보는 것은 대개 충분하지 않습니다. 전력 수요, 재고, 의료 지표, 트래픽처럼 의사결정으로 이어지는 예측에서는 "내일 값이 얼마인가?"보다 "어느 정도 범위까지 대비해야 하는가?"가 더 중요할 때가 많습니다. 이때 필요한 것은 예측값 하나가 아니라 **prediction interval**입니다.
+
+문제는 interval을 만들기 위해서도 데이터가 필요하다는 점입니다. Conformal prediction은 모델을 거의 가리지 않고 사용할 수 있는 distribution-free uncertainty quantification 도구지만, calibration set이 있어야 합니다. 데이터가 풍부하다면 training set과 calibration set을 나누는 것이 큰 부담이 아닐 수 있습니다. 반대로 짧은 시계열이나 새로 시작한 서비스의 demand series처럼 데이터가 적으면, 학습에 쓸 데이터와 calibration에 쓸 데이터가 서로 경쟁합니다.
+
+이번 글은 Sami Achour, Yassine Bouher, Duong Nguyen, Nicolas Chesneau의 2025년 arXiv 논문 [Foundation models for time series forecasting: Application in conformal prediction](https://arxiv.org/abs/2507.08858)을 바탕으로, time series foundation model을 단순한 forecasting benchmark가 아니라 **calibration data를 확보하는 통계적 장치**로 해석해보려는 글입니다.
+
+짧게 말하면 논문의 핵심은 다음과 같습니다.
+
+> Zero-shot time series foundation model은 별도 학습 없이 예측을 시작할 수 있으므로, 제한된 historical data 중 더 많은 부분을 conformal calibration에 사용할 수 있다.
+
+*English summary: Time series foundation models are useful not only because they forecast well, but also because they change the data allocation problem in conformal prediction.*
+
+# Calibration Data as a Statistical Resource
+
+일반적인 supervised forecasting workflow를 생각해보겠습니다. 관측된 시계열을
+
+$$
+y_1, y_2, \ldots, y_N
+$$
+
+라고 하고, 과거 window로부터 미래 horizon \(H\)를 예측하는 모델을 \(\hat f\)라고 하겠습니다. Conformal prediction을 쓰려면 보통 데이터를 두 부분으로 나눕니다.
+
+$$
+\mathcal{D}_{train} \quad \text{and} \quad \mathcal{D}_{cal}.
+$$
+
+\(\mathcal{D}_{train}\)은 \(\hat f\)를 학습하는 데 쓰이고, \(\mathcal{D}_{cal}\)은 학습된 모델의 residual distribution을 추정하는 데 쓰입니다. Split conformal prediction에서는 calibration point마다 nonconformity score를 계산합니다.
+
+$$
+S_i = |\hat f(x_i) - y_i|, \qquad i \in \mathcal{D}_{cal}.
+$$
+
+그 다음 miscoverage rate \(\alpha\)에 대해 calibration score의 경험적 분위수를 사용합니다.
+
+$$
+\hat q = Q_{1-\hat \alpha}\left(\{S_i: i \in \mathcal{D}_{cal}\}\right),
+$$
+
+여기서 논문이 사용하는 finite-sample correction은 대략 다음과 같은 형태입니다.
+
+$$
+1-\hat\alpha = \frac{\lceil (|\mathcal{D}_{cal}|+1)(1-\alpha)\rceil}{|\mathcal{D}_{cal}|}.
+$$
+
+새로운 입력 \(x_{N+k}\)에 대한 conformal interval은 다음처럼 만들어집니다.
+
+$$
+I(x_{N+k}) =
+\left[
+\hat f(x_{N+k}) - \hat q,\,
+\hat f(x_{N+k}) + \hat q
+\right],
+\qquad k=1,\ldots,H.
+$$
+
+이 식만 보면 매우 단순합니다. 하지만 핵심은 \(\hat q\)가 calibration residual의 분위수라는 점입니다. \(|\mathcal{D}_{cal}|\)이 작으면 분위수 추정은 거칠어집니다. 특히 90% interval처럼 tail quantile을 추정할 때 calibration sample size가 작으면, coverage가 불안정해질 수 있습니다.
+
+따라서 conformal prediction에서 데이터는 두 역할을 가집니다.
+
+- 모델을 학습하기 위한 데이터
+- residual quantile을 안정적으로 추정하기 위한 데이터
+
+전통적인 통계 모델이나 gradient boosting 모델은 첫 번째 역할에 데이터를 많이 요구합니다. 반면 foundation model은 이미 대규모 데이터에서 pre-training되어 있기 때문에, downstream series에서는 긴 학습 절차 없이 zero-shot 또는 few-shot 예측을 수행할 수 있습니다. 이 차이가 conformal prediction에서는 곧 calibration sample size의 차이로 바뀝니다.
+
+# Time Series Foundation Models in the Paper
+
+논문은 세 종류의 time series foundation model 계열을 사용합니다.
+
+| Model family | Forecasting idea | Output type in the paper |
+| --- | --- | --- |
+| Lag-Llama | LLaMA-style decoder with lag and calendar features | Student-t distribution |
+| Chronos / Chronos-Bolt | continuous values를 discrete tokens로 바꾸어 language modeling처럼 예측 | categorical distribution over tokens |
+| TimesFM / TimesFM2 | time series patches를 decoder-only transformer로 예측 | point forecast |
+
+여기서 흥미로운 점은 이 논문이 각 foundation model의 distributional output을 깊게 비교하지 않는다는 것입니다. 실제 실험에서는 모든 모델을 point forecasting 중심으로 놓고, 그 위에 split conformal prediction을 얹습니다. 즉, 모델 자체가 probabilistic forecast를 줄 수 있는지보다, point predictor로서 residual을 얼마나 작게 만들고 calibration set을 얼마나 확보할 수 있는지를 봅니다.
+
+이 선택은 약간 보수적입니다. Chronos나 Lag-Llama는 probabilistic output을 낼 수 있는데, 그 장점을 모두 사용하지 않았기 때문입니다. 하지만 그래서 오히려 통계적 메시지가 깨끗해집니다.
+
+$$
+\text{Good point forecast} + \text{large calibration set}
+\Rightarrow
+\text{useful conformal interval}.
+$$
+
+Conformal prediction에서는 base model이 완벽할 필요가 없습니다. 다만 residual이 작고 안정적이면 interval width가 줄어듭니다. Foundation model이 좋은 point forecast를 주면서 학습 데이터를 덜 요구한다면, residual distribution을 추정하는 데 더 많은 데이터를 남길 수 있습니다.
+
+# Local Quantile and Multiple Series
+
+시계열 데이터셋은 하나의 긴 series일 수도 있고, 여러 개의 짧은 series 모음일 수도 있습니다. 논문은 ERCOT처럼 하나의 hourly series가 있는 경우와 NN5, M3처럼 여러 series가 있는 경우를 함께 다룹니다.
+
+여러 개의 series \(j=1,\ldots,M\)가 있을 때 conformal quantile을 잡는 방법은 크게 두 가지입니다.
+
+첫째, 모든 series의 calibration residual을 모아서 하나의 global quantile을 계산할 수 있습니다.
+
+$$
+\hat q_{\mathrm{global}}
+= Q_{1-\hat\alpha}\left(
+\bigcup_{j=1}^M \{S_i^{(j)}: i \in \mathcal{D}_{cal}^{(j)}\}
+\right).
+$$
+
+둘째, 각 series별로 따로 local quantile을 계산할 수 있습니다.
+
+$$
+\hat q_j
+= Q_{1-\hat\alpha}\left(
+\{S_i^{(j)}: i \in \mathcal{D}_{cal}^{(j)}\}
+\right).
+$$
+
+논문은 main result에서 local quantile을 사용합니다. 이 선택은 series별 scale과 noise level이 다를 수 있다는 점을 반영합니다. 예를 들어 하나의 series는 안정적인 주간 패턴을 갖고, 다른 series는 sporadic spike를 가질 수 있습니다. Global quantile은 여러 series를 pooling하여 sample size를 키우지만, 이질적인 series를 같은 residual distribution으로 묶는 위험이 있습니다. Local quantile은 각 series의 특성을 더 잘 반영하지만, 각 series의 calibration sample size가 작아지는 문제가 있습니다.
+
+이 trade-off는 spatial statistics의 partial pooling 문제와도 비슷합니다. 완전 pooling은 안정적이지만 heterogeneity를 지우고, no pooling은 heterogeneity를 살리지만 variance가 커집니다. Time series conformal prediction에서도 결국 같은 질문이 나옵니다.
+
+> residual distribution을 어느 단위에서 공유할 것인가?
+
+# Evaluation Metrics
+
+논문은 prediction interval을 세 가지 관점에서 평가합니다.
+
+첫째, **Mean Coverage Rate**입니다. 각 series \(j\)에서 실제 값이 interval 안에 들어간 비율을
+
+$$
+CR_j =
+\frac{1}{H}
+\sum_{i=1}^{H}
+\mathbf{1}\{y_i^{(j)} \in I_i^{(j)}\}
+$$
+
+로 정의하고, test series들에 대해 평균을 냅니다.
+
+$$
+MCR =
+\frac{1}{M_{test}}
+\sum_{j=1}^{M_{test}} CR_j.
+$$
+
+둘째, **Mean Scaled Interval Width**입니다. Interval이 너무 넓으면 coverage는 쉽게 올라갑니다. 따라서 interval width를 naive model의 width로 나눈 scaled quantity를 봅니다.
+
+$$
+MSIW =
+\frac{1}{M_{test}}
+\sum_{j=1}^{M_{test}}
+\frac{IW_j}{IW_{j,\mathrm{naive}}}.
+$$
+
+셋째, **Mean Absolute Scaled Error**입니다. Point forecast 자체가 얼마나 좋은지도 봅니다.
+
+$$
+MASE =
+\frac{\sum_{j=1}^{M_{test}} MAE_j}
+{\sum_{j=1}^{M_{test}} MAE_{j,\mathrm{naive}}}.
+$$
+
+좋은 모델은 target coverage에 가깝고, MSIW가 작고, MASE도 낮아야 합니다. Coverage만 높고 interval이 지나치게 넓으면 실제 의사결정에는 별 도움이 되지 않습니다. 반대로 interval이 좁지만 coverage가 무너지면 uncertainty quantification으로서 실패입니다.
+
+# What the Experiments Suggest
+
+실험은 ERCOT, NN5 Daily, NN5 Weekly, M3 Monthly 데이터셋에서 수행됩니다. 비교 대상에는 naive, seasonal naive, LightGBM, StatisticalEnsemble light, 그리고 Lag-Llama, Chronos, Chronos-Bolt, TimesFM, TimesFM2가 포함됩니다. Target coverage는 \(\alpha=0.1\), 즉 90% coverage입니다.
+
+논문의 결과를 한 문장으로 요약하면 다음과 같습니다.
+
+> 제한된 데이터 조건에서 Chronos 계열과 TimesFM 계열은 대체로 낮은 MASE와 좁은 interval width를 보이면서도 target coverage에 비교적 가까운 conformal interval을 만들었다.
+
+ERCOT 실험에서는 일부 모델이 target coverage를 항상 만족하지는 못했습니다. 하지만 coverage를 맞춘 전통적 모델들은 interval이 매우 넓거나 point forecast error가 큰 경우가 있었습니다. 논문은 이 때문에 coverage, width, MASE를 함께 봐야 한다고 해석합니다.
+
+NN5와 M3 실험에서는 TSFM과 전통 모델 간 격차가 ERCOT만큼 극단적이지는 않았지만, Chronos-Bolt, TimesFM, TimesFM2가 여전히 강한 결과를 보였습니다. 특히 논문은 NN5 Weekly long-horizon setting에서 TimesFM2가 target coverage를 만족하면서도 낮은 MASE와 MSIW를 보인 사례를 언급합니다.
+
+더 중요한 통계적 관찰은 calibration set size입니다. 데이터 frequency가 낮거나 series length가 짧으면 \(|\mathcal{D}_{cal}|\)이 작아지고, conformal quantile 추정이 불안정해집니다. Foundation model은 training data를 덜 요구하므로 calibration에 더 많은 관측치를 남길 수 있습니다. 이 차이는 데이터가 적을수록 더 크게 나타납니다.
+
+# Caveat: Time Series Are Not Exchangeable
+
+이 논문을 읽을 때 가장 조심해야 할 부분은 conformal guarantee입니다. Split conformal prediction의 표준적인 finite-sample coverage guarantee는 exchangeability에 기대고 있습니다. 하지만 시계열 데이터는 일반적으로 exchangeable하지 않습니다. 시간 순서, seasonality, drift, autocorrelation이 있기 때문입니다.
+
+논문도 이 점을 명시적으로 한계로 둡니다. 실험에서 split conformal prediction을 사용했지만, time series에 더 적합한 conformal method가 있을 수 있습니다. 예를 들어 adaptive conformal inference나 conformalized quantile regression, block-based calibration, residual dependence를 고려하는 방법들이 자연스러운 확장입니다.
+
+따라서 이 논문의 메시지를 "TSFM + split conformal이면 항상 valid interval이 나온다"로 읽으면 안 됩니다. 더 정확한 해석은 다음에 가깝습니다.
+
+> Time series foundation model은 conformal prediction의 base forecaster와 calibration data allocation을 동시에 개선할 수 있는 유망한 도구다. 다만 time dependence 때문에 coverage guarantee는 별도로 신중하게 다뤄야 한다.
+
+이 지점이 LLM meets Statistics 관점에서 중요합니다. Foundation model이 강한 representation을 제공하더라도, uncertainty quantification은 여전히 data-generating process의 구조와 calibration design에 의존합니다.
+
+# Why this paper?
+
+이 논문은 새로운 conformal theorem을 제시하는 이론 논문은 아닙니다. 대신 foundation model을 통계적 workflow 안에 넣었을 때 어떤 resource trade-off가 바뀌는지를 분명하게 보여줍니다. 개인적으로는 다음 질문으로 이어진다는 점에서 유용합니다.
+
+- Zero-shot foundation model을 쓸 때 calibration set을 얼마나 남겨야 하는가?
+- Multiple related time series에서 global, local, partially pooled conformal quantile 중 무엇이 좋은가?
+- Foundation model의 probabilistic output과 conformal calibration을 어떻게 결합할 수 있는가?
+- Time dependence와 distribution shift가 있는 setting에서 foundation model 기반 conformal interval의 coverage를 어떻게 진단할 것인가?
+
+가능한 연구 확장으로는 Bayesian hierarchical residual model을 이용해 series별 conformal quantile을 partial pooling하거나, TSFM의 latent representation을 이용해 similar series끼리 calibration residual을 공유하는 방법을 생각해볼 수 있습니다. 이는 논문이 주장한 내용은 아니고, 이 글을 읽으며 떠오른 speculative direction입니다.
+
+# References
+
+- Sami Achour, Yassine Bouher, Duong Nguyen, and Nicolas Chesneau, "Foundation models for time series forecasting: Application in conformal prediction", arXiv preprint, 2025.
+- arXiv: [2507.08858](https://arxiv.org/abs/2507.08858)
+- PDF: [https://arxiv.org/pdf/2507.08858](https://arxiv.org/pdf/2507.08858)
+- DOI: [10.48550/arXiv.2507.08858](https://doi.org/10.48550/arXiv.2507.08858)
+- Reliable metadata page: [dblp record](https://dblp.org/rec/journals/corr/abs-2507-08858)
+
+# Manual Reference-Manager Import Metadata
+
+| Field | Value |
+| --- | --- |
+| title | Foundation models for time series forecasting: Application in conformal prediction |
+| authors | Sami Achour; Yassine Bouher; Duong Nguyen; Nicolas Chesneau |
+| year | 2025 |
+| URL | https://arxiv.org/abs/2507.08858 |
+| DOI | 10.48550/arXiv.2507.08858 |
+| arXiv ID | 2507.08858 |
+| suggested tags | llm-meets-statistics, daily-paper, time-series, statistical-inference, uncertainty |
+| collection | Recent Trends |
