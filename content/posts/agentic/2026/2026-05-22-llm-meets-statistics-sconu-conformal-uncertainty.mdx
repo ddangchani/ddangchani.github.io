@@ -1,0 +1,277 @@
+---
+title: "SConU: Selective Conformal Uncertainty in Large Language Models"
+description: "LLM conformal uncertainty를 exchangeability 검정과 conformal p-value 관점에서 읽는 논문 정리"
+date: "2026-05-22"
+tags:
+  - llm-meets-statistics
+  - daily-paper
+  - statistical-inference
+  - uncertainty
+  - conformal-prediction
+categories:
+  - research paper
+routeSegments:
+  - "llm-meets-statistics-sconu-conformal-uncertainty"
+teaser: null
+coverImage: null
+excerpt: "LLM conformal uncertainty를 exchangeability 검정과 conformal p-value 관점에서 읽는 논문 정리"
+readingTimeMinutes: 9
+useMath: true
+featured: false
+draft: false
+canonicalUrl: "https://ddangchani.github.io/llm-meets-statistics-sconu-conformal-uncertainty/"
+
+curation_topic: "LLM meets Statistics"
+paper:
+  title: "SConU: Selective Conformal Uncertainty in Large Language Models"
+  authors:
+    - "Zhiyuan Wang"
+    - "Qingni Wang"
+    - "Yue Zhang"
+    - "Tianlong Chen"
+    - "Xiaofeng Zhu"
+    - "Xiaoshuang Shi"
+    - "Kaidi Xu"
+  year: "2025"
+  venue: "ACL 2025 Main / arXiv preprint"
+  url: "https://arxiv.org/abs/2504.14154"
+  pdf_url: "https://arxiv.org/pdf/2504.14154"
+  doi: "10.48550/arXiv.2504.14154"
+  arxiv_id: "2504.14154"
+cover_image: "not available"
+score:
+  topical_relevance: 38
+  statistical_depth: 24
+  recency: 13
+  credibility: 10
+  career_usefulness: 9
+  total: 94
+---
+
+# Introduction
+
+LLM이 답을 하나만 내놓는 서비스에서는 "정답인가?"라는 질문이 가장 먼저 보입니다. 하지만 통계적으로 더 중요한 질문은 조금 다릅니다. 주어진 질문에 대해 모델이 만든 여러 후보 답변 중 어느 범위를 믿을 수 있는가? 그리고 그 믿음의 보장은 새로운 질문에도 유지되는가?
+
+Conformal prediction은 이런 질문에 답하기 좋은 도구입니다. Calibration set에서 nonconformity score를 계산하고, 그 분위수를 이용해 새 샘플의 prediction set을 만듭니다. 모델 내부를 완전히 알 필요가 없고, 분포를 특정 parametric family로 가정하지 않아도 finite-sample coverage guarantee를 줄 수 있다는 점이 매력적입니다.
+
+하지만 LLM QA에서는 conformal prediction의 전제가 쉽게 흔들립니다. Calibration set은 의료 질문인데 test question은 수학 문제라면, 두 질문에서 모델의 uncertainty distribution이 같다고 보기 어렵습니다. 같은 MMLU-Pro 안에서도 subject가 바뀌면 모델이 느끼는 난이도와 uncertainty가 크게 달라질 수 있습니다. 이때 calibration set에서 계산한 threshold를 그대로 적용하면, 형식적으로는 conformal 방법을 썼지만 실제 miscoverage rate는 사용자가 정한 risk level을 벗어날 수 있습니다.
+
+Zhiyuan Wang, Qingni Wang, Yue Zhang, Tianlong Chen, Xiaofeng Zhu, Xiaoshuang Shi, Kaidi Xu의 ACL 2025 Main 논문 [SConU: Selective Conformal Uncertainty in Large Language Models](https://arxiv.org/abs/2504.14154)는 이 문제를 정면으로 다룹니다. 핵심은 간단합니다.
+
+> 새 QA sample이 calibration set과 같은 uncertainty distribution에서 왔다고 볼 수 있는지 conformal p-value로 먼저 검사하고, 의심스러운 sample은 prediction set을 만들기보다 abstain한다.
+
+English summary: SConU turns conformal uncertainty for LLM QA into a selective inference problem. It tests whether a test query is compatible with the calibration uncertainty distribution, then applies conformal prediction only to samples that pass this exchangeability check.
+
+# Conformal Uncertainty as a QA Problem
+
+Calibration set을
+
+$$
+\mathcal{D}_{cal}=\{(x_i,y_i^\*)\}_{i=1}^{N}
+$$
+
+라고 하겠습니다. 여기서 \(x_i\)는 질문이고 \(y_i^\*\)는 ground-truth answer입니다. LLM은 각 질문에 대해 하나의 답만 만들 수도 있지만, uncertainty를 보려면 보통 여러 candidate response를 샘플링합니다.
+
+$$
+\{y^{(i)}_j\}_{j=1}^{M}.
+$$
+
+Multiple-choice QA라면 각 option의 logit probability를 사용할 수 있고, black-box setting에서는 candidate set 안에서 같은 답 또는 같은 semantic cluster가 얼마나 자주 나오는지 frequency score를 사용할 수 있습니다. 논문은 예시로 다음과 같은 confidence score를 둡니다.
+
+$$
+w_l F_l(y^{(i)}_j)+w_f F_f(y^{(i)}_j),
+\qquad w_l+w_f=1.
+$$
+
+여기서 \(F_l\)은 model logit에서 온 score, \(F_f\)는 candidate set 안에서의 frequency score입니다. Ground truth answer에 대한 nonconformity score는 confidence의 반대 방향으로 잡을 수 있습니다.
+
+$$
+s_i
+=1-w_lF_l(y_i^\*)-w_fF_f(y_i^\*).
+$$
+
+값이 클수록 모델이 정답을 덜 신뢰하거나, 정답에 해당하는 후보가 candidate set 안에서 덜 안정적으로 나타난다는 뜻입니다. 일반적인 split conformal prediction은 calibration score들의 분위수 \(q_\alpha\)를 잡고, 새 질문 \(x_{N+1}\)에 대해 score가 threshold 이하인 후보 답변들을 prediction set에 넣습니다.
+
+이 구조는 LLM QA에서도 자연스럽습니다. 사용자가 risk level \(\alpha\)를 정하면, 정답이 prediction set 밖으로 빠질 확률을 대략 \(\alpha\) 이하로 관리하고 싶습니다. 문제는 그 보장이 calibration score와 test score의 exchangeability에 기대고 있다는 점입니다.
+
+# Exchangeability Is the Fragile Assumption
+
+Conformal prediction에서 가장 중요한 전제는 calibration score들과 새 sample의 score가 exchangeable하다는 것입니다. 데이터 point를 \(Z_1,\ldots,Z_N,Z_{N+1}\)라고 할 때, 임의의 permutation \(\pi\)에 대해
+
+$$
+(Z_{\pi(1)},\ldots,Z_{\pi(N+1)})
+\overset{d}{=}
+(Z_1,\ldots,Z_{N+1})
+$$
+
+이면 exchangeability가 성립합니다. IID라면 exchangeability가 따라오지만, 실제 LLM QA에서는 이 가정이 꽤 강합니다.
+
+예를 들어 calibration set이 health domain 질문들로 구성되어 있고 test question이 math domain에서 왔다고 합시다. 어떤 모델은 health question에 대해 안정적인 option probability를 내지만, math question에서는 candidate answer가 매우 흔들릴 수 있습니다. 그러면 calibration score의 empirical distribution은 test question의 uncertainty state를 대표하지 못합니다.
+
+논문은 MMLU-Pro에서 이런 miscalibration을 관찰합니다. 단일 domain 안에서도 empirical miscoverage rate가 risk level을 넘는 경우가 있고, cross-domain setting에서는 더 심하게 벗어납니다. 특히 Psychology subset으로 calibration하고 Math subset을 test하는 식의 구성에서는, 같은 benchmark 안에서도 uncertainty distribution shift가 상당히 큽니다.
+
+이 지점에서 SConU의 관점은 "더 좋은 threshold를 고르자"가 아닙니다. 먼저 물어야 할 질문은 다음입니다.
+
+> 이 test question은 애초에 이 calibration set으로 보장할 수 있는 대상인가?
+
+# Conformal p-value for Selection
+
+SConU는 각 test question \(x_{N+1}\)에 대해 null hypothesis를 세웁니다.
+
+$$
+H_0:\mathcal{D}_{cal}\text{ can serve as a calibration set for }x_{N+1}.
+$$
+
+즉, calibration set의 uncertainty distribution이 새 질문을 보장하는 데 쓸 수 있다고 보는 가설입니다. 이 가설을 검사하기 위해 논문은 conformal p-value를 사용합니다.
+
+각 질문 \(x_i\)에 대해 LLM의 uncertainty를 \(u_i=U(x_i)\)라고 합시다. 논문은 uncertainty notion으로 predictive entropy를 사용합니다. 이때 새 질문의 uncertainty가 calibration 질문들보다 지나치게 크면, calibration set과 맞지 않는 outlier일 가능성이 큽니다. 기본 SConU p-value는 다음과 같습니다.
+
+$$
+p_{N+1}
+=
+\frac{1+\sum_{i=1}^{N}\mathbf{1}\{u_i\ge u_{N+1}\}}{N+1}.
+$$
+
+이 값은 새 질문보다 uncertainty가 큰 calibration question이 얼마나 있는지를 rank 형태로 측정합니다. \(p_{N+1}\)이 작다는 것은 \(u_{N+1}\)이 calibration uncertainty distribution의 upper tail에 있다는 뜻입니다. 사용자가 significance level \(\delta\)를 정하면, \(p_{N+1}<\delta\)인 질문은 exchangeability가 의심되는 sample로 보고 답변을 거절하거나 별도 처리할 수 있습니다.
+
+여기서 중요한 점은 p-value가 prediction set의 크기를 직접 조정하는 장치가 아니라는 것입니다. SConU는 selection step과 conformal prediction step을 분리합니다.
+
+1. 먼저 \(x_{N+1}\)이 calibration set과 uncertainty 관점에서 compatible한지 검사합니다.
+2. 통과한 sample에 대해서만 기존 ConU 방식으로 prediction set을 만듭니다.
+3. 탈락한 sample은 coverage guarantee를 억지로 주장하지 않고 abstain합니다.
+
+이렇게 보면 SConU는 "모든 질문에 답하되 부정확한 보장을 주는 방법"이 아니라, "보장 가능한 영역을 먼저 정의하는 selective conformal method"에 가깝습니다.
+
+# SConU-Pro: Calibration Points Also Need Checking
+
+기본 p-value는 calibration question들의 uncertainty를 모두 같은 reference로 봅니다. 하지만 calibration set 안에도 이상한 point가 있을 수 있습니다. 어떤 calibration question은 모델이 사실상 정답 후보를 만들지 못하거나, candidate set 안에서 ground truth가 전혀 안정적으로 나타나지 않을 수 있습니다.
+
+SConU-Pro는 이 점을 반영해 p-value의 counting rule을 수정합니다.
+
+$$
+p'_{N+1}
+=
+\frac{
+1+\sum_{i=1}^{N}
+\mathbf{1}\{u_i\ge u_{N+1},\; y_i^\*\in E(x_i,\mathcal{D}_{cal},\alpha)\}
+}{N+1}.
+$$
+
+여기서 \(E(x_i,\mathcal{D}_{cal},\alpha)\)는 \(x_i\)에 대해 risk level \(\alpha\)에서 만든 prediction set입니다. 조건
+
+$$
+y_i^\*\in E(x_i,\mathcal{D}_{cal},\alpha)
+$$
+
+은 calibration point \(i\) 자체가 해당 risk level에서 reference로 쓸 만한지를 묻습니다. 만약 leave-one-out 형태로 봤을 때 \(x_i\)의 ground truth가 prediction set에 들어가지 않는다면, 그 point는 high-uncertainty anomaly일 수 있고, \(u_i\ge u_{N+1}\)라는 비교가 통계적으로 좋은 reference가 아닐 수 있습니다.
+
+직관적으로 말하면 SConU-Pro는 "test point가 이상한가?"뿐 아니라 "calibration point들이 reference로 쓸 만한가?"도 함께 봅니다. 이 때문에 cross-domain miscalibration이 큰 상황에서 기본 SConU보다 더 보수적이고 안정적인 selection을 할 수 있습니다.
+
+# Minimum Manageable Risk Level
+
+논문에서 특히 흥미로운 부분은 calibration set을 인위적으로 정리하지 않고, 그 calibration set이 감당할 수 있는 최소 risk level을 계산한다는 점입니다.
+
+LLM은 각 질문에 대해 \(M\)개의 candidate response를 샘플링합니다. 하지만 어떤 질문에서는 \(M\)번을 샘플링해도 ground truth에 해당하는 admissible response가 한 번도 나오지 않을 수 있습니다. 기존 방식처럼 이런 calibration sample을 제거하면 calibration distribution이 좁아져서 쉬운 질문 위주로 보정되는 문제가 생깁니다.
+
+논문은 각 calibration question에 대해 정답이 candidate set에 처음 안정적으로 포함되기 위해 필요한 최소 sampling size를 생각합니다.
+
+$$
+m_i
+=
+\inf\left\{
+M_i:
+\forall M_i'\ge M_i,\;
+y_i^\*\in \{y_j^{(i)}\}_{j=1}^{M_i'}
+\right\}.
+$$
+
+이 \(m_i\)들을 정렬한 뒤, error rate \(\beta\)에 대해
+
+$$
+\hat m=m_{\lceil(1-\beta)(1+N)\rceil}
+$$
+
+를 선택하면, exchangeability 아래에서 새 question이 \(\hat m\)번의 sampling 안에 admissible response를 포함할 확률을 \(1-\beta\) 이상으로 만들 수 있습니다.
+
+논문은 더 나아가 reliable response set
+
+$$
+C_\lambda(x_i)
+=
+\{y_j^{(i)}:F(y_j^{(i)})\ge 1-\lambda\}
+$$
+
+와 miscoverage loss
+
+$$
+l_i(\lambda)=\mathbf{1}\{y_i^\*\notin C_\lambda(x_i)\}
+$$
+
+를 정의합니다. Calibration average loss를
+
+$$
+L_N(\lambda)=\frac{1}{N}\sum_{i=1}^{N}l_i(\lambda)
+$$
+
+라고 하면, \(\lambda=1\)일 때는 candidate set 전체를 허용하므로 남는 error는 "아예 admissible response를 샘플링하지 못한 경우"입니다.
+
+$$
+L_N(1)
+=
+\frac{1}{N}
+\sum_{i=1}^{N}
+\mathbf{1}\left\{
+y_i^\*\notin \{y_j^{(i)}\}_{j=1}^{M}
+\right\}.
+$$
+
+따라서 이 calibration set과 finite sampling budget이 관리할 수 있는 최소 risk level은 다음처럼 주어집니다.
+
+$$
+\alpha_l=\frac{N L_N(1)}{N+1}.
+$$
+
+사용자가 \(\alpha<\alpha_l\)을 요구한다면, 현재 sampling budget과 calibration set으로는 그 수준의 miscoverage를 보장하기 어렵습니다. 이 경우 더 많은 sample을 뽑거나, 더 강한 모델을 쓰거나, 답변을 abstain하는 것이 정직한 선택입니다. 이 해석은 LLM uncertainty를 단순한 score calibration이 아니라 decision policy로 연결합니다.
+
+# What the Experiments Show
+
+논문은 closed-ended QA로 MMLU, MMLU-Pro, MedMCQA를 사용하고, open-domain QA로 TriviaQA와 CoQA를 사용합니다. 주요 metric은 empirical miscoverage rate (EMR), size-stratified miscoverage rate (SMR), average prediction set size (APSS)입니다.
+
+결과의 메시지는 세 가지로 요약할 수 있습니다.
+
+첫째, sampling size calibration은 실제로 risk level과 연결됩니다. TriviaQA와 MedMCQA에서 여러 LLM을 대상으로 실험했을 때, \(\beta=0.1,0.2,0.3\)에 대해 admissible response를 얻지 못하는 평균 비율이 대체로 해당 risk level 아래에서 관리됩니다. 이는 calibration set을 함부로 삭제하지 않고도 finite sampling budget의 한계를 계량화할 수 있음을 보여줍니다.
+
+둘째, SConU는 single-domain setting에서 EMR을 risk level 안으로 묶는 데 도움이 됩니다. 예를 들어 MMLU-Pro의 Health와 Economics subset에서 Qwen-2-7B-Instruct와 LLaMA-3.1-8B-Instruct를 비교할 때, 기본 ConU가 일부 risk level에서 mean 또는 median EMR을 넘기는 반면 SConU selection을 적용하면 EMR이 더 안정적으로 risk level 아래에 놓입니다.
+
+셋째, cross-domain setting에서 SConU-Pro의 효과가 더 선명합니다. 논문은 MMLU-Pro subject 사이를 calibration/test domain으로 바꿔가며 실험합니다. Psychology로 calibration하고 Math를 test하는 경우처럼 uncertainty distribution shift가 큰 조합에서는 EMR이 크게 튀는데, SConU와 SConU-Pro는 이런 outlier test samples를 걸러냅니다. 특히 SConU-Pro는 calibration point의 reference quality까지 고려하므로 cross-domain EMR 관리가 더 안정적입니다.
+
+Prediction efficiency에서도 흥미로운 관찰이 있습니다. Open-domain QA에서는 prediction set 안에 의미적으로 중복된 답변이 많이 들어갈 수 있습니다. 논문은 semantic deduplication 후 APSS가 크게 줄어드는 결과를 보고합니다. 이는 conformal set이 통계적으로 valid하더라도, 사람이 쓰기 좋은 answer set으로 만들려면 semantic representation과 clustering이 함께 필요하다는 점을 시사합니다.
+
+# Why this Paper?
+
+이 논문이 "LLM meets Statistics" 관점에서 좋은 이유는 conformal prediction을 LLM에 단순히 적용하지 않고, 적용 조건 자체를 통계적 검정 문제로 다시 묻기 때문입니다.
+
+Conformal prediction은 종종 "distribution-free guarantee"라는 표현으로 소개됩니다. 하지만 distribution-free가 assumption-free를 뜻하지는 않습니다. Exchangeability가 깨지면 guarantee는 약해집니다. SConU는 이 약점을 숨기지 않고, conformal p-value와 selective abstention으로 operationalize합니다.
+
+연구 방향으로는 두 가지가 자연스럽습니다.
+
+- RAG evaluation에서도 query distribution shift를 conformal p-value로 감지할 수 있을까?
+- Spatial or geospatial QA에서 지역별 uncertainty distribution이 다를 때, calibration domain을 어떻게 구성해야 할까?
+
+이 두 질문은 논문이 직접 주장한 결과가 아니라 가능한 확장입니다. 특히 spatial reasoning이나 marked point process 형태의 unstructured-to-structured 데이터에서는 "어떤 sample이 같은 calibration population에 속하는가?"가 중요한 문제가 됩니다. SConU의 selection idea는 이런 문제를 설계할 때 유용한 출발점이 될 수 있습니다.
+
+# References
+
+- Zhiyuan Wang, Qingni Wang, Yue Zhang, Tianlong Chen, Xiaofeng Zhu, Xiaoshuang Shi, Kaidi Xu, "SConU: Selective Conformal Uncertainty in Large Language Models." ACL 2025 Main / arXiv:2504.14154. [arXiv](https://arxiv.org/abs/2504.14154), [PDF](https://arxiv.org/pdf/2504.14154), doi: [10.48550/arXiv.2504.14154](https://doi.org/10.48550/arXiv.2504.14154).
+- Official code link from the paper: [https://github.com/Zhiyuan-GG/SConU](https://github.com/Zhiyuan-GG/SConU).
+
+| field | value |
+| --- | --- |
+| title | SConU: Selective Conformal Uncertainty in Large Language Models |
+| authors | Zhiyuan Wang; Qingni Wang; Yue Zhang; Tianlong Chen; Xiaofeng Zhu; Xiaoshuang Shi; Kaidi Xu |
+| year | 2025 |
+| URL | https://arxiv.org/abs/2504.14154 |
+| DOI / arXiv ID | 10.48550/arXiv.2504.14154 / 2504.14154 |
+| suggested tags | llm-meets-statistics, daily-paper, statistical-inference, uncertainty, conformal-prediction |
+| collection | Recent Trends |
+
