@@ -1,0 +1,249 @@
+---
+title: "The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs"
+description: "LLM-as-a-judge를 사람 annotator 대체 가능성에 대한 통계적 검정 문제로 읽는 논문 정리"
+date: "2026-05-25"
+tags:
+  - llm-meets-statistics
+  - daily-paper
+  - llm-evaluation
+  - statistical-inference
+categories:
+  - research paper
+routeSegments:
+  - "llm-meets-statistics-alt-test-llm-judge"
+teaser: null
+coverImage: null
+excerpt: "LLM-as-a-judge를 사람 annotator 대체 가능성에 대한 통계적 검정 문제로 읽는 논문 정리"
+readingTimeMinutes: 9
+useMath: true
+featured: false
+draft: false
+canonicalUrl: "https://ddangchani.github.io/llm-meets-statistics-alt-test-llm-judge/"
+
+curation_topic: "LLM meets Statistics"
+paper:
+  title: "The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs"
+  authors:
+    - "Nitay Calderon"
+    - "Roi Reichart"
+    - "Rotem Dror"
+  year: "2025"
+  venue: "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)"
+  url: "https://aclanthology.org/2025.acl-long.782/"
+  pdf_url: "https://aclanthology.org/2025.acl-long.782.pdf"
+  doi: "10.18653/v1/2025.acl-long.782"
+  arxiv_id: "2501.10970"
+cover_image: "not available"
+score:
+  topical_relevance: 39
+  statistical_depth: 23
+  recency: 13
+  credibility: 10
+  career_usefulness: 9
+  total: 94
+---
+
+# Introduction
+
+LLM-as-a-judge를 사용할 때 자주 묻는 질문은 "사람과 얼마나 잘 맞는가?"입니다. 그래서 많은 논문과 서비스에서는 human agreement, majority-vote accuracy, correlation, Cohen's kappa 같은 값을 보고합니다. 하지만 실제 연구 설계에서 필요한 질문은 조금 다릅니다.
+
+> 이 LLM judge를 새 annotator로 고용한 사람 대신 써도 되는가?
+
+이 질문은 단순한 성능 비교가 아니라 의사결정 문제입니다. LLM은 빠르고 싸지만, 사람 annotator와 다른 편향을 가질 수 있습니다. 반대로 사람도 fatigue, guideline ambiguity, 개인별 해석 차이를 가집니다. 따라서 "LLM이 majority label을 얼마나 맞히는가?"만 보면, 연구자가 정말 알고 싶은 replacement question을 놓칠 수 있습니다.
+
+Nitay Calderon, Roi Reichart, Rotem Dror의 ACL 2025 논문 [The Alternative Annotator Test for LLM-as-a-Judge](https://aclanthology.org/2025.acl-long.782/)는 이 문제를 통계적 검정 절차로 정식화합니다. 논문은 LLM annotation이 이미 NLP, medicine, psychology, social science에서 연구 결과 자체를 만드는 데 쓰이고 있는데도, LLM이 사람 annotator를 대체할 수 있는지 판단하는 표준적이고 엄밀한 절차가 부족하다고 지적합니다.
+
+핵심 아이디어는 간단합니다. 각 human annotator를 한 명씩 제외하고, LLM과 제외된 annotator 중 누가 나머지 human group을 더 잘 대표하는지 비교합니다. 그 비교를 annotator별 hypothesis test로 만들고, 여러 annotator에 대한 검정을 FDR-controlling procedure로 보정합니다. 마지막으로 LLM이 충분히 많은 human annotator를 통계적으로 이기면, LLM을 대체 annotator로 사용하는 결정을 정당화합니다.
+
+English summary: the alt-test treats LLM-as-a-judge adoption as a statistical replacement test. It does not ask only whether the LLM agrees with a majority label; it asks whether the LLM represents the human annotator group at least as well as a held-out human annotator, after accounting for annotation cost and multiple testing.
+
+# Replacement as a Statistical Question
+
+데이터셋에 $$n$$개의 instance가 있고, $$m$$명의 human annotator가 있다고 하겠습니다.
+
+$$
+\{x_1,\ldots,x_n\},\qquad \{h_1,\ldots,h_m\}.
+$$
+
+Annotator $$h_j$$가 instance $$x_i$$에 부여한 label을 $$h_j(x_i)$$라고 쓰고, LLM judge의 annotation을 $$f(x_i)$$라고 씁니다. 논문은 특정 annotator $$h_j$$를 제외한 나머지 annotator 집합을 $$[-j]$$로 표기합니다.
+
+Replacement question을 직접 묻기 위해서는, LLM을 majority vote와만 비교하지 않습니다. 대신 다음 두 대상을 비교합니다.
+
+1. LLM annotation $$f(x_i)$$가 나머지 annotator들과 얼마나 잘 맞는가?
+2. 제외된 human annotator $$h_j(x_i)$$가 나머지 annotator들과 얼마나 잘 맞는가?
+
+이때 alignment score를 $$S(f,x_i,j)$$라고 두겠습니다. 값이 클수록 나머지 annotator들과 더 잘 맞는 방향으로 정의합니다. Label type에 따라 score는 달라질 수 있습니다.
+
+연속형 점수라면 negative RMSE를 사용할 수 있습니다.
+
+$$
+S(f,x_i,j)
+=-
+\sqrt{
+\frac{1}{|H_i|-1}
+\sum_{k\in H_i\setminus \{j\}}
+(f(x_i)-h_k(x_i))^2
+}.
+$$
+
+분류 label이라면 나머지 annotator와 일치한 비율을 사용할 수 있습니다.
+
+$$
+S(f,x_i,j)
+=
+\frac{1}{|H_i|-1}
+\sum_{k\in H_i\setminus \{j\}}
+\mathbf{1}\{f(x_i)=h_k(x_i)\}.
+$$
+
+Free-text generation task라면 BLEURT, BERTScore, 혹은 task에 맞는 similarity function $$\operatorname{sim}$$을 사용할 수 있습니다.
+
+$$
+S(f,x_i,j)
+=
+\frac{1}{|H_i|-1}
+\sum_{k\in H_i\setminus \{j\}}
+\operatorname{sim}(f(x_i),h_k(x_i)).
+$$
+
+중요한 점은 score 자체가 논문의 목적이 아니라는 것입니다. Score는 "나머지 사람들의 annotation distribution을 누가 더 잘 대표하는가?"를 비교하기 위한 local statistic입니다.
+
+# Advantage Probability
+
+각 annotator $$h_j$$에 대해 LLM이 이겼는지 나타내는 indicator를 정의합니다.
+
+$$
+W^f_{i,j}
+=
+\mathbf{1}\{S(f,x_i,j)\ge S(h_j,x_i,j)\}.
+$$
+
+즉, instance $$x_i$$에서 LLM annotation이 제외된 human annotator보다 나머지 annotator group과 같거나 더 잘 맞으면 1입니다. 반대로 human annotator가 LLM보다 같거나 더 잘 맞는 사건도 정의할 수 있습니다.
+
+$$
+W^h_{i,j}
+=
+\mathbf{1}\{S(h_j,x_i,j)\ge S(f,x_i,j)\}.
+$$
+
+논문은 이 indicator들의 평균을 advantage probability의 추정량으로 사용합니다.
+
+$$
+\rho^f_j
+=
+\widehat{P}(\mathrm{LLM}\succeq h_j)
+=
+\frac{1}{|I_j|}
+\sum_{i\in I_j}W^f_{i,j}.
+$$
+
+마찬가지로 $$\rho^h_j$$는 $$h_j$$가 LLM보다 advantage를 갖는 확률의 추정량입니다. 따라서 $$\rho^f_j$$가 크다는 것은 LLM이 annotator $$h_j$$보다 human group을 더 잘 대표하는 경우가 많다는 뜻입니다.
+
+이 정의가 좋은 이유는 해석이 직접적이기 때문입니다. Accuracy가 0.6이면 "충분한가?"라는 질문이 남습니다. 반면 $$\rho^f_j=0.7$$이면 "LLM이 random instance에서 annotator $$h_j$$ 이상으로 group consensus를 대표할 확률이 약 70%"라고 읽을 수 있습니다.
+
+# The Alt-Test
+
+이제 replacement question을 hypothesis testing으로 씁니다. LLM은 사람보다 빠르고 저렴하므로, 논문은 cost-benefit hyperparameter $$\epsilon$$을 둡니다. $$\epsilon$$은 human annotator 쪽 threshold를 낮추는 penalty처럼 작동합니다. 즉, 매우 비싸고 느린 expert annotation을 대체하려는 경우에는 LLM이 사람과 완전히 동등하지 않아도 실용적으로 채택될 수 있습니다.
+
+각 annotator $$h_j$$에 대해 검정 문제는 다음과 같습니다.
+
+$$
+H_{0j}:\rho^f_j\le \rho^h_j-\epsilon
+\qquad\text{vs.}\qquad
+H_{1j}:\rho^f_j> \rho^h_j-\epsilon.
+$$
+
+논문은 paired t-test를 사용합니다. Instance별 차이를
+
+$$
+d_{i,j}=W^h_{i,j}-W^f_{i,j}
+$$
+
+라고 두면, null hypothesis는 평균 차이 $$\bar d_j=\rho^h_j-\rho^f_j$$가 $$\epsilon$$ 이상이라는 주장입니다. Test statistic은 다음 형태입니다.
+
+$$
+t_j=
+\frac{\bar d_j-\epsilon}{s_j/\sqrt{n}},
+\qquad
+s_j=
+\sqrt{
+\frac{\sum_{i=1}^{n}(d_{i,j}-\bar d_j)^2}{n-1}
+}.
+$$
+
+여기서 $$n<30$$인 경우에는 normality assumption이 약하므로 Wilcoxon signed-rank test 같은 non-parametric test를 고려하라고 논문은 권합니다. 실제 적용에서는 최소 30개 instance가 필요하고, 보통 50-100개 instance를 annotating하면 충분한 경우가 많다고 제안합니다.
+
+이 절차를 annotator마다 수행하면 $$m$$개의 p-value가 생깁니다. 하지만 이 검정들은 독립이 아닙니다. 특정 annotator를 제외한 나머지 group을 계속 재사용하기 때문에, hypothesis들 사이에 dependency가 생깁니다. 따라서 단순히 $$p<0.05$$인 annotator 수를 세면 Type-I error가 누적됩니다.
+
+논문은 이 문제를 FDR control로 처리합니다. 특히 dependent hypotheses에 적합한 Benjamini-Yekutieli procedure를 권장하고, 실험에서는 target FDR level $$q=0.05$$를 사용합니다. FDR 보정 이후 기각된 null hypothesis의 비율을 winning rate라고 둡니다.
+
+$$
+\omega=
+\frac{1}{m}
+\sum_{j=1}^{m}
+\mathbf{1}\{H_{0j}\text{ is rejected}\}.
+$$
+
+기본 decision rule은 $$\omega\ge 0.5$$입니다. 즉, LLM이 annotator의 과반에 대해 통계적으로 advantage를 보이면 LLM을 대체 annotator로 사용할 근거가 있다고 보는 것입니다. High-stakes domain에서는 이 threshold를 더 엄격하게 둘 수 있습니다.
+
+# Average Advantage Probability
+
+Winning rate $$\omega$$는 decision rule로는 좋지만, LLM judge들을 서로 비교하기에는 거칩니다. Annotator가 세 명뿐이면 가능한 값이 $$0,1/3,2/3,1$$뿐입니다. 또 $$\epsilon$$ 값에 따라 변하고, 이긴 정도의 크기를 반영하지 않습니다.
+
+그래서 논문은 Average Advantage Probability를 제안합니다.
+
+$$
+\rho=
+\frac{1}{m}
+\sum_{j=1}^{m}\rho^f_j.
+$$
+
+이 값은 임의로 고른 human annotator와 비교했을 때, LLM annotation이 human group을 같거나 더 잘 대표할 확률로 해석할 수 있습니다. 논문은 이 지표가 discrete, continuous, free-text annotation task에 공통으로 적용될 수 있고, F1, kappa, correlation보다 decision-maker에게 해석이 쉽다고 봅니다.
+
+Statistical evaluation에서 이런 통합 지표는 중요합니다. LLM judge의 품질을 task마다 서로 다른 metric으로 보고하면, 어느 모델이 annotation pipeline에 더 적합한지 비교하기 어렵습니다. $$\rho$$는 "사람 하나를 새로 뽑는 것과 LLM을 쓰는 것 중 어느 쪽이 group consensus에 더 가까운가?"라는 공통 언어를 제공합니다.
+
+# Experiments and Interpretation
+
+논문은 language와 vision-language task를 포함한 10개 dataset을 구성하고, 6개 LLM과 4개 prompting technique을 비교합니다. Dataset은 discrete, continuous, free-text annotation을 포함하고, annotator 수도 3명에서 13명까지 다양합니다.
+
+주요 결과는 균형 잡혀 있습니다. 많은 dataset에서 최소 하나의 LLM과 prompting strategy가 alt-test를 통과했지만, 모든 task에서 LLM이 사람을 대체할 수 있었던 것은 아닙니다. 논문은 MT-Bench와 SummEval에서는 어떤 LLM도 통과하지 못한 반면, Framing, CEBAB-A, CEBaB-S, Lesion 같은 dataset에서는 거의 모든 LLM이 $$\omega\ge 0.5$$를 달성했다고 보고합니다.
+
+또 하나의 중요한 관찰은 task aspect별 차이입니다. 예를 들어 lesion image annotation에서는 색상 관련 aspect에서는 LLM들이 통과하지만, asymmetry나 border irregularity처럼 형태 판단이 필요한 aspect에서는 더 어려움을 보입니다. SummEval처럼 coherence, consistency, fluency, relevance가 나뉘는 평가에서도 aspect마다 결과가 달라질 수 있습니다.
+
+따라서 이 논문의 메시지는 "LLM judge를 써도 된다"가 아닙니다. 더 정확히는 다음과 같습니다.
+
+> LLM judge를 쓰려면, 사용하려는 task와 annotator profile에서 대체 가능성을 별도로 검정해야 한다.
+
+Prompting 결과도 흥미롭습니다. 논문은 in-context learning이 대체로 성능을 높이는 반면, chain-of-thought와 ensemble이 항상 같은 이득을 주지는 않는다고 보고합니다. 이는 judge prompting을 복잡하게 만드는 것보다, 실제 human annotation 분포와 비교하는 validation subset을 확보하는 일이 더 중요할 수 있음을 시사합니다.
+
+# Why this Paper?
+
+이 논문은 LLM evaluation을 measurement problem으로 보는 데 좋은 출발점입니다. 기존 LLM-as-a-judge 논의는 종종 "GPT-4 judge가 human과 얼마나 correlate하는가?"에서 멈춥니다. 하지만 실제 연구에서는 LLM annotation이 downstream statistical analysis의 label이 되고, 그 label이 논문의 결론을 만듭니다.
+
+Alt-test는 이 상황에서 필요한 최소한의 질문을 잘 세웁니다.
+
+1. Human annotator group을 기준으로 누가 더 representative한가?
+2. LLM의 비용상 이득을 어느 정도까지 인정할 것인가?
+3. 여러 annotator와 비교할 때 false discovery를 어떻게 관리할 것인가?
+4. 최종 decision과 model comparison metric을 어떻게 분리할 것인가?
+
+Possible extension으로는 domain shift가 있는 annotation setting을 들 수 있습니다. 예를 들어 medical note annotation에서 병원, 환자군, 문서 양식이 바뀌면 $$\rho$$와 $$\omega$$가 안정적으로 유지되는지 별도로 봐야 합니다. 이 부분은 논문의 주장이라기보다, LLM judge를 실제 scientific measurement instrument로 쓰기 위해 자연스럽게 따라오는 연구 방향입니다.
+
+# References
+
+- Paper: [The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs](https://aclanthology.org/2025.acl-long.782/)
+- PDF: [ACL Anthology PDF](https://aclanthology.org/2025.acl-long.782.pdf)
+- arXiv: [arXiv:2501.10970](https://arxiv.org/abs/2501.10970)
+- DOI: [10.18653/v1/2025.acl-long.782](https://doi.org/10.18653/v1/2025.acl-long.782)
+- Code and data: [nitaytech/AltTest](https://github.com/nitaytech/AltTest)
+
+| Field | Value |
+| --- | --- |
+| Title | The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs |
+| Authors | Nitay Calderon, Roi Reichart, Rotem Dror |
+| Year | 2025 |
+| Venue | ACL 2025 Long Papers |
+| URL | https://aclanthology.org/2025.acl-long.782/ |
+| DOI / arXiv ID | 10.18653/v1/2025.acl-long.782 / 2501.10970 |
+| Suggested tags | llm-meets-statistics, daily-paper, llm-evaluation, statistical-inference |
+| Collection | Recent Trends |
