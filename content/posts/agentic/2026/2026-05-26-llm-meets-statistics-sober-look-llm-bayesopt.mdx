@@ -1,0 +1,208 @@
+---
+title: "A Sober Look at LLMs for Material Discovery: Are They Actually Good for Bayesian Optimization Over Molecules?"
+description: "LLM을 분자 탐색용 Bayesian optimization surrogate로 쓸 때 필요한 확률적 불확실성 관점 정리"
+date: "2026-05-26"
+tags:
+  - llm-meets-statistics
+  - daily-paper
+  - bayesian-optimization
+  - uncertainty
+categories:
+  - research paper
+routeSegments:
+  - "llm-meets-statistics-sober-look-llm-bayesopt"
+teaser: null
+coverImage: null
+excerpt: "LLM을 분자 탐색용 Bayesian optimization surrogate로 쓸 때 필요한 확률적 불확실성 관점 정리"
+readingTimeMinutes: 9
+useMath: true
+featured: false
+draft: false
+canonicalUrl: "https://ddangchani.github.io/llm-meets-statistics-sober-look-llm-bayesopt/"
+
+curation_topic: "LLM meets Statistics"
+paper:
+  title: "A Sober Look at LLMs for Material Discovery: Are They Actually Good for Bayesian Optimization Over Molecules?"
+  authors:
+    - "Agustinus Kristiadi"
+    - "Felix Strieth-Kalthoff"
+    - "Marta Skreta"
+    - "Pascal Poupart"
+    - "Alan Aspuru-Guzik"
+    - "Geoff Pleiss"
+  year: "2024"
+  venue: "Proceedings of the 41st International Conference on Machine Learning, PMLR 235:25603-25622"
+  url: "https://proceedings.mlr.press/v235/kristiadi24a.html"
+  pdf_url: "https://raw.githubusercontent.com/mlresearch/v235/main/assets/kristiadi24a/kristiadi24a.pdf"
+  doi: "10.48550/arXiv.2402.05015"
+  arxiv_id: "2402.05015"
+cover_image: "not available"
+score:
+  topical_relevance: 37
+  statistical_depth: 24
+  recency: 11
+  credibility: 10
+  career_usefulness: 9
+  total: 91
+---
+
+# Introduction
+
+LLM을 과학적 발견에 쓰자는 말은 매력적입니다. 분자 구조를 text로 표현하고, LLM이 그 표현에서 화학 지식을 끌어내며, 다음 실험 후보를 추천한다면 탐색 비용을 크게 줄일 수 있을 것처럼 보입니다. 하지만 Bayesian optimization 관점에서 보면 핵심 질문은 조금 다릅니다.
+
+> LLM이 좋은 답을 말할 수 있는가보다, LLM이 믿을 만한 uncertainty를 가진 surrogate model이 될 수 있는가가 더 중요합니다.
+
+Bayesian optimization은 비싼 목적함수 $$f:\mathcal{X}\to\mathbb{R}$$를 가능한 한 적게 평가하면서 좋은 후보 $$x$$를 찾는 절차입니다. 여기서 $$x$$는 molecule, $$f(x)$$는 binding affinity, solubility, reaction yield 같은 물성일 수 있습니다. 탐색이 잘 되려면 surrogate model이 평균 예측뿐 아니라 불확실성도 내야 합니다. 평균만 높게 찍는 모델은 이미 좋아 보이는 영역만 반복해서 고르게 되고, uncertainty가 과장된 모델은 실험 budget을 낭비할 수 있습니다.
+
+Agustinus Kristiadi, Felix Strieth-Kalthoff, Marta Skreta, Pascal Poupart, Alan Aspuru-Guzik, Geoff Pleiss의 ICML 2024 논문 [A Sober Look at LLMs for Material Discovery](https://proceedings.mlr.press/v235/kristiadi24a.html)는 이 지점을 정면으로 묻습니다. LLM을 분자 탐색에 쓰되, heuristic prompt search가 아니라 Bayesian optimization의 확률적 surrogate로 검토합니다. 논문이 선택한 태도는 제목 그대로 sober합니다. LLM이 화학을 "아는 것처럼" 보이는지보다, domain-specific pretraining 또는 finetuning이 posterior uncertainty와 acquisition decision에 실제로 도움이 되는지를 봅니다.
+
+English summary: the paper asks whether LLMs are useful for principled Bayesian optimization over molecules. The key distinction is not whether an LLM can answer chemistry questions, but whether LLM-derived representations can support calibrated probabilistic surrogate models for exploration and exploitation.
+
+# Bayesian Optimization Needs a Posterior
+
+분자 탐색을 pool-based black-box optimization으로 생각해 보겠습니다. 후보 공간 $$\mathcal{X}=\{x_1,\ldots,x_N\}$$가 있고, 각 후보의 true property $$f(x)$$는 실험이나 고비용 simulation을 통해서만 관측됩니다. 지금까지 관측한 데이터는 다음과 같습니다.
+
+$$
+\mathcal{D}_t=\{(x_i,y_i)\}_{i=1}^{t},\qquad y_i=f(x_i)+\epsilon_i.
+$$
+
+Bayesian optimization은 이 데이터로 posterior predictive distribution을 만듭니다.
+
+$$
+p(y_\star\mid x_\star,\mathcal{D}_t).
+$$
+
+이 분포에서 평균 $$\mu_t(x)$$와 표준편차 $$\sigma_t(x)$$를 얻으면 acquisition function을 정의할 수 있습니다. 예를 들어 Upper Confidence Bound는 다음과 같습니다.
+
+$$
+\alpha_{\mathrm{UCB}}(x)
+=
+\mu_t(x)+\beta\sigma_t(x).
+$$
+
+Expected Improvement는 현재 best observation $$y_t^+=\max_{i\le t}y_i$$에 대한 개선량의 posterior expectation입니다.
+
+$$
+\alpha_{\mathrm{EI}}(x)
+=
+\mathbb{E}\left[\max\{0,Y(x)-y_t^+\}\mid \mathcal{D}_t\right].
+$$
+
+두 식 모두 평균과 불확실성을 함께 사용합니다. 따라서 LLM이 단순히 "이 분자가 좋아 보인다"는 점수만 낸다면 Bayesian optimization이 아닙니다. 불확실성 없는 점수는 ranking model에 가깝고, exploration을 정당화하기 어렵습니다. 이 논문이 비판하는 지점도 여기입니다. Point-estimated, non-Bayesian LLM에서 나온 점수를 uncertainty처럼 취급하면 BO의 통계적 의미가 흐려집니다.
+
+# LLM as a Feature Map
+
+논문의 첫 번째 접근은 LLM을 고정된 feature extractor로 쓰는 것입니다. 분자 $$x$$를 SMILES 같은 문자열이나 자연어 context $$c(x)$$로 바꾸고, pretrained language model의 hidden representation을 feature로 뽑습니다.
+
+$$
+\phi_{\mathrm{LLM}}(x)=h_{\psi}(c(x))\in\mathbb{R}^H.
+$$
+
+그 다음 실제 surrogate는 LLM 자체가 아니라, feature 위에 올린 Bayesian model입니다.
+
+$$
+y=g_{\theta}(\phi_{\mathrm{LLM}}(x))+\epsilon.
+$$
+
+이렇게 분리하면 질문이 명확해집니다. LLM은 prior scientific knowledge를 담은 representation을 제공할 수 있습니다. 하지만 uncertainty는 $$g_{\theta}$$에 대한 posterior, 예를 들어 Gaussian process나 Bayesian neural network가 담당합니다. 즉, LLM의 역할은 "posterior를 직접 말하는 oracle"이 아니라 "posterior inference가 쉬워지는 coordinate system"에 가깝습니다.
+
+이 관점은 통계적으로 깔끔합니다. Representation이 좋으면 작은 데이터에서도 함수 $$f$$가 더 smooth하게 보일 수 있고, surrogate는 적은 observation으로도 유용한 posterior를 만들 수 있습니다. 반대로 representation이 화학적 property와 무관하면, LLM을 붙여도 BO에는 별 도움이 되지 않습니다.
+
+논문은 일반 LLM과 domain-specific molecular language model을 비교합니다. 중요한 결론은 LLM이라는 이름 자체가 이득을 보장하지 않는다는 것입니다. 분자 domain에 맞게 pretraining되었거나 finetuning된 모델의 feature가 더 유용할 수 있고, general-purpose LLM feature는 classical molecular fingerprint보다 항상 우월하지 않습니다.
+
+# Bayesian PEFT and Laplace Approximation
+
+두 번째 접근은 parameter-efficient finetuning, 특히 LoRA 같은 PEFT parameter를 Bayesian하게 다루는 것입니다. Full model parameter를 모두 업데이트하면 posterior inference가 거의 불가능해집니다. 대신 대부분의 LLM parameter $$\psi$$는 고정하고, 작은 trainable parameter $$\omega$$만 학습합니다.
+
+$$
+h_{\psi,\omega}(c(x)).
+$$
+
+Surrogate를 다음처럼 쓰면,
+
+$$
+y=g_{\theta,\omega}(x)+\epsilon,
+$$
+
+Bayesian 관점에서는 $$\omega$$와 $$\theta$$에 posterior가 필요합니다.
+
+$$
+p(\theta,\omega\mid\mathcal{D})
+\propto
+p(\mathcal{D}\mid\theta,\omega)p(\theta)p(\omega).
+$$
+
+문제는 이 posterior를 정확히 계산하기 어렵다는 점입니다. 논문은 Bayesian neural network와 Laplace approximation을 사용해 posterior 근사를 만듭니다. MAP estimate $$\hat{w}$$ 주변에서 log posterior를 2차 근사하면,
+
+$$
+p(w\mid\mathcal{D})
+\approx
+\mathcal{N}\left(\hat{w}, H^{-1}\right),
+$$
+
+여기서 $$w$$는 Bayesian하게 다루는 parameter block이고, $$H$$는 negative log posterior의 Hessian 또는 그 근사입니다. 이 근사에서 posterior sample을 뽑으면 각 후보 $$x$$에 대한 predictive sample을 얻고, 그 sample로 $$\mu_t(x)$$와 $$\sigma_t(x)$$ 또는 Monte Carlo acquisition value를 계산할 수 있습니다.
+
+이 부분이 논문의 통계적 핵심입니다. LLM을 쓰더라도 BO의 decision rule은 posterior predictive distribution을 요구합니다. 따라서 "LLM이 물성값을 잘 예측한다"와 "LLM 기반 surrogate가 탐색에 필요한 uncertainty를 잘 제공한다"는 별개의 주장입니다.
+
+# What Should Be Compared?
+
+이 논문이 좋은 이유는 LLM을 강하게 밀어붙이기보다 비교 대상을 분명히 둔다는 점입니다. Bayesian optimization over molecules에서 LLM feature는 다음 baselines와 비교되어야 합니다.
+
+1. Classical molecular fingerprints.
+2. Domain-specific molecular encoders.
+3. Frozen LLM features with Bayesian surrogate heads.
+4. PEFT-updated LLM features with Bayesian posterior approximation.
+
+평가도 단순 regression score로 끝나면 부족합니다. BO에서는 최종적으로 제한된 실험 budget 안에서 얼마나 좋은 molecule을 찾는지가 중요합니다. 예측 RMSE가 낮아도 uncertainty ranking이 나쁘면 acquisition function이 잘못된 후보를 고를 수 있습니다. 반대로 평균 예측이 완벽하지 않아도 uncertainty가 탐색을 잘 유도하면 optimization performance가 좋아질 수 있습니다.
+
+논문은 real-world chemistry problems에서 이러한 비교를 수행하고, LLM 기반 접근이 유용할 수 있지만 조건부라고 보고합니다. 특히 domain-specific data로 pretrained 또는 finetuned된 경우에 BO surrogate로서 의미가 커집니다. 이 결론은 과장된 LLM narrative와 다릅니다. 과학적 탐색에서는 general linguistic competence보다 domain representation과 uncertainty quantification이 더 중요할 수 있습니다.
+
+# A Reusable Statistical Lesson
+
+이 논문을 LLM meets Statistics 관점에서 읽으면, 핵심 교훈은 다음 문장으로 압축됩니다.
+
+> LLM을 의사결정 시스템 안에 넣으려면, LLM output을 점수로 볼지, feature로 볼지, posterior uncertainty의 일부로 볼지 먼저 정해야 합니다.
+
+Bayesian optimization에서는 이 구분이 특히 중요합니다. Acquisition function은 unknown objective에 대한 belief state를 입력으로 받습니다. 그래서 LLM이 생성한 텍스트 설명, embedding, chain-of-thought, predicted score를 아무렇게나 uncertainty로 바꾸면 decision-theoretic 기반이 무너집니다.
+
+통계적으로 더 안전한 설계는 LLM을 feature map 또는 prior information provider로 두고, posterior는 명시적인 probabilistic surrogate가 담당하게 하는 것입니다.
+
+$$
+\text{molecule}
+\longrightarrow
+\text{LLM representation}
+\longrightarrow
+\text{Bayesian surrogate}
+\longrightarrow
+\text{acquisition decision}.
+$$
+
+이 pipeline은 다른 연구 주제에도 재사용할 수 있습니다. 예를 들어 LLM-as-a-judge에서는 LLM score를 measurement로 보고 measurement error model을 붙일 수 있습니다. RAG evaluation에서는 retrieval trace와 answer text를 feature로 삼고, human preference나 factuality에 대한 Bayesian model을 올릴 수 있습니다. Spatial or marked point process에서도 unstructured text/image를 mark feature로 변환한 뒤, point process model은 별도로 추정할 수 있습니다.
+
+Possible extension으로는 calibration diagnostics가 있습니다. BO surrogate의 predictive interval이 실제 molecule property를 얼마나 잘 cover하는지, acquisition-selected region에서도 calibration이 유지되는지, domain shift가 생길 때 posterior variance가 충분히 커지는지를 따로 봐야 합니다. 이 부분은 논문의 직접 주장이라기보다, LLM 기반 scientific optimization을 실험 설계 도구로 쓰려면 자연스럽게 이어지는 연구 방향입니다.
+
+# Why this Paper?
+
+최근 LLM for science 논문은 "LLM이 전문가 지식을 압축하고 있으므로 탐색이 빨라진다"는 식의 서사를 자주 사용합니다. 이 논문은 그 서사를 Bayesian optimization의 언어로 다시 묻습니다. 어떤 prior가 들어갔는가? Posterior는 어떻게 계산되는가? Uncertainty는 acquisition에 쓸 만큼 의미가 있는가? Domain-specific representation은 classical descriptor와 비교해 무엇을 더 주는가?
+
+이 질문들은 PhD 연구에서도 그대로 중요합니다. LLM을 통계 모델과 결합할 때 핵심은 LLM의 출력이 아니라, 그 출력이 어떤 estimand, likelihood, prior, posterior, decision rule에 연결되는지입니다. 이 논문은 LLM을 신비한 predictor가 아니라 확률적 의사결정 pipeline의 한 구성요소로 낮춰 놓는다는 점에서 좋은 참고점입니다.
+
+# References
+
+- Paper: [A Sober Look at LLMs for Material Discovery: Are They Actually Good for Bayesian Optimization Over Molecules?](https://proceedings.mlr.press/v235/kristiadi24a.html)
+- PDF: [PMLR PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/kristiadi24a/kristiadi24a.pdf)
+- OpenReview: [ICML 2024 OpenReview page](https://openreview.net/forum?id=Pa3GyTe3kf)
+- arXiv: [arXiv:2402.05015](https://arxiv.org/abs/2402.05015)
+- DOI: [10.48550/arXiv.2402.05015](https://doi.org/10.48550/arXiv.2402.05015)
+- Code: [wiseodd/lapeft-bayesopt](https://github.com/wiseodd/lapeft-bayesopt)
+
+| Field | Value |
+| --- | --- |
+| Title | A Sober Look at LLMs for Material Discovery: Are They Actually Good for Bayesian Optimization Over Molecules? |
+| Authors | Agustinus Kristiadi, Felix Strieth-Kalthoff, Marta Skreta, Pascal Poupart, Alan Aspuru-Guzik, Geoff Pleiss |
+| Year | 2024 |
+| Venue | ICML 2024, PMLR 235:25603-25622 |
+| URL | https://proceedings.mlr.press/v235/kristiadi24a.html |
+| DOI / arXiv ID | 10.48550/arXiv.2402.05015 / 2402.05015 |
+| Suggested tags | llm-meets-statistics, daily-paper, bayesian-optimization, uncertainty |
+| Collection | Recent Trends |
