@@ -1,158 +1,226 @@
 {
   "/Optimal-Transport/": {
     "link": "/Optimal-Transport/",
-    "count": 146
+    "count": 151
   },
   "/SSM/": {
     "link": "/SSM/",
-    "count": 74
-  },
-  "/Conformal-Prediction/": {
-    "link": "/Conformal-Prediction/",
-    "count": 50
+    "count": 71
   },
   "/STGCN/": {
     "link": "/STGCN/",
-    "count": 50
+    "count": 48
+  },
+  "/Conformal-Prediction/": {
+    "link": "/Conformal-Prediction/",
+    "count": 47
   },
   "/KAN/": {
     "link": "/KAN/",
-    "count": 27
+    "count": 31
   },
   "/DPDL/": {
     "link": "/DPDL/",
-    "count": 20
+    "count": 19
   },
-  "/Monte-Carlo-Sampling/": {
-    "link": "/Monte-Carlo-Sampling/",
+  "/Universal-Approximation-Theorem/": {
+    "link": "/Universal-Approximation-Theorem/",
     "count": 13
   },
   "/etc/itreview2/": {
     "link": "/etc/itreview2/",
     "count": 13
   },
-  "/Sensitivity-Analysis/": {
-    "link": "/Sensitivity-Analysis/",
+  "/Monte-Carlo-Sampling/": {
+    "link": "/Monte-Carlo-Sampling/",
+    "count": 12
+  },
+  "/pymc/": {
+    "link": "/pymc/",
     "count": 11
   },
-  "/Universal-Approximation-Theorem/": {
-    "link": "/Universal-Approximation-Theorem/",
-    "count": 11
+  "/Sensitivity-Analysis/": {
+    "link": "/Sensitivity-Analysis/",
+    "count": 10
   },
   "/BayesOpt/": {
     "link": "/BayesOpt/",
     "count": 9
   },
-  "/DAG-GNN/": {
-    "link": "/DAG-GNN/",
+  "/ATE-estimation/": {
+    "link": "/ATE-estimation/",
     "count": 8
-  },
-  "/pymc/": {
-    "link": "/pymc/",
-    "count": 7
   },
   "/tags/Real Analysis/": {
     "link": "/tags/Real Analysis/",
+    "count": 8
+  },
+  "/SDE/": {
+    "link": "/SDE/",
     "count": 7
   },
   "/etc/itreview1/": {
     "link": "/etc/itreview1/",
+    "count": 7
+  },
+  "/optimal-transport/": {
+    "link": "/optimal-transport/",
+    "count": 7
+  },
+  "/DAG-GNN/": {
+    "link": "/DAG-GNN/",
     "count": 6
   },
-  "/spatial-causal-inference-2/": {
-    "link": "/spatial-causal-inference-2/",
+  "/KStest/": {
+    "link": "/KStest/",
+    "count": 6
+  },
+  "/baekjoonhub/": {
+    "link": "/baekjoonhub/",
     "count": 6
   },
   "/tags/Spatial Statistics/": {
     "link": "/tags/Spatial Statistics/",
     "count": 6
   },
-  "/ATE-estimation/": {
-    "link": "/ATE-estimation/",
+  "/DPGAN/": {
+    "link": "/DPGAN/",
     "count": 5
   },
-  "/GP-and-DNN/": {
-    "link": "/GP-and-DNN/",
+  "/HMM/": {
+    "link": "/HMM/",
     "count": 5
   },
   "/llm-meets-statistics-bias-uncertainty-llm-judge/": {
     "link": "/llm-meets-statistics-bias-uncertainty-llm-judge/",
     "count": 5
   },
-  "/project/따릉이_EDA/": {
-    "link": "/project/따릉이_EDA/",
+  "/policy-optimization/": {
+    "link": "/policy-optimization/",
     "count": 5
+  },
+  "/BN-and-MRF/": {
+    "link": "/BN-and-MRF/",
+    "count": 4
+  },
+  "/DPVI/": {
+    "link": "/DPVI/",
+    "count": 4
   },
   "/Differential-Privacy/": {
     "link": "/Differential-Privacy/",
     "count": 4
   },
-  "/HMM/": {
-    "link": "/HMM/",
+  "/GP-and-DNN/": {
+    "link": "/GP-and-DNN/",
     "count": 4
   },
   "/Jupyter-convert/": {
     "link": "/Jupyter-convert/",
     "count": 4
   },
-  "/KStest/": {
-    "link": "/KStest/",
-    "count": 4
-  },
-  "/Markov-Random-Field/": {
-    "link": "/Markov-Random-Field/",
-    "count": 4
-  },
   "/ai-9b0cdf/": {
     "link": "/ai-9b0cdf/",
     "count": 4
   },
-  "/baekjoonhub/": {
-    "link": "/baekjoonhub/",
+  "/bayesopt/": {
+    "link": "/bayesopt/",
+    "count": 4
+  },
+  "/kan-670884/": {
+    "link": "/kan-670884/",
+    "count": 4
+  },
+  "/linear model/Linear_Mixed_Effect_Model/": {
+    "link": "/linear model/Linear_Mixed_Effect_Model/",
+    "count": 4
+  },
+  "/llm-meets-statistics-tsfm-conformal-prediction/": {
+    "link": "/llm-meets-statistics-tsfm-conformal-prediction/",
     "count": 4
   },
   "/machine learning/tSNE/": {
     "link": "/machine learning/tSNE/",
     "count": 4
   },
-  "/optimal-transport/": {
-    "link": "/optimal-transport/",
-    "count": 4
-  },
   "/page15/": {
     "link": "/page15/",
     "count": 4
   },
-  "/Coxprocess/": {
-    "link": "/Coxprocess/",
+  "/tags/Machine Learning": {
+    "link": "/tags/Machine Learning",
+    "count": 4
+  },
+  "/4-bd02ff/": {
+    "link": "/4-bd02ff/",
     "count": 3
   },
-  "/DPGAN/": {
-    "link": "/DPGAN/",
+  "/GDP/": {
+    "link": "/GDP/",
     "count": 3
   },
-  "/Eigenfunctions/": {
-    "link": "/Eigenfunctions/",
+  "/Markov-Random-Field/": {
+    "link": "/Markov-Random-Field/",
     "count": 3
   },
-  "/SDE/": {
-    "link": "/SDE/",
+  "/Optimal-Transport/[https://pythonot.github.io/]": {
+    "link": "/Optimal-Transport/[https://pythonot.github.io/]",
     "count": 3
   },
-  "/kan-670884/": {
-    "link": "/kan-670884/",
+  "/RDP/": {
+    "link": "/RDP/",
     "count": 3
   },
-  "/linear model/Linear_Mixed_Effect_Model/": {
-    "link": "/linear model/Linear_Mixed_Effect_Model/",
+  "/Spectral-Analysis-3/": {
+    "link": "/Spectral-Analysis-3/",
+    "count": 3
+  },
+  "/VDR/": {
+    "link": "/VDR/",
+    "count": 3
+  },
+  "/Variational-Inference/": {
+    "link": "/Variational-Inference/",
+    "count": 3
+  },
+  "/bayesian/BDA_(1)/": {
+    "link": "/bayesian/BDA_(1)/",
+    "count": 3
+  },
+  "/llm-meets-statistics-sober-look-llm-bayesopt/": {
+    "link": "/llm-meets-statistics-sober-look-llm-bayesopt/",
+    "count": 3
+  },
+  "/mathematics/Product_Integral/": {
+    "link": "/mathematics/Product_Integral/",
+    "count": 3
+  },
+  "/mathematics/realanalysis_Topological_spaces(1)/": {
+    "link": "/mathematics/realanalysis_Topological_spaces(1)/",
+    "count": 3
+  },
+  "/mathematics/realanalysis_metricspaces/": {
+    "link": "/mathematics/realanalysis_metricspaces/",
+    "count": 3
+  },
+  "/spatial-causal-inference-2/": {
+    "link": "/spatial-causal-inference-2/",
+    "count": 3
+  },
+  "/spatial-causal-inference-3/": {
+    "link": "/spatial-causal-inference-3/",
+    "count": 3
+  },
+  "/statistics/MM_algorithm/": {
+    "link": "/statistics/MM_algorithm/",
+    "count": 3
+  },
+  "/stgcn-0c2699/": {
+    "link": "/stgcn-0c2699/",
     "count": 3
   },
   "/tags/Deep Learning": {
     "link": "/tags/Deep Learning",
-    "count": 3
-  },
-  "/tags/Machine Learning": {
-    "link": "/tags/Machine Learning",
     "count": 3
   },
   "/tags/Mathematics/": {
@@ -163,48 +231,52 @@
     "link": "/time series/State-Space_Model/",
     "count": 3
   },
+  "/13-cc5fd2/": {
+    "link": "/13-cc5fd2/",
+    "count": 2
+  },
   "/15-13969d/": {
     "link": "/15-13969d/",
     "count": 2
   },
-  "/4-bd02ff/": {
-    "link": "/4-bd02ff/",
+  "/176962/": {
+    "link": "/176962/",
     "count": 2
   },
-  "/BN-and-MRF/": {
-    "link": "/BN-and-MRF/",
+  "/CovModels/": {
+    "link": "/CovModels/",
     "count": 2
   },
-  "/GDP/": {
-    "link": "/GDP/",
+  "/Coxprocess/": {
+    "link": "/Coxprocess/",
     "count": 2
   },
-  "/RDP/": {
-    "link": "/RDP/",
+  "/EDA-point-process/": {
+    "link": "/EDA-point-process/",
+    "count": 2
+  },
+  "/Eigenfunctions/": {
+    "link": "/Eigenfunctions/",
+    "count": 2
+  },
+  "/LPP/": {
+    "link": "/LPP/",
     "count": 2
   },
   "/Spatial-Causal-Inference-1/": {
     "link": "/Spatial-Causal-Inference-1/",
     "count": 2
   },
-  "/Spatial-Stat-1/": {
-    "link": "/Spatial-Stat-1/",
+  "/Transformer/": {
+    "link": "/Transformer/",
     "count": 2
   },
-  "/Variational-Inference/": {
-    "link": "/Variational-Inference/",
+  "/collaborative-filtering/": {
+    "link": "/collaborative-filtering/",
     "count": 2
   },
-  "/bayesopt/": {
-    "link": "/bayesopt/",
-    "count": 2
-  },
-  "/coxprocess/": {
-    "link": "/coxprocess/",
-    "count": 2
-  },
-  "/deep learning/Backpropagation/": {
-    "link": "/deep learning/Backpropagation/",
+  "/deep learning/LSTM-FCN/": {
+    "link": "/deep learning/LSTM-FCN/",
     "count": 2
   },
   "/differential-privacy/": {
@@ -215,16 +287,36 @@
     "link": "/dp-for-functions/",
     "count": 2
   },
+  "/eigenfunctions/": {
+    "link": "/eigenfunctions/",
+    "count": 2
+  },
   "/gan-6e2708/": {
     "link": "/gan-6e2708/",
+    "count": 2
+  },
+  "/gdp-ab1f12/": {
+    "link": "/gdp-ab1f12/",
+    "count": 2
+  },
+  "/gms-1-1ce06d/": {
+    "link": "/gms-1-1ce06d/",
     "count": 2
   },
   "/gp-and-dnn/": {
     "link": "/gp-and-dnn/",
     "count": 2
   },
-  "/llm-meets-statistics-tsfm-conformal-prediction/": {
-    "link": "/llm-meets-statistics-tsfm-conformal-prediction/",
+  "/jekyll-tag/": {
+    "link": "/jekyll-tag/",
+    "count": 2
+  },
+  "/kernelpca/": {
+    "link": "/kernelpca/",
+    "count": 2
+  },
+  "/linearreg1/": {
+    "link": "/linearreg1/",
     "count": 2
   },
   "/machine learning/kernel1/": {
@@ -235,12 +327,16 @@
     "link": "/machine learning/kernel3/",
     "count": 2
   },
-  "/mathematics/realanalysis_BCP/": {
-    "link": "/mathematics/realanalysis_BCP/",
+  "/mathematics/Absolute_Continuity/": {
+    "link": "/mathematics/Absolute_Continuity/",
     "count": 2
   },
-  "/mathematics/realanalysis_Topological_spaces(1)/": {
-    "link": "/mathematics/realanalysis_Topological_spaces(1)/",
+  "/mathematics/Lebesgue_Integration_with_General_measure/": {
+    "link": "/mathematics/Lebesgue_Integration_with_General_measure/",
+    "count": 2
+  },
+  "/mathematics/realanalysis_Topological_spaces(2)/": {
+    "link": "/mathematics/realanalysis_Topological_spaces(2)/",
     "count": 2
   },
   "/neuralode/": {
@@ -251,28 +347,52 @@
     "link": "/optimization/",
     "count": 2
   },
-  "/policy-optimization/": {
-    "link": "/policy-optimization/",
+  "/prob-1/": {
+    "link": "/prob-1/",
     "count": 2
   },
-  "/project/따릉이_shrinkage/": {
-    "link": "/project/따릉이_shrinkage/",
+  "/probabilistic-graphical-models/": {
+    "link": "/probabilistic-graphical-models/",
     "count": 2
   },
-  "/rdp-32fc11/": {
-    "link": "/rdp-32fc11/",
+  "/product-integral/": {
+    "link": "/product-integral/",
     "count": 2
   },
   "/realanalysis-bcp/": {
     "link": "/realanalysis-bcp/",
     "count": 2
   },
-  "/spatial-causal-inference-3/": {
-    "link": "/spatial-causal-inference-3/",
+  "/realanalysis-topological-spaces-1/": {
+    "link": "/realanalysis-topological-spaces-1/",
     "count": 2
   },
-  "/stgcn-0c2699/": {
-    "link": "/stgcn-0c2699/",
+  "/realanalysis-topological-spaces-3/": {
+    "link": "/realanalysis-topological-spaces-3/",
+    "count": 2
+  },
+  "/spatial-causal-inference-1/": {
+    "link": "/spatial-causal-inference-1/",
+    "count": 2
+  },
+  "/stationarity/": {
+    "link": "/stationarity/",
+    "count": 2
+  },
+  "/statistics/MCMC/": {
+    "link": "/statistics/MCMC/",
+    "count": 2
+  },
+  "/statistics/Spatial-Stat-2/": {
+    "link": "/statistics/Spatial-Stat-2/",
+    "count": 2
+  },
+  "/statistics/Sufficiency/": {
+    "link": "/statistics/Sufficiency/",
+    "count": 2
+  },
+  "/support-vector-machine/": {
+    "link": "/support-vector-machine/",
     "count": 2
   },
   "/svm-ebbf44/": {
@@ -287,6 +407,10 @@
     "link": "/tags/Real Analysis",
     "count": 2
   },
+  "/(/time series/State-Space_Model/)": {
+    "link": "/(/time series/State-Space_Model/)",
+    "count": 1
+  },
   "/0709-kiss-summer-school-dl-lecture/": {
     "link": "/0709-kiss-summer-school-dl-lecture/",
     "count": 1
@@ -295,28 +419,56 @@
     "link": "/1-65b6ad/",
     "count": 1
   },
-  "/11-29827c/": {
-    "link": "/11-29827c/",
+  "/10-755c0c/": {
+    "link": "/10-755c0c/",
     "count": 1
   },
-  "/13-cc5fd2/": {
-    "link": "/13-cc5fd2/",
+  "/12-4e8caa/": {
+    "link": "/12-4e8caa/",
+    "count": 1
+  },
+  "/169198/": {
+    "link": "/169198/",
     "count": 1
   },
   "/172927/": {
     "link": "/172927/",
     "count": 1
   },
-  "/176962/": {
-    "link": "/176962/",
-    "count": 1
-  },
   "/178870/": {
     "link": "/178870/",
     "count": 1
   },
+  "/181187/": {
+    "link": "/181187/",
+    "count": 1
+  },
+  "/181188/": {
+    "link": "/181188/",
+    "count": 1
+  },
+  "/1844-63b955/": {
+    "link": "/1844-63b955/",
+    "count": 1
+  },
+  "/2-86a17f/": {
+    "link": "/2-86a17f/",
+    "count": 1
+  },
+  "/3-48c840/": {
+    "link": "/3-48c840/",
+    "count": 1
+  },
   "/42892-81ee54/": {
     "link": "/42892-81ee54/",
+    "count": 1
+  },
+  "/43105-da10dc/": {
+    "link": "/43105-da10dc/",
+    "count": 1
+  },
+  "/5-769964/": {
+    "link": "/5-769964/",
     "count": 1
   },
   "/6-4f20b1/": {
@@ -331,16 +483,24 @@
     "link": "/72413-378a7e/",
     "count": 1
   },
+  "/8-68698b/": {
+    "link": "/8-68698b/",
+    "count": 1
+  },
+  "/86971-3dbace/": {
+    "link": "/86971-3dbace/",
+    "count": 1
+  },
+  "/9-fc1195/": {
+    "link": "/9-fc1195/",
+    "count": 1
+  },
   "/92343-d0cb4a/": {
     "link": "/92343-d0cb4a/",
     "count": 1
   },
-  "/DPVI/": {
-    "link": "/DPVI/",
-    "count": 1
-  },
-  "/Differentially-Private-Grids-for-Geospatial-Data/": {
-    "link": "/Differentially-Private-Grids-for-Geospatial-Data/",
+  "/AI-관련-개념정리/": {
+    "link": "/AI-관련-개념정리/",
     "count": 1
   },
   "/Diffusion/": {
@@ -351,20 +511,56 @@
     "link": "/Disease-mapping/",
     "count": 1
   },
-  "/Optimal-Transport/[https://pythonot.github.io/]": {
-    "link": "/Optimal-Transport/[https://pythonot.github.io/]",
+  "/FineTuning/": {
+    "link": "/FineTuning/",
+    "count": 1
+  },
+  "/Geostatistical-Methods/": {
+    "link": "/Geostatistical-Methods/",
+    "count": 1
+  },
+  "/Randomized-Experiment/": {
+    "link": "/Randomized-Experiment/",
     "count": 1
   },
   "/Spatial-Causal-Inference-3/": {
     "link": "/Spatial-Causal-Inference-3/",
     "count": 1
   },
-  "/VDR/": {
-    "link": "/VDR/",
+  "/Spatial-Stat-1/": {
+    "link": "/Spatial-Stat-1/",
+    "count": 1
+  },
+  "/Spectral-Analysis-4/": {
+    "link": "/Spectral-Analysis-4/",
+    "count": 1
+  },
+  "/Spectral-Analysis-5/": {
+    "link": "/Spectral-Analysis-5/",
+    "count": 1
+  },
+  "/VAE/": {
+    "link": "/VAE/",
+    "count": 1
+  },
+  "/absolute-continuity/": {
+    "link": "/absolute-continuity/",
     "count": 1
   },
   "/alexnet/": {
     "link": "/alexnet/",
+    "count": 1
+  },
+  "/an-overview-of-statistical-learning/": {
+    "link": "/an-overview-of-statistical-learning/",
+    "count": 1
+  },
+  "/automl/": {
+    "link": "/automl/",
+    "count": 1
+  },
+  "/average-treatment-effect/": {
+    "link": "/average-treatment-effect/",
     "count": 1
   },
   "/backpropagation/": {
@@ -375,12 +571,60 @@
     "link": "/bayesian-causal-inference/",
     "count": 1
   },
+  "/bayesian/BDA_(2)/": {
+    "link": "/bayesian/BDA_(2)/",
+    "count": 1
+  },
+  "/bda-1-4cee1a/": {
+    "link": "/bda-1-4cee1a/",
+    "count": 1
+  },
+  "/bda-2-7cce04/": {
+    "link": "/bda-2-7cce04/",
+    "count": 1
+  },
+  "/bn-and-mrf/": {
+    "link": "/bn-and-mrf/",
+    "count": 1
+  },
+  "/boosting/": {
+    "link": "/boosting/",
+    "count": 1
+  },
+  "/causal inference/Causal_Inference_(1)/": {
+    "link": "/causal inference/Causal_Inference_(1)/",
+    "count": 1
+  },
+  "/causal inference/Causal_Inference_(2)/": {
+    "link": "/causal inference/Causal_Inference_(2)/",
+    "count": 1
+  },
   "/causal inference/Causal_Inference_(5)/": {
     "link": "/causal inference/Causal_Inference_(5)/",
     "count": 1
   },
+  "/causal inference/Causal_Inference_(6)": {
+    "link": "/causal inference/Causal_Inference_(6)",
+    "count": 1
+  },
   "/causal-inference-1/": {
     "link": "/causal-inference-1/",
+    "count": 1
+  },
+  "/causal-inference-2/": {
+    "link": "/causal-inference-2/",
+    "count": 1
+  },
+  "/causal-inference-3/": {
+    "link": "/causal-inference-3/",
+    "count": 1
+  },
+  "/causal-inference-4/": {
+    "link": "/causal-inference-4/",
+    "count": 1
+  },
+  "/causal-inference-5/": {
+    "link": "/causal-inference-5/",
     "count": 1
   },
   "/causal-inference-6/": {
@@ -391,24 +635,52 @@
     "link": "/cnn-89be69/",
     "count": 1
   },
-  "/collaborative-filtering/": {
-    "link": "/collaborative-filtering/",
+  "/conditional-expectations/": {
+    "link": "/conditional-expectations/",
+    "count": 1
+  },
+  "/confounder-adjustment/": {
+    "link": "/confounder-adjustment/",
+    "count": 1
+  },
+  "/covmodels/": {
+    "link": "/covmodels/",
+    "count": 1
+  },
+  "/coxprocess/": {
+    "link": "/coxprocess/",
+    "count": 1
+  },
+  "/cross-validation/": {
+    "link": "/cross-validation/",
     "count": 1
   },
   "/datascience-roadmap/": {
     "link": "/datascience-roadmap/",
     "count": 1
   },
+  "/deep learning/Backpropagation/": {
+    "link": "/deep learning/Backpropagation/",
+    "count": 1
+  },
   "/deep learning/CNN/": {
     "link": "/deep learning/CNN/",
     "count": 1
   },
-  "/deep learning/LSTM-FCN/": {
-    "link": "/deep learning/LSTM-FCN/",
+  "/deep learning/Multivariate_LSTM-FCN": {
+    "link": "/deep learning/Multivariate_LSTM-FCN",
     "count": 1
   },
   "/deep learning/Multivariate_LSTM-FCN/": {
     "link": "/deep learning/Multivariate_LSTM-FCN/",
+    "count": 1
+  },
+  "/deep learning/Optimization": {
+    "link": "/deep learning/Optimization",
+    "count": 1
+  },
+  "/deep learning/Regularization_on_DL/": {
+    "link": "/deep learning/Regularization_on_DL/",
     "count": 1
   },
   "/differentially-private-grids-for-geospatial-data/": {
@@ -419,6 +691,14 @@
     "link": "/diffusion/",
     "count": 1
   },
+  "/disease-mapping/": {
+    "link": "/disease-mapping/",
+    "count": 1
+  },
+  "/distribution/": {
+    "link": "/distribution/",
+    "count": 1
+  },
   "/dpdl-5d0536/": {
     "link": "/dpdl-5d0536/",
     "count": 1
@@ -427,8 +707,32 @@
     "link": "/dpgan-e3fba0/",
     "count": 1
   },
+  "/eda-73e95b/": {
+    "link": "/eda-73e95b/",
+    "count": 1
+  },
+  "/eda-point-process/": {
+    "link": "/eda-point-process/",
+    "count": 1
+  },
+  "/entropy/": {
+    "link": "/entropy/",
+    "count": 1
+  },
+  "/entry-1a7022a5/": {
+    "link": "/entry-1a7022a5/",
+    "count": 1
+  },
+  "/entry-dd449019/": {
+    "link": "/entry-dd449019/",
+    "count": 1
+  },
   "/events-and-distribution/": {
     "link": "/events-and-distribution/",
+    "count": 1
+  },
+  "/expansion1/": {
+    "link": "/expansion1/",
     "count": 1
   },
   "/finetuning/": {
@@ -439,28 +743,76 @@
     "link": "/fit-without-fear/",
     "count": 1
   },
-  "/gdp-ab1f12/": {
-    "link": "/gdp-ab1f12/",
+  "/gaussian-process-classification/": {
+    "link": "/gaussian-process-classification/",
     "count": 1
   },
-  "/gms-1-1ce06d/": {
-    "link": "/gms-1-1ce06d/",
+  "/gaussian-process-regression/": {
+    "link": "/gaussian-process-regression/",
+    "count": 1
+  },
+  "/gaussian-process/": {
+    "link": "/gaussian-process/",
+    "count": 1
+  },
+  "/generalized-linear-model/": {
+    "link": "/generalized-linear-model/",
+    "count": 1
+  },
+  "/geostatistical-methods/": {
+    "link": "/geostatistical-methods/",
+    "count": 1
+  },
+  "/gradient-boosting/": {
+    "link": "/gradient-boosting/",
+    "count": 1
+  },
+  "/hmm-bd9bad/": {
+    "link": "/hmm-bd9bad/",
     "count": 1
   },
   "/itreview1/": {
     "link": "/itreview1/",
     "count": 1
   },
-  "/jekyll-tag/": {
-    "link": "/jekyll-tag/",
+  "/itreview2/": {
+    "link": "/itreview2/",
+    "count": 1
+  },
+  "/jupyter-convert/": {
+    "link": "/jupyter-convert/",
+    "count": 1
+  },
+  "/kernel1/": {
+    "link": "/kernel1/",
+    "count": 1
+  },
+  "/kernel2/": {
+    "link": "/kernel2/",
     "count": 1
   },
   "/kernel3/": {
     "link": "/kernel3/",
     "count": 1
   },
+  "/kstest/": {
+    "link": "/kstest/",
+    "count": 1
+  },
+  "/laplace-approximation-binary-gp-classifier/": {
+    "link": "/laplace-approximation-binary-gp-classifier/",
+    "count": 1
+  },
+  "/lda2-ea7ca2/": {
+    "link": "/lda2-ea7ca2/",
+    "count": 1
+  },
   "/lebesgue-integration-with-general-measure/": {
     "link": "/lebesgue-integration-with-general-measure/",
+    "count": 1
+  },
+  "/linear model/linearreg1": {
+    "link": "/linear model/linearreg1",
     "count": 1
   },
   "/linear model/logistic/": {
@@ -479,6 +831,14 @@
     "link": "/linearreg2/",
     "count": 1
   },
+  "/logistic/": {
+    "link": "/logistic/",
+    "count": 1
+  },
+  "/lpp-18317e/": {
+    "link": "/lpp-18317e/",
+    "count": 1
+  },
   "/lstm-fcn/": {
     "link": "/lstm-fcn/",
     "count": 1
@@ -487,16 +847,56 @@
     "link": "/ma-models/",
     "count": 1
   },
+  "/machine learning/Bootstrap/": {
+    "link": "/machine learning/Bootstrap/",
+    "count": 1
+  },
   "/machine learning/Gaussian_Process/": {
     "link": "/machine learning/Gaussian_Process/",
     "count": 1
   },
-  "/mathematics/realanalysis_Topological_spaces(2)/": {
-    "link": "/mathematics/realanalysis_Topological_spaces(2)/",
+  "/machine learning/Gaussian_Process_Classification/": {
+    "link": "/machine learning/Gaussian_Process_Classification/",
+    "count": 1
+  },
+  "/machine learning/Gradient_Boosting/": {
+    "link": "/machine learning/Gradient_Boosting/",
+    "count": 1
+  },
+  "/machine learning/Splines": {
+    "link": "/machine learning/Splines",
+    "count": 1
+  },
+  "/machine learning/Support_Vector_Machine/": {
+    "link": "/machine learning/Support_Vector_Machine/",
+    "count": 1
+  },
+  "/machine learning/Tree/": {
+    "link": "/machine learning/Tree/",
+    "count": 1
+  },
+  "/machine learning/kernel3": {
+    "link": "/machine learning/kernel3",
+    "count": 1
+  },
+  "/markov-random-field/": {
+    "link": "/markov-random-field/",
+    "count": 1
+  },
+  "/mathematics/gms_1/": {
+    "link": "/mathematics/gms_1/",
+    "count": 1
+  },
+  "/mathematics/realanalysis_BCP/": {
+    "link": "/mathematics/realanalysis_BCP/",
     "count": 1
   },
   "/mathematics/realanalysis_Topological_spaces(3)/": {
     "link": "/mathematics/realanalysis_Topological_spaces(3)/",
+    "count": 1
+  },
+  "/mathematics/실해석학10/": {
+    "link": "/mathematics/실해석학10/",
     "count": 1
   },
   "/mathematics/실해석학2/": {
@@ -507,12 +907,28 @@
     "link": "/mathematics/실해석학8/",
     "count": 1
   },
+  "/mathematics/실해석학9": {
+    "link": "/mathematics/실해석학9",
+    "count": 1
+  },
+  "/mixture-model/": {
+    "link": "/mixture-model/",
+    "count": 1
+  },
   "/mm-algorithm/": {
     "link": "/mm-algorithm/",
     "count": 1
   },
+  "/model-assessment/": {
+    "link": "/model-assessment/",
+    "count": 1
+  },
   "/monotone-class-argument/": {
     "link": "/monotone-class-argument/",
+    "count": 1
+  },
+  "/monte-carlo-sampling/": {
+    "link": "/monte-carlo-sampling/",
     "count": 1
   },
   "/multivariate-lstm-fcn/": {
@@ -535,28 +951,56 @@
     "link": "/partial-regression/",
     "count": 1
   },
-  "/prob-1/": {
-    "link": "/prob-1/",
+  "/probability theory/Events_and_Distribution/": {
+    "link": "/probability theory/Events_and_Distribution/",
     "count": 1
   },
-  "/probability theory/Monotone_class_argument/": {
-    "link": "/probability theory/Monotone_class_argument/",
+  "/probability theory/prob_1": {
+    "link": "/probability theory/prob_1",
     "count": 1
   },
-  "/product-integral/": {
-    "link": "/product-integral/",
+  "/probability theory/prob_1/": {
+    "link": "/probability theory/prob_1/",
     "count": 1
   },
   "/project/따릉이_AutoML/": {
     "link": "/project/따릉이_AutoML/",
     "count": 1
   },
-  "/realanalysis-topological-spaces-1/": {
-    "link": "/realanalysis-topological-spaces-1/",
+  "/project/따릉이_Linear/": {
+    "link": "/project/따릉이_Linear/",
     "count": 1
   },
-  "/realanalysis-topological-spaces-3/": {
-    "link": "/realanalysis-topological-spaces-3/",
+  "/project/따릉이_shrinkage/": {
+    "link": "/project/따릉이_shrinkage/",
+    "count": 1
+  },
+  "/pymc-25bf7c/": {
+    "link": "/pymc-25bf7c/",
+    "count": 1
+  },
+  "/radical-empiricism/": {
+    "link": "/radical-empiricism/",
+    "count": 1
+  },
+  "/randomforest/": {
+    "link": "/randomforest/",
+    "count": 1
+  },
+  "/randomized-experiment/": {
+    "link": "/randomized-experiment/",
+    "count": 1
+  },
+  "/rdp-32fc11/": {
+    "link": "/rdp-32fc11/",
+    "count": 1
+  },
+  "/realanalysis-metricspaces/": {
+    "link": "/realanalysis-metricspaces/",
+    "count": 1
+  },
+  "/realanalysis-topological-spaces-2/": {
+    "link": "/realanalysis-topological-spaces-2/",
     "count": 1
   },
   "/recommeder-systems/": {
@@ -567,40 +1011,84 @@
     "link": "/regularization-on-dl/",
     "count": 1
   },
+  "/rest-api/": {
+    "link": "/rest-api/",
+    "count": 1
+  },
+  "/robust-pca/": {
+    "link": "/robust-pca/",
+    "count": 1
+  },
+  "/self-organizing-map/": {
+    "link": "/self-organizing-map/",
+    "count": 1
+  },
   "/sensitivity-analysis/": {
     "link": "/sensitivity-analysis/",
+    "count": 1
+  },
+  "/shrinkage/": {
+    "link": "/shrinkage/",
     "count": 1
   },
   "/simpe-nn-with-tf/": {
     "link": "/simpe-nn-with-tf/",
     "count": 1
   },
-  "/spatial-causal-inference-1/": {
-    "link": "/spatial-causal-inference-1/",
+  "/spatial-hierarchical-model/": {
+    "link": "/spatial-hierarchical-model/",
     "count": 1
   },
   "/spatial-stat-1/": {
     "link": "/spatial-stat-1/",
     "count": 1
   },
+  "/spatial-stat-2/": {
+    "link": "/spatial-stat-2/",
+    "count": 1
+  },
+  "/spatial-stat-3/": {
+    "link": "/spatial-stat-3/",
+    "count": 1
+  },
+  "/spectral-analysis-1/": {
+    "link": "/spectral-analysis-1/",
+    "count": 1
+  },
+  "/spectral-analysis-2/": {
+    "link": "/spectral-analysis-2/",
+    "count": 1
+  },
+  "/spectral-analysis-3/": {
+    "link": "/spectral-analysis-3/",
+    "count": 1
+  },
+  "/splines/": {
+    "link": "/splines/",
+    "count": 1
+  },
   "/ssm-6363bf/": {
     "link": "/ssm-6363bf/",
     "count": 1
   },
-  "/stationarity/": {
-    "link": "/stationarity/",
+  "/statistics/Spatial-Stat-3/": {
+    "link": "/statistics/Spatial-Stat-3/",
     "count": 1
   },
-  "/statistics/MM_algorithm/": {
-    "link": "/statistics/MM_algorithm/",
-    "count": 1
-  },
-  "/statistics/Spatial-Stat-2/": {
-    "link": "/statistics/Spatial-Stat-2/",
+  "/support-vector-regression/": {
+    "link": "/support-vector-regression/",
     "count": 1
   },
   "/tags/Bayesian/": {
     "link": "/tags/Bayesian/",
+    "count": 1
+  },
+  "/tags/Causal Inference": {
+    "link": "/tags/Causal Inference",
+    "count": 1
+  },
+  "/tags/DDPM/": {
+    "link": "/tags/DDPM/",
     "count": 1
   },
   "/tags/Deep Learning/": {
@@ -611,6 +1099,18 @@
     "link": "/tags/Linear Model/",
     "count": 1
   },
+  "/tags/Statistics/": {
+    "link": "/tags/Statistics/",
+    "count": 1
+  },
+  "/time series/Spectral_Density": {
+    "link": "/time series/Spectral_Density",
+    "count": 1
+  },
+  "/transform/": {
+    "link": "/transform/",
+    "count": 1
+  },
   "/tree-0bd727/": {
     "link": "/tree-0bd727/",
     "count": 1
@@ -619,12 +1119,20 @@
     "link": "/tree-7b1112/",
     "count": 1
   },
+  "/tsne-1061cf/": {
+    "link": "/tsne-1061cf/",
+    "count": 1
+  },
   "/universal-approximation-theorem/": {
     "link": "/universal-approximation-theorem/",
     "count": 1
   },
   "/vae-1f0e37/": {
     "link": "/vae-1f0e37/",
+    "count": 1
+  },
+  "/variational-inference/": {
+    "link": "/variational-inference/",
     "count": 1
   },
   "/vdr-1a6a2c/": {
@@ -639,8 +1147,8 @@
     "link": "/프로그래머스-42892/",
     "count": 1
   },
-  "/프로그래머스-86971/": {
-    "link": "/프로그래머스-86971/",
+  "/프로그래머스-43105": {
+    "link": "/프로그래머스-43105",
     "count": 1
   }
 }
