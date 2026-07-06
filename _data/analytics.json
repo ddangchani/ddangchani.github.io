@@ -1,23 +1,23 @@
 {
   "/Optimal-Transport/": {
     "link": "/Optimal-Transport/",
-    "count": 5102
+    "count": 5152
   },
   "/KAN/": {
     "link": "/KAN/",
-    "count": 4213
+    "count": 4218
   },
   "/SSM/": {
     "link": "/SSM/",
-    "count": 2631
+    "count": 2638
   },
   "/STGCN/": {
     "link": "/STGCN/",
-    "count": 1436
+    "count": 1443
   },
   "/Conformal-Prediction/": {
     "link": "/Conformal-Prediction/",
-    "count": 1112
+    "count": 1117
   },
   "/pymc/": {
     "link": "/pymc/",
@@ -29,11 +29,11 @@
   },
   "/Universal-Approximation-Theorem/": {
     "link": "/Universal-Approximation-Theorem/",
-    "count": 613
+    "count": 614
   },
   "/KStest/": {
     "link": "/KStest/",
-    "count": 581
+    "count": 583
   },
   "/machine learning/Splines/": {
     "link": "/machine learning/Splines/",
@@ -45,7 +45,7 @@
   },
   "/BayesOpt/": {
     "link": "/BayesOpt/",
-    "count": 377
+    "count": 383
   },
   "/NeuralODE/": {
     "link": "/NeuralODE/",
@@ -69,11 +69,11 @@
   },
   "/baekjoonhub/": {
     "link": "/baekjoonhub/",
-    "count": 189
+    "count": 190
   },
   "/RDP/": {
     "link": "/RDP/",
-    "count": 173
+    "count": 174
   },
   "/EDA-point-process/": {
     "link": "/EDA-point-process/",
@@ -125,7 +125,7 @@
   },
   "/Datascience-roadmap/": {
     "link": "/Datascience-roadmap/",
-    "count": 118
+    "count": 119
   },
   "/HMM/": {
     "link": "/HMM/",
@@ -137,35 +137,35 @@
   },
   "/GDP/": {
     "link": "/GDP/",
-    "count": 106
+    "count": 107
   },
   "/project/따릉이_EDA/": {
     "link": "/project/따릉이_EDA/",
     "count": 106
   },
+  "/etc/itreview2/": {
+    "link": "/etc/itreview2/",
+    "count": 97
+  },
   "/Markov-Random-Field/": {
     "link": "/Markov-Random-Field/",
     "count": 96
+  },
+  "/Transformer/": {
+    "link": "/Transformer/",
+    "count": 95
   },
   "/time series/State-Space_Model/": {
     "link": "/time series/State-Space_Model/",
     "count": 95
   },
-  "/Transformer/": {
-    "link": "/Transformer/",
-    "count": 94
-  },
   "/DPGAN/": {
     "link": "/DPGAN/",
     "count": 93
   },
-  "/etc/itreview2/": {
-    "link": "/etc/itreview2/",
-    "count": 93
-  },
   "/Differential-Privacy/": {
     "link": "/Differential-Privacy/",
-    "count": 91
+    "count": 92
   },
   "/GAN/": {
     "link": "/GAN/",
@@ -219,6 +219,10 @@
     "link": "/statistics/MM_algorithm/",
     "count": 66
   },
+  "/etc/itreview1/": {
+    "link": "/etc/itreview1/",
+    "count": 63
+  },
   "/machine learning/kernelpca/": {
     "link": "/machine learning/kernelpca/",
     "count": 62
@@ -231,17 +235,13 @@
     "link": "/Spatial-Causal-Inference-1/",
     "count": 61
   },
-  "/etc/itreview1/": {
-    "link": "/etc/itreview1/",
-    "count": 60
-  },
   "/causal inference/Causal_Inference_(1)/": {
     "link": "/causal inference/Causal_Inference_(1)/",
     "count": 58
   },
   "/mathematics/realanalysis_Topological_spaces(1)/": {
     "link": "/mathematics/realanalysis_Topological_spaces(1)/",
-    "count": 55
+    "count": 58
   },
   "/Eigenfunctions/": {
     "link": "/Eigenfunctions/",
@@ -363,6 +363,10 @@
     "link": "/VAE/",
     "count": 28
   },
+  "/VDR/": {
+    "link": "/VDR/",
+    "count": 28
+  },
   "/deep learning/Regularization_on_DL/": {
     "link": "/deep learning/Regularization_on_DL/",
     "count": 28
@@ -371,16 +375,16 @@
     "link": "/프로그래머스-181187/",
     "count": 28
   },
-  "/VDR/": {
-    "link": "/VDR/",
-    "count": 27
-  },
   "/causal inference/Causal_Inference_(4)/": {
     "link": "/causal inference/Causal_Inference_(4)/",
     "count": 27
   },
   "/DP-for-Functions/": {
     "link": "/DP-for-Functions/",
+    "count": 26
+  },
+  "/Spatial-Stat-1/": {
+    "link": "/Spatial-Stat-1/",
     "count": 26
   },
   "/mathematics/실해석학1/": {
@@ -391,8 +395,8 @@
     "link": "/recommender system/Collaborative-Filtering/",
     "count": 26
   },
-  "/Spatial-Stat-1/": {
-    "link": "/Spatial-Stat-1/",
+  "/Spatial-Hierarchical-Model/": {
+    "link": "/Spatial-Hierarchical-Model/",
     "count": 25
   },
   "/causal inference/Causal_Inference_(5)/": {
@@ -417,10 +421,6 @@
   },
   "/Bayesian-Causal-Inference/": {
     "link": "/Bayesian-Causal-Inference/",
-    "count": 24
-  },
-  "/Spatial-Hierarchical-Model/": {
-    "link": "/Spatial-Hierarchical-Model/",
     "count": 24
   },
   "/deep learning/CNN/": {
@@ -483,6 +483,10 @@
     "link": "/mathematics/실해석학4/",
     "count": 20
   },
+  "/statistics/Spatial-Stat-3/": {
+    "link": "/statistics/Spatial-Stat-3/",
+    "count": 20
+  },
   "/deep learning/AlexNet/": {
     "link": "/deep learning/AlexNet/",
     "count": 19
@@ -491,8 +495,8 @@
     "link": "/policy-optimization/",
     "count": 19
   },
-  "/statistics/Spatial-Stat-3/": {
-    "link": "/statistics/Spatial-Stat-3/",
+  "/spatial-causal-inference-2/": {
+    "link": "/spatial-causal-inference-2/",
     "count": 19
   },
   "/Spectral-Analysis-4/": {
@@ -541,10 +545,6 @@
   },
   "/mathematics/Product_Integral/": {
     "link": "/mathematics/Product_Integral/",
-    "count": 16
-  },
-  "/spatial-causal-inference-2/": {
-    "link": "/spatial-causal-inference-2/",
     "count": 16
   },
   "/이진트리/": {
@@ -619,6 +619,10 @@
     "link": "/machine learning/Cross_Validation/",
     "count": 12
   },
+  "/optimal-transport/": {
+    "link": "/optimal-transport/",
+    "count": 12
+  },
   "/search/": {
     "link": "/search/",
     "count": 12
@@ -633,10 +637,6 @@
   },
   "/mathematics/실해석학8/": {
     "link": "/mathematics/실해석학8/",
-    "count": 11
-  },
-  "/optimal-transport/": {
-    "link": "/optimal-transport/",
     "count": 11
   },
   "/page2/": {
@@ -691,6 +691,10 @@
     "link": "/deep%20learning/simpe_nn_with_tf/",
     "count": 9
   },
+  "/linear model/lda1/": {
+    "link": "/linear model/lda1/",
+    "count": 9
+  },
   "/linear model/linearreg2/": {
     "link": "/linear model/linearreg2/",
     "count": 9
@@ -727,10 +731,6 @@
     "link": "/deep learning/Neural_Network/",
     "count": 8
   },
-  "/linear model/lda1/": {
-    "link": "/linear model/lda1/",
-    "count": 8
-  },
   "/machine learning/Model_Assessment/": {
     "link": "/machine learning/Model_Assessment/",
     "count": 8
@@ -747,8 +747,16 @@
     "link": "/page15/",
     "count": 8
   },
+  "/tags/Mathematics/": {
+    "link": "/tags/Mathematics/",
+    "count": 8
+  },
   "/tags/Real Analysis/": {
     "link": "/tags/Real Analysis/",
+    "count": 8
+  },
+  "/프로그래머스-72413/": {
+    "link": "/프로그래머스-72413/",
     "count": 8
   },
   "/프로그래머스-92343/": {
@@ -757,6 +765,10 @@
   },
   "/1.-알고리즘/": {
     "link": "/1.-알고리즘/",
+    "count": 7
+  },
+  "/Optimal-Transport/[https://pythonot.github.io/]": {
+    "link": "/Optimal-Transport/[https://pythonot.github.io/]",
     "count": 7
   },
   "/deep learning/0709_KISS_Summer_school_DL_Lecture/": {
@@ -791,6 +803,10 @@
     "link": "/tags/Spatial Statistics/",
     "count": 7
   },
+  "/tags/Statistics/": {
+    "link": "/tags/Statistics/",
+    "count": 7
+  },
   "/time series/MA_models/": {
     "link": "/time series/MA_models/",
     "count": 7
@@ -803,13 +819,9 @@
     "link": "/알고리즘-테스트/",
     "count": 7
   },
-  "/프로그래머스-72413/": {
-    "link": "/프로그래머스-72413/",
+  "/프로그래머스-43105/": {
+    "link": "/프로그래머스-43105/",
     "count": 7
-  },
-  "/Optimal-Transport/[https://pythonot.github.io/]": {
-    "link": "/Optimal-Transport/[https://pythonot.github.io/]",
-    "count": 6
   },
   "/deep learning/Backpropagation/": {
     "link": "/deep learning/Backpropagation/",
@@ -831,12 +843,12 @@
     "link": "/프로그래머스-181188/",
     "count": 6
   },
-  "/프로그래머스-43105/": {
-    "link": "/프로그래머스-43105/",
-    "count": 6
-  },
   "/an-overview-of-statistical-learning/": {
     "link": "/an-overview-of-statistical-learning/",
+    "count": 5
+  },
+  "/deep learning/0709_KISS_Summer_school_DL_Lecture": {
+    "link": "/deep learning/0709_KISS_Summer_school_DL_Lecture",
     "count": 5
   },
   "/llm-meets-statistics-bias-uncertainty-llm-judge/": {
@@ -869,10 +881,6 @@
   },
   "/tags/Deep Learning": {
     "link": "/tags/Deep Learning",
-    "count": 5
-  },
-  "/tags/Mathematics/": {
-    "link": "/tags/Mathematics/",
     "count": 5
   },
   "/프로그래머스-169198/": {
@@ -917,6 +925,10 @@
   },
   "/causal%20inference/Causal_Inference_(6)/": {
     "link": "/causal%20inference/Causal_Inference_(6)/",
+    "count": 4
+  },
+  "/conformal-prediction/": {
+    "link": "/conformal-prediction/",
     "count": 4
   },
   "/cross-validation/": {
@@ -1011,16 +1023,20 @@
     "link": "/tags/Spatial Statistics",
     "count": 4
   },
-  "/tags/Statistics/": {
-    "link": "/tags/Statistics/",
-    "count": 4
-  },
   "/transformer/": {
     "link": "/transformer/",
     "count": 4
   },
+  "/universal-approximation-theorem/": {
+    "link": "/universal-approximation-theorem/",
+    "count": 4
+  },
   "/13-cc5fd2/": {
     "link": "/13-cc5fd2/",
+    "count": 3
+  },
+  "/15-13969d/": {
+    "link": "/15-13969d/",
     "count": 3
   },
   "/2-86a17f/": {
@@ -1049,10 +1065,6 @@
   },
   "/collaborative-filtering/": {
     "link": "/collaborative-filtering/",
-    "count": 3
-  },
-  "/conformal-prediction/": {
-    "link": "/conformal-prediction/",
     "count": 3
   },
   "/deep%20learning/Backpropagation/": {
@@ -1089,6 +1101,10 @@
   },
   "/kernel3/": {
     "link": "/kernel3/",
+    "count": 3
+  },
+  "/kstest/": {
+    "link": "/kstest/",
     "count": 3
   },
   "/linear%20model/Linear_Mixed_Effect_Model/": {
@@ -1203,10 +1219,6 @@
     "link": "/tags/Real Analysis",
     "count": 3
   },
-  "/universal-approximation-theorem/": {
-    "link": "/universal-approximation-theorem/",
-    "count": 3
-  },
   "/비동기/": {
     "link": "/비동기/",
     "count": 3
@@ -1223,8 +1235,12 @@
     "link": "/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-181187/",
     "count": 2
   },
-  "/15-13969d/": {
-    "link": "/15-13969d/",
+  "/1-6522b6/": {
+    "link": "/1-6522b6/",
+    "count": 2
+  },
+  "/12945-eedfd6/": {
+    "link": "/12945-eedfd6/",
     "count": 2
   },
   "/169198/": {
@@ -1399,6 +1415,10 @@
     "link": "/fit-without-fear/",
     "count": 2
   },
+  "/gaussian-process-classification/": {
+    "link": "/gaussian-process-classification/",
+    "count": 2
+  },
   "/gaussian-process-regression/": {
     "link": "/gaussian-process-regression/",
     "count": 2
@@ -1425,10 +1445,6 @@
   },
   "/jekyll-tag/": {
     "link": "/jekyll-tag/",
-    "count": 2
-  },
-  "/kstest/": {
-    "link": "/kstest/",
     "count": 2
   },
   "/laplace-approximation-binary-gp-classifier/": {
@@ -1501,6 +1517,10 @@
   },
   "/mathematics/실해석학9": {
     "link": "/mathematics/실해석학9",
+    "count": 2
+  },
+  "/mcmc-782b63/": {
+    "link": "/mcmc-782b63/",
     "count": 2
   },
   "/mixture-model/": {
@@ -1593,6 +1613,14 @@
   },
   "/simpe-nn-with-tf/": {
     "link": "/simpe-nn-with-tf/",
+    "count": 2
+  },
+  "/spectral-analysis-2/": {
+    "link": "/spectral-analysis-2/",
+    "count": 2
+  },
+  "/spectral-density/": {
+    "link": "/spectral-density/",
     "count": 2
   },
   "/splines/": {
@@ -1691,10 +1719,6 @@
     "link": "/0709-kiss-summer-school-dl-lecture/",
     "count": 1
   },
-  "/1-6522b6/": {
-    "link": "/1-6522b6/",
-    "count": 1
-  },
   "/1-65b6ad/": {
     "link": "/1-65b6ad/",
     "count": 1
@@ -1709,10 +1733,6 @@
   },
   "/12-4e8caa/": {
     "link": "/12-4e8caa/",
-    "count": 1
-  },
-  "/12945-eedfd6/": {
-    "link": "/12945-eedfd6/",
     "count": 1
   },
   "/172927/": {
@@ -1835,6 +1855,10 @@
     "link": "/SDE",
     "count": 1
   },
+  "/SSM/(/time series/State-Space_Model/)": {
+    "link": "/SSM/(/time series/State-Space_Model/)",
+    "count": 1
+  },
   "/Spatial-Causal-Inference-1": {
     "link": "/Spatial-Causal-Inference-1",
     "count": 1
@@ -1875,6 +1899,10 @@
     "link": "/bda-2-7cce04/",
     "count": 1
   },
+  "/causal": {
+    "link": "/causal",
+    "count": 1
+  },
   "/causal inference/Causal_Inference_(4)": {
     "link": "/causal inference/Causal_Inference_(4)",
     "count": 1
@@ -1913,10 +1941,6 @@
   },
   "/confounder-adjustment/": {
     "link": "/confounder-adjustment/",
-    "count": 1
-  },
-  "/deep learning/0709_KISS_Summer_school_DL_Lecture": {
-    "link": "/deep learning/0709_KISS_Summer_school_DL_Lecture",
     "count": 1
   },
   "/deep learning/AlexNet": {
@@ -2001,10 +2025,6 @@
   },
   "/finetuning/": {
     "link": "/finetuning/",
-    "count": 1
-  },
-  "/gaussian-process-classification/": {
-    "link": "/gaussian-process-classification/",
     "count": 1
   },
   "/geostatistical-methods/": {
@@ -2187,10 +2207,6 @@
     "link": "/mathematics/실해석학6",
     "count": 1
   },
-  "/mcmc-782b63/": {
-    "link": "/mcmc-782b63/",
-    "count": 1
-  },
   "/monotone-class-argument/": {
     "link": "/monotone-class-argument/",
     "count": 1
@@ -2367,16 +2383,8 @@
     "link": "/spatial-stat-3/",
     "count": 1
   },
-  "/spectral-analysis-2/": {
-    "link": "/spectral-analysis-2/",
-    "count": 1
-  },
   "/spectral-analysis-3/": {
     "link": "/spectral-analysis-3/",
-    "count": 1
-  },
-  "/spectral-density/": {
-    "link": "/spectral-density/",
     "count": 1
   },
   "/statistics/MM_algorithm": {
